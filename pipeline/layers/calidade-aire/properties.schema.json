@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "calidade-aire feature properties",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "nome",
+    "ica",
+    "categoria_gl",
+    "categoria_es",
+    "contaminante",
+    "cor",
+    "data_medida"
+  ],
+  "properties": {
+    "id": { "type": "integer" },
+    "nome": { "type": "string", "minLength": 1 },
+    "concello": { "type": "string" },
+    "tipo": { "type": "string", "description": "Fondo, Tráfico ou Industrial" },
+    "ica": { "type": ["number", "null"], "minimum": 0, "maximum": 6 },
+    "categoria_gl": { "type": "string", "minLength": 1 },
+    "categoria_es": { "type": "string", "minLength": 1 },
+    "contaminante": { "type": "string", "minLength": 1 },
+    "cor": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6}$" },
+    "data_medida": { "type": "string", "format": "date-time" }
+  }
+}
