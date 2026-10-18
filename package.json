@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "description": "Mapa público de Galicia con datos abertos. Fundación Galicia Sustentable.",
+  "license": "AGPL-3.0-only",
   "type": "module",
   "engines": {
     "node": ">=24"

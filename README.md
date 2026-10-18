@@ -10,7 +10,7 @@ Promove: [Fundación Galicia Sustentable](https://galiciasustentable.org). Nome 
 
 - Datos derivados: [ODbL 1.0](DATA_LICENSE.md). Cada capa conserva a atribución da súa fonte.
 - Textos editoriais: [CC BY-NC-SA 4.0](CONTENT_LICENSE.md).
-- Código: pendente de decisión (ver `docs/decisions/0002-code-licence.md`).
+- Código: [AGPL-3.0](LICENSE) (ver `docs/decisions/0002-code-licence.md`).
 
 ## Desenvolvemento
 
