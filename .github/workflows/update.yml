@@ -1,0 +1,129 @@
+# Ingest due layers every 10 minutes, keep the data on the `data` branch,
+# raise a freshness alert issue, then build, audit and deploy the site.
+# Deploy runs only when the FTPS secrets exist.
+name: update
+
+on:
+  schedule:
+    - cron: '*/10 * * * *'
+  workflow_dispatch:
+    inputs:
+      force:
+        description: Ignore ingest.every and refresh every layer
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: update
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      DATA_OUT_DIR: data-out
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+
+      - name: Restore last published data (data branch)
+        run: |
+          git fetch origin data || true
+          if git show-ref --verify --quiet refs/remotes/origin/data; then
+            git worktree add data-out origin/data
+            git -C data-out switch -c data
+          else
+            git worktree add --orphan -b data data-out
+          fi
+
+      - name: Ingest
+        env:
+          FIRMS_MAP_KEY: ${{ secrets.FIRMS_MAP_KEY }}
+          NAP_API_KEY: ${{ secrets.NAP_API_KEY }}
+          METEOGALICIA_AFOROS_KEY: ${{ secrets.METEOGALICIA_AFOROS_KEY }}
+        run: npx tsx pipeline/cli.ts ingest ${{ inputs.force && '--force' || '' }}
+
+      - name: Save data
+        working-directory: data-out
+        run: |
+          git config user.name "galicia-agora-ingest"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -q -m "data: $(date -u +%Y-%m-%dT%H:%MZ)" || exit 0
+          git push -q origin data
+
+      - name: Freshness alert
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set +e
+          npx tsx pipeline/cli.ts status > status.txt
+          code=$?
+          set -e
+          cat status.txt
+          title="Alerta de frescura: capas sen actualizar"
+          existing=$(gh issue list --state open --search "in:title \"$title\"" --json number -q '.[0].number')
+          if [ "$code" = "3" ]; then
+            body=$(printf 'Unha ou máis capas levan máis de tres ciclos sen actualizarse.\n\n```\n%s\n```\n' "$(grep ALERT status.txt)")
+            if [ -n "$existing" ]; then
+              gh issue comment "$existing" --body "$body"
+            else
+              gh issue create --title "$title" --body "$body"
+            fi
+          elif [ -n "$existing" ]; then
+            gh issue close "$existing" --comment "Todas as capas volven estar dentro de prazo."
+          fi
+
+      - name: Check deploy configuration
+        id: cfg
+        env:
+          FTPS_HOST: ${{ secrets.FTPS_HOST }}
+        run: echo "deploy=$([ -n "$FTPS_HOST" ] && echo true || echo false)" >> "$GITHUB_OUTPUT"
+
+      - name: Cache basemap and map assets
+        if: steps.cfg.outputs.deploy == 'true'
+        uses: actions/cache@v4
+        with:
+          path: build
+          key: basemap-${{ github.run_id }}
+          restore-keys: basemap-
+
+      - name: Install map tools
+        if: steps.cfg.outputs.deploy == 'true'
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq tippecanoe lftp
+          curl -sSL -o pmtiles.tgz https://github.com/protomaps/go-pmtiles/releases/download/v1.31.2/go-pmtiles_1.31.2_Linux_x86_64.tar.gz
+          tar -xzf pmtiles.tgz pmtiles && sudo mv pmtiles /usr/local/bin/
+
+      - name: Build and audit
+        if: steps.cfg.outputs.deploy == 'true'
+        run: |
+          # Refresh the basemap monthly; otherwise reuse the cached extract.
+          if [ -f build/basemap-version.txt ] && [ $(( $(date +%s) - $(stat -c %Y build/basemap-version.txt) )) -gt 2592000 ]; then
+            rm -f build/galicia.pmtiles build/basemap-version.txt
+          fi
+          make basemap assets
+          npm run build
+          npm run audit
+
+      - name: Deploy (FTPS)
+        if: steps.cfg.outputs.deploy == 'true'
+        env:
+          FTPS_HOST: ${{ secrets.FTPS_HOST }}
+          FTPS_USER: ${{ secrets.FTPS_USER }}
+          FTPS_PASSWORD: ${{ secrets.FTPS_PASSWORD }}
+          FTPS_DIR: ${{ secrets.FTPS_DIR }}
+        run: |
+          lftp -u "$FTPS_USER","$FTPS_PASSWORD" "ftps://$FTPS_HOST" -e "
+            set ftp:ssl-force true; set ssl:verify-certificate true;
+            mirror --reverse --only-newer --parallel=4 --exclude-glob .git* dist/ ${FTPS_DIR:-/};
+            quit"
