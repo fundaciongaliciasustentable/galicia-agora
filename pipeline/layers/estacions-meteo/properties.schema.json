@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "estacions-meteo feature properties",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "nome", "concello", "altitude", "data_medida"],
+  "properties": {
+    "id": { "type": "integer" },
+    "nome": { "type": "string", "minLength": 1 },
+    "concello": { "type": "string" },
+    "altitude": { "type": "number" },
+    "data_medida": { "type": "string", "format": "date-time" },
+    "temperatura": { "type": "number", "description": "ºC a 1,5 m" },
+    "humidade": { "type": "number", "minimum": 0, "maximum": 100, "description": "% a 1,5 m" },
+    "vento_velocidade": { "type": "number", "minimum": 0, "description": "m/s" },
+    "vento_direccion": { "type": "number", "minimum": 0, "maximum": 360, "description": "graos" },
+    "vento_altura_m": { "enum": [2, 10] },
+    "refacho": { "type": "number", "minimum": 0, "description": "m/s" },
+    "chuvia_10min": { "type": "number", "minimum": 0, "description": "L/m2 en 10 min" },
+    "presion": { "type": "number", "description": "hPa reducida ao nivel do mar" }
+  },
+  "patternProperties": {
+    "^(temperatura|humidade|vento_velocidade|vento_direccion|refacho|chuvia_10min|presion)_cod$": {
+      "type": "integer"
+    }
+  }
+}

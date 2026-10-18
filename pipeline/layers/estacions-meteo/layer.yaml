@@ -1,0 +1,53 @@
+id: estacions-meteo
+title:
+  gl: Estacións meteorolóxicas
+  es: Estaciones meteorológicas
+theme: tempo-aire
+operator:
+  name: MeteoGalicia (Consellería de Medio Ambiente, Xunta de Galicia)
+  url: https://www.meteogalicia.gal/web/observacion/rede-meteoroloxica
+source_url: https://servizos.meteogalicia.gal/mgrss/observacion/ultimos10minEstacionsMeteo.action
+licence:
+  spdx: CC-BY-SA-4.0
+  text_url: https://www.meteogalicia.gal/web/aviso-legal
+  quote: "utilizada libremente… co único compromiso de mencionar expresamente a MeteoGalicia"
+  verified_at: 2026-10-18
+  odbl_compatible: doubt
+  collection: cc-by-sa-4.0
+  notes: >-
+    Dobre licenza: aviso legal de MeteoGalicia (atribución) e abertos.xunta.gal, conxunto 0114
+    (CC BY-SA 4.0). Aplícase a máis restritiva (ADR 0005) ata confirmación por escrito.
+attribution: "Datos: MeteoGalicia (Xunta de Galicia)"
+update_frequency:
+  declared: PT10M
+  measured: PT10M
+  schedule: "*/10 * * * *"
+geometry: point
+output: geojson
+auth:
+  required: false
+privacy_notes: >-
+  Sen datos persoais: lecturas de estacións meteorolóxicas públicas. Só valores con código de
+  validación 1; os demais códigos (non documentados) consérvanse marcados en <campo>_cod e os
+  baleiros (-9999, código 9) descártanse. Descártanse as estacións cunha lectura máis de 60 min
+  anterior á máis recente da resposta.
+stale_after: PT40M
+ingest:
+  every: PT10M
+style:
+  kind: circle
+  color_token: --c-tempo
+  label_field: temperatura
+table:
+  fields:
+    - nome
+    - concello
+    - altitude
+    - temperatura
+    - humidade
+    - vento_velocidade
+    - vento_direccion
+    - refacho
+    - chuvia_10min
+    - presion
+    - data_medida
