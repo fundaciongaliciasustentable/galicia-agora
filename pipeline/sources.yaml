@@ -586,7 +586,7 @@ sources:
   - id: ideg-espazos
     name: Rede Galega de Espazos Protexidos — IDEG / IET
     phase: 1
-    layers: [espazos-protexidos]
+    layers: [espazos-naturais-galicia]
     operator: Xunta de Galicia (IET)
     endpoints:
       - url: https://ideg.xunta.gal/servizos/rest/services/LugaresProtexidos
@@ -612,7 +612,7 @@ sources:
   - id: miteco-natura
     name: Rede Natura 2000 e ENP — MITECO / IEPNB
     phase: 1
-    layers: [espazos-protexidos]
+    layers: [rede-natura]
     operator: Ministerio para la Transición Ecológica (Banco de Datos de la Naturaleza)
     endpoints:
       - url: https://geoserver.iepnb.es/geoserver/RN2000/ows

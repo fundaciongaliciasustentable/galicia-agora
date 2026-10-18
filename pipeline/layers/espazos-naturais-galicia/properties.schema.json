@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "espazos-naturais-galicia feature properties",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["figura", "nome", "superficie_ha"],
+  "properties": {
+    "figura": {
+      "enum": [
+        "Parque nacional",
+        "Parque natural",
+        "Humidal protexido",
+        "Zona de especial protección dos valores naturais",
+        "Monumento natural",
+        "Paisaxe protexida"
+      ]
+    },
+    "nome": { "type": "string", "minLength": 1 },
+    "superficie_ha": { "type": ["number", "null"], "minimum": 0 }
+  }
+}

@@ -1,0 +1,42 @@
+id: espazos-naturais-galicia
+title:
+  gl: Espazos naturais protexidos de Galicia
+  es: Espacios naturales protegidos de Galicia
+theme: territorio
+operator:
+  name: Xunta de Galicia (Instituto de Estudos do Territorio / IDEG)
+  url: https://mapas.xunta.gal
+source_url: https://ideg.xunta.gal/servizos/rest/services/LugaresProtexidos/EN_EspazosProtexidos/MapServer
+licence:
+  spdx: CC-BY-SA-4.0
+  text_url: https://mapas.xunta.gal/gl/aviso-legal
+  verified_at: 2026-10-18
+  odbl_compatible: doubt
+  collection: cc-by-sa-4.0
+  notes: >-
+    Dobre licenza (ADR 0005): IET «compatible con CC BY 4.0» / abertos.xunta.gal
+    CC BY-SA 4.0; aplícase a máis restritiva ata confirmación escrita.
+    Figuras da Rede Galega de Espazos Protexidos fóra de Rede Natura (subcapas
+    1–6 de EN_EspazosProtexidos): parque nacional, parques naturais, humidais
+    protexidos, ZEPVN, monumentos naturais e paisaxes protexidas. Moitas
+    sobrepóñense a espazos Natura 2000 (capa rede-natura). Xeometría
+    xeneralizada no servidor con maxAllowableOffset = 0,0001° (≈ 10 m) e
+    coordenadas a 5 decimais. Nomes tal como os publica o IET.
+attribution: © Instituto de Estudos do Territorio. Xunta de Galicia
+update_frequency:
+  declared: static
+  measured: static
+geometry: polygon
+output: geojson
+auth:
+  required: false
+privacy_notes: Límites de espazos protexidos; ningún dato persoal.
+stale_after: P90D
+ingest:
+  every: P30D
+style:
+  kind: fill
+  color_token: --c-espazo
+  label_field: nome
+table:
+  fields: [figura, nome, superficie_ha]
