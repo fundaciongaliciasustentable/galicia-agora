@@ -4,7 +4,7 @@ Mapa público de Galicia con datos abertos. Promotor: Fundación Galicia Sustent
 
 ## Estado
 
-Fase 0 (verificación das fontes). Non se constrúe a Fase 1 sen aprobación explícita. Backlog (fases 2–4) só documentado.
+Fase 0 (verificación das fontes). Non se constrúe a Fase 1 sen aprobación explícita. Backlog (fases 2–5) só documentado en `docs/roadmap.md`.
 
 ## Comandos
 
