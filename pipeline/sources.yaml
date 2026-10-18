@@ -255,9 +255,9 @@ sources:
         documented: false
         notes: Ficheiros Europa 24h sen chave (SNPP, NOAA-20, NOAA-21, MODIS). Ruta non ligada no HTML estático.
       - url: https://firms.modaps.eosdis.nasa.gov/api/area/csv/{FIRMS_MAP_KEY}/VIIRS_SNPP_NRT/-9.35,41.8,-6.7,43.8/1
-        status: 400
+        status: 200
         documented: true
-        notes: Con chave falsa responde "Invalid MAP_KEY." Precisa MAP_KEY gratuíta.
+        notes: "Coa MAP_KEY da FGS (segredo FIRMS_MAP_KEY), 18/10/2026: 200 nos catro produtos; en 2 días, SNPP 1, NOAA-20 11, NOAA-21 10, MODIS 1 detección en Galicia. A resposta inclúe a columna instrument."
     format: CSV
     auth: "Ficheiros rexionais: ningunha. API por área: MAP_KEY gratuíta."
     frequency:
@@ -406,21 +406,22 @@ sources:
     operator: AISStream.io
     endpoints:
       - url: wss://stream.aisstream.io/v0/stream
-        status: not-called
+        status: 101
         documented: true
-        notes: Sen chave. Documentación revisada; ShipStaticData trae Type e Dimension.
+        notes: "Proba de 180 s desde Actions o 18/10/2026 (só agregados): 66 mensaxes, 52 buques distintos, 12 de clase B, 11 con ShipStaticData (tipo e eslora). Coa regra de atraso, 48 dos 52 irían atrasados, a maioría por falta de datos estáticos nunha xanela tan curta."
     format: JSON por websocket
     auth: Chave gratuíta; prohibida a conexión directa desde o navegador.
-    frequency: { declared: stream, measured: non verificado }
+    frequency: { declared: stream, measured: "~0,4 mensaxes/s na costa galega (proba de 3 min); cobertura parcial" }
     limits: "3 conexións por conta e por IP; sen SLA."
     licence:
       name: non atopada (/terms dá 404)
       url: https://aisstream.io/documentation
       verified: false
       odbl_compatible: unknown
-    coverage: non verificado
+    coverage: "Parcial: 52 buques en 3 min no bbox 41,8–44,3 N, 10,5–7 O. Densidade baixa para unha costa con moito tráfico; medir en xanelas longas."
     risks:
       - Sen termos de redistribución publicados.
+      - Os datos estáticos chegan cada ~6 min; sen eles a regra aplica o atraso por defecto.
     verdict: conditional
     verdict_notes: Non se publica nada sen permiso escrito do operador. Se non chega, só agregados ou capa desactivada.
     alternative: "EMODnet Human Activities, densidade de buques (CC BY 4.0, non verificado)."
@@ -441,7 +442,7 @@ sources:
       - url: https://nap.transportes.gob.es/api/Fichero/download/1584
         status: 401
         documented: true
-        notes: '"Api Key was not provided."'
+        notes: 'Sen chave: "Api Key was not provided." Coa chave do segredo NAP_API_KEY na cabeceira ApiKey (segundo o swagger /api/swagger/v1/swagger.json), tamén 401 o 18/10/2026: o valor gardado non é unha chave válida ou non está activa.'
     format: GTFS (ZIP)
     auth: Rexistro no NAP e chave de API.
     frequency: { declared: "ata 24 h", measured: "actualizado 16/10/2026; xanela de validez de 3–4 semanas" }

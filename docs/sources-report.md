@@ -61,16 +61,26 @@ Isto afecta a 8 das 12 capas. Detalle e opcións en [`licences.md`](licences.md)
 | Nomenclátor (BY-SA) | Publicalo como colección separada BY-SA, ou nomes de IDEG/IGN se o IET confirma CC BY |
 | Banco de Terras | Cifras agregadas das memorias de Agader |
 
-## O que preciso de ti
+## Verificación con chaves (18/10/2026)
+
+Corre en GitHub Actions (`verify-keys.yml`) cos segredos do repositorio e só imprime contas agregadas.
+
+| Fonte | Resultado |
+|---|---|
+| FIRMS, API por área | **Funciona.** Detección en Galicia nos últimos 2 días: NOAA-20 11, NOAA-21 10, SNPP 1, MODIS 1 |
+| AISStream | **Conecta.** En 3 min: 52 buques, 12 de clase B, 11 con tipo e eslora. Ritmo baixo (~0,4 mensaxes/s): a cobertura é parcial. Aplicando a regra de atraso, 48 de 52 irían atrasados, sobre todo porque nunha xanela tan curta non chegan os datos estáticos. Segue sen poderse publicar: faltan os termos |
+| NAP | **Falla (401)** coa chave gardada. O valor non é unha chave válida ou aínda non está activa |
+| Caudais (`mgafos`) | Chave solicitada; pendente de resposta |
+
 
 Eu non podo rexistrarme nin pedir chaves. Pendentes:
 
 | Acción | Para que capa | Como |
 |---|---|---|
-| Pedir chave `mgafos` | Caudais | Correo a administracion-web.meteogalicia@xunta.gal |
-| Rexistro no NAP e chave de API | Buses | nap.transportes.gob.es |
-| Chave AISStream e consulta de termos | Buques | aisstream.io (conta GitHub) e issues do seu repositorio |
-| (Opcional) FIRMS MAP_KEY | Focos | firms.modaps.eosdis.nasa.gov/api/map_key |
+| ~~Pedir chave `mgafos`~~ (solicitada o 18/10) | Caudais | Agardar resposta e gardala como segredo |
+| Revisar a chave do NAP (dá 401) | Buses | Copiar de novo a chave de API do perfil do NAP |
+| Consulta de termos a AISStream | Buques | Issues do seu repositorio de GitHub |
+| ~~FIRMS MAP_KEY~~ (feito) | Focos | |
 | Consulta de licenza ao IET/Amtega | Territorio, espazos, patrimonio, aire, estacións | Carta da FGS (proposta de texto en `licences.md`) |
 | Consulta de licenza a Intecmar e xeometría das zonas | Zonas de produción | Correo a Intecmar |
 
