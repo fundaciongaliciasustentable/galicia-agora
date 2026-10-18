@@ -1,7 +1,18 @@
 {
   "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
   "files": {
-    "includes": ["**", "!pipeline/samples", "!**/fixtures", "!node_modules"]
+    "includes": [
+      "**",
+      "!pipeline/samples",
+      "!**/fixtures",
+      "!node_modules",
+      "!dist",
+      "!.astro",
+      "!site/public/data",
+      "!site/public/basemap",
+      "!site/public/glyphs",
+      "!site/public/sprites"
+    ]
   },
   "formatter": {
     "indentStyle": "space",
@@ -9,9 +20,37 @@
     "lineWidth": 100
   },
   "javascript": {
-    "formatter": { "quoteStyle": "single", "semicolons": "always" }
+    "formatter": {
+      "quoteStyle": "single",
+      "semicolons": "always"
+    }
   },
   "linter": {
-    "rules": { "preset": "recommended" }
-  }
+    "rules": {
+      "preset": "recommended"
+    }
+  },
+  "overrides": [
+    {
+      "includes": ["**/*.astro"],
+      "linter": {
+        "rules": {
+          "correctness": {
+            "noUnusedVariables": "off",
+            "noUnusedImports": "off"
+          }
+        }
+      }
+    },
+    {
+      "includes": ["**/*.css"],
+      "linter": {
+        "rules": {
+          "complexity": {
+            "noImportantStyles": "off"
+          }
+        }
+      }
+    }
+  ]
 }

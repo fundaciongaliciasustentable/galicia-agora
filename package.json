@@ -9,8 +9,8 @@
     "node": ">=24"
   },
   "scripts": {
-    "dev": "echo \"site/ arrives in Phase 1\" && exit 1",
-    "build": "echo \"site/ arrives in Phase 1\" && exit 1",
+    "dev": "tsx site/scripts/prepare.ts && astro dev",
+    "build": "tsx site/scripts/prepare.ts && astro build && tsx site/scripts/search.ts",
     "test": "vitest run",
     "lint": "biome check . && tsc --noEmit",
     "format": "biome format --write .",
@@ -18,16 +18,23 @@
     "ingest": "tsx pipeline/cli.ts ingest",
     "status": "tsx pipeline/cli.ts status",
     "validate": "tsx pipeline/cli.ts validate",
-    "catalog": "tsx pipeline/cli.ts catalog"
+    "catalog": "tsx pipeline/cli.ts catalog",
+    "preview": "astro preview"
   },
   "dependencies": {
+    "@fontsource/lato": "^5.3.0",
+    "@protomaps/basemaps": "^5.7.2",
     "ajv": "8.20.0",
     "ajv-formats": "3.0.1",
+    "astro": "^5.18.2",
+    "maplibre-gl": "^6.14.0",
+    "pmtiles": "^4.5.0",
     "yaml": "2.9.1"
   },
   "devDependencies": {
     "@biomejs/biome": "2.5.15",
     "@types/node": "26.6.5",
+    "pagefind": "^1.5.2",
     "tsx": "4.23.15",
     "typescript": "7.0.2",
     "vitest": "5.0.5"

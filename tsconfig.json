@@ -10,8 +10,8 @@
     "noEmit": true,
     "allowImportingTsExtensions": true,
     "verbatimModuleSyntax": true,
-    "types": ["node"]
+    "types": ["node", "vite/client"]
   },
-  "include": ["pipeline/**/*.ts"],
-  "exclude": ["pipeline/samples/**"]
+  "include": ["pipeline/**/*.ts", "site/src/**/*.ts", "site/scripts/**/*.ts"],
+  "exclude": ["pipeline/samples/**", "dist", "node_modules"]
 }
