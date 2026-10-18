@@ -1,0 +1,71 @@
+---
+import '../styles/global.css';
+import { base, type Lang, t } from '../i18n';
+
+interface Props {
+  lang: Lang;
+  title: string;
+  description?: string;
+  /** Path of this page without language prefix, e.g. 'estado/' or ''. */
+  path: string;
+  fullscreen?: boolean;
+}
+
+const { lang, title, description, path, fullscreen = false } = Astro.props;
+const other: Lang = lang === 'gl' ? 'es' : 'gl';
+const here = `${base(lang)}${path}`;
+const nav = [
+  { href: base(lang), label: t(lang, 'nav_map'), path: '' },
+  { href: `${base(lang)}estado/`, label: t(lang, 'nav_status'), path: 'estado/' },
+  { href: `${base(lang)}fontes/`, label: t(lang, 'nav_sources'), path: 'fontes/' },
+  { href: `${base(lang)}sobre/`, label: t(lang, 'nav_about'), path: 'sobre/' },
+];
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    {description && <meta name="description" content={description} />}
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="alternate" hreflang={other} href={`${base(other)}${path}`} />
+    <link rel="alternate" hreflang={lang} href={here} />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+  </head>
+  <body class={fullscreen ? 'is-fullscreen' : ''}>
+    <a class="skip-link" href="#contido">{t(lang, 'skip')}</a>
+    <header class="ga-header">
+      <a class="ga-brand" href={base(lang)}>
+        <svg viewBox="0 0 1080 1080" aria-hidden="true" focusable="false">
+          <path d="M709.6,641.8c-17.7-7.2-34.7-17-50.6-29.7l-21.6,48.4c24.2-6.8,48.3-13,72.2-18.6Z"/>
+          <path d="M977.6,651.2c-77.2.5-200,11.1-361.3,56.3l-1.6,3.6c27.2,14.5,50.2,24.9,69.4,31.4,109.6-44.9,214.6-72.1,292.1-88.1.4-1.1.9-2.2,1.3-3.3Z"/>
+          <path d="M835.7,554.9c14.6,12.9,21.9,29.5,21.9,49.8s-.4,7.7-1,11.2c45.2-5,88.7-6.7,129.7-4.1.4-5.1.7-10.2.7-15.5,0-37.1-10.3-68.8-30.8-95-17.8-22.6-45.3-42.3-82.6-59.1-37.4,20.7-76.3,44.3-116.1,70,38.3,16.3,64.5,30.7,78.3,42.9Z"/>
+          <path d="M769.2,755.1c4.4,0,8.6.3,13.3.3,63,0,112.9-14.2,149.5-42.5,3.5-2.7,6.6-5.5,9.7-8.4-62.2,14.4-119.7,31.5-172.5,50.7Z"/>
+          <path d="M709.1,489c40.6-24.9,79-47.6,114.2-67.8-29.1-12.5-49.1-22.8-59.8-31.1-14.3-10.9-21.4-23.2-21.4-36.8,0-34.5,21.7-51.7,65.2-51.7s86.2,11.6,113.4,34.8l35.8-96.5c-48.8-24.9-100.8-37.3-156.2-37.3s-99.7,12.9-134.8,38.6c-35.2,25.7-52.7,61.6-52.7,107.7s32.2,104.1,96.4,140.1Z"/>
+          <path d="M168.1,890.6c-10.4,5.5-21,11.3-31.5,17.1,2.8,1.6,5.5,3.3,8.3,4.7,7.7-7.3,15.4-14.6,23.2-21.8Z"/>
+          <path d="M174.9,785.2l-74.3,91.7c35.3-17.8,75.9-37.6,120.4-58.2-15.9-8.9-31.3-20-46.1-33.5Z"/>
+          <path d="M565.5,781.7c0-21.2-3-39.9-8.8-56.4-37.4,11.8-76.4,25.3-117.3,41,2.6,5.5,4.2,11.8,4.2,18.9,0,18.6-11.6,33.2-34.8,43.8-23.2,10.6-52.7,15.9-88.6,15.9s-4.5-.2-6.7-.3c-41.4,34.3-78.7,65.9-109.7,92.5,36.1,11.5,74.1,17.3,113.9,17.3s20-.4,29.7-1.1c65.3-62.8,140.2-113.7,217.1-154.6.6-5.5,1-11.1,1-16.9Z"/>
+          <path d="M184.9,566.8c-18.9,8-35.5,20.4-49.8,37.3-14.3,16.9-21.4,34.2-21.4,51.7,0,61.4,42.8,92,128.4,92s34.7-1.7,62.2-5c17.2-2.1,31.5-3.4,43.4-4.2,41-32,82-62.5,122.5-91.5-24.2-7.4-52.9-11.3-86.3-11.3s-38,2.5-62.2,7.5c-24.2,5-41.5,7.5-51.7,7.5-22.9,0-34.3-6.6-34.3-19.9s7.7-15,23.1-22.1c15.4-7.1,24.3-10.7,26.6-10.7l20.4,3c14.9,1.7,26.9,2.5,35.8,2.5,56.4,0,103.1-18.2,140.1-54.5,37-36.3,55.5-84.8,55.5-145.5s-10.3-79.3-30.8-110.5l59.2-43.3-86.1-78.1-48.8,56.7c-32.2-17.9-72.1-26.9-119.9-26.9s-112.4,18.7-154.2,56c-41.8,37.3-62.7,84.5-62.7,141.5s30.3,128.2,91,167.7ZM247.6,330.5c17.9-17.9,41.1-26.9,69.7-26.9s49.3,9.3,66.4,27.9c17.1,18.6,25.6,41.3,25.6,68.2s-8,58-23.9,76.6c-15.9,18.6-38.6,27.9-68.2,27.9s-53-9.5-70.4-28.6c-17.4-19.1-26.1-44.4-26.1-75.9s9-51.2,26.9-69.2Z"/>
+          <path d="M524.8,676.7c-15.4,11.7-30.7,23.4-45.7,35.1,19.6-7.1,39.4-14,59.3-20.6-4.1-5.2-8.7-10-13.6-14.4Z"/>
+          <path d="M437.7,935.1c19.6-7,38.1-15.8,55.2-26.7,19.9-12.6,35.5-27.3,47.3-43.8-38,23.2-72.2,47-102.4,70.5Z"/>
+        </svg>
+        <span>Galicia Agora</span>
+      </a>
+      <nav class="ga-nav" aria-label={lang === 'gl' ? 'Principal' : 'Principal'}>
+        {
+          nav.map((n) => (
+            <a href={n.href} aria-current={n.path === path ? 'page' : undefined}>
+              {n.label}
+            </a>
+          ))
+        }
+        <a href={`${base(other)}${path}`} lang={other} hreflang={other}>
+          <span class="ga-long">{t(lang, 'other_lang')}</span><span class="ga-short" aria-hidden="true">{other.toUpperCase()}</span>
+        </a>
+      </nav>
+    </header>
+    <slot />
+  </body>
+</html>

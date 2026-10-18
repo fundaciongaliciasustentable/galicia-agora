@@ -1,0 +1,131 @@
+/* FGS design tokens (galiciasustentable-html skill v2.0, mirrors fgs-web tokens.css).
+   Layer colours (--c-*) are project tokens chosen from the FGS accents. */
+
+:root {
+  color-scheme: light dark;
+
+  --gs-verde-nato: #4a5846;
+  --gs-verde-nato-50: rgba(74, 88, 70, 0.08);
+  --gs-verde-nato-90: rgba(74, 88, 70, 0.92);
+  --gs-verde-claro: #6b8f47;
+  --gs-verde-moi-claro: #e8efe3;
+
+  --gs-branco: #ffffff;
+  --gs-gris-05: #fafaf7;
+  --gs-gris-10: #f5f5f0;
+  --gs-gris-20: #e8e8e2;
+  --gs-gris-50: #6c6c64;
+  --gs-gris-80: #3e3e38;
+  --gs-negro: #1a1a17;
+
+  --gs-terra: #8b5e3c;
+  --gs-azul: #2e6b8a;
+  --gs-viola: #6b4c8a;
+  --gs-oliva: #7a7a2e;
+
+  --gs-exito: #4a7c59;
+  --gs-aviso: #c8872b;
+  --gs-erro: #a64040;
+
+  --gs-font-titulos: "Trebuchet MS", "Trebuchet", Arial, sans-serif;
+  --gs-font-corpo: "Lato", system-ui, -apple-system, sans-serif;
+
+  --gs-texto-xs: 0.75rem;
+  --gs-texto-sm: 0.875rem;
+  --gs-texto-base: 1rem;
+  --gs-texto-lg: 1.125rem;
+  --gs-texto-xl: 1.375rem;
+  --gs-texto-2xl: 1.75rem;
+  --gs-texto-3xl: 2.25rem;
+
+  --gs-radius: 4px;
+  --gs-radius-card: 8px;
+  --gs-sombra: 0 2px 12px rgba(26, 26, 23, 0.14);
+
+  /* Semantic surfaces */
+  --bg: var(--gs-gris-05);
+  --surface: var(--gs-branco);
+  --surface-2: var(--gs-gris-10);
+  --border: var(--gs-gris-20);
+  --text: var(--gs-gris-80);
+  --text-muted: var(--gs-gris-50);
+  --heading: var(--gs-verde-nato);
+  --link: var(--gs-verde-nato);
+  --link-hover: var(--gs-verde-claro);
+  --header-bg: var(--gs-verde-nato);
+  --header-text: var(--gs-branco);
+  --focus: #1f5fa8;
+
+  /* Freshness states (text on --surface meets 4.5:1) */
+  --st-fresh: var(--gs-exito);
+  --st-stale: #8a5a12;
+  --st-failed: var(--gs-erro);
+
+  /* Layer colours */
+  --c-tempo: var(--gs-azul);
+  --c-aire: var(--gs-viola);
+  --c-lume: #c2410c;
+  --c-queimado: var(--gs-terra);
+  --c-tren: var(--gs-negro);
+  --c-limite: var(--gs-gris-80);
+  --c-natura: var(--gs-verde-claro);
+  --c-espazo: var(--gs-oliva);
+  --c-patrimonio: #8a3b5c;
+  --c-auga: var(--gs-azul);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #161714;
+    --surface: #1f201c;
+    --surface-2: #272823;
+    --border: #3a3b35;
+    --text: #e6e6df;
+    --text-muted: #b3b3aa;
+    --heading: #c9d8bd;
+    --link: #c9d8bd;
+    --link-hover: #e8efe3;
+    --header-bg: #2c3529;
+    --focus: #8ab4f8;
+    --st-fresh: #7fbf8e;
+    --st-stale: #e0a95a;
+    --st-failed: #e08a8a;
+    --c-tempo: #6fa8c7;
+    --c-aire: #a58cc4;
+    --c-lume: #fb8a4c;
+    --c-queimado: #c2946e;
+    --c-tren: #f2f2ec;
+    --c-limite: #c9c9c0;
+    --c-natura: #9cc275;
+    --c-espazo: #c4c46a;
+    --c-patrimonio: #d48aa8;
+    --c-auga: #6fa8c7;
+  }
+}
+
+:root[data-theme="dark"] {
+  --bg: #161714;
+  --surface: #1f201c;
+  --surface-2: #272823;
+  --border: #3a3b35;
+  --text: #e6e6df;
+  --text-muted: #b3b3aa;
+  --heading: #c9d8bd;
+  --link: #c9d8bd;
+  --link-hover: #e8efe3;
+  --header-bg: #2c3529;
+  --focus: #8ab4f8;
+  --st-fresh: #7fbf8e;
+  --st-stale: #e0a95a;
+  --st-failed: #e08a8a;
+  --c-tempo: #6fa8c7;
+  --c-aire: #a58cc4;
+  --c-lume: #fb8a4c;
+  --c-queimado: #c2946e;
+  --c-tren: #f2f2ec;
+  --c-limite: #c9c9c0;
+  --c-natura: #9cc275;
+  --c-espazo: #c4c46a;
+  --c-patrimonio: #d48aa8;
+  --c-auga: #6fa8c7;
+}
