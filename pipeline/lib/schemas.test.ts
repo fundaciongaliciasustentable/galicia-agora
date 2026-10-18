@@ -12,6 +12,7 @@ const layer = {
     text_url: 'https://example.org/licence',
     verified_at: '2026-10-18',
     odbl_compatible: true,
+    collection: 'odbl',
   },
   attribution: '© Augas de Galicia',
   update_frequency: { declared: 'PT10M' },
@@ -37,6 +38,13 @@ describe('layer schema', () => {
   it('rejects unknown themes and bad ids', async () => {
     expect(await validate('layer', { ...layer, theme: 'outros' })).not.toEqual([]);
     expect(await validate('layer', { ...layer, id: 'Caudais_Rios' })).not.toEqual([]);
+  });
+
+  it('keeps layers with doubtful licences out of the ODbL collection', async () => {
+    const doubt = { ...layer.licence, odbl_compatible: 'doubt', collection: 'odbl' };
+    expect(await validate('layer', { ...layer, licence: doubt })).not.toEqual([]);
+    const separate = { ...doubt, collection: 'cc-by-sa-4.0' };
+    expect(await validate('layer', { ...layer, licence: separate })).toEqual([]);
   });
 
   it('rejects a layer without licence', async () => {

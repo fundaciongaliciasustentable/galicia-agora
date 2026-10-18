@@ -101,13 +101,19 @@
     "licence": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["text_url", "verified_at", "odbl_compatible"],
+      "required": ["text_url", "verified_at", "odbl_compatible", "collection"],
+      "if": { "properties": { "odbl_compatible": { "const": true } } },
+      "else": { "properties": { "collection": { "const": "cc-by-sa-4.0" } } },
       "properties": {
         "spdx": { "type": "string" },
         "text_url": { "type": "string", "format": "uri" },
         "quote": { "type": "string", "maxLength": 200 },
         "verified_at": { "type": "string", "format": "date" },
         "odbl_compatible": { "enum": [true, false, "doubt"] },
+        "collection": {
+          "description": "Which published collection the layer belongs to (ADR 0005).",
+          "enum": ["odbl", "cc-by-sa-4.0"]
+        },
         "notes": { "type": "string" }
       }
     }
