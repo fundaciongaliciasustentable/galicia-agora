@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-18T09:16:13.086Z",
+  "generated_at": "2026-10-18T10:33:47.032Z",
   "layers": [
     {
       "id": "calidade-aire",
@@ -52,18 +52,22 @@
       },
       "meta": {
         "layer_id": "calidade-aire",
-        "published_at": "2026-10-18T08:00:00.000Z",
-        "fetched_at": "2026-10-18T09:15:56.624Z",
-        "last_success_at": "2026-10-18T09:15:56.624Z",
+        "published_at": "2026-10-18T10:00:00.000Z",
+        "fetched_at": "2026-10-18T10:33:26.521Z",
+        "last_success_at": "2026-10-18T10:33:26.521Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 46,
         "source_url": "https://servizos.meteogalicia.gal/mgrss/caire/jsonICAActual.action",
         "licence": "CC-BY-SA-4.0",
         "attribution": "Datos: Rede de Calidade do Aire de Galicia, MeteoGalicia (Xunta de Galicia). Datos provisionais, non validados.",
-        "checksum": "sha256:b7b7faabd1bf47626b55b87eef85e044f51ccb6c49c136b9d09d9e080578d3ac",
+        "checksum": "sha256:828416b89c9e2d7c38b64d77e3bb23ca37b80e2d41683ef3205bc713089896c5",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-10-18T10:33:26.521Z",
+            "ok": true
+          },
           {
             "at": "2026-10-18T09:15:56.624Z",
             "ok": true
@@ -124,8 +128,8 @@
       "meta": {
         "layer_id": "concellos-parroquias",
         "published_at": "2026-01-31T23:00:00.000Z",
-        "fetched_at": "2026-10-18T09:15:57.790Z",
-        "last_success_at": "2026-10-18T09:15:57.790Z",
+        "fetched_at": "2026-10-18T10:33:28.297Z",
+        "last_success_at": "2026-10-18T10:33:28.297Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 4098,
@@ -135,6 +139,10 @@
         "checksum": "sha256:b69a2c74c7c2bf7326369f9c647e0c558e486d35ca146e43bf105da3b10fc299",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-10-18T10:33:28.297Z",
+            "ok": true
+          },
           {
             "at": "2026-10-18T09:15:57.790Z",
             "ok": true
@@ -190,8 +198,8 @@
       "meta": {
         "layer_id": "espazos-naturais-galicia",
         "published_at": null,
-        "fetched_at": "2026-10-18T09:16:04.637Z",
-        "last_success_at": "2026-10-18T09:16:04.637Z",
+        "fetched_at": "2026-10-18T10:33:35.550Z",
+        "last_success_at": "2026-10-18T10:33:35.550Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 96,
@@ -201,6 +209,10 @@
         "checksum": "sha256:5f0841a2003aba7b4f12fffaff2b386faadd7c23bdfe84eedbafcd469ca5c57e",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-10-18T10:33:35.550Z",
+            "ok": true
+          },
           {
             "at": "2026-10-18T09:16:04.637Z",
             "ok": true
@@ -265,18 +277,22 @@
       },
       "meta": {
         "layer_id": "estacions-meteo",
-        "published_at": "2026-10-18T09:00:00.000Z",
-        "fetched_at": "2026-10-18T09:16:08.022Z",
-        "last_success_at": "2026-10-18T09:16:08.022Z",
+        "published_at": "2026-10-18T10:20:00.000Z",
+        "fetched_at": "2026-10-18T10:33:39.428Z",
+        "last_success_at": "2026-10-18T10:33:39.428Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 154,
         "source_url": "https://servizos.meteogalicia.gal/mgrss/observacion/ultimos10minEstacionsMeteo.action",
         "licence": "CC-BY-SA-4.0",
         "attribution": "Datos: MeteoGalicia (Xunta de Galicia)",
-        "checksum": "sha256:bcb4c223dcebaf74c74f453972679d555417bcdee2da408a294d82b5c4c46c79",
+        "checksum": "sha256:79a7c8741c4f64c95a72f304704b4d25cfe368ea8ac22a5704e71bea746df455",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-10-18T10:33:39.428Z",
+            "ok": true
+          },
           {
             "at": "2026-10-18T09:16:08.022Z",
             "ok": true
@@ -335,8 +351,8 @@
       "meta": {
         "layer_id": "focos-calor",
         "published_at": "2026-10-18T03:02:00.000Z",
-        "fetched_at": "2026-10-18T09:16:08.749Z",
-        "last_success_at": "2026-10-18T09:16:08.749Z",
+        "fetched_at": "2026-10-18T10:33:40.678Z",
+        "last_success_at": "2026-10-18T10:33:40.678Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 17,
@@ -346,6 +362,10 @@
         "checksum": "sha256:32de158deec64f69c3c39f676a839529ccb4970192dabd1032c643507ffc123f",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-10-18T10:33:40.678Z",
+            "ok": true
+          },
           {
             "at": "2026-10-18T09:16:08.749Z",
             "ok": true
@@ -407,8 +427,8 @@
       "meta": {
         "layer_id": "patrimonio",
         "published_at": null,
-        "fetched_at": "2026-10-18T09:16:09.089Z",
-        "last_success_at": "2026-10-18T09:16:09.089Z",
+        "fetched_at": "2026-10-18T10:33:41.653Z",
+        "last_success_at": "2026-10-18T10:33:41.653Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 664,
@@ -418,6 +438,10 @@
         "checksum": "sha256:ed56e00b716494bec07ac4ae8683f04488af8cc0c45b7cc40ad114d3d4dd7ddd",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-10-18T10:33:41.653Z",
+            "ok": true
+          },
           {
             "at": "2026-10-18T09:16:09.089Z",
             "ok": true
@@ -502,17 +526,21 @@
       "meta": {
         "layer_id": "perimetros-queimados",
         "published_at": "2026-10-12T13:32:36.912Z",
-        "fetched_at": "2026-10-18T09:16:09.412Z",
-        "last_success_at": "2026-10-18T09:16:09.412Z",
+        "fetched_at": "2026-10-18T10:33:42.227Z",
+        "last_success_at": "2026-10-18T10:33:42.227Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 171,
         "source_url": "https://maps.effis.emergency.copernicus.eu/effis?service=WFS&request=GetFeature&version=2.0.0&typeNames=ms:modis.ba.poly.season&outputFormat=geojson&bbox=41.8,-9.35,43.8,-6.7,urn:ogc:def:crs:EPSG::4326",
         "licence": "CC-BY-4.0",
         "attribution": "© Unión Europea, Copernicus EFFIS (JRC)",
-        "checksum": "sha256:b32939fdfb2bae97027a58bbda0e2814d8e982b9a32c0828c6fcb17921690059",
+        "checksum": "sha256:abf9290fe81f5f08750da7a21559ef383d771032147e4c9d5f192668ad74262b",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-10-18T10:33:42.227Z",
+            "ok": true
+          },
           {
             "at": "2026-10-18T09:16:09.412Z",
             "ok": true
@@ -570,21 +598,25 @@
       "meta": {
         "layer_id": "rede-natura",
         "published_at": null,
-        "fetched_at": "2026-10-18T09:16:11.223Z",
-        "last_success_at": null,
-        "status": "failed",
+        "fetched_at": "2026-10-18T10:33:44.751Z",
+        "last_success_at": "2026-10-18T09:03:21.597Z",
+        "status": "stale",
         "consecutive_failures": 1,
-        "feature_count": 0,
+        "feature_count": 76,
         "source_url": "https://geoserver.iepnb.es/geoserver/RN2000/ows",
         "licence": "https://www.miteco.gob.es/es/atencion-al-ciudadano/aviso-legal.html",
         "attribution": "Fuente: MITECO, Banco de Datos de la Naturaleza",
-        "checksum": null,
+        "checksum": "sha256:302244ac1781a3ee068ae74ef481c42043fe0448181a10201a6ede29f4427cc2",
         "last_error": "HTTP 403 for https://geoserver.iepnb.es/geoserver/RN2000/ows?service=WFS&version=2.0.0&request=GetCapabilities",
         "history": [
           {
-            "at": "2026-10-18T09:16:11.223Z",
+            "at": "2026-10-18T10:33:44.751Z",
             "ok": false,
             "error": "HTTP 403 for https://geoserver.iepnb.es/geoserver/RN2000/ows?service=WFS&version=2.0.0&request=GetCapabilities"
+          },
+          {
+            "at": "2026-10-18T09:03:21.597Z",
+            "ok": true
           }
         ],
         "alert": false
@@ -645,18 +677,22 @@
       "volatile": true,
       "meta": {
         "layer_id": "tren",
-        "published_at": "2026-10-18T09:16:04.000Z",
-        "fetched_at": "2026-10-18T09:16:11.911Z",
-        "last_success_at": "2026-10-18T09:16:11.911Z",
+        "published_at": "2026-10-18T10:33:33.000Z",
+        "fetched_at": "2026-10-18T10:33:45.553Z",
+        "last_success_at": "2026-10-18T10:33:45.553Z",
         "status": "fresh",
         "consecutive_failures": 0,
-        "feature_count": 10,
+        "feature_count": 7,
         "source_url": "https://gtfsrt.renfe.com/vehicle_positions_LD.json",
         "licence": "CC-BY-4.0",
         "attribution": "Origen de los datos: Renfe Operadora",
-        "checksum": "sha256:3cfa20ff3db9a0ad24f90a338c48c6bc9ef6cf4749e31918d3652b8b151c1bed",
+        "checksum": "sha256:6e0741bfd7d98ba5120925969712f80965ffcd8a53dbd095f03ba330986e2515",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-10-18T10:33:45.553Z",
+            "ok": true
+          },
           {
             "at": "2026-10-18T09:16:11.911Z",
             "ok": true
