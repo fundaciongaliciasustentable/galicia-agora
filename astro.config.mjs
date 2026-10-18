@@ -2,6 +2,7 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
+  site: 'https://agora.galiciasustentable.org',
   srcDir: './site/src',
   publicDir: './site/public',
   outDir: './dist',

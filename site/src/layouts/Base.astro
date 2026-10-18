@@ -31,8 +31,9 @@ const nav = [
     <title>{title}</title>
     {description && <meta name="description" content={description} />}
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <link rel="alternate" hreflang={other} href={`${base(other)}${path}`} />
-    <link rel="alternate" hreflang={lang} href={here} />
+    <link rel="canonical" href={new URL(here, Astro.site).href} />
+    <link rel="alternate" hreflang={other} href={new URL(`${base(other)}${path}`, Astro.site).href} />
+    <link rel="alternate" hreflang={lang} href={new URL(here, Astro.site).href} />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
   </head>
   <body class={fullscreen ? 'is-fullscreen' : ''}>
