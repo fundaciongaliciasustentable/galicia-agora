@@ -1,0 +1,71 @@
+# Phase 0: verify sources that need a key, using repository secrets.
+# Prints aggregate counts only; never uploads raw data (logs here are public).
+name: verify-keys
+
+on:
+  workflow_dispatch:
+    inputs:
+      ais_seconds:
+        description: Seconds to listen to AISStream
+        default: '180'
+
+permissions:
+  contents: read
+
+env:
+  UA: 'GaliciaAgora/0.1 (+https://github.com/fundaciongaliciasustentable/galicia-agora; galiciasustentable@galiciasustentable.org)'
+
+jobs:
+  nap:
+    runs-on: ubuntu-latest
+    steps:
+      - name: NAP Xunta bus GTFS (dataset 1386, file 1584)
+        env:
+          NAP_API_KEY: ${{ secrets.NAP_API_KEY }}
+        run: |
+          set -euo pipefail
+          code=$(curl -sS -A "$UA" -H "ApiKey: $NAP_API_KEY" -o meta.json -w '%{http_code}' \
+            https://nap.transportes.gob.es/api/Fichero/1386)
+          echo "metadata HTTP $code"
+          code=$(curl -sS -L -A "$UA" -H "ApiKey: $NAP_API_KEY" -o feed.zip -w '%{http_code}' \
+            https://nap.transportes.gob.es/api/Fichero/download/1584)
+          echo "download HTTP $code, $(stat -c %s feed.zip) bytes"
+          test "$code" = 200
+          unzip -l feed.zip | tail -n +4 | head -n -2 | awk '{print $4, $1" bytes"}'
+          for f in agency routes stops trips stop_times calendar calendar_dates shapes; do
+            if unzip -l feed.zip "$f.txt" >/dev/null 2>&1; then
+              echo "$f.txt rows: $(( $(unzip -p feed.zip "$f.txt" | wc -l) - 1 ))"
+            fi
+          done
+          unzip -p feed.zip feed_info.txt 2>/dev/null || echo "no feed_info.txt"
+          echo "calendar range:"
+          unzip -p feed.zip calendar.txt 2>/dev/null | awk -F, 'NR>1{print $(NF-1); print $NF}' | sort | sed -n '1p;$p' || true
+
+  firms:
+    runs-on: ubuntu-latest
+    steps:
+      - name: FIRMS area API over Galicia
+        env:
+          FIRMS_MAP_KEY: ${{ secrets.FIRMS_MAP_KEY }}
+        run: |
+          set -euo pipefail
+          for src in VIIRS_SNPP_NRT VIIRS_NOAA20_NRT VIIRS_NOAA21_NRT MODIS_NRT; do
+            code=$(curl -sS -A "$UA" -o f.csv -w '%{http_code}' \
+              "https://firms.modaps.eosdis.nasa.gov/api/area/csv/$FIRMS_MAP_KEY/$src/-9.35,41.8,-6.7,43.8/2")
+            echo "$src HTTP $code, $(( $(wc -l < f.csv) - 1 )) detections in 2 days; header: $(head -1 f.csv | cut -c1-80)"
+          done
+
+  aisstream:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - name: AISStream aggregate check
+        env:
+          AISSTREAM_API_KEY: ${{ secrets.AISSTREAM_API_KEY }}
+        run: npx tsx pipeline/verify/aisstream.ts ${{ inputs.ais_seconds }}
