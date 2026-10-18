@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "tren feature properties",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["tren", "rede", "viaxe", "data_posicion", "estado", "parada"],
+  "properties": {
+    "tren": { "type": "string", "minLength": 1 },
+    "rede": { "enum": ["AV/LD/MD", "Cercanías"] },
+    "viaxe": { "type": ["string", "null"] },
+    "data_posicion": { "type": ["string", "null"], "format": "date-time" },
+    "estado": { "type": ["string", "null"] },
+    "parada": { "type": ["string", "null"] }
+  }
+}

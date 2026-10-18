@@ -1,0 +1,43 @@
+id: tren
+title:
+  gl: Trens en circulación
+  es: Trenes en circulación
+theme: mobilidade
+operator:
+  name: Renfe Operadora
+  url: https://data.renfe.com
+source_url: https://gtfsrt.renfe.com/vehicle_positions_LD.json
+licence:
+  spdx: CC-BY-4.0
+  text_url: https://data.renfe.com/legal
+  quote: para fines comerciales y no comerciales
+  verified_at: 2026-10-18
+  odbl_compatible: true
+  collection: odbl
+  notes: >-
+    GTFS-RT de posicións: AV/LD/MD (vehicle_positions_LD.json) e Cercanías
+    (vehicle_positions.json, que inclúe a rede de Ferrol).
+attribution: 'Origen de los datos: Renfe Operadora'
+update_frequency:
+  declared: PT15M
+  schedule: '*/10 * * * *'
+geometry: point
+output: geojson
+auth:
+  required: false
+privacy_notes: >-
+  Só posicións de trens de servizo público; ningún dato persoal. As posicións
+  chegan coa demora propia da fonte: Renfe publícaas con ata 15 minutos de
+  atraso. Non engadimos atraso propio; o aviso de 15 min describe o atraso da fonte.
+stale_after: PT45M
+ingest:
+  every: PT10M
+delay:
+  minutes: 15
+  reason: A fonte publica posicións con ata 15 min de atraso
+style:
+  kind: circle
+  color_token: --c-tren
+  label_field: tren
+table:
+  fields: [tren, rede, viaxe, estado, parada, data_posicion]
