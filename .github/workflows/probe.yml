@@ -1,0 +1,54 @@
+# Phase 0: measure real update frequency of live sources.
+# Appends one line per source every 10 minutes to the `probe-log` branch.
+# Disable this workflow once the sources report is closed.
+name: probe
+
+on:
+  schedule:
+    - cron: '*/10 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: probe
+  cancel-in-progress: false
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+
+      - name: Check out probe-log branch
+        run: |
+          git fetch origin probe-log || true
+          if git show-ref --verify --quiet refs/remotes/origin/probe-log; then
+            git worktree add log origin/probe-log
+            git -C log switch -c probe-log
+          else
+            git worktree add --orphan -b probe-log log
+          fi
+
+      - name: Probe
+        env:
+          PROBE_LOG_DIR: log
+          METEOSIX_API_KEY: ${{ secrets.METEOSIX_API_KEY }}
+          FIRMS_MAP_KEY: ${{ secrets.FIRMS_MAP_KEY }}
+        run: npm run probe
+
+      - name: Commit log
+        working-directory: log
+        run: |
+          git config user.name "galicia-agora-probe"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -q -m "probe: $(date -u +%Y-%m-%dT%H:%MZ)" || exit 0
+          git push origin probe-log
