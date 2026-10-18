@@ -1,6 +1,6 @@
 # Deseño do servidor para capas en vivo (avións e buques)
 
-- Estado: **proposta, pendente de aprobación**. Non se contrata nada sen o teu visto e prace.
+- Estado: **aprobada a opción A** o 18/10/2026 (ADR 0007).
 - Data: 18/10/2026
 
 ## Por que fai falta
