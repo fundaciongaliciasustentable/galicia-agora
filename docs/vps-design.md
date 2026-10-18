@@ -1,6 +1,6 @@
 # Deseño do servidor para capas en vivo (avións e buques)
 
-- Estado: **aprobada a opción A** o 18/10/2026 (ADR 0007).
+- Estado: **aprobado o uso do VPS administrado que a FGS xa ten en Dinahosting** (18/10/2026, ADR 0007). A táboa de opcións de abaixo queda como histórico da decisión.
 - Data: 18/10/2026
 
 ## Por que fai falta
@@ -46,7 +46,7 @@ Os prezos son orientativos e **hai que confirmalos antes de contratar**.
 | B. VPS en Dinahosting | similar | non verificado, probablemente 10–20 €/mes | Mesmo provedor e factura ca a revista | Prezo e características por confirmar |
 | C. Raspberry Pi na Leira Experimental | 4 GB | ~80 € unha vez e electricidade | Sen cota mensual; podería alimentar tamén un receptor ADS-B propio | Depende da conexión e da electricidade da Leira; mantemento físico |
 
-**Recomendación: A**, cun custo anual arredor de 60 €. Os servizos consumen moi pouco (unha petición por minuto e un websocket).
+Recomendación inicial: A, cun custo anual arredor de 60 €. Descartouse ao saber que a FGS xa ten un VPS administrado en Dinahosting (prezo comprobado do VPS I de Dinahosting: desde 35,91 €/mes). Os servizos consumen moi pouco (unha petición por minuto e un websocket).
 
 A opción C ten un valor engadido: un receptor ADS-B propio cumpriría a condición que adsb.lol anunciou para dar a chave futura, e a FGS achegaría datos á rede comunitaria. Non substitúe o VPS, pero pódese engadir despois.
 
