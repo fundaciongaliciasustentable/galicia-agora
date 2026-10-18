@@ -1,0 +1,43 @@
+id: concellos-parroquias
+title:
+  gl: Concellos e parroquias
+  es: Ayuntamientos y parroquias
+theme: territorio
+operator:
+  name: Instituto de Estudos do Territorio (Xunta de Galicia)
+  url: https://mapas.xunta.gal
+source_url: https://ideg.xunta.gal/servizos/rest/services/LimitesAdministrativos/LimitesAdministrativos/MapServer
+licence:
+  spdx: CC-BY-SA-4.0
+  text_url: https://mapas.xunta.gal/gl/aviso-legal
+  quote: licenza de uso compatible con CC- BY 4.0 INT.
+  verified_at: 2026-10-18
+  odbl_compatible: doubt
+  collection: cc-by-sa-4.0
+  notes: >-
+    Dobre licenza (ADR 0005): o IET declara «compatible con CC BY 4.0» e o mesmo
+    conxunto figura en abertos.xunta.gal baixo CC BY-SA 4.0; aplícase a máis
+    restritiva ata confirmación escrita do IET/Amtega. Xeometría xeneralizada no
+    servidor con maxAllowableOffset = 0,0005° (≈ 50 m) e coordenadas a 5
+    decimais: válida para visualización, non para usos catastrais nin legais.
+    Concellos: subcapa 12; parroquias: subcapa 18 (3.785). A data de
+    publicación é o mes de edición que o IET indica no nome da capa
+    («Parroquias (Febreiro 2026)»), día 1.
+attribution: © Instituto de Estudos do Territorio. Xunta de Galicia
+update_frequency:
+  declared: static
+  measured: static
+geometry: polygon
+output: geojson
+auth:
+  required: false
+privacy_notes: Límites administrativos e toponimia oficial; ningún dato persoal.
+stale_after: P90D
+ingest:
+  every: P30D
+style:
+  kind: line
+  color_token: --c-limite
+  label_field: nome
+table:
+  fields: [nivel, nome, concello, codigo_concello, codigo_parroquia, provincia, capital]

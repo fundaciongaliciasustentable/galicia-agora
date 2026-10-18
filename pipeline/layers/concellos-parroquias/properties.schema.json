@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "concellos-parroquias feature properties",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "nivel",
+    "nome",
+    "codigo_concello",
+    "concello",
+    "codigo_ine",
+    "provincia",
+    "capital"
+  ],
+  "properties": {
+    "nivel": { "enum": ["concello", "parroquia"] },
+    "nome": { "type": "string", "minLength": 1 },
+    "codigo_parroquia": { "type": "string", "pattern": "^\\d{7}$" },
+    "parroquia": { "type": "string", "minLength": 1 },
+    "codigo_concello": { "type": "string", "pattern": "^\\d{5}$" },
+    "concello": { "type": ["string", "null"] },
+    "codigo_ine": { "type": "string", "pattern": "^\\d{5}$" },
+    "provincia": { "type": ["string", "null"] },
+    "capital": { "type": ["string", "null"] }
+  },
+  "if": { "properties": { "nivel": { "const": "parroquia" } } },
+  "then": { "required": ["codigo_parroquia", "parroquia"] },
+  "else": {
+    "not": { "anyOf": [{ "required": ["codigo_parroquia"] }, { "required": ["parroquia"] }] }
+  }
+}
