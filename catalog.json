@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-18T13:21:22.819Z",
+  "generated_at": "2026-10-18T16:39:50.661Z",
   "layers": [
     {
       "id": "calidade-aire",
@@ -52,18 +52,22 @@
       },
       "meta": {
         "layer_id": "calidade-aire",
-        "published_at": "2026-10-18T13:00:00.000Z",
-        "fetched_at": "2026-10-18T13:21:17.599Z",
-        "last_success_at": "2026-10-18T13:21:17.599Z",
+        "published_at": "2026-10-18T16:00:00.000Z",
+        "fetched_at": "2026-10-18T16:39:44.231Z",
+        "last_success_at": "2026-10-18T16:39:44.231Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 46,
         "source_url": "https://servizos.meteogalicia.gal/mgrss/caire/jsonICAActual.action",
         "licence": "CC-BY-SA-4.0",
         "attribution": "Datos: Rede de Calidade do Aire de Galicia, MeteoGalicia (Xunta de Galicia). Datos provisionais, non validados.",
-        "checksum": "sha256:03443a6b71999ffacbbe835ab3ffa4b317db2fd259c386dee01dc285ff834c78",
+        "checksum": "sha256:71877c85c8831cf55ca6b0211d54ea9f036adde99056cc0b81675ac4b913a8d0",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-10-18T16:39:44.231Z",
+            "ok": true
+          },
           {
             "at": "2026-10-18T13:21:17.599Z",
             "ok": true
@@ -281,18 +285,22 @@
       },
       "meta": {
         "layer_id": "estacions-meteo",
-        "published_at": "2026-10-18T13:10:00.000Z",
-        "fetched_at": "2026-10-18T13:21:19.255Z",
-        "last_success_at": "2026-10-18T13:21:19.255Z",
+        "published_at": "2026-10-18T16:30:00.000Z",
+        "fetched_at": "2026-10-18T16:39:46.079Z",
+        "last_success_at": "2026-10-18T16:39:46.079Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 154,
         "source_url": "https://servizos.meteogalicia.gal/mgrss/observacion/ultimos10minEstacionsMeteo.action",
         "licence": "CC-BY-SA-4.0",
         "attribution": "Datos: MeteoGalicia (Xunta de Galicia)",
-        "checksum": "sha256:c0d7bed0523a47eb89bce224ce866194c19ab7513466ded150cea9c2c7a52e94",
+        "checksum": "sha256:866408d6a33326b0de3fb803f1d21d4539e9fb00bb366a33eb7fd6f8e7c2ffd5",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-10-18T16:39:46.079Z",
+            "ok": true
+          },
           {
             "at": "2026-10-18T13:21:19.255Z",
             "ok": true
@@ -362,18 +370,22 @@
       "volatile": true,
       "meta": {
         "layer_id": "focos-calor",
-        "published_at": "2026-10-18T03:40:00.000Z",
-        "fetched_at": "2026-10-18T13:21:20.469Z",
-        "last_success_at": "2026-10-18T13:21:20.469Z",
+        "published_at": "2026-10-18T15:18:00.000Z",
+        "fetched_at": "2026-10-18T16:39:47.292Z",
+        "last_success_at": "2026-10-18T16:39:47.292Z",
         "status": "fresh",
         "consecutive_failures": 0,
-        "feature_count": 29,
+        "feature_count": 40,
         "source_url": "https://firms.modaps.eosdis.nasa.gov/api/area/",
         "licence": "CC0-1.0",
         "attribution": "NASA LANCE FIRMS (NASA/GSFC/ESDIS)",
-        "checksum": "sha256:eacbacf6ff3f4e02cd96b21c0db45669c8910a1de7630c34968cb6a70ce2b012",
+        "checksum": "sha256:4a898998a8a8108aa9f763ff11d989c7d6d9777db180318e258b2c53d3d30086",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-10-18T16:39:47.292Z",
+            "ok": true
+          },
           {
             "at": "2026-10-18T13:21:20.469Z",
             "ok": true
@@ -697,18 +709,22 @@
       "volatile": true,
       "meta": {
         "layer_id": "tren",
-        "published_at": "2026-10-18T13:21:12.000Z",
-        "fetched_at": "2026-10-18T13:21:21.315Z",
-        "last_success_at": "2026-10-18T13:21:21.315Z",
+        "published_at": "2026-10-18T16:39:34.000Z",
+        "fetched_at": "2026-10-18T16:39:48.596Z",
+        "last_success_at": "2026-10-18T16:39:48.596Z",
         "status": "fresh",
         "consecutive_failures": 0,
-        "feature_count": 15,
+        "feature_count": 13,
         "source_url": "https://gtfsrt.renfe.com/vehicle_positions_LD.json",
         "licence": "CC-BY-4.0",
         "attribution": "Origen de los datos: Renfe Operadora",
-        "checksum": "sha256:d4cb592981052d48066234fb02b8af563c9e6175d1fcba1107da4f1544d62bfa",
+        "checksum": "sha256:84b79fc07773305718f1668e57ed8edd2cc21cf73775c176ca9407deab42b00a",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-10-18T16:39:48.596Z",
+            "ok": true
+          },
           {
             "at": "2026-10-18T13:21:21.315Z",
             "ok": true
