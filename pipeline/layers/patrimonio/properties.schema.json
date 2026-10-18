@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "patrimonio feature properties",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "nome",
+    "concello",
+    "lugar",
+    "categoria",
+    "interese",
+    "data_declaracion",
+    "dog",
+    "boe",
+    "localizacion_xeneralizada"
+  ],
+  "properties": {
+    "id": { "type": "string", "pattern": "^BIC\\." },
+    "nome": { "type": "string", "minLength": 1 },
+    "concello": { "type": ["string", "null"] },
+    "lugar": { "type": ["string", "null"] },
+    "categoria": { "type": ["string", "null"] },
+    "interese": { "type": ["string", "null"] },
+    "data_declaracion": { "type": ["string", "null"], "format": "date" },
+    "dog": { "type": ["string", "null"] },
+    "boe": { "type": ["string", "null"] },
+    "localizacion_xeneralizada": { "type": "boolean" }
+  }
+}

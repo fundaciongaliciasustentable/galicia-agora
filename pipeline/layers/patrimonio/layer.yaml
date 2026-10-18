@@ -1,0 +1,43 @@
+id: patrimonio
+title:
+  gl: Bens de interese cultural (BIC)
+  es: Bienes de interés cultural (BIC)
+theme: territorio
+operator:
+  name: Xunta de Galicia — Plan Básico Autonómico (PBA)
+  url: https://ideg.xunta.gal
+source_url: https://ideg.xunta.gal/servizos/rest/services/PBA/Afeccions_PatrimonioCultural/MapServer/2
+licence:
+  spdx: CC-BY-SA-4.0
+  text_url: https://abertos.xunta.gal/condicions-de-uso
+  verified_at: 2026-10-18
+  odbl_compatible: doubt
+  collection: cc-by-sa-4.0
+  notes: >-
+    Dobre declaración da Xunta: CC BY-SA 4.0 en abertos.xunta.gal e «compatible
+    con CC BY 4.0» no IET/IDEG. Aplícase a máis restritiva (ADR 0005). É a capa
+    urbanística de afeccións do PBA (BIC. Elementos, xuño 2026), non o rexistro
+    legal de bens da Consellería de Cultura.
+attribution: Xunta de Galicia. Plan Básico Autonómico (PBA), afeccións do patrimonio cultural
+update_frequency:
+  declared: static
+  measured: static
+geometry: point
+output: geojson
+auth:
+  required: false
+privacy_notes: >-
+  Sen datos persoais. Regra de sensibilidade: os xacementos arqueolóxicos non se
+  sitúan con precisión, para non facilitar o expolio. Se INTERESE é «ARQ», se
+  CATEGORIA contén «arqueolóxico/a» ou se XENERICO é «Arte rupestre» ou «Castro»,
+  as coordenadas redondéanse a 2 decimais (~1 km) e a entidade leva
+  localizacion_xeneralizada: true. O resto de BIC conserva 5 decimais.
+stale_after: P30D
+ingest:
+  every: P7D
+style:
+  kind: circle
+  color_token: --c-patrimonio
+  label_field: nome
+table:
+  fields: [nome, categoria, concello, lugar, interese, data_declaracion, dog, boe, localizacion_xeneralizada]
