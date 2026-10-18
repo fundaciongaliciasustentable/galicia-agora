@@ -11,7 +11,13 @@
       "!site/public/data",
       "!site/public/basemap",
       "!site/public/glyphs",
-      "!site/public/sprites"
+      "!site/public/sprites",
+      "!site/public/maplibre",
+      "!site/public/style-light.json",
+      "!site/public/style-dark.json",
+      "!data-out",
+      "!build",
+      "!probe-log"
     ]
   },
   "formatter": {
@@ -32,7 +38,9 @@
   },
   "overrides": [
     {
-      "includes": ["**/*.astro"],
+      "includes": [
+        "**/*.astro"
+      ],
       "linter": {
         "rules": {
           "correctness": {
@@ -43,7 +51,9 @@
       }
     },
     {
-      "includes": ["**/*.css"],
+      "includes": [
+        "**/*.css"
+      ],
       "linter": {
         "rules": {
           "complexity": {
