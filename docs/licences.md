@@ -33,7 +33,11 @@ CC BY-SA 4.0 obriga a distribuír as adaptacións baixo a mesma licenza ou unha 
 
 O caso OSM confirma que a dúbida é real: OpenStreetMap pediu ao IET unha autorización expresa para usar a súa cartografía baixo ODbL. Esa autorización vale para OSM, non para nós.
 
-## Opcións
+## Decisión (18/10/2026, ADR 0005)
+
+Aplícase a licenza máis restritiva. As capas da Xunta con dobre declaración publícanse como **colección separada baixo CC BY-SA 4.0**, fóra da base ODbL: estacións meteorolóxicas, calidade do aire, concellos e parroquias, Nomenclátor, espazos protexidos da Rede galega e patrimonio. Mantense a consulta á Xunta; se confirma CC BY 4.0, esas capas pasan á base ODbL.
+
+## Opcións que se valoraron
 
 1. **Pedir aclaración ou dispensa á Xunta** (IET e Amtega): que confirmen por escrito que os conxuntos do IET se rexen polo aviso legal compatible con CC BY 4.0, ou que autoricen a súa inclusión nunha base ODbL. É a opción que recomendamos.
 2. **Coleccións separadas**: publicar as capas BY-SA como ficheiros aparte baixo CC BY-SA 4.0, fóra da base ODbL, coa súa licenza visible na interface. Técnicamente simple, pero rompe a idea dunha única base descargable.
