@@ -72,6 +72,47 @@
     },
     "privacy_notes": { "type": "string", "minLength": 1 },
     "stale_after": { "$ref": "#/$defs/duration" },
+    "ingest": {
+      "description": "How often the ingest job should refresh this layer.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["every"],
+      "properties": { "every": { "$ref": "#/$defs/duration" } }
+    },
+    "context": {
+      "description": "Extra facts shown next to the layer (e.g. discordant official figures), each with its source.",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["label", "value", "source", "source_url"],
+        "properties": {
+          "label": {
+            "type": "object",
+            "required": ["gl", "es"],
+            "properties": { "gl": { "type": "string" }, "es": { "type": "string" } }
+          },
+          "value": { "type": "string" },
+          "source": { "type": "string" },
+          "source_url": { "type": "string", "format": "uri" },
+          "note": {
+            "type": "object",
+            "required": ["gl", "es"],
+            "properties": { "gl": { "type": "string" }, "es": { "type": "string" } }
+          }
+        }
+      }
+    },
+    "delay": {
+      "description": "Publication delay applied before showing data (privacy or source rule).",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["minutes", "reason"],
+      "properties": {
+        "minutes": { "type": "integer", "minimum": 0 },
+        "reason": { "type": "string" }
+      }
+    },
     "style": {
       "type": "object",
       "required": ["kind"],
