@@ -1,0 +1,20 @@
+{
+  "layer_id": "patrimonio",
+  "published_at": null,
+  "fetched_at": "2026-10-18T09:16:09.089Z",
+  "last_success_at": "2026-10-18T09:16:09.089Z",
+  "status": "fresh",
+  "consecutive_failures": 0,
+  "feature_count": 664,
+  "source_url": "https://ideg.xunta.gal/servizos/rest/services/PBA/Afeccions_PatrimonioCultural/MapServer/2",
+  "licence": "CC-BY-SA-4.0",
+  "attribution": "Xunta de Galicia. Plan Básico Autonómico (PBA), afeccións do patrimonio cultural",
+  "checksum": "sha256:ed56e00b716494bec07ac4ae8683f04488af8cc0c45b7cc40ad114d3d4dd7ddd",
+  "last_error": null,
+  "history": [
+    {
+      "at": "2026-10-18T09:16:09.089Z",
+      "ok": true
+    }
+  ]
+}

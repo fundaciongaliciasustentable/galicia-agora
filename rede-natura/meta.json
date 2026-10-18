@@ -1,0 +1,21 @@
+{
+  "layer_id": "rede-natura",
+  "published_at": null,
+  "fetched_at": "2026-10-18T09:16:11.223Z",
+  "last_success_at": null,
+  "status": "failed",
+  "consecutive_failures": 1,
+  "feature_count": 0,
+  "source_url": "https://geoserver.iepnb.es/geoserver/RN2000/ows",
+  "licence": "https://www.miteco.gob.es/es/atencion-al-ciudadano/aviso-legal.html",
+  "attribution": "Fuente: MITECO, Banco de Datos de la Naturaleza",
+  "checksum": null,
+  "last_error": "HTTP 403 for https://geoserver.iepnb.es/geoserver/RN2000/ows?service=WFS&version=2.0.0&request=GetCapabilities",
+  "history": [
+    {
+      "at": "2026-10-18T09:16:11.223Z",
+      "ok": false,
+      "error": "HTTP 403 for https://geoserver.iepnb.es/geoserver/RN2000/ows?service=WFS&version=2.0.0&request=GetCapabilities"
+    }
+  ]
+}
