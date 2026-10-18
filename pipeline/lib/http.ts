@@ -2,7 +2,7 @@
 // exponential backoff, and conditional requests (ETag / Last-Modified).
 
 export const USER_AGENT =
-  'GaliciaAgora/0.1 (+https://github.com/fundaciongaliciasustentable/galicia-agora)';
+  'GaliciaAgora/0.1 (+https://github.com/fundaciongaliciasustentable/galicia-agora; galiciasustentable@galiciasustentable.org)';
 
 export interface FetchOptions {
   etag?: string | null;
