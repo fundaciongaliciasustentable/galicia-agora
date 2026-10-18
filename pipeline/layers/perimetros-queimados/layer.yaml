@@ -1,0 +1,73 @@
+id: perimetros-queimados
+title:
+  gl: Áreas queimadas (tempada actual)
+  es: Áreas quemadas (temporada actual)
+theme: lume-monte
+operator:
+  name: Copernicus EFFIS (Comisión Europea, JRC)
+  url: https://forest-fire.emergency.copernicus.eu/
+source_url: "https://maps.effis.emergency.copernicus.eu/effis?service=WFS&request=GetFeature&version=2.0.0&typeNames=ms:modis.ba.poly.season&outputFormat=geojson&bbox=41.8,-9.35,43.8,-6.7,urn:ogc:def:crs:EPSG::4326"
+licence:
+  spdx: CC-BY-4.0
+  text_url: https://forest-fire.emergency.copernicus.eu/about-effis/data-license
+  verified_at: 2026-10-18
+  odbl_compatible: true
+  collection: odbl
+  notes: >-
+    CC BY 4.0, © Unión Europea. Logos excluídos. O servizo WFS está etiquetado como
+    «Test Service». As cifras de contexto da Xunta veñen do aviso legal de Medio Rural
+    (reutilización con cita).
+attribution: © Unión Europea, Copernicus EFFIS (JRC)
+update_frequency:
+  declared: P1D
+geometry: polygon
+output: geojson
+auth:
+  required: false
+privacy_notes: >-
+  Sen datos persoais. Perímetros de áreas queimadas cartografadas por satélite (MODIS); non
+  identifican persoas nin propiedades. / Sin datos personales. Perímetros de áreas quemadas
+  cartografiadas por satélite (MODIS); no identifican personas ni propiedades.
+stale_after: P3D
+ingest:
+  every: P1D
+style:
+  kind: fill
+  color_token: --c-queimado
+  label_field: concello
+table:
+  fields:
+    - data_lume
+    - concello
+    - provincia
+    - area_ha
+    - actualizado
+context:
+  - label:
+      gl: Lumes forestais en Galicia en 2025 segundo a Xunta
+      es: Incendios forestales en Galicia en 2025 según la Xunta
+    value: "1.475 lumes; 118.763,65 ha"
+    source: Consellería do Medio Rural, Xunta de Galicia (estatística anual por distrito forestal)
+    source_url: https://mediorural.xunta.gal/sites/default/files/estatisticas/2025/Lumes-2025-por-Distrito.xlsx
+    note:
+      gl: >-
+        Cifra oficial da estatística anual de incendios forestais. A Xunta atribúe a diferenza
+        coa cifra de EFFIS aos criterios de medición.
+      es: >-
+        Cifra oficial de la estadística anual de incendios forestales. La Xunta atribuye la
+        diferencia con la cifra de EFFIS a los criterios de medición.
+  - label:
+      gl: Superficie queimada en 2025 nas catro provincias galegas segundo EFFIS
+      es: Superficie quemada en 2025 en las cuatro provincias gallegas según EFFIS
+    value: "148.581 ha (258 áreas cartografadas; calculado o 18/10/2026)"
+    source: Copernicus EFFIS (JRC), capa modis.ba.poly.2025, suma de AREA_HA para A Coruña, Lugo, Ourense e Pontevedra
+    source_url: "https://maps.effis.emergency.copernicus.eu/effis?service=WFS&request=GetFeature&version=2.0.0&typeNames=ms:modis.ba.poly.2025&outputFormat=geojson&bbox=41.8,-9.35,43.8,-6.7,urn:ogc:def:crs:EPSG::4326"
+    note:
+      gl: >-
+        EFFIS cartografa as áreas queimadas a partir de imaxes de satélite (MODIS) e inclúe todo
+        o terreo queimado por riba do seu limiar de detección. A Xunta atribúe a diferenza coa
+        cifra oficial aos criterios de medición.
+      es: >-
+        EFFIS cartografía las áreas quemadas a partir de imágenes de satélite (MODIS) e incluye
+        todo el terreno quemado por encima de su umbral de detección. La Xunta atribuye la
+        diferencia con la cifra oficial a los criterios de medición.

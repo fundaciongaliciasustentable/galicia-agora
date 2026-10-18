@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "perimetros-queimados feature properties",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "data_lume", "actualizado", "provincia", "concello", "area_ha"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "data_lume": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "actualizado": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "provincia": {
+      "enum": ["A Coruña", "Lugo", "Ourense", "Pontevedra"]
+    },
+    "concello": {
+      "type": ["string", "null"]
+    },
+    "area_ha": {
+      "type": "number",
+      "minimum": 0
+    },
+    "pct_frondosas": {
+      "type": ["number", "null"],
+      "minimum": 0,
+      "maximum": 100
+    },
+    "pct_coniferas": {
+      "type": ["number", "null"],
+      "minimum": 0,
+      "maximum": 100
+    },
+    "pct_mixto": {
+      "type": ["number", "null"],
+      "minimum": 0,
+      "maximum": 100
+    },
+    "pct_esclerofilas": {
+      "type": ["number", "null"],
+      "minimum": 0,
+      "maximum": 100
+    },
+    "pct_transicion": {
+      "type": ["number", "null"],
+      "minimum": 0,
+      "maximum": 100
+    },
+    "pct_outra_natural": {
+      "type": ["number", "null"],
+      "minimum": 0,
+      "maximum": 100
+    },
+    "pct_agricola": {
+      "type": ["number", "null"],
+      "minimum": 0,
+      "maximum": 100
+    },
+    "pct_artificial": {
+      "type": ["number", "null"],
+      "minimum": 0,
+      "maximum": 100
+    },
+    "pct_outra": {
+      "type": ["number", "null"],
+      "minimum": 0,
+      "maximum": 100
+    },
+    "pct_natura2000": {
+      "type": ["number", "null"],
+      "minimum": 0,
+      "maximum": 100
+    }
+  }
+}
