@@ -1,0 +1,33 @@
+{
+  "name": "galicia-agora",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Mapa público de Galicia con datos abertos. Fundación Galicia Sustentable.",
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "dev": "echo \"site/ arrives in Phase 1\" && exit 1",
+    "build": "echo \"site/ arrives in Phase 1\" && exit 1",
+    "test": "vitest run",
+    "lint": "biome check . && tsc --noEmit",
+    "format": "biome format --write .",
+    "probe": "tsx pipeline/probe/cli.ts",
+    "ingest": "tsx pipeline/cli.ts ingest",
+    "status": "tsx pipeline/cli.ts status",
+    "validate": "tsx pipeline/cli.ts validate"
+  },
+  "dependencies": {
+    "ajv": "8.20.0",
+    "ajv-formats": "3.0.1",
+    "yaml": "2.9.1"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.5.15",
+    "@types/node": "26.6.5",
+    "tsx": "4.23.15",
+    "typescript": "7.0.2",
+    "vitest": "5.0.5"
+  }
+}
