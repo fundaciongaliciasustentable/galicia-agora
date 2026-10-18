@@ -79,22 +79,29 @@ export function madridToIso(local: string): string {
   if (!m) throw new Error(`Unrecognised local time: ${local}`);
   const [, y, mo, d, h, mi, s = '00'] = m;
   const asUtc = Date.UTC(Number(y), Number(mo) - 1, Number(d), Number(h), Number(mi), Number(s));
-  // Offset of Europe/Madrid at that instant (CET +1 / CEST +2).
-  const fmt = new Intl.DateTimeFormat('en-GB', {
-    timeZone: 'Europe/Madrid',
-    hourCycle: 'h23',
-    year: 'numeric',
-    month: '2-digit',
-    day: '2-digit',
-    hour: '2-digit',
-    minute: '2-digit',
-    second: '2-digit',
-  });
+  // Offset of Europe/Madrid (CET +1 / CEST +2). Computed twice: the first
+  // guess uses the wrong instant near a clock change, the second corrects it.
+  const first = madridOffsetMs(asUtc);
+  const offset = madridOffsetMs(asUtc - first);
+  return new Date(asUtc - offset).toISOString();
+}
+
+const MADRID = new Intl.DateTimeFormat('en-GB', {
+  timeZone: 'Europe/Madrid',
+  hourCycle: 'h23',
+  year: 'numeric',
+  month: '2-digit',
+  day: '2-digit',
+  hour: '2-digit',
+  minute: '2-digit',
+  second: '2-digit',
+});
+
+/** Offset of Europe/Madrid from UTC, in ms, at the given UTC instant. */
+function madridOffsetMs(utcMs: number): number {
   const parts = Object.fromEntries(
-    fmt.formatToParts(new Date(asUtc)).map((p) => [p.type, p.value]),
+    MADRID.formatToParts(new Date(utcMs)).map((x) => [x.type, x.value]),
   );
   const p = (k: string) => Number(parts[k]);
-  const shown = Date.UTC(p('year'), p('month') - 1, p('day'), p('hour'), p('minute'), p('second'));
-  const offset = shown - asUtc;
-  return new Date(asUtc - offset).toISOString();
+  return Date.UTC(p('year'), p('month') - 1, p('day'), p('hour'), p('minute'), p('second')) - utcMs;
 }

@@ -103,4 +103,13 @@ describe('madridToIso', () => {
     expect(madridToIso('2026-10-18 09:00')).toBe('2026-10-18T07:00:00.000Z');
     expect(madridToIso('2026-12-01 09:00')).toBe('2026-12-01T08:00:00.000Z');
   });
+
+  it('is correct in the hours around clock changes', () => {
+    // 2026-10-25 03:00 CEST -> 02:00 CET; 01:30 is still CEST.
+    expect(madridToIso('2026-10-25 01:30')).toBe('2026-10-24T23:30:00.000Z');
+    expect(madridToIso('2026-10-25 04:00')).toBe('2026-10-25T03:00:00.000Z');
+    // 2026-03-29 02:00 CET -> 03:00 CEST; 01:30 is CET, 03:30 is CEST.
+    expect(madridToIso('2026-03-29 01:30')).toBe('2026-03-29T00:30:00.000Z');
+    expect(madridToIso('2026-03-29 03:30')).toBe('2026-03-29T01:30:00.000Z');
+  });
 });

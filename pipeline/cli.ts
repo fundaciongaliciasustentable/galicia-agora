@@ -4,7 +4,7 @@
 //   npm run status                      status of each layer; exits 3 if any needs an alert
 //   npm run catalog                     write data-out/catalog.json for the site
 
-import { readdir } from 'node:fs/promises';
+import { access, readdir } from 'node:fs/promises';
 import { join } from 'node:path';
 import type { LayerDef } from './lib/adapter.ts';
 import { parseDuration } from './lib/duration.ts';
@@ -21,10 +21,16 @@ function arg(name: string): string | undefined {
 
 async function layerIds(): Promise<string[]> {
   const entries = await readdir(LAYERS_DIR, { withFileTypes: true });
-  return entries
-    .filter((e) => e.isDirectory())
-    .map((e) => e.name)
-    .sort();
+  const ids: string[] = [];
+  for (const e of entries) {
+    if (!e.isDirectory()) continue;
+    // A folder without layer.yaml is a layer in progress, not a layer.
+    try {
+      await access(join(LAYERS_DIR, e.name, 'layer.yaml'));
+      ids.push(e.name);
+    } catch {}
+  }
+  return ids.sort();
 }
 
 /** stale_after if set, otherwise three ingest cycles, otherwise one day. */
