@@ -23,12 +23,13 @@ Método: chamada real a cada servizo co User-Agent do proxecto, mostra gardada e
 | Buses da Xunta | GTFS no NAP | **condicional** | Precisa rexistro e chave |
 | Espazos protexidos | MITECO/IEPNB (Natura) + IDEG (Rede galega) | **go** (MITECO) / condicional (IDEG) | MITECO só pide cita |
 | Patrimonio | IDEG PBA Afeccións | **condicional** | Licenza e sensibilidade dos xacementos |
+| Tren (engadida o 18/10) | Renfe GTFS + GTFS-RT | **go** | Cobre Galicia (Alvia, Avlo, MD, Regional), CC BY 4.0 |
 
 Condicionais do encargo:
 
 | Fonte | Veredicto | Nota |
 |---|---|---|
-| Renfe GTFS-RT | **go** | Cobre Galicia (Alvia, Avlo, MD, Regional), CC BY 4.0. Propoño levar o tren á Fase 1 |
+| Renfe GTFS-RT | **go** | Pasa á Fase 1 por decisión da FGS |
 | Banco de Terras | no-go | Só visor; datos ligados a persoas |
 | Grella 1 km² IGE | condicional | API CSV real; licenza específica non atopada |
 | Rexistro eólico | condicional | Aeroxeradores no IDEG, sen MW nin promotor; licenza non declarada |
@@ -47,7 +48,7 @@ Isto afecta a 8 das 12 capas. Detalle e opcións en [`licences.md`](licences.md)
 2. **Estacións**: non se precisa a chave de MeteoSIX. O servizo de observación é aberto. MeteoSIX queda para ondas e mareas (Fase 2).
 3. **Lume, cifra da Xunta**: o ficheiro oficial `Lumes-2025-por-Distrito.xlsx` di **118.763,65 ha** e 1.475 lumes. A cifra do encargo, 118.966 ha, vén de notas de prensa de novembro de 2025. Proponse usar a do ficheiro, coa súa data.
 4. **EFFIS**: o servizo WFS chámase «Test Service». Funciona, pero pode cambiar.
-5. **Tren**: Renfe publica GTFS-RT aberto con servizos galegos. Pódese incorporar sen tocar o visor web.
+5. **Tren**: Renfe publica GTFS-RT aberto con servizos galegos. Entra na Fase 1 (decisión do 18/10/2026), sen tocar o visor web.
 6. **Patrimonio**: a fonte localizada é unha capa urbanística (PBA), non o rexistro legal de Cultura. Hai 80.010 elementos de catálogo; os xacementos arqueolóxicos precisan xeneralización.
 
 ## Substitucións propostas

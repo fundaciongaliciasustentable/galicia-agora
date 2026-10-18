@@ -673,7 +673,8 @@ sources:
   # ───────────────────────── Condicionais ─────────────────────────
   - id: renfe-gtfsrt
     name: Renfe GTFS-RT (AV/LD/MD e Cercanías)
-    phase: conditional
+    phase: 1
+    layers: [tren]
     operator: Renfe Operadora
     endpoints:
       - url: https://gtfsrt.renfe.com/vehicle_positions_LD.json
@@ -702,7 +703,7 @@ sources:
       - Posicións con 15 min de atraso.
       - tripId con data embebida e trens duplicados.
     verdict: go
-    verdict_notes: Proposta de subir a capa de tren á Fase 1.
+    verdict_notes: "Entra na Fase 1 (decisión FGS, 18/10/2026): GTFS estático para vías e estacións, GTFS-RT para posicións con aviso de 15 min de atraso."
     verified: true
     checked_at: 2026-10-18
     samples: [renfe-gtfsrt/vehicle_positions_LD.json]
