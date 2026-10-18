@@ -24,7 +24,8 @@ concurrency:
 jobs:
   update:
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    # The first deploy uploads the ~140 MB basemap; later runs only send changes.
+    timeout-minutes: 45
     env:
       DATA_OUT_DIR: data-out
     steps:
@@ -123,7 +124,9 @@ jobs:
           FTPS_PASSWORD: ${{ secrets.FTPS_PASSWORD }}
           FTPS_DIR: ${{ secrets.FTPS_DIR }}
         run: |
-          lftp -u "$FTPS_USER","$FTPS_PASSWORD" "ftps://$FTPS_HOST" -e "
-            set ftp:ssl-force true; set ssl:verify-certificate true;
-            mirror --reverse --only-newer --parallel=4 --exclude-glob .git* dist/ ${FTPS_DIR:-/};
+          # Explicit FTPS (AUTH TLS on port 21): Dinahosting does not offer implicit FTPS (990).
+          lftp -u "$FTPS_USER","$FTPS_PASSWORD" "ftp://$FTPS_HOST" -e "
+            set ftp:ssl-force true; set ftp:ssl-protect-data true; set ssl:verify-certificate true;
+            set net:timeout 30; set net:max-retries 3; set net:reconnect-interval-base 10;
+            mirror --reverse --only-newer --parallel=4 --verbose=1 --exclude-glob .git* dist/ ${FTPS_DIR:-/};
             quit"
