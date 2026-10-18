@@ -44,4 +44,4 @@ Fase 1 en curso (aprobada o 18/10/2026 para as capas que non precisan VPS). Back
 - HTTP sempre con `pipeline/lib/http.ts` (User-Agent identificable, backoff, peticións condicionais).
 - Commits pequenos, un por capa. Cada dependencia nova xustifica tamaño, licenza e mantemento no commit.
 - Decisións en `docs/decisions/NNNN-titulo.md` (ADR curto).
-- Identidade visual: ler a skill `galiciasustentable-html` antes de escribir HTML/CSS.
+- Identidade visual: skill `galiciasustentable-html` v4.1, perfil «divulgación e técnico» (Source Sans 3 autoaloxada en títulos, corpo e interface; corpo a 18 px; cifras tabulares nas táboas) e pé estándar da FGS (`site/src/components/Footer.astro`) con logo servido desde o propio sitio.

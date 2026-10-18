@@ -1,0 +1,178 @@
+---
+// FGS standard website footer (galiciasustentable-html skill v4.1, section 8).
+// Links are absolute so the footer works on any FGS domain. The logo is served
+// from this site: no resource is loaded from another origin.
+import type { Lang } from '../i18n';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const FGS = 'https://fundaciongaliciasustentable.gal';
+const p = (path: string) => `${FGS}${lang === 'es' ? '/es' : ''}/${path}/index.html`;
+const year = new Date().getFullYear();
+
+const T = {
+  about: {
+    gl: 'Organización privada sen ánimo de lucro constituída en 2008 co propósito de transformar Galicia nunha sociedade sustentable.',
+    es: 'Organización privada sin ánimo de lucro constituida en 2008 con el propósito de transformar Galicia en una sociedad sustentable.',
+  },
+  declared: {
+    gl: 'Declarada de interese ambiental e galego en 2009.',
+    es: 'Declarada de interés ambiental y gallego en 2009.',
+  },
+  foundation: { gl: 'Fundación', es: 'Fundación' },
+  the_foundation: { gl: 'A Fundación', es: 'La Fundación' },
+  team: { gl: 'Equipo', es: 'Equipo' },
+  transparency: { gl: 'Transparencia', es: 'Transparencia' },
+  contact: { gl: 'Contacto', es: 'Contacto' },
+  ecosystem: { gl: 'Ecosistema', es: 'Ecosistema' },
+  projects: { gl: 'Proxectos', es: 'Proyectos' },
+  magazine: { gl: 'Revista', es: 'Revista' },
+  donations: { gl: 'Doazóns', es: 'Donaciones' },
+  media: { gl: 'Medios', es: 'Medios' },
+  support: { gl: 'Apoia a fundación', es: 'Apoya a la fundación' },
+  support_text: {
+    gl: 'O teu apoio fai posible o noso traballo.',
+    es: 'Tu apoyo hace posible nuestro trabajo.',
+  },
+  donate: { gl: 'Doar agora', es: 'Donar ahora' },
+  legal: { gl: 'Espazo legal', es: 'Espacio legal' },
+  notice: { gl: 'Aviso legal', es: 'Aviso legal' },
+  privacy: { gl: 'Privacidade', es: 'Privacidad' },
+  cookies: { gl: 'Cookies', es: 'Cookies' },
+  ai: { gl: 'Política de IA', es: 'Política de IA' },
+};
+---
+
+<footer class="gs-footer">
+  <div class="gs-footer__grid">
+    <div class="gs-footer__marca">
+      <a href={lang === 'es' ? `${FGS}/es/` : `${FGS}/`}>
+        <img src="/logos/logo-fgs-horizontal-branco.png" alt="Fundación Galicia Sustentable" width="141" height="60" loading="lazy" />
+      </a>
+      <p>{T.about[lang]}</p>
+      <p>{T.declared[lang]}</p>
+    </div>
+    <nav aria-label={T.foundation[lang]}>
+      <h2>{T.foundation[lang]}</h2>
+      <ul>
+        <li><a href={p('a-fundacion')}>{T.the_foundation[lang]}</a></li>
+        <li><a href={p('equipo')}>{T.team[lang]}</a></li>
+        <li><a href={p('transparencia')}>{T.transparency[lang]}</a></li>
+        <li><a href={p('contacto')}>{T.contact[lang]}</a></li>
+      </ul>
+    </nav>
+    <nav aria-label={T.ecosystem[lang]}>
+      <h2>{T.ecosystem[lang]}</h2>
+      <ul>
+        <li><a href={lang === 'es' ? `${FGS}/es/` : `${FGS}/`}>{T.foundation[lang]}</a></li>
+        <li><a href="https://galiciasustentable.org/proxectos/">{T.projects[lang]}</a></li>
+        <li><a href="https://galiciasustentable.org/">{T.magazine[lang]}</a></li>
+        <li><a href={p('doar')}>{T.donations[lang]}</a></li>
+        <li><a href={p('medios')}>{T.media[lang]}</a></li>
+      </ul>
+    </nav>
+    <div class="gs-footer__apoio">
+      <h2>{T.support[lang]}</h2>
+      <p>{T.support_text[lang]}</p>
+      <a class="gs-footer__boton" href={p('doar')}>{T.donate[lang]}</a>
+    </div>
+  </div>
+  <div class="gs-footer__legal">
+    <span>© {year} Fundación Galicia Sustentable · CIF G70193537</span>
+    <nav aria-label={T.legal[lang]}>
+      <a href={p('aviso-legal')}>{T.notice[lang]}</a>
+      <a href={p('privacidade')}>{T.privacy[lang]}</a>
+      <a href={p('cookies')}>{T.cookies[lang]}</a>
+      <a href={p('politica-ia')}>{T.ai[lang]}</a>
+    </nav>
+  </div>
+</footer>
+
+<style>
+  .gs-footer {
+    background: var(--gs-verde-nato);
+    color: var(--gs-verde-moi-claro);
+    font-family: var(--gs-font-corpo);
+    font-size: 16px;
+    line-height: 1.6;
+    padding: 48px 48px 24px;
+  }
+  .gs-footer a {
+    color: var(--gs-verde-moi-claro);
+    text-underline-offset: 0.2em;
+  }
+  .gs-footer a:hover {
+    color: var(--gs-branco);
+  }
+  .gs-footer h2 {
+    font-family: var(--gs-font-corpo);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gs-branco);
+    margin: 0 0 12px;
+    border: 0;
+    padding: 0;
+  }
+  .gs-footer ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .gs-footer li {
+    margin: 6px 0;
+  }
+  .gs-footer__grid {
+    display: grid;
+    gap: 32px;
+    grid-template-columns: 2fr 1fr 1fr 1.4fr;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .gs-footer__marca p {
+    margin: 12px 0 0;
+    max-width: 38ch;
+  }
+  .gs-footer__marca img {
+    display: block;
+    height: 60px;
+    width: auto;
+  }
+  .gs-footer__boton {
+    display: inline-block;
+    margin-top: 8px;
+    background: var(--gs-branco);
+    color: var(--gs-verde-nato) !important;
+    font-weight: 700;
+    padding: 10px 18px;
+    border-radius: var(--gs-radius);
+    text-decoration: none;
+  }
+  .gs-footer__legal {
+    max-width: 1200px;
+    margin: 32px auto 0;
+    padding-top: 16px;
+    border-top: 1px solid rgba(232, 239, 227, 0.25);
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    font-size: 12px;
+  }
+  .gs-footer__legal nav {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  @media (max-width: 800px) {
+    .gs-footer {
+      padding: 36px 20px 20px;
+    }
+    .gs-footer__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

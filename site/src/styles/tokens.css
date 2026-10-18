@@ -1,4 +1,4 @@
-/* FGS design tokens (galiciasustentable-html skill v2.0, mirrors fgs-web tokens.css).
+/* FGS design tokens (galiciasustentable-html skill v4.1; colours as in fgs-web tokens.css).
    Layer colours (--c-*) are project tokens chosen from the FGS accents. */
 
 :root {
@@ -27,8 +27,10 @@
   --gs-aviso: #c8872b;
   --gs-erro: #a64040;
 
-  --gs-font-titulos: "Trebuchet MS", "Trebuchet", Arial, sans-serif;
-  --gs-font-corpo: "Lato", system-ui, -apple-system, sans-serif;
+  /* Skill v4, perfil «divulgación e técnico»: Source Sans 3 en títulos, corpo e
+     interface. Trebuchet MS só no logotipo; Playfair e Newsreader non se usan aquí. */
+  --gs-font-titulos: "Source Sans 3", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --gs-font-corpo: "Source Sans 3", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 
   --gs-texto-xs: 0.75rem;
   --gs-texto-sm: 0.875rem;

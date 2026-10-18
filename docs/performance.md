@@ -23,4 +23,6 @@ O peso está en MapLibre. `/estado`, `/fontes` e `/sobre` non levan JavaScript.
 
 ## Tipografía
 
-Lato 400 e 700, subconxuntos latin e latin-ext en woff2 (~23 KB cada un), servidos desde o propio sitio. Os títulos usan Trebuchet MS do sistema.
+Source Sans 3 (400, 400 cursiva, 600 e 700), subconxuntos latin e latin-ext en woff2, servidos desde o propio sitio; o navegador só descarga os pesos e subconxuntos que usa a páxina. Corpo a 18 px, como pide a skill v4.1.
+
+Primeiro debuxado do mapa: uns 6–8 s no navegador de proba en local (cargar MapLibre e o índice do PMTiles). Pendente de medir en produción.

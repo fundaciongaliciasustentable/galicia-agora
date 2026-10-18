@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import Footer from '../components/Footer.astro';
 import { base, type Lang, t } from '../i18n';
 
 interface Props {
@@ -51,7 +52,10 @@ const nav = [
           <path d="M524.8,676.7c-15.4,11.7-30.7,23.4-45.7,35.1,19.6-7.1,39.4-14,59.3-20.6-4.1-5.2-8.7-10-13.6-14.4Z"/>
           <path d="M437.7,935.1c19.6-7,38.1-15.8,55.2-26.7,19.9-12.6,35.5-27.3,47.3-43.8-38,23.2-72.2,47-102.4,70.5Z"/>
         </svg>
-        <span>Galicia Agora</span>
+        <span class="ga-brand-text">
+          <span>Galicia Agora</span>
+          <span class="ga-brand-sub">{lang === 'gl' ? 'un proxecto da Fundación Galicia Sustentable' : 'un proyecto de la Fundación Galicia Sustentable'}</span>
+        </span>
       </a>
       <nav class="ga-nav" aria-label={lang === 'gl' ? 'Principal' : 'Principal'}>
         {
@@ -67,5 +71,6 @@ const nav = [
       </nav>
     </header>
     <slot />
+    <Footer lang={lang} />
   </body>
 </html>

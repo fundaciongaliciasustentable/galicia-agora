@@ -1,5 +1,7 @@
-@import "@fontsource/lato/400.css";
-@import "@fontsource/lato/700.css";
+@import "@fontsource/source-sans-3/400.css";
+@import "@fontsource/source-sans-3/400-italic.css";
+@import "@fontsource/source-sans-3/600.css";
+@import "@fontsource/source-sans-3/700.css";
 @import "./tokens.css";
 
 *,
@@ -16,7 +18,7 @@ body {
 
 body {
   font-family: var(--gs-font-corpo);
-  font-size: var(--gs-texto-base);
+  font-size: var(--gs-texto-lg);
   line-height: 1.6;
   color: var(--text);
   background: var(--bg);
@@ -89,6 +91,21 @@ a:hover {
   font-family: var(--gs-font-titulos);
   font-weight: 700;
   font-size: var(--gs-texto-lg);
+}
+.ga-brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+.ga-brand-sub {
+  font-weight: 400;
+  font-size: var(--gs-texto-xs);
+  color: var(--gs-verde-moi-claro);
+}
+@media (max-width: 640px) {
+  .ga-brand-sub {
+    display: none;
+  }
 }
 .ga-brand svg {
   width: 28px;
@@ -167,6 +184,7 @@ a:hover {
   background: var(--surface);
 }
 .ga-table {
+  font-variant-numeric: tabular-nums;
   width: 100%;
   border-collapse: collapse;
   font-size: var(--gs-texto-sm);
