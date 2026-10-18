@@ -1,0 +1,341 @@
+---
+import { type CatalogLayer, displayStatus, loadCatalog } from '../catalog';
+// Full-screen map with the layer panel. The panel is rendered at build time
+// from the catalogue (works without JS and for screen readers); the client
+// script refreshes freshness and draws layers only when they are switched on.
+import { absoluteTime, dictionary, type Lang, relativeTime, THEME_ORDER, THEMES, t } from '../i18n';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const catalog = loadCatalog();
+const byTheme = THEME_ORDER.map((theme) => ({
+  theme,
+  layers: catalog.layers.filter((l) => l.theme === theme),
+})).filter((g) => g.layers.length > 0);
+
+const statusLabel = (l: CatalogLayer) => t(lang, `status_${displayStatus(l)}` as const);
+const licenceLabel = (l: CatalogLayer) => l.licence.spdx ?? l.licence.text_url;
+---
+
+<div class="ga-app" data-lang={lang} data-dict={JSON.stringify(dictionary(lang))}>
+  <button class="ga-panel-toggle ga-button" type="button" aria-expanded="false" aria-controls="ga-panel">
+    {t(lang, 'layers')}
+  </button>
+
+  <aside id="ga-panel" class="ga-panel" aria-label={t(lang, 'layers')}>
+    <div class="ga-panel-head">
+      <button type="button" class="ga-button ga-panel-close">{t(lang, 'close')}</button>
+      <p class="ga-tagline">{t(lang, 'tagline')}</p>
+      <div id="ga-search" class="ga-search" data-label={t(lang, 'search')}></div>
+    </div>
+
+    {
+      byTheme.map((group) => (
+        <section class="ga-theme" aria-labelledby={`th-${group.theme}`}>
+          <h2 id={`th-${group.theme}`}>{THEMES[group.theme]?.[lang]}</h2>
+          <ul>
+            {group.layers.map((l) => (
+              <li class="ga-layer" data-layer={l.id}>
+                <div class="ga-layer-row">
+                  <input type="checkbox" id={`cb-${l.id}`} data-toggle={l.id} />
+                  <label for={`cb-${l.id}`}>
+                    <span class="ga-swatch" style={`background: var(${l.style.color_token ?? '--gs-verde-nato'})`} aria-hidden="true" />
+                    {l.title[lang]}
+                  </label>
+                  <span class="ga-status" data-status={displayStatus(l)} data-status-for={l.id}>
+                    {statusLabel(l)}
+                  </span>
+                </div>
+                <details class="ga-layer-info">
+                  <summary>
+                    <span class="visually-hidden">{l.title[lang]}: </span>
+                    {l.operator.name}
+                    {' · '}
+                    <time
+                      datetime={l.meta?.published_at ?? undefined}
+                      title={absoluteTime(l.meta?.published_at ?? null, lang) ?? undefined}
+                      data-relative={l.meta?.published_at ?? ''}
+                    >
+                      {relativeTime(l.meta?.published_at ?? null, lang) ?? t(lang, 'published_unknown')}
+                    </time>
+                  </summary>
+                  <dl>
+                    <dt>{t(lang, 'operator')}</dt>
+                    <dd><a href={l.operator.url} rel="noopener">{l.operator.name}</a></dd>
+                    <dt>{t(lang, 'published')}</dt>
+                    <dd>{absoluteTime(l.meta?.published_at ?? null, lang) ?? t(lang, 'published_unknown')}</dd>
+                    <dt>{t(lang, 'fetched')}</dt>
+                    <dd>{absoluteTime(l.meta?.fetched_at ?? null, lang) ?? '—'}</dd>
+                    <dt>{t(lang, 'licence')}</dt>
+                    <dd>
+                      <a href={l.licence.text_url} rel="noopener">{licenceLabel(l)}</a>
+                      {' · '}
+                      {l.licence.collection === 'odbl' ? t(lang, 'collection_odbl') : t(lang, 'collection_bysa')}
+                      <br />
+                      <small>{l.attribution}</small>
+                    </dd>
+                    {l.delay && (
+                      <>
+                        <dt>{t(lang, 'delay_note')}</dt>
+                        <dd>{l.delay.minutes} min · {l.delay.reason}</dd>
+                      </>
+                    )}
+                  </dl>
+                  {l.context && l.context.length > 0 && (
+                    <div class="ga-context">
+                      <h3>{t(lang, 'context')}</h3>
+                      <ul>
+                        {l.context.map((c) => (
+                          <li>
+                            <strong>{c.label[lang]}:</strong> {c.value}
+                            {' '}(<a href={c.source_url} rel="noopener">{c.source}</a>)
+                            {c.note && <p>{c.note[lang]}</p>}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                  <p class="ga-layer-actions">
+                    <a href={l.source_url} rel="noopener">{t(lang, 'source')}</a>
+                    <button type="button" class="ga-button" data-table={l.id}>{t(lang, 'as_table')}</button>
+                    <a href={`/data/${l.id}/data.geojson`} download>{t(lang, 'download')}</a>
+                  </p>
+                </details>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ))
+    }
+    <p class="ga-panel-foot">
+      <small>© OpenStreetMap (ODbL) · Protomaps · Galicia Agora (ODbL / CC BY-SA 4.0)</small>
+    </p>
+  </aside>
+
+  <main id="contido" class="ga-map-wrap">
+    <div id="ga-map" class="ga-map" role="region" aria-label={t(lang, 'map_label')}></div>
+    <p class="ga-hint" id="ga-hint">{t(lang, 'no_layers')}</p>
+    <section id="ga-ficha" class="ga-ficha" aria-live="polite" hidden>
+      <button type="button" class="ga-button ga-ficha-close">{t(lang, 'close')}</button>
+      <div class="ga-ficha-body"></div>
+    </section>
+  </main>
+
+  <dialog id="ga-table" class="ga-dialog">
+    <form method="dialog"><button class="ga-button">{t(lang, 'close')}</button></form>
+    <div class="ga-dialog-body"></div>
+  </dialog>
+</div>
+
+<style>
+  .ga-app {
+    position: relative;
+    height: calc(100dvh - 52px);
+    display: flex;
+    flex-direction: column;
+  }
+  .ga-map-wrap {
+    position: relative;
+    flex: 1;
+    min-height: 0;
+  }
+  .ga-map {
+    position: absolute;
+    inset: 0;
+  }
+  .ga-hint {
+    position: absolute;
+    left: 50%;
+    top: 12px;
+    transform: translateX(-50%);
+    margin: 0;
+    background: var(--surface);
+    color: var(--text);
+    border-radius: var(--gs-radius-card);
+    box-shadow: var(--gs-sombra);
+    padding: 6px 12px;
+    font-size: var(--gs-texto-sm);
+    max-width: calc(100% - 32px);
+    text-align: center;
+  }
+  .ga-hint[hidden] {
+    display: none;
+  }
+  .ga-panel-toggle {
+    position: absolute;
+    z-index: 3;
+    left: 16px;
+    bottom: 24px;
+    box-shadow: var(--gs-sombra);
+    padding: 8px 14px;
+    font-weight: 700;
+  }
+  .ga-panel {
+    position: absolute;
+    z-index: 4;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    max-height: 70dvh;
+    overflow-y: auto;
+    background: var(--surface);
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    box-shadow: var(--gs-sombra);
+    padding: 12px 16px 24px;
+    display: none;
+  }
+  .ga-app.panel-open .ga-panel {
+    display: block;
+  }
+  @media (min-width: 768px) {
+    .ga-app {
+      flex-direction: row;
+    }
+    .ga-panel-toggle {
+      display: none;
+    }
+    .ga-panel {
+      position: relative;
+      display: block;
+      width: 360px;
+      max-height: none;
+      border-radius: 0;
+      box-shadow: none;
+      border-right: 1px solid var(--border);
+      flex-shrink: 0;
+    }
+  }
+  .ga-panel-close {
+    float: right;
+  }
+  @media (min-width: 768px) {
+    .ga-panel-close {
+      display: none;
+    }
+  }
+  .ga-tagline {
+    margin: 0 0 8px;
+    color: var(--text-muted);
+    font-size: var(--gs-texto-sm);
+  }
+  .ga-theme h2 {
+    font-size: var(--gs-texto-base);
+    margin: 16px 0 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .ga-theme ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .ga-layer {
+    border-bottom: 1px solid var(--border);
+    padding: 6px 0;
+  }
+  .ga-layer-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .ga-layer-row input {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--gs-verde-nato);
+  }
+  .ga-layer-row label {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+  }
+  .ga-swatch {
+    width: 12px;
+    height: 12px;
+    border-radius: 3px;
+    flex-shrink: 0;
+  }
+  .ga-layer-info summary {
+    cursor: pointer;
+    font-size: var(--gs-texto-xs);
+    color: var(--text-muted);
+    margin-left: 26px;
+  }
+  .ga-layer-info dl {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 2px 10px;
+    font-size: var(--gs-texto-xs);
+    margin: 8px 0 8px 26px;
+  }
+  .ga-layer-info dt {
+    color: var(--text-muted);
+  }
+  .ga-layer-info dd {
+    margin: 0;
+  }
+  .ga-context {
+    margin-left: 26px;
+    font-size: var(--gs-texto-xs);
+  }
+  .ga-context h3 {
+    font-size: var(--gs-texto-sm);
+    margin: 4px 0;
+  }
+  .ga-context ul {
+    padding-left: 16px;
+  }
+  .ga-layer-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    font-size: var(--gs-texto-xs);
+    margin-left: 26px;
+  }
+  .ga-panel-foot {
+    color: var(--text-muted);
+    margin-top: 16px;
+  }
+  .ga-ficha {
+    position: absolute;
+    z-index: 5;
+    right: 16px;
+    top: 16px;
+    width: min(360px, calc(100% - 32px));
+    max-height: calc(100% - 32px);
+    overflow-y: auto;
+    background: var(--surface);
+    border-radius: var(--gs-radius-card);
+    box-shadow: var(--gs-sombra);
+    padding: 12px 16px;
+    font-size: var(--gs-texto-sm);
+  }
+  .ga-ficha-close {
+    float: right;
+  }
+  .ga-dialog {
+    width: min(960px, calc(100vw - 32px));
+    max-height: calc(100dvh - 32px);
+    border: 1px solid var(--border);
+    border-radius: var(--gs-radius-card);
+    background: var(--surface);
+    color: var(--text);
+    padding: 16px;
+  }
+  .ga-dialog::backdrop {
+    background: rgba(26, 26, 23, 0.5);
+  }
+  .ga-search {
+    min-height: 40px;
+  }
+</style>
+
+<script>
+  import { start } from '../map/app';
+  start();
+</script>
