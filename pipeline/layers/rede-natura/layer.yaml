@@ -1,0 +1,43 @@
+id: rede-natura
+title:
+  gl: Rede Natura 2000
+  es: Red Natura 2000
+theme: territorio
+operator:
+  name: Ministerio para la Transición Ecológica y el Reto Demográfico (Banco de Datos de la Naturaleza)
+  url: https://www.miteco.gob.es/es/biodiversidad/servicios/banco-datos-naturaleza.html
+source_url: https://geoserver.iepnb.es/geoserver/RN2000/ows
+licence:
+  text_url: https://www.miteco.gob.es/es/atencion-al-ciudadano/aviso-legal.html
+  quote: puede ser utilizada… siempre que se cite la fuente
+  verified_at: 2026-10-18
+  odbl_compatible: true
+  collection: odbl
+  notes: >-
+    Aviso legal do MITECO: reutilización citando a fonte. WFS do IEPNB, última
+    edición con ano no nome da capa (hoxe RN2000:rn2000_2024; a descarga
+    oficial n2000_2025 aínda non está no WFS). Filtro no servidor
+    ids_ccaa_filtro LIKE '%11%' (76 espazos, comprobado o 18/10/2026) e
+    revisión no adaptador. Inclúe espazos mariños compartidos coa AGE (11,90)
+    e con Asturias (11,12), algúns lonxe da costa (Banco de Galicia). Sen
+    listas de especies nin hábitats; coordenadas redondeadas a 5 decimais
+    (≈ 21 MB en GeoJSON, convén PMTiles). O respaldo oficial do geoserver do
+    IEPNB para reutilización non está verificado.
+attribution: 'Fuente: MITECO, Banco de Datos de la Naturaleza'
+update_frequency:
+  declared: P365D
+  measured: static
+geometry: polygon
+output: geojson
+auth:
+  required: false
+privacy_notes: Límites de espazos protexidos; ningún dato persoal.
+stale_after: P90D
+ingest:
+  every: P30D
+style:
+  kind: fill
+  color_token: --c-natura
+  label_field: nome
+table:
+  fields: [codigo, nome, figura, superficie_ha, edicion]

@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "rede-natura feature properties",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["codigo", "nome", "figura", "superficie_ha", "edicion"],
+  "properties": {
+    "codigo": { "type": "string", "pattern": "^ES[0-9A-Z]{7}$" },
+    "nome": { "type": "string", "minLength": 1 },
+    "figura": { "type": "string", "minLength": 1 },
+    "superficie_ha": { "type": ["number", "null"], "minimum": 0 },
+    "edicion": { "type": "integer", "minimum": 2000 }
+  }
+}
