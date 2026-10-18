@@ -1,5 +1,7 @@
 // Interface strings. Galician at the root, Spanish under /es/.
 
+import { BASE } from './paths.ts';
+
 export type Lang = 'gl' | 'es';
 
 export const THEMES: Record<string, { gl: string; es: string }> = {
@@ -76,7 +78,7 @@ export function dictionary(lang: Lang): Record<Key, string> {
 }
 
 export function base(lang: Lang): string {
-  return lang === 'gl' ? '/' : '/es/';
+  return lang === 'gl' ? BASE : `${BASE}es/`;
 }
 
 export function relativeTime(iso: string | null, lang: Lang, now = new Date()): string | null {

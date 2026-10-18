@@ -1,6 +1,6 @@
 # CLAUDE.md — Galicia Agora
 
-Mapa público de Galicia con datos abertos. Promotor: Fundación Galicia Sustentable (FGS). Enderezo: https://agora.galiciasustentable.org.
+Mapa público de Galicia con datos abertos. Promotor: Fundación Galicia Sustentable (FGS). Enderezo: https://galiciasustentable.org/galicia-agora/ (o curto https://agora.galiciasustentable.org redirixe alí). Base `/galicia-agora/` en `site/site.config.json`: nunca escribir rutas propias absolutas, usar `asset()` de `site/src/paths.ts`.
 
 ## Estado
 

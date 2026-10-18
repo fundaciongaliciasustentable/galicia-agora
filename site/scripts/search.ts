@@ -69,6 +69,7 @@ async function main() {
           : 'Parroquia';
       const where = isConcello ? (p.provincia ?? '') : `${p.concello ?? ''}, ${p.provincia ?? ''}`;
       await index.addCustomRecord({
+        // Root-relative: Pagefind prefixes the site base (where its bundle lives).
         url: `${lang === 'gl' ? '/' : '/es/'}#${hash}`,
         content: `${p.nome ?? ''} ${p.concello ?? ''} ${p.capital ?? ''}`,
         language: lang,

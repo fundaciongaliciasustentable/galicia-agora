@@ -1,8 +1,10 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
+import cfg from './site/site.config.json' with { type: 'json' };
 
 export default defineConfig({
-  site: 'https://agora.galiciasustentable.org',
+  site: cfg.site,
+  base: cfg.base,
   srcDir: './site/src',
   publicDir: './site/public',
   outDir: './dist',

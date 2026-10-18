@@ -5,6 +5,7 @@
 // first toggle, never before.
 
 import type { LayerSpecification, Map as MlMap, StyleSpecification } from 'maplibre-gl';
+import { asset } from '../paths.ts';
 import { layerStyles } from './styles.ts';
 import { readHash, writeHash } from './urlstate.ts';
 
@@ -97,15 +98,15 @@ function fieldLabel(f: string): string {
 }
 
 async function loadStyle(dark: boolean): Promise<StyleSpecification> {
-  const res = await fetch(`/style-${dark ? 'dark' : 'light'}.json`);
+  const res = await fetch(asset(`style-${dark ? 'dark' : 'light'}.json`));
   const style = (await res.json()) as StyleSpecification;
   const origin = window.location.origin;
   // MapLibre needs absolute URLs for glyphs, sprites and pmtiles sources.
-  if (style.glyphs) style.glyphs = origin + style.glyphs;
-  if (typeof style.sprite === 'string') style.sprite = origin + style.sprite;
+  if (style.glyphs) style.glyphs = origin + asset(style.glyphs);
+  if (typeof style.sprite === 'string') style.sprite = origin + asset(style.sprite);
   for (const src of Object.values(style.sources)) {
     if ('url' in src && typeof src.url === 'string' && src.url.startsWith('pmtiles:///')) {
-      src.url = `pmtiles://${origin}${src.url.slice('pmtiles://'.length)}`;
+      src.url = `pmtiles://${origin}${asset(src.url.slice('pmtiles://'.length))}`;
     }
   }
   return style;
@@ -135,11 +136,11 @@ export async function start(): Promise<void> {
   const [maplibregl, { Protocol }] = await Promise.all([import('maplibre-gl'), import('pmtiles')]);
   await import('maplibre-gl/dist/maplibre-gl.css');
 
-  maplibregl.setWorkerUrl('/maplibre/maplibre-gl-worker.mjs');
+  maplibregl.setWorkerUrl(asset('maplibre/maplibre-gl-worker.mjs'));
   const protocol = new Protocol();
   maplibregl.addProtocol('pmtiles', protocol.tile);
 
-  const catalog = (await (await fetch('/data/catalog.json')).json()) as { layers: Layer[] };
+  const catalog = (await (await fetch(asset('data/catalog.json'))).json()) as { layers: Layer[] };
   const layersById = new Map(catalog.layers.map((l) => [l.id, l]));
 
   refreshFreshness(app, catalog.layers, lang, dict);
@@ -181,13 +182,13 @@ export async function start(): Promise<void> {
     if (layer.tiles) {
       map.addSource(id, {
         type: 'vector',
-        url: `pmtiles://${origin}${layer.tiles}`,
+        url: `pmtiles://${origin}${asset(layer.tiles)}`,
         attribution: layer.attribution,
       });
     } else {
       map.addSource(id, {
         type: 'geojson',
-        data: `/data/${id}/data.geojson`,
+        data: asset(`data/${id}/data.geojson`),
         attribution: layer.attribution,
       });
     }
@@ -295,7 +296,7 @@ export async function start(): Promise<void> {
       dialogBody.replaceChildren(el('p', {}, dict.loading));
       dialog.showModal();
       try {
-        const rows = (await (await fetch(`/data/${layer.id}/table.json`)).json()) as Array<
+        const rows = (await (await fetch(asset(`data/${layer.id}/table.json`))).json()) as Array<
           Record<string, unknown>
         >;
         renderTable(dialogBody, layer, rows, lang, dict);
@@ -419,7 +420,7 @@ function renderTable(
   const parts: Node[] = [el('h2', {}, layer.title[lang as 'gl' | 'es']), wrap];
   if (rows.length > TABLE_LIMIT) {
     const p = el('p', {}, `${(dict.table_limit ?? '').replace('{n}', String(TABLE_LIMIT))} `);
-    p.append(el('a', { href: `/data/${layer.id}/data.geojson`, download: '' }, 'GeoJSON'));
+    p.append(el('a', { href: asset(`data/${layer.id}/data.geojson`), download: '' }, 'GeoJSON'));
     parts.push(p);
   }
   body.replaceChildren(...parts);
@@ -431,10 +432,10 @@ function loadSearch(lang: string) {
   if (!host) return;
   const css = document.createElement('link');
   css.rel = 'stylesheet';
-  css.href = '/pagefind/pagefind-ui.css';
+  css.href = asset('pagefind/pagefind-ui.css');
   document.head.append(css);
   const script = document.createElement('script');
-  script.src = '/pagefind/pagefind-ui.js';
+  script.src = asset('pagefind/pagefind-ui.js');
   script.onload = () => {
     const PagefindUI = (window as unknown as { PagefindUI?: new (o: object) => unknown })
       .PagefindUI;

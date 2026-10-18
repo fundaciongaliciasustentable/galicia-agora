@@ -3,6 +3,7 @@
 // Links are absolute so the footer works on any FGS domain. The logo is served
 // from this site: no resource is loaded from another origin.
 import type { Lang } from '../i18n';
+import { asset } from '../paths';
 
 interface Props {
   lang: Lang;
@@ -49,7 +50,7 @@ const T = {
   <div class="gs-footer__grid">
     <div class="gs-footer__marca">
       <a href={lang === 'es' ? `${FGS}/es/` : `${FGS}/`}>
-        <img src="/logos/logo-fgs-horizontal-branco.png" alt="Fundación Galicia Sustentable" width="141" height="60" loading="lazy" />
+        <img src={asset("logos/logo-fgs-horizontal-branco.png")} alt="Fundación Galicia Sustentable" width="141" height="60" loading="lazy" />
       </a>
       <p>{T.about[lang]}</p>
       <p>{T.declared[lang]}</p>

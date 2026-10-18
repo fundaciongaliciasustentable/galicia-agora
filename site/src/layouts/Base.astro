@@ -2,6 +2,7 @@
 import '../styles/global.css';
 import Footer from '../components/Footer.astro';
 import { base, type Lang, t } from '../i18n';
+import { asset } from '../paths';
 
 interface Props {
   lang: Lang;
@@ -30,7 +31,7 @@ const nav = [
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     {description && <meta name="description" content={description} />}
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href={asset("favicon.svg")} type="image/svg+xml" />
     <link rel="canonical" href={new URL(here, Astro.site).href} />
     <link rel="alternate" hreflang={other} href={new URL(`${base(other)}${path}`, Astro.site).href} />
     <link rel="alternate" hreflang={lang} href={new URL(here, Astro.site).href} />

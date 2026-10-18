@@ -4,6 +4,7 @@ import { type CatalogLayer, displayStatus, loadCatalog } from '../catalog';
 // from the catalogue (works without JS and for screen readers); the client
 // script refreshes freshness and draws layers only when they are switched on.
 import { absoluteTime, dictionary, type Lang, relativeTime, THEME_ORDER, THEMES, t } from '../i18n';
+import { asset } from '../paths';
 
 interface Props {
   lang: Lang;
@@ -100,7 +101,7 @@ const licenceLabel = (l: CatalogLayer) => l.licence.spdx ?? l.licence.text_url;
                   <p class="ga-layer-actions">
                     <a href={l.source_url} rel="noopener">{t(lang, 'source')}</a>
                     <button type="button" class="ga-button" data-table={l.id}>{t(lang, 'as_table')}</button>
-                    <a href={`/data/${l.id}/data.geojson`} download>{t(lang, 'download')}</a>
+                    <a href={asset(`data/${l.id}/data.geojson`)} download>{t(lang, 'download')}</a>
                   </p>
                 </details>
               </li>
