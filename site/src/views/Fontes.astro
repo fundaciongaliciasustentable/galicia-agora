@@ -1,0 +1,107 @@
+---
+import { loadCatalog } from '../catalog';
+import { type Lang, THEMES, t } from '../i18n';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const catalog = loadCatalog();
+const REPO = 'https://github.com/fundaciongaliciasustentable/galicia-agora';
+const L = {
+  title: { gl: 'Fontes e licenzas', es: 'Fuentes y licencias' },
+  intro: {
+    gl: 'Todas as capas proceden de fontes abertas cunha licenza comprobada. Cada capa nomea o operador orixinal, a licenza e a atribución que pide.',
+    es: 'Todas las capas proceden de fuentes abiertas con una licencia comprobada. Cada capa nombra al operador original, la licencia y la atribución que pide.',
+  },
+  collections: {
+    gl: 'Publicamos dúas coleccións. A base de datos derivada vai baixo ODbL 1.0. As capas da Xunta con dúas declaracións de licenza contraditorias van á parte, baixo CC BY-SA 4.0, a máis restritiva das dúas, ata que a Xunta confirme outra cousa.',
+    es: 'Publicamos dos colecciones. La base de datos derivada va bajo ODbL 1.0. Las capas de la Xunta con dos declaraciones de licencia contradictorias van aparte, bajo CC BY-SA 4.0, la más restrictiva de las dos, hasta que la Xunta confirme otra cosa.',
+  },
+  attribution: { gl: 'Atribución', es: 'Atribución' },
+  frequency: { gl: 'Frecuencia declarada', es: 'Frecuencia declarada' },
+  privacy: { gl: 'Privacidade e notas', es: 'Privacidad y notas' },
+  verified: { gl: 'Licenza verificada o', es: 'Licencia verificada el' },
+  report: {
+    gl: 'Informe completo de verificación das fontes',
+    es: 'Informe completo de verificación de las fuentes',
+  },
+  basemap: {
+    gl: 'Mapa base: © colaboradores de OpenStreetMap (ODbL), xerado con Protomaps. Tipografía dos rótulos: Noto Sans (SIL OFL).',
+    es: 'Mapa base: © colaboradores de OpenStreetMap (ODbL), generado con Protomaps. Tipografía de los rótulos: Noto Sans (SIL OFL).',
+  },
+};
+---
+
+<main id="contido" class="ga-page">
+  <h1>{L.title[lang]}</h1>
+  <p>{L.intro[lang]}</p>
+  <p class="ga-note">{L.collections[lang]}</p>
+  <p>
+    <a href={`${REPO}/blob/main/docs/sources-report.md`} rel="noopener">{L.report[lang]}</a> ·
+    <a href={`${REPO}/blob/main/docs/licences.md`} rel="noopener">docs/licences.md</a>
+  </p>
+
+  {
+    catalog.layers.map((l) => (
+      <section aria-labelledby={`f-${l.id}`}>
+        <h2 id={`f-${l.id}`}>{l.title[lang]}</h2>
+        <p>
+          <span class="ga-badge">{THEMES[l.theme]?.[lang]}</span>{' '}
+          <span class="ga-badge">{l.licence.collection === 'odbl' ? t(lang, 'collection_odbl') : t(lang, 'collection_bysa')}</span>
+        </p>
+        <dl>
+          <dt>{t(lang, 'operator')}</dt>
+          <dd><a href={l.operator.url} rel="noopener">{l.operator.name}</a></dd>
+          <dt>{t(lang, 'source')}</dt>
+          <dd><a href={l.source_url} rel="noopener">{l.source_url}</a></dd>
+          <dt>{t(lang, 'licence')}</dt>
+          <dd>
+            <a href={l.licence.text_url} rel="noopener">{l.licence.spdx ?? l.licence.text_url}</a>
+            {l.licence.quote && <blockquote>«{l.licence.quote}»</blockquote>}
+            {l.licence.notes && <p><small>{l.licence.notes}</small></p>}
+            <small>{L.verified[lang]} {l.licence.verified_at}</small>
+          </dd>
+          <dt>{L.attribution[lang]}</dt>
+          <dd>{l.attribution}</dd>
+          <dt>{L.frequency[lang]}</dt>
+          <dd>{l.update_frequency.declared}{l.update_frequency.measured ? ` · ${l.update_frequency.measured}` : ''}</dd>
+          <dt>{L.privacy[lang]}</dt>
+          <dd>{l.privacy_notes}</dd>
+        </dl>
+      </section>
+    ))
+  }
+
+  <h2>OpenStreetMap</h2>
+  <p>{L.basemap[lang]}</p>
+</main>
+
+<style>
+  dl {
+    display: grid;
+    grid-template-columns: minmax(120px, max-content) 1fr;
+    gap: 4px 16px;
+    font-size: var(--gs-texto-sm);
+  }
+  dt {
+    color: var(--text-muted);
+  }
+  dd {
+    margin: 0;
+    overflow-wrap: anywhere;
+  }
+  blockquote {
+    margin: 4px 0;
+    padding-left: 10px;
+    border-left: 3px solid var(--border);
+  }
+  @media (max-width: 560px) {
+    dl {
+      grid-template-columns: 1fr;
+    }
+    dd {
+      margin-bottom: 8px;
+    }
+  }
+</style>

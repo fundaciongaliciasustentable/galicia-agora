@@ -1,0 +1,123 @@
+---
+import type { Lang } from '../i18n';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const REPO = 'https://github.com/fundaciongaliciasustentable/galicia-agora';
+---
+
+<main id="contido" class="ga-page">
+  {
+    lang === 'gl' ? (
+      <>
+        <h1>Sobre Galicia Agora</h1>
+        <p>
+          Galicia Agora reúne nun mapa os datos abertos que describen o país neste momento: o tempo, o aire, os
+          lumes, os trens, os límites e os espazos protexidos. Promóveo a Fundación Galicia Sustentable. Non pide
+          rexistro, non usa cookies nin analítica e non vende nada.
+        </p>
+
+        <h2>Como traballamos</h2>
+        <ul>
+          <li>Só usamos fontes cunha licenza comprobada. Cada capa nomea o operador orixinal e a licenza.</li>
+          <li>Cada dato leva a hora en que o publicou a fonte. Se a fonte non a indica, dicímolo.</li>
+          <li>
+            Cando unha fonte falla, conservamos o último dato bo e marcámolo como desactualizado. Un dato vello
+            nunca se amosa coma se fose actual.
+          </li>
+          <li>Todo se serve desde este sitio: o navegador non fai peticións a terceiros.</li>
+          <li>O código é aberto (AGPL-3.0) e os datos derivados publícanse baixo ODbL 1.0.</li>
+        </ul>
+
+        <h2>Cifras que non coinciden</h2>
+        <p>
+          Algunhas fontes miden o mesmo fenómeno con métodos distintos. A superficie queimada en 2025 é o caso máis
+          claro: a Xunta e o sistema europeo EFFIS dan cifras diferentes. Amosamos as dúas, coa súa fonte e
+          cunha nota sobre o método. A Xunta atribúe a diferenza a criterios de medición; EFFIS estima a área a
+          partir de imaxes de satélite. Non tomamos partido.
+        </p>
+
+        <h2>Privacidade</h2>
+        <ul>
+          <li>Non publicamos datos persoais nin titularidade catastral.</li>
+          <li>
+            As posicións exactas dos xacementos arqueolóxicos xeneralízanse a arredor de 1 km para evitar o
+            expolio.
+          </li>
+          <li>
+            As posicións dos trens publícanse co atraso da propia fonte. As embarcacións pequenas, cando se
+            incorporen, levarán un atraso de 30 minutos.
+          </li>
+        </ul>
+
+        <h2>Limitacións</h2>
+        <p>
+          Os datos en tempo real adoitan ser provisionais: a fonte pode corrixilos despois. Os focos de calor
+          detectados por satélite non son lumes confirmados. A cobertura depende de cada rede de medida.
+        </p>
+
+        <h2>Contacto e código</h2>
+        <p>
+          Correo: galiciasustentable@galiciasustentable.org. Código, metodoloxía e informe de fontes en{' '}
+          <a href={REPO} rel="noopener">GitHub</a>.
+        </p>
+      </>
+    ) : (
+      <>
+        <h1>Acerca de Galicia Agora</h1>
+        <p>
+          Galicia Agora reúne en un mapa los datos abiertos que describen Galicia en este momento: el tiempo, el
+          aire, los incendios, los trenes, los límites y los espacios protegidos. Lo promueve la Fundación Galicia
+          Sustentable. No pide registro, no usa cookies ni analítica y no vende nada.
+        </p>
+
+        <h2>Cómo trabajamos</h2>
+        <ul>
+          <li>Solo usamos fuentes con una licencia comprobada. Cada capa nombra al operador original y la licencia.</li>
+          <li>Cada dato lleva la hora en que lo publicó la fuente. Si la fuente no la indica, lo decimos.</li>
+          <li>
+            Cuando una fuente falla, conservamos el último dato bueno y lo marcamos como desactualizado. Un dato
+            antiguo nunca se muestra como si fuera actual.
+          </li>
+          <li>Todo se sirve desde este sitio: el navegador no hace peticiones a terceros.</li>
+          <li>El código es abierto (AGPL-3.0) y los datos derivados se publican bajo ODbL 1.0.</li>
+        </ul>
+
+        <h2>Cifras que no coinciden</h2>
+        <p>
+          Algunas fuentes miden el mismo fenómeno con métodos distintos. La superficie quemada en 2025 es el caso
+          más claro: la Xunta y el sistema europeo EFFIS dan cifras diferentes. Mostramos las dos, con su fuente y
+          una nota sobre el método. La Xunta atribuye la diferencia a criterios de medición; EFFIS estima el área a
+          partir de imágenes de satélite. No tomamos partido.
+        </p>
+
+        <h2>Privacidad</h2>
+        <ul>
+          <li>No publicamos datos personales ni titularidad catastral.</li>
+          <li>
+            Las posiciones exactas de los yacimientos arqueológicos se generalizan a unos 1 km para evitar el
+            expolio.
+          </li>
+          <li>
+            Las posiciones de los trenes se publican con el retraso de la propia fuente. Las embarcaciones
+            pequeñas, cuando se incorporen, llevarán un retraso de 30 minutos.
+          </li>
+        </ul>
+
+        <h2>Limitaciones</h2>
+        <p>
+          Los datos en tiempo real suelen ser provisionales: la fuente puede corregirlos después. Los focos de calor
+          detectados por satélite no son incendios confirmados. La cobertura depende de cada red de medida.
+        </p>
+
+        <h2>Contacto y código</h2>
+        <p>
+          Correo: galiciasustentable@galiciasustentable.org. Código, metodología e informe de fuentes en{' '}
+          <a href={REPO} rel="noopener">GitHub</a>.
+        </p>
+      </>
+    )
+  }
+</main>

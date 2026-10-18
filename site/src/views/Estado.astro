@@ -1,0 +1,80 @@
+---
+import { displayStatus, loadCatalog } from '../catalog';
+import { absoluteTime, type Lang, t } from '../i18n';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const catalog = loadCatalog();
+const L = {
+  title: { gl: 'Estado das fontes', es: 'Estado de las fuentes' },
+  intro: {
+    gl: 'Cada capa descárgase de forma automática. Se unha fonte falla ou devolve datos inválidos, conservamos o último ficheiro bo e marcámolo como desactualizado. Nunca se amosa un dato vello coma se fose actual.',
+    es: 'Cada capa se descarga de forma automática. Si una fuente falla o devuelve datos inválidos, conservamos el último fichero bueno y lo marcamos como desactualizado. Nunca se muestra un dato antiguo como si fuera actual.',
+  },
+  generated: { gl: 'Táboa xerada', es: 'Tabla generada' },
+  layer: { gl: 'Capa', es: 'Capa' },
+  status: { gl: 'Estado', es: 'Estado' },
+  failures: { gl: 'Fallos (7 días)', es: 'Fallos (7 días)' },
+  attempts: { gl: 'intentos', es: 'intentos' },
+  last_error: { gl: 'Último erro', es: 'Último error' },
+  alert: {
+    gl: 'Alerta: máis de tres ciclos sen actualizar',
+    es: 'Alerta: más de tres ciclos sin actualizar',
+  },
+  legend: {
+    gl: 'Actualizado: a última descarga boa está dentro do prazo da capa. Desactualizado: amósase o último dato bo, pero a fonte non respondeu ben no prazo. Sen datos: nunca se obtivo un ficheiro válido.',
+    es: 'Actualizado: la última descarga buena está dentro del plazo de la capa. Desactualizado: se muestra el último dato bueno, pero la fuente no respondió bien en el plazo. Sin datos: nunca se obtuvo un fichero válido.',
+  },
+};
+---
+
+<main id="contido" class="ga-page">
+  <h1>{L.title[lang]}</h1>
+  <p>{L.intro[lang]}</p>
+  <p class="ga-note">{L.legend[lang]}</p>
+  <div class="ga-table-wrap">
+    <table class="ga-table">
+      <caption>{L.generated[lang]}: {absoluteTime(catalog.generated_at, lang)}</caption>
+      <thead>
+        <tr>
+          <th scope="col">{L.layer[lang]}</th>
+          <th scope="col">{t(lang, 'operator')}</th>
+          <th scope="col">{L.status[lang]}</th>
+          <th scope="col">{t(lang, 'published')}</th>
+          <th scope="col">{t(lang, 'fetched')}</th>
+          <th scope="col">{L.failures[lang]}</th>
+          <th scope="col">{L.last_error[lang]}</th>
+        </tr>
+      </thead>
+      <tbody>
+        {
+          catalog.layers.map((l) => {
+            const st = displayStatus(l);
+            const hist = l.meta?.history ?? [];
+            const fails = hist.filter((h) => !h.ok).length;
+            return (
+              <tr>
+                <th scope="row">{l.title[lang]}</th>
+                <td>{l.operator.name}</td>
+                <td>
+                  <span class="ga-status" data-status={st}>
+                    {t(lang, `status_${st}` as const)}
+                  </span>
+                  {l.meta?.alert && <div><small>{L.alert[lang]}</small></div>}
+                </td>
+                <td>{absoluteTime(l.meta?.published_at ?? null, lang) ?? t(lang, 'published_unknown')}</td>
+                <td>{absoluteTime(l.meta?.fetched_at ?? null, lang) ?? '—'}</td>
+                <td>
+                  {fails} / {hist.length} {L.attempts[lang]}
+                </td>
+                <td>{l.meta?.last_error ?? '—'}</td>
+              </tr>
+            );
+          })
+        }
+      </tbody>
+    </table>
+  </div>
+</main>
