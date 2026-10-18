@@ -1,0 +1,110 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://galicia-agora/schema/sources.schema.json",
+  "title": "Source verification register (sources.yaml)",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["sources"],
+  "properties": {
+    "sources": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/source" }
+    }
+  },
+  "$defs": {
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "name",
+        "phase",
+        "operator",
+        "endpoints",
+        "format",
+        "auth",
+        "frequency",
+        "limits",
+        "licence",
+        "coverage",
+        "risks",
+        "verdict",
+        "verified"
+      ],
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" },
+        "name": { "type": "string" },
+        "phase": { "enum": [1, "conditional"] },
+        "layers": { "type": "array", "items": { "type": "string" } },
+        "operator": { "type": "string" },
+        "endpoints": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["url", "status"],
+            "properties": {
+              "url": { "type": "string" },
+              "status": {
+                "description": "HTTP status seen on the real call, or 'not-called' with a reason in notes",
+                "anyOf": [{ "type": "integer" }, { "const": "not-called" }]
+              },
+              "documented": { "type": "boolean" },
+              "notes": { "type": "string" }
+            }
+          }
+        },
+        "format": { "type": "string" },
+        "auth": { "type": "string" },
+        "frequency": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["declared", "measured"],
+          "properties": {
+            "declared": { "type": "string" },
+            "measured": { "type": "string" },
+            "evidence": { "type": "string" }
+          }
+        },
+        "limits": { "type": "string" },
+        "licence": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["name", "url", "verified", "odbl_compatible"],
+          "properties": {
+            "name": { "type": "string" },
+            "url": { "type": "string" },
+            "quote": { "type": "string", "maxLength": 200 },
+            "verified": { "type": "boolean" },
+            "odbl_compatible": { "enum": [true, false, "doubt", "unknown"] }
+          }
+        },
+        "coverage": { "type": "string" },
+        "risks": { "type": "array", "items": { "type": "string" } },
+        "verdict": { "enum": ["go", "no-go", "conditional"] },
+        "verdict_notes": { "type": "string" },
+        "alternative": { "type": "string" },
+        "verified": {
+          "description": "Overall: true only if endpoint and licence were confirmed by real calls/cited pages.",
+          "type": "boolean"
+        },
+        "checked_at": { "type": "string", "format": "date" },
+        "samples": { "type": "array", "items": { "type": "string" } },
+        "probe": {
+          "description": "Settings for the frequency-measurement probe (probe.yml).",
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["url"],
+          "properties": {
+            "url": { "type": "string" },
+            "timestamp_path": {
+              "description": "Regex with one capture group that extracts the source's own publication timestamp from the body.",
+              "type": "string"
+            },
+            "env_key": { "type": "string" }
+          }
+        }
+      }
+    }
+  }
+}

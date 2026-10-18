@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://galicia-agora/schema/meta.schema.json",
+  "title": "Per-layer publication metadata (meta.json)",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "layer_id",
+    "published_at",
+    "fetched_at",
+    "status",
+    "feature_count",
+    "source_url",
+    "licence",
+    "attribution",
+    "checksum",
+    "last_error",
+    "history"
+  ],
+  "properties": {
+    "layer_id": { "type": "string" },
+    "published_at": {
+      "description": "Publication time reported by the source; null when the source does not provide one.",
+      "type": ["string", "null"],
+      "format": "date-time"
+    },
+    "fetched_at": { "type": "string", "format": "date-time" },
+    "last_success_at": { "type": ["string", "null"], "format": "date-time" },
+    "status": { "enum": ["fresh", "stale", "failed"] },
+    "consecutive_failures": { "type": "integer", "minimum": 0 },
+    "feature_count": { "type": "integer", "minimum": 0 },
+    "source_url": { "type": "string", "format": "uri" },
+    "licence": { "type": "string" },
+    "attribution": { "type": "string" },
+    "checksum": { "type": ["string", "null"], "pattern": "^sha256:[0-9a-f]{64}$" },
+    "last_error": { "type": ["string", "null"] },
+    "history": {
+      "description": "Attempts in the last 7 days, newest first.",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["at", "ok"],
+        "properties": {
+          "at": { "type": "string", "format": "date-time" },
+          "ok": { "type": "boolean" },
+          "error": { "type": "string" }
+        }
+      }
+    }
+  }
+}
