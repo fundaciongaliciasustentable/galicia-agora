@@ -4,7 +4,11 @@ Mapa público de Galicia con datos abertos. Promotor: Fundación Galicia Sustent
 
 ## Estado
 
-Fase 0 (verificación das fontes). Non se constrúe a Fase 1 sen aprobación explícita. Backlog (fases 2–5) só documentado en `docs/roadmap.md`.
+Fase 1 en curso (aprobada o 18/10/2026 para as capas que non precisan VPS). Backlog (fases 2–5) só documentado en `docs/roadmap.md`.
+
+- Capas feitas: estacions-meteo, calidade-aire, focos-calor, perimetros-queimados, tren, concellos-parroquias, rede-natura, espazos-naturais-galicia, patrimonio.
+- Pendentes: caudais (chave mgafos), buses (chave NAP dá 401), zonas de produción (licenza e xeometría de Intecmar), entidades de poboación, avións e buques (VPS, `docs/vps-design.md`; buques ademais sen termos de AISStream).
+- Despregue: `update.yml` despregará por FTPS cando existan os segredos `FTPS_*`.
 
 ## Comandos
 
@@ -13,11 +17,13 @@ Fase 0 (verificación das fontes). Non se constrúe a Fase 1 sen aprobación exp
 | `npm test` | Tests (vitest) |
 | `npm run lint` | Biome + `tsc --noEmit` |
 | `npm run validate` | Valida `pipeline/sources.yaml` e cada `layers/*/layer.yaml` |
-| `npm run probe [-- --source=<id>]` | Sonda de frecuencia (escribe en `probe-log/`) |
-| `npm run probe -- --summary` | Intervalo medido por fonte a partir do log |
-| `npm run ingest [-- --layer=<id>]` | Fase 1 |
-| `npm run status` | Estado de cada capa (`data-out/<id>/meta.json`) |
-| `npm run dev` / `build` | Fase 1 (Astro en `site/`) |
+| `npm run ingest [-- --layer=<id>] [-- --force]` | Descarga as capas que tocan (ou unha) en `data-out/` |
+| `npm run status` | Estado de cada capa; sae con 3 se algunha precisa alerta |
+| `npm run catalog` | Escribe `data-out/catalog.json` |
+| `make basemap assets` | Mapa base PMTiles de Galicia, glifos e sprites en `build/` |
+| `npm run dev` / `npm run build` | Prepara `site/public`, Astro, Pagefind |
+| `npm run audit` | Falla se o sitio construído carga algo doutro orixe |
+| `npm run probe [-- --summary]` | Sonda de frecuencia da Fase 0 |
 
 ## Regras non negociables
 

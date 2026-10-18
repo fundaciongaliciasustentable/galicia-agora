@@ -5,7 +5,7 @@ Só a Fase 0 e a Fase 1 están en construción. O resto é backlog: documentado,
 | Fase | Contido | Estado |
 |---|---|---|
 | 0 | Verificación das fontes | Entregada (provisional ata medir frecuencias) |
-| 1 | Lanzamento: 13 capas (12 do encargo e tren), mapa base, buscador, `/estado`, `/fontes`, `/sobre` | Pendente de aprobación |
+| 1 | Lanzamento: 13 capas (12 do encargo e tren), mapa base, buscador, `/estado`, `/fontes`, `/sobre` | En curso: 9 capas, sitio e CI feitos; pendentes chaves, Intecmar, entidades, VPS e FTPS |
 | 2 | Territorio e litoral | Backlog |
 | 3 | Economía, vivenda e transparencia | Backlog |
 | 4 | O que ninguén máis pode copiar | Backlog |
