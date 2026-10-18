@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-18T18:20:12.639Z",
+  "generated_at": "2026-10-18T19:05:32.399Z",
   "layers": [
     {
       "id": "calidade-aire",
@@ -289,18 +289,22 @@
       },
       "meta": {
         "layer_id": "estacions-meteo",
-        "published_at": "2026-10-18T18:10:00.000Z",
-        "fetched_at": "2026-10-18T18:20:10.038Z",
-        "last_success_at": "2026-10-18T18:20:10.038Z",
+        "published_at": "2026-10-18T18:50:00.000Z",
+        "fetched_at": "2026-10-18T19:05:27.333Z",
+        "last_success_at": "2026-10-18T19:05:27.333Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 154,
         "source_url": "https://servizos.meteogalicia.gal/mgrss/observacion/ultimos10minEstacionsMeteo.action",
         "licence": "CC-BY-SA-4.0",
         "attribution": "Datos: MeteoGalicia (Xunta de Galicia)",
-        "checksum": "sha256:abf2a3d856941054648ce38e56bc52d3a6619f6f320156062a8ad70b63bf24f8",
+        "checksum": "sha256:864cafc4f74d74e5080cd191e8df2f31845b08e0b06e8090e5777ca9506f7415",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-10-18T19:05:27.333Z",
+            "ok": true
+          },
           {
             "at": "2026-10-18T18:20:10.038Z",
             "ok": true
@@ -379,8 +383,8 @@
       "meta": {
         "layer_id": "focos-calor",
         "published_at": "2026-10-18T15:18:00.000Z",
-        "fetched_at": "2026-10-18T18:20:10.792Z",
-        "last_success_at": "2026-10-18T18:20:10.792Z",
+        "fetched_at": "2026-10-18T19:05:29.786Z",
+        "last_success_at": "2026-10-18T19:05:29.786Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 40,
@@ -390,6 +394,10 @@
         "checksum": "sha256:4a898998a8a8108aa9f763ff11d989c7d6d9777db180318e258b2c53d3d30086",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-10-18T19:05:29.786Z",
+            "ok": true
+          },
           {
             "at": "2026-10-18T18:20:10.792Z",
             "ok": true
@@ -721,18 +729,22 @@
       "volatile": true,
       "meta": {
         "layer_id": "tren",
-        "published_at": "2026-10-18T18:19:52.000Z",
-        "fetched_at": "2026-10-18T18:20:11.536Z",
-        "last_success_at": "2026-10-18T18:20:11.536Z",
+        "published_at": "2026-10-18T19:05:13.000Z",
+        "fetched_at": "2026-10-18T19:05:30.797Z",
+        "last_success_at": "2026-10-18T19:05:30.797Z",
         "status": "fresh",
         "consecutive_failures": 0,
-        "feature_count": 18,
+        "feature_count": 16,
         "source_url": "https://gtfsrt.renfe.com/vehicle_positions_LD.json",
         "licence": "CC-BY-4.0",
         "attribution": "Origen de los datos: Renfe Operadora",
-        "checksum": "sha256:87379aabc81e4450b8da96af0c02dfc0e1e6316312fafff43ac206219a8d1b50",
+        "checksum": "sha256:31f7a39c3bd4afbbd0a0a522affb4aa891ed2f6110ae4e063522641d51eb0490",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-10-18T19:05:30.797Z",
+            "ok": true
+          },
           {
             "at": "2026-10-18T18:20:11.536Z",
             "ok": true
