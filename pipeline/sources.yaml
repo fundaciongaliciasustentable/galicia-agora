@@ -1,2 +1,778 @@
-# Source verification register. Schema: pipeline/schema/sources.schema.json
-sources: []
+# Source verification register (Phase 0). Schema: pipeline/schema/sources.schema.json
+# All calls made 2026-10-18 with the GaliciaAgora User-Agent. Raw samples live in
+# pipeline/samples/<id>/ (local only, not committed). Anything not confirmed by a
+# real call or a cited page is written as "non verificado".
+
+sources:
+  # ───────────────────────── Tempo e aire ─────────────────────────
+  - id: meteogalicia-estacions
+    name: MeteoGalicia — observación das estacións (10 min)
+    phase: 1
+    layers: [estacions-meteo]
+    operator: MeteoGalicia (Consellería de Medio Ambiente, Xunta de Galicia)
+    endpoints:
+      - url: https://servizos.meteogalicia.gal/mgrss/observacion/ultimos10minEstacionsMeteo.action
+        status: 200
+        documented: true
+        notes: "Sen parámetros devolve todas as estacións en servizo (~322 KB). Filtros idEst, idParam. Doc: meteogalicia.gal/datosred/infoweb/meteo/docs/rss/JSON_ultimos10min_gl.pdf"
+      - url: https://servizos.meteogalicia.gal/mgrss/observacion/listaEstacionsMeteo.action
+        status: 200
+        documented: true
+        notes: 155 estacións con lat/lon, concello e altitude.
+    format: JSON
+    auth: ningunha
+    frequency:
+      declared: 10 min
+      measured: "10 min, chegada escalonada con atraso de 5–15 min (dúas chamadas, 07:44Z e 07:55Z)"
+      evidence: Campo instanteLecturaUTC. Sen Last-Modified nin ETag.
+    limits: "Aviso do 17/09/2026: bloqueo temporal de IP por baixa eficiencia de peticións (limiar non publicado). Recomendan unha chamada para todas as estacións cada 10 min."
+    licence:
+      name: "Aviso legal MeteoGalicia (atribución) / abertos.xunta.gal dataset 0114 (CC BY-SA 4.0)"
+      url: https://www.meteogalicia.gal/web/aviso-legal
+      quote: "utilizada libremente… co único compromiso de mencionar expresamente a MeteoGalicia"
+      verified: true
+      odbl_compatible: doubt
+    coverage: Toda Galicia, 155 estacións.
+    risks:
+      - Política de bloqueo de IP con limiar descoñecido.
+      - Algunhas estacións con datos vellos (unha con data 2026-09-23); filtrar por idade.
+      - Dúas licenzas para o mesmo dato (atribución e BY-SA).
+    verdict: go
+    verdict_notes: Unha chamada global cada 10 min. Descartar lecturas con máis dunha hora.
+    verified: true
+    checked_at: 2026-10-18
+    samples: [meteogalicia/ultimos10min.json, meteogalicia/estacions.json, meteogalicia/JSON_ultimos10min_gl.pdf]
+    probe:
+      url: https://servizos.meteogalicia.gal/mgrss/observacion/ultimos10minEstacionsMeteo.action?idParam=TA_AVG_1.5m
+      timestamp_path: '"instanteLecturaUTC":"([^"]+)"'
+
+  - id: meteosix-v5
+    name: MeteoSIX API v5
+    phase: 1
+    operator: MeteoGalicia
+    endpoints:
+      - url: https://servizos.meteogalicia.gal/apiv5/
+        status: 200
+        documented: true
+        notes: 'Sen chave responde 200 con {"exception":{"code":"005",...}}.'
+    format: JSON
+    auth: Chave persoal gratuíta (por correo)
+    frequency: { declared: "predición por modelo", measured: non verificado }
+    limits: non verificado
+    licence:
+      name: Aviso legal MeteoGalicia
+      url: https://www.meteogalicia.gal/web/aviso-legal
+      verified: true
+      odbl_compatible: doubt
+    coverage: Galicia (malla dos modelos WRF, WW3, SWAN, ROMS, MOHID).
+    risks:
+      - "Só predicións, mareas e orto/ocaso: non ten observacións."
+    verdict: no-go
+    verdict_notes: Non serve para a capa de estacións. Útil na Fase 2 (ondas e mareas).
+    alternative: meteogalicia-estacions
+    verified: true
+    checked_at: 2026-10-18
+    samples: [meteogalicia/meteosix_v5_nokey.txt]
+
+  - id: calidade-aire
+    name: Rede de Calidade do Aire de Galicia
+    phase: 1
+    layers: [calidade-aire]
+    operator: MeteoGalicia / Consellería de Medio Ambiente
+    endpoints:
+      - url: https://servizos.meteogalicia.gal/mgrss/caire/jsonICAActual.action
+        status: 200
+        documented: true
+        notes: 46 estacións con ICA e contaminante dominante.
+      - url: https://servizos.meteogalicia.gal/mgrss/caire/jsonEstacionesCaire.action
+        status: 200
+        documented: true
+        notes: 48 estacións con lat/lon e parámetros.
+      - url: https://servizos.meteogalicia.gal/mgrss/caire/jsonDatosActualesParametro.action?idParametro=N
+        status: 200
+        documented: true
+        notes: "Un contaminante, todas as estacións. Doc IT/052: meteo-estaticos.xunta.gal/datosred/infoweb/caire/informes/OTROS/GL/IT_JSON.pdf"
+    format: JSON
+    auth: ningunha
+    frequency:
+      declared: horaria
+      measured: "horaria (fecha 09:00 local en todas as estacións ás 09:5x)"
+      evidence: campo fecha
+    limits: Mesma política de bloqueo de IP de MeteoGalicia.
+    licence:
+      name: abertos.xunta.gal dataset 0055 (CC BY-SA 4.0) / aviso legal MeteoGalicia
+      url: https://abertos.xunta.gal/condicions-de-uso
+      verified: true
+      odbl_compatible: doubt
+    coverage: Galicia, 46–48 estacións.
+    risks:
+      - Datos non validados (flag T); amosar o aviso.
+    verdict: go
+    verified: true
+    checked_at: 2026-10-18
+    samples: [calidade-aire/jsonICAActual.json, calidade-aire/jsonEstacionesCaire.json, calidade-aire/IT_JSON.pdf]
+    probe:
+      url: https://servizos.meteogalicia.gal/mgrss/caire/jsonICAActual.action
+      timestamp_path: '"fecha":"([^"]+)"'
+
+  - id: eea-aire
+    name: EEA Air Quality Download Service (reserva)
+    phase: 1
+    operator: European Environment Agency
+    endpoints:
+      - url: https://eeadmz1-downloads-api-appservice.azurewebsites.net/ParquetFile/urls
+        status: 200
+        documented: true
+        notes: POST; 41 ficheiros Parquet galegos para NO2. Last-Modified de varios días atrás.
+    format: Parquet
+    auth: ningunha
+    frequency: { declared: '"up-to-date"', measured: "días de atraso (Last-Modified 14–15/10/2026)" }
+    limits: non verificado
+    licence:
+      name: CC BY 4.0 (aviso legal EEA, non confirmado por conxunto)
+      url: https://www.eea.europa.eu/en/legal-notice
+      quote: "EEA materials are published under the CC-BY license"
+      verified: false
+      odbl_compatible: true
+    coverage: Estacións galegas notificadas por España.
+    risks: [Non é tempo real.]
+    verdict: conditional
+    verdict_notes: Só reserva histórica, non para a capa en vivo.
+    verified: false
+    checked_at: 2026-10-18
+    samples: [eea-aire/parquet_urls_ES_NO2_UTD.csv]
+
+  # ───────────────────────── Auga e mar ─────────────────────────
+  - id: augas-galicia-aforos
+    name: Rede foronómica MeteoGalicia–Augas de Galicia (caudais e niveis)
+    phase: 1
+    layers: [caudais-rios]
+    operator: Augas de Galicia e MeteoGalicia (Xunta de Galicia)
+    endpoints:
+      - url: https://servizos.meteogalicia.gal/mgafos/json/estadoActual.action?cod=CLAVE
+        status: 200
+        documented: true
+        notes: Sen chave devolve unha páxina HTML de erro. Esquema e cadencia non verificados.
+      - url: https://servizos.meteogalicia.gal/mgafos/estacions/listEstadoActual.action
+        status: 200
+        documented: false
+        notes: Endpoint de visor non documentado, HTML, unha estación por chamada. Non se usa.
+    format: JSON (segundo a documentación)
+    auth: "Chave persoal gratuíta, por correo a administracion-web.meteogalicia@xunta.gal; revogable"
+    frequency: { declared: "10 min (datos dos últimos 30 días)", measured: non verificado }
+    limits: "Datos de 10 min: máximo 2 h para todas as estacións ou 96 h para unha."
+    licence:
+      name: non verificado (presumiblemente aviso legal MeteoGalicia)
+      url: https://www.meteogalicia.gal/web/aviso-legal
+      verified: false
+      odbl_compatible: unknown
+    coverage: "Galicia-Costa. Número de puntos non verificado (a web di 43; as notas de prensa, 95)."
+    risks:
+      - Sen chave non se pode verificar.
+      - Datos non validados, só de referencia.
+    verdict: conditional
+    verdict_notes: Solicitar a chave e repetir a verificación.
+    alternative: Ningunha limpa. Non se extrae o visor.
+    verified: false
+    checked_at: 2026-10-18
+    samples: [augas-galicia/mgafos_estadoActual_nokey.txt, augas-galicia/JSON_Aforos_Estado_Actual_es.pdf]
+
+  - id: saih-minosil
+    name: SAIH Miño-Sil
+    phase: 1
+    layers: [caudais-rios]
+    operator: Confederación Hidrográfica do Miño-Sil
+    endpoints:
+      - url: https://saih.chminosil.es/index.php?url=/datos/resumen
+        status: 200
+        documented: false
+        notes: Táboa HTML (73 puntos de nivel, ~15 min). Precisa cookie de sesión. Sen feed lexible por máquina.
+    format: HTML (sen feed)
+    auth: ningunha
+    frequency: { declared: non indicada, measured: "~15 min (marcas 09:30 e 09:45 locais)" }
+    limits: non verificado
+    licence:
+      name: Nota legal CHMS (RD 1495/2011, reutilización con atribución)
+      url: https://saih.chminosil.es/index.php?url=/presentacion/notalegal
+      quote: "para fines comerciales y no comerciales"
+      verified: true
+      odbl_compatible: true
+    coverage: Conca Miño-Sil (Lugo, Ourense, partes de León e Zamora).
+    risks: [Só HTML; extraelo sería raspar un visor.]
+    verdict: no-go
+    verdict_notes: Licenza boa, pero sen feed aberto.
+    alternative: Pedir feed á CHMS. Mentres, ligazón ao SAIH e anuario de aforos do MITECO (histórico).
+    verified: true
+    checked_at: 2026-10-18
+    samples: [saih-minosil/resumen_niveles.html]
+
+  - id: intecmar-zonas
+    name: Intecmar — estado das zonas de produción (biotoxinas)
+    phase: 1
+    layers: [zonas-producion]
+    operator: Intecmar (Consellería do Mar, Xunta de Galicia)
+    endpoints:
+      - url: https://www.intecmar.gal/Api/EstadoZonasProducion/EstadoZonasBiotoxinas
+        status: 200
+        documented: true
+        notes: "186 zonas, 20 pechadas o 18/10. Filtros Tipo, Codigo, Estado. Doc: intecmar.gal/Informacion/ServizoEstadoZonas.pdf"
+      - url: https://www.intecmar.gal/Api/EstadoZonasProducion/ClasificacionMicrobioloxicaZonas
+        status: 200
+        documented: true
+    format: JSON (sen xeometría)
+    auth: ningunha
+    frequency:
+      declared: diaria
+      measured: "días laborables (dataActualizacion 2026-10-17T10:07+02:00, sen actualización o sábado)"
+    limits: non verificado
+    licence:
+      name: Aviso legal do portal da Xunta (reutilización con cita)
+      url: https://www.xunta.gal/aviso-legal-do-portal-da-xunta
+      verified: false
+      odbl_compatible: doubt
+    coverage: Litoral galego, 186 zonas.
+    risks:
+      - Sen polígonos das zonas; hai que atopar a xeometría oficial (non verificado).
+      - O aviso legal fala do «Portal»; non está confirmado que se aplique á API.
+    verdict: conditional
+    verdict_notes: Pedir confirmación de licenza a Intecmar e a fonte oficial dos polígonos.
+    verified: true
+    checked_at: 2026-10-18
+    samples: [intecmar/EstadoZonasBiotoxinas.json, intecmar/ServizoEstadoZonas.pdf]
+    probe:
+      url: https://www.intecmar.gal/Api/EstadoZonasProducion/EstadoZonasBiotoxinas
+      timestamp_path: '"dataActualizacion":"([^"]+)"'
+
+  # ───────────────────────── Lume e monte ─────────────────────────
+  - id: firms
+    name: NASA FIRMS — focos activos
+    phase: 1
+    layers: [focos-calor]
+    operator: NASA LANCE FIRMS (NASA/GSFC/ESDIS)
+    endpoints:
+      - url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/noaa-20-viirs-c2/csv/J1_VIIRS_C2_Europe_24h.csv
+        status: 200
+        documented: false
+        notes: Ficheiros Europa 24h sen chave (SNPP, NOAA-20, NOAA-21, MODIS). Ruta non ligada no HTML estático.
+      - url: https://firms.modaps.eosdis.nasa.gov/api/area/csv/{FIRMS_MAP_KEY}/VIIRS_SNPP_NRT/-9.35,41.8,-6.7,43.8/1
+        status: 400
+        documented: true
+        notes: Con chave falsa responde "Invalid MAP_KEY." Precisa MAP_KEY gratuíta.
+    format: CSV
+    auth: "Ficheiros rexionais: ningunha. API por área: MAP_KEY gratuíta."
+    frequency:
+      declared: "case tempo real (~3 h tras o paso, non verificado)"
+      measured: "Last-Modified 06:48Z; varias veces ao día"
+    limits: "API: 5000 transaccións cada 10 min."
+    licence:
+      name: CC0 (NASA Earthdata data use guidance), cita moi recomendada
+      url: https://www.earthdata.nasa.gov/engage/open-data-services-software-policies/data-use-guidance
+      quote: "data provided from a NASA-led mission are licensed as Creative Commons Zero"
+      verified: true
+      odbl_compatible: true
+    coverage: Europa; 2–12 focos en Galicia nas últimas 24 h, segundo o satélite.
+    risks:
+      - Rutas sen chave non documentadas.
+      - NOAA-20/21 son misións NOAA; licenza específica non verificada.
+    verdict: go
+    verdict_notes: Ficheiros de 24 h recortados ao bbox. MAP_KEY opcional para consultas por área.
+    verified: true
+    checked_at: 2026-10-18
+    samples: [firms/J1_VIIRS_C2_Europe_24h.csv, firms/SUOMI_VIIRS_C2_Europe_24h.csv]
+    probe:
+      url: https://firms.modaps.eosdis.nasa.gov/data/active_fire/noaa-20-viirs-c2/csv/J1_VIIRS_C2_Europe_24h.csv
+
+  - id: effis
+    name: Copernicus EFFIS — áreas queimadas
+    phase: 1
+    layers: [perimetros-queimados]
+    operator: Comisión Europea, JRC / Copernicus EMS
+    endpoints:
+      - url: https://maps.effis.emergency.copernicus.eu/effis?service=WFS&request=GetCapabilities
+        status: 200
+        documented: true
+        notes: 'Título "EFFIS - OGC/WFS Test Service". Capas ms:modis.ba.poly.season e .2016–.2025. Saída GeoJSON.'
+      - url: https://maps.effis.emergency.copernicus.eu/effis?service=WFS&request=GetFeature&version=2.0.0&typeNames=ms:modis.ba.poly.season&outputFormat=geojson
+        status: 200
+        documented: true
+        notes: "Bbox Galicia: 261 entidades (47 nas catro provincias galegas). LASTUPDATE máis recente 2026-09-24."
+    format: GeoJSON / GML (WFS 2.0)
+    auth: ningunha
+    frequency: { declared: non indicada, measured: "última actualización da tempada 2026-09-24 (pendente de medir)" }
+    limits: non verificado
+    licence:
+      name: CC BY 4.0, © Unión Europea
+      url: https://forest-fire.emergency.copernicus.eu/about-effis/data-license
+      verified: true
+      odbl_compatible: true
+    coverage: Europa; o bbox inclúe Portugal e Castela e León (filtrar por PROVINCE).
+    risks:
+      - Servizo etiquetado como "Test".
+      - Cifras distintas das oficiais da Xunta; preséntanse xuntas.
+    verdict: go
+    verified: true
+    checked_at: 2026-10-18
+    samples: [effis/wfs_getcapabilities.xml, effis/modis_ba_poly_season_galicia.geojson]
+
+  - id: xunta-incendios
+    name: Xunta — estatística anual de incendios forestais
+    phase: 1
+    layers: [perimetros-queimados]
+    operator: Consellería do Medio Rural, Xunta de Galicia
+    endpoints:
+      - url: https://mediorural.xunta.gal/sites/default/files/estatisticas/2025/Lumes-2025-por-Distrito.xlsx
+        status: 200
+        documented: true
+        notes: "2025: 1.475 lumes, 118.763,65 ha. Last-Modified 25/03/2026. Por distrito forestal, sen xeometría."
+    format: XLSX anual
+    auth: ningunha
+    frequency: { declared: anual, measured: anual }
+    limits: ningún coñecido
+    licence:
+      name: Aviso legal Medio Rural (reutilización con cita, sen desnaturalizar)
+      url: https://mediorural.xunta.gal/gl/aviso-legal
+      quote: "para usos comerciais e non comerciais"
+      verified: true
+      odbl_compatible: true
+    coverage: Galicia por provincia e distrito.
+    risks:
+      - "O encargo cita 118.966 ha (cifra de prensa, nov. 2025); o ficheiro oficial di 118.763,65 ha. Úsase a do ficheiro, citada."
+    verdict: go
+    verdict_notes: Referencia anual xunto a EFFIS, sen tomar partido.
+    verified: true
+    checked_at: 2026-10-18
+    samples: [xunta-incendios/Lumes-2025-por-Distrito.xlsx]
+
+  # ───────────────────────── Mobilidade ─────────────────────────
+  - id: adsb-lol
+    name: adsb.lol
+    phase: 1
+    layers: [avions]
+    operator: adsb.lol (rede comunitaria)
+    endpoints:
+      - url: https://api.adsb.lol/v2/point/42.8/-8.0/150
+        status: 200
+        documented: true
+        notes: 52 avións. cache-control no-store.
+    format: JSON
+    auth: "Ningunha hoxe; anunciada chave futura para quen alimente a rede."
+    frequency: { declared: tempo real, measured: tempo real }
+    limits: '"Rate limits are dynamic" (sen cifra).'
+    licence:
+      name: ODbL 1.0
+      url: https://www.adsb.lol/docs/open-data/api/
+      quote: "API License: ODbL 1.0"
+      verified: true
+      odbl_compatible: true
+    coverage: Galicia e mar próximo (150 NM).
+    risks:
+      - Chave futura vinculada a ter un receptor ADS-B.
+      - Matrículas e indicativos de avionetas privadas; valorar ocultar o campo r.
+    verdict: go
+    verdict_notes: Instantánea cada 1–2 min desde o servidor.
+    verified: true
+    checked_at: 2026-10-18
+    samples: [adsb-lol/point_42.8_-8.0_150.json]
+
+  - id: adsb-fi
+    name: adsb.fi (reserva)
+    phase: 1
+    operator: adsb.fi
+    endpoints:
+      - url: https://opendata.adsb.fi/api/v3/lat/42.8/lon/-8.0/dist/150
+        status: 200
+        documented: true
+    format: JSON
+    auth: ningunha
+    frequency: { declared: tempo real, measured: tempo real }
+    limits: 1 petición por segundo.
+    licence:
+      name: Uso persoal non comercial
+      url: https://github.com/adsbfi/opendata
+      quote: "for personal, non-commercial use only"
+      verified: true
+      odbl_compatible: false
+    coverage: Galicia.
+    risks: [Incompatible con ODbL e coa publicación.]
+    verdict: no-go
+    alternative: adsb-lol
+    verified: true
+    checked_at: 2026-10-18
+
+  - id: aisstream
+    name: AISStream.io
+    phase: 1
+    layers: [buques-ais]
+    operator: AISStream.io
+    endpoints:
+      - url: wss://stream.aisstream.io/v0/stream
+        status: not-called
+        documented: true
+        notes: Sen chave. Documentación revisada; ShipStaticData trae Type e Dimension.
+    format: JSON por websocket
+    auth: Chave gratuíta; prohibida a conexión directa desde o navegador.
+    frequency: { declared: stream, measured: non verificado }
+    limits: "3 conexións por conta e por IP; sen SLA."
+    licence:
+      name: non atopada (/terms dá 404)
+      url: https://aisstream.io/documentation
+      verified: false
+      odbl_compatible: unknown
+    coverage: non verificado
+    risks:
+      - Sen termos de redistribución publicados.
+    verdict: conditional
+    verdict_notes: Non se publica nada sen permiso escrito do operador. Se non chega, só agregados ou capa desactivada.
+    alternative: "EMODnet Human Activities, densidade de buques (CC BY 4.0, non verificado)."
+    verified: false
+    checked_at: 2026-10-18
+    samples: [aisstream/notes.md]
+
+  - id: nap-bus-xunta
+    name: GTFS dos autobuses da Xunta (NAP)
+    phase: 1
+    layers: [buses-xunta]
+    operator: Xunta de Galicia (publicado no NAP do MITRAMS)
+    endpoints:
+      - url: https://nap.transportes.gob.es/ConjuntoDato/Detail/1386
+        status: 200
+        documented: true
+        notes: "6.742 rutas, 24.823 paradas, 184.019 viaxes; 135,93 MB; validez 16/10–10/11/2026."
+      - url: https://nap.transportes.gob.es/api/Fichero/download/1584
+        status: 401
+        documented: true
+        notes: '"Api Key was not provided."'
+    format: GTFS (ZIP)
+    auth: Rexistro no NAP e chave de API.
+    frequency: { declared: "ata 24 h", measured: "actualizado 16/10/2026; xanela de validez de 3–4 semanas" }
+    limits: Acceso monitorizado; bloqueo por abuso.
+    licence:
+      name: Licenza de datos abertos do MITRAMS
+      url: https://nap.transportes.gob.es/licencia-datos
+      quote: "para fines comerciales y no comerciales"
+      verified: true
+      odbl_compatible: doubt
+    coverage: Toda a rede autonómica.
+    risks:
+      - Os datos brutos deben compartirse coa mesma licenza; os derivados poden ir noutra.
+      - Obrigas de amosar "Powered by MITRAMS" e de manter a información actualizada.
+    verdict: conditional
+    verdict_notes: Go en canto haxa rexistro e chave.
+    verified: true
+    checked_at: 2026-10-18
+    samples: [nap-bus-xunta/detail_1386.txt]
+
+  # ───────────────────────── Territorio ─────────────────────────
+  - id: ideg-limites
+    name: Límites administrativos (concellos, parroquias) — IET / IDEG
+    phase: 1
+    layers: [concellos-parroquias]
+    operator: Instituto de Estudos do Territorio (Xunta de Galicia)
+    endpoints:
+      - url: https://visorgis.cmati.xunta.es/cdix/descargas/visor_basico/Parroquias.zip
+        status: 200
+        documented: true
+        notes: HEAD; 19,7 MB; Last-Modified 01/06/2026.
+      - url: https://ideg.xunta.gal/servizos/rest/services/LimitesAdministrativos/LimitesAdministrativos/MapServer/18/query
+        status: 200
+        documented: true
+        notes: "ArcGIS REST, 3.785 parroquias, GeoJSON en EPSG:4326. Sen WFS (WFSServer dá 400)."
+    format: Shapefile ZIP / ArcGIS REST GeoJSON
+    auth: ningunha
+    frequency: { declared: "segundo límites IGN (02/2026)", measured: static }
+    limits: maxRecordCount 1000, con paxinación.
+    licence:
+      name: "IET: compatible con CC BY 4.0 / abertos.xunta.gal: CC BY-SA 4.0"
+      url: https://mapas.xunta.gal/gl/aviso-legal
+      quote: "licenza de uso compatible con CC- BY 4.0 INT."
+      verified: true
+      odbl_compatible: doubt
+    coverage: Toda Galicia.
+    risks:
+      - O mesmo conxunto figura en abertos.xunta.gal baixo CC BY-SA 4.0.
+    verdict: conditional
+    verdict_notes: Técnicamente go. Pedir aclaración escrita ao IET/Amtega sobre a licenza aplicable.
+    verified: true
+    checked_at: 2026-10-18
+    samples: [cnig-limites/ideg-parroquias-query5.geojson, cnig-limites/iet-aviso-legal.html]
+
+  - id: ideg-entidades
+    name: Entidades de poboación (PBA) — IDEG
+    phase: 1
+    layers: [concellos-parroquias]
+    operator: Instituto de Estudos do Territorio (Xunta de Galicia)
+    endpoints:
+      - url: https://ideg.xunta.gal/servizos/rest/services/PBA/EntidadesPoboacion_PBA/MapServer/0/query
+        status: 200
+        documented: true
+        notes: "36.190 puntos (xuño 2025) con NOME_LUGAR, COD_IGRP, NOMEN_XUNT, POB_2024."
+    format: ArcGIS REST GeoJSON
+    auth: ningunha
+    frequency: { declared: anual, measured: static }
+    limits: maxRecordCount 1000.
+    licence:
+      name: "IET (compatible con CC BY 4.0) / abertos (CC BY-SA 4.0)"
+      url: https://mapas.xunta.gal/gl/aviso-legal
+      verified: true
+      odbl_compatible: doubt
+    coverage: Toda Galicia.
+    risks: [Mesmo conflito de licenzas.]
+    verdict: conditional
+    verified: true
+    checked_at: 2026-10-18
+    samples: [nomenclator/ideg-pba-entidades-poboacion-L0-query5.geojson]
+
+  - id: nomenclator-galicia
+    name: Nomenclátor de Galicia 2026
+    phase: 1
+    layers: [concellos-parroquias]
+    operator: Xunta de Galicia / Real Academia Galega
+    endpoints:
+      - url: https://ficheiros-web.xunta.gal/abertos/toponimia/nomenclator.csv
+        status: 200
+        documented: true
+        notes: "CSV ; UTF-8 con BOM, 3,6 MB, 42.212 topónimos (Decreto 27/2026). Sen códigos nin coordenadas."
+    format: CSV
+    auth: ningunha
+    frequency: { declared: por decreto, measured: static }
+    limits: ningún
+    licence:
+      name: CC BY-SA 4.0 (abertos.xunta.gal)
+      url: https://abertos.xunta.gal/condicions-de-uso
+      quote: "deberá distribuírse baixo os termos da mesma licenza CC BY-SA 4.0"
+      verified: true
+      odbl_compatible: false
+    coverage: Toda Galicia.
+    risks:
+      - O share-alike impide relicenciar baixo ODbL.
+    verdict: conditional
+    verdict_notes: Referencia de grafía oficial para o buscador. Publicar como colección separada BY-SA ou obter dispensa.
+    verified: true
+    checked_at: 2026-10-18
+    samples: [nomenclator/nomenclator-2026-first200KB.csv]
+
+  - id: ign-inspire
+    name: IGN — unidades administrativas e NGBE (INSPIRE WFS)
+    phase: 1
+    layers: [concellos-parroquias]
+    operator: Instituto Geográfico Nacional / CNIG
+    endpoints:
+      - url: https://www.ign.es/wfs-inspire/unidades-administrativas
+        status: 200
+        documented: true
+        notes: Chega a municipio; sen parroquias. Xeometría a resolución completa (pesada).
+      - url: https://www.ign.es/wfs-inspire/ngbe
+        status: 200
+        documented: true
+    format: WFS 2.0 (GML/GeoJSON)
+    auth: ningunha
+    frequency: { declared: non indicada, measured: static }
+    limits: non verificado
+    licence:
+      name: CC BY 4.0 (ign.es)
+      url: https://www.ign.es/wfs-inspire/unidades-administrativas?service=WFS&request=GetCapabilities
+      quote: "CC BY 4.0 ign.es"
+      verified: true
+      odbl_compatible: true
+    coverage: España.
+    risks: [Sen parroquias.]
+    verdict: go
+    verdict_notes: Reserva limpa para concellos e para contraste.
+    verified: true
+    checked_at: 2026-10-18
+    samples: [cnig-limites/ign-wfs-unidades-administrativas-getcapabilities.xml]
+
+  - id: ideg-espazos
+    name: Rede Galega de Espazos Protexidos — IDEG / IET
+    phase: 1
+    layers: [espazos-protexidos]
+    operator: Xunta de Galicia (IET)
+    endpoints:
+      - url: https://ideg.xunta.gal/servizos/rest/services/LugaresProtexidos
+        status: 200
+        documented: true
+        notes: 14 MapServers (parques, humidais, ZEPVN, monumentos, paisaxes; Rede Natura sen código de sitio).
+    format: ArcGIS REST GeoJSON / ZIP IET
+    auth: ningunha
+    frequency: { declared: variable, measured: static }
+    limits: maxRecordCount 1000.
+    licence:
+      name: "IET (compatible con CC BY 4.0) / abertos (CC BY-SA 4.0)"
+      url: https://mapas.xunta.gal/gl/aviso-legal
+      verified: true
+      odbl_compatible: doubt
+    coverage: Galicia.
+    risks: [Conflito de licenzas.]
+    verdict: conditional
+    verified: true
+    checked_at: 2026-10-18
+    samples: [ideg-espazos/ideg-rede-natura-zec-query5.geojson]
+
+  - id: miteco-natura
+    name: Rede Natura 2000 e ENP — MITECO / IEPNB
+    phase: 1
+    layers: [espazos-protexidos]
+    operator: Ministerio para la Transición Ecológica (Banco de Datos de la Naturaleza)
+    endpoints:
+      - url: https://geoserver.iepnb.es/geoserver/RN2000/ows
+        status: 200
+        documented: true
+        notes: "WFS 2.0, GeoJSON. Filtro ids_ccaa_filtro='11'. Con código de sitio (ES1140004…)."
+      - url: https://www.miteco.gob.es/es/biodiversidad/servicios/banco-datos-naturaleza/informacion-disponible/rednatura_2000_desc.html
+        status: 200
+        documented: true
+        notes: "Descarga oficial n2000_2025 (shp 132 MB, GeoJSON 195 MB)."
+    format: WFS / ZIP
+    auth: ningunha
+    frequency: { declared: anual, measured: static }
+    limits: ningún coñecido
+    licence:
+      name: Aviso legal MITECO (reutilización citando a fonte)
+      url: https://www.miteco.gob.es/es/atencion-al-ciudadano/aviso-legal.html
+      quote: "puede ser utilizada… siempre que se cite la fuente"
+      verified: true
+      odbl_compatible: true
+    coverage: España; filtrar Galicia.
+    risks:
+      - WMS do MITECO roto na proba.
+      - Respaldo oficial do geoserver do IEPNB para reutilización non verificado.
+    verdict: go
+    verified: true
+    checked_at: 2026-10-18
+    samples: [miteco-natura/iepnb-rn2000_2024-getfeature5-galicia.json]
+
+  - id: patrimonio-pba
+    name: Patrimonio cultural — PBA Afeccións (IDEG)
+    phase: 1
+    layers: [patrimonio]
+    operator: Xunta de Galicia (Plan Básico Autonómico)
+    endpoints:
+      - url: https://ideg.xunta.gal/servizos/rest/services/PBA/Afeccions_PatrimonioCultural/MapServer
+        status: 200
+        documented: true
+        notes: "BIC elementos (664) e Catálogo (80.010), xuño 2026."
+    format: ArcGIS REST GeoJSON
+    auth: ningunha
+    frequency: { declared: non indicada, measured: static }
+    limits: maxRecordCount 1000.
+    licence:
+      name: CC BY-SA 4.0 vía abertos / compatible con CC BY vía IET
+      url: https://abertos.xunta.gal/condicions-de-uso
+      verified: true
+      odbl_compatible: doubt
+    coverage: Galicia.
+    risks:
+      - É unha capa urbanística de afeccións, non o rexistro legal.
+      - Coordenadas de xacementos arqueolóxicos sensibles (risco de expolio).
+    verdict: conditional
+    verdict_notes: Comezar só cos BIC; o Catálogo completo, tras revisar licenza e xeneralizar xacementos.
+    verified: true
+    checked_at: 2026-10-18
+    samples: [patrimonio/ideg-pba-bic-elementos-L2-query5.geojson]
+
+  # ───────────────────────── Condicionais ─────────────────────────
+  - id: renfe-gtfsrt
+    name: Renfe GTFS-RT (AV/LD/MD e Cercanías)
+    phase: conditional
+    operator: Renfe Operadora
+    endpoints:
+      - url: https://gtfsrt.renfe.com/vehicle_positions_LD.json
+        status: 200
+        documented: true
+        notes: "165 vehículos; 15 en Galicia (Alvia, Avlo, MD, Regional)."
+      - url: https://gtfsrt.renfe.com/trip_updates_LD.json
+        status: 200
+        documented: true
+      - url: https://ssl.renfe.com/gtransit/Fichero_AV_LD/google_transit.zip
+        status: 200
+        documented: true
+        notes: GTFS estático; 150 paradas en Galicia; 164 de 165 tripId casan.
+    format: GTFS-RT (JSON e protobuf)
+    auth: ningunha
+    frequency: { declared: "posicións cada 15 min; trip updates cada 30 s", measured: non verificado }
+    limits: non verificado
+    licence:
+      name: CC BY 4.0 (data.renfe.com)
+      url: https://data.renfe.com/legal
+      quote: "para fines comerciales y no comerciales"
+      verified: true
+      odbl_compatible: true
+    coverage: Si, servizos galegos de media e longa distancia.
+    risks:
+      - Posicións con 15 min de atraso.
+      - tripId con data embebida e trens duplicados.
+    verdict: go
+    verdict_notes: Proposta de subir a capa de tren á Fase 1.
+    verified: true
+    checked_at: 2026-10-18
+    samples: [renfe-gtfsrt/vehicle_positions_LD.json]
+    probe:
+      url: https://gtfsrt.renfe.com/vehicle_positions_LD.json
+      timestamp_path: '"timestamp": "(\d+)"'
+
+  - id: banco-terras
+    name: Banco de Terras de Galicia
+    phase: conditional
+    operator: Agader / Xunta de Galicia
+    endpoints:
+      - url: https://info-sitegal.xunta.gal/gl
+        status: 200
+        documented: false
+        notes: Só visor e solicitudes. Cartafoles BTG e Parcelas do IDEG baleiros.
+    format: ningún aberto
+    auth: n/a
+    frequency: { declared: n/a, measured: n/a }
+    limits: n/a
+    licence: { name: n/a, url: "https://info-sitegal.xunta.gal/gl", verified: false, odbl_compatible: unknown }
+    coverage: n/a
+    risks: [Parcelas vinculadas a persoas (datos persoais).]
+    verdict: no-go
+    alternative: Cifras agregadas das memorias anuais.
+    verified: true
+    checked_at: 2026-10-18
+
+  - id: ige-grella
+    name: IGE — poboación en grella de 1 km²
+    phase: conditional
+    operator: Instituto Galego de Estatística
+    endpoints:
+      - url: https://www.ige.gal/igebdt/igeapi/csv/gridkm2/2024/15006/pob_total
+        status: 200
+        documented: true
+        notes: "CSV con id de cela INSPIRE (1kmE2842N2385, EPSG:3035), 2018–2024; sen xeometría."
+    format: CSV / JSON
+    auth: ningunha
+    frequency: { declared: anual, measured: static }
+    limits: non verificado
+    licence:
+      name: Aviso legal do portal da Xunta (sen licenza CC específica)
+      url: https://www.xunta.gal/aviso-legal-do-portal-da-xunta
+      verified: false
+      odbl_compatible: doubt
+    coverage: Galicia (celas con segredo estatístico suprimidas; limiar non verificado).
+    risks: [Licenza específica do IGE non atopada.]
+    verdict: conditional
+    verified: true
+    checked_at: 2026-10-18
+    samples: [ige-grella/ige-igeapi-csv-gridkm2-2024-arzua-pob_total.csv]
+
+  - id: eolica
+    name: Enerxía eólica — IDEG
+    phase: conditional
+    operator: Xunta de Galicia
+    endpoints:
+      - url: https://ideg.xunta.gal/servizos/rest/services/RecursosEnerxeticos/enerxia_eolica_v2/MapServer
+        status: 200
+        documented: true
+        notes: "Aeroxeradores: 37 novas solicitudes, 368 en tramitación, 5.152 en funcionamento, autorizados ou en obras. Sen MW nin promotor."
+    format: ArcGIS REST GeoJSON
+    auth: ningunha
+    frequency: { declared: non indicada, measured: non verificado }
+    limits: maxRecordCount 10000.
+    licence: { name: non indicada, url: "https://ideg.xunta.gal/servizos", verified: false, odbl_compatible: unknown }
+    coverage: Galicia.
+    risks: [Licenza non declarada; estados mesturados nunha capa.]
+    verdict: conditional
+    verified: false
+    checked_at: 2026-10-18
+    samples: [eolica/ideg-RecursosEnerxeticos_enerxia_eolica_v2-MapServer.json]
