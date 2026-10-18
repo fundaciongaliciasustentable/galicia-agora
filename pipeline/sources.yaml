@@ -637,6 +637,7 @@ sources:
     risks:
       - WMS do MITECO roto na proba.
       - Respaldo oficial do geoserver do IEPNB para reutilización non verificado.
+      - "O WFS do IEPNB responde 403 desde GitHub Actions (18/10/2026); desde unha IP doméstica funciona. Alternativa: ZIP oficial n2000 do MITECO procesado con GDAL."
     verdict: go
     verified: true
     checked_at: 2026-10-18
