@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "focos-calor feature properties",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "satelite",
+    "instrumento",
+    "data_deteccion",
+    "confianza",
+    "confianza_pct",
+    "frp",
+    "dia_noite"
+  ],
+  "properties": {
+    "satelite": { "type": "string", "minLength": 1 },
+    "instrumento": { "enum": ["VIIRS", "MODIS"] },
+    "data_deteccion": { "type": "string", "format": "date-time" },
+    "confianza": { "enum": ["baixa", "nominal", "alta"] },
+    "confianza_pct": { "type": ["number", "null"], "minimum": 0, "maximum": 100 },
+    "frp": { "type": ["number", "null"] },
+    "dia_noite": { "enum": ["día", "noite", null] }
+  }
+}

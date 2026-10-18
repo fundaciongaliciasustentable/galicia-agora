@@ -1,0 +1,52 @@
+id: focos-calor
+title:
+  gl: Focos de calor detectados por satélite
+  es: Focos de calor detectados por satélite
+theme: lume-monte
+operator:
+  name: NASA LANCE FIRMS (NASA/GSFC/ESDIS)
+  url: https://firms.modaps.eosdis.nasa.gov/
+# Public, keyless endpoint family. The keyed area API URL is never written here.
+source_url: https://firms.modaps.eosdis.nasa.gov/api/area/
+licence:
+  spdx: CC0-1.0
+  text_url: https://www.earthdata.nasa.gov/engage/open-data-services-software-policies/data-use-guidance
+  quote: "data provided from a NASA-led mission are licensed as Creative Commons Zero"
+  verified_at: 2026-10-18
+  odbl_compatible: true
+  collection: odbl
+  notes: >-
+    CC0 para misións da NASA; cita moi recomendada. NOAA-20 e NOAA-21 son misións NOAA:
+    licenza específica non verificada.
+attribution: NASA LANCE FIRMS (NASA/GSFC/ESDIS)
+update_frequency:
+  declared: PT3H
+geometry: point
+output: geojson
+auth:
+  required: false
+  env_var: FIRMS_MAP_KEY
+  notes: >-
+    Opcional. Con FIRMS_MAP_KEY úsase a API por área (VIIRS SNPP, NOAA-20, NOAA-21 e MODIS,
+    último día, bbox de Galicia). Sen chave úsanse os ficheiros Europa 24 h sen chave,
+    recortados ao bbox de Galicia. A chave nunca se escribe en ficheiros, URL gardadas nin erros.
+privacy_notes: >-
+  Sen datos persoais. Unha detección de calor non é un incendio forestal confirmado: pode ser
+  unha industria, unha queima agrícola ou outra fonte de calor. / Sin datos personales. Una
+  detección de calor no es un incendio forestal confirmado: puede ser una industria, una quema
+  agrícola u otra fuente de calor.
+stale_after: PT6H
+ingest:
+  every: PT30M
+style:
+  kind: circle
+  color_token: --c-lume
+table:
+  fields:
+    - data_deteccion
+    - satelite
+    - instrumento
+    - confianza
+    - frp
+    - dia_noite
+volatile: true
