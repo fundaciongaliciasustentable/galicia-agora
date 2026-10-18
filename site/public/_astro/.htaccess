@@ -1,0 +1,5 @@
+# Astro fingerprints every file in this folder: safe to cache for a year.
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresDefault "access plus 1 year"
+</IfModule>

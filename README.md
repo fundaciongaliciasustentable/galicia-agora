@@ -2,7 +2,7 @@
 
 Galicia como é agora mesmo: un mapa público con datos abertos de fontes oficiais, universitarias, comunitarias e comerciais con licenza aberta. Cada capa nomea o operador orixinal e a hora de publicación do dato. Sen rexistro, sen cookies, sen analítica. Nada se vende.
 
-Enderezo: https://galiciasustentable.org/galicia-agora/ (en preparación; https://agora.galiciasustentable.org redirixe alí). Promove: [Fundación Galicia Sustentable](https://fundaciongaliciasustentable.gal).
+Enderezo: https://agora.galiciasustentable.org (en preparación). Promove: [Fundación Galicia Sustentable](https://fundaciongaliciasustentable.gal).
 
 **Estado:** Fase 0, verificación das fontes. Ver [`docs/sources-report.md`](docs/sources-report.md).
 

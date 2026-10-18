@@ -1,0 +1,40 @@
+# Galicia Agora — Apache config for the hosting folder www/galicia-agora,
+# served as https://agora.galiciasustentable.org. Every block is guarded with
+# <IfModule> so a missing module never turns the site into a 500 error.
+
+# The same folder is also reachable as galiciasustentable.org/galicia-agora/.
+# Send those requests to the subdomain so there is a single address.
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTP_HOST} !^agora\.galiciasustentable\.org$ [NC]
+  RewriteRule ^(.*)$ https://agora.galiciasustentable.org/$1 [R=301,L]
+</IfModule>
+
+<IfModule mod_mime.c>
+  AddType application/vnd.pmtiles .pmtiles
+  AddType application/geo+json .geojson
+  AddType text/javascript .mjs
+</IfModule>
+
+<IfModule mod_headers.c>
+  # Only resources from this origin may load. Report-only until it has been
+  # checked on the published site; then rename the header to enforce it.
+  Header set Content-Security-Policy-Report-Only "default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; worker-src 'self' blob:; frame-ancestors 'self'; base-uri 'self'; form-action 'self'"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+  Header set X-Content-Type-Options "nosniff"
+  Header set Permissions-Policy "geolocation=(), camera=(), microphone=(), interest-cohort=()"
+</IfModule>
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  # Live data and pages: always revalidate, so stale data is never cached.
+  ExpiresByType text/html "access plus 0 seconds"
+  ExpiresByType application/json "access plus 0 seconds"
+  ExpiresByType application/geo+json "access plus 0 seconds"
+  # Unhashed names (MapLibre worker, Pagefind) can change on upgrade: one day.
+  # Fingerprinted files in _astro/ get a year (see _astro/.htaccess).
+  ExpiresByType text/css "access plus 1 day"
+  ExpiresByType text/javascript "access plus 1 day"
+  ExpiresByType font/woff2 "access plus 1 day"
+  ExpiresByType application/vnd.pmtiles "access plus 7 days"
+</IfModule>

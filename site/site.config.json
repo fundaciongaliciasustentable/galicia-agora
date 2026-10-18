@@ -1,5 +1,5 @@
 {
-  "site": "https://galiciasustentable.org",
-  "base": "/galicia-agora/",
-  "alias": "https://agora.galiciasustentable.org"
+  "site": "https://agora.galiciasustentable.org",
+  "base": "/",
+  "hosting_dir": "www/galicia-agora"
 }
