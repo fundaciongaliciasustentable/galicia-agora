@@ -35,8 +35,8 @@ for (const file of walk(ROOT)) {
     for (const [re, kind] of patterns) {
       for (const m of html.matchAll(re)) {
         const url = m[1] ?? '';
-        // hreflang alternates are links to our own pages, not loads.
-        if (kind === 'link' && /rel=["']alternate["']/i.test(m[0])) continue;
+        // Canonical and hreflang alternates name pages; the browser does not load them.
+        if (kind === 'link' && /rel=["'](?:alternate|canonical)["']/i.test(m[0])) continue;
         if (ABSOLUTE.test(url)) report(file, `${kind} loads ${url}`);
       }
     }
