@@ -21,3 +21,8 @@ jobs:
       - run: npm run lint
       - run: npm test
       - run: npm run validate
+      - name: Build site with fixture-free empty catalogue and audit it
+        run: |
+          npx tsx pipeline/cli.ts catalog
+          npx astro build
+          npm run audit

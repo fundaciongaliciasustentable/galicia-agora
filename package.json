@@ -19,7 +19,8 @@
     "status": "tsx pipeline/cli.ts status",
     "validate": "tsx pipeline/cli.ts validate",
     "catalog": "tsx pipeline/cli.ts catalog",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "audit": "tsx site/scripts/audit.ts dist"
   },
   "dependencies": {
     "@fontsource/lato": "^5.3.0",
