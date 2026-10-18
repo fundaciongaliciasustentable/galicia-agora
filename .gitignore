@@ -7,3 +7,7 @@ dist/
 .DS_Store
 /data-out/
 *.log
+
+# Raw source samples stay local until each licence allows redistribution
+/pipeline/samples/
+/probe-log/
