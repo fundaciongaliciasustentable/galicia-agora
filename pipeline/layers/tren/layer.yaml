@@ -41,3 +41,4 @@ style:
   label_field: tren
 table:
   fields: [tren, rede, viaxe, estado, parada, data_posicion]
+volatile: true

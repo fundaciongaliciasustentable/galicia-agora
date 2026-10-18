@@ -9,6 +9,7 @@
 - Política (`pipeline/lib/publish.ts`):
   - escritura atómica (temporal + rename);
   - rexéitase: erro de rede, validación fallida, 0 entidades, ou caída de máis do 50 % fronte ao último reconto bo;
+  - excepción: as capas con `volatile: true` (focos de calor, trens) aceptan 0 entidades e caídas grandes, porque nelas son datos normais (unha noite sen trens, un día sen lumes); os erros de rede e de validación séguense rexeitando;
   - se se rexeita e hai un ficheiro bo anterior → `stale`, consérvase; se non o hai → `failed`;
   - unha capa `fresh` pasa a `stale` cando a última descarga boa supera `stale_after` (por defecto 3 × frecuencia);
   - alerta cando leva máis de tres ciclos sen éxito;

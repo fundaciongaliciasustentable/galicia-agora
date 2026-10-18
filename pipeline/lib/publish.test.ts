@@ -61,6 +61,20 @@ describe('decide', () => {
     expect(d.meta.last_error).toMatch(/anomalous drop/);
   });
 
+  it('accepts empty results and large drops for volatile layers', () => {
+    const prev = decide(ok('2026-10-18T08:00:00Z', 30), null).meta;
+    const empty = decide({ ...ok('2026-10-18T08:10:00Z', 0), volatile: true }, prev);
+    expect(empty.write).toBe(true);
+    expect(empty.meta.status).toBe('fresh');
+    expect(empty.meta.feature_count).toBe(0);
+    const failed = decide(
+      { ...base, at: new Date('2026-10-18T08:20:00Z'), error: 'HTTP 503', volatile: true },
+      empty.meta,
+    );
+    expect(failed.write).toBe(false);
+    expect(failed.meta.status).toBe('stale');
+  });
+
   it('rejects data that fails schema validation', () => {
     const d = decide({ ...ok('2026-10-18T08:10:00Z'), validationErrors: ['/features bad'] }, null);
     expect(d.write).toBe(false);

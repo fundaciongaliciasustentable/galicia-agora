@@ -42,6 +42,11 @@ export interface Attempt {
   validationErrors?: string[];
   /** Fetch/normalize error, if any. */
   error?: string;
+  /**
+   * Layers whose count legitimately swings to zero (fire detections, trains at
+   * night): an empty result or a large drop is data, not an anomaly.
+   */
+  volatile?: boolean;
 }
 
 export interface Decision {
@@ -63,6 +68,7 @@ function rejectReason(attempt: Attempt, prev: Meta | null): string | null {
   if (attempt.validationErrors?.length) {
     return `schema validation failed: ${attempt.validationErrors.slice(0, 3).join('; ')}`;
   }
+  if (attempt.volatile) return null;
   if (attempt.data.featureCount === 0) return 'empty result (0 features)';
   if (prev && prev.feature_count > 0) {
     const ratio = attempt.data.featureCount / prev.feature_count;

@@ -72,6 +72,10 @@
     },
     "privacy_notes": { "type": "string", "minLength": 1 },
     "stale_after": { "$ref": "#/$defs/duration" },
+    "volatile": {
+      "description": "True when zero features or large drops are normal (ADR 0004).",
+      "type": "boolean"
+    },
     "ingest": {
       "description": "How often the ingest job should refresh this layer.",
       "type": "object",

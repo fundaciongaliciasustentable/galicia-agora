@@ -25,6 +25,7 @@ export interface LayerDef {
   attribution: string;
   stale_after?: string;
   ingest?: { every: string };
+  volatile?: boolean;
   [key: string]: unknown;
 }
 

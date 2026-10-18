@@ -72,6 +72,7 @@ export async function runLayer(id: string, opts: RunOptions): Promise<RunResult>
     sourceUrl: layer.source_url,
     licence: layer.licence.spdx ?? layer.licence.text_url,
     attribution: layer.attribution,
+    volatile: layer.volatile === true,
   };
 
   try {
