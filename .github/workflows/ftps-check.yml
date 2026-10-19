@@ -15,6 +15,17 @@ jobs:
     timeout-minutes: 6
     steps:
       - run: sudo apt-get update -qq && sudo apt-get install -y -qq lftp
+      - name: Check FTPS_HOST format (value stays masked)
+        env:
+          FTPS_HOST: ${{ secrets.FTPS_HOST }}
+        run: |
+          printf 'length: %s\n' "${#FTPS_HOST}"
+          case "$FTPS_HOST" in *://*) echo "has a scheme (ftp:// or similar): remove it";; esac
+          case "$FTPS_HOST" in *[[:space:]]*) echo "contains whitespace or a newline";; esac
+          case "$FTPS_HOST" in */*) echo "contains a slash: only the host name is expected";; esac
+          case "$FTPS_HOST" in *:[0-9]*) echo "contains a port";; esac
+          if getent hosts "$FTPS_HOST" >/dev/null; then echo "resolves: yes"; else echo "resolves: NO"; fi
+          printf 'ends with .espacioseguro.com: %s\n' "$(case "$FTPS_HOST" in *.espacioseguro.com) echo yes;; *) echo no;; esac)"
       - name: Connect, list and write a probe file
         env:
           FTPS_HOST: ${{ secrets.FTPS_HOST }}
