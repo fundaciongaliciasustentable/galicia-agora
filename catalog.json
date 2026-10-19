@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-19T06:26:24.647Z",
+  "generated_at": "2026-10-19T13:46:41.297Z",
   "layers": [
     {
       "id": "calidade-aire",
@@ -52,18 +52,22 @@
       },
       "meta": {
         "layer_id": "calidade-aire",
-        "published_at": "2026-10-19T06:00:00.000Z",
-        "fetched_at": "2026-10-19T06:26:20.327Z",
-        "last_success_at": "2026-10-19T06:26:20.327Z",
+        "published_at": "2026-10-19T13:00:00.000Z",
+        "fetched_at": "2026-10-19T13:46:35.438Z",
+        "last_success_at": "2026-10-19T13:46:35.438Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 46,
         "source_url": "https://servizos.meteogalicia.gal/mgrss/caire/jsonICAActual.action",
         "licence": "CC-BY-SA-4.0",
         "attribution": "Datos: Rede de Calidade do Aire de Galicia, MeteoGalicia (Xunta de Galicia). Datos provisionais, non validados.",
-        "checksum": "sha256:661583f9acb101e6828a0a4f0992288aca428cd09be291cc3a9105c82a3d7141",
+        "checksum": "sha256:060fecfeea9b371891d5421255727aec4dd99b5492c6f3f585193fe6f6c9f153",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-10-19T13:46:35.438Z",
+            "ok": true
+          },
           {
             "at": "2026-10-19T06:26:20.327Z",
             "ok": true
@@ -305,18 +309,22 @@
       },
       "meta": {
         "layer_id": "estacions-meteo",
-        "published_at": "2026-10-19T06:20:00.000Z",
-        "fetched_at": "2026-10-19T06:26:22.433Z",
-        "last_success_at": "2026-10-19T06:26:22.433Z",
+        "published_at": "2026-10-19T13:30:00.000Z",
+        "fetched_at": "2026-10-19T13:46:37.062Z",
+        "last_success_at": "2026-10-19T13:46:37.062Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 153,
         "source_url": "https://servizos.meteogalicia.gal/mgrss/observacion/ultimos10minEstacionsMeteo.action",
         "licence": "CC-BY-SA-4.0",
         "attribution": "Datos: MeteoGalicia (Xunta de Galicia)",
-        "checksum": "sha256:6e416f2e20b8a951d3b73acc6d36985a676f2ffca9880dadaa87c089bd910dda",
+        "checksum": "sha256:3308495fdf543728cd4083bc8aaa59bc9aff1db2068f85d5e1656209c73c0fb8",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-10-19T13:46:37.062Z",
+            "ok": true
+          },
           {
             "at": "2026-10-19T06:26:22.433Z",
             "ok": true
@@ -415,8 +423,8 @@
       "meta": {
         "layer_id": "focos-calor",
         "published_at": null,
-        "fetched_at": "2026-10-19T06:26:23.173Z",
-        "last_success_at": "2026-10-19T06:26:23.173Z",
+        "fetched_at": "2026-10-19T13:46:37.808Z",
+        "last_success_at": "2026-10-19T13:46:37.808Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 0,
@@ -426,6 +434,10 @@
         "checksum": "sha256:ed778c73ea51338d6576fb5992b189f2b94d9f3d5e199f46c1af520d6b0b3e6c",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-10-19T13:46:37.808Z",
+            "ok": true
+          },
           {
             "at": "2026-10-19T06:26:23.173Z",
             "ok": true
@@ -625,18 +637,22 @@
       ],
       "meta": {
         "layer_id": "perimetros-queimados",
-        "published_at": "2026-10-12T13:32:36.912Z",
-        "fetched_at": "2026-10-18T10:33:42.227Z",
-        "last_success_at": "2026-10-18T10:33:42.227Z",
+        "published_at": "2026-10-19T13:19:12.428Z",
+        "fetched_at": "2026-10-19T13:46:38.221Z",
+        "last_success_at": "2026-10-19T13:46:38.221Z",
         "status": "fresh",
         "consecutive_failures": 0,
-        "feature_count": 171,
+        "feature_count": 176,
         "source_url": "https://maps.effis.emergency.copernicus.eu/effis?service=WFS&request=GetFeature&version=2.0.0&typeNames=ms:modis.ba.poly.season&outputFormat=geojson&bbox=41.8,-9.35,43.8,-6.7,urn:ogc:def:crs:EPSG::4326",
         "licence": "CC-BY-4.0",
         "attribution": "© Unión Europea, Copernicus EFFIS (JRC)",
-        "checksum": "sha256:abf9290fe81f5f08750da7a21559ef383d771032147e4c9d5f192668ad74262b",
+        "checksum": "sha256:5a4f2c11bcbf3f55d2a1e7603abae45ce75e20b8463c113c0c08b0c7beb7944f",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-10-19T13:46:38.221Z",
+            "ok": true
+          },
           {
             "at": "2026-10-18T10:33:42.227Z",
             "ok": true
@@ -777,18 +793,22 @@
       "volatile": true,
       "meta": {
         "layer_id": "tren",
-        "published_at": "2026-10-19T06:26:13.000Z",
-        "fetched_at": "2026-10-19T06:26:23.522Z",
-        "last_success_at": "2026-10-19T06:26:23.522Z",
+        "published_at": "2026-10-19T13:46:33.000Z",
+        "fetched_at": "2026-10-19T13:46:39.935Z",
+        "last_success_at": "2026-10-19T13:46:39.935Z",
         "status": "fresh",
         "consecutive_failures": 0,
-        "feature_count": 18,
+        "feature_count": 16,
         "source_url": "https://gtfsrt.renfe.com/vehicle_positions_LD.json",
         "licence": "CC-BY-4.0",
         "attribution": "Origen de los datos: Renfe Operadora",
-        "checksum": "sha256:02bba56db94f692954e8bd94a1341b933c0235a6ea48082866e7a2cfaa0516aa",
+        "checksum": "sha256:97d9f365f606bac2d97a489780a46ebcc9cf7d12e14e482015f14d328b35c0ae",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-10-19T13:46:39.935Z",
+            "ok": true
+          },
           {
             "at": "2026-10-19T06:26:23.522Z",
             "ok": true
