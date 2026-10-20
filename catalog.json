@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-20T17:14:52.922Z",
+  "generated_at": "2026-10-20T20:38:20.455Z",
   "layers": [
     {
       "id": "calidade-aire",
@@ -52,18 +52,22 @@
       },
       "meta": {
         "layer_id": "calidade-aire",
-        "published_at": "2026-10-20T16:00:00.000Z",
-        "fetched_at": "2026-10-20T17:14:31.570Z",
-        "last_success_at": "2026-10-20T17:14:31.570Z",
+        "published_at": "2026-10-20T20:00:00.000Z",
+        "fetched_at": "2026-10-20T20:38:15.433Z",
+        "last_success_at": "2026-10-20T20:38:15.433Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 46,
         "source_url": "https://servizos.meteogalicia.gal/mgrss/caire/jsonICAActual.action",
         "licence": "CC-BY-SA-4.0",
         "attribution": "Datos: Rede de Calidade do Aire de Galicia, MeteoGalicia (Xunta de Galicia). Datos provisionais, non validados.",
-        "checksum": "sha256:129e7f83c48c83f24357b94b5ebe431830b91cf395cb2582b2f180d82a880e1d",
+        "checksum": "sha256:dc4840d654e424a2411a65434788a08d31ff58d627bd5177d60d850516485d28",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-10-20T20:38:15.433Z",
+            "ok": true
+          },
           {
             "at": "2026-10-20T17:14:31.570Z",
             "ok": true
@@ -333,18 +337,22 @@
       },
       "meta": {
         "layer_id": "estacions-meteo",
-        "published_at": "2026-10-20T17:00:00.000Z",
-        "fetched_at": "2026-10-20T17:14:35.101Z",
-        "last_success_at": "2026-10-20T17:14:35.101Z",
+        "published_at": "2026-10-20T20:30:00.000Z",
+        "fetched_at": "2026-10-20T20:38:17.081Z",
+        "last_success_at": "2026-10-20T20:38:17.081Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 154,
         "source_url": "https://servizos.meteogalicia.gal/mgrss/observacion/ultimos10minEstacionsMeteo.action",
         "licence": "CC-BY-SA-4.0",
         "attribution": "Datos: MeteoGalicia (Xunta de Galicia)",
-        "checksum": "sha256:4c937ee42f314303cc2d74dd23da4fe38604449a6ce03e9e59d7a40d7d3eec33",
+        "checksum": "sha256:ddc9e78ca0290ba5681e5140b34be990ce59912683a54f85100218c96f28caa2",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-10-20T20:38:17.081Z",
+            "ok": true
+          },
           {
             "at": "2026-10-20T17:14:35.101Z",
             "ok": true
@@ -471,8 +479,8 @@
       "meta": {
         "layer_id": "focos-calor",
         "published_at": "2026-10-20T02:26:00.000Z",
-        "fetched_at": "2026-10-20T17:14:36.293Z",
-        "last_success_at": "2026-10-20T17:14:36.293Z",
+        "fetched_at": "2026-10-20T20:38:18.031Z",
+        "last_success_at": "2026-10-20T20:38:18.031Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 4,
@@ -482,6 +490,10 @@
         "checksum": "sha256:3e0c7dd63f9c50d4a668e28450e53dab6ed1d68f9ae24c9fbaebe7e3f40a9004",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-10-20T20:38:18.031Z",
+            "ok": true
+          },
           {
             "at": "2026-10-20T17:14:36.293Z",
             "ok": true
@@ -869,18 +881,22 @@
       "volatile": true,
       "meta": {
         "layer_id": "tren",
-        "published_at": "2026-10-20T17:14:18.000Z",
-        "fetched_at": "2026-10-20T17:14:39.825Z",
-        "last_success_at": "2026-10-20T17:14:39.825Z",
+        "published_at": "2026-10-20T20:38:14.000Z",
+        "fetched_at": "2026-10-20T20:38:19.264Z",
+        "last_success_at": "2026-10-20T20:38:19.264Z",
         "status": "fresh",
         "consecutive_failures": 0,
-        "feature_count": 16,
+        "feature_count": 11,
         "source_url": "https://gtfsrt.renfe.com/vehicle_positions_LD.json",
         "licence": "CC-BY-4.0",
         "attribution": "Origen de los datos: Renfe Operadora",
-        "checksum": "sha256:7c7d886e450c066004abbdd84ff0b3190af3c531cec954fe236d4e7cb2d6783d",
+        "checksum": "sha256:43486b559179ebf61b3bce9193eb9a13a526a781c4c8040c320c407de136cf5a",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-10-20T20:38:19.264Z",
+            "ok": true
+          },
           {
             "at": "2026-10-20T17:14:39.825Z",
             "ok": true
