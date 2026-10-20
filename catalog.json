@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-20T12:16:08.124Z",
+  "generated_at": "2026-10-20T17:14:52.922Z",
   "layers": [
     {
       "id": "calidade-aire",
@@ -52,18 +52,22 @@
       },
       "meta": {
         "layer_id": "calidade-aire",
-        "published_at": "2026-10-20T11:00:00.000Z",
-        "fetched_at": "2026-10-20T12:16:02.815Z",
-        "last_success_at": "2026-10-20T12:16:02.815Z",
+        "published_at": "2026-10-20T16:00:00.000Z",
+        "fetched_at": "2026-10-20T17:14:31.570Z",
+        "last_success_at": "2026-10-20T17:14:31.570Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 46,
         "source_url": "https://servizos.meteogalicia.gal/mgrss/caire/jsonICAActual.action",
         "licence": "CC-BY-SA-4.0",
         "attribution": "Datos: Rede de Calidade do Aire de Galicia, MeteoGalicia (Xunta de Galicia). Datos provisionais, non validados.",
-        "checksum": "sha256:4dcdfa22cb56971b5b6e33a2431481b79b6b25fd5b0e12e5b0b19fe0c87af76c",
+        "checksum": "sha256:129e7f83c48c83f24357b94b5ebe431830b91cf395cb2582b2f180d82a880e1d",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-10-20T17:14:31.570Z",
+            "ok": true
+          },
           {
             "at": "2026-10-20T12:16:02.815Z",
             "ok": true
@@ -329,18 +333,22 @@
       },
       "meta": {
         "layer_id": "estacions-meteo",
-        "published_at": "2026-10-20T12:10:00.000Z",
-        "fetched_at": "2026-10-20T12:16:04.745Z",
-        "last_success_at": "2026-10-20T12:16:04.745Z",
+        "published_at": "2026-10-20T17:00:00.000Z",
+        "fetched_at": "2026-10-20T17:14:35.101Z",
+        "last_success_at": "2026-10-20T17:14:35.101Z",
         "status": "fresh",
         "consecutive_failures": 0,
-        "feature_count": 153,
+        "feature_count": 154,
         "source_url": "https://servizos.meteogalicia.gal/mgrss/observacion/ultimos10minEstacionsMeteo.action",
         "licence": "CC-BY-SA-4.0",
         "attribution": "Datos: MeteoGalicia (Xunta de Galicia)",
-        "checksum": "sha256:e675dbb416d6dfb42321ba8740ee0baaabe132935e62f2ecf45c10cb95c06db3",
+        "checksum": "sha256:4c937ee42f314303cc2d74dd23da4fe38604449a6ce03e9e59d7a40d7d3eec33",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-10-20T17:14:35.101Z",
+            "ok": true
+          },
           {
             "at": "2026-10-20T12:16:04.745Z",
             "ok": true
@@ -463,8 +471,8 @@
       "meta": {
         "layer_id": "focos-calor",
         "published_at": "2026-10-20T02:26:00.000Z",
-        "fetched_at": "2026-10-20T12:16:05.728Z",
-        "last_success_at": "2026-10-20T12:16:05.728Z",
+        "fetched_at": "2026-10-20T17:14:36.293Z",
+        "last_success_at": "2026-10-20T17:14:36.293Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 4,
@@ -474,6 +482,10 @@
         "checksum": "sha256:3e0c7dd63f9c50d4a668e28450e53dab6ed1d68f9ae24c9fbaebe7e3f40a9004",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-10-20T17:14:36.293Z",
+            "ok": true
+          },
           {
             "at": "2026-10-20T12:16:05.728Z",
             "ok": true
@@ -698,8 +710,8 @@
       "meta": {
         "layer_id": "perimetros-queimados",
         "published_at": "2026-10-19T13:19:12.428Z",
-        "fetched_at": "2026-10-19T13:46:38.221Z",
-        "last_success_at": "2026-10-19T13:46:38.221Z",
+        "fetched_at": "2026-10-20T17:14:37.272Z",
+        "last_success_at": "2026-10-20T17:14:37.272Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 176,
@@ -709,6 +721,10 @@
         "checksum": "sha256:5a4f2c11bcbf3f55d2a1e7603abae45ce75e20b8463c113c0c08b0c7beb7944f",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-10-20T17:14:37.272Z",
+            "ok": true
+          },
           {
             "at": "2026-10-19T13:46:38.221Z",
             "ok": true
@@ -853,18 +869,22 @@
       "volatile": true,
       "meta": {
         "layer_id": "tren",
-        "published_at": "2026-10-20T12:15:56.000Z",
-        "fetched_at": "2026-10-20T12:16:06.753Z",
-        "last_success_at": "2026-10-20T12:16:06.753Z",
+        "published_at": "2026-10-20T17:14:18.000Z",
+        "fetched_at": "2026-10-20T17:14:39.825Z",
+        "last_success_at": "2026-10-20T17:14:39.825Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 16,
         "source_url": "https://gtfsrt.renfe.com/vehicle_positions_LD.json",
         "licence": "CC-BY-4.0",
         "attribution": "Origen de los datos: Renfe Operadora",
-        "checksum": "sha256:98777698c40590bd2218506f8c727c5a6afd18ee4bdc9910abdc3f0d4b1f0652",
+        "checksum": "sha256:7c7d886e450c066004abbdd84ff0b3190af3c531cec954fe236d4e7cb2d6783d",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-10-20T17:14:39.825Z",
+            "ok": true
+          },
           {
             "at": "2026-10-20T12:16:06.753Z",
             "ok": true
