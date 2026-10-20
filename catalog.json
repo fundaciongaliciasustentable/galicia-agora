@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-20T20:38:20.455Z",
+  "generated_at": "2026-10-20T23:23:32.113Z",
   "layers": [
     {
       "id": "calidade-aire",
@@ -52,18 +52,22 @@
       },
       "meta": {
         "layer_id": "calidade-aire",
-        "published_at": "2026-10-20T20:00:00.000Z",
-        "fetched_at": "2026-10-20T20:38:15.433Z",
-        "last_success_at": "2026-10-20T20:38:15.433Z",
+        "published_at": "2026-10-20T23:00:00.000Z",
+        "fetched_at": "2026-10-20T23:23:29.097Z",
+        "last_success_at": "2026-10-20T23:23:29.097Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 46,
         "source_url": "https://servizos.meteogalicia.gal/mgrss/caire/jsonICAActual.action",
         "licence": "CC-BY-SA-4.0",
         "attribution": "Datos: Rede de Calidade do Aire de Galicia, MeteoGalicia (Xunta de Galicia). Datos provisionais, non validados.",
-        "checksum": "sha256:dc4840d654e424a2411a65434788a08d31ff58d627bd5177d60d850516485d28",
+        "checksum": "sha256:6d84fb86ce49e925a4142d892024b1406e1cea22bfc7b20d8baeb4268de61976",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-10-20T23:23:29.097Z",
+            "ok": true
+          },
           {
             "at": "2026-10-20T20:38:15.433Z",
             "ok": true
@@ -337,18 +341,22 @@
       },
       "meta": {
         "layer_id": "estacions-meteo",
-        "published_at": "2026-10-20T20:30:00.000Z",
-        "fetched_at": "2026-10-20T20:38:17.081Z",
-        "last_success_at": "2026-10-20T20:38:17.081Z",
+        "published_at": "2026-10-20T23:10:00.000Z",
+        "fetched_at": "2026-10-20T23:23:30.251Z",
+        "last_success_at": "2026-10-20T23:23:30.251Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 154,
         "source_url": "https://servizos.meteogalicia.gal/mgrss/observacion/ultimos10minEstacionsMeteo.action",
         "licence": "CC-BY-SA-4.0",
         "attribution": "Datos: MeteoGalicia (Xunta de Galicia)",
-        "checksum": "sha256:ddc9e78ca0290ba5681e5140b34be990ce59912683a54f85100218c96f28caa2",
+        "checksum": "sha256:8c163c357a1d58eae8da386491aa81ed1f8594490ff62e57a24c7d985165bd48",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-10-20T23:23:30.251Z",
+            "ok": true
+          },
           {
             "at": "2026-10-20T20:38:17.081Z",
             "ok": true
@@ -479,8 +487,8 @@
       "meta": {
         "layer_id": "focos-calor",
         "published_at": "2026-10-20T02:26:00.000Z",
-        "fetched_at": "2026-10-20T20:38:18.031Z",
-        "last_success_at": "2026-10-20T20:38:18.031Z",
+        "fetched_at": "2026-10-20T23:23:30.986Z",
+        "last_success_at": "2026-10-20T23:23:30.986Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 4,
@@ -490,6 +498,10 @@
         "checksum": "sha256:3e0c7dd63f9c50d4a668e28450e53dab6ed1d68f9ae24c9fbaebe7e3f40a9004",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-10-20T23:23:30.986Z",
+            "ok": true
+          },
           {
             "at": "2026-10-20T20:38:18.031Z",
             "ok": true
@@ -882,17 +894,22 @@
       "meta": {
         "layer_id": "tren",
         "published_at": "2026-10-20T20:38:14.000Z",
-        "fetched_at": "2026-10-20T20:38:19.264Z",
+        "fetched_at": "2026-10-20T23:23:31.485Z",
         "last_success_at": "2026-10-20T20:38:19.264Z",
-        "status": "fresh",
-        "consecutive_failures": 0,
+        "status": "stale",
+        "consecutive_failures": 1,
         "feature_count": 11,
         "source_url": "https://gtfsrt.renfe.com/vehicle_positions_LD.json",
         "licence": "CC-BY-4.0",
         "attribution": "Origen de los datos: Renfe Operadora",
         "checksum": "sha256:43486b559179ebf61b3bce9193eb9a13a526a781c4c8040c320c407de136cf5a",
-        "last_error": null,
+        "last_error": "Renfe ld: unexpected GTFS-RT JSON (no header/entity)",
         "history": [
+          {
+            "at": "2026-10-20T23:23:31.485Z",
+            "ok": false,
+            "error": "Renfe ld: unexpected GTFS-RT JSON (no header/entity)"
+          },
           {
             "at": "2026-10-20T20:38:19.264Z",
             "ok": true
@@ -973,7 +990,7 @@
             "ok": true
           }
         ],
-        "alert": false
+        "alert": true
       }
     }
   ]
