@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-21T01:48:18.390Z",
+  "generated_at": "2026-10-21T06:37:43.708Z",
   "layers": [
     {
       "id": "calidade-aire",
@@ -52,18 +52,22 @@
       },
       "meta": {
         "layer_id": "calidade-aire",
-        "published_at": "2026-10-21T01:00:00.000Z",
-        "fetched_at": "2026-10-21T01:47:19.943Z",
-        "last_success_at": "2026-10-21T01:47:19.943Z",
+        "published_at": "2026-10-21T06:00:00.000Z",
+        "fetched_at": "2026-10-21T06:37:37.567Z",
+        "last_success_at": "2026-10-21T06:37:37.567Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 46,
         "source_url": "https://servizos.meteogalicia.gal/mgrss/caire/jsonICAActual.action",
         "licence": "CC-BY-SA-4.0",
         "attribution": "Datos: Rede de Calidade do Aire de Galicia, MeteoGalicia (Xunta de Galicia). Datos provisionais, non validados.",
-        "checksum": "sha256:bb4bb53a6ee72b46895f4ebd3fd87a5fa92ade3aaca0db969025e8ebe430c836",
+        "checksum": "sha256:946a00782d65a5c4f85d6fe8666342a5b259131308e217cb323ee634b55c3fe8",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-10-21T06:37:37.567Z",
+            "ok": true
+          },
           {
             "at": "2026-10-21T01:47:19.943Z",
             "ok": true
@@ -345,18 +349,22 @@
       },
       "meta": {
         "layer_id": "estacions-meteo",
-        "published_at": "2026-10-21T01:30:00.000Z",
-        "fetched_at": "2026-10-21T01:47:21.303Z",
-        "last_success_at": "2026-10-21T01:47:21.303Z",
+        "published_at": "2026-10-21T06:30:00.000Z",
+        "fetched_at": "2026-10-21T06:37:39.421Z",
+        "last_success_at": "2026-10-21T06:37:39.421Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 154,
         "source_url": "https://servizos.meteogalicia.gal/mgrss/observacion/ultimos10minEstacionsMeteo.action",
         "licence": "CC-BY-SA-4.0",
         "attribution": "Datos: MeteoGalicia (Xunta de Galicia)",
-        "checksum": "sha256:24d0ac51e2d32e71aed4ad465fc595cc8c209554eb73ee39e1c1c88fd625d454",
+        "checksum": "sha256:2fd7da92ed54e9d982c7acd24717f3ea01116e35c1d6f321337d2e122c4951ac",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-10-21T06:37:39.421Z",
+            "ok": true
+          },
           {
             "at": "2026-10-21T01:47:21.303Z",
             "ok": true
@@ -495,8 +503,8 @@
       "meta": {
         "layer_id": "focos-calor",
         "published_at": null,
-        "fetched_at": "2026-10-21T01:47:22.178Z",
-        "last_success_at": "2026-10-21T01:47:22.178Z",
+        "fetched_at": "2026-10-21T06:37:40.628Z",
+        "last_success_at": "2026-10-21T06:37:40.628Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 0,
@@ -506,6 +514,10 @@
         "checksum": "sha256:ed778c73ea51338d6576fb5992b189f2b94d9f3d5e199f46c1af520d6b0b3e6c",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-10-21T06:37:40.628Z",
+            "ok": true
+          },
           {
             "at": "2026-10-21T01:47:22.178Z",
             "ok": true
@@ -905,18 +917,22 @@
       "volatile": true,
       "meta": {
         "layer_id": "tren",
-        "published_at": "2026-10-20T20:38:14.000Z",
-        "fetched_at": "2026-10-21T01:47:22.767Z",
-        "last_success_at": "2026-10-20T20:38:19.264Z",
-        "status": "stale",
-        "consecutive_failures": 2,
-        "feature_count": 11,
+        "published_at": "2026-10-21T06:37:33.000Z",
+        "fetched_at": "2026-10-21T06:37:41.689Z",
+        "last_success_at": "2026-10-21T06:37:41.689Z",
+        "status": "fresh",
+        "consecutive_failures": 0,
+        "feature_count": 21,
         "source_url": "https://gtfsrt.renfe.com/vehicle_positions_LD.json",
         "licence": "CC-BY-4.0",
         "attribution": "Origen de los datos: Renfe Operadora",
-        "checksum": "sha256:43486b559179ebf61b3bce9193eb9a13a526a781c4c8040c320c407de136cf5a",
-        "last_error": "Failed after 4 attempts: fetch failed",
+        "checksum": "sha256:2ffcd3954ab7c2965651ece5ee36371fb40f9ce17bc0c20d86fa129335a2488c",
+        "last_error": null,
         "history": [
+          {
+            "at": "2026-10-21T06:37:41.689Z",
+            "ok": true
+          },
           {
             "at": "2026-10-21T01:47:22.767Z",
             "ok": false,
@@ -1007,7 +1023,7 @@
             "ok": true
           }
         ],
-        "alert": true
+        "alert": false
       }
     }
   ]
