@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-21T23:43:43.091Z",
+  "generated_at": "2026-10-22T01:55:24.535Z",
   "layers": [
     {
       "id": "calidade-aire",
@@ -52,18 +52,22 @@
       },
       "meta": {
         "layer_id": "calidade-aire",
-        "published_at": "2026-10-21T23:00:00.000Z",
-        "fetched_at": "2026-10-21T23:43:40.092Z",
-        "last_success_at": "2026-10-21T23:43:40.092Z",
+        "published_at": "2026-10-22T01:00:00.000Z",
+        "fetched_at": "2026-10-22T01:55:19.466Z",
+        "last_success_at": "2026-10-22T01:55:19.466Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 46,
         "source_url": "https://servizos.meteogalicia.gal/mgrss/caire/jsonICAActual.action",
         "licence": "CC-BY-SA-4.0",
         "attribution": "Datos: Rede de Calidade do Aire de Galicia, MeteoGalicia (Xunta de Galicia). Datos provisionais, non validados.",
-        "checksum": "sha256:a15ee57a37aecf2e7ccd1dd0dafe4508afcfe1eb3257366fad03fc12ac276918",
+        "checksum": "sha256:262b9c6d4c844ce70b216925492a8c12455273a8adee2521eb58eeac872f3942",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-10-22T01:55:19.466Z",
+            "ok": true
+          },
           {
             "at": "2026-10-21T23:43:40.092Z",
             "ok": true
@@ -365,18 +369,22 @@
       },
       "meta": {
         "layer_id": "estacions-meteo",
-        "published_at": "2026-10-21T23:30:00.000Z",
-        "fetched_at": "2026-10-21T23:43:41.218Z",
-        "last_success_at": "2026-10-21T23:43:41.218Z",
+        "published_at": "2026-10-22T01:40:00.000Z",
+        "fetched_at": "2026-10-22T01:55:21.284Z",
+        "last_success_at": "2026-10-22T01:55:21.284Z",
         "status": "fresh",
         "consecutive_failures": 0,
-        "feature_count": 153,
+        "feature_count": 154,
         "source_url": "https://servizos.meteogalicia.gal/mgrss/observacion/ultimos10minEstacionsMeteo.action",
         "licence": "CC-BY-SA-4.0",
         "attribution": "Datos: MeteoGalicia (Xunta de Galicia)",
-        "checksum": "sha256:9c6b5c13c14b89bf27dcd22fba4ce7ac0524162fd04ba43fd559beac77a2d7db",
+        "checksum": "sha256:3b17e8b4deda4a71db6e55da4f5894478fa5077a92f7b450a3cf4420eb4bd260",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-10-22T01:55:21.284Z",
+            "ok": true
+          },
           {
             "at": "2026-10-21T23:43:41.218Z",
             "ok": true
@@ -535,8 +543,8 @@
       "meta": {
         "layer_id": "focos-calor",
         "published_at": null,
-        "fetched_at": "2026-10-21T23:43:41.946Z",
-        "last_success_at": "2026-10-21T23:43:41.946Z",
+        "fetched_at": "2026-10-22T01:55:22.459Z",
+        "last_success_at": "2026-10-22T01:55:22.459Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 0,
@@ -546,6 +554,10 @@
         "checksum": "sha256:ed778c73ea51338d6576fb5992b189f2b94d9f3d5e199f46c1af520d6b0b3e6c",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-10-22T01:55:22.459Z",
+            "ok": true
+          },
           {
             "at": "2026-10-21T23:43:41.946Z",
             "ok": true
@@ -970,10 +982,10 @@
       "meta": {
         "layer_id": "tren",
         "published_at": "2026-10-21T20:48:55.000Z",
-        "fetched_at": "2026-10-21T23:43:42.434Z",
+        "fetched_at": "2026-10-22T01:55:23.457Z",
         "last_success_at": "2026-10-21T20:49:11.364Z",
         "status": "stale",
-        "consecutive_failures": 1,
+        "consecutive_failures": 2,
         "feature_count": 7,
         "source_url": "https://gtfsrt.renfe.com/vehicle_positions_LD.json",
         "licence": "CC-BY-4.0",
@@ -981,6 +993,11 @@
         "checksum": "sha256:88e75d0f98f5530d9c0491dd9adf3097258faf7528407051f7bcad709d4078a6",
         "last_error": "Renfe ld: unexpected GTFS-RT JSON (no header/entity)",
         "history": [
+          {
+            "at": "2026-10-22T01:55:23.457Z",
+            "ok": false,
+            "error": "Renfe ld: unexpected GTFS-RT JSON (no header/entity)"
+          },
           {
             "at": "2026-10-21T23:43:42.434Z",
             "ok": false,
