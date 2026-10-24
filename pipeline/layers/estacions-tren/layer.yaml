@@ -1,0 +1,47 @@
+id: estacions-tren
+title:
+  gl: Estacións de tren
+  es: Estaciones de tren
+theme: mobilidade
+operator:
+  name: Renfe Operadora
+  url: https://data.renfe.com
+source_url: https://ssl.renfe.com/gtransit/Fichero_AV_LD/google_transit.zip
+licence:
+  spdx: CC-BY-4.0
+  text_url: https://data.renfe.com/legal
+  quote: para fines comerciales y no comerciales
+  verified_at: 2026-10-18
+  odbl_compatible: true
+  collection: odbl
+  notes: >-
+    GTFS estático de AV/LD/MD (google_transit.zip) e de Cercanías e ancho
+    métrico (fomento_transit.zip, conxunto «horarios-cercanias» de
+    data.renfe.com, CC BY 4.0 comprobado o 24/10/2026; trae a liña
+    Ferrol–Ortigueira). A provincia de cada estación sae do listado
+    «estaciones-listado-completo» (estaciones.csv, CC BY 4.0), opcional.
+attribution: 'Origen de los datos: Renfe Operadora'
+update_frequency:
+  declared: P1D
+  schedule: '15 5 * * *'
+geometry: point
+output: geojson
+auth:
+  required: false
+privacy_notes: >-
+  Estacións e horarios do servizo público; ningún dato persoal. Só se publican
+  as estacións con polo menos unha viaxe no GTFS, dentro do bbox de Galicia
+  con 0,05° de marxe e sen as estacións que o listado de Renfe sitúa noutra
+  provincia. servizos_dia conta as viaxes distintas que paran na estación o
+  primeiro mércores desde a data de descarga (dia_referencia); un festivo
+  nese mércores baixa a cifra. Valença (Portugal) consta en Renfe como
+  Pontevedra e queda dentro.
+stale_after: P7D
+ingest:
+  every: P1D
+style:
+  kind: circle
+  color_token: --c-tren
+  label_field: nome
+table:
+  fields: [nome, servizos_dia, linas, rede, dia_referencia, id]

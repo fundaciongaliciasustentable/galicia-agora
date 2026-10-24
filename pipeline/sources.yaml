@@ -675,7 +675,7 @@ sources:
   - id: renfe-gtfsrt
     name: Renfe GTFS-RT (AV/LD/MD e Cercanías)
     phase: 1
-    layers: [tren]
+    layers: [tren, estacions-tren]
     operator: Renfe Operadora
     endpoints:
       - url: https://gtfsrt.renfe.com/vehicle_positions_LD.json

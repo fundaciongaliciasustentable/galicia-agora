@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "estacions-tren feature properties",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "nome", "servizos_dia", "linas", "rede", "dia_referencia"],
+  "properties": {
+    "id": { "type": "string", "pattern": "^\\d{5}$" },
+    "nome": { "type": "string", "minLength": 1 },
+    "servizos_dia": { "type": "integer", "minimum": 0 },
+    "linas": { "type": "string", "minLength": 1 },
+    "rede": { "enum": ["AV/LD/MD", "Cercanías", "AV/LD/MD · Cercanías"] },
+    "dia_referencia": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" }
+  }
+}
