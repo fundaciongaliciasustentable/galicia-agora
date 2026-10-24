@@ -56,3 +56,21 @@ Se algunha rede cidadá chega a entrar: posición xeneralizada (hexágono de ~5 
 6. **Meteoclimatic:** permiso para as 35 estacións galegas.
 7. **MeteoGalicia:** servizo de datos de MeteoEscolas e licenza do servizo de aforos.
 8. **Red Eléctrica e UFD:** autorización para xeración en Galicia e capacidade por subestación.
+
+## Fontes da guía compartida (24/10/2026)
+
+Verificáronse as fontes novas da guía de APIs comerciais, IoT e OSINT. Moitas xa estaban revisadas arriba (Davis, Netatmo, PurpleAir, aisstream, FIRMS, EMSC, REData, Electromaps). O resultado das novas:
+
+| Fonte | Veredicto | Motivo |
+|---|---|---|
+| Cámaras de tráfico da DGT | **Go para as localizacións** (354 en Galicia); imaxes condicionais | A ficha do NAP di CC BY, pero o aviso legal da DGT restrinxe reproducións. Consultar á DGT antes de servir as imaxes |
+| Satélites (CelesTrak) | Condicional, case go | Space-Track autoriza redistribuír os elementos orbitais con cita; consultas como moito cada 2 h |
+| Antenas de móbil (OpenCelliD) | Condicional | CC BY-SA 4.0 (colección CC BY-SA); precisa token gratuíto que ten que pedir a FGS |
+| Sentinel-2 (composición mensual) | Go opcional, fase 2 | Licenza aberta con atribución; 3–5 días de traballo e 0,3–2 GB por mes |
+| Mapillary | Condicional | Imaxes CC BY-SA, pero prohibe redistribuír en bloque: só unha selección pequena |
+| Ookla, Global Fishing Watch | Non | Licenzas non comerciais (NC), incompatibles con ODbL e CC BY-SA |
+| OpenSky | Non | Só investigación e educación; o encargo prohibe o uso operativo sen acordo |
+| Windy Webcams, AQICN, Electricity Maps, Blitzortung, N2YO | Non | Prohiben redistribuír, son non comerciais ou só funcionan incrustando contido alleo |
+| OpenAQ | Non | Reagrega as estacións oficiais que xa publicamos |
+
+Fontes comerciais da guía que quedan fóra sen verificar, porque o encargo as exclúe ou precisan gasto: Flightradar24, FlightAware, ADS-B Exchange, MarineTraffic, VesselFinder, Sentinel Hub/Up42, CARTO/Unacast, APIs de Google, Meteomatics.
