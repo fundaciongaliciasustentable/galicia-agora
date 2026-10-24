@@ -152,7 +152,7 @@ sources:
       - url: https://servizos.meteogalicia.gal/mgafos/json/estadoActual.action?cod=CLAVE
         status: 200
         documented: true
-        notes: Sen chave devolve unha páxina HTML de erro. Esquema e cadencia non verificados.
+        notes: "Coa chave da FGS (segredo METEOGALICIA_AFOROS_KEY), 24/10/2026: JSON listEstadoActual con 89 estacións (caudal, nivel, dataUTC, lat/lon, concello)." 
       - url: https://servizos.meteogalicia.gal/mgafos/estacions/listEstadoActual.action
         status: 200
         documented: false
@@ -166,14 +166,13 @@ sources:
       url: https://www.meteogalicia.gal/web/aviso-legal
       verified: false
       odbl_compatible: unknown
-    coverage: "Galicia-Costa. Número de puntos non verificado (a web di 43; as notas de prensa, 95)."
+    coverage: "Galicia-Costa: 89 estacións con datos o 24/10/2026."
     risks:
-      - Sen chave non se pode verificar.
       - Datos non validados, só de referencia.
     verdict: conditional
-    verdict_notes: Solicitar a chave e repetir a verificación.
+    verdict_notes: "Chave obtida e verificada o 24/10/2026. Licenza específica do servizo sen confirmar: colección CC BY-SA."
     alternative: Ningunha limpa. Non se extrae o visor.
-    verified: false
+    verified: true
     checked_at: 2026-10-18
     samples: [augas-galicia/mgafos_estadoActual_nokey.txt, augas-galicia/JSON_Aforos_Estado_Actual_es.pdf]
 
@@ -440,7 +439,7 @@ sources:
         documented: true
         notes: "6.742 rutas, 24.823 paradas, 184.019 viaxes; 135,93 MB; validez 16/10–10/11/2026."
       - url: https://nap.transportes.gob.es/api/Fichero/download/1584
-        status: 401
+        status: 200
         documented: true
         notes: 'Sen chave: "Api Key was not provided." Coa chave do segredo NAP_API_KEY na cabeceira ApiKey (segundo o swagger /api/swagger/v1/swagger.json), tamén 401 o 18/10/2026: o valor gardado non é unha chave válida ou non está activa.'
     format: GTFS (ZIP)
@@ -458,7 +457,7 @@ sources:
       - Os datos brutos deben compartirse coa mesma licenza; os derivados poden ir noutra.
       - Obrigas de amosar "Powered by MITRAMS" e de manter a información actualizada.
     verdict: conditional
-    verdict_notes: Go en canto haxa rexistro e chave.
+    verdict_notes: "Chave verificada o 24/10/2026: GTFS de 144 MB, 6.788 rutas, 25.118 paradas, 186.735 viaxes; calendario 23/10–17/11/2026." 
     verified: true
     checked_at: 2026-10-18
     samples: [nap-bus-xunta/detail_1386.txt]
@@ -779,3 +778,324 @@ sources:
     verified: false
     checked_at: 2026-10-18
     samples: [eolica/ideg-RecursosEnerxeticos_enerxia_eolica_v2-MapServer.json]
+
+  # ═══════════════ Lote 1b (verificado o 24/10/2026, inspirado en Lemuriant) ═══════════════
+  - id: emsc-sismos
+    name: Terremotos recentes — EMSC SeismicPortal (solucións do IGN)
+    phase: "1b"
+    layers: [sismos-recentes]
+    operator: EMSC-CSEM (con solucións do Instituto Geográfico Nacional)
+    endpoints:
+      - url: https://www.seismicportal.eu/fdsnws/event/1/query?starttime={now-30d}&minlatitude=41.5&maxlatitude=44.5&minlongitude=-10.5&maxlongitude=-6.5&format=json&limit=500
+        status: 200
+        documented: true
+        notes: "FDSN event, GeoJSON. 25 sismos en Galicia en 30 días (M1,5–4,2); a maioría con auth IGN. Campos time, lastupdate, depth, mag, magtype, unid."
+    format: GeoJSON (FDSN event)
+    auth: ningunha
+    frequency: { declared: tempo case real, measured: "lastupdate 5–30 min despois do evento; revisións posteriores" }
+    limits: "Sen límite documentado. Prohibida a copia masiva da base sen permiso escrito."
+    licence:
+      name: CC BY 4.0
+      url: https://www.seismicportal.eu/terms.html
+      quote: "provided under the Creative Commons Attribution 4.0 International (CC BY 4.0) license"
+      verified: true
+      odbl_compatible: true
+    coverage: Galicia e zona próxima; o enxame do Bierzo queda xusto fóra.
+    risks:
+      - Magnitudes revisadas co tempo; actualizar por unid.
+      - Mestura de solucións IGN e EMSC con magnitudes distintas.
+      - "Cláusula de copia masiva: consultar a EMSC antes de gardar un arquivo histórico."
+    verdict: go
+    verified: true
+    checked_at: 2026-10-24
+    samples: [emsc-sismos/emsc-30d.json]
+
+  - id: ign-sismos
+    name: IGN — últimos terremotos (GeoRSS)
+    phase: "1b"
+    operator: Instituto Geográfico Nacional
+    endpoints:
+      - url: https://www.ign.es/ign/RssTools/sismologia.xml
+        status: 200
+        documented: true
+        notes: "22 sismos en 10 días para toda España, filtrados; sen profundidade; magnitude en texto libre. Sen servizo FDSN event (404)."
+    format: GeoRSS
+    auth: ningunha
+    frequency: { declared: non indicada, measured: "caché CloudFront; copia vella servida ata 5 min" }
+    limits: non verificado
+    licence: { name: "compatible con CC BY 4.0 (política de datos IGN)", url: "https://www.ign.es/web/politica-datos", verified: false, odbl_compatible: true }
+    coverage: 0 sismos en Galicia nos últimos 10 días (filtro de magnitude).
+    risks: [Feed resumido; non serve como fonte principal.]
+    verdict: no-go
+    alternative: emsc-sismos (publica as solucións do propio IGN)
+    verified: true
+    checked_at: 2026-10-24
+
+  - id: metar-aeroportos
+    name: METAR dos aeroportos galegos — NOAA Aviation Weather Center
+    phase: "1b"
+    layers: [tempo-aeroportos]
+    operator: AEMET (orixe) vía NOAA Aviation Weather Center
+    endpoints:
+      - url: https://aviationweather.gov/api/data/metar?ids=LEST,LECO,LEVX&format=json
+        status: 200
+        documented: true
+        notes: "METAR cada 30 min nos tres aeroportos, máis SPECI; latencia mediana 4 min. Unidades aeronáuticas (kt, millas, pés)."
+    format: JSON / GeoJSON
+    auth: ningunha
+    frequency: { declared: "30 min", measured: "30 min (:00 e :30), H24" }
+    limits: "100 peticións por minuto; bloqueo se se supera."
+    licence:
+      name: "Dominio público NOAA, pero os METAR españois son de AEMET (nota legal: reutilización citando AEMET)"
+      url: https://www.aemet.es/es/nota_legal
+      verified: false
+      odbl_compatible: doubt
+    coverage: LEST, LECO, LEVX.
+    risks: [Cadea de licenza AEMET → NOAA sen confirmar.]
+    verdict: conditional
+    verdict_notes: Técnicamente listo. Confirmar coa nota legal de AEMET ou pedir permiso; mentres, colección CC BY-SA.
+    verified: true
+    checked_at: 2026-10-24
+    samples: [metar-aeroportos/metar.json]
+
+  - id: ourairports
+    name: OurAirports — aeroportos e heliportos
+    phase: "1b"
+    layers: [aeroportos]
+    operator: OurAirports (comunidade)
+    endpoints:
+      - url: https://davidmegginson.github.io/ourairports-data/airports.csv
+        status: 200
+        documented: true
+        notes: "40 rexistros ES-GA (1 grande, 2 medianos, 14 pequenos, 25 heliportos). Rexenerado cada noite."
+    format: CSV
+    auth: ningunha
+    frequency: { declared: diaria, measured: "last-modified diario" }
+    limits: ningún
+    licence:
+      name: Dominio público
+      url: https://ourairports.com/data/
+      quote: "All data is released to the Public Domain"
+      verified: true
+      odbl_compatible: true
+    coverage: Galicia completa.
+    risks: [Editado pola comunidade, sen garantía de exactitude.]
+    verdict: go
+    verified: true
+    checked_at: 2026-10-24
+    samples: [metar-aeroportos/ourairports-galicia.csv]
+
+  - id: aemet-avisos
+    name: AEMET — avisos meteorolóxicos CAP de Galicia
+    phase: "1b"
+    layers: [avisos-meteo]
+    operator: Agencia Estatal de Meteoroloxía (AEMET)
+    endpoints:
+      - url: https://www.aemet.es/documentos_d/eltiempo/prediccion/avisos/rss/CAP_AFAC71_ATOM.xml
+        status: 200
+        documented: true
+        notes: "Atom sen chave; cada aviso ligado a un CAP XML con polígono e código de zona Meteoalerta."
+      - url: https://www.aemet.es/documentos/es/eltiempo/prediccion/avisos/plan_meteoalerta/AEMET-meteoalerta-delimitacion-zonas.zip
+        status: 200
+        documented: true
+        notes: "Zonas oficiais (16 terrestres e 6 costeiras en Galicia), v6. Derivadas da BDLJE do IGN (CC BY)."
+    format: Atom + CAP XML
+    auth: ningunha
+    frequency: { declared: "cando se emite un aviso", measured: "last-modified 06:37Z; caché 60 s" }
+    limits: non verificado
+    licence:
+      name: Nota legal AEMET (reutilización citando AEMET e data de actualización)
+      url: https://www.aemet.es/es/nota_legal
+      quote: "Autorizado el uso de la información y su reproducción citando a AEMET"
+      verified: true
+      odbl_compatible: true
+    coverage: Toda Galicia, terra e costa.
+    risks:
+      - Zonas v6 de 2017–2018; comprobar se cambiaron.
+      - Prohibido desnaturalizar a información.
+    verdict: go
+    verified: true
+    checked_at: 2026-10-24
+    samples: [aemet-avisos/CAP_AFAC71_ATOM.xml]
+
+  - id: meteogalicia-avisos
+    name: MeteoGalicia — avisos por concello
+    phase: "1b"
+    layers: [avisos-meteo]
+    operator: MeteoGalicia (Xunta de Galicia)
+    endpoints:
+      - url: https://servizos.meteogalicia.gal/mgrss/predicion/adversos/jsonAvisosConcellos.action?dia=-1
+        status: 200
+        documented: true
+        notes: "Avisos por concello para hoxe e dous días; estrutura real distinta da documentada (envoltorio listaDiaConcellos)."
+    format: JSON
+    auth: ningunha
+    frequency: { declared: non indicada, measured: "sen avisos durante a proba" }
+    limits: Política de bloqueo de IP de MeteoGalicia.
+    licence:
+      name: Aviso legal MeteoGalicia (atribución) / posible CC BY-SA en abertos
+      url: https://www.meteogalicia.gal/web/aviso-legal
+      verified: true
+      odbl_compatible: doubt
+    coverage: 313 concellos.
+    risks:
+      - Non inclúe os avisos costeiros de AEMET (discrepancia observada).
+    verdict: go
+    verdict_notes: Complemento de aemet-avisos; xeometría desde concellos-parroquias.
+    verified: true
+    checked_at: 2026-10-24
+    samples: [meteogalicia-avisos/jsonAvisosConcellos.json]
+
+  - id: meteoalarm-avisos
+    name: MeteoAlarm (EUMETNET)
+    phase: "1b"
+    operator: EUMETNET
+    endpoints:
+      - url: https://feeds.meteoalarm.org/feeds/meteoalarm-legacy-atom-spain
+        status: 200
+        documented: true
+    format: Atom/CAP
+    auth: ningunha
+    frequency: { declared: tempo real, measured: "updated 07:06Z" }
+    limits: "Redistribución con atraso medio inferior a 5 min."
+    licence:
+      name: Equivalente a CC BY 4.0 con condicións adicionais
+      url: https://meteoalarm.org/en/live/page/terms-and-conditions
+      verified: true
+      odbl_compatible: false
+    coverage: Zonas galegas por EMMA_ID, sen polígonos.
+    risks: [Condicións incompatibles cun ciclo de 10 min; só redistribúe AEMET.]
+    verdict: no-go
+    alternative: aemet-avisos
+    verified: true
+    checked_at: 2026-10-24
+
+  - id: meteogalicia-raios
+    name: MeteoGalicia — raios
+    phase: "1b"
+    layers: [raios]
+    operator: MeteoGalicia (Xunta de Galicia)
+    endpoints:
+      - url: https://servizos.meteogalicia.gal/mgrss/observacion/jsonRaios.action
+        status: 200
+        documented: true
+        notes: "Puntos con hora UTC, lat, lon e peakCurrent; contadores Galicia e total. Rede máis ampla ca Galicia: recortar."
+    format: JSON
+    auth: ningunha
+    frequency: { declared: non indicada, measured: "sen raios durante a proba; 147 entre o 17 e o 23/10" }
+    limits: Política de bloqueo de IP de MeteoGalicia.
+    licence:
+      name: Aviso legal MeteoGalicia (atribución) / posible CC BY-SA en abertos
+      url: https://www.meteogalicia.gal/web/aviso-legal
+      verified: true
+      odbl_compatible: doubt
+    coverage: Galicia (rede ata 37,6–44,4 N).
+    risks: [Volume moi baixo fóra de tormentas.]
+    verdict: go
+    verified: true
+    checked_at: 2026-10-24
+    samples: [meteogalicia-raios/jsonRaios.json]
+
+  - id: aemet-raios
+    name: AEMET — raios
+    phase: "1b"
+    operator: AEMET
+    endpoints:
+      - url: https://opendata.aemet.es/opendata/api/red/rayos/mapa
+        status: not-called
+        documented: true
+        notes: Só imaxe; precisa chave.
+    format: imaxe
+    auth: chave AEMET OpenData
+    frequency: { declared: "12 h", measured: non verificado }
+    limits: non verificado
+    licence: { name: Nota legal AEMET, url: "https://www.aemet.es/es/nota_legal", verified: true, odbl_compatible: true }
+    coverage: España.
+    risks: [Sen datos vectoriais.]
+    verdict: no-go
+    alternative: meteogalicia-raios
+    verified: true
+    checked_at: 2026-10-24
+
+  - id: cmems-insitu-ibi
+    name: Copernicus Marine — boias e mareógrafos in situ (IBI NRT)
+    phase: "1b"
+    layers: [boias-oceanicas, mareografos]
+    operator: Copernicus Marine Service (datos de Portos do Estado, INTECMAR/MeteoGalicia e outros)
+    endpoints:
+      - url: https://s3.waw3-1.cloudferro.com/mdl-native-03/native/INSITU_IBI_PHYBGCWAV_DISCRETE_MYNRT_013_033/cmems_obs-ins_ibi_phybgcwav_mynrt_na_irr_202311/index_latest.txt
+        status: 200
+        documented: true
+        notes: "S3 anónimo; índice CSV de 8,6 MB e ficheiros NetCDF4 diarios. Boias de ondas (Estaca de Bares, Vilán-Sisargas, Silleiro, Langosteira), boias das rías e 10 mareógrafos."
+    format: NetCDF4 (precisa lector no servidor)
+    auth: ningunha (o S3 é anónimo)
+    frequency: { declared: horaria, measured: "datos ata 06:00Z con ficheiro das 06:57Z" }
+    limits: non verificado
+    licence:
+      name: Licenza de Copernicus Marine (redistribución e derivados con atribución)
+      url: https://marine.copernicus.eu/user-corner/service-commitments-and-licence
+      verified: true
+      odbl_compatible: doubt
+    coverage: Toda a costa galega.
+    risks:
+      - A licenza menciona contas persoais; quizais haxa que aceptar o acordo de servizo.
+      - Precisa ler NetCDF4 (dependencia nova).
+      - Excluír traxectorias de buques (ficheiros GL_TS_TS_*).
+    verdict: conditional
+    verdict_notes: Mellor fonte para ondas e mareas. Confirmar a licenza e a conta antes de publicar.
+    verified: true
+    checked_at: 2026-10-24
+    samples: [emodnet-boias/cmems-index_latest.galicia.txt]
+
+  - id: meteogalicia-boias
+    name: MeteoGalicia/INTECMAR — boias das rías (THREDDS)
+    phase: "1b"
+    layers: [boias-oceanicas]
+    operator: INTECMAR, MeteoGalicia e CETMAR
+    endpoints:
+      - url: https://thredds.meteogalicia.gal/thredds/catalog/observacion/boyas/catalog.xml
+        status: 200
+        documented: true
+        notes: "6 boias (Cíes fóra de servizo hoxe). OPeNDAP .ascii permite ler a última hora sen NetCDF. Sen altura de onda."
+    format: NetCDF (OPeNDAP)
+    auth: ningunha
+    frequency: { declared: horaria, measured: "ficheiro actualizado a :40 cada hora" }
+    limits: non verificado
+    licence:
+      name: Licenza de Copernicus Marine (atributo dos ficheiros)
+      url: https://marine.copernicus.eu/user-corner/service-commitments-and-licence
+      verified: true
+      odbl_compatible: doubt
+    coverage: Rías Baixas e Muros.
+    risks: [Licenza mixta INTECMAR/Copernicus.]
+    verdict: conditional
+    verdict_notes: Fonte máis fresca (~6 h) para as boias das rías; mesmo trato ca cmems-insitu-ibi.
+    verified: true
+    checked_at: 2026-10-24
+    samples: [meteogalicia-boias/opendap-BCies-latest.ascii.txt]
+
+  - id: puertos-estado
+    name: Portos do Estado — mareógrafos (THREDDS) e Portus
+    phase: "1b"
+    operator: Puertos del Estado
+    endpoints:
+      - url: https://opendap.puertos.es/thredds/catalog/catalog.xml
+        status: 200
+        documented: true
+        notes: "Só mareógrafos (11 en Galicia), sen boias."
+    format: NetCDF4
+    auth: ningunha
+    frequency: { declared: horaria, measured: "2–3 h de atraso" }
+    limits: non verificado
+    licence:
+      name: Condicións de descarga de Portos do Estado
+      url: https://bancodatos.puertos.es/BD/peticiones/Manual_Usuario_Descargaportus.pdf
+      quote: "en ningún caso, se permite la transferencia de los datos a terceros"
+      verified: true
+      odbl_compatible: false
+    coverage: 11 mareógrafos galegos.
+    risks: [Prohibida a redistribución.]
+    verdict: no-go
+    alternative: cmems-insitu-ibi
+    verified: true
+    checked_at: 2026-10-24

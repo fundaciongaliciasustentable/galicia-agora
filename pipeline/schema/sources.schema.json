@@ -34,7 +34,7 @@
       "properties": {
         "id": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" },
         "name": { "type": "string" },
-        "phase": { "enum": [1, "conditional"] },
+        "phase": { "enum": [1, "1b", "conditional"] },
         "layers": { "type": "array", "items": { "type": "string" } },
         "operator": { "type": "string" },
         "endpoints": {
