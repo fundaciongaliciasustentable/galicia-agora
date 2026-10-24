@@ -38,8 +38,19 @@ jobs:
             fi
           done
           unzip -p feed.zip feed_info.txt 2>/dev/null || echo "no feed_info.txt"
+          mkdir -p nap-sample
+          for f in agency routes stops calendar; do unzip -p feed.zip "$f.txt" > "nap-sample/$f.txt"; done
+          unzip -p feed.zip trips.txt | head -2000 > nap-sample/trips-head.txt
+          unzip -p feed.zip shapes.txt | head -5000 > nap-sample/shapes-head.txt
           echo "calendar range:"
           unzip -p feed.zip calendar.txt 2>/dev/null | awk -F, 'NR>1{print $(NF-1); print $NF}' | sort | sed -n '1p;$p' || true
+
+      - name: Keep a GTFS sample (small files and heads only)
+        uses: actions/upload-artifact@v4
+        with:
+          name: nap-sample
+          path: nap-sample/
+          retention-days: 2
 
   firms:
     runs-on: ubuntu-latest
@@ -77,6 +88,12 @@ jobs:
                   walk(o[0], path + '[0]')
           walk(d)
           PY
+      - name: Keep the response as a short-lived sample (no key inside)
+        uses: actions/upload-artifact@v4
+        with:
+          name: mgafos-sample
+          path: a.json
+          retention-days: 2
 
   aisstream:
     runs-on: ubuntu-latest
