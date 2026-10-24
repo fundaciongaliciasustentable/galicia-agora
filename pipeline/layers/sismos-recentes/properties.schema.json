@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "sismos-recentes feature properties",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "data",
+    "actualizado",
+    "magnitude",
+    "tipo_magnitude",
+    "profundidade_km",
+    "autoria",
+    "rexion",
+    "tipo_evento",
+    "fonte_url"
+  ],
+  "properties": {
+    "id": { "type": "string", "minLength": 1, "description": "unid de EMSC" },
+    "data": { "type": "string", "format": "date-time", "description": "hora de orixe (UTC)" },
+    "actualizado": {
+      "type": "string",
+      "format": "date-time",
+      "description": "última revisión da solución (UTC)"
+    },
+    "magnitude": { "type": ["number", "null"] },
+    "tipo_magnitude": { "type": ["string", "null"], "description": "ml, mb, mw…" },
+    "profundidade_km": { "type": ["number", "null"] },
+    "profundidade_fixada": {
+      "const": true,
+      "description": "presente cando a profundidade é exactamente 0 km (fixada polo cálculo)"
+    },
+    "autoria": { "type": ["string", "null"], "description": "axencia autora: IGN, EMSC…" },
+    "rexion": { "type": ["string", "null"], "description": "rexión Flinn-Engdahl" },
+    "tipo_evento": {
+      "type": ["string", "null"],
+      "description": "código QuakeML: ke terremoto coñecido, se sospeitado…"
+    },
+    "fonte_url": { "type": "string", "format": "uri" }
+  }
+}

@@ -1,0 +1,54 @@
+id: sismos-recentes
+title:
+  gl: Terremotos recentes (30 días)
+  es: Terremotos recientes (30 días)
+theme: territorio
+operator:
+  name: EMSC-CSEM (con solucións do Instituto Geográfico Nacional)
+  url: https://www.seismicportal.eu/
+# The real request adds starttime = now − 30 days (FDSN event service).
+source_url: https://www.seismicportal.eu/fdsnws/event/1/query?minlatitude=41.5&maxlatitude=44.5&minlongitude=-10.5&maxlongitude=-6.5&format=json&limit=500
+licence:
+  spdx: CC-BY-4.0
+  text_url: https://www.seismicportal.eu/terms.html
+  quote: "provided under the Creative Commons Attribution 4.0 International (CC BY 4.0) license"
+  verified_at: 2026-10-24
+  odbl_compatible: true
+  collection: odbl
+  notes: >-
+    Os termos prohiben a copia masiva da base de datos sen permiso escrito: a capa só garda a
+    xanela móbil dos últimos 30 días e non constrúe un arquivo histórico. Antes de gardar un
+    histórico hai que consultar a EMSC.
+attribution: EMSC-CSEM / Instituto Geográfico Nacional (solucións IGN)
+update_frequency:
+  declared: PT10M
+  measured: PT10M
+  schedule: "*/10 * * * *"
+geometry: point
+output: geojson
+auth:
+  required: false
+privacy_notes: >-
+  Sen datos persoais: epicentros de terremotos. As magnitudes e localizacións revísanse co
+  tempo (campo actualizado); unha profundidade de 0 km adoita ser unha profundidade fixada
+  polo cálculo, non medida (profundidade_fixada). Inclúe o mar e a raia próximos a Galicia.
+  / Sin datos personales: epicentros de terremotos. Las magnitudes y localizaciones se revisan
+  con el tiempo; una profundidad de 0 km suele ser fijada por el cálculo, no medida.
+stale_after: PT1H
+ingest:
+  every: PT10M
+volatile: true
+style:
+  kind: circle
+  color_token: --c-sismo
+  label_field: magnitude
+table:
+  fields:
+    - data
+    - magnitude
+    - tipo_magnitude
+    - profundidade_km
+    - rexion
+    - autoria
+    - actualizado
+    - fonte_url
