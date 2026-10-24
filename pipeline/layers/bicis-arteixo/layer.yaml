@@ -1,0 +1,44 @@
+id: bicis-arteixo
+title:
+  gl: Bicicleta pública de Arteixo (biciArteixo)
+  es: Bicicleta pública de Arteixo (biciArteixo)
+theme: mobilidade
+operator:
+  name: Concello de Arteixo (servizo operado por nextbike)
+  url: https://www.biciarteixo.com/
+source_url: https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_aa/gbfs.json
+licence:
+  spdx: CC0-1.0
+  text_url: https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_aa/es/system_information.json
+  quote: "license_id CC0-1.0"
+  verified_at: 2026-10-24
+  odbl_compatible: true
+  collection: odbl
+  notes: Licenza declarada no propio feed GBFS (system_information.license_id).
+attribution: "Datos: biciArteixo / nextbike (CC0)"
+update_frequency:
+  declared: PT1M
+  schedule: "*/10 * * * *"
+geometry: point
+output: geojson
+auth:
+  required: false
+privacy_notes: >-
+  Só agregados por estación (bicis dispoñibles e ancoraxes libres). Non se le
+  free_bike_status nin se publica ningún identificador de bici, para non permitir seguir
+  percorridos.
+stale_after: PT40M
+ingest:
+  every: PT10M
+style:
+  kind: circle
+  color_token: --c-bici
+  label_field: bicis_libres
+table:
+  fields:
+    - nome
+    - capacidade
+    - bicis_libres
+    - ancoraxes_libres
+    - operativa
+    - actualizado

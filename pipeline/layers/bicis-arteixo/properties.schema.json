@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "bicis-arteixo feature properties",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "nome",
+    "capacidade",
+    "bicis_libres",
+    "ancoraxes_libres",
+    "operativa",
+    "actualizado"
+  ],
+  "properties": {
+    "id": { "type": "string", "minLength": 1, "description": "GBFS station_id" },
+    "nome": { "type": "string", "minLength": 1 },
+    "capacidade": { "type": ["integer", "null"], "minimum": 0, "description": "Ancoraxes totais" },
+    "bicis_libres": { "type": "integer", "minimum": 0, "description": "num_bikes_available" },
+    "ancoraxes_libres": {
+      "type": ["integer", "null"],
+      "minimum": 0,
+      "description": "num_docks_available"
+    },
+    "operativa": { "type": "boolean", "description": "is_installed e is_renting" },
+    "actualizado": { "type": "string", "format": "date-time", "description": "last_reported" }
+  }
+}
