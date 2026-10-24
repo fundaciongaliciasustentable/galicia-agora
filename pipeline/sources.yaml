@@ -525,7 +525,7 @@ sources:
   - id: nomenclator-galicia
     name: Nomenclátor de Galicia 2026
     phase: 1
-    layers: [concellos-parroquias]
+    layers: [concellos-parroquias, entidades-poboacion]
     operator: Xunta de Galicia / Real Academia Galega
     endpoints:
       - url: https://ficheiros-web.xunta.gal/abertos/toponimia/nomenclator.csv

@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "entidades-poboacion feature properties",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "codigo",
+    "nome",
+    "tipo",
+    "tipo_nome",
+    "codigo_parroquia",
+    "codigo_ine",
+    "poboacion",
+    "nomenclator_xunta"
+  ],
+  "properties": {
+    "codigo": { "type": ["string", "null"], "pattern": "^\\d{11}$" },
+    "nome": { "type": "string", "minLength": 1 },
+    "tipo": { "type": "string", "pattern": "^[A-Z]{1,4}$" },
+    "tipo_nome": { "type": ["string", "null"] },
+    "codigo_parroquia": { "type": "string", "pattern": "^(15|27|32|36)\\d{5}$" },
+    "codigo_ine": { "type": "string", "pattern": "^(15|27|32|36)\\d{3}$" },
+    "poboacion": { "type": ["integer", "null"], "minimum": 0 },
+    "nomenclator_xunta": { "type": ["boolean", "null"] }
+  }
+}
