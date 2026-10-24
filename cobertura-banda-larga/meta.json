@@ -1,0 +1,20 @@
+{
+  "layer_id": "cobertura-banda-larga",
+  "published_at": "2026-06-16T16:27:24.000Z",
+  "fetched_at": "2026-10-24T07:54:25.155Z",
+  "last_success_at": "2026-10-24T07:54:25.155Z",
+  "status": "fresh",
+  "consecutive_failures": 0,
+  "feature_count": 313,
+  "source_url": "https://digital.gob.es/telecomunicaciones-infraestructuras-digitales/areas-interes/banda-ancha/informacion-cobertura",
+  "licence": "https://digital.gob.es/nota-legal",
+  "attribution": "Fonte: Ministerio para a Transformación Dixital e da Función Pública, cobertura de banda larga",
+  "checksum": "sha256:79e5de1c866ad9b7651b6d05d2f4e2dd44cc101827575798ea7eef2e52589098",
+  "last_error": null,
+  "history": [
+    {
+      "at": "2026-10-24T07:54:25.155Z",
+      "ok": true
+    }
+  ]
+}

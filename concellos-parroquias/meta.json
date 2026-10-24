@@ -1,8 +1,8 @@
 {
   "layer_id": "concellos-parroquias",
   "published_at": "2026-01-31T23:00:00.000Z",
-  "fetched_at": "2026-10-24T07:32:38.212Z",
-  "last_success_at": "2026-10-24T07:32:38.212Z",
+  "fetched_at": "2026-10-24T07:54:27.313Z",
+  "last_success_at": "2026-10-24T07:54:27.313Z",
   "status": "fresh",
   "consecutive_failures": 0,
   "feature_count": 4098,
@@ -12,6 +12,10 @@
   "checksum": "sha256:b69a2c74c7c2bf7326369f9c647e0c558e486d35ca146e43bf105da3b10fc299",
   "last_error": null,
   "history": [
+    {
+      "at": "2026-10-24T07:54:27.313Z",
+      "ok": true
+    },
     {
       "at": "2026-10-24T07:32:38.212Z",
       "ok": true

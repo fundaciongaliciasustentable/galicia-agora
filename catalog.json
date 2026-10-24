@@ -1,6 +1,298 @@
 {
-  "generated_at": "2026-10-24T07:32:57.053Z",
+  "generated_at": "2026-10-24T07:55:03.979Z",
   "layers": [
+    {
+      "id": "aeroportos",
+      "title": {
+        "gl": "Aeroportos, aeródromos e heliportos",
+        "es": "Aeropuertos, aeródromos y helipuertos"
+      },
+      "theme": "mobilidade",
+      "operator": {
+        "name": "OurAirports (comunidade); pasaxeiros de Eurostat",
+        "url": "https://ourairports.com/countries/ES/"
+      },
+      "source_url": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "licence": {
+        "text_url": "https://ourairports.com/data/",
+        "quote": "All data is released to the Public Domain",
+        "verified_at": "2026-10-24",
+        "odbl_compatible": true,
+        "collection": "odbl",
+        "notes": "Localizacións e características: OurAirports, dominio público. Pasaxeiros mensuais: Eurostat, conxunto avia_paoa, reutilización autorizada recoñecendo a fonte (https://ec.europa.eu/eurostat/help/copyright-notice, «authorised provided the source is acknowledged»). Datos de OurAirports editados pola comunidade, sen garantía de exactitude."
+      },
+      "attribution": "OurAirports (dominio público); pasaxeiros: Eurostat (avia_paoa)",
+      "update_frequency": {
+        "declared": "P1D",
+        "schedule": "45 5 * * *"
+      },
+      "geometry": "point",
+      "output": "geojson",
+      "privacy_notes": "Sen datos persoais: instalacións aeronáuticas (inclúe heliportos de hospitais e bases contra incendios, que son instalacións públicas) e totais mensuais de pasaxeiros por aeroporto. Exclúense os rexistros marcados como pechados.",
+      "stale_after": "P7D",
+      "ingest": {
+        "every": "P1D"
+      },
+      "style": {
+        "kind": "circle",
+        "color_token": "--c-aeroporto",
+        "label_field": "nome"
+      },
+      "table": {
+        "fields": [
+          "nome",
+          "tipo",
+          "icao",
+          "localidade",
+          "elevacion_m",
+          "servizo_regular",
+          "pasaxeiros_mes",
+          "pasaxeiros_periodo",
+          "pasaxeiros_12_meses"
+        ]
+      },
+      "meta": {
+        "layer_id": "aeroportos",
+        "published_at": "2026-10-21T21:00:00.000Z",
+        "fetched_at": "2026-10-24T07:54:03.142Z",
+        "last_success_at": "2026-10-24T07:54:03.142Z",
+        "status": "fresh",
+        "consecutive_failures": 0,
+        "feature_count": 40,
+        "source_url": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+        "licence": "https://ourairports.com/data/",
+        "attribution": "OurAirports (dominio público); pasaxeiros: Eurostat (avia_paoa)",
+        "checksum": "sha256:9ad39f9f2c08c108d729015ff8860ac8fdd7b8b051d17cd75c2b3528b8e27902",
+        "last_error": null,
+        "history": [
+          {
+            "at": "2026-10-24T07:54:03.142Z",
+            "ok": true
+          }
+        ],
+        "alert": false
+      }
+    },
+    {
+      "id": "avisos-aemet",
+      "title": {
+        "gl": "Avisos meteorolóxicos da AEMET",
+        "es": "Avisos meteorológicos de AEMET"
+      },
+      "theme": "tempo-aire",
+      "operator": {
+        "name": "Agencia Estatal de Meteoroloxía (AEMET)",
+        "url": "https://www.aemet.es/es/eltiempo/prediccion/avisos?k=gal"
+      },
+      "source_url": "https://www.aemet.es/documentos_d/eltiempo/prediccion/avisos/rss/CAP_AFAC71_ATOM.xml",
+      "licence": {
+        "text_url": "https://www.aemet.es/es/nota_legal",
+        "quote": "Autorizado el uso de la información y su reproducción citando a AEMET",
+        "verified_at": "2026-10-24",
+        "odbl_compatible": true,
+        "collection": "odbl",
+        "notes": "Nota legal da AEMET: reutilización citando a AEMET e a data de actualización; prohibido desnaturalizar a información. Os textos dos avisos publícanse tal como os dá a AEMET."
+      },
+      "attribution": "© AEMET. Información elaborada pola Axencia Estatal de Meteoroloxía",
+      "update_frequency": {
+        "declared": "PT10M",
+        "schedule": "*/10 * * * *"
+      },
+      "geometry": "polygon",
+      "output": "geojson",
+      "privacy_notes": "Sen datos persoais: avisos oficiais por zona Meteoalerta (polígonos do propio CAP). Só avisos amarelos, laranxas e vermellos en vigor ou futuros; quítanse os verdes, os cancelados e os caducados. Ata 40 avisos CAP por execución. / Sin datos personales: avisos oficiales por zona Meteoalerta; solo amarillos, naranjas y rojos vigentes o futuros.",
+      "stale_after": "PT1H",
+      "ingest": {
+        "every": "PT10M"
+      },
+      "volatile": true,
+      "style": {
+        "kind": "fill",
+        "color_token": "--c-aviso",
+        "label_field": "fenomeno"
+      },
+      "table": {
+        "fields": [
+          "nivel",
+          "fenomeno",
+          "zona",
+          "inicio",
+          "fin",
+          "titular",
+          "descricion",
+          "probabilidade",
+          "fonte_url"
+        ]
+      },
+      "meta": {
+        "layer_id": "avisos-aemet",
+        "published_at": "2026-10-24T06:37:10.000Z",
+        "fetched_at": "2026-10-24T07:54:03.952Z",
+        "last_success_at": "2026-10-24T07:54:03.952Z",
+        "status": "fresh",
+        "consecutive_failures": 0,
+        "feature_count": 1,
+        "source_url": "https://www.aemet.es/documentos_d/eltiempo/prediccion/avisos/rss/CAP_AFAC71_ATOM.xml",
+        "licence": "https://www.aemet.es/es/nota_legal",
+        "attribution": "© AEMET. Información elaborada pola Axencia Estatal de Meteoroloxía",
+        "checksum": "sha256:bf1888f76fe1c2c4e9a7a1d6ffe79d78f0c7f19e929f3560e59a185e47080f04",
+        "last_error": null,
+        "history": [
+          {
+            "at": "2026-10-24T07:54:03.952Z",
+            "ok": true
+          }
+        ],
+        "alert": false
+      }
+    },
+    {
+      "id": "avisos-meteogalicia",
+      "title": {
+        "gl": "Avisos de MeteoGalicia por concello",
+        "es": "Avisos de MeteoGalicia por concello"
+      },
+      "theme": "tempo-aire",
+      "operator": {
+        "name": "MeteoGalicia (Consellería de Medio Ambiente, Xunta de Galicia)",
+        "url": "https://www.meteogalicia.gal/"
+      },
+      "source_url": "https://servizos.meteogalicia.gal/mgrss/predicion/adversos/jsonConcellosNivelMax.action",
+      "licence": {
+        "spdx": "CC-BY-SA-4.0",
+        "text_url": "https://www.meteogalicia.gal/web/aviso-legal",
+        "quote": "utilizada libremente… co único compromiso de mencionar expresamente a MeteoGalicia",
+        "verified_at": "2026-10-24",
+        "odbl_compatible": "doubt",
+        "collection": "cc-by-sa-4.0",
+        "notes": "Dobre licenza: aviso legal de MeteoGalicia (atribución) e posible CC BY-SA en abertos.xunta.gal. Aplícase a máis restritiva (ADR 0005) ata confirmación por escrito."
+      },
+      "attribution": "Datos: MeteoGalicia (Xunta de Galicia)",
+      "update_frequency": {
+        "declared": "PT10M",
+        "schedule": "*/10 * * * *"
+      },
+      "geometry": "none",
+      "output": "geojson",
+      "privacy_notes": "Sen datos persoais: nivel máximo de aviso de hoxe en cada un dos 313 concellos. O código de concello de MeteoGalicia é o código INE de 5 cifras (comprobado cos 313 do IGE). O detalle (fenómenos e horas) pídese só cando algún concello ten aviso; ata dúas peticións por execución. Non inclúe os avisos costeiros da AEMET. / Sin datos personales: nivel máximo de aviso de hoy por concello; no incluye los avisos costeros de AEMET.",
+      "stale_after": "PT40M",
+      "ingest": {
+        "every": "PT10M"
+      },
+      "volatile": true,
+      "join": {
+        "layer": "concellos-parroquias",
+        "key": "codigo_ine",
+        "where": {
+          "nivel": "concello"
+        }
+      },
+      "style": {
+        "kind": "fill",
+        "color_token": "--c-tempo",
+        "label_field": "nivel_txt"
+      },
+      "table": {
+        "fields": [
+          "nome",
+          "nivel_txt",
+          "fenomenos",
+          "inicio",
+          "fin"
+        ]
+      },
+      "meta": {
+        "layer_id": "avisos-meteogalicia",
+        "published_at": null,
+        "fetched_at": "2026-10-24T07:54:04.188Z",
+        "last_success_at": "2026-10-24T07:54:04.188Z",
+        "status": "fresh",
+        "consecutive_failures": 0,
+        "feature_count": 313,
+        "source_url": "https://servizos.meteogalicia.gal/mgrss/predicion/adversos/jsonConcellosNivelMax.action",
+        "licence": "CC-BY-SA-4.0",
+        "attribution": "Datos: MeteoGalicia (Xunta de Galicia)",
+        "checksum": "sha256:b0d3259a42f56a43a11eff1268cfdbc5e2c722c39da0f71071f3559ef3833aac",
+        "last_error": null,
+        "history": [
+          {
+            "at": "2026-10-24T07:54:04.188Z",
+            "ok": true
+          }
+        ],
+        "alert": false
+      }
+    },
+    {
+      "id": "bicis-arteixo",
+      "title": {
+        "gl": "Bicicleta pública de Arteixo (biciArteixo)",
+        "es": "Bicicleta pública de Arteixo (biciArteixo)"
+      },
+      "theme": "mobilidade",
+      "operator": {
+        "name": "Concello de Arteixo (servizo operado por nextbike)",
+        "url": "https://www.biciarteixo.com/"
+      },
+      "source_url": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_aa/gbfs.json",
+      "licence": {
+        "spdx": "CC0-1.0",
+        "text_url": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_aa/es/system_information.json",
+        "quote": "license_id CC0-1.0",
+        "verified_at": "2026-10-24",
+        "odbl_compatible": true,
+        "collection": "odbl",
+        "notes": "Licenza declarada no propio feed GBFS (system_information.license_id)."
+      },
+      "attribution": "Datos: biciArteixo / nextbike (CC0)",
+      "update_frequency": {
+        "declared": "PT1M",
+        "schedule": "*/10 * * * *"
+      },
+      "geometry": "point",
+      "output": "geojson",
+      "privacy_notes": "Só agregados por estación (bicis dispoñibles e ancoraxes libres). Non se le free_bike_status nin se publica ningún identificador de bici, para non permitir seguir percorridos.",
+      "stale_after": "PT40M",
+      "ingest": {
+        "every": "PT10M"
+      },
+      "style": {
+        "kind": "circle",
+        "color_token": "--c-bici",
+        "label_field": "bicis_libres"
+      },
+      "table": {
+        "fields": [
+          "nome",
+          "capacidade",
+          "bicis_libres",
+          "ancoraxes_libres",
+          "operativa",
+          "actualizado"
+        ]
+      },
+      "meta": {
+        "layer_id": "bicis-arteixo",
+        "published_at": "2026-10-24T07:53:45.000Z",
+        "fetched_at": "2026-10-24T07:54:04.667Z",
+        "last_success_at": "2026-10-24T07:54:04.667Z",
+        "status": "fresh",
+        "consecutive_failures": 0,
+        "feature_count": 15,
+        "source_url": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_aa/gbfs.json",
+        "licence": "CC0-1.0",
+        "attribution": "Datos: biciArteixo / nextbike (CC0)",
+        "checksum": "sha256:e5eab4655a2c89eafdaeaacbd67f5038f1b0ad212809fef82ee62018c8f29f27",
+        "last_error": null,
+        "history": [
+          {
+            "at": "2026-10-24T07:54:04.667Z",
+            "ok": true
+          }
+        ],
+        "alert": false
+      }
+    },
     {
       "id": "buses-xunta",
       "title": {
@@ -49,8 +341,8 @@
       "meta": {
         "layer_id": "buses-xunta",
         "published_at": "2026-10-23T19:29:27.000Z",
-        "fetched_at": "2026-10-24T07:32:10.817Z",
-        "last_success_at": "2026-10-24T07:32:10.817Z",
+        "fetched_at": "2026-10-24T07:54:05.229Z",
+        "last_success_at": "2026-10-24T07:54:05.229Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 25118,
@@ -60,6 +352,10 @@
         "checksum": "sha256:29c51b6e64a18daa454eb8abc5e5af9ac236d0f4107c8203f4688f0e051d1ebf",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-10-24T07:54:05.229Z",
+            "ok": true
+          },
           {
             "at": "2026-10-24T07:32:10.817Z",
             "ok": true
@@ -120,17 +416,21 @@
       "meta": {
         "layer_id": "calidade-aire",
         "published_at": "2026-10-24T07:00:00.000Z",
-        "fetched_at": "2026-10-24T07:32:36.156Z",
-        "last_success_at": "2026-10-24T07:32:36.156Z",
+        "fetched_at": "2026-10-24T07:54:23.940Z",
+        "last_success_at": "2026-10-24T07:54:23.940Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 46,
         "source_url": "https://servizos.meteogalicia.gal/mgrss/caire/jsonICAActual.action",
         "licence": "CC-BY-SA-4.0",
         "attribution": "Datos: Rede de Calidade do Aire de Galicia, MeteoGalicia (Xunta de Galicia). Datos provisionais, non validados.",
-        "checksum": "sha256:3fefe7ee7ac1ca02a97691da06695e022f54ea6081e8d6c22fb7c40922931049",
+        "checksum": "sha256:a74313acbf1490fafafb7f252b8aa4ab53f4c706fd0698f6c0fabd97933b7817",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-10-24T07:54:23.940Z",
+            "ok": true
+          },
           {
             "at": "2026-10-24T07:32:36.156Z",
             "ok": true
@@ -340,20 +640,156 @@
       },
       "meta": {
         "layer_id": "caudais-rios",
-        "published_at": "2026-10-24T07:20:00.000Z",
-        "fetched_at": "2026-10-24T07:32:37.881Z",
-        "last_success_at": "2026-10-24T07:32:37.881Z",
+        "published_at": "2026-10-24T07:40:00.000Z",
+        "fetched_at": "2026-10-24T07:54:24.928Z",
+        "last_success_at": "2026-10-24T07:54:24.928Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 87,
         "source_url": "https://servizos.meteogalicia.gal/mgafos/json/estadoActual.action",
         "licence": "https://www.meteogalicia.gal/web/aviso-legal",
         "attribution": "Datos: Augas de Galicia e MeteoGalicia (Xunta de Galicia). Datos non validados.",
-        "checksum": "sha256:9a755a3ea9b16103400cdb4c6b516352688cc728f4ab932ff25d9ee482129eab",
+        "checksum": "sha256:ad3a9425a36d8d7820bb5129387bdb09e4efc21aba05e29803210de7227f3101",
         "last_error": null,
         "history": [
           {
+            "at": "2026-10-24T07:54:24.928Z",
+            "ok": true
+          },
+          {
             "at": "2026-10-24T07:32:37.881Z",
+            "ok": true
+          }
+        ],
+        "alert": false
+      }
+    },
+    {
+      "id": "cobertura-banda-larga",
+      "title": {
+        "gl": "Cobertura de banda larga por concello",
+        "es": "Cobertura de banda ancha por ayuntamiento"
+      },
+      "theme": "territorio",
+      "operator": {
+        "name": "Ministerio para a Transformación Dixital e da Función Pública",
+        "url": "https://digital.gob.es"
+      },
+      "source_url": "https://digital.gob.es/telecomunicaciones-infraestructuras-digitales/areas-interes/banda-ancha/informacion-cobertura",
+      "licence": {
+        "text_url": "https://digital.gob.es/nota-legal",
+        "quote": "Debe citarse la fuente de los documentos",
+        "verified_at": "2026-10-24",
+        "odbl_compatible": true,
+        "collection": "odbl",
+        "notes": "Nota legal do Ministerio (Lei 37/2007: reutilización citando a fonte). Ficheiro XLSX anual «Cobertura Banda Ancha España» (folla «Municipio_%hogar»: cobertura en % de fogares a 30 de xuño), enlazado desde a páxina de información de cobertura."
+      },
+      "attribution": "Fonte: Ministerio para a Transformación Dixital e da Función Pública, cobertura de banda larga",
+      "update_frequency": {
+        "declared": "P365D"
+      },
+      "geometry": "none",
+      "output": "geojson",
+      "privacy_notes": "Porcentaxes de fogares con cobertura por concello, agregadas polo Ministerio a partir das declaracións dos operadores; ningún dato persoal.",
+      "stale_after": "P400D",
+      "ingest": {
+        "every": "P30D"
+      },
+      "join": {
+        "layer": "concellos-parroquias",
+        "key": "codigo_ine",
+        "where": {
+          "nivel": "concello"
+        }
+      },
+      "indicators": [
+        {
+          "id": "ftth",
+          "label": {
+            "gl": "Cobertura de fibra óptica (FTTH)",
+            "es": "Cobertura de fibra óptica (FTTH)"
+          },
+          "unit": "% fogares",
+          "comparison": "points",
+          "source": "Ministerio, folla Municipio_%hogar, columna «FTTH (junio AAAA)»",
+          "note": {
+            "gl": "Porcentaxe de fogares con cobertura FTTH segundo o Ministerio. O valor de Galicia é a media dos concellos ponderada polos fogares (cálculo propio) e a diferenza en puntos tamén é cálculo propio; móstrase xunto ao valor orixinal.",
+            "es": "Porcentaje de hogares con cobertura FTTH según el Ministerio. El valor de Galicia es la media de los ayuntamientos ponderada por los hogares (cálculo propio) y la diferencia en puntos también es cálculo propio; se muestra junto al valor original."
+          }
+        },
+        {
+          "id": "velocidade_100mbps",
+          "label": {
+            "gl": "Cobertura de 100 Mbps",
+            "es": "Cobertura de 100 Mbps"
+          },
+          "unit": "% fogares",
+          "comparison": "points",
+          "source": "Ministerio, folla Municipio_%hogar, columna «Cob. 100Mbps condiciones máxima demanda (junio AAAA)»",
+          "note": {
+            "gl": "Fogares con 100 Mbps ou máis en condicións de máxima demanda, calquera tecnoloxía fixa. Galicia: media ponderada polos fogares e diferenza en puntos, cálculo propio.",
+            "es": "Hogares con 100 Mbps o más en condiciones de máxima demanda, cualquier tecnología fija. Galicia: media ponderada por los hogares y diferencia en puntos, cálculo propio."
+          }
+        },
+        {
+          "id": "velocidade_1gbps",
+          "label": {
+            "gl": "Cobertura de 1 Gbps",
+            "es": "Cobertura de 1 Gbps"
+          },
+          "unit": "% fogares",
+          "comparison": "points",
+          "source": "Ministerio, folla Municipio_%hogar, columna «Cob. 1Gbps descarga condiciones máxima demanda (junio AAAA)»",
+          "note": {
+            "gl": "Fogares con 1 Gbps de descarga en condicións de máxima demanda. Galicia: media ponderada polos fogares e diferenza en puntos, cálculo propio.",
+            "es": "Hogares con 1 Gbps de descarga en condiciones de máxima demanda. Galicia: media ponderada por los hogares y diferencia en puntos, cálculo propio."
+          }
+        },
+        {
+          "id": "cobertura_5g",
+          "label": {
+            "gl": "Cobertura 5G",
+            "es": "Cobertura 5G"
+          },
+          "unit": "% fogares",
+          "comparison": "points",
+          "source": "Ministerio, folla Municipio_%hogar, columna «5G (junio AAAA)»",
+          "note": {
+            "gl": "Fogares con cobertura 5G de calquera banda (a columna «5G-Banda 3,5GHz» non se usa). Galicia: media ponderada polos fogares e diferenza en puntos, cálculo propio.",
+            "es": "Hogares con cobertura 5G de cualquier banda (la columna «5G-Banda 3,5GHz» no se usa). Galicia: media ponderada por los hogares y diferencia en puntos, cálculo propio."
+          }
+        }
+      ],
+      "style": {
+        "kind": "fill",
+        "label_field": "nome"
+      },
+      "table": {
+        "fields": [
+          "nome",
+          "codigo_ine",
+          "ftth",
+          "velocidade_100mbps",
+          "velocidade_1gbps",
+          "cobertura_5g"
+        ]
+      },
+      "meta": {
+        "layer_id": "cobertura-banda-larga",
+        "published_at": "2026-06-16T16:27:24.000Z",
+        "fetched_at": "2026-10-24T07:54:25.155Z",
+        "last_success_at": "2026-10-24T07:54:25.155Z",
+        "status": "fresh",
+        "consecutive_failures": 0,
+        "feature_count": 313,
+        "source_url": "https://digital.gob.es/telecomunicaciones-infraestructuras-digitales/areas-interes/banda-ancha/informacion-cobertura",
+        "licence": "https://digital.gob.es/nota-legal",
+        "attribution": "Fonte: Ministerio para a Transformación Dixital e da Función Pública, cobertura de banda larga",
+        "checksum": "sha256:79e5de1c866ad9b7651b6d05d2f4e2dd44cc101827575798ea7eef2e52589098",
+        "last_error": null,
+        "history": [
+          {
+            "at": "2026-10-24T07:54:25.155Z",
             "ok": true
           }
         ],
@@ -412,8 +848,8 @@
       "meta": {
         "layer_id": "concellos-parroquias",
         "published_at": "2026-01-31T23:00:00.000Z",
-        "fetched_at": "2026-10-24T07:32:38.212Z",
-        "last_success_at": "2026-10-24T07:32:38.212Z",
+        "fetched_at": "2026-10-24T07:54:27.313Z",
+        "last_success_at": "2026-10-24T07:54:27.313Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 4098,
@@ -423,6 +859,10 @@
         "checksum": "sha256:b69a2c74c7c2bf7326369f9c647e0c558e486d35ca146e43bf105da3b10fc299",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-10-24T07:54:27.313Z",
+            "ok": true
+          },
           {
             "at": "2026-10-24T07:32:38.212Z",
             "ok": true
@@ -486,8 +926,8 @@
       "meta": {
         "layer_id": "espazos-naturais-galicia",
         "published_at": null,
-        "fetched_at": "2026-10-24T07:32:45.126Z",
-        "last_success_at": "2026-10-24T07:32:45.126Z",
+        "fetched_at": "2026-10-24T07:54:33.018Z",
+        "last_success_at": "2026-10-24T07:54:33.018Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 96,
@@ -497,6 +937,10 @@
         "checksum": "sha256:5f0841a2003aba7b4f12fffaff2b386faadd7c23bdfe84eedbafcd469ca5c57e",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-10-24T07:54:33.018Z",
+            "ok": true
+          },
           {
             "at": "2026-10-24T07:32:45.126Z",
             "ok": true
@@ -569,18 +1013,22 @@
       },
       "meta": {
         "layer_id": "estacions-meteo",
-        "published_at": "2026-10-24T07:20:00.000Z",
-        "fetched_at": "2026-10-24T07:32:49.397Z",
-        "last_success_at": "2026-10-24T07:32:49.397Z",
+        "published_at": "2026-10-24T07:40:00.000Z",
+        "fetched_at": "2026-10-24T07:54:36.451Z",
+        "last_success_at": "2026-10-24T07:54:36.451Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 154,
         "source_url": "https://servizos.meteogalicia.gal/mgrss/observacion/ultimos10minEstacionsMeteo.action",
         "licence": "CC-BY-SA-4.0",
         "attribution": "Datos: MeteoGalicia (Xunta de Galicia)",
-        "checksum": "sha256:fbbb2deadc4cfc44dfa7532ad2a80f2eeb7e980bab0ef27894885ac16ec5d4be",
+        "checksum": "sha256:87a464d365a7c1a977f8694f3cecce29602a77bedb3a6d95dc1733ea56759f2b",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-10-24T07:54:36.451Z",
+            "ok": true
+          },
           {
             "at": "2026-10-24T07:32:49.397Z",
             "ok": true
@@ -799,8 +1247,8 @@
       "meta": {
         "layer_id": "focos-calor",
         "published_at": null,
-        "fetched_at": "2026-10-24T07:32:50.503Z",
-        "last_success_at": "2026-10-24T07:32:50.503Z",
+        "fetched_at": "2026-10-24T07:54:37.178Z",
+        "last_success_at": "2026-10-24T07:54:37.178Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 0,
@@ -810,6 +1258,10 @@
         "checksum": "sha256:ed778c73ea51338d6576fb5992b189f2b94d9f3d5e199f46c1af520d6b0b3e6c",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-10-24T07:54:37.178Z",
+            "ok": true
+          },
           {
             "at": "2026-10-24T07:32:50.503Z",
             "ok": true
@@ -981,6 +1433,331 @@
       }
     },
     {
+      "id": "gasolineiras",
+      "title": {
+        "gl": "Gasolineiras e prezos dos carburantes",
+        "es": "Gasolineras y precios de los carburantes"
+      },
+      "theme": "mobilidade",
+      "operator": {
+        "name": "Ministerio para a Transición Ecolóxica e o Reto Demográfico (MITERD)",
+        "url": "https://geoportalgasolineras.es/"
+      },
+      "source_url": "https://sedeaplicaciones.minetur.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/EstacionesTerrestres/FiltroCCAA/12",
+      "licence": {
+        "text_url": "https://www.miteco.gob.es/es/atencion-al-ciudadano/aviso-legal.html",
+        "quote": "sin necesidad de autorización expresa",
+        "verified_at": "2026-10-24",
+        "odbl_compatible": true,
+        "collection": "odbl",
+        "notes": "Aviso legal do MITECO (Lei 37/2007 de reutilización da información do sector público): reutilización permitida citando a fonte."
+      },
+      "attribution": "Fonte: Ministerio para a Transición Ecolóxica (MITERD), xeoportal de gasolineiras",
+      "update_frequency": {
+        "declared": "PT30M",
+        "schedule": "*/30 * * * *"
+      },
+      "geometry": "point",
+      "output": "geojson",
+      "privacy_notes": "Sen datos persoais: estacións de servizo e os prezos que comunican ao Ministerio. A resposta non trae hora de publicación propia: o campo «Fecha» é a hora da consulta (os prezos en vigor nese momento), polo que a hora de publicación queda baleira e prezo_actualizado indica esa hora de consulta.",
+      "stale_after": "PT2H",
+      "ingest": {
+        "every": "PT30M"
+      },
+      "style": {
+        "kind": "circle",
+        "color_token": "--c-carburante",
+        "label_field": "nome"
+      },
+      "table": {
+        "fields": [
+          "nome",
+          "concello",
+          "enderezo",
+          "horario",
+          "gasoleo_a",
+          "gasolina_95",
+          "gasolina_98",
+          "gasoleo_b",
+          "glp",
+          "prezo_actualizado"
+        ]
+      },
+      "meta": {
+        "layer_id": "gasolineiras",
+        "published_at": null,
+        "fetched_at": "2026-10-24T07:54:37.601Z",
+        "last_success_at": "2026-10-24T07:54:37.601Z",
+        "status": "fresh",
+        "consecutive_failures": 0,
+        "feature_count": 727,
+        "source_url": "https://sedeaplicaciones.minetur.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/EstacionesTerrestres/FiltroCCAA/12",
+        "licence": "https://www.miteco.gob.es/es/atencion-al-ciudadano/aviso-legal.html",
+        "attribution": "Fonte: Ministerio para a Transición Ecolóxica (MITERD), xeoportal de gasolineiras",
+        "checksum": "sha256:1ae0efa227c99d68e47ef428c40db33c1f21a7add593ae495d7e02168c54fb1b",
+        "last_error": null,
+        "history": [
+          {
+            "at": "2026-10-24T07:54:37.601Z",
+            "ok": true
+          }
+        ],
+        "alert": false
+      }
+    },
+    {
+      "id": "indicadores-concellos",
+      "title": {
+        "gl": "Indicadores dos concellos comparados con Galicia",
+        "es": "Indicadores de los ayuntamientos comparados con Galicia"
+      },
+      "theme": "territorio",
+      "operator": {
+        "name": "Instituto Galego de Estatística (IGE)",
+        "url": "https://www.ige.gal"
+      },
+      "source_url": "https://www.ige.gal/igebdt/igeapi/csv/datos/723/T%5B1:a%5D,1:0:3:9:10,2:2",
+      "licence": {
+        "text_url": "https://www.ige.gal/web/avisolegal.jsp",
+        "quote": "Está prohibido desnaturalizar o sentido da información",
+        "verified_at": "2026-10-24",
+        "odbl_compatible": "doubt",
+        "collection": "cc-by-sa-4.0",
+        "notes": "Aviso legal do IGE (Lei 37/2007: reutilización citando «Fonte: IGE»). Compatibilidade con ODbL en dúbida: colección CC BY-SA 4.0 (ADR 0005). Condicións da API: non modificar os datos presentados; por iso cada indicador publica o valor orixinal do IGE xunto ao valor de Galicia e á comparación, que é cálculo propio. Aviso obrigatorio: «Este produto emprega a API de datos do Instituto Galego de Estatística (IGE), pero non está certificado ou aprobado polo IGE.» Pendente: consulta escrita ao IGE sobre os índices derivados."
+      },
+      "attribution": "Fonte: IGE: https://www.ige.gal. Comparacións con Galicia e indicadores derivados: cálculo propio da Fundación Galicia Sustentable. Este produto emprega a API de datos do Instituto Galego de Estatística (IGE), pero non está certificado ou aprobado polo IGE.",
+      "update_frequency": {
+        "declared": "P30D"
+      },
+      "geometry": "none",
+      "output": "geojson",
+      "privacy_notes": "Só datos estatísticos agregados por concello; ningún dato persoal. O IGE non difunde valores con poucos sucesos (segredo estatístico): eses casos publícanse sen dato.",
+      "stale_after": "P30D",
+      "ingest": {
+        "every": "P7D"
+      },
+      "join": {
+        "layer": "concellos-parroquias",
+        "key": "codigo_ine",
+        "where": {
+          "nivel": "concello"
+        }
+      },
+      "indicators": [
+        {
+          "id": "envellecemento",
+          "label": {
+            "gl": "Índice de envellecemento",
+            "es": "Índice de envejecimiento"
+          },
+          "unit": "índice",
+          "comparison": "index",
+          "source": "IGE, táboa 723 (Indicadores de poboación)",
+          "note": {
+            "gl": "Poboación de 65 e máis anos por cada 100 menores de 20. Valor orixinal do IGE; a comparación con Galicia (Galicia = 100) é cálculo propio e móstrase xunto ao orixinal.",
+            "es": "Población de 65 y más años por cada 100 menores de 20. Valor original del IGE; la comparación con Galicia (Galicia = 100) es cálculo propio y se muestra junto al original."
+          }
+        },
+        {
+          "id": "maiores_65_pct",
+          "label": {
+            "gl": "Poboación de 65 e máis anos",
+            "es": "Población de 65 y más años"
+          },
+          "unit": "%",
+          "comparison": "points",
+          "source": "IGE, táboa 723 (Indicadores de poboación)",
+          "note": {
+            "gl": "Valor orixinal do IGE. A diferenza con Galicia (en puntos) é cálculo propio e móstrase xunto ao orixinal.",
+            "es": "Valor original del IGE. La diferencia con Galicia (en puntos) es cálculo propio y se muestra junto al original."
+          }
+        },
+        {
+          "id": "idade_media",
+          "label": {
+            "gl": "Idade media",
+            "es": "Edad media"
+          },
+          "unit": "anos",
+          "comparison": "points",
+          "source": "IGE, táboa 723 (Indicadores de poboación)",
+          "note": {
+            "gl": "Idade media a 1 de xaneiro. Valor orixinal do IGE; a diferenza con Galicia (en anos) é cálculo propio e móstrase xunto ao orixinal.",
+            "es": "Edad media a 1 de enero. Valor original del IGE; la diferencia con Galicia (en años) es cálculo propio y se muestra junto al original."
+          }
+        },
+        {
+          "id": "variacion_poboacion_10a",
+          "label": {
+            "gl": "Variación da poboación en 10 anos",
+            "es": "Variación de la población en 10 años"
+          },
+          "unit": "%",
+          "comparison": "points",
+          "source": "IGE, táboa 1558 (Series históricas de poboación)",
+          "note": {
+            "gl": "Cálculo propio: (poboación do último ano − poboación de 10 anos antes) ÷ poboación de 10 anos antes × 100, coas cifras orixinais do IGE. Para Cerdedo-Cotobade e Oza-Cesuras, o ano inicial suma os concellos de orixe cando o IGE non dá cifra do concello novo. A diferenza con Galicia (en puntos) tamén é cálculo propio.",
+            "es": "Cálculo propio: (población del último año − población de 10 años antes) ÷ población de 10 años antes × 100, con las cifras originales del IGE. Para Cerdedo-Cotobade y Oza-Cesuras, el año inicial suma los ayuntamientos de origen cuando el IGE no da cifra del nuevo. La diferencia con Galicia (en puntos) también es cálculo propio."
+          }
+        },
+        {
+          "id": "densidade",
+          "label": {
+            "gl": "Densidade de poboación",
+            "es": "Densidad de población"
+          },
+          "unit": "hab./km²",
+          "comparison": "index",
+          "source": "IGE, táboa 943 (Densidade de poboación)",
+          "note": {
+            "gl": "Valor orixinal do IGE. Distribución moi asimétrica (das cidades a concellos de menos de 5 hab./km²). A comparación con Galicia (Galicia = 100) é cálculo propio e móstrase xunto ao orixinal.",
+            "es": "Valor original del IGE. Distribución muy asimétrica (de las ciudades a ayuntamientos de menos de 5 hab./km²). La comparación con Galicia (Galicia = 100) es cálculo propio y se muestra junto al original."
+          }
+        },
+        {
+          "id": "renda_hab",
+          "label": {
+            "gl": "Renda dispoñible bruta por habitante",
+            "es": "Renta disponible bruta por habitante"
+          },
+          "unit": "€",
+          "comparison": "index",
+          "source": "IGE, táboa 9642 (Renda dispoñible bruta por habitante)",
+          "note": {
+            "gl": "Valor orixinal do IGE (o último ano pode ser provisional). A comparación con Galicia (Galicia = 100) é cálculo propio e móstrase xunto ao orixinal.",
+            "es": "Valor original del IGE (el último año puede ser provisional). La comparación con Galicia (Galicia = 100) es cálculo propio y se muestra junto al original."
+          }
+        },
+        {
+          "id": "estranxeiros_pct",
+          "label": {
+            "gl": "Poboación estranxeira",
+            "es": "Población extranjera"
+          },
+          "unit": "%",
+          "comparison": "points",
+          "source": "IGE, táboa 9830 (Porcentaxe de poboación estranxeira)",
+          "note": {
+            "gl": "Valor orixinal do IGE. A diferenza con Galicia (en puntos) é cálculo propio e móstrase xunto ao orixinal.",
+            "es": "Valor original del IGE. La diferencia con Galicia (en puntos) es cálculo propio y se muestra junto al original."
+          }
+        },
+        {
+          "id": "saldo_migratorio",
+          "label": {
+            "gl": "Saldo migratorio",
+            "es": "Saldo migratorio"
+          },
+          "unit": "‰",
+          "comparison": "points",
+          "source": "IGE, táboa 9810 (Saldo migratorio por 1000 habitantes)",
+          "note": {
+            "gl": "Saldo migratorio total por 1.000 habitantes. Valor orixinal do IGE; a diferenza con Galicia (en puntos) é cálculo propio e móstrase xunto ao orixinal.",
+            "es": "Saldo migratorio total por 1.000 habitantes. Valor original del IGE; la diferencia con Galicia (en puntos) es cálculo propio y se muestra junto al original."
+          }
+        },
+        {
+          "id": "afiliacion_agro_pct",
+          "label": {
+            "gl": "Afiliación no agro e na pesca",
+            "es": "Afiliación en agricultura y pesca"
+          },
+          "unit": "%",
+          "comparison": "points",
+          "source": "IGE, táboa 11500 (Afiliacións á Seguridade Social por sector)",
+          "note": {
+            "gl": "Porcentaxe de afiliacións en alta laboral do sector «Agricultura e pesca», segundo o concello de residencia. Valor orixinal do IGE (último mes); a diferenza con Galicia (en puntos) é cálculo propio e móstrase xunto ao orixinal.",
+            "es": "Porcentaje de afiliaciones en alta laboral del sector «Agricultura e pesca», según el ayuntamiento de residencia. Valor original del IGE (último mes); la diferencia con Galicia (en puntos) es cálculo propio y se muestra junto al original."
+          }
+        },
+        {
+          "id": "paro_rel",
+          "label": {
+            "gl": "Paro rexistrado sobre poboación de 20 a 64 anos",
+            "es": "Paro registrado sobre población de 20 a 64 años"
+          },
+          "unit": "%",
+          "comparison": "index",
+          "source": "IGE, táboas 744 (Paro rexistrado), 1558 (Poboación) e 723 (Indicadores de poboación)",
+          "note": {
+            "gl": "NON é a taxa de paro oficial (non existe taxa de paro municipal). Cálculo propio: paro rexistrado do último mes ÷ (poboación do último ano × porcentaxe de poboación de 20 a 64 anos) × 100, coas cifras orixinais do IGE. A táboa 744 dá 0 parados en Cerdedo-Cotobade e Oza-Cesuras (concellos fusionados), cifra non crible: publícanse sen dato. A comparación con Galicia (Galicia = 100) tamén é cálculo propio.",
+            "es": "NO es la tasa de paro oficial (no existe tasa de paro municipal). Cálculo propio: paro registrado del último mes ÷ (población del último año × porcentaje de población de 20 a 64 años) × 100, con las cifras originales del IGE. La tabla 744 da 0 parados en Cerdedo-Cotobade y Oza-Cesuras (ayuntamientos fusionados), cifra no creíble: se publican sin dato. La comparación con Galicia (Galicia = 100) también es cálculo propio."
+          }
+        },
+        {
+          "id": "bovino_km2",
+          "label": {
+            "gl": "Gando bovino por km²",
+            "es": "Ganado bovino por km²"
+          },
+          "unit": "cabezas/km²",
+          "comparison": "index",
+          "source": "IGE, táboas 62 (Gando bovino) e 77 (Superficie)",
+          "note": {
+            "gl": "Cálculo propio: número de bovinos do último ano ÷ superficie do concello (km², última cifra do IGE), coas cifras orixinais do IGE. A comparación con Galicia (Galicia = 100) tamén é cálculo propio.",
+            "es": "Cálculo propio: número de bovinos del último año ÷ superficie del ayuntamiento (km², última cifra del IGE), con las cifras originales del IGE. La comparación con Galicia (Galicia = 100) también es cálculo propio."
+          }
+        },
+        {
+          "id": "natalidade_3a",
+          "label": {
+            "gl": "Natalidade (media de 3 anos)",
+            "es": "Natalidad (media de 3 años)"
+          },
+          "unit": "‰",
+          "comparison": "points",
+          "source": "IGE, táboas 57 (Nacementos) e 1558 (Poboación)",
+          "note": {
+            "gl": "Cálculo propio: nacementos dos tres últimos anos ÷ suma da poboación deses anos × 1.000 (media de 3 anos para que os concellos pequenos non oscilen tanto). O último ano de nacementos pode ser provisional. A diferenza con Galicia (en puntos) tamén é cálculo propio.",
+            "es": "Cálculo propio: nacimientos de los tres últimos años ÷ suma de la población de esos años × 1.000 (media de 3 años para que los ayuntamientos pequeños no oscilen tanto). El último año de nacimientos puede ser provisional. La diferencia con Galicia (en puntos) también es cálculo propio."
+          }
+        }
+      ],
+      "style": {
+        "kind": "fill",
+        "label_field": "nome"
+      },
+      "table": {
+        "fields": [
+          "nome",
+          "codigo_ine",
+          "envellecemento",
+          "maiores_65_pct",
+          "idade_media",
+          "variacion_poboacion_10a",
+          "densidade",
+          "renda_hab",
+          "estranxeiros_pct",
+          "saldo_migratorio",
+          "afiliacion_agro_pct",
+          "paro_rel",
+          "bovino_km2",
+          "natalidade_3a"
+        ]
+      },
+      "meta": {
+        "layer_id": "indicadores-concellos",
+        "published_at": null,
+        "fetched_at": "2026-10-24T07:54:40.008Z",
+        "last_success_at": "2026-10-24T07:54:40.008Z",
+        "status": "fresh",
+        "consecutive_failures": 0,
+        "feature_count": 313,
+        "source_url": "https://www.ige.gal/igebdt/igeapi/csv/datos/723/T%5B1:a%5D,1:0:3:9:10,2:2",
+        "licence": "https://www.ige.gal/web/avisolegal.jsp",
+        "attribution": "Fonte: IGE: https://www.ige.gal. Comparacións con Galicia e indicadores derivados: cálculo propio da Fundación Galicia Sustentable. Este produto emprega a API de datos do Instituto Galego de Estatística (IGE), pero non está certificado ou aprobado polo IGE.",
+        "checksum": "sha256:18d39ce3d17ea07a331b9b82bc969eee77d0258b95c1cce853da9eacfcc08586",
+        "last_error": null,
+        "history": [
+          {
+            "at": "2026-10-24T07:54:40.008Z",
+            "ok": true
+          }
+        ],
+        "alert": false
+      }
+    },
+    {
       "id": "patrimonio",
       "title": {
         "gl": "Bens de interese cultural (BIC)",
@@ -1033,8 +1810,8 @@
       "meta": {
         "layer_id": "patrimonio",
         "published_at": null,
-        "fetched_at": "2026-10-24T07:32:51.451Z",
-        "last_success_at": "2026-10-24T07:32:51.451Z",
+        "fetched_at": "2026-10-24T07:54:54.781Z",
+        "last_success_at": "2026-10-24T07:54:54.781Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 664,
@@ -1044,6 +1821,10 @@
         "checksum": "sha256:ed56e00b716494bec07ac4ae8683f04488af8cc0c45b7cc40ad114d3d4dd7ddd",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-10-24T07:54:54.781Z",
+            "ok": true
+          },
           {
             "at": "2026-10-24T07:32:51.451Z",
             "ok": true
@@ -1136,8 +1917,8 @@
       "meta": {
         "layer_id": "perimetros-queimados",
         "published_at": "2026-10-19T13:19:12.428Z",
-        "fetched_at": "2026-10-24T07:32:52.042Z",
-        "last_success_at": "2026-10-24T07:32:52.042Z",
+        "fetched_at": "2026-10-24T07:54:55.546Z",
+        "last_success_at": "2026-10-24T07:54:55.546Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 176,
@@ -1147,6 +1928,10 @@
         "checksum": "sha256:5a4f2c11bcbf3f55d2a1e7603abae45ce75e20b8463c113c0c08b0c7beb7944f",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-10-24T07:54:55.546Z",
+            "ok": true
+          },
           {
             "at": "2026-10-24T07:32:52.042Z",
             "ok": true
@@ -1177,6 +1962,143 @@
           },
           {
             "at": "2026-10-18T09:16:09.412Z",
+            "ok": true
+          }
+        ],
+        "alert": false
+      }
+    },
+    {
+      "id": "puntos-recarga",
+      "title": {
+        "gl": "Puntos de recarga de vehículos eléctricos",
+        "es": "Puntos de recarga de vehículos eléctricos"
+      },
+      "theme": "mobilidade",
+      "operator": {
+        "name": "MITERD, publicado no Punto de Acceso Nacional de Tráfico (DGT)",
+        "url": "https://nap.dgt.es/es/dataset/puntos-de-recarga-electrica-para-vehiculos"
+      },
+      "source_url": "https://nap.dgt.es/datex2/v3/miterd/EnergyInfrastructureTablePublication/electrolineras.xml",
+      "licence": {
+        "text_url": "https://nap.dgt.es/es/dataset/puntos-de-recarga-electrica-para-vehiculos",
+        "quote": "Licencia: Creative Commons Attribution",
+        "verified_at": "2026-10-24",
+        "odbl_compatible": true,
+        "collection": "odbl",
+        "notes": "A ficha do conxunto no NAP declara «Creative Commons Attribution» sen indicar a versión."
+      },
+      "attribution": "Fonte: MITERD vía Punto de Acceso Nacional de Tráfico (DGT)",
+      "update_frequency": {
+        "declared": "P1D",
+        "schedule": "15 5 * * *"
+      },
+      "geometry": "point",
+      "output": "geojson",
+      "privacy_notes": "Sen datos persoais: localizacións de recarga, operador e características técnicas. A fonte non publica ocupación nin prezos. Algúns operadores son pequenas empresas (concesionarios, hoteis); publícase só o nome comercial que figura no rexistro público.",
+      "stale_after": "P3D",
+      "ingest": {
+        "every": "P1D"
+      },
+      "style": {
+        "kind": "circle",
+        "color_token": "--c-recarga",
+        "label_field": "nome"
+      },
+      "table": {
+        "fields": [
+          "nome",
+          "operador",
+          "concello",
+          "puntos",
+          "potencia_max_kw",
+          "conectores",
+          "actualizado"
+        ]
+      },
+      "meta": {
+        "layer_id": "puntos-recarga",
+        "published_at": "2026-10-23T08:16:28.845Z",
+        "fetched_at": "2026-10-24T07:54:57.244Z",
+        "last_success_at": "2026-10-24T07:54:57.244Z",
+        "status": "fresh",
+        "consecutive_failures": 0,
+        "feature_count": 460,
+        "source_url": "https://nap.dgt.es/datex2/v3/miterd/EnergyInfrastructureTablePublication/electrolineras.xml",
+        "licence": "https://nap.dgt.es/es/dataset/puntos-de-recarga-electrica-para-vehiculos",
+        "attribution": "Fonte: MITERD vía Punto de Acceso Nacional de Tráfico (DGT)",
+        "checksum": "sha256:4f2e2c8be0bf1de82815c1191daaaa6a09936587bd4e1a628031ab89e45c28f8",
+        "last_error": null,
+        "history": [
+          {
+            "at": "2026-10-24T07:54:57.244Z",
+            "ok": true
+          }
+        ],
+        "alert": false
+      }
+    },
+    {
+      "id": "raios",
+      "title": {
+        "gl": "Raios (últimas 24 horas)",
+        "es": "Rayos (últimas 24 horas)"
+      },
+      "theme": "tempo-aire",
+      "operator": {
+        "name": "MeteoGalicia (Consellería de Medio Ambiente, Xunta de Galicia)",
+        "url": "https://www.meteogalicia.gal/web/observacion/raios"
+      },
+      "source_url": "https://servizos.meteogalicia.gal/mgrss/observacion/jsonRaios.action",
+      "licence": {
+        "spdx": "CC-BY-SA-4.0",
+        "text_url": "https://www.meteogalicia.gal/web/aviso-legal",
+        "quote": "utilizada libremente… co único compromiso de mencionar expresamente a MeteoGalicia",
+        "verified_at": "2026-10-24",
+        "odbl_compatible": "doubt",
+        "collection": "cc-by-sa-4.0",
+        "notes": "Dobre licenza: aviso legal de MeteoGalicia (atribución) e posible CC BY-SA en abertos.xunta.gal. Aplícase a máis restritiva (ADR 0005) ata confirmación por escrito."
+      },
+      "attribution": "Datos: MeteoGalicia (Xunta de Galicia)",
+      "update_frequency": {
+        "declared": "PT10M",
+        "schedule": "*/10 * * * *"
+      },
+      "geometry": "point",
+      "output": "geojson",
+      "privacy_notes": "Sen datos persoais: descargas eléctricas detectadas pola rede de MeteoGalicia. Só os raios das últimas 24 horas dentro de Galicia (marxe de 0,1°). Unha soa petición por execución. / Sin datos personales: descargas detectadas por la red de MeteoGalicia en las últimas 24 horas dentro de Galicia.",
+      "stale_after": "PT40M",
+      "ingest": {
+        "every": "PT10M"
+      },
+      "volatile": true,
+      "style": {
+        "kind": "circle",
+        "color_token": "--c-raio"
+      },
+      "table": {
+        "fields": [
+          "data",
+          "intensidade_ka",
+          "polaridade"
+        ]
+      },
+      "meta": {
+        "layer_id": "raios",
+        "published_at": null,
+        "fetched_at": "2026-10-24T07:54:59.776Z",
+        "last_success_at": "2026-10-24T07:54:59.776Z",
+        "status": "fresh",
+        "consecutive_failures": 0,
+        "feature_count": 0,
+        "source_url": "https://servizos.meteogalicia.gal/mgrss/observacion/jsonRaios.action",
+        "licence": "CC-BY-SA-4.0",
+        "attribution": "Datos: MeteoGalicia (Xunta de Galicia)",
+        "checksum": "sha256:ed778c73ea51338d6576fb5992b189f2b94d9f3d5e199f46c1af520d6b0b3e6c",
+        "last_error": null,
+        "history": [
+          {
+            "at": "2026-10-24T07:54:59.776Z",
             "ok": true
           }
         ],
@@ -1232,10 +2154,10 @@
       "meta": {
         "layer_id": "rede-natura",
         "published_at": null,
-        "fetched_at": "2026-10-24T07:32:54.318Z",
+        "fetched_at": "2026-10-24T07:55:00.114Z",
         "last_success_at": "2026-10-18T09:03:21.597Z",
         "status": "stale",
-        "consecutive_failures": 2,
+        "consecutive_failures": 3,
         "feature_count": 76,
         "source_url": "https://geoserver.iepnb.es/geoserver/RN2000/ows",
         "licence": "https://www.miteco.gob.es/es/atencion-al-ciudadano/aviso-legal.html",
@@ -1243,6 +2165,11 @@
         "checksum": "sha256:302244ac1781a3ee068ae74ef481c42043fe0448181a10201a6ede29f4427cc2",
         "last_error": "HTTP 403 for https://geoserver.iepnb.es/geoserver/RN2000/ows?service=WFS&version=2.0.0&request=GetCapabilities",
         "history": [
+          {
+            "at": "2026-10-24T07:55:00.114Z",
+            "ok": false,
+            "error": "HTTP 403 for https://geoserver.iepnb.es/geoserver/RN2000/ows?service=WFS&version=2.0.0&request=GetCapabilities"
+          },
           {
             "at": "2026-10-24T07:32:54.318Z",
             "ok": false,
@@ -1255,6 +2182,80 @@
           },
           {
             "at": "2026-10-18T09:03:21.597Z",
+            "ok": true
+          }
+        ],
+        "alert": false
+      }
+    },
+    {
+      "id": "sismos-recentes",
+      "title": {
+        "gl": "Terremotos recentes (30 días)",
+        "es": "Terremotos recientes (30 días)"
+      },
+      "theme": "territorio",
+      "operator": {
+        "name": "EMSC-CSEM (con solucións do Instituto Geográfico Nacional)",
+        "url": "https://www.seismicportal.eu/"
+      },
+      "source_url": "https://www.seismicportal.eu/fdsnws/event/1/query?minlatitude=41.5&maxlatitude=44.5&minlongitude=-10.5&maxlongitude=-6.5&format=json&limit=500",
+      "licence": {
+        "spdx": "CC-BY-4.0",
+        "text_url": "https://www.seismicportal.eu/terms.html",
+        "quote": "provided under the Creative Commons Attribution 4.0 International (CC BY 4.0) license",
+        "verified_at": "2026-10-24",
+        "odbl_compatible": true,
+        "collection": "odbl",
+        "notes": "Os termos prohiben a copia masiva da base de datos sen permiso escrito: a capa só garda a xanela móbil dos últimos 30 días e non constrúe un arquivo histórico. Antes de gardar un histórico hai que consultar a EMSC."
+      },
+      "attribution": "EMSC-CSEM / Instituto Geográfico Nacional (solucións IGN)",
+      "update_frequency": {
+        "declared": "PT10M",
+        "measured": "PT10M",
+        "schedule": "*/10 * * * *"
+      },
+      "geometry": "point",
+      "output": "geojson",
+      "privacy_notes": "Sen datos persoais: epicentros de terremotos. As magnitudes e localizacións revísanse co tempo (campo actualizado); unha profundidade de 0 km adoita ser unha profundidade fixada polo cálculo, non medida (profundidade_fixada). Inclúe o mar e a raia próximos a Galicia. / Sin datos personales: epicentros de terremotos. Las magnitudes y localizaciones se revisan con el tiempo; una profundidad de 0 km suele ser fijada por el cálculo, no medida.",
+      "stale_after": "PT1H",
+      "ingest": {
+        "every": "PT10M"
+      },
+      "volatile": true,
+      "style": {
+        "kind": "circle",
+        "color_token": "--c-sismo",
+        "label_field": "magnitude"
+      },
+      "table": {
+        "fields": [
+          "data",
+          "magnitude",
+          "tipo_magnitude",
+          "profundidade_km",
+          "rexion",
+          "autoria",
+          "actualizado",
+          "fonte_url"
+        ]
+      },
+      "meta": {
+        "layer_id": "sismos-recentes",
+        "published_at": "2026-10-24T03:33:22.025Z",
+        "fetched_at": "2026-10-24T07:55:00.943Z",
+        "last_success_at": "2026-10-24T07:55:00.943Z",
+        "status": "fresh",
+        "consecutive_failures": 0,
+        "feature_count": 50,
+        "source_url": "https://www.seismicportal.eu/fdsnws/event/1/query?minlatitude=41.5&maxlatitude=44.5&minlongitude=-10.5&maxlongitude=-6.5&format=json&limit=500",
+        "licence": "CC-BY-4.0",
+        "attribution": "EMSC-CSEM / Instituto Geográfico Nacional (solucións IGN)",
+        "checksum": "sha256:d65f53e24726d5f8ffb5e324c400157b18cba45a99520e0d457ead0cf6642091",
+        "last_error": null,
+        "history": [
+          {
+            "at": "2026-10-24T07:55:00.943Z",
             "ok": true
           }
         ],
@@ -1316,18 +2317,22 @@
       "volatile": true,
       "meta": {
         "layer_id": "tren",
-        "published_at": "2026-10-24T07:32:48.000Z",
-        "fetched_at": "2026-10-24T07:32:55.294Z",
-        "last_success_at": "2026-10-24T07:32:55.294Z",
+        "published_at": "2026-10-24T07:54:48.000Z",
+        "fetched_at": "2026-10-24T07:55:02.886Z",
+        "last_success_at": "2026-10-24T07:55:02.886Z",
         "status": "fresh",
         "consecutive_failures": 0,
-        "feature_count": 12,
+        "feature_count": 14,
         "source_url": "https://gtfsrt.renfe.com/vehicle_positions_LD.json",
         "licence": "CC-BY-4.0",
         "attribution": "Origen de los datos: Renfe Operadora",
-        "checksum": "sha256:23115715542f9c8fb3637732f936a3827a17638b145f6502aed13753be5d8d74",
+        "checksum": "sha256:d65a9a71aebe32ecc3c7875e4698f603ad74491175a88c68e5bded0dbfca8479",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-10-24T07:55:02.886Z",
+            "ok": true
+          },
           {
             "at": "2026-10-24T07:32:55.294Z",
             "ok": true
