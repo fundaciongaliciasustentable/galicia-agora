@@ -6,6 +6,15 @@
 
 import type { LayerSpecification, Map as MlMap, StyleSpecification } from 'maplibre-gl';
 import { asset } from '../paths.ts';
+import {
+  classifyIndicator,
+  classifyWarnings,
+  DIVERGING,
+  deviation,
+  type Indicator,
+  type LegendItem,
+  type Row,
+} from './choropleth.ts';
 import { layerStyles } from './styles.ts';
 import { readHash, writeHash } from './urlstate.ts';
 
@@ -20,6 +29,8 @@ interface Layer {
   licence: { spdx?: string; text_url: string };
   operator: { name: string; url: string };
   tiles?: string;
+  join?: { layer: string; key: string; where?: Record<string, unknown> };
+  indicators?: Indicator[];
   meta: {
     published_at: string | null;
     fetched_at: string;
@@ -46,6 +57,13 @@ function el<K extends keyof HTMLElementTagNameMap>(
 
 function cssVar(name: string): string {
   return getComputedStyle(document.documentElement).getPropertyValue(name).trim() || '#4a5846';
+}
+
+/** Which catalogue layer a style layer belongs to (choropleths draw on another layer's source). */
+function ownerOf(l: { id: string; metadata?: unknown; source?: unknown }): string | undefined {
+  const m = l.metadata as Record<string, unknown> | undefined;
+  if (m && typeof m['ga:layer'] === 'string') return m['ga:layer'];
+  return typeof l.source === 'string' ? l.source : undefined;
 }
 
 function relative(iso: string | null, lang: string): string | null {
@@ -113,8 +131,10 @@ async function loadStyle(dark: boolean): Promise<StyleSpecification> {
 }
 
 export async function start(): Promise<void> {
-  const app = document.querySelector<HTMLElement>('.ga-app');
-  if (!app) return;
+  const found = document.querySelector<HTMLElement>('.ga-app');
+  if (!found) return;
+  // A non-null alias so nested functions keep the narrowed type.
+  const app: HTMLElement = found;
   const lang = app.dataset.lang ?? 'gl';
   const dict = JSON.parse(app.dataset.dict ?? '{}') as Dict;
 
@@ -175,9 +195,99 @@ export async function start(): Promise<void> {
   };
   map.on('moveend', updateHash);
 
-  function addLayer(id: string) {
+  const rowsByLayer = new Map<string, Map<string, Row>>();
+  const selectedIndicator = new Map<string, string>();
+  const added = new Set<string>();
+  const dark = () => darkQuery.matches;
+
+  /** Add a layer's source without drawing it (used as geometry for choropleths). */
+  function ensureSource(id: string) {
     const layer = layersById.get(id);
     if (!layer || map.getSource(id)) return;
+    const origin = window.location.origin;
+    if (layer.tiles) {
+      map.addSource(id, { type: 'vector', url: `pmtiles://${origin}${asset(layer.tiles)}` });
+    } else {
+      map.addSource(id, { type: 'geojson', data: asset(`data/${id}/data.geojson`) });
+    }
+  }
+
+  async function addJoinLayer(layer: Layer) {
+    const join = layer.join;
+    if (!join) return;
+    ensureSource(join.layer);
+    const target = layersById.get(join.layer);
+    const sourceLayer = target?.tiles ? join.layer : undefined;
+    const filter = join.where
+      ? ['all', ...Object.entries(join.where).map(([k, v]) => ['==', ['get', k], v])]
+      : undefined;
+    const meta = { 'ga:layer': layer.id };
+    map.addLayer({
+      id: `${layer.id}__fill`,
+      type: 'fill',
+      source: join.layer,
+      ...(sourceLayer ? { 'source-layer': sourceLayer } : {}),
+      ...(filter ? { filter } : {}),
+      metadata: meta,
+      paint: { 'fill-color': 'rgba(0,0,0,0)', 'fill-opacity': 0.75 },
+    } as LayerSpecification);
+    map.addLayer({
+      id: `${layer.id}__line`,
+      type: 'line',
+      source: join.layer,
+      ...(sourceLayer ? { 'source-layer': sourceLayer } : {}),
+      ...(filter ? { filter } : {}),
+      metadata: meta,
+      paint: { 'line-color': cssVar('--border'), 'line-width': 0.5 },
+    } as LayerSpecification);
+    const rows = (await (await fetch(asset(`data/${layer.id}/table.json`))).json()) as Row[];
+    rowsByLayer.set(layer.id, new Map(rows.map((r) => [String(r[join.key]), r])));
+    paintJoin(layer);
+  }
+
+  /** Recolour a choropleth for the selected indicator and update its legend. */
+  function paintJoin(layer: Layer) {
+    const join = layer.join;
+    const rows = rowsByLayer.get(layer.id);
+    if (!join || !rows || !map.getLayer(`${layer.id}__fill`)) return;
+    const list = [...rows.values()];
+    let classified: { fillColor: unknown; legend: LegendItem[] };
+    let note = '';
+    if (layer.indicators?.length) {
+      const indId = selectedIndicator.get(layer.id) ?? layer.indicators[0]?.id;
+      const ind = layer.indicators.find((i) => i.id === indId) ?? layer.indicators[0];
+      if (!ind) return;
+      classified = classifyIndicator(
+        list,
+        ind,
+        join.key,
+        dark() ? DIVERGING.dark : DIVERGING.light,
+        lang as 'gl' | 'es',
+      );
+      note = ind.comparison === 'index' ? (dict.legend_index ?? '') : (dict.legend_points ?? '');
+    } else {
+      classified = classifyWarnings(list, join.key, lang as 'gl' | 'es');
+    }
+    map.setPaintProperty(`${layer.id}__fill`, 'fill-color', classified.fillColor as never);
+    renderLegend(app, layer.id, classified.legend, note);
+  }
+
+  function addLayer(id: string) {
+    const layer = layersById.get(id);
+    if (!layer || added.has(id)) return;
+    added.add(id);
+    if (layer.join) {
+      void addJoinLayer(layer);
+      return;
+    }
+    if (map.getSource(id)) {
+      // Source already present as a choropleth base: just add the styled layers.
+      const color = cssVar(layer.style.color_token ?? '--gs-verde-nato');
+      for (const spec of layerStyles(layer, color, layer.tiles ? id : undefined)) {
+        map.addLayer({ ...spec, metadata: { 'ga:layer': id } } as LayerSpecification);
+      }
+      return;
+    }
     const origin = window.location.origin;
     if (layer.tiles) {
       map.addSource(id, {
@@ -194,19 +304,19 @@ export async function start(): Promise<void> {
     }
     const color = cssVar(layer.style.color_token ?? '--gs-verde-nato');
     for (const spec of layerStyles(layer, color, layer.tiles ? id : undefined)) {
-      map.addLayer(spec as LayerSpecification);
+      map.addLayer({ ...spec, metadata: { 'ga:layer': id } } as LayerSpecification);
     }
   }
 
   function setVisible(id: string, on: boolean) {
     if (on) {
-      if (!map.getSource(id)) addLayer(id);
-      for (const l of map.getStyle().layers.filter((x) => 'source' in x && x.source === id)) {
+      if (!added.has(id)) addLayer(id);
+      for (const l of map.getStyle().layers.filter((x) => ownerOf(x) === id)) {
         map.setLayoutProperty(l.id, 'visibility', 'visible');
       }
       active.add(id);
     } else {
-      for (const l of map.getStyle().layers.filter((x) => 'source' in x && x.source === id)) {
+      for (const l of map.getStyle().layers.filter((x) => ownerOf(x) === id)) {
         map.setLayoutProperty(l.id, 'visibility', 'none');
       }
       active.delete(id);
@@ -226,6 +336,14 @@ export async function start(): Promise<void> {
       }
       cb.addEventListener('change', () => setVisible(id, cb.checked));
     }
+    for (const sel of app.querySelectorAll<HTMLSelectElement>('select[data-indicator-for]')) {
+      const id = sel.dataset.indicatorFor ?? '';
+      sel.addEventListener('change', () => {
+        selectedIndicator.set(id, sel.value);
+        const layer = layersById.get(id);
+        if (layer) paintJoin(layer);
+      });
+    }
     updateHash();
   });
 
@@ -238,15 +356,22 @@ export async function start(): Promise<void> {
         const keep = Object.fromEntries(
           Object.entries(prev.sources).filter(([k]) => layersById.has(k)),
         );
-        const keepLayers = prev.layers.filter(
-          (l) => 'source' in l && layersById.has(String(l.source)),
-        );
+        const keepLayers = prev.layers.filter((l) => {
+          const o = ownerOf(l);
+          return o !== undefined && layersById.has(o);
+        });
         return {
           ...next,
           sources: { ...next.sources, ...keep },
           layers: [...next.layers, ...keepLayers],
         };
       },
+    });
+    map.once('styledata', () => {
+      for (const id of added) {
+        const layer = layersById.get(id);
+        if (layer?.join) paintJoin(layer);
+      }
     });
   });
 
@@ -260,7 +385,10 @@ export async function start(): Promise<void> {
   map.on('click', (e) => {
     const ids = map
       .getStyle()
-      .layers.filter((l) => 'source' in l && active.has(String(l.source)))
+      .layers.filter((l) => {
+        const o = ownerOf(l);
+        return o !== undefined && active.has(o);
+      })
       .map((l) => l.id);
     if (!ids.length) return;
     const hits = map.queryRenderedFeatures(e.point, { layers: ids });
@@ -272,15 +400,24 @@ export async function start(): Promise<void> {
     const rank = (t: string) => (t.includes('Point') ? 0 : t.includes('Line') ? 1 : 2);
     const f = [...hits].sort((a, b) => rank(a.geometry.type) - rank(b.geometry.type))[0];
     if (!f) return;
-    const layer = layersById.get(String(f.source));
+    const layer = layersById.get(ownerOf(f.layer) ?? String(f.source));
     if (!layer) return;
-    renderFicha(fichaBody, layer, f.properties ?? {}, lang, dict);
+    if (layer.join) {
+      const row = rowsByLayer.get(layer.id)?.get(String(f.properties?.[layer.join.key]));
+      if (!row) return;
+      renderJoinFicha(fichaBody, layer, row, lang, dict, selectedIndicator.get(layer.id));
+    } else {
+      renderFicha(fichaBody, layer, f.properties ?? {}, lang, dict);
+    }
     ficha.hidden = false;
   });
   map.on('mousemove', (e) => {
     const ids = map
       .getStyle()
-      .layers.filter((l) => 'source' in l && active.has(String(l.source)))
+      .layers.filter((l) => {
+        const o = ownerOf(l);
+        return o !== undefined && active.has(o);
+      })
       .map((l) => l.id);
     const hit = ids.length ? map.queryRenderedFeatures(e.point, { layers: ids }).length > 0 : false;
     map.getCanvas().style.cursor = hit ? 'pointer' : '';
@@ -456,4 +593,94 @@ function loadSearch(lang: string) {
     });
   };
   document.head.append(script);
+}
+
+function renderLegend(app: HTMLElement, id: string, items: LegendItem[], note: string) {
+  const box = app.querySelector<HTMLElement>(`[data-legend-for="${id}"]`);
+  if (!box) return;
+  const list = el('ul', { class: 'ga-legend' });
+  for (const it of items) {
+    const li = el('li');
+    li.append(
+      el('span', {
+        class: 'ga-legend-swatch',
+        style: `background:${it.color}`,
+        'aria-hidden': 'true',
+      }),
+    );
+    li.append(document.createTextNode(it.label));
+    list.append(li);
+  }
+  const parts: Node[] = [list];
+  if (note) parts.push(el('p', { class: 'ga-legend-note' }, note));
+  box.replaceChildren(...parts);
+  box.hidden = false;
+}
+
+/** Card for a concello: every indicator with its value, Galicia's and the comparison. */
+function renderJoinFicha(
+  body: HTMLElement,
+  layer: Layer,
+  row: Row,
+  lang: string,
+  dict: Dict,
+  selected?: string,
+) {
+  const l = lang as 'gl' | 'es';
+  const h = el('h2', {}, String(row.nome ?? ''));
+  const sub = el('p', { class: 'ga-ficha-layer' }, layer.title[l]);
+  const parts: Node[] = [h, sub];
+  if (layer.indicators?.length) {
+    const table = el('table', { class: 'ga-table ga-ficha-table' });
+    const head = el('tr');
+    for (const t of [dict.indicator, dict.value, 'Galicia', dict.comparison]) {
+      head.append(el('th', { scope: 'col' }, t ?? ''));
+    }
+    const thead = el('thead');
+    thead.append(head);
+    const tbody = el('tbody');
+    for (const ind of layer.indicators) {
+      const tr = el('tr', ind.id === selected ? { class: 'is-selected' } : {});
+      const d = deviation(row, ind);
+      const rel = row[`${ind.id}_rel`];
+      const relTxt =
+        rel === null || rel === undefined
+          ? '—'
+          : ind.comparison === 'index'
+            ? `${formatValue(rel, lang)} (Galicia = 100)`
+            : `${d !== null && d > 0 ? '+' : ''}${formatValue(rel, lang)} p.`;
+      tr.append(
+        el('th', { scope: 'row' }, `${ind.label[l]} (${ind.unit})`),
+        el('td', {}, `${formatValue(row[ind.id], lang)}`),
+        el('td', {}, formatValue(row[`${ind.id}_galicia`], lang)),
+        el('td', {}, relTxt),
+      );
+      tbody.append(tr);
+    }
+    table.append(thead, tbody);
+    const periods = [
+      ...new Set(layer.indicators.map((i) => row[`${i.id}_periodo`]).filter(Boolean)),
+    ];
+    parts.push(
+      table,
+      el(
+        'p',
+        { class: 'ga-ficha-meta' },
+        `${dict.period}: ${periods.join(', ')}. ${dict.own_calc}`,
+      ),
+    );
+  } else {
+    const dl = el('dl');
+    for (const f of layer.table.fields) {
+      if (f in row) dl.append(el('dt', {}, fieldLabel(f)), el('dd', {}, formatValue(row[f], lang)));
+    }
+    parts.push(dl);
+  }
+  const links = el('p');
+  links.append(
+    el('a', { href: layer.source_url, rel: 'noopener' }, dict.source ?? ''),
+    document.createTextNode(` · ${layer.attribution}`),
+  );
+  parts.push(links);
+  body.replaceChildren(...parts);
 }

@@ -57,6 +57,23 @@ const STRINGS = {
   },
   loading: { gl: 'Cargando…', es: 'Cargando…' },
   load_error: { gl: 'Non se puido cargar a capa.', es: 'No se pudo cargar la capa.' },
+  indicator: { gl: 'Indicador', es: 'Indicador' },
+  value: { gl: 'Valor', es: 'Valor' },
+  comparison: { gl: 'Fronte a Galicia', es: 'Frente a Galicia' },
+  period: { gl: 'Período', es: 'Período' },
+  own_calc: {
+    gl: 'A comparación con Galicia é cálculo propio a partir dos datos orixinais, que se amosan ao lado.',
+    es: 'La comparación con Galicia es cálculo propio a partir de los datos originales, que se muestran al lado.',
+  },
+  legend_index: {
+    gl: 'Índice: Galicia = 100. As cores indican distancia á media, non mellor ou peor.',
+    es: 'Índice: Galicia = 100. Los colores indican distancia a la media, no mejor o peor.',
+  },
+  legend_points: {
+    gl: 'Diferenza en puntos fronte ao valor de Galicia. As cores indican distancia á media, non mellor ou peor.',
+    es: 'Diferencia en puntos frente al valor de Galicia. Los colores indican distancia a la media, no mejor o peor.',
+  },
+  choose_indicator: { gl: 'Indicador', es: 'Indicador' },
   collection_odbl: { gl: 'Base ODbL', es: 'Base ODbL' },
   collection_bysa: { gl: 'Colección CC BY-SA 4.0', es: 'Colección CC BY-SA 4.0' },
 } as const;

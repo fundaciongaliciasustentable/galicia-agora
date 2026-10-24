@@ -125,7 +125,7 @@ function data() {
     };
     writeFileSync(join(dstDir, 'table.json'), JSON.stringify(fc.features.map((f) => f.properties)));
 
-    if (statSync(geojson).size > TILE_THRESHOLD_BYTES) {
+    if (layer.geometry !== 'none' && statSync(geojson).size > TILE_THRESHOLD_BYTES) {
       const out = join(dstDir, 'data.pmtiles');
       execFileSync(
         'tippecanoe',

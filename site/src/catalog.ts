@@ -47,6 +47,15 @@ export interface CatalogLayer {
     note?: Bilingual;
   }>;
   delay?: { minutes: number; reason: string };
+  join?: { layer: string; key: string; where?: Record<string, unknown> };
+  indicators?: Array<{
+    id: string;
+    label: Bilingual;
+    unit: string;
+    comparison: 'index' | 'points';
+    source: string;
+    note?: Bilingual;
+  }>;
   meta: CatalogMeta | null;
 }
 

@@ -49,6 +49,21 @@ const licenceLabel = (l: CatalogLayer) => l.licence.spdx ?? l.licence.text_url;
                     {statusLabel(l)}
                   </span>
                 </div>
+                {l.join && (
+                  <div class="ga-layer-extra">
+                    {l.indicators && l.indicators.length > 0 && (
+                      <label class="ga-indicator">
+                        <span>{t(lang, 'choose_indicator')}</span>
+                        <select data-indicator-for={l.id}>
+                          {l.indicators.map((ind) => (
+                            <option value={ind.id}>{ind.label[lang]}</option>
+                          ))}
+                        </select>
+                      </label>
+                    )}
+                    <div class="ga-legend-box" data-legend-for={l.id} hidden />
+                  </div>
+                )}
                 <details class="ga-layer-info">
                   <summary>
                     <span class="visually-hidden">{l.title[lang]}: </span>
@@ -259,6 +274,31 @@ const licenceLabel = (l: CatalogLayer) => l.licence.spdx ?? l.licence.text_url;
     height: 12px;
     border-radius: 3px;
     flex-shrink: 0;
+  }
+  .ga-layer-extra {
+    display: none;
+    margin: 6px 0 4px 26px;
+    font-size: var(--gs-texto-sm);
+  }
+  .ga-layer:has(input[data-toggle]:checked) .ga-layer-extra {
+    display: block;
+  }
+  .ga-indicator {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .ga-indicator span {
+    font-size: var(--gs-texto-xs);
+    color: var(--text-muted);
+  }
+  .ga-indicator select {
+    font: inherit;
+    padding: 4px 6px;
+    border: 1px solid var(--border);
+    border-radius: var(--gs-radius);
+    background: var(--surface);
+    color: var(--text);
   }
   .ga-layer-info summary {
     cursor: pointer;
