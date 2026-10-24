@@ -72,6 +72,49 @@
     },
     "privacy_notes": { "type": "string", "minLength": 1 },
     "stale_after": { "$ref": "#/$defs/duration" },
+    "join": {
+      "description": "For geometry none: the client draws the rows on another layer's features, matched by key (e.g. concellos by INE code).",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["layer", "key"],
+      "properties": {
+        "layer": { "type": "string" },
+        "key": { "type": "string" },
+        "where": { "type": "object" }
+      }
+    },
+    "indicators": {
+      "description": "Per-row measures shown as a choropleth. For each id the rows carry <id>, <id>_galicia, <id>_rel and <id>_periodo.",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "label", "unit", "comparison", "source"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^[a-z0-9_]+$" },
+          "label": {
+            "type": "object",
+            "required": ["gl", "es"],
+            "properties": { "gl": { "type": "string" }, "es": { "type": "string" } }
+          },
+          "unit": { "type": "string" },
+          "comparison": {
+            "description": "index: value / Galicia × 100. points: value − Galicia (rates and percentages).",
+            "enum": ["index", "points"]
+          },
+          "higher_is": {
+            "description": "Optional reading aid for the legend; never used to rank concellos.",
+            "enum": ["more", "less", "neutral"]
+          },
+          "source": { "type": "string" },
+          "note": {
+            "type": "object",
+            "required": ["gl", "es"],
+            "properties": { "gl": { "type": "string" }, "es": { "type": "string" } }
+          }
+        }
+      }
+    },
     "volatile": {
       "description": "True when zero features or large drops are normal (ADR 0004).",
       "type": "boolean"

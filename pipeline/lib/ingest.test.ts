@@ -3,7 +3,7 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import type { Adapter } from './adapter.ts';
-import { madridToIso } from './adapter.ts';
+import { compareWithGalicia, madridToIso } from './adapter.ts';
 import { runLayer } from './ingest.ts';
 
 const LAYER_YAML = `
@@ -111,5 +111,14 @@ describe('madridToIso', () => {
     // 2026-03-29 02:00 CET -> 03:00 CEST; 01:30 is CET, 03:30 is CEST.
     expect(madridToIso('2026-03-29 01:30')).toBe('2026-03-29T00:30:00.000Z');
     expect(madridToIso('2026-03-29 03:30')).toBe('2026-03-29T01:30:00.000Z');
+  });
+});
+
+describe('compareWithGalicia', () => {
+  it('indexes ratios and subtracts rates', () => {
+    expect(compareWithGalicia(215, 176.27, 'index')).toBe(122);
+    expect(compareWithGalicia(50.77, 26.88, 'points')).toBe(23.89);
+    expect(compareWithGalicia(null, 10, 'index')).toBeNull();
+    expect(compareWithGalicia(5, 0, 'index')).toBeNull();
   });
 });

@@ -26,6 +26,8 @@ export interface LayerDef {
   stale_after?: string;
   ingest?: { every: string };
   volatile?: boolean;
+  join?: { layer: string; key: string; where?: Record<string, unknown> };
+  indicators?: Array<{ id: string; comparison: 'index' | 'points' }>;
   [key: string]: unknown;
 }
 
@@ -105,4 +107,18 @@ function madridOffsetMs(utcMs: number): number {
   );
   const p = (k: string) => Number(parts[k]);
   return Date.UTC(p('year'), p('month') - 1, p('day'), p('hour'), p('minute'), p('second')) - utcMs;
+}
+
+/** Comparison with the Galicia value: index (Galicia = 100) or difference in points. */
+export function compareWithGalicia(
+  value: number | null,
+  galicia: number | null,
+  comparison: 'index' | 'points',
+): number | null {
+  if (value === null || galicia === null || !Number.isFinite(value) || !Number.isFinite(galicia)) {
+    return null;
+  }
+  if (comparison === 'points') return round(value - galicia, 2);
+  if (galicia === 0) return null;
+  return round((value / galicia) * 100, 1);
 }
