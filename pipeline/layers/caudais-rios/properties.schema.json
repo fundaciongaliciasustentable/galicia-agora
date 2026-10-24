@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "caudais-rios feature properties",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "nome", "concello", "provincia", "caudal_m3s", "nivel_m", "data_medida"],
+  "properties": {
+    "id": { "type": "integer" },
+    "nome": { "type": "string", "minLength": 1 },
+    "concello": { "type": "string" },
+    "provincia": { "type": "string" },
+    "caudal_m3s": { "type": ["number", "null"], "minimum": 0, "description": "m³/s, non validado" },
+    "nivel_m": { "type": ["number", "null"], "description": "m, non validado" },
+    "data_medida": { "type": "string", "format": "date-time" }
+  }
+}

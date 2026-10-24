@@ -1,0 +1,52 @@
+id: caudais-rios
+title:
+  gl: Caudais e niveis dos ríos
+  es: Caudales y niveles de los ríos
+theme: auga-mar
+operator:
+  name: Augas de Galicia e MeteoGalicia (Xunta de Galicia)
+  url: https://servizos.meteogalicia.gal/mgafos/estacions/estacions.action
+source_url: https://servizos.meteogalicia.gal/mgafos/json/estadoActual.action
+licence:
+  text_url: https://www.meteogalicia.gal/web/aviso-legal
+  quote: "utilizada libremente… co único compromiso de mencionar expresamente a MeteoGalicia"
+  verified_at: 2026-10-18
+  odbl_compatible: doubt
+  collection: cc-by-sa-4.0
+  notes: >-
+    Licenza específica non verificada para o servizo de aforos (mgafos). Presumiblemente
+    aplícase o aviso legal de MeteoGalicia (atribución); como no resto de MeteoGalicia, pode
+    haber unha segunda declaración CC BY-SA 4.0 en abertos.xunta.gal. Aplícase a máis
+    restritiva (ADR 0005) ata confirmación por escrito. A documentación do servizo
+    (JSON_Aforos_Estado_Actual) di que os servizos JSON de aforos son públicos e gratuítos.
+attribution: "Datos: Augas de Galicia e MeteoGalicia (Xunta de Galicia). Datos non validados."
+update_frequency:
+  declared: PT10M
+  schedule: "*/10 * * * *"
+geometry: point
+output: geojson
+auth:
+  required: true
+  env_var: METEOGALICIA_AFOROS_KEY
+  notes: >-
+    Chave persoal gratuíta, pedida por correo a administracion-web.meteogalicia@xunta.gal,
+    no parámetro cod. A chave nunca se escribe en source_url, meta.json, rexistros nin erros.
+privacy_notes: >-
+  Sen datos persoais: lecturas de estacións de aforo públicas. Datos en tempo real non
+  validados. Descártase o valor -9999 (sen dato), as estacións sen caudal nin nivel e as
+  estacións cunha lectura máis de 3 h anterior á máis recente da resposta.
+stale_after: PT40M
+ingest:
+  every: PT10M
+style:
+  kind: circle
+  color_token: --c-auga
+  label_field: caudal_m3s
+table:
+  fields:
+    - nome
+    - concello
+    - provincia
+    - caudal_m3s
+    - nivel_m
+    - data_medida
