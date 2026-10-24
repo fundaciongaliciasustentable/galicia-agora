@@ -1,0 +1,53 @@
+id: avisos-meteogalicia
+title:
+  gl: Avisos de MeteoGalicia por concello
+  es: Avisos de MeteoGalicia por concello
+theme: tempo-aire
+operator:
+  name: MeteoGalicia (Consellería de Medio Ambiente, Xunta de Galicia)
+  url: https://www.meteogalicia.gal/
+source_url: https://servizos.meteogalicia.gal/mgrss/predicion/adversos/jsonConcellosNivelMax.action
+licence:
+  spdx: CC-BY-SA-4.0
+  text_url: https://www.meteogalicia.gal/web/aviso-legal
+  quote: "utilizada libremente… co único compromiso de mencionar expresamente a MeteoGalicia"
+  verified_at: 2026-10-24
+  odbl_compatible: doubt
+  collection: cc-by-sa-4.0
+  notes: >-
+    Dobre licenza: aviso legal de MeteoGalicia (atribución) e posible CC BY-SA en
+    abertos.xunta.gal. Aplícase a máis restritiva (ADR 0005) ata confirmación por escrito.
+attribution: "Datos: MeteoGalicia (Xunta de Galicia)"
+update_frequency:
+  declared: PT10M
+  schedule: "*/10 * * * *"
+geometry: none
+output: geojson
+auth:
+  required: false
+privacy_notes: >-
+  Sen datos persoais: nivel máximo de aviso de hoxe en cada un dos 313 concellos. O código de
+  concello de MeteoGalicia é o código INE de 5 cifras (comprobado cos 313 do IGE). O detalle
+  (fenómenos e horas) pídese só cando algún concello ten aviso; ata dúas peticións por
+  execución. Non inclúe os avisos costeiros da AEMET. / Sin datos personales: nivel máximo de
+  aviso de hoy por concello; no incluye los avisos costeros de AEMET.
+stale_after: PT40M
+ingest:
+  every: PT10M
+volatile: true
+join:
+  layer: concellos-parroquias
+  key: codigo_ine
+  where:
+    nivel: concello
+style:
+  kind: fill
+  color_token: --c-tempo
+  label_field: nivel_txt
+table:
+  fields:
+    - nome
+    - nivel_txt
+    - fenomenos
+    - inicio
+    - fin

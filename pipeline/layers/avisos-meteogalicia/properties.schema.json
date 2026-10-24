@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "avisos-meteogalicia row properties (one per concello)",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["codigo_ine", "nome", "nivel", "nivel_txt", "fenomenos", "inicio", "fin"],
+  "properties": {
+    "codigo_ine": { "type": "string", "pattern": "^(15|27|32|36)\\d{3}$" },
+    "nome": { "type": "string" },
+    "nivel": { "enum": [0, 1, 2, 3], "description": "nivel máximo de aviso hoxe" },
+    "nivel_txt": { "enum": ["sen aviso", "amarelo", "laranxa", "vermello"] },
+    "fenomenos": {
+      "type": ["string", "null"],
+      "description": "tipos de alerta en galego, separados por comas"
+    },
+    "inicio": { "type": ["string", "null"], "format": "date-time" },
+    "fin": { "type": ["string", "null"], "format": "date-time" }
+  }
+}
