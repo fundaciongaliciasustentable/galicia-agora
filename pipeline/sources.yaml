@@ -1099,3 +1099,39 @@ sources:
     alternative: cmems-insitu-ibi
     verified: true
     checked_at: 2026-10-24
+
+  - id: ige-ficha-municipal
+    name: IGE — indicadores municipais (API de táboas)
+    phase: "1b"
+    layers: [indicadores-concellos]
+    operator: Instituto Galego de Estatística (IGE)
+    endpoints:
+      - url: "https://www.ige.gal/igebdt/igeapi/csv/datos/{taboa}/T[1:a],{eixos}"
+        status: 200
+        documented: true
+        notes: "Unha chamada por indicador devolve Galicia (código 12), provincias, comarcas e os 313 concellos (máis 4 códigos extinguidos). Verificado: índice de envellecemento 2025, Galicia 176,27, Abegondo 215."
+      - url: "https://www.ige.gal/igebdt/igeapi/json/metadatos/{taboa}/selector"
+        status: 200
+        documented: true
+        notes: Eixos, unidades, fonte e notas de cada táboa.
+    format: CSV (ISO-8859-1) / JSON / JSON-stat
+    auth: ningunha
+    frequency: { declared: "calendario do IGE (mensual, anual)", measured: "paro set. 2026 actualizado o 09/10/2026; poboación 2025 actualizada en febreiro–marzo 2026" }
+    limits: "Sen cifra; o IGE pode limitar peticións repetidas. Nunca pedir táboas sen filtrar (5,8 MB)."
+    licence:
+      name: "Aviso legal do IGE (Lei 37/2007: reutilización citando «Fonte: IGE»)"
+      url: https://www.ige.gal/web/avisolegal.jsp
+      quote: "Está prohibido desnaturalizar o sentido da información"
+      verified: true
+      odbl_compatible: doubt
+    coverage: 313 concellos.
+    risks:
+      - "Condicións da API: non modificar nin editar os datos presentados; publicar o valor orixinal xunto ao índice calculado e identificalo como cálculo propio."
+      - Aviso obrigatorio de uso da API sen aprobación do IGE.
+      - As táboas cambian de código ao revisar series (9641→9642, 10340→11500).
+      - Non hai taxa de paro municipal oficial; calquera taxa é cálculo propio.
+    verdict: conditional
+    verdict_notes: "Técnicamente listo. Colección CC BY-SA e consulta escrita ao IGE sobre os índices derivados."
+    verified: true
+    checked_at: 2026-10-24
+    samples: [ige-ficha-municipal/t723-indic-poboacion-last.csv, ige-ficha-municipal/api-docs.html]
