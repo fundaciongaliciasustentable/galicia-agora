@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "buses-xunta feature properties",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["stop_id", "nome", "linas", "linas_nomes"],
+  "properties": {
+    "stop_id": { "type": "string", "minLength": 1 },
+    "nome": { "type": "string" },
+    "linas": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Liñas distintas (nome longo da ruta, sen distinguir sentido) que paran aquí"
+    },
+    "linas_nomes": { "type": "string", "description": "Ata 10 nomes de liña, orde alfabética" }
+  }
+}

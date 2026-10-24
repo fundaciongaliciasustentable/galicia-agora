@@ -1,0 +1,50 @@
+id: buses-xunta
+title:
+  gl: Paradas de autobús da Xunta
+  es: Paradas de autobús de la Xunta
+theme: mobilidade
+operator:
+  name: Xunta de Galicia (publicado no Punto de Acceso Nacional do MITRAMS)
+  url: https://nap.transportes.gob.es/ConjuntoDato/Detail/1386
+source_url: https://nap.transportes.gob.es/api/Fichero/download/1584
+licence:
+  text_url: https://nap.transportes.gob.es/licencia-datos
+  quote: para fines comerciales y no comerciales
+  verified_at: 2026-10-18
+  odbl_compatible: doubt
+  collection: cc-by-sa-4.0
+  notes: >-
+    Licenza de datos abertos do MITRAMS. Os datos derivados poden publicarse con outra
+    licenza, pero os datos brutos deben manter a mesma; a web debe amosar «Powered by
+    MITRAMS» e manter a información actualizada. Por iso vai na colección CC BY-SA 4.0,
+    fóra da base ODbL, ata aclaralo.
+attribution: "Fonte: Xunta de Galicia, vía Punto de Acceso Nacional (MITRAMS). Powered by MITRAMS"
+update_frequency:
+  declared: P1D
+  schedule: "30 4 * * *"
+geometry: point
+output: geojson
+auth:
+  required: true
+  env_var: NAP_API_KEY
+  notes: >-
+    Rexistro no NAP e chave de API na cabeceira ApiKey. A chave nunca se escribe en
+    source_url, meta.json, rexistros nin erros. O 18/10/2026 a chave gardada daba 401.
+privacy_notes: >-
+  Sen datos persoais: paradas da rede pública de autobuses. Só se publican as paradas con
+  polo menos unha viaxe no GTFS; unha liña é un nome longo de ruta, sen distinguir sentido
+  nin concesión. Recórtase ao bbox de Galicia con 0,1° de marxe. Os percorridos das liñas
+  (shapes.txt) quedan para máis adiante.
+stale_after: P3D
+ingest:
+  every: P1D
+style:
+  kind: circle
+  color_token: --c-bus
+  label_field: nome
+table:
+  fields:
+    - nome
+    - linas
+    - linas_nomes
+    - stop_id
