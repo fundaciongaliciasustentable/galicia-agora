@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "raios feature properties",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["data", "intensidade_ka", "polaridade"],
+  "properties": {
+    "data": { "type": "string", "format": "date-time", "description": "hora da descarga (UTC)" },
+    "intensidade_ka": {
+      "type": ["number", "null"],
+      "description": "corrente de pico en kA (peakCurrent); o signo indica a polaridade"
+    },
+    "polaridade": { "enum": ["positivo", "negativo", null] }
+  }
+}

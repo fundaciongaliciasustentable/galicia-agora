@@ -1,0 +1,45 @@
+id: raios
+title:
+  gl: Raios (últimas 24 horas)
+  es: Rayos (últimas 24 horas)
+theme: tempo-aire
+operator:
+  name: MeteoGalicia (Consellería de Medio Ambiente, Xunta de Galicia)
+  url: https://www.meteogalicia.gal/web/observacion/raios
+# The real request adds dataIni/dataFin (yesterday–today) to cover a rolling 24 h.
+source_url: https://servizos.meteogalicia.gal/mgrss/observacion/jsonRaios.action
+licence:
+  spdx: CC-BY-SA-4.0
+  text_url: https://www.meteogalicia.gal/web/aviso-legal
+  quote: "utilizada libremente… co único compromiso de mencionar expresamente a MeteoGalicia"
+  verified_at: 2026-10-24
+  odbl_compatible: doubt
+  collection: cc-by-sa-4.0
+  notes: >-
+    Dobre licenza: aviso legal de MeteoGalicia (atribución) e posible CC BY-SA en
+    abertos.xunta.gal. Aplícase a máis restritiva (ADR 0005) ata confirmación por escrito.
+attribution: "Datos: MeteoGalicia (Xunta de Galicia)"
+update_frequency:
+  declared: PT10M
+  schedule: "*/10 * * * *"
+geometry: point
+output: geojson
+auth:
+  required: false
+privacy_notes: >-
+  Sen datos persoais: descargas eléctricas detectadas pola rede de MeteoGalicia. Só os raios
+  das últimas 24 horas dentro de Galicia (marxe de 0,1°). Unha soa petición por execución.
+  / Sin datos personales: descargas detectadas por la red de MeteoGalicia en las últimas 24
+  horas dentro de Galicia.
+stale_after: PT40M
+ingest:
+  every: PT10M
+volatile: true
+style:
+  kind: circle
+  color_token: --c-raio
+table:
+  fields:
+    - data
+    - intensidade_ka
+    - polaridade
