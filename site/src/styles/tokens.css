@@ -69,6 +69,7 @@
   --c-lume: #c2410c;
   --c-queimado: var(--gs-terra);
   --c-tren: var(--gs-negro);
+  --c-bus: var(--gs-azul);
   --c-limite: var(--gs-gris-80);
   --c-natura: var(--gs-verde-claro);
   --c-espazo: var(--gs-oliva);
@@ -97,6 +98,7 @@
     --c-lume: #fb8a4c;
     --c-queimado: #c2946e;
     --c-tren: #f2f2ec;
+    --c-bus: #6fa8c7;
     --c-limite: #c9c9c0;
     --c-natura: #9cc275;
     --c-espazo: #c4c46a;
@@ -125,6 +127,7 @@
   --c-lume: #fb8a4c;
   --c-queimado: #c2946e;
   --c-tren: #f2f2ec;
+  --c-bus: #6fa8c7;
   --c-limite: #c9c9c0;
   --c-natura: #9cc275;
   --c-espazo: #c4c46a;

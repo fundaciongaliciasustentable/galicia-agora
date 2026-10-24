@@ -27,7 +27,7 @@ const PUBLIC = 'site/public';
 const FONTS = ['Noto Sans Regular', 'Noto Sans Medium', 'Noto Sans Italic'];
 // Latin, Latin Extended-A and General Punctuation cover Galician and Spanish.
 const GLYPH_RANGES = ['0-255', '256-511', '8192-8447'];
-/** Polygon layers above this size are served as PMTiles instead of GeoJSON. */
+/** Layers above this size are served as PMTiles instead of GeoJSON. */
 const TILE_THRESHOLD_BYTES = 1_000_000;
 
 function log(msg: string) {
@@ -125,7 +125,7 @@ function data() {
     };
     writeFileSync(join(dstDir, 'table.json'), JSON.stringify(fc.features.map((f) => f.properties)));
 
-    if (layer.geometry === 'polygon' && statSync(geojson).size > TILE_THRESHOLD_BYTES) {
+    if (statSync(geojson).size > TILE_THRESHOLD_BYTES) {
       const out = join(dstDir, 'data.pmtiles');
       execFileSync(
         'tippecanoe',

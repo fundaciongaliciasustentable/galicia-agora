@@ -94,6 +94,30 @@ export function layerStyles(layer: LayerLike, color: string, sourceLayer?: strin
           },
         }),
       ];
+    case 'caudais-rios':
+      return [
+        base('circle', {
+          type: 'circle',
+          paint: {
+            'circle-radius': ['interpolate', ['linear'], ['zoom'], 6, 3, 12, 7],
+            'circle-color': color,
+            'circle-stroke-color': '#ffffff',
+            'circle-stroke-width': 1,
+          },
+        }),
+      ];
+    case 'buses-xunta':
+      return [
+        base('circle', {
+          type: 'circle',
+          minzoom: 9,
+          paint: {
+            'circle-radius': ['interpolate', ['linear'], ['zoom'], 9, 1.5, 14, 5],
+            'circle-color': color,
+            'circle-opacity': 0.8,
+          },
+        }),
+      ];
     case 'focos-calor':
       return [
         base('circle', {
