@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-24T07:55:03.979Z",
+  "generated_at": "2026-10-24T09:09:36.559Z",
   "layers": [
     {
       "id": "aeroportos",
@@ -54,8 +54,8 @@
       "meta": {
         "layer_id": "aeroportos",
         "published_at": "2026-10-21T21:00:00.000Z",
-        "fetched_at": "2026-10-24T07:54:03.142Z",
-        "last_success_at": "2026-10-24T07:54:03.142Z",
+        "fetched_at": "2026-10-24T09:06:18.821Z",
+        "last_success_at": "2026-10-24T09:06:18.821Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 40,
@@ -65,6 +65,10 @@
         "checksum": "sha256:9ad39f9f2c08c108d729015ff8860ac8fdd7b8b051d17cd75c2b3528b8e27902",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-10-24T09:06:18.821Z",
+            "ok": true
+          },
           {
             "at": "2026-10-24T07:54:03.142Z",
             "ok": true
@@ -126,18 +130,22 @@
       },
       "meta": {
         "layer_id": "avisos-aemet",
-        "published_at": "2026-10-24T06:37:10.000Z",
-        "fetched_at": "2026-10-24T07:54:03.952Z",
-        "last_success_at": "2026-10-24T07:54:03.952Z",
+        "published_at": "2026-10-24T08:38:27.000Z",
+        "fetched_at": "2026-10-24T09:06:19.401Z",
+        "last_success_at": "2026-10-24T09:06:19.401Z",
         "status": "fresh",
         "consecutive_failures": 0,
-        "feature_count": 1,
+        "feature_count": 3,
         "source_url": "https://www.aemet.es/documentos_d/eltiempo/prediccion/avisos/rss/CAP_AFAC71_ATOM.xml",
         "licence": "https://www.aemet.es/es/nota_legal",
         "attribution": "© AEMET. Información elaborada pola Axencia Estatal de Meteoroloxía",
-        "checksum": "sha256:bf1888f76fe1c2c4e9a7a1d6ffe79d78f0c7f19e929f3560e59a185e47080f04",
+        "checksum": "sha256:61c13187060c5c060a8bb1c76334e7d0a587c3dfe8727f50a9a4a8f600b7b7d7",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-10-24T09:06:19.401Z",
+            "ok": true
+          },
           {
             "at": "2026-10-24T07:54:03.952Z",
             "ok": true
@@ -204,8 +212,8 @@
       "meta": {
         "layer_id": "avisos-meteogalicia",
         "published_at": null,
-        "fetched_at": "2026-10-24T07:54:04.188Z",
-        "last_success_at": "2026-10-24T07:54:04.188Z",
+        "fetched_at": "2026-10-24T09:06:19.773Z",
+        "last_success_at": "2026-10-24T09:06:19.773Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 313,
@@ -215,6 +223,10 @@
         "checksum": "sha256:b0d3259a42f56a43a11eff1268cfdbc5e2c722c39da0f71071f3559ef3833aac",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-10-24T09:06:19.773Z",
+            "ok": true
+          },
           {
             "at": "2026-10-24T07:54:04.188Z",
             "ok": true
@@ -273,18 +285,22 @@
       },
       "meta": {
         "layer_id": "bicis-arteixo",
-        "published_at": "2026-10-24T07:53:45.000Z",
-        "fetched_at": "2026-10-24T07:54:04.667Z",
-        "last_success_at": "2026-10-24T07:54:04.667Z",
+        "published_at": "2026-10-24T09:05:56.000Z",
+        "fetched_at": "2026-10-24T09:06:20.231Z",
+        "last_success_at": "2026-10-24T09:06:20.231Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 15,
         "source_url": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_aa/gbfs.json",
         "licence": "CC0-1.0",
         "attribution": "Datos: biciArteixo / nextbike (CC0)",
-        "checksum": "sha256:e5eab4655a2c89eafdaeaacbd67f5038f1b0ad212809fef82ee62018c8f29f27",
+        "checksum": "sha256:9428463d8da60d12febd2153f39d54c4a25d405686b25adb1d625f88a74e8227",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-10-24T09:06:20.231Z",
+            "ok": true
+          },
           {
             "at": "2026-10-24T07:54:04.667Z",
             "ok": true
@@ -341,8 +357,8 @@
       "meta": {
         "layer_id": "buses-xunta",
         "published_at": "2026-10-23T19:29:27.000Z",
-        "fetched_at": "2026-10-24T07:54:05.229Z",
-        "last_success_at": "2026-10-24T07:54:05.229Z",
+        "fetched_at": "2026-10-24T09:06:20.789Z",
+        "last_success_at": "2026-10-24T09:06:20.789Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 25118,
@@ -352,6 +368,10 @@
         "checksum": "sha256:29c51b6e64a18daa454eb8abc5e5af9ac236d0f4107c8203f4688f0e051d1ebf",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-10-24T09:06:20.789Z",
+            "ok": true
+          },
           {
             "at": "2026-10-24T07:54:05.229Z",
             "ok": true
@@ -415,18 +435,22 @@
       },
       "meta": {
         "layer_id": "calidade-aire",
-        "published_at": "2026-10-24T07:00:00.000Z",
-        "fetched_at": "2026-10-24T07:54:23.940Z",
-        "last_success_at": "2026-10-24T07:54:23.940Z",
+        "published_at": "2026-10-24T08:00:00.000Z",
+        "fetched_at": "2026-10-24T09:06:38.122Z",
+        "last_success_at": "2026-10-24T09:06:38.122Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 46,
         "source_url": "https://servizos.meteogalicia.gal/mgrss/caire/jsonICAActual.action",
         "licence": "CC-BY-SA-4.0",
         "attribution": "Datos: Rede de Calidade do Aire de Galicia, MeteoGalicia (Xunta de Galicia). Datos provisionais, non validados.",
-        "checksum": "sha256:a74313acbf1490fafafb7f252b8aa4ab53f4c706fd0698f6c0fabd97933b7817",
+        "checksum": "sha256:1d34177c593ed5707508d8b2303d05181aa9cbb139a3abf9f9ac146658e6eddc",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-10-24T09:06:38.122Z",
+            "ok": true
+          },
           {
             "at": "2026-10-24T07:54:23.940Z",
             "ok": true
@@ -640,18 +664,22 @@
       },
       "meta": {
         "layer_id": "caudais-rios",
-        "published_at": "2026-10-24T07:40:00.000Z",
-        "fetched_at": "2026-10-24T07:54:24.928Z",
-        "last_success_at": "2026-10-24T07:54:24.928Z",
+        "published_at": "2026-10-24T08:50:00.000Z",
+        "fetched_at": "2026-10-24T09:06:39.146Z",
+        "last_success_at": "2026-10-24T09:06:39.146Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 87,
         "source_url": "https://servizos.meteogalicia.gal/mgafos/json/estadoActual.action",
         "licence": "https://www.meteogalicia.gal/web/aviso-legal",
         "attribution": "Datos: Augas de Galicia e MeteoGalicia (Xunta de Galicia). Datos non validados.",
-        "checksum": "sha256:ad3a9425a36d8d7820bb5129387bdb09e4efc21aba05e29803210de7227f3101",
+        "checksum": "sha256:4a991698350f08249ebf189c0ffdc9454488b2cdfe498f4e6e05dfa528a4f500",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-10-24T09:06:39.146Z",
+            "ok": true
+          },
           {
             "at": "2026-10-24T07:54:24.928Z",
             "ok": true
@@ -777,8 +805,8 @@
       "meta": {
         "layer_id": "cobertura-banda-larga",
         "published_at": "2026-06-16T16:27:24.000Z",
-        "fetched_at": "2026-10-24T07:54:25.155Z",
-        "last_success_at": "2026-10-24T07:54:25.155Z",
+        "fetched_at": "2026-10-24T09:06:39.364Z",
+        "last_success_at": "2026-10-24T09:06:39.364Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 313,
@@ -788,6 +816,10 @@
         "checksum": "sha256:79e5de1c866ad9b7651b6d05d2f4e2dd44cc101827575798ea7eef2e52589098",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-10-24T09:06:39.364Z",
+            "ok": true
+          },
           {
             "at": "2026-10-24T07:54:25.155Z",
             "ok": true
@@ -848,8 +880,8 @@
       "meta": {
         "layer_id": "concellos-parroquias",
         "published_at": "2026-01-31T23:00:00.000Z",
-        "fetched_at": "2026-10-24T07:54:27.313Z",
-        "last_success_at": "2026-10-24T07:54:27.313Z",
+        "fetched_at": "2026-10-24T09:06:40.421Z",
+        "last_success_at": "2026-10-24T09:06:40.421Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 4098,
@@ -859,6 +891,10 @@
         "checksum": "sha256:b69a2c74c7c2bf7326369f9c647e0c558e486d35ca146e43bf105da3b10fc299",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-10-24T09:06:40.421Z",
+            "ok": true
+          },
           {
             "at": "2026-10-24T07:54:27.313Z",
             "ok": true
@@ -873,6 +909,75 @@
           },
           {
             "at": "2026-10-18T09:15:57.790Z",
+            "ok": true
+          }
+        ],
+        "alert": false
+      }
+    },
+    {
+      "id": "entidades-poboacion",
+      "title": {
+        "gl": "Entidades de poboación",
+        "es": "Entidades de población"
+      },
+      "theme": "territorio",
+      "operator": {
+        "name": "Instituto de Estudos do Territorio (Xunta de Galicia)",
+        "url": "https://mapas.xunta.gal"
+      },
+      "source_url": "https://ideg.xunta.gal/servizos/rest/services/PBA/EntidadesPoboacion_PBA/MapServer/0/query",
+      "licence": {
+        "spdx": "CC-BY-SA-4.0",
+        "text_url": "https://mapas.xunta.gal/gl/aviso-legal",
+        "verified_at": "2026-10-18",
+        "odbl_compatible": "doubt",
+        "collection": "cc-by-sa-4.0",
+        "notes": "Dobre licenza (ADR 0005): o IET declara «compatible con CC BY 4.0» e abertos.xunta.gal publica os seus conxuntos baixo CC BY-SA 4.0; aplícase a máis restritiva ata confirmación escrita do IET/Amtega. 36.190 puntos; COD_IGRP non é único (os lugares LU e os núcleos PU levan un código de parroquia rematado en 0099 / 0098). As etiquetas de TIPO_ENTID dedúcense dos datos (o servizo non publica a lista de códigos) e non están verificadas. A data de publicación é o mes de edición que o servizo indica no texto («Decembro 2025»), día 1."
+      },
+      "attribution": "© Instituto de Estudos do Territorio. Xunta de Galicia (PBA)",
+      "update_frequency": {
+        "declared": "static",
+        "measured": "static"
+      },
+      "geometry": "point",
+      "output": "geojson",
+      "privacy_notes": "Toponimia oficial e poboación agregada por entidade (padrón 2024); ningún dato persoal. Para lugares (LU) e núcleos do planeamento (PU) a fonte dá 0 habitantes porque non son entidades do INE: publícase sen dato (null).",
+      "stale_after": "P90D",
+      "ingest": {
+        "every": "P30D"
+      },
+      "style": {
+        "kind": "circle",
+        "color_token": "--c-limite",
+        "label_field": "nome"
+      },
+      "table": {
+        "fields": [
+          "nome",
+          "tipo_nome",
+          "poboacion",
+          "codigo",
+          "codigo_parroquia",
+          "codigo_ine"
+        ]
+      },
+      "meta": {
+        "layer_id": "entidades-poboacion",
+        "published_at": "2025-11-30T23:00:00.000Z",
+        "fetched_at": "2026-10-24T09:06:49.730Z",
+        "last_success_at": "2026-10-24T09:06:49.730Z",
+        "status": "fresh",
+        "consecutive_failures": 0,
+        "feature_count": 36190,
+        "source_url": "https://ideg.xunta.gal/servizos/rest/services/PBA/EntidadesPoboacion_PBA/MapServer/0/query",
+        "licence": "CC-BY-SA-4.0",
+        "attribution": "© Instituto de Estudos do Territorio. Xunta de Galicia (PBA)",
+        "checksum": "sha256:7e4fdd7f0cb378f173d43b959c082f27167e47776f9e564ef99d1c190edd7e58",
+        "last_error": null,
+        "history": [
+          {
+            "at": "2026-10-24T09:06:49.730Z",
             "ok": true
           }
         ],
@@ -926,8 +1031,8 @@
       "meta": {
         "layer_id": "espazos-naturais-galicia",
         "published_at": null,
-        "fetched_at": "2026-10-24T07:54:33.018Z",
-        "last_success_at": "2026-10-24T07:54:33.018Z",
+        "fetched_at": "2026-10-24T09:07:23.099Z",
+        "last_success_at": "2026-10-24T09:07:23.099Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 96,
@@ -937,6 +1042,10 @@
         "checksum": "sha256:5f0841a2003aba7b4f12fffaff2b386faadd7c23bdfe84eedbafcd469ca5c57e",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-10-24T09:07:23.099Z",
+            "ok": true
+          },
           {
             "at": "2026-10-24T07:54:33.018Z",
             "ok": true
@@ -1013,18 +1122,22 @@
       },
       "meta": {
         "layer_id": "estacions-meteo",
-        "published_at": "2026-10-24T07:40:00.000Z",
-        "fetched_at": "2026-10-24T07:54:36.451Z",
-        "last_success_at": "2026-10-24T07:54:36.451Z",
+        "published_at": "2026-10-24T09:00:00.000Z",
+        "fetched_at": "2026-10-24T09:07:27.591Z",
+        "last_success_at": "2026-10-24T09:07:27.591Z",
         "status": "fresh",
         "consecutive_failures": 0,
-        "feature_count": 154,
+        "feature_count": 153,
         "source_url": "https://servizos.meteogalicia.gal/mgrss/observacion/ultimos10minEstacionsMeteo.action",
         "licence": "CC-BY-SA-4.0",
         "attribution": "Datos: MeteoGalicia (Xunta de Galicia)",
-        "checksum": "sha256:87a464d365a7c1a977f8694f3cecce29602a77bedb3a6d95dc1733ea56759f2b",
+        "checksum": "sha256:02aaf8efbc4c975a7d63fcf37e959e2d573733624d32e94fded71dd59495aae7",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-10-24T09:07:27.591Z",
+            "ok": true
+          },
           {
             "at": "2026-10-24T07:54:36.451Z",
             "ok": true
@@ -1198,6 +1311,76 @@
       }
     },
     {
+      "id": "estacions-tren",
+      "title": {
+        "gl": "Estacións de tren",
+        "es": "Estaciones de tren"
+      },
+      "theme": "mobilidade",
+      "operator": {
+        "name": "Renfe Operadora",
+        "url": "https://data.renfe.com"
+      },
+      "source_url": "https://ssl.renfe.com/gtransit/Fichero_AV_LD/google_transit.zip",
+      "licence": {
+        "spdx": "CC-BY-4.0",
+        "text_url": "https://data.renfe.com/legal",
+        "quote": "para fines comerciales y no comerciales",
+        "verified_at": "2026-10-18",
+        "odbl_compatible": true,
+        "collection": "odbl",
+        "notes": "GTFS estático de AV/LD/MD (google_transit.zip) e de Cercanías e ancho métrico (fomento_transit.zip, conxunto «horarios-cercanias» de data.renfe.com, CC BY 4.0 comprobado o 24/10/2026; trae a liña Ferrol–Ortigueira). A provincia de cada estación sae do listado «estaciones-listado-completo» (estaciones.csv, CC BY 4.0), opcional."
+      },
+      "attribution": "Origen de los datos: Renfe Operadora",
+      "update_frequency": {
+        "declared": "P1D",
+        "schedule": "15 5 * * *"
+      },
+      "geometry": "point",
+      "output": "geojson",
+      "privacy_notes": "Estacións e horarios do servizo público; ningún dato persoal. Só se publican as estacións con polo menos unha viaxe no GTFS, dentro do bbox de Galicia con 0,05° de marxe e sen as estacións que o listado de Renfe sitúa noutra provincia. servizos_dia conta as viaxes distintas que paran na estación o primeiro mércores desde a data de descarga (dia_referencia); un festivo nese mércores baixa a cifra. Valença (Portugal) consta en Renfe como Pontevedra e queda dentro.",
+      "stale_after": "P7D",
+      "ingest": {
+        "every": "P1D"
+      },
+      "style": {
+        "kind": "circle",
+        "color_token": "--c-tren",
+        "label_field": "nome"
+      },
+      "table": {
+        "fields": [
+          "nome",
+          "servizos_dia",
+          "linas",
+          "rede",
+          "dia_referencia",
+          "id"
+        ]
+      },
+      "meta": {
+        "layer_id": "estacions-tren",
+        "published_at": "2026-10-24T02:08:03.000Z",
+        "fetched_at": "2026-10-24T09:07:28.805Z",
+        "last_success_at": "2026-10-24T09:07:28.805Z",
+        "status": "fresh",
+        "consecutive_failures": 0,
+        "feature_count": 137,
+        "source_url": "https://ssl.renfe.com/gtransit/Fichero_AV_LD/google_transit.zip",
+        "licence": "CC-BY-4.0",
+        "attribution": "Origen de los datos: Renfe Operadora",
+        "checksum": "sha256:03e6f8551bf6c6367e9889ee2a699857e933635dcce273fb50d821f1b5f59dc8",
+        "last_error": null,
+        "history": [
+          {
+            "at": "2026-10-24T09:07:28.805Z",
+            "ok": true
+          }
+        ],
+        "alert": false
+      }
+    },
+    {
       "id": "focos-calor",
       "title": {
         "gl": "Focos de calor detectados por satélite",
@@ -1247,8 +1430,8 @@
       "meta": {
         "layer_id": "focos-calor",
         "published_at": null,
-        "fetched_at": "2026-10-24T07:54:37.178Z",
-        "last_success_at": "2026-10-24T07:54:37.178Z",
+        "fetched_at": "2026-10-24T09:07:44.550Z",
+        "last_success_at": "2026-10-24T09:07:44.550Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 0,
@@ -1258,6 +1441,10 @@
         "checksum": "sha256:ed778c73ea51338d6576fb5992b189f2b94d9f3d5e199f46c1af520d6b0b3e6c",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-10-24T09:07:44.550Z",
+            "ok": true
+          },
           {
             "at": "2026-10-24T07:54:37.178Z",
             "ok": true
@@ -1486,19 +1673,219 @@
       "meta": {
         "layer_id": "gasolineiras",
         "published_at": null,
-        "fetched_at": "2026-10-24T07:54:37.601Z",
-        "last_success_at": "2026-10-24T07:54:37.601Z",
+        "fetched_at": "2026-10-24T09:07:44.877Z",
+        "last_success_at": "2026-10-24T09:07:44.877Z",
         "status": "fresh",
         "consecutive_failures": 0,
-        "feature_count": 727,
+        "feature_count": 728,
         "source_url": "https://sedeaplicaciones.minetur.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/EstacionesTerrestres/FiltroCCAA/12",
         "licence": "https://www.miteco.gob.es/es/atencion-al-ciudadano/aviso-legal.html",
         "attribution": "Fonte: Ministerio para a Transición Ecolóxica (MITERD), xeoportal de gasolineiras",
-        "checksum": "sha256:1ae0efa227c99d68e47ef428c40db33c1f21a7add593ae495d7e02168c54fb1b",
+        "checksum": "sha256:8ffd9fffc8fb37f3c90f46c532387165edb4c0b3baf55c781b40d043977ac3d4",
         "last_error": null,
         "history": [
           {
+            "at": "2026-10-24T09:07:44.877Z",
+            "ok": true
+          },
+          {
             "at": "2026-10-24T07:54:37.601Z",
+            "ok": true
+          }
+        ],
+        "alert": false
+      }
+    },
+    {
+      "id": "historial-queimados",
+      "title": {
+        "gl": "Áreas queimadas por ano (desde 2016)",
+        "es": "Áreas quemadas por año (desde 2016)"
+      },
+      "theme": "lume-monte",
+      "operator": {
+        "name": "Copernicus EFFIS (Comisión Europea, JRC)",
+        "url": "https://forest-fire.emergency.copernicus.eu/"
+      },
+      "source_url": "https://maps.effis.emergency.copernicus.eu/effis?service=WFS&request=GetFeature&version=2.0.0&typeNames=ms:modis.ba.poly.YYYY&outputFormat=geojson&bbox=41.8,-9.35,43.8,-6.7,urn:ogc:def:crs:EPSG::4326",
+      "licence": {
+        "spdx": "CC-BY-4.0",
+        "text_url": "https://forest-fire.emergency.copernicus.eu/about-effis/data-license",
+        "verified_at": "2026-10-18",
+        "odbl_compatible": true,
+        "collection": "odbl",
+        "notes": "CC BY 4.0, © Unión Europea. Logos excluídos. O servizo WFS está etiquetado como «Test Service». As cifras de contexto da Xunta veñen dos ficheiros anuais de Medio Rural (aviso legal: reutilización con cita)."
+      },
+      "attribution": "© Unión Europea, Copernicus EFFIS (JRC)",
+      "update_frequency": {
+        "declared": "P365D"
+      },
+      "geometry": "polygon",
+      "output": "geojson",
+      "privacy_notes": "Sen datos persoais. Perímetros de áreas queimadas cartografadas por satélite (MODIS); non identifican persoas nin propiedades. / Sin datos personales. Perímetros de áreas quemadas cartografiadas por satélite (MODIS); no identifican personas ni propiedades.",
+      "stale_after": "P90D",
+      "ingest": {
+        "every": "P30D"
+      },
+      "style": {
+        "kind": "fill",
+        "color_token": "--c-queimado",
+        "label_field": "ano"
+      },
+      "table": {
+        "fields": [
+          "ano",
+          "data_lume",
+          "concello",
+          "provincia",
+          "area_ha"
+        ]
+      },
+      "context": [
+        {
+          "label": {
+            "gl": "Como ler as cifras anuais",
+            "es": "Cómo leer las cifras anuales"
+          },
+          "value": "EFFIS: ha e áreas cartografadas · Xunta: ha e lumes",
+          "source": "Copernicus EFFIS (JRC), capas modis.ba.poly.AAAA; Consellería do Medio Rural, Xunta de Galicia (estatística anual por distrito forestal)",
+          "source_url": "https://mediorural.xunta.gal/gl/recursos/estatisticas/estatisticas-forestais/incendios-forestais",
+          "note": {
+            "gl": "As cifras de EFFIS calcúlanse con estes datos (suma de AREA_HA e número de áreas nas catro provincias galegas, calculado o 24/10/2026). EFFIS cartografa por satélite (MODIS) as áreas queimadas por riba do seu limiar de detección; unha área pode xuntar varios lumes e moitos lumes pequenos non chegan a cartografarse, así que o número de áreas non equivale ao número de lumes. A Xunta conta cada lume forestal e mide a superficie con outros criterios. As dúas cifras móstranse xuntas, sen axustalas. Para 2016 e 2017 a Xunta só publica a estatística en PDF e aquí só se dá a cifra de EFFIS.",
+            "es": "Las cifras de EFFIS se calculan con estos datos (suma de AREA_HA y número de áreas en las cuatro provincias gallegas, calculado el 24/10/2026). EFFIS cartografía por satélite (MODIS) las áreas quemadas por encima de su umbral de detección; un área puede agrupar varios incendios y muchos incendios pequeños no llegan a cartografiarse, por lo que el número de áreas no equivale al número de incendios. La Xunta cuenta cada incendio forestal y mide la superficie con otros criterios. Las dos cifras se muestran juntas, sin ajustarlas. Para 2016 y 2017 la Xunta solo publica la estadística en PDF y aquí solo se da la cifra de EFFIS."
+          }
+        },
+        {
+          "label": {
+            "gl": "Superficie queimada en Galicia en 2016",
+            "es": "Superficie quemada en Galicia en 2016"
+          },
+          "value": "EFFIS: 18.248 ha, 46 áreas",
+          "source": "Copernicus EFFIS (JRC), modis.ba.poly.2016",
+          "source_url": "https://maps.effis.emergency.copernicus.eu/effis?service=WFS&request=GetFeature&version=2.0.0&typeNames=ms:modis.ba.poly.2016&outputFormat=geojson&bbox=41.8,-9.35,43.8,-6.7,urn:ogc:def:crs:EPSG::4326",
+          "note": {
+            "gl": "Só EFFIS; a estatística da Xunta deste ano só está en PDF.",
+            "es": "Solo EFFIS; la estadística de la Xunta de este año solo está en PDF."
+          }
+        },
+        {
+          "label": {
+            "gl": "Superficie queimada en Galicia en 2017",
+            "es": "Superficie quemada en Galicia en 2017"
+          },
+          "value": "EFFIS: 48.347 ha, 104 áreas",
+          "source": "Copernicus EFFIS (JRC), modis.ba.poly.2017",
+          "source_url": "https://maps.effis.emergency.copernicus.eu/effis?service=WFS&request=GetFeature&version=2.0.0&typeNames=ms:modis.ba.poly.2017&outputFormat=geojson&bbox=41.8,-9.35,43.8,-6.7,urn:ogc:def:crs:EPSG::4326",
+          "note": {
+            "gl": "Só EFFIS; a estatística da Xunta deste ano só está en PDF.",
+            "es": "Solo EFFIS; la estadística de la Xunta de este año solo está en PDF."
+          }
+        },
+        {
+          "label": {
+            "gl": "Superficie queimada en Galicia en 2018",
+            "es": "Superficie quemada en Galicia en 2018"
+          },
+          "value": "EFFIS: 1.306 ha, 17 áreas · Xunta: 2.599,66 ha, 1.338 lumes",
+          "source": "Copernicus EFFIS (JRC), modis.ba.poly.2018; Consellería do Medio Rural, Xunta de Galicia, Lumes 2018 por distrito",
+          "source_url": "https://mediorural.xunta.gal/sites/default/files/estatisticas/2018/Lumes_2018_por_Distrito.xlsx",
+          "note": {
+            "gl": "O ficheiro da Xunta de 2018 non trae columna de superficie total; a cifra é a suma da superficie arborada e rasa da fila «Galicia».",
+            "es": "El fichero de la Xunta de 2018 no trae columna de superficie total; la cifra es la suma de la superficie arbolada y rasa de la fila «Galicia»."
+          }
+        },
+        {
+          "label": {
+            "gl": "Superficie queimada en Galicia en 2019",
+            "es": "Superficie quemada en Galicia en 2019"
+          },
+          "value": "EFFIS: 4.578 ha, 37 áreas · Xunta: 6.835,53 ha, 1.653 lumes",
+          "source": "Copernicus EFFIS (JRC), modis.ba.poly.2019; Consellería do Medio Rural, Xunta de Galicia, Lumes 2019 por distrito",
+          "source_url": "https://mediorural.xunta.gal/sites/default/files/estatisticas/2019/Lumes_2019_por_Distrito.xlsx",
+          "note": {
+            "gl": "O ficheiro da Xunta de 2019 non trae columna de superficie total; a cifra é a suma da superficie arborada e rasa da fila «Galicia».",
+            "es": "El fichero de la Xunta de 2019 no trae columna de superficie total; la cifra es la suma de la superficie arbolada y rasa de la fila «Galicia»."
+          }
+        },
+        {
+          "label": {
+            "gl": "Superficie queimada en Galicia en 2020",
+            "es": "Superficie quemada en Galicia en 2020"
+          },
+          "value": "EFFIS: 14.735 ha, 106 áreas · Xunta: 14.823,92 ha, 1.527 lumes",
+          "source": "Copernicus EFFIS (JRC), modis.ba.poly.2020; Consellería do Medio Rural, Xunta de Galicia, Lumes 2020 por distrito",
+          "source_url": "https://mediorural.xunta.gal/sites/default/files/estatisticas/2020/Lumes_2020_por_Distrito.xlsx",
+          "note": {
+            "gl": "O ficheiro da Xunta de 2020 non trae columna de superficie total; a cifra é a suma da superficie arborada e rasa da fila «Galicia».",
+            "es": "El fichero de la Xunta de 2020 no trae columna de superficie total; la cifra es la suma de la superficie arbolada y rasa de la fila «Galicia»."
+          }
+        },
+        {
+          "label": {
+            "gl": "Superficie queimada en Galicia en 2021",
+            "es": "Superficie quemada en Galicia en 2021"
+          },
+          "value": "EFFIS: 4.036 ha, 64 áreas · Xunta: 4.403,18 ha, 950 lumes",
+          "source": "Copernicus EFFIS (JRC), modis.ba.poly.2021; Consellería do Medio Rural, Xunta de Galicia, Lumes 2021 por distrito",
+          "source_url": "https://mediorural.xunta.gal/sites/default/files/estatisticas/2021/Lumes_2021_por_Distrito.xlsx",
+          "note": {
+            "gl": "O ficheiro da Xunta de 2021 non trae columna de superficie total; a cifra é a suma da superficie arborada e rasa da fila «Galicia».",
+            "es": "El fichero de la Xunta de 2021 no trae columna de superficie total; la cifra es la suma de la superficie arbolada y rasa de la fila «Galicia»."
+          }
+        },
+        {
+          "label": {
+            "gl": "Superficie queimada en Galicia en 2022",
+            "es": "Superficie quemada en Galicia en 2022"
+          },
+          "value": "EFFIS: 52.574 ha, 176 áreas · Xunta: 51.642,58 ha, 1.713 lumes",
+          "source": "Copernicus EFFIS (JRC), modis.ba.poly.2022; Consellería do Medio Rural, Xunta de Galicia, Lumes 2022 por distrito",
+          "source_url": "https://mediorural.xunta.gal/sites/default/files/estatisticas/2021/Lumes_2022_por_Distrito.xlsx"
+        },
+        {
+          "label": {
+            "gl": "Superficie queimada en Galicia en 2023",
+            "es": "Superficie quemada en Galicia en 2023"
+          },
+          "value": "EFFIS: 5.886 ha, 99 áreas · Xunta: 6.748,92 ha, 908 lumes",
+          "source": "Copernicus EFFIS (JRC), modis.ba.poly.2023; Consellería do Medio Rural, Xunta de Galicia, Lumes 2023 por distrito",
+          "source_url": "https://mediorural.xunta.gal/sites/default/files/estatisticas/2023/lumes-2023-por-distrito.xlsx"
+        },
+        {
+          "label": {
+            "gl": "Superficie queimada en Galicia en 2024",
+            "es": "Superficie quemada en Galicia en 2024"
+          },
+          "value": "EFFIS: 2.214 ha, 70 áreas · Xunta: 2.644,70 ha, 755 lumes",
+          "source": "Copernicus EFFIS (JRC), modis.ba.poly.2024; Consellería do Medio Rural, Xunta de Galicia, Lumes 2024 por distrito",
+          "source_url": "https://mediorural.xunta.gal/sites/default/files/estatisticas/2024/Lumes-2024-por-Distrito.xlsx"
+        },
+        {
+          "label": {
+            "gl": "Superficie queimada en Galicia en 2025",
+            "es": "Superficie quemada en Galicia en 2025"
+          },
+          "value": "EFFIS: 148.581 ha, 258 áreas · Xunta: 118.763,65 ha, 1.475 lumes",
+          "source": "Copernicus EFFIS (JRC), modis.ba.poly.2025; Consellería do Medio Rural, Xunta de Galicia, Lumes 2025 por distrito",
+          "source_url": "https://mediorural.xunta.gal/sites/default/files/estatisticas/2025/Lumes-2025-por-Distrito.xlsx"
+        }
+      ],
+      "meta": {
+        "layer_id": "historial-queimados",
+        "published_at": "2025-11-05T08:23:32.541Z",
+        "fetched_at": "2026-10-24T09:07:47.214Z",
+        "last_success_at": "2026-10-24T09:07:47.214Z",
+        "status": "fresh",
+        "consecutive_failures": 0,
+        "feature_count": 977,
+        "source_url": "https://maps.effis.emergency.copernicus.eu/effis?service=WFS&request=GetFeature&version=2.0.0&typeNames=ms:modis.ba.poly.YYYY&outputFormat=geojson&bbox=41.8,-9.35,43.8,-6.7,urn:ogc:def:crs:EPSG::4326",
+        "licence": "CC-BY-4.0",
+        "attribution": "© Unión Europea, Copernicus EFFIS (JRC)",
+        "checksum": "sha256:b7cc2afc5134d9cf885d6dfa25addcbf47b8a93e978fe5a45d9a41786aab6cb3",
+        "last_error": null,
+        "history": [
+          {
+            "at": "2026-10-24T09:07:47.214Z",
             "ok": true
           }
         ],
@@ -1523,9 +1910,9 @@
         "verified_at": "2026-10-24",
         "odbl_compatible": "doubt",
         "collection": "cc-by-sa-4.0",
-        "notes": "Aviso legal do IGE (Lei 37/2007: reutilización citando «Fonte: IGE»). Compatibilidade con ODbL en dúbida: colección CC BY-SA 4.0 (ADR 0005). Condicións da API: non modificar os datos presentados; por iso cada indicador publica o valor orixinal do IGE xunto ao valor de Galicia e á comparación, que é cálculo propio. Aviso obrigatorio: «Este produto emprega a API de datos do Instituto Galego de Estatística (IGE), pero non está certificado ou aprobado polo IGE.» Pendente: consulta escrita ao IGE sobre os índices derivados."
+        "notes": "Aviso legal do IGE (Lei 37/2007: reutilización citando «Fonte: IGE»). Compatibilidade con ODbL en dúbida: colección CC BY-SA 4.0 (ADR 0005). Condicións da API: non modificar os datos presentados; por iso cada indicador publica o valor orixinal do IGE xunto ao valor de Galicia e á comparación, que é cálculo propio. Aviso obrigatorio: «Este produto emprega a API de datos do Instituto Galego de Estatística (IGE), pero non está certificado ou aprobado polo IGE.» Pendente: consulta escrita ao IGE sobre os índices derivados. O indicador de vivendas baleiras usa datos do INE (Censo de Población y Viviendas 2021, táboa 59531, API Tempus), licenza CC BY 4.0 segundo o aviso legal do INE (https://www.ine.es/dyngs/AYU/index.htm?cid=125, verificado 2026-10-24): «La licencia de uso general a aplicar a la información estadística de este sitio web, salvo que se indique lo contrario, es la Creative Commons Reconocimiento 4.0 (CC BY 4.0)». Condicións: citar «Elaboración propia con datos extraídos del sitio web del INE: www.ine.es» cando hai tratamento, indicar a data da última actualización (táboa 59531: 22/11/2024) e non suxerir que o INE participa ou apoia a reutilización."
       },
-      "attribution": "Fonte: IGE: https://www.ige.gal. Comparacións con Galicia e indicadores derivados: cálculo propio da Fundación Galicia Sustentable. Este produto emprega a API de datos do Instituto Galego de Estatística (IGE), pero non está certificado ou aprobado polo IGE.",
+      "attribution": "Fonte: IGE: https://www.ige.gal. Comparacións con Galicia e indicadores derivados: cálculo propio da Fundación Galicia Sustentable. Este produto emprega a API de datos do Instituto Galego de Estatística (IGE), pero non está certificado ou aprobado polo IGE. Vivendas baleiras: elaboración propia con datos extraídos do sitio web do INE: www.ine.es (Censo de Población y Viviendas 2021, última actualización da táboa 22/11/2024; CC BY 4.0).",
       "update_frequency": {
         "declared": "P30D"
       },
@@ -1711,6 +2098,48 @@
             "gl": "Cálculo propio: nacementos dos tres últimos anos ÷ suma da poboación deses anos × 1.000 (media de 3 anos para que os concellos pequenos non oscilen tanto). O último ano de nacementos pode ser provisional. A diferenza con Galicia (en puntos) tamén é cálculo propio.",
             "es": "Cálculo propio: nacimientos de los tres últimos años ÷ suma de la población de esos años × 1.000 (media de 3 años para que los ayuntamientos pequeños no oscilen tanto). El último año de nacimientos puede ser provisional. La diferencia con Galicia (en puntos) también es cálculo propio."
           }
+        },
+        {
+          "id": "explotacions_1000hab",
+          "label": {
+            "gl": "Explotacións agrarias por 1.000 habitantes",
+            "es": "Explotaciones agrarias por 1.000 habitantes"
+          },
+          "unit": "explotacións/1.000 hab.",
+          "comparison": "index",
+          "source": "IGE, táboas 10331 (Censo agrario 2020, INE) e 1558 (Poboación)",
+          "note": {
+            "gl": "Cálculo propio: explotacións con superficie agraria utilizada (SAU) do Censo agrario 2020 ÷ poboación a 1 de xaneiro de 2020 × 1.000, coas cifras orixinais do IGE. Non inclúe as explotacións gandeiras sen terras. Cada explotación cóntase no concello onde ten a maior parte da SAU. A comparación con Galicia (Galicia = 100) tamén é cálculo propio.",
+            "es": "Cálculo propio: explotaciones con superficie agraria utilizada (SAU) del Censo agrario 2020 ÷ población a 1 de enero de 2020 × 1.000, con las cifras originales del IGE. No incluye las explotaciones ganaderas sin tierras. Cada explotación se cuenta en el ayuntamiento donde tiene la mayor parte de la SAU. La comparación con Galicia (Galicia = 100) también es cálculo propio."
+          }
+        },
+        {
+          "id": "sau_pct",
+          "label": {
+            "gl": "Superficie agraria utilizada sobre a superficie do concello",
+            "es": "Superficie agraria utilizada sobre la superficie del ayuntamiento"
+          },
+          "unit": "%",
+          "comparison": "points",
+          "source": "IGE, táboas 10331 (Censo agrario 2020, INE) e 77 (Superficie)",
+          "note": {
+            "gl": "Cálculo propio: SAU das explotacións (ha, Censo agrario 2020) ÷ superficie do concello (km² × 100, última cifra do IGE) × 100. A SAU atribúese ao concello onde cada explotación ten a maior parte da súa superficie, polo que pode superar o 100 % en concellos pequenos con explotacións que traballan terras dos veciños. A diferenza con Galicia (en puntos) tamén é cálculo propio.",
+            "es": "Cálculo propio: SAU de las explotaciones (ha, Censo agrario 2020) ÷ superficie del ayuntamiento (km² × 100, última cifra del IGE) × 100. La SAU se atribuye al ayuntamiento donde cada explotación tiene la mayor parte de su superficie, por lo que puede superar el 100 % en ayuntamientos pequeños con explotaciones que trabajan tierras de los vecinos. La diferencia con Galicia (en puntos) también es cálculo propio."
+          }
+        },
+        {
+          "id": "vivendas_baleiras_pct",
+          "label": {
+            "gl": "Vivendas baleiras",
+            "es": "Viviendas vacías"
+          },
+          "unit": "%",
+          "comparison": "points",
+          "source": "INE, táboa 59531 (Censo de Población y Viviendas 2021, intensidade de uso)",
+          "note": {
+            "gl": "Cálculo propio: vivendas baleiras ÷ vivendas totais × 100, coas cifras orixinais do INE. O INE considera baleira a vivenda sen contrato de luz ou cun consumo eléctrico anual (2020) moi baixo, polo que unha vivenda secundaria case sen uso pode contar como baleira. O INE só publica os municipios de máis de 1.000 habitantes: os concellos máis pequenos van sen dato. A diferenza con Galicia (en puntos) tamén é cálculo propio.",
+            "es": "Cálculo propio: viviendas vacías ÷ viviendas totales × 100, con las cifras originales del INE. El INE considera vacía la vivienda sin contrato de luz o con un consumo eléctrico anual (2020) muy bajo, por lo que una vivienda secundaria casi sin uso puede contar como vacía. El INE solo publica los municipios de más de 1.000 habitantes: los ayuntamientos más pequeños van sin dato. La diferencia con Galicia (en puntos) también es cálculo propio."
+          }
         }
       ],
       "style": {
@@ -1732,23 +2161,30 @@
           "afiliacion_agro_pct",
           "paro_rel",
           "bovino_km2",
-          "natalidade_3a"
+          "natalidade_3a",
+          "explotacions_1000hab",
+          "sau_pct",
+          "vivendas_baleiras_pct"
         ]
       },
       "meta": {
         "layer_id": "indicadores-concellos",
         "published_at": null,
-        "fetched_at": "2026-10-24T07:54:40.008Z",
-        "last_success_at": "2026-10-24T07:54:40.008Z",
+        "fetched_at": "2026-10-24T09:08:58.736Z",
+        "last_success_at": "2026-10-24T09:08:58.736Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 313,
         "source_url": "https://www.ige.gal/igebdt/igeapi/csv/datos/723/T%5B1:a%5D,1:0:3:9:10,2:2",
         "licence": "https://www.ige.gal/web/avisolegal.jsp",
-        "attribution": "Fonte: IGE: https://www.ige.gal. Comparacións con Galicia e indicadores derivados: cálculo propio da Fundación Galicia Sustentable. Este produto emprega a API de datos do Instituto Galego de Estatística (IGE), pero non está certificado ou aprobado polo IGE.",
-        "checksum": "sha256:18d39ce3d17ea07a331b9b82bc969eee77d0258b95c1cce853da9eacfcc08586",
+        "attribution": "Fonte: IGE: https://www.ige.gal. Comparacións con Galicia e indicadores derivados: cálculo propio da Fundación Galicia Sustentable. Este produto emprega a API de datos do Instituto Galego de Estatística (IGE), pero non está certificado ou aprobado polo IGE. Vivendas baleiras: elaboración propia con datos extraídos do sitio web do INE: www.ine.es (Censo de Población y Viviendas 2021, última actualización da táboa 22/11/2024; CC BY 4.0).",
+        "checksum": "sha256:19d81ffcdcbf05e243ac49ee01f65dd8a85253e941060423670b6e6b248567e2",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-10-24T09:08:58.736Z",
+            "ok": true
+          },
           {
             "at": "2026-10-24T07:54:40.008Z",
             "ok": true
@@ -1810,8 +2246,8 @@
       "meta": {
         "layer_id": "patrimonio",
         "published_at": null,
-        "fetched_at": "2026-10-24T07:54:54.781Z",
-        "last_success_at": "2026-10-24T07:54:54.781Z",
+        "fetched_at": "2026-10-24T09:09:28.417Z",
+        "last_success_at": "2026-10-24T09:09:28.417Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 664,
@@ -1821,6 +2257,10 @@
         "checksum": "sha256:ed56e00b716494bec07ac4ae8683f04488af8cc0c45b7cc40ad114d3d4dd7ddd",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-10-24T09:09:28.417Z",
+            "ok": true
+          },
           {
             "at": "2026-10-24T07:54:54.781Z",
             "ok": true
@@ -1917,8 +2357,8 @@
       "meta": {
         "layer_id": "perimetros-queimados",
         "published_at": "2026-10-19T13:19:12.428Z",
-        "fetched_at": "2026-10-24T07:54:55.546Z",
-        "last_success_at": "2026-10-24T07:54:55.546Z",
+        "fetched_at": "2026-10-24T09:09:29.168Z",
+        "last_success_at": "2026-10-24T09:09:29.168Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 176,
@@ -1928,6 +2368,10 @@
         "checksum": "sha256:5a4f2c11bcbf3f55d2a1e7603abae45ce75e20b8463c113c0c08b0c7beb7944f",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-10-24T09:09:29.168Z",
+            "ok": true
+          },
           {
             "at": "2026-10-24T07:54:55.546Z",
             "ok": true
@@ -2018,9 +2462,9 @@
       },
       "meta": {
         "layer_id": "puntos-recarga",
-        "published_at": "2026-10-23T08:16:28.845Z",
-        "fetched_at": "2026-10-24T07:54:57.244Z",
-        "last_success_at": "2026-10-24T07:54:57.244Z",
+        "published_at": "2026-10-24T08:17:51.044Z",
+        "fetched_at": "2026-10-24T09:09:30.787Z",
+        "last_success_at": "2026-10-24T09:09:30.787Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 460,
@@ -2030,6 +2474,10 @@
         "checksum": "sha256:4f2e2c8be0bf1de82815c1191daaaa6a09936587bd4e1a628031ab89e45c28f8",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-10-24T09:09:30.787Z",
+            "ok": true
+          },
           {
             "at": "2026-10-24T07:54:57.244Z",
             "ok": true
@@ -2086,8 +2534,8 @@
       "meta": {
         "layer_id": "raios",
         "published_at": null,
-        "fetched_at": "2026-10-24T07:54:59.776Z",
-        "last_success_at": "2026-10-24T07:54:59.776Z",
+        "fetched_at": "2026-10-24T09:09:32.986Z",
+        "last_success_at": "2026-10-24T09:09:32.986Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 0,
@@ -2097,6 +2545,10 @@
         "checksum": "sha256:ed778c73ea51338d6576fb5992b189f2b94d9f3d5e199f46c1af520d6b0b3e6c",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-10-24T09:09:32.986Z",
+            "ok": true
+          },
           {
             "at": "2026-10-24T07:54:59.776Z",
             "ok": true
@@ -2154,10 +2606,10 @@
       "meta": {
         "layer_id": "rede-natura",
         "published_at": null,
-        "fetched_at": "2026-10-24T07:55:00.114Z",
+        "fetched_at": "2026-10-24T09:09:33.349Z",
         "last_success_at": "2026-10-18T09:03:21.597Z",
         "status": "stale",
-        "consecutive_failures": 3,
+        "consecutive_failures": 4,
         "feature_count": 76,
         "source_url": "https://geoserver.iepnb.es/geoserver/RN2000/ows",
         "licence": "https://www.miteco.gob.es/es/atencion-al-ciudadano/aviso-legal.html",
@@ -2165,6 +2617,11 @@
         "checksum": "sha256:302244ac1781a3ee068ae74ef481c42043fe0448181a10201a6ede29f4427cc2",
         "last_error": "HTTP 403 for https://geoserver.iepnb.es/geoserver/RN2000/ows?service=WFS&version=2.0.0&request=GetCapabilities",
         "history": [
+          {
+            "at": "2026-10-24T09:09:33.349Z",
+            "ok": false,
+            "error": "HTTP 403 for https://geoserver.iepnb.es/geoserver/RN2000/ows?service=WFS&version=2.0.0&request=GetCapabilities"
+          },
           {
             "at": "2026-10-24T07:55:00.114Z",
             "ok": false,
@@ -2242,18 +2699,22 @@
       },
       "meta": {
         "layer_id": "sismos-recentes",
-        "published_at": "2026-10-24T03:33:22.025Z",
-        "fetched_at": "2026-10-24T07:55:00.943Z",
-        "last_success_at": "2026-10-24T07:55:00.943Z",
+        "published_at": "2026-10-24T08:42:46.087Z",
+        "fetched_at": "2026-10-24T09:09:34.282Z",
+        "last_success_at": "2026-10-24T09:09:34.282Z",
         "status": "fresh",
         "consecutive_failures": 0,
-        "feature_count": 50,
+        "feature_count": 51,
         "source_url": "https://www.seismicportal.eu/fdsnws/event/1/query?minlatitude=41.5&maxlatitude=44.5&minlongitude=-10.5&maxlongitude=-6.5&format=json&limit=500",
         "licence": "CC-BY-4.0",
         "attribution": "EMSC-CSEM / Instituto Geográfico Nacional (solucións IGN)",
-        "checksum": "sha256:d65f53e24726d5f8ffb5e324c400157b18cba45a99520e0d457ead0cf6642091",
+        "checksum": "sha256:2858b2b93837847d51fc3cd7995ac6e52ba9e2c17571591faa1aebb4fbff206d",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-10-24T09:09:34.282Z",
+            "ok": true
+          },
           {
             "at": "2026-10-24T07:55:00.943Z",
             "ok": true
@@ -2317,18 +2778,22 @@
       "volatile": true,
       "meta": {
         "layer_id": "tren",
-        "published_at": "2026-10-24T07:54:48.000Z",
-        "fetched_at": "2026-10-24T07:55:02.886Z",
-        "last_success_at": "2026-10-24T07:55:02.886Z",
+        "published_at": "2026-10-24T09:09:30.000Z",
+        "fetched_at": "2026-10-24T09:09:35.837Z",
+        "last_success_at": "2026-10-24T09:09:35.837Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 14,
         "source_url": "https://gtfsrt.renfe.com/vehicle_positions_LD.json",
         "licence": "CC-BY-4.0",
         "attribution": "Origen de los datos: Renfe Operadora",
-        "checksum": "sha256:d65a9a71aebe32ecc3c7875e4698f603ad74491175a88c68e5bded0dbfca8479",
+        "checksum": "sha256:aa024beac589c9e90076d14b4a5c03199bbee64712d11250985a3b7124c79347",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-10-24T09:09:35.837Z",
+            "ok": true
+          },
           {
             "at": "2026-10-24T07:55:02.886Z",
             "ok": true

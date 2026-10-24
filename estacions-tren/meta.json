@@ -1,0 +1,20 @@
+{
+  "layer_id": "estacions-tren",
+  "published_at": "2026-10-24T02:08:03.000Z",
+  "fetched_at": "2026-10-24T09:07:28.805Z",
+  "last_success_at": "2026-10-24T09:07:28.805Z",
+  "status": "fresh",
+  "consecutive_failures": 0,
+  "feature_count": 137,
+  "source_url": "https://ssl.renfe.com/gtransit/Fichero_AV_LD/google_transit.zip",
+  "licence": "CC-BY-4.0",
+  "attribution": "Origen de los datos: Renfe Operadora",
+  "checksum": "sha256:03e6f8551bf6c6367e9889ee2a699857e933635dcce273fb50d821f1b5f59dc8",
+  "last_error": null,
+  "history": [
+    {
+      "at": "2026-10-24T09:07:28.805Z",
+      "ok": true
+    }
+  ]
+}

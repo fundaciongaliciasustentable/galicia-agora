@@ -1,17 +1,21 @@
 {
   "layer_id": "indicadores-concellos",
   "published_at": null,
-  "fetched_at": "2026-10-24T07:54:40.008Z",
-  "last_success_at": "2026-10-24T07:54:40.008Z",
+  "fetched_at": "2026-10-24T09:08:58.736Z",
+  "last_success_at": "2026-10-24T09:08:58.736Z",
   "status": "fresh",
   "consecutive_failures": 0,
   "feature_count": 313,
   "source_url": "https://www.ige.gal/igebdt/igeapi/csv/datos/723/T%5B1:a%5D,1:0:3:9:10,2:2",
   "licence": "https://www.ige.gal/web/avisolegal.jsp",
-  "attribution": "Fonte: IGE: https://www.ige.gal. Comparacións con Galicia e indicadores derivados: cálculo propio da Fundación Galicia Sustentable. Este produto emprega a API de datos do Instituto Galego de Estatística (IGE), pero non está certificado ou aprobado polo IGE.",
-  "checksum": "sha256:18d39ce3d17ea07a331b9b82bc969eee77d0258b95c1cce853da9eacfcc08586",
+  "attribution": "Fonte: IGE: https://www.ige.gal. Comparacións con Galicia e indicadores derivados: cálculo propio da Fundación Galicia Sustentable. Este produto emprega a API de datos do Instituto Galego de Estatística (IGE), pero non está certificado ou aprobado polo IGE. Vivendas baleiras: elaboración propia con datos extraídos do sitio web do INE: www.ine.es (Censo de Población y Viviendas 2021, última actualización da táboa 22/11/2024; CC BY 4.0).",
+  "checksum": "sha256:19d81ffcdcbf05e243ac49ee01f65dd8a85253e941060423670b6e6b248567e2",
   "last_error": null,
   "history": [
+    {
+      "at": "2026-10-24T09:08:58.736Z",
+      "ok": true
+    },
     {
       "at": "2026-10-24T07:54:40.008Z",
       "ok": true
