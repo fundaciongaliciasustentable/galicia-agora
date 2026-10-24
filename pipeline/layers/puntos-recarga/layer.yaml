@@ -1,0 +1,45 @@
+id: puntos-recarga
+title:
+  gl: Puntos de recarga de vehículos eléctricos
+  es: Puntos de recarga de vehículos eléctricos
+theme: mobilidade
+operator:
+  name: MITERD, publicado no Punto de Acceso Nacional de Tráfico (DGT)
+  url: https://nap.dgt.es/es/dataset/puntos-de-recarga-electrica-para-vehiculos
+source_url: https://nap.dgt.es/datex2/v3/miterd/EnergyInfrastructureTablePublication/electrolineras.xml
+licence:
+  text_url: https://nap.dgt.es/es/dataset/puntos-de-recarga-electrica-para-vehiculos
+  quote: "Licencia: Creative Commons Attribution"
+  verified_at: 2026-10-24
+  odbl_compatible: true
+  collection: odbl
+  notes: >-
+    A ficha do conxunto no NAP declara «Creative Commons Attribution» sen indicar a versión.
+attribution: "Fonte: MITERD vía Punto de Acceso Nacional de Tráfico (DGT)"
+update_frequency:
+  declared: P1D
+  schedule: "15 5 * * *"
+geometry: point
+output: geojson
+auth:
+  required: false
+privacy_notes: >-
+  Sen datos persoais: localizacións de recarga, operador e características técnicas. A fonte
+  non publica ocupación nin prezos. Algúns operadores son pequenas empresas (concesionarios,
+  hoteis); publícase só o nome comercial que figura no rexistro público.
+stale_after: P3D
+ingest:
+  every: P1D
+style:
+  kind: circle
+  color_token: --c-recarga
+  label_field: nome
+table:
+  fields:
+    - nome
+    - operador
+    - concello
+    - puntos
+    - potencia_max_kw
+    - conectores
+    - actualizado

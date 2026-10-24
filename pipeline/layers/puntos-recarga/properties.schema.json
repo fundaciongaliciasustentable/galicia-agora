@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "puntos-recarga feature properties",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "nome",
+    "operador",
+    "concello",
+    "puntos",
+    "potencia_max_kw",
+    "conectores",
+    "actualizado"
+  ],
+  "properties": {
+    "id": { "type": "string", "minLength": 1, "description": "Identificador do sitio no NAP" },
+    "nome": { "type": "string", "minLength": 1 },
+    "operador": { "type": ["string", "null"] },
+    "concello": { "type": ["string", "null"] },
+    "puntos": { "type": "integer", "minimum": 0, "description": "Puntos de recarga (refillPoint)" },
+    "potencia_max_kw": {
+      "type": ["number", "null"],
+      "exclusiveMinimum": 0,
+      "description": "Potencia máxima dun conector, kW"
+    },
+    "conectores": {
+      "type": ["string", "null"],
+      "minLength": 1,
+      "description": "Tipos de conector (Tipo 2, CCS2, CHAdeMO…), separados por comas"
+    },
+    "actualizado": {
+      "type": ["string", "null"],
+      "format": "date-time",
+      "description": "lastUpdated do sitio"
+    }
+  }
+}
