@@ -183,6 +183,10 @@ export async function start(): Promise<void> {
     fadeDuration: reducedMotion.matches ? 0 : 300,
   });
   map.addControl(new maplibregl.NavigationControl({ visualizePitch: false }), 'top-right');
+  // Developer aid: ?debug exposes the map instance in the console.
+  if (new URLSearchParams(window.location.search).has('debug')) {
+    (window as unknown as { gaMap?: MlMap }).gaMap = map;
+  }
   map.addControl(new maplibregl.ScaleControl({ unit: 'metric' }), 'bottom-right');
 
   const active = new Set<string>();
@@ -409,6 +413,8 @@ export async function start(): Promise<void> {
     } else {
       renderFicha(fichaBody, layer, f.properties ?? {}, lang, dict);
     }
+    // Concello cards carry a four-column table and need a wider panel.
+    ficha.classList.toggle('is-wide', !!layer.join?.key && !!layer.indicators?.length);
     ficha.hidden = false;
   });
   map.on('mousemove', (e) => {
@@ -661,8 +667,10 @@ function renderJoinFicha(
     const periods = [
       ...new Set(layer.indicators.map((i) => row[`${i.id}_periodo`]).filter(Boolean)),
     ];
+    const wrap = el('div', { class: 'ga-ficha-table-wrap' });
+    wrap.append(table);
     parts.push(
-      table,
+      wrap,
       el(
         'p',
         { class: 'ga-ficha-meta' },

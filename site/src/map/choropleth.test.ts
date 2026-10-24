@@ -28,14 +28,23 @@ const rows = [
 
 describe('choropleth', () => {
   it('measures distance from Galicia for index and points', () => {
-    expect(deviation(rows[0] as never, idx)).toBe(22);
+    expect(deviation(rows[0] as never, idx)).toBeCloseTo(Math.log2(1.22));
+    // Double and half of Galicia are equally far from the centre.
+    expect(deviation({ envellecemento_rel: 200 } as never, idx)).toBeCloseTo(
+      -(deviation({ envellecemento_rel: 50 } as never, idx) ?? 0),
+    );
     expect(deviation(rows[2] as never, pts)).toBe(-6);
     expect(deviation(rows[4] as never, idx)).toBeNull();
   });
 
+  it('never labels an index below zero', () => {
+    const c = classifyIndicator(rows, idx, 'codigo_ine', DIVERGING.light, 'gl');
+    expect(c.legend.map((l) => l.label).join(' ')).not.toMatch(/-\d/);
+  });
+
   it('puts values close to Galicia in the middle class', () => {
     const b = breaksFor(rows, idx);
-    expect(classIndex(-1, b)).toBe(2);
+    expect(classIndex(-0.01, b)).toBe(2);
     expect(classIndex(b.strong + 1, b)).toBe(4);
     expect(classIndex(-(b.strong + 1), b)).toBe(0);
   });

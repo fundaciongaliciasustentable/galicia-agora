@@ -356,6 +356,10 @@ const licenceLabel = (l: CatalogLayer) => l.licence.spdx ?? l.licence.text_url;
     padding: 12px 16px;
     font-size: var(--gs-texto-sm);
   }
+  /* Concello cards hold a four-column table: give them more room. */
+  .ga-ficha.is-wide {
+    width: min(540px, calc(100% - 32px));
+  }
   .ga-ficha-close {
     float: right;
   }
