@@ -17,7 +17,8 @@
       "!site/public/style-dark.json",
       "!data-out",
       "!build",
-      "!probe-log"
+      "!probe-log",
+      "!galicia-agora-web"
     ]
   },
   "formatter": {
