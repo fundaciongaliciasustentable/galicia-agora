@@ -20,10 +20,20 @@ licence:
     de Galicia e á comparación, que é cálculo propio. Aviso obrigatorio: «Este produto emprega
     a API de datos do Instituto Galego de Estatística (IGE), pero non está certificado ou
     aprobado polo IGE.» Pendente: consulta escrita ao IGE sobre os índices derivados.
+    O indicador de vivendas baleiras usa datos do INE (Censo de Población y Viviendas 2021,
+    táboa 59531, API Tempus), licenza CC BY 4.0 segundo o aviso legal do INE
+    (https://www.ine.es/dyngs/AYU/index.htm?cid=125, verificado 2026-10-24): «La licencia de
+    uso general a aplicar a la información estadística de este sitio web, salvo que se indique
+    lo contrario, es la Creative Commons Reconocimiento 4.0 (CC BY 4.0)». Condicións: citar
+    «Elaboración propia con datos extraídos del sitio web del INE: www.ine.es» cando hai
+    tratamento, indicar a data da última actualización (táboa 59531: 22/11/2024) e non
+    suxerir que o INE participa ou apoia a reutilización.
 attribution: >-
   Fonte: IGE: https://www.ige.gal. Comparacións con Galicia e indicadores derivados: cálculo
   propio da Fundación Galicia Sustentable. Este produto emprega a API de datos do Instituto
-  Galego de Estatística (IGE), pero non está certificado ou aprobado polo IGE.
+  Galego de Estatística (IGE), pero non está certificado ou aprobado polo IGE. Vivendas
+  baleiras: elaboración propia con datos extraídos do sitio web do INE: www.ine.es (Censo de
+  Población y Viviendas 2021, última actualización da táboa 22/11/2024; CC BY 4.0).
 update_frequency:
   declared: P30D
 geometry: none
@@ -207,6 +217,66 @@ indicators:
         × 1.000 (media de 3 años para que los ayuntamientos pequeños no oscilen tanto). El
         último año de nacimientos puede ser provisional. La diferencia con Galicia (en puntos)
         también es cálculo propio.
+  - id: explotacions_1000hab
+    label:
+      gl: Explotacións agrarias por 1.000 habitantes
+      es: Explotaciones agrarias por 1.000 habitantes
+    unit: explotacións/1.000 hab.
+    comparison: index
+    source: IGE, táboas 10331 (Censo agrario 2020, INE) e 1558 (Poboación)
+    note:
+      gl: >-
+        Cálculo propio: explotacións con superficie agraria utilizada (SAU) do Censo agrario
+        2020 ÷ poboación a 1 de xaneiro de 2020 × 1.000, coas cifras orixinais do IGE. Non
+        inclúe as explotacións gandeiras sen terras. Cada explotación cóntase no concello onde
+        ten a maior parte da SAU. A comparación con Galicia (Galicia = 100) tamén é cálculo
+        propio.
+      es: >-
+        Cálculo propio: explotaciones con superficie agraria utilizada (SAU) del Censo agrario
+        2020 ÷ población a 1 de enero de 2020 × 1.000, con las cifras originales del IGE. No
+        incluye las explotaciones ganaderas sin tierras. Cada explotación se cuenta en el
+        ayuntamiento donde tiene la mayor parte de la SAU. La comparación con Galicia
+        (Galicia = 100) también es cálculo propio.
+  - id: sau_pct
+    label:
+      gl: Superficie agraria utilizada sobre a superficie do concello
+      es: Superficie agraria utilizada sobre la superficie del ayuntamiento
+    unit: '%'
+    comparison: points
+    source: IGE, táboas 10331 (Censo agrario 2020, INE) e 77 (Superficie)
+    note:
+      gl: >-
+        Cálculo propio: SAU das explotacións (ha, Censo agrario 2020) ÷ superficie do concello
+        (km² × 100, última cifra do IGE) × 100. A SAU atribúese ao concello onde cada
+        explotación ten a maior parte da súa superficie, polo que pode superar o 100 % en
+        concellos pequenos con explotacións que traballan terras dos veciños. A diferenza con
+        Galicia (en puntos) tamén é cálculo propio.
+      es: >-
+        Cálculo propio: SAU de las explotaciones (ha, Censo agrario 2020) ÷ superficie del
+        ayuntamiento (km² × 100, última cifra del IGE) × 100. La SAU se atribuye al
+        ayuntamiento donde cada explotación tiene la mayor parte de su superficie, por lo que
+        puede superar el 100 % en ayuntamientos pequeños con explotaciones que trabajan
+        tierras de los vecinos. La diferencia con Galicia (en puntos) también es cálculo propio.
+  - id: vivendas_baleiras_pct
+    label: { gl: Vivendas baleiras, es: Viviendas vacías }
+    unit: '%'
+    comparison: points
+    source: INE, táboa 59531 (Censo de Población y Viviendas 2021, intensidade de uso)
+    note:
+      gl: >-
+        Cálculo propio: vivendas baleiras ÷ vivendas totais × 100, coas cifras orixinais do
+        INE. O INE considera baleira a vivenda sen contrato de luz ou cun consumo eléctrico
+        anual (2020) moi baixo, polo que unha vivenda secundaria case sen uso pode contar como
+        baleira. O INE só
+        publica os municipios de máis de 1.000 habitantes: os concellos máis pequenos van sen
+        dato. A diferenza con Galicia (en puntos) tamén é cálculo propio.
+      es: >-
+        Cálculo propio: viviendas vacías ÷ viviendas totales × 100, con las cifras originales
+        del INE. El INE considera vacía la vivienda sin contrato de luz o con un consumo
+        eléctrico anual (2020) muy bajo, por lo que una vivienda secundaria casi sin uso puede
+        contar como vacía. El INE
+        solo publica los municipios de más de 1.000 habitantes: los ayuntamientos más pequeños
+        van sin dato. La diferencia con Galicia (en puntos) también es cálculo propio.
 style:
   kind: fill
   label_field: nome
@@ -226,3 +296,6 @@ table:
     - paro_rel
     - bovino_km2
     - natalidade_3a
+    - explotacions_1000hab
+    - sau_pct
+    - vivendas_baleiras_pct

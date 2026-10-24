@@ -3,6 +3,11 @@
 // codigo_ine. Every indicator carries the original value, the Galicia value, our own
 // comparison (index Galicia = 100, or difference in points) and the source period.
 //
+// Empty dwellings come from INE (Censo de Población y Viviendas 2021, table 59531, CC BY 4.0)
+// through its Tempus JSON API: the IGE table 5619 leaves empty/secondary dwellings blank for
+// 2021. That table is national (~7 MB, all municipalities) and cannot be filtered server side;
+// INE only publishes municipalities over 1,000 inhabitants, so the smallest concellos get null.
+//
 // API conditions: data must not be modified. Values read directly from a table are passed
 // through untouched; derived values (population change, unemployment relative to the
 // working-age population, cattle per km², 3-year birth rate) are our own calculations and
@@ -36,11 +41,18 @@ export const REQUESTS = {
   t77: '77/T%5B1:a%5D,1:0',
   // Births, sex 0 = Total, last 3 years.
   t57: '57/T%5B3:a%5D,1:0',
+  // Agrarian census 2020: axis 1 element 0 = Total SAU (both holdings and hectares).
+  t10331: '10331/T%5B1:a%5D,1:0',
 } as const;
 
+/** INE Tempus: dwellings by intensity of use (electricity), Censo 2021, single period. */
+export const INE_VIVENDAS_URL = 'https://servicios.ine.es/wstempus/js/ES/DATOS_TABLA/59531?nult=1';
+/** Reference year of INE table 59531 (the response carries no date). */
+export const INE_VIVENDAS_PERIODO = '2021';
+
 export type TableKey = keyof typeof REQUESTS;
-/** Decoded CSV text per table. */
-export type Raw = Record<TableKey, string>;
+/** Decoded CSV text per IGE table, plus the INE JSON text. */
+export type Raw = Record<TableKey, string> & { ine59531: string };
 
 export const GALICIA = '12';
 /** Codes kept in the IGE tables for concellos merged in 2013 and 2016. */
@@ -67,6 +79,9 @@ export const INDICATORS = [
   { id: 'paro_rel', comparison: 'index' },
   { id: 'bovino_km2', comparison: 'index' },
   { id: 'natalidade_3a', comparison: 'points' },
+  { id: 'explotacions_1000hab', comparison: 'index' },
+  { id: 'sau_pct', comparison: 'points' },
+  { id: 'vivendas_baleiras_pct', comparison: 'points' },
 ] as const;
 
 export type IndicatorId = (typeof INDICATORS)[number]['id'];
@@ -203,6 +218,51 @@ function popOf(pop: Map<string, Map<string, number | null>>, year: string, cod: 
 const div = (a: number | null | undefined, b: number | null | undefined) =>
   a === null || a === undefined || b === null || b === undefined || b === 0 ? null : a / b;
 
+interface IneSeries {
+  Nombre?: unknown;
+  Data?: Array<{ Valor?: unknown; Secreto?: unknown }>;
+}
+
+/**
+ * Parse INE table 59531 ("<code> <name>, <measure>" series) into values by place code for
+ * the requested measures. Confidential (Secreto) or missing values → null.
+ */
+export function parseIneVivendas(
+  text: string,
+  measures: readonly string[],
+): Record<string, Map<string, number | null>> {
+  let data: unknown;
+  try {
+    data = JSON.parse(text);
+  } catch {
+    throw new Error(`ine59531: response is not JSON: ${text.slice(0, 200)}`);
+  }
+  if (!Array.isArray(data) || data.length === 0) throw new Error('ine59531: empty or not an array');
+  const out: Record<string, Map<string, number | null>> = {};
+  for (const m of measures) out[m] = new Map();
+  for (const s of data as IneSeries[]) {
+    if (typeof s?.Nombre !== 'string') throw new Error('ine59531: series without Nombre');
+    const cut = s.Nombre.lastIndexOf(', ');
+    if (cut < 0) continue;
+    const measure = s.Nombre.slice(cut + 2).trim();
+    const target = out[measure];
+    if (!target) continue;
+    // Two-digit codes are ambiguous (12 is both Galicia and the province of Castellón), so
+    // only municipalities (5 digits) and the named Galicia row are kept.
+    const place = s.Nombre.slice(0, cut);
+    const code = place === '12 Galicia' ? GALICIA : /^(\d{5}) /.exec(place)?.[1];
+    if (!code) continue;
+    const d = s.Data?.[0];
+    const v = d && d.Secreto !== true && typeof d.Valor === 'number' ? d.Valor : null;
+    if (target.has(code)) throw new Error(`ine59531: duplicate ${code} ${measure}`);
+    target.set(code, v);
+  }
+  for (const m of measures) {
+    if (!out[m]?.has(GALICIA)) throw new Error(`ine59531: no Galicia row for "${m}"`);
+  }
+  return out;
+}
+
 interface Computed {
   periodo: string;
   value: (cod: string) => number | null;
@@ -253,6 +313,23 @@ export function buildIndicators(raw: Raw): {
     't62',
   );
   const area = series(t.t77, undefined, 't77');
+
+  // Agrarian census 2020 (single period). Holdings are placed in the concello where they
+  // have most SAU, so SAU can exceed the concello area in a few places.
+  const censoRows = (label: string) =>
+    series(
+      filterDim(t.t10331, 'Características básicas da explotación', label, 't10331'),
+      undefined,
+      't10331',
+    );
+  const explotacions = censoRows('Número de explotacións');
+  const sauHa = censoRows('Superficie (ha)');
+  const censoYear = explotacions.tempoCod;
+  if (!pop.has(censoYear)) throw new Error(`t1558: no population for census year ${censoYear}`);
+
+  const ine = parseIneVivendas(raw.ine59531 ?? '', ['Viviendas totales', 'Viviendas vacías']);
+  const vivTotal = ine['Viviendas totales'] as Map<string, number | null>;
+  const vivBaleiras = ine['Viviendas vacías'] as Map<string, number | null>;
 
   // Births: the three most recent years in the response.
   const birthYears = [...new Set(t.t57.map((r) => r.tempoCod))].sort(
@@ -326,6 +403,28 @@ export function buildIndicators(raw: Raw): {
         return v === null ? null : round(v * 1000, 2);
       },
     },
+    explotacions_1000hab: {
+      periodo: explotacions.periodo,
+      value: (c) => {
+        const v = div(explotacions.values.get(c), popOf(pop, censoYear, c));
+        return v === null ? null : round(v * 1000, 2);
+      },
+    },
+    sau_pct: {
+      periodo: sauHa.periodo,
+      value: (c) => {
+        // ha ÷ (km² × 100) × 100 = ha ÷ km².
+        const v = div(sauHa.values.get(c), area.values.get(c));
+        return v === null ? null : round(v, 2);
+      },
+    },
+    vivendas_baleiras_pct: {
+      periodo: INE_VIVENDAS_PERIODO,
+      value: (c) => {
+        const v = div(vivBaleiras.get(c), vivTotal.get(c));
+        return v === null ? null : round(v * 100, 2);
+      },
+    },
   };
 
   // Concellos: 5-digit codes in the latest population year, minus the extinct ones.
@@ -348,6 +447,9 @@ const adapter = {
       const res = await ctx.get(BASE + query, { timeoutMs: 60_000 });
       out[key] = decoder.decode(res.body);
     }
+    // Different host: no pause needed. ~7 MB, so allow more time.
+    const ine = await ctx.get(INE_VIVENDAS_URL, { timeoutMs: 180_000 });
+    out.ine59531 = new TextDecoder('utf-8').decode(ine.body);
     return out as Raw;
   },
 

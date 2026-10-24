@@ -4,7 +4,14 @@ import { describe, expect, it } from 'vitest';
 import { compareWithGalicia, type LayerDef } from '../../lib/adapter.ts';
 import { loadYaml, validateWithSchema } from '../../lib/schemas.ts';
 import { fixtureContext } from '../../lib/testing.ts';
-import adapter, { INDICATORS, parseIgeCsv, type Raw, REQUESTS, type TableKey } from './adapter.ts';
+import adapter, {
+  INDICATORS,
+  parseIgeCsv,
+  parseIneVivendas,
+  type Raw,
+  REQUESTS,
+  type TableKey,
+} from './adapter.ts';
 import schema from './properties.schema.json' with { type: 'json' };
 
 const dir = import.meta.dirname;
@@ -13,14 +20,20 @@ const layer = await loadYaml<LayerDef>(join(dir, 'layer.yaml'));
 const keys = Object.keys(REQUESTS) as TableKey[];
 
 // Route on the "/<table>/" segment of each request.
-const routes = keys.map((k) => ({
-  match: `/datos/${REQUESTS[k].split('/')[0]}/`,
-  file: fx(`${k}.csv`),
-}));
+const routes = [
+  ...keys.map((k) => ({
+    match: `/datos/${REQUESTS[k].split('/')[0]}/`,
+    file: fx(`${k}.csv`),
+  })),
+  { match: 'servicios.ine.es/wstempus/js/ES/DATOS_TABLA/59531', file: fx('ine59531.json') },
+];
 
 function rawFromFixtures(): Raw {
   const dec = new TextDecoder('latin1');
-  return Object.fromEntries(keys.map((k) => [k, dec.decode(readFileSync(fx(`${k}.csv`)))])) as Raw;
+  return {
+    ...Object.fromEntries(keys.map((k) => [k, dec.decode(readFileSync(fx(`${k}.csv`)))])),
+    ine59531: readFileSync(fx('ine59531.json'), 'utf-8'),
+  } as Raw;
 }
 
 async function run() {
@@ -35,8 +48,15 @@ const props = (out: Awaited<ReturnType<typeof run>>['out'], cod: string) =>
 describe('indicadores-concellos adapter', () => {
   it('makes one filtered request per table, with encoded brackets', async () => {
     const { ctx } = await run();
-    expect(ctx.requested).toHaveLength(11);
-    for (const u of ctx.requested) {
+    // 12 IGE tables + 1 INE table; well under the 18-request budget.
+    expect(ctx.requested).toHaveLength(13);
+    expect(ctx.requested.length).toBeLessThanOrEqual(18);
+    const ige = ctx.requested.filter((u) => u.includes('ige.gal'));
+    expect(ige).toHaveLength(12);
+    expect(ctx.requested.at(-1)).toBe(
+      'https://servicios.ine.es/wstempus/js/ES/DATOS_TABLA/59531?nult=1',
+    );
+    for (const u of ige) {
       expect(u.startsWith('https://www.ige.gal/igebdt/igeapi/csv/datos/')).toBe(true);
       expect(u).not.toMatch(/[[\]]/);
       expect(u.split('/datos/')[1]).toMatch(/^\d+\/.+/);
@@ -91,6 +111,58 @@ describe('indicadores-concellos adapter', () => {
     expect(p.bovino_km2 as number).toBeGreaterThan(0);
   });
 
+  it('computes agrarian census and empty-dwelling indicators', async () => {
+    const { out } = await run();
+    const p = props(out, '15001');
+    // Abegondo: 209 holdings with SAU, 1,357 ha SAU (table 10331); INE 1,018 of 3,377 empty.
+    expect(p.explotacions_1000hab_periodo).toBe('2020');
+    expect(p.sau_pct_periodo).toBe('2020');
+    expect(p.vivendas_baleiras_pct_periodo).toBe('2021');
+    expect(p.vivendas_baleiras_pct).toBeCloseTo((1018 / 3377) * 100, 2);
+    // Galicia: 506,351 of 1,757,739 dwellings empty.
+    expect(p.vivendas_baleiras_pct_galicia).toBeCloseTo((506351 / 1757739) * 100, 2);
+    expect(p.vivendas_baleiras_pct_rel).toBe(
+      compareWithGalicia(
+        p.vivendas_baleiras_pct as number,
+        p.vivendas_baleiras_pct_galicia as number,
+        'points',
+      ),
+    );
+    // Galicia: 74,757 holdings for ~2.7 M inhabitants; 597,993 ha SAU over ~29,575 km².
+    expect(p.explotacions_1000hab_galicia as number).toBeGreaterThan(25);
+    expect(p.explotacions_1000hab_galicia as number).toBeLessThan(30);
+    expect(p.sau_pct_galicia as number).toBeGreaterThan(19);
+    expect(p.sau_pct_galicia as number).toBeLessThan(22);
+    expect(p.explotacions_1000hab as number).toBeGreaterThan(0);
+    expect(p.sau_pct_rel).toBe(
+      compareWithGalicia(p.sau_pct as number, p.sau_pct_galicia as number, 'points'),
+    );
+    // Merged concello (2016) has its own census and INE figures.
+    expect(props(out, '36902').vivendas_baleiras_pct).toBeCloseTo((1459 / 4075) * 100, 2);
+  });
+
+  it('publishes no empty-dwelling value for concellos INE does not list', async () => {
+    const raw = rawFromFixtures();
+    const ine = (JSON.parse(raw.ine59531) as Array<{ Nombre: string }>).filter(
+      (s) => !s.Nombre.startsWith('27034 '),
+    );
+    const out = await adapter.normalize(
+      { ...raw, ine59531: JSON.stringify(ine) },
+      fixtureContext(layer, []),
+    );
+    const p = props(out, '27034');
+    expect(p.vivendas_baleiras_pct).toBeNull();
+    expect(p.vivendas_baleiras_pct_rel).toBeNull();
+    expect(p.vivendas_baleiras_pct_galicia).not.toBeNull();
+    // Secret values are null too.
+    const m = parseIneVivendas(
+      '[{"Nombre":"12 Galicia, Viviendas vacías","Data":[{"Valor":5,"Secreto":false}]},' +
+        '{"Nombre":"15001 Abegondo, Viviendas vacías","Data":[{"Valor":3,"Secreto":true}]}]',
+      ['Viviendas vacías'],
+    );
+    expect(m['Viviendas vacías']?.get('15001')).toBeNull();
+  });
+
   it('rebuilds the 2015 population of Cerdedo-Cotobade from Cerdedo + Cotobade', async () => {
     const { out } = await run();
     const p = props(out, '36902');
@@ -119,6 +191,15 @@ describe('indicadores-concellos adapter', () => {
     const raw = rawFromFixtures();
     await expect(async () =>
       adapter.normalize({ ...raw, t744: '' }, fixtureContext(layer, [])),
+    ).rejects.toThrow();
+    await expect(async () =>
+      adapter.normalize({ ...raw, ine59531: '<html>Erro</html>' }, fixtureContext(layer, [])),
+    ).rejects.toThrow(/ine59531/);
+    await expect(async () =>
+      adapter.normalize({ ...raw, ine59531: '[]' }, fixtureContext(layer, [])),
+    ).rejects.toThrow(/ine59531/);
+    await expect(async () =>
+      adapter.normalize({ ...raw, t10331: '' }, fixtureContext(layer, [])),
     ).rejects.toThrow();
     // A table without the expected indicator label.
     const bad = raw.t723.replaceAll('Índice de envellecemento', 'Outro');
