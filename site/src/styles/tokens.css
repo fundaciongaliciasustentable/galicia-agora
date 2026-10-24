@@ -73,6 +73,10 @@
   --c-sismo: var(--gs-viola);
   --c-raio: #b8860b;
   --c-aviso: var(--gs-aviso);
+  --c-carburante: var(--gs-terra);
+  --c-recarga: var(--gs-exito);
+  --c-bici: var(--gs-verde-claro);
+  --c-aeroporto: var(--gs-gris-80);
   --c-limite: var(--gs-gris-80);
   --c-natura: var(--gs-verde-claro);
   --c-espazo: var(--gs-oliva);
@@ -105,6 +109,10 @@
     --c-sismo: #a58cc4;
     --c-raio: #f2c94c;
     --c-aviso: #e0a95a;
+    --c-carburante: #c2946e;
+    --c-recarga: #7fbf8e;
+    --c-bici: #9cc275;
+    --c-aeroporto: #c9c9c0;
     --c-limite: #c9c9c0;
     --c-natura: #9cc275;
     --c-espazo: #c4c46a;
@@ -137,6 +145,10 @@
   --c-sismo: #a58cc4;
   --c-raio: #f2c94c;
   --c-aviso: #e0a95a;
+  --c-carburante: #c2946e;
+  --c-recarga: #7fbf8e;
+  --c-bici: #9cc275;
+  --c-aeroporto: #c9c9c0;
   --c-limite: #c9c9c0;
   --c-natura: #9cc275;
   --c-espazo: #c4c46a;
