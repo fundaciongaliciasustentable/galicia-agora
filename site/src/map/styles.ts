@@ -94,6 +94,56 @@ export function layerStyles(layer: LayerLike, color: string, sourceLayer?: strin
           },
         }),
       ];
+    case 'estacions-tren':
+      // Hollow rings, so moving trains (filled) stay readable on top.
+      return [
+        base('circle', {
+          type: 'circle',
+          paint: {
+            'circle-radius': ['interpolate', ['linear'], ['zoom'], 6, 3, 12, 6],
+            'circle-color': '#ffffff',
+            'circle-stroke-color': color,
+            'circle-stroke-width': 2,
+          },
+        }),
+        base('label', {
+          type: 'symbol',
+          minzoom: 10,
+          layout: {
+            'text-field': ['get', 'nome'],
+            'text-font': ['Noto Sans Regular'],
+            'text-size': 11,
+            'text-offset': [0, 1.1],
+            'text-anchor': 'top',
+          },
+          paint: { 'text-color': color, 'text-halo-color': '#ffffff', 'text-halo-width': 1.5 },
+        }),
+      ];
+    case 'entidades-poboacion':
+      // 36,190 places: dots from zoom 10, labels from zoom 12.
+      return [
+        base('circle', {
+          type: 'circle',
+          minzoom: 10,
+          paint: {
+            'circle-radius': ['interpolate', ['linear'], ['zoom'], 10, 1.5, 14, 4],
+            'circle-color': color,
+            'circle-opacity': 0.8,
+          },
+        }),
+        base('label', {
+          type: 'symbol',
+          minzoom: 12,
+          layout: {
+            'text-field': ['get', 'nome'],
+            'text-font': ['Noto Sans Regular'],
+            'text-size': 11,
+            'text-offset': [0, 0.9],
+            'text-anchor': 'top',
+          },
+          paint: { 'text-color': color, 'text-halo-color': '#ffffff', 'text-halo-width': 1.5 },
+        }),
+      ];
     case 'caudais-rios':
       return [
         base('circle', {

@@ -136,11 +136,16 @@ function data() {
           '--quiet',
           '-l',
           layer.id,
-          '-zg',
-          '--maximum-zoom=13',
-          '--coalesce-densest-as-needed',
-          '--detect-shared-borders',
-          '--extend-zooms-if-still-dropping',
+          // Points keep full precision (z13) and every feature from z10;
+          // -zg would stop at z7 (~76 m) for dense point layers.
+          ...(layer.geometry === 'point'
+            ? ['-z13', '--base-zoom=10', '--drop-densest-as-needed']
+            : [
+                '-zg',
+                '--coalesce-densest-as-needed',
+                '--detect-shared-borders',
+                '--extend-zooms-if-still-dropping',
+              ]),
           geojson,
         ],
         { stdio: 'inherit' },

@@ -8,7 +8,7 @@ Fase 1 en curso (aprobada o 18/10/2026 para as capas que non precisan VPS). Back
 
 - Capas feitas (21): estacions-meteo, calidade-aire, raios, avisos-aemet, avisos-meteogalicia, focos-calor, perimetros-queimados, caudais-rios, tren, buses-xunta, gasolineiras, puntos-recarga, bicis-arteixo, aeroportos, concellos-parroquias, indicadores-concellos, cobertura-banda-larga, sismos-recentes, rede-natura, espazos-naturais-galicia, patrimonio.
 - Capas por concello (`geometry: none` + `join` + `indicators`): debúxanse sobre os polígonos de concellos-parroquias; comparación con Galicia como índice (escala en proporcións, log2) ou diferenza en puntos, sempre co valor orixinal ao lado.
-- Pendentes: zonas de produción (Intecmar), entidades de poboación, avións e buques (VPS de Dinahosting, acceso SSH pendente; buques sen termos de AISStream), condicionais de `docs/sources-report-1b.md` (METAR, boias Copernicus, BiciCoruña, satélites CelesTrak, antenas OpenCelliD, cámaras DGT).
+- Pendentes: zonas de produción (Intecmar), avións e buques (VPS de Dinahosting, acceso SSH pendente; buques sen termos de AISStream), condicionais de `docs/sources-report-1b.md` (METAR, boias Copernicus, BiciCoruña, satélites CelesTrak, antenas OpenCelliD, cámaras DGT).
 - Despregue: `update.yml` despregará por FTPS cando existan os segredos `FTPS_*`.
 
 ## Comandos
