@@ -55,6 +55,29 @@ jobs:
             echo "$src HTTP $code, $(( $(wc -l < f.csv) - 1 )) detections in 2 days; header: $(head -1 f.csv | cut -c1-80)"
           done
 
+  mgafos:
+    runs-on: ubuntu-latest
+    steps:
+      - name: MeteoGalicia aforos (estadoActual) with key, aggregate output only
+        env:
+          KEY: ${{ secrets.METEOGALICIA_AFOROS_KEY }}
+        run: |
+          set -euo pipefail
+          code=$(curl -sS -A "$UA" -o a.json -w '%{http_code}' \
+            "https://servizos.meteogalicia.gal/mgafos/json/estadoActual.action?cod=$KEY")
+          echo "HTTP $code, $(stat -c %s a.json) bytes, content: $(head -c 15 a.json | tr -dc '[:print:]')"
+          python3 - <<'PY'
+          import json
+          d = json.load(open('a.json'))
+          def walk(o, path=''):
+              if isinstance(o, dict):
+                  for k, v in o.items(): walk(v, f'{path}.{k}')
+              elif isinstance(o, list) and o:
+                  print(f'list {path}: {len(o)} items; first item keys: {sorted(o[0].keys()) if isinstance(o[0], dict) else type(o[0]).__name__}')
+                  walk(o[0], path + '[0]')
+          walk(d)
+          PY
+
   aisstream:
     runs-on: ubuntu-latest
     timeout-minutes: 15
