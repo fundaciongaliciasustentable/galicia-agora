@@ -1,0 +1,167 @@
+id: historial-queimados
+title:
+  gl: Áreas queimadas por ano (desde 2016)
+  es: Áreas quemadas por año (desde 2016)
+theme: lume-monte
+operator:
+  name: Copernicus EFFIS (Comisión Europea, JRC)
+  url: https://forest-fire.emergency.copernicus.eu/
+# One GetCapabilities per run lists the yearly typeNames; then one GetFeature per
+# completed year (2016..current year − 1) with this bbox.
+source_url: "https://maps.effis.emergency.copernicus.eu/effis?service=WFS&request=GetFeature&version=2.0.0&typeNames=ms:modis.ba.poly.YYYY&outputFormat=geojson&bbox=41.8,-9.35,43.8,-6.7,urn:ogc:def:crs:EPSG::4326"
+licence:
+  spdx: CC-BY-4.0
+  text_url: https://forest-fire.emergency.copernicus.eu/about-effis/data-license
+  verified_at: 2026-10-18
+  odbl_compatible: true
+  collection: odbl
+  notes: >-
+    CC BY 4.0, © Unión Europea. Logos excluídos. O servizo WFS está etiquetado como
+    «Test Service». As cifras de contexto da Xunta veñen dos ficheiros anuais de Medio Rural
+    (aviso legal: reutilización con cita).
+attribution: © Unión Europea, Copernicus EFFIS (JRC)
+update_frequency:
+  # EFFIS does not declare an update frequency for the yearly layers; a new year
+  # appears once a year and past years are revised occasionally.
+  declared: P365D
+geometry: polygon
+output: geojson
+auth:
+  required: false
+privacy_notes: >-
+  Sen datos persoais. Perímetros de áreas queimadas cartografadas por satélite (MODIS); non
+  identifican persoas nin propiedades. / Sin datos personales. Perímetros de áreas quemadas
+  cartografiadas por satélite (MODIS); no identifican personas ni propiedades.
+stale_after: P90D
+ingest:
+  every: P30D
+style:
+  kind: fill
+  color_token: --c-queimado
+  label_field: ano
+table:
+  fields:
+    - ano
+    - data_lume
+    - concello
+    - provincia
+    - area_ha
+context:
+  - label:
+      gl: Como ler as cifras anuais
+      es: Cómo leer las cifras anuales
+    value: "EFFIS: ha e áreas cartografadas · Xunta: ha e lumes"
+    source: Copernicus EFFIS (JRC), capas modis.ba.poly.AAAA; Consellería do Medio Rural, Xunta de Galicia (estatística anual por distrito forestal)
+    source_url: https://mediorural.xunta.gal/gl/recursos/estatisticas/estatisticas-forestais/incendios-forestais
+    note:
+      gl: >-
+        As cifras de EFFIS calcúlanse con estes datos (suma de AREA_HA e número de áreas nas
+        catro provincias galegas, calculado o 24/10/2026). EFFIS cartografa por satélite (MODIS)
+        as áreas queimadas por riba do seu limiar de detección; unha área pode xuntar varios lumes
+        e moitos lumes pequenos non chegan a cartografarse, así que o número de áreas non equivale
+        ao número de lumes. A Xunta conta cada lume forestal e mide a superficie con outros
+        criterios. As dúas cifras móstranse xuntas, sen axustalas. Para 2016 e 2017 a Xunta só
+        publica a estatística en PDF e aquí só se dá a cifra de EFFIS.
+      es: >-
+        Las cifras de EFFIS se calculan con estos datos (suma de AREA_HA y número de áreas en las
+        cuatro provincias gallegas, calculado el 24/10/2026). EFFIS cartografía por satélite
+        (MODIS) las áreas quemadas por encima de su umbral de detección; un área puede agrupar
+        varios incendios y muchos incendios pequeños no llegan a cartografiarse, por lo que el
+        número de áreas no equivale al número de incendios. La Xunta cuenta cada incendio
+        forestal y mide la superficie con otros criterios. Las dos cifras se muestran juntas, sin
+        ajustarlas. Para 2016 y 2017 la Xunta solo publica la estadística en PDF y aquí solo se da
+        la cifra de EFFIS.
+  - label:
+      gl: Superficie queimada en Galicia en 2016
+      es: Superficie quemada en Galicia en 2016
+    value: "EFFIS: 18.248 ha, 46 áreas"
+    source: Copernicus EFFIS (JRC), modis.ba.poly.2016
+    source_url: "https://maps.effis.emergency.copernicus.eu/effis?service=WFS&request=GetFeature&version=2.0.0&typeNames=ms:modis.ba.poly.2016&outputFormat=geojson&bbox=41.8,-9.35,43.8,-6.7,urn:ogc:def:crs:EPSG::4326"
+    note:
+      gl: Só EFFIS; a estatística da Xunta deste ano só está en PDF.
+      es: Solo EFFIS; la estadística de la Xunta de este año solo está en PDF.
+  - label:
+      gl: Superficie queimada en Galicia en 2017
+      es: Superficie quemada en Galicia en 2017
+    value: "EFFIS: 48.347 ha, 104 áreas"
+    source: Copernicus EFFIS (JRC), modis.ba.poly.2017
+    source_url: "https://maps.effis.emergency.copernicus.eu/effis?service=WFS&request=GetFeature&version=2.0.0&typeNames=ms:modis.ba.poly.2017&outputFormat=geojson&bbox=41.8,-9.35,43.8,-6.7,urn:ogc:def:crs:EPSG::4326"
+    note:
+      gl: Só EFFIS; a estatística da Xunta deste ano só está en PDF.
+      es: Solo EFFIS; la estadística de la Xunta de este año solo está en PDF.
+  - label:
+      gl: Superficie queimada en Galicia en 2018
+      es: Superficie quemada en Galicia en 2018
+    value: "EFFIS: 1.306 ha, 17 áreas · Xunta: 2.599,66 ha, 1.338 lumes"
+    source: Copernicus EFFIS (JRC), modis.ba.poly.2018; Consellería do Medio Rural, Xunta de Galicia, Lumes 2018 por distrito
+    source_url: "https://mediorural.xunta.gal/sites/default/files/estatisticas/2018/Lumes_2018_por_Distrito.xlsx"
+    note:
+      gl: >-
+        O ficheiro da Xunta de 2018 non trae columna de superficie total; a cifra é a suma da
+        superficie arborada e rasa da fila «Galicia».
+      es: >-
+        El fichero de la Xunta de 2018 no trae columna de superficie total; la cifra es la suma de
+        la superficie arbolada y rasa de la fila «Galicia».
+  - label:
+      gl: Superficie queimada en Galicia en 2019
+      es: Superficie quemada en Galicia en 2019
+    value: "EFFIS: 4.578 ha, 37 áreas · Xunta: 6.835,53 ha, 1.653 lumes"
+    source: Copernicus EFFIS (JRC), modis.ba.poly.2019; Consellería do Medio Rural, Xunta de Galicia, Lumes 2019 por distrito
+    source_url: "https://mediorural.xunta.gal/sites/default/files/estatisticas/2019/Lumes_2019_por_Distrito.xlsx"
+    note:
+      gl: >-
+        O ficheiro da Xunta de 2019 non trae columna de superficie total; a cifra é a suma da
+        superficie arborada e rasa da fila «Galicia».
+      es: >-
+        El fichero de la Xunta de 2019 no trae columna de superficie total; la cifra es la suma de
+        la superficie arbolada y rasa de la fila «Galicia».
+  - label:
+      gl: Superficie queimada en Galicia en 2020
+      es: Superficie quemada en Galicia en 2020
+    value: "EFFIS: 14.735 ha, 106 áreas · Xunta: 14.823,92 ha, 1.527 lumes"
+    source: Copernicus EFFIS (JRC), modis.ba.poly.2020; Consellería do Medio Rural, Xunta de Galicia, Lumes 2020 por distrito
+    source_url: "https://mediorural.xunta.gal/sites/default/files/estatisticas/2020/Lumes_2020_por_Distrito.xlsx"
+    note:
+      gl: >-
+        O ficheiro da Xunta de 2020 non trae columna de superficie total; a cifra é a suma da
+        superficie arborada e rasa da fila «Galicia».
+      es: >-
+        El fichero de la Xunta de 2020 no trae columna de superficie total; la cifra es la suma de
+        la superficie arbolada y rasa de la fila «Galicia».
+  - label:
+      gl: Superficie queimada en Galicia en 2021
+      es: Superficie quemada en Galicia en 2021
+    value: "EFFIS: 4.036 ha, 64 áreas · Xunta: 4.403,18 ha, 950 lumes"
+    source: Copernicus EFFIS (JRC), modis.ba.poly.2021; Consellería do Medio Rural, Xunta de Galicia, Lumes 2021 por distrito
+    source_url: "https://mediorural.xunta.gal/sites/default/files/estatisticas/2021/Lumes_2021_por_Distrito.xlsx"
+    note:
+      gl: >-
+        O ficheiro da Xunta de 2021 non trae columna de superficie total; a cifra é a suma da
+        superficie arborada e rasa da fila «Galicia».
+      es: >-
+        El fichero de la Xunta de 2021 no trae columna de superficie total; la cifra es la suma de
+        la superficie arbolada y rasa de la fila «Galicia».
+  - label:
+      gl: Superficie queimada en Galicia en 2022
+      es: Superficie quemada en Galicia en 2022
+    value: "EFFIS: 52.574 ha, 176 áreas · Xunta: 51.642,58 ha, 1.713 lumes"
+    source: Copernicus EFFIS (JRC), modis.ba.poly.2022; Consellería do Medio Rural, Xunta de Galicia, Lumes 2022 por distrito
+    source_url: "https://mediorural.xunta.gal/sites/default/files/estatisticas/2021/Lumes_2022_por_Distrito.xlsx"
+  - label:
+      gl: Superficie queimada en Galicia en 2023
+      es: Superficie quemada en Galicia en 2023
+    value: "EFFIS: 5.886 ha, 99 áreas · Xunta: 6.748,92 ha, 908 lumes"
+    source: Copernicus EFFIS (JRC), modis.ba.poly.2023; Consellería do Medio Rural, Xunta de Galicia, Lumes 2023 por distrito
+    source_url: "https://mediorural.xunta.gal/sites/default/files/estatisticas/2023/lumes-2023-por-distrito.xlsx"
+  - label:
+      gl: Superficie queimada en Galicia en 2024
+      es: Superficie quemada en Galicia en 2024
+    value: "EFFIS: 2.214 ha, 70 áreas · Xunta: 2.644,70 ha, 755 lumes"
+    source: Copernicus EFFIS (JRC), modis.ba.poly.2024; Consellería do Medio Rural, Xunta de Galicia, Lumes 2024 por distrito
+    source_url: "https://mediorural.xunta.gal/sites/default/files/estatisticas/2024/Lumes-2024-por-Distrito.xlsx"
+  - label:
+      gl: Superficie queimada en Galicia en 2025
+      es: Superficie quemada en Galicia en 2025
+    value: "EFFIS: 148.581 ha, 258 áreas · Xunta: 118.763,65 ha, 1.475 lumes"
+    source: Copernicus EFFIS (JRC), modis.ba.poly.2025; Consellería do Medio Rural, Xunta de Galicia, Lumes 2025 por distrito
+    source_url: "https://mediorural.xunta.gal/sites/default/files/estatisticas/2025/Lumes-2025-por-Distrito.xlsx"

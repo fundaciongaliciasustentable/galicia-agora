@@ -284,7 +284,7 @@ sources:
   - id: effis
     name: Copernicus EFFIS — áreas queimadas
     phase: 1
-    layers: [perimetros-queimados]
+    layers: [perimetros-queimados, historial-queimados]
     operator: Comisión Europea, JRC / Copernicus EMS
     endpoints:
       - url: https://maps.effis.emergency.copernicus.eu/effis?service=WFS&request=GetCapabilities
@@ -316,7 +316,7 @@ sources:
   - id: xunta-incendios
     name: Xunta — estatística anual de incendios forestais
     phase: 1
-    layers: [perimetros-queimados]
+    layers: [perimetros-queimados, historial-queimados]
     operator: Consellería do Medio Rural, Xunta de Galicia
     endpoints:
       - url: https://mediorural.xunta.gal/sites/default/files/estatisticas/2025/Lumes-2025-por-Distrito.xlsx
