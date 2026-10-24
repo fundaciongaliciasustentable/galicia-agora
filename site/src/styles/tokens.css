@@ -70,6 +70,9 @@
   --c-queimado: var(--gs-terra);
   --c-tren: var(--gs-negro);
   --c-bus: var(--gs-azul);
+  --c-sismo: var(--gs-viola);
+  --c-raio: #b8860b;
+  --c-aviso: var(--gs-aviso);
   --c-limite: var(--gs-gris-80);
   --c-natura: var(--gs-verde-claro);
   --c-espazo: var(--gs-oliva);
@@ -99,6 +102,9 @@
     --c-queimado: #c2946e;
     --c-tren: #f2f2ec;
     --c-bus: #6fa8c7;
+    --c-sismo: #a58cc4;
+    --c-raio: #f2c94c;
+    --c-aviso: #e0a95a;
     --c-limite: #c9c9c0;
     --c-natura: #9cc275;
     --c-espazo: #c4c46a;
@@ -128,6 +134,9 @@
   --c-queimado: #c2946e;
   --c-tren: #f2f2ec;
   --c-bus: #6fa8c7;
+  --c-sismo: #a58cc4;
+  --c-raio: #f2c94c;
+  --c-aviso: #e0a95a;
   --c-limite: #c9c9c0;
   --c-natura: #9cc275;
   --c-espazo: #c4c46a;

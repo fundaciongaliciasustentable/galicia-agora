@@ -118,6 +118,73 @@ export function layerStyles(layer: LayerLike, color: string, sourceLayer?: strin
           },
         }),
       ];
+    case 'sismos-recentes':
+      return [
+        base('circle', {
+          type: 'circle',
+          paint: {
+            // Area grows with magnitude; M1.5 ≈ 3 px, M4 ≈ 14 px.
+            'circle-radius': [
+              'interpolate',
+              ['linear'],
+              ['coalesce', ['get', 'magnitude'], 1],
+              1,
+              2,
+              4,
+              14,
+            ],
+            'circle-color': color,
+            'circle-opacity': 0.55,
+            'circle-stroke-color': color,
+            'circle-stroke-width': 1.5,
+          },
+        }),
+      ];
+    case 'raios':
+      return [
+        base('circle', {
+          type: 'circle',
+          paint: {
+            'circle-radius': 4,
+            'circle-color': color,
+            'circle-stroke-color': '#1a1a17',
+            'circle-stroke-width': 0.8,
+          },
+        }),
+      ];
+    case 'avisos-aemet':
+      return [
+        base('fill', {
+          type: 'fill',
+          paint: {
+            'fill-color': [
+              'match',
+              ['get', 'nivel'],
+              'vermello',
+              '#c0392b',
+              'laranxa',
+              '#f2994a',
+              '#f2c94c',
+            ],
+            'fill-opacity': 0.45,
+          },
+        }),
+        base('line', {
+          type: 'line',
+          paint: {
+            'line-color': [
+              'match',
+              ['get', 'nivel'],
+              'vermello',
+              '#c0392b',
+              'laranxa',
+              '#d9822b',
+              '#c9a227',
+            ],
+            'line-width': 1.5,
+          },
+        }),
+      ];
     case 'focos-calor':
       return [
         base('circle', {

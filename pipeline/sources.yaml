@@ -888,7 +888,7 @@ sources:
   - id: aemet-avisos
     name: AEMET — avisos meteorolóxicos CAP de Galicia
     phase: "1b"
-    layers: [avisos-meteo]
+    layers: [avisos-aemet]
     operator: Agencia Estatal de Meteoroloxía (AEMET)
     endpoints:
       - url: https://www.aemet.es/documentos_d/eltiempo/prediccion/avisos/rss/CAP_AFAC71_ATOM.xml
@@ -916,12 +916,12 @@ sources:
     verdict: go
     verified: true
     checked_at: 2026-10-24
-    samples: [aemet-avisos/CAP_AFAC71_ATOM.xml]
+    samples: [aemet-avisos/CAP_AFAC71_ATOM.xml, aemet-avisos/cap_AFAZ711501COCO2422.xml]
 
   - id: meteogalicia-avisos
     name: MeteoGalicia — avisos por concello
     phase: "1b"
-    layers: [avisos-meteo]
+    layers: [avisos-meteogalicia]
     operator: MeteoGalicia (Xunta de Galicia)
     endpoints:
       - url: https://servizos.meteogalicia.gal/mgrss/predicion/adversos/jsonAvisosConcellos.action?dia=-1
@@ -944,7 +944,7 @@ sources:
     verdict_notes: Complemento de aemet-avisos; xeometría desde concellos-parroquias.
     verified: true
     checked_at: 2026-10-24
-    samples: [meteogalicia-avisos/jsonAvisosConcellos.json]
+    samples: [meteogalicia-avisos/jsonConcellosNivelMax.json, meteogalicia-avisos/avisosConcellos_dia-1.json]
 
   - id: meteoalarm-avisos
     name: MeteoAlarm (EUMETNET)
@@ -994,7 +994,7 @@ sources:
     verdict: go
     verified: true
     checked_at: 2026-10-24
-    samples: [meteogalicia-raios/jsonRaios.json]
+    samples: [meteogalicia-raios/jsonRaios_17-23oct.json, meteogalicia-raios/JSON_RaiosHistorico_gl.pdf]
 
   - id: aemet-raios
     name: AEMET — raios
