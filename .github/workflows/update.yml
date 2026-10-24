@@ -88,7 +88,18 @@ jobs:
         id: cfg
         env:
           FTPS_HOST: ${{ secrets.FTPS_HOST }}
-        run: echo "deploy=$([ -n "$FTPS_HOST" ] && echo true || echo false)" >> "$GITHUB_OUTPUT"
+        run: |
+          deploy=false
+          if [ -z "$FTPS_HOST" ]; then
+            echo "::notice::FTPS secrets not set: deploy skipped"
+          else
+            case "$FTPS_HOST" in
+              *://*|*/*|*:*|*[[:space:]]*)
+                echo "::error::FTPS_HOST must be only the server name (no ftp://, port, slash or spaces): deploy skipped" ;;
+              *) deploy=true ;;
+            esac
+          fi
+          echo "deploy=$deploy" >> "$GITHUB_OUTPUT"
 
       - name: Cache basemap and map assets
         if: steps.cfg.outputs.deploy == 'true'
