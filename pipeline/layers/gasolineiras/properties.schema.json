@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "gasolineiras feature properties",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "nome",
+    "enderezo",
+    "concello",
+    "horario",
+    "venda",
+    "gasoleo_a",
+    "gasolina_95",
+    "gasolina_98",
+    "gasoleo_b",
+    "glp",
+    "prezo_actualizado"
+  ],
+  "properties": {
+    "id": { "type": "string", "pattern": "^\\d+$", "description": "IDEESS" },
+    "nome": { "type": "string", "minLength": 1, "description": "Rótulo" },
+    "enderezo": { "type": "string" },
+    "concello": { "type": "string" },
+    "horario": { "type": "string" },
+    "venda": { "enum": ["publica", "restrinxida"], "description": "Tipo Venta P / R" },
+    "gasoleo_a": { "type": ["number", "null"], "exclusiveMinimum": 0, "description": "€/L" },
+    "gasolina_95": {
+      "type": ["number", "null"],
+      "exclusiveMinimum": 0,
+      "description": "€/L, gasolina 95 E5 (ou E10 se non hai E5)"
+    },
+    "gasolina_98": {
+      "type": ["number", "null"],
+      "exclusiveMinimum": 0,
+      "description": "€/L, gasolina 98 E5 (ou E10 se non hai E5)"
+    },
+    "gasoleo_b": { "type": ["number", "null"], "exclusiveMinimum": 0, "description": "€/L" },
+    "glp": { "type": ["number", "null"], "exclusiveMinimum": 0, "description": "€/L, autogás" },
+    "prezo_actualizado": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Hora da consulta: prezos en vigor nese momento"
+    }
+  }
+}

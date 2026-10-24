@@ -1,0 +1,50 @@
+id: gasolineiras
+title:
+  gl: Gasolineiras e prezos dos carburantes
+  es: Gasolineras y precios de los carburantes
+theme: mobilidade
+operator:
+  name: Ministerio para a Transición Ecolóxica e o Reto Demográfico (MITERD)
+  url: https://geoportalgasolineras.es/
+source_url: https://sedeaplicaciones.minetur.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/EstacionesTerrestres/FiltroCCAA/12
+licence:
+  text_url: https://www.miteco.gob.es/es/atencion-al-ciudadano/aviso-legal.html
+  quote: "sin necesidad de autorización expresa"
+  verified_at: 2026-10-24
+  odbl_compatible: true
+  collection: odbl
+  notes: >-
+    Aviso legal do MITECO (Lei 37/2007 de reutilización da información do sector público):
+    reutilización permitida citando a fonte.
+attribution: "Fonte: Ministerio para a Transición Ecolóxica (MITERD), xeoportal de gasolineiras"
+update_frequency:
+  declared: PT30M
+  schedule: "*/30 * * * *"
+geometry: point
+output: geojson
+auth:
+  required: false
+privacy_notes: >-
+  Sen datos persoais: estacións de servizo e os prezos que comunican ao Ministerio. A resposta
+  non trae hora de publicación propia: o campo «Fecha» é a hora da consulta (os prezos en vigor
+  nese momento), polo que a hora de publicación queda baleira e prezo_actualizado indica
+  esa hora de consulta.
+stale_after: PT2H
+ingest:
+  every: PT30M
+style:
+  kind: circle
+  color_token: --c-carburante
+  label_field: nome
+table:
+  fields:
+    - nome
+    - concello
+    - enderezo
+    - horario
+    - gasoleo_a
+    - gasolina_95
+    - gasolina_98
+    - gasoleo_b
+    - glp
+    - prezo_actualizado
