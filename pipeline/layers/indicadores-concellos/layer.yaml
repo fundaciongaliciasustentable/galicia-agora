@@ -1,0 +1,228 @@
+id: indicadores-concellos
+title:
+  gl: Indicadores dos concellos comparados con Galicia
+  es: Indicadores de los ayuntamientos comparados con Galicia
+theme: territorio
+operator:
+  name: Instituto Galego de Estatística (IGE)
+  url: https://www.ige.gal
+source_url: https://www.ige.gal/igebdt/igeapi/csv/datos/723/T%5B1:a%5D,1:0:3:9:10,2:2
+licence:
+  text_url: https://www.ige.gal/web/avisolegal.jsp
+  quote: Está prohibido desnaturalizar o sentido da información
+  verified_at: 2026-10-24
+  odbl_compatible: doubt
+  collection: cc-by-sa-4.0
+  notes: >-
+    Aviso legal do IGE (Lei 37/2007: reutilización citando «Fonte: IGE»). Compatibilidade con
+    ODbL en dúbida: colección CC BY-SA 4.0 (ADR 0005). Condicións da API: non modificar os
+    datos presentados; por iso cada indicador publica o valor orixinal do IGE xunto ao valor
+    de Galicia e á comparación, que é cálculo propio. Aviso obrigatorio: «Este produto emprega
+    a API de datos do Instituto Galego de Estatística (IGE), pero non está certificado ou
+    aprobado polo IGE.» Pendente: consulta escrita ao IGE sobre os índices derivados.
+attribution: >-
+  Fonte: IGE: https://www.ige.gal. Comparacións con Galicia e indicadores derivados: cálculo
+  propio da Fundación Galicia Sustentable. Este produto emprega a API de datos do Instituto
+  Galego de Estatística (IGE), pero non está certificado ou aprobado polo IGE.
+update_frequency:
+  declared: P30D
+geometry: none
+output: geojson
+auth:
+  required: false
+privacy_notes: >-
+  Só datos estatísticos agregados por concello; ningún dato persoal. O IGE non difunde valores
+  con poucos sucesos (segredo estatístico): eses casos publícanse sen dato.
+stale_after: P30D
+ingest:
+  every: P7D
+join:
+  layer: concellos-parroquias
+  key: codigo_ine
+  where: { nivel: concello }
+indicators:
+  - id: envellecemento
+    label: { gl: Índice de envellecemento, es: Índice de envejecimiento }
+    unit: índice
+    comparison: index
+    source: IGE, táboa 723 (Indicadores de poboación)
+    note:
+      gl: >-
+        Poboación de 65 e máis anos por cada 100 menores de 20. Valor orixinal do IGE; a
+        comparación con Galicia (Galicia = 100) é cálculo propio e móstrase xunto ao orixinal.
+      es: >-
+        Población de 65 y más años por cada 100 menores de 20. Valor original del IGE; la
+        comparación con Galicia (Galicia = 100) es cálculo propio y se muestra junto al original.
+  - id: maiores_65_pct
+    label: { gl: Poboación de 65 e máis anos, es: Población de 65 y más años }
+    unit: '%'
+    comparison: points
+    source: IGE, táboa 723 (Indicadores de poboación)
+    note:
+      gl: >-
+        Valor orixinal do IGE. A diferenza con Galicia (en puntos) é cálculo propio e móstrase
+        xunto ao orixinal.
+      es: >-
+        Valor original del IGE. La diferencia con Galicia (en puntos) es cálculo propio y se
+        muestra junto al original.
+  - id: idade_media
+    label: { gl: Idade media, es: Edad media }
+    unit: anos
+    comparison: points
+    source: IGE, táboa 723 (Indicadores de poboación)
+    note:
+      gl: >-
+        Idade media a 1 de xaneiro. Valor orixinal do IGE; a diferenza con Galicia (en anos) é
+        cálculo propio e móstrase xunto ao orixinal.
+      es: >-
+        Edad media a 1 de enero. Valor original del IGE; la diferencia con Galicia (en años) es
+        cálculo propio y se muestra junto al original.
+  - id: variacion_poboacion_10a
+    label: { gl: Variación da poboación en 10 anos, es: Variación de la población en 10 años }
+    unit: '%'
+    comparison: points
+    source: IGE, táboa 1558 (Series históricas de poboación)
+    note:
+      gl: >-
+        Cálculo propio: (poboación do último ano − poboación de 10 anos antes) ÷ poboación de 10
+        anos antes × 100, coas cifras orixinais do IGE. Para Cerdedo-Cotobade e Oza-Cesuras, o
+        ano inicial suma os concellos de orixe cando o IGE non dá cifra do concello novo. A
+        diferenza con Galicia (en puntos) tamén é cálculo propio.
+      es: >-
+        Cálculo propio: (población del último año − población de 10 años antes) ÷ población de
+        10 años antes × 100, con las cifras originales del IGE. Para Cerdedo-Cotobade y
+        Oza-Cesuras, el año inicial suma los ayuntamientos de origen cuando el IGE no da cifra
+        del nuevo. La diferencia con Galicia (en puntos) también es cálculo propio.
+  - id: densidade
+    label: { gl: Densidade de poboación, es: Densidad de población }
+    unit: hab./km²
+    comparison: index
+    source: IGE, táboa 943 (Densidade de poboación)
+    note:
+      gl: >-
+        Valor orixinal do IGE. Distribución moi asimétrica (das cidades a concellos de menos de
+        5 hab./km²). A comparación con Galicia (Galicia = 100) é cálculo propio e móstrase
+        xunto ao orixinal.
+      es: >-
+        Valor original del IGE. Distribución muy asimétrica (de las ciudades a ayuntamientos de
+        menos de 5 hab./km²). La comparación con Galicia (Galicia = 100) es cálculo propio y se
+        muestra junto al original.
+  - id: renda_hab
+    label: { gl: Renda dispoñible bruta por habitante, es: Renta disponible bruta por habitante }
+    unit: €
+    comparison: index
+    source: IGE, táboa 9642 (Renda dispoñible bruta por habitante)
+    note:
+      gl: >-
+        Valor orixinal do IGE (o último ano pode ser provisional). A comparación con Galicia
+        (Galicia = 100) é cálculo propio e móstrase xunto ao orixinal.
+      es: >-
+        Valor original del IGE (el último año puede ser provisional). La comparación con Galicia
+        (Galicia = 100) es cálculo propio y se muestra junto al original.
+  - id: estranxeiros_pct
+    label: { gl: Poboación estranxeira, es: Población extranjera }
+    unit: '%'
+    comparison: points
+    source: IGE, táboa 9830 (Porcentaxe de poboación estranxeira)
+    note:
+      gl: >-
+        Valor orixinal do IGE. A diferenza con Galicia (en puntos) é cálculo propio e móstrase
+        xunto ao orixinal.
+      es: >-
+        Valor original del IGE. La diferencia con Galicia (en puntos) es cálculo propio y se
+        muestra junto al original.
+  - id: saldo_migratorio
+    label: { gl: Saldo migratorio, es: Saldo migratorio }
+    unit: ‰
+    comparison: points
+    source: IGE, táboa 9810 (Saldo migratorio por 1000 habitantes)
+    note:
+      gl: >-
+        Saldo migratorio total por 1.000 habitantes. Valor orixinal do IGE; a diferenza con
+        Galicia (en puntos) é cálculo propio e móstrase xunto ao orixinal.
+      es: >-
+        Saldo migratorio total por 1.000 habitantes. Valor original del IGE; la diferencia con
+        Galicia (en puntos) es cálculo propio y se muestra junto al original.
+  - id: afiliacion_agro_pct
+    label: { gl: Afiliación no agro e na pesca, es: Afiliación en agricultura y pesca }
+    unit: '%'
+    comparison: points
+    source: IGE, táboa 11500 (Afiliacións á Seguridade Social por sector)
+    note:
+      gl: >-
+        Porcentaxe de afiliacións en alta laboral do sector «Agricultura e pesca», segundo o
+        concello de residencia. Valor orixinal do IGE (último mes); a diferenza con Galicia (en
+        puntos) é cálculo propio e móstrase xunto ao orixinal.
+      es: >-
+        Porcentaje de afiliaciones en alta laboral del sector «Agricultura e pesca», según el
+        ayuntamiento de residencia. Valor original del IGE (último mes); la diferencia con
+        Galicia (en puntos) es cálculo propio y se muestra junto al original.
+  - id: paro_rel
+    label:
+      gl: Paro rexistrado sobre poboación de 20 a 64 anos
+      es: Paro registrado sobre población de 20 a 64 años
+    unit: '%'
+    comparison: index
+    source: IGE, táboas 744 (Paro rexistrado), 1558 (Poboación) e 723 (Indicadores de poboación)
+    note:
+      gl: >-
+        NON é a taxa de paro oficial (non existe taxa de paro municipal). Cálculo propio: paro
+        rexistrado do último mes ÷ (poboación do último ano × porcentaxe de poboación de 20 a 64
+        anos) × 100, coas cifras orixinais do IGE. A táboa 744 dá 0 parados en Cerdedo-Cotobade
+        e Oza-Cesuras (concellos fusionados), cifra non crible: publícanse sen dato. A
+        comparación con Galicia (Galicia = 100) tamén é cálculo propio.
+      es: >-
+        NO es la tasa de paro oficial (no existe tasa de paro municipal). Cálculo propio: paro
+        registrado del último mes ÷ (población del último año × porcentaje de población de 20 a
+        64 años) × 100, con las cifras originales del IGE. La tabla 744 da 0 parados en
+        Cerdedo-Cotobade y Oza-Cesuras (ayuntamientos fusionados), cifra no creíble: se publican
+        sin dato. La comparación con Galicia (Galicia = 100) también es cálculo propio.
+  - id: bovino_km2
+    label: { gl: Gando bovino por km², es: Ganado bovino por km² }
+    unit: cabezas/km²
+    comparison: index
+    source: IGE, táboas 62 (Gando bovino) e 77 (Superficie)
+    note:
+      gl: >-
+        Cálculo propio: número de bovinos do último ano ÷ superficie do concello (km², última
+        cifra do IGE), coas cifras orixinais do IGE. A comparación con Galicia (Galicia = 100)
+        tamén é cálculo propio.
+      es: >-
+        Cálculo propio: número de bovinos del último año ÷ superficie del ayuntamiento (km²,
+        última cifra del IGE), con las cifras originales del IGE. La comparación con Galicia
+        (Galicia = 100) también es cálculo propio.
+  - id: natalidade_3a
+    label: { gl: Natalidade (media de 3 anos), es: Natalidad (media de 3 años) }
+    unit: ‰
+    comparison: points
+    source: IGE, táboas 57 (Nacementos) e 1558 (Poboación)
+    note:
+      gl: >-
+        Cálculo propio: nacementos dos tres últimos anos ÷ suma da poboación deses anos × 1.000
+        (media de 3 anos para que os concellos pequenos non oscilen tanto). O último ano de
+        nacementos pode ser provisional. A diferenza con Galicia (en puntos) tamén é cálculo
+        propio.
+      es: >-
+        Cálculo propio: nacimientos de los tres últimos años ÷ suma de la población de esos años
+        × 1.000 (media de 3 años para que los ayuntamientos pequeños no oscilen tanto). El
+        último año de nacimientos puede ser provisional. La diferencia con Galicia (en puntos)
+        también es cálculo propio.
+style:
+  kind: fill
+  label_field: nome
+table:
+  fields:
+    - nome
+    - codigo_ine
+    - envellecemento
+    - maiores_65_pct
+    - idade_media
+    - variacion_poboacion_10a
+    - densidade
+    - renda_hab
+    - estranxeiros_pct
+    - saldo_migratorio
+    - afiliacion_agro_pct
+    - paro_rel
+    - bovino_km2
+    - natalidade_3a

@@ -1,0 +1,224 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "indicadores-concellos feature properties",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "codigo_ine",
+    "nome",
+    "envellecemento",
+    "envellecemento_galicia",
+    "envellecemento_rel",
+    "envellecemento_periodo",
+    "maiores_65_pct",
+    "maiores_65_pct_galicia",
+    "maiores_65_pct_rel",
+    "maiores_65_pct_periodo",
+    "idade_media",
+    "idade_media_galicia",
+    "idade_media_rel",
+    "idade_media_periodo",
+    "variacion_poboacion_10a",
+    "variacion_poboacion_10a_galicia",
+    "variacion_poboacion_10a_rel",
+    "variacion_poboacion_10a_periodo",
+    "densidade",
+    "densidade_galicia",
+    "densidade_rel",
+    "densidade_periodo",
+    "renda_hab",
+    "renda_hab_galicia",
+    "renda_hab_rel",
+    "renda_hab_periodo",
+    "estranxeiros_pct",
+    "estranxeiros_pct_galicia",
+    "estranxeiros_pct_rel",
+    "estranxeiros_pct_periodo",
+    "saldo_migratorio",
+    "saldo_migratorio_galicia",
+    "saldo_migratorio_rel",
+    "saldo_migratorio_periodo",
+    "afiliacion_agro_pct",
+    "afiliacion_agro_pct_galicia",
+    "afiliacion_agro_pct_rel",
+    "afiliacion_agro_pct_periodo",
+    "paro_rel",
+    "paro_rel_galicia",
+    "paro_rel_rel",
+    "paro_rel_periodo",
+    "bovino_km2",
+    "bovino_km2_galicia",
+    "bovino_km2_rel",
+    "bovino_km2_periodo",
+    "natalidade_3a",
+    "natalidade_3a_galicia",
+    "natalidade_3a_rel",
+    "natalidade_3a_periodo"
+  ],
+  "properties": {
+    "codigo_ine": {
+      "type": "string",
+      "pattern": "^\\d{5}$"
+    },
+    "nome": {
+      "type": "string",
+      "minLength": 1
+    },
+    "envellecemento": {
+      "type": ["number", "null"]
+    },
+    "envellecemento_galicia": {
+      "type": ["number", "null"]
+    },
+    "envellecemento_rel": {
+      "type": ["number", "null"]
+    },
+    "envellecemento_periodo": {
+      "type": "string",
+      "minLength": 4
+    },
+    "maiores_65_pct": {
+      "type": ["number", "null"]
+    },
+    "maiores_65_pct_galicia": {
+      "type": ["number", "null"]
+    },
+    "maiores_65_pct_rel": {
+      "type": ["number", "null"]
+    },
+    "maiores_65_pct_periodo": {
+      "type": "string",
+      "minLength": 4
+    },
+    "idade_media": {
+      "type": ["number", "null"]
+    },
+    "idade_media_galicia": {
+      "type": ["number", "null"]
+    },
+    "idade_media_rel": {
+      "type": ["number", "null"]
+    },
+    "idade_media_periodo": {
+      "type": "string",
+      "minLength": 4
+    },
+    "variacion_poboacion_10a": {
+      "type": ["number", "null"]
+    },
+    "variacion_poboacion_10a_galicia": {
+      "type": ["number", "null"]
+    },
+    "variacion_poboacion_10a_rel": {
+      "type": ["number", "null"]
+    },
+    "variacion_poboacion_10a_periodo": {
+      "type": "string",
+      "minLength": 4
+    },
+    "densidade": {
+      "type": ["number", "null"]
+    },
+    "densidade_galicia": {
+      "type": ["number", "null"]
+    },
+    "densidade_rel": {
+      "type": ["number", "null"]
+    },
+    "densidade_periodo": {
+      "type": "string",
+      "minLength": 4
+    },
+    "renda_hab": {
+      "type": ["number", "null"]
+    },
+    "renda_hab_galicia": {
+      "type": ["number", "null"]
+    },
+    "renda_hab_rel": {
+      "type": ["number", "null"]
+    },
+    "renda_hab_periodo": {
+      "type": "string",
+      "minLength": 4
+    },
+    "estranxeiros_pct": {
+      "type": ["number", "null"]
+    },
+    "estranxeiros_pct_galicia": {
+      "type": ["number", "null"]
+    },
+    "estranxeiros_pct_rel": {
+      "type": ["number", "null"]
+    },
+    "estranxeiros_pct_periodo": {
+      "type": "string",
+      "minLength": 4
+    },
+    "saldo_migratorio": {
+      "type": ["number", "null"]
+    },
+    "saldo_migratorio_galicia": {
+      "type": ["number", "null"]
+    },
+    "saldo_migratorio_rel": {
+      "type": ["number", "null"]
+    },
+    "saldo_migratorio_periodo": {
+      "type": "string",
+      "minLength": 4
+    },
+    "afiliacion_agro_pct": {
+      "type": ["number", "null"]
+    },
+    "afiliacion_agro_pct_galicia": {
+      "type": ["number", "null"]
+    },
+    "afiliacion_agro_pct_rel": {
+      "type": ["number", "null"]
+    },
+    "afiliacion_agro_pct_periodo": {
+      "type": "string",
+      "minLength": 4
+    },
+    "paro_rel": {
+      "type": ["number", "null"]
+    },
+    "paro_rel_galicia": {
+      "type": ["number", "null"]
+    },
+    "paro_rel_rel": {
+      "type": ["number", "null"]
+    },
+    "paro_rel_periodo": {
+      "type": "string",
+      "minLength": 4
+    },
+    "bovino_km2": {
+      "type": ["number", "null"]
+    },
+    "bovino_km2_galicia": {
+      "type": ["number", "null"]
+    },
+    "bovino_km2_rel": {
+      "type": ["number", "null"]
+    },
+    "bovino_km2_periodo": {
+      "type": "string",
+      "minLength": 4
+    },
+    "natalidade_3a": {
+      "type": ["number", "null"]
+    },
+    "natalidade_3a_galicia": {
+      "type": ["number", "null"]
+    },
+    "natalidade_3a_rel": {
+      "type": ["number", "null"]
+    },
+    "natalidade_3a_periodo": {
+      "type": "string",
+      "minLength": 4
+    }
+  }
+}
