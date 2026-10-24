@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "aeroportos feature properties",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "icao",
+    "iata",
+    "nome",
+    "tipo",
+    "localidade",
+    "elevacion_m",
+    "servizo_regular",
+    "pasaxeiros_mes",
+    "pasaxeiros_periodo",
+    "pasaxeiros_12_meses",
+    "fonte_url"
+  ],
+  "properties": {
+    "id": { "type": "string", "minLength": 1, "description": "OurAirports ident" },
+    "icao": { "type": ["string", "null"], "pattern": "^[A-Z0-9]{4}$" },
+    "iata": { "type": ["string", "null"], "pattern": "^[A-Z0-9]{3}$" },
+    "nome": { "type": "string", "minLength": 1 },
+    "tipo": {
+      "enum": ["grande", "mediano", "pequeno", "heliporto", "hidroaeroporto", "globos"]
+    },
+    "localidade": { "type": ["string", "null"], "description": "municipality (texto libre)" },
+    "elevacion_m": { "type": ["integer", "null"], "description": "metros (convertido de pés)" },
+    "servizo_regular": { "type": "boolean" },
+    "pasaxeiros_mes": {
+      "type": ["integer", "null"],
+      "minimum": 0,
+      "description": "Pasaxeiros transportados no último mes con datos (Eurostat)"
+    },
+    "pasaxeiros_periodo": {
+      "type": ["string", "null"],
+      "pattern": "^\\d{4}-\\d{2}$",
+      "description": "Mes de pasaxeiros_mes"
+    },
+    "pasaxeiros_12_meses": {
+      "type": ["integer", "null"],
+      "minimum": 0,
+      "description": "Suma dos 12 meses ata pasaxeiros_periodo, se están todos"
+    },
+    "fonte_url": { "type": "string", "format": "uri" }
+  }
+}

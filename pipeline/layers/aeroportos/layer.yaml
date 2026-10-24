@@ -1,0 +1,51 @@
+id: aeroportos
+title:
+  gl: Aeroportos, aeródromos e heliportos
+  es: Aeropuertos, aeródromos y helipuertos
+theme: mobilidade
+operator:
+  name: OurAirports (comunidade); pasaxeiros de Eurostat
+  url: https://ourairports.com/countries/ES/
+source_url: https://davidmegginson.github.io/ourairports-data/airports.csv
+licence:
+  text_url: https://ourairports.com/data/
+  quote: "All data is released to the Public Domain"
+  verified_at: 2026-10-24
+  odbl_compatible: true
+  collection: odbl
+  notes: >-
+    Localizacións e características: OurAirports, dominio público. Pasaxeiros mensuais:
+    Eurostat, conxunto avia_paoa, reutilización autorizada recoñecendo a fonte
+    (https://ec.europa.eu/eurostat/help/copyright-notice, «authorised provided the source
+    is acknowledged»). Datos de OurAirports editados pola comunidade, sen garantía de
+    exactitude.
+attribution: "OurAirports (dominio público); pasaxeiros: Eurostat (avia_paoa)"
+update_frequency:
+  declared: P1D
+  schedule: "45 5 * * *"
+geometry: point
+output: geojson
+auth:
+  required: false
+privacy_notes: >-
+  Sen datos persoais: instalacións aeronáuticas (inclúe heliportos de hospitais e bases
+  contra incendios, que son instalacións públicas) e totais mensuais de pasaxeiros por
+  aeroporto. Exclúense os rexistros marcados como pechados.
+stale_after: P7D
+ingest:
+  every: P1D
+style:
+  kind: circle
+  color_token: --c-aeroporto
+  label_field: nome
+table:
+  fields:
+    - nome
+    - tipo
+    - icao
+    - localidade
+    - elevacion_m
+    - servizo_regular
+    - pasaxeiros_mes
+    - pasaxeiros_periodo
+    - pasaxeiros_12_meses
