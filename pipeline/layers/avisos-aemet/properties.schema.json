@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "avisos-aemet feature properties",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "nivel",
+    "fenomeno",
+    "codigo_fenomeno",
+    "zona",
+    "codigo_zona",
+    "inicio",
+    "fin",
+    "titular",
+    "descricion",
+    "probabilidade",
+    "fonte_url"
+  ],
+  "properties": {
+    "id": { "type": "string", "minLength": 1 },
+    "nivel": { "enum": ["amarelo", "laranxa", "vermello"] },
+    "fenomeno": { "type": ["string", "null"], "description": "texto da fonte (castelán)" },
+    "codigo_fenomeno": {
+      "type": ["string", "null"],
+      "description": "código Meteoalerta: CO costeiros, VI vento, PR choiva…"
+    },
+    "zona": { "type": ["string", "null"], "description": "areaDesc" },
+    "codigo_zona": { "type": ["string", "null"], "description": "zona Meteoalerta (geocode)" },
+    "inicio": { "type": ["string", "null"], "format": "date-time" },
+    "fin": { "type": "string", "format": "date-time" },
+    "titular": { "type": ["string", "null"] },
+    "descricion": { "type": ["string", "null"] },
+    "probabilidade": { "type": ["string", "null"], "description": "p. ex. 40%-70%" },
+    "fonte_url": { "type": "string", "format": "uri" }
+  }
+}

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>https://www.aemet.es/es/eltiempo/prediccion/avisos</id>
+  <title>AEMET - Avisos de fenómenos meteorológicos adversos - Galicia</title>
+  <subtitle>Avisos de fenómenos meteorológicos adversos según el Plan Meteoalerta de la Agencia Estatal de Meteorología (AEMET) para Galicia.</subtitle>
+  <link>https://www.aemet.es/es/eltiempo/prediccion/avisos?k=gal</link>
+  <author>
+    <name>Agencia Estatal de Meteorología. AEMET</name>
+  </author>
+  <rights>https://www.aemet.es/es/nota_legal</rights>
+  <updated>2026-10-24T06:37:10+00:00</updated>
+  <logo>https://www.aemet.es/imagenes/gif/logo_AEMET_web.gif</logo>
+    <entry>
+      <title>Estado completo de avisos para Galicia</title>
+      <summary>Fichero tar.gz que contiene todos los avisos para Galicia de 08:37 24-10-2026 CEST (UTC+2) a 23:59 26-10-2026 CET (UTC+1).</summary>
+      <link href="https://www.aemet.es/documentos_d/eltiempo/prediccion/avisos/cap/Z_CAP_C_LEMM_20261024063710_AFAC71.tar.gz"/>
+      <id>Z_CAP_C_LEMM_20261024063710_AFAC71.tar.gz</id>
+      <updated>2026-10-24T06:37:10+00:00</updated>
+    </entry>
+    <entry>
+      <title>Aviso. Nivel amarillo. Costeros. Noroeste de A Coruña</title>
+      <summary>Aviso de costeros de nivel amarillo de 20:00 24-10-2026 CEST (UTC+2) a 23:59 24-10-2026 CEST (UTC+2).</summary>
+      <link href="https://www.aemet.es/documentos_d/eltiempo/prediccion/avisos/cap/Z_CAP_C_LEMM_20261024063710_AFAZ711501COCO2422.xml"/>
+      <id>Z_CAP_C_LEMM_20261024063710_AFAZ711501COCO2422.xml</id>
+      <updated>2026-10-24T06:37:10+00:00</updated>
+    </entry>
+</feed>

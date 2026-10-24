@@ -1,0 +1,50 @@
+id: avisos-aemet
+title:
+  gl: Avisos meteorolóxicos da AEMET
+  es: Avisos meteorológicos de AEMET
+theme: tempo-aire
+operator:
+  name: Agencia Estatal de Meteoroloxía (AEMET)
+  url: https://www.aemet.es/es/eltiempo/prediccion/avisos?k=gal
+source_url: https://www.aemet.es/documentos_d/eltiempo/prediccion/avisos/rss/CAP_AFAC71_ATOM.xml
+licence:
+  text_url: https://www.aemet.es/es/nota_legal
+  quote: "Autorizado el uso de la información y su reproducción citando a AEMET"
+  verified_at: 2026-10-24
+  odbl_compatible: true
+  collection: odbl
+  notes: >-
+    Nota legal da AEMET: reutilización citando a AEMET e a data de actualización; prohibido
+    desnaturalizar a información. Os textos dos avisos publícanse tal como os dá a AEMET.
+attribution: "© AEMET. Información elaborada pola Axencia Estatal de Meteoroloxía"
+update_frequency:
+  declared: PT10M
+  schedule: "*/10 * * * *"
+geometry: polygon
+output: geojson
+auth:
+  required: false
+privacy_notes: >-
+  Sen datos persoais: avisos oficiais por zona Meteoalerta (polígonos do propio CAP). Só
+  avisos amarelos, laranxas e vermellos en vigor ou futuros; quítanse os verdes, os cancelados
+  e os caducados. Ata 40 avisos CAP por execución. / Sin datos personales: avisos oficiales
+  por zona Meteoalerta; solo amarillos, naranjas y rojos vigentes o futuros.
+stale_after: PT1H
+ingest:
+  every: PT10M
+volatile: true
+style:
+  kind: fill
+  color_token: --c-aviso
+  label_field: fenomeno
+table:
+  fields:
+    - nivel
+    - fenomeno
+    - zona
+    - inicio
+    - fin
+    - titular
+    - descricion
+    - probabilidade
+    - fonte_url
