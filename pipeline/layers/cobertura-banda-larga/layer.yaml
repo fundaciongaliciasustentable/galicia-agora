@@ -1,0 +1,93 @@
+id: cobertura-banda-larga
+title:
+  gl: Cobertura de banda larga por concello
+  es: Cobertura de banda ancha por ayuntamiento
+theme: territorio
+operator:
+  name: Ministerio para a Transformación Dixital e da Función Pública
+  url: https://digital.gob.es
+source_url: https://digital.gob.es/telecomunicaciones-infraestructuras-digitales/areas-interes/banda-ancha/informacion-cobertura
+licence:
+  text_url: https://digital.gob.es/nota-legal
+  quote: Debe citarse la fuente de los documentos
+  verified_at: 2026-10-24
+  odbl_compatible: true
+  collection: odbl
+  notes: >-
+    Nota legal do Ministerio (Lei 37/2007: reutilización citando a fonte). Ficheiro XLSX
+    anual «Cobertura Banda Ancha España» (folla «Municipio_%hogar»: cobertura en % de fogares
+    a 30 de xuño), enlazado desde a páxina de información de cobertura.
+attribution: >-
+  Fonte: Ministerio para a Transformación Dixital e da Función Pública, cobertura de banda larga
+update_frequency:
+  declared: P365D
+geometry: none
+output: geojson
+auth:
+  required: false
+privacy_notes: >-
+  Porcentaxes de fogares con cobertura por concello, agregadas polo Ministerio a partir das
+  declaracións dos operadores; ningún dato persoal.
+stale_after: P400D
+ingest:
+  every: P30D
+join:
+  layer: concellos-parroquias
+  key: codigo_ine
+  where: { nivel: concello }
+indicators:
+  - id: ftth
+    label: { gl: Cobertura de fibra óptica (FTTH), es: Cobertura de fibra óptica (FTTH) }
+    unit: '% fogares'
+    comparison: points
+    source: Ministerio, folla Municipio_%hogar, columna «FTTH (junio AAAA)»
+    note:
+      gl: >-
+        Porcentaxe de fogares con cobertura FTTH segundo o Ministerio. O valor de Galicia é a
+        media dos concellos ponderada polos fogares (cálculo propio) e a diferenza en puntos
+        tamén é cálculo propio; móstrase xunto ao valor orixinal.
+      es: >-
+        Porcentaje de hogares con cobertura FTTH según el Ministerio. El valor de Galicia es la
+        media de los ayuntamientos ponderada por los hogares (cálculo propio) y la diferencia
+        en puntos también es cálculo propio; se muestra junto al valor original.
+  - id: velocidade_100mbps
+    label: { gl: Cobertura de 100 Mbps, es: Cobertura de 100 Mbps }
+    unit: '% fogares'
+    comparison: points
+    source: Ministerio, folla Municipio_%hogar, columna «Cob. 100Mbps condiciones máxima demanda (junio AAAA)»
+    note:
+      gl: >-
+        Fogares con 100 Mbps ou máis en condicións de máxima demanda, calquera tecnoloxía fixa.
+        Galicia: media ponderada polos fogares e diferenza en puntos, cálculo propio.
+      es: >-
+        Hogares con 100 Mbps o más en condiciones de máxima demanda, cualquier tecnología fija.
+        Galicia: media ponderada por los hogares y diferencia en puntos, cálculo propio.
+  - id: velocidade_1gbps
+    label: { gl: Cobertura de 1 Gbps, es: Cobertura de 1 Gbps }
+    unit: '% fogares'
+    comparison: points
+    source: Ministerio, folla Municipio_%hogar, columna «Cob. 1Gbps descarga condiciones máxima demanda (junio AAAA)»
+    note:
+      gl: >-
+        Fogares con 1 Gbps de descarga en condicións de máxima demanda. Galicia: media
+        ponderada polos fogares e diferenza en puntos, cálculo propio.
+      es: >-
+        Hogares con 1 Gbps de descarga en condiciones de máxima demanda. Galicia: media
+        ponderada por los hogares y diferencia en puntos, cálculo propio.
+  - id: cobertura_5g
+    label: { gl: Cobertura 5G, es: Cobertura 5G }
+    unit: '% fogares'
+    comparison: points
+    source: Ministerio, folla Municipio_%hogar, columna «5G (junio AAAA)»
+    note:
+      gl: >-
+        Fogares con cobertura 5G de calquera banda (a columna «5G-Banda 3,5GHz» non se usa).
+        Galicia: media ponderada polos fogares e diferenza en puntos, cálculo propio.
+      es: >-
+        Hogares con cobertura 5G de cualquier banda (la columna «5G-Banda 3,5GHz» no se usa).
+        Galicia: media ponderada por los hogares y diferencia en puntos, cálculo propio.
+style:
+  kind: fill
+  label_field: nome
+table:
+  fields: [nome, codigo_ine, ftth, velocidade_100mbps, velocidade_1gbps, cobertura_5g]

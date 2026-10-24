@@ -1,0 +1,112 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "cobertura-banda-larga feature properties",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "codigo_ine",
+    "nome",
+    "ftth",
+    "ftth_galicia",
+    "ftth_rel",
+    "ftth_periodo",
+    "velocidade_100mbps",
+    "velocidade_100mbps_galicia",
+    "velocidade_100mbps_rel",
+    "velocidade_100mbps_periodo",
+    "velocidade_1gbps",
+    "velocidade_1gbps_galicia",
+    "velocidade_1gbps_rel",
+    "velocidade_1gbps_periodo",
+    "cobertura_5g",
+    "cobertura_5g_galicia",
+    "cobertura_5g_rel",
+    "cobertura_5g_periodo"
+  ],
+  "properties": {
+    "codigo_ine": {
+      "type": "string",
+      "pattern": "^(15|27|32|36)\\d{3}$"
+    },
+    "nome": {
+      "type": "string",
+      "minLength": 1
+    },
+    "ftth": {
+      "type": ["number", "null"],
+      "minimum": 0,
+      "maximum": 100
+    },
+    "ftth_galicia": {
+      "type": ["number", "null"],
+      "minimum": 0,
+      "maximum": 100
+    },
+    "ftth_rel": {
+      "type": ["number", "null"],
+      "minimum": -100,
+      "maximum": 100
+    },
+    "ftth_periodo": {
+      "type": "string",
+      "pattern": "^30/06/\\d{4}$"
+    },
+    "velocidade_100mbps": {
+      "type": ["number", "null"],
+      "minimum": 0,
+      "maximum": 100
+    },
+    "velocidade_100mbps_galicia": {
+      "type": ["number", "null"],
+      "minimum": 0,
+      "maximum": 100
+    },
+    "velocidade_100mbps_rel": {
+      "type": ["number", "null"],
+      "minimum": -100,
+      "maximum": 100
+    },
+    "velocidade_100mbps_periodo": {
+      "type": "string",
+      "pattern": "^30/06/\\d{4}$"
+    },
+    "velocidade_1gbps": {
+      "type": ["number", "null"],
+      "minimum": 0,
+      "maximum": 100
+    },
+    "velocidade_1gbps_galicia": {
+      "type": ["number", "null"],
+      "minimum": 0,
+      "maximum": 100
+    },
+    "velocidade_1gbps_rel": {
+      "type": ["number", "null"],
+      "minimum": -100,
+      "maximum": 100
+    },
+    "velocidade_1gbps_periodo": {
+      "type": "string",
+      "pattern": "^30/06/\\d{4}$"
+    },
+    "cobertura_5g": {
+      "type": ["number", "null"],
+      "minimum": 0,
+      "maximum": 100
+    },
+    "cobertura_5g_galicia": {
+      "type": ["number", "null"],
+      "minimum": 0,
+      "maximum": 100
+    },
+    "cobertura_5g_rel": {
+      "type": ["number", "null"],
+      "minimum": -100,
+      "maximum": 100
+    },
+    "cobertura_5g_periodo": {
+      "type": "string",
+      "pattern": "^30/06/\\d{4}$"
+    }
+  }
+}
