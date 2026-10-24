@@ -1,6 +1,73 @@
 {
-  "generated_at": "2026-10-24T06:31:29.169Z",
+  "generated_at": "2026-10-24T07:32:57.053Z",
   "layers": [
+    {
+      "id": "buses-xunta",
+      "title": {
+        "gl": "Paradas de autobús da Xunta",
+        "es": "Paradas de autobús de la Xunta"
+      },
+      "theme": "mobilidade",
+      "operator": {
+        "name": "Xunta de Galicia (publicado no Punto de Acceso Nacional do MITRAMS)",
+        "url": "https://nap.transportes.gob.es/ConjuntoDato/Detail/1386"
+      },
+      "source_url": "https://nap.transportes.gob.es/api/Fichero/download/1584",
+      "licence": {
+        "text_url": "https://nap.transportes.gob.es/licencia-datos",
+        "quote": "para fines comerciales y no comerciales",
+        "verified_at": "2026-10-18",
+        "odbl_compatible": "doubt",
+        "collection": "cc-by-sa-4.0",
+        "notes": "Licenza de datos abertos do MITRAMS. Os datos derivados poden publicarse con outra licenza, pero os datos brutos deben manter a mesma; a web debe amosar «Powered by MITRAMS» e manter a información actualizada. Por iso vai na colección CC BY-SA 4.0, fóra da base ODbL, ata aclaralo."
+      },
+      "attribution": "Fonte: Xunta de Galicia, vía Punto de Acceso Nacional (MITRAMS). Powered by MITRAMS",
+      "update_frequency": {
+        "declared": "P1D",
+        "schedule": "30 4 * * *"
+      },
+      "geometry": "point",
+      "output": "geojson",
+      "privacy_notes": "Sen datos persoais: paradas da rede pública de autobuses. Só se publican as paradas con polo menos unha viaxe no GTFS; unha liña é un nome longo de ruta, sen distinguir sentido nin concesión. Recórtase ao bbox de Galicia con 0,1° de marxe. Os percorridos das liñas (shapes.txt) quedan para máis adiante.",
+      "stale_after": "P3D",
+      "ingest": {
+        "every": "P1D"
+      },
+      "style": {
+        "kind": "circle",
+        "color_token": "--c-bus",
+        "label_field": "nome"
+      },
+      "table": {
+        "fields": [
+          "nome",
+          "linas",
+          "linas_nomes",
+          "stop_id"
+        ]
+      },
+      "meta": {
+        "layer_id": "buses-xunta",
+        "published_at": "2026-10-23T19:29:27.000Z",
+        "fetched_at": "2026-10-24T07:32:10.817Z",
+        "last_success_at": "2026-10-24T07:32:10.817Z",
+        "status": "fresh",
+        "consecutive_failures": 0,
+        "feature_count": 25118,
+        "source_url": "https://nap.transportes.gob.es/api/Fichero/download/1584",
+        "licence": "https://nap.transportes.gob.es/licencia-datos",
+        "attribution": "Fonte: Xunta de Galicia, vía Punto de Acceso Nacional (MITRAMS). Powered by MITRAMS",
+        "checksum": "sha256:29c51b6e64a18daa454eb8abc5e5af9ac236d0f4107c8203f4688f0e051d1ebf",
+        "last_error": null,
+        "history": [
+          {
+            "at": "2026-10-24T07:32:10.817Z",
+            "ok": true
+          }
+        ],
+        "alert": false
+      }
+    },
     {
       "id": "calidade-aire",
       "title": {
@@ -52,18 +119,22 @@
       },
       "meta": {
         "layer_id": "calidade-aire",
-        "published_at": "2026-10-24T06:00:00.000Z",
-        "fetched_at": "2026-10-24T06:31:10.233Z",
-        "last_success_at": "2026-10-24T06:31:10.233Z",
+        "published_at": "2026-10-24T07:00:00.000Z",
+        "fetched_at": "2026-10-24T07:32:36.156Z",
+        "last_success_at": "2026-10-24T07:32:36.156Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 46,
         "source_url": "https://servizos.meteogalicia.gal/mgrss/caire/jsonICAActual.action",
         "licence": "CC-BY-SA-4.0",
         "attribution": "Datos: Rede de Calidade do Aire de Galicia, MeteoGalicia (Xunta de Galicia). Datos provisionais, non validados.",
-        "checksum": "sha256:36d63f04c2ef741ff1eec468f362ecd5be63715effcda73873eac0e4a23731cc",
+        "checksum": "sha256:3fefe7ee7ac1ca02a97691da06695e022f54ea6081e8d6c22fb7c40922931049",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-10-24T07:32:36.156Z",
+            "ok": true
+          },
           {
             "at": "2026-10-24T06:31:10.233Z",
             "ok": true
@@ -221,6 +292,75 @@
       }
     },
     {
+      "id": "caudais-rios",
+      "title": {
+        "gl": "Caudais e niveis dos ríos",
+        "es": "Caudales y niveles de los ríos"
+      },
+      "theme": "auga-mar",
+      "operator": {
+        "name": "Augas de Galicia e MeteoGalicia (Xunta de Galicia)",
+        "url": "https://servizos.meteogalicia.gal/mgafos/estacions/estacions.action"
+      },
+      "source_url": "https://servizos.meteogalicia.gal/mgafos/json/estadoActual.action",
+      "licence": {
+        "text_url": "https://www.meteogalicia.gal/web/aviso-legal",
+        "quote": "utilizada libremente… co único compromiso de mencionar expresamente a MeteoGalicia",
+        "verified_at": "2026-10-18",
+        "odbl_compatible": "doubt",
+        "collection": "cc-by-sa-4.0",
+        "notes": "Licenza específica non verificada para o servizo de aforos (mgafos). Presumiblemente aplícase o aviso legal de MeteoGalicia (atribución); como no resto de MeteoGalicia, pode haber unha segunda declaración CC BY-SA 4.0 en abertos.xunta.gal. Aplícase a máis restritiva (ADR 0005) ata confirmación por escrito. A documentación do servizo (JSON_Aforos_Estado_Actual) di que os servizos JSON de aforos son públicos e gratuítos."
+      },
+      "attribution": "Datos: Augas de Galicia e MeteoGalicia (Xunta de Galicia). Datos non validados.",
+      "update_frequency": {
+        "declared": "PT10M",
+        "schedule": "*/10 * * * *"
+      },
+      "geometry": "point",
+      "output": "geojson",
+      "privacy_notes": "Sen datos persoais: lecturas de estacións de aforo públicas. Datos en tempo real non validados. Descártase o valor -9999 (sen dato), as estacións sen caudal nin nivel e as estacións cunha lectura máis de 3 h anterior á máis recente da resposta.",
+      "stale_after": "PT40M",
+      "ingest": {
+        "every": "PT10M"
+      },
+      "style": {
+        "kind": "circle",
+        "color_token": "--c-auga",
+        "label_field": "caudal_m3s"
+      },
+      "table": {
+        "fields": [
+          "nome",
+          "concello",
+          "provincia",
+          "caudal_m3s",
+          "nivel_m",
+          "data_medida"
+        ]
+      },
+      "meta": {
+        "layer_id": "caudais-rios",
+        "published_at": "2026-10-24T07:20:00.000Z",
+        "fetched_at": "2026-10-24T07:32:37.881Z",
+        "last_success_at": "2026-10-24T07:32:37.881Z",
+        "status": "fresh",
+        "consecutive_failures": 0,
+        "feature_count": 87,
+        "source_url": "https://servizos.meteogalicia.gal/mgafos/json/estadoActual.action",
+        "licence": "https://www.meteogalicia.gal/web/aviso-legal",
+        "attribution": "Datos: Augas de Galicia e MeteoGalicia (Xunta de Galicia). Datos non validados.",
+        "checksum": "sha256:9a755a3ea9b16103400cdb4c6b516352688cc728f4ab932ff25d9ee482129eab",
+        "last_error": null,
+        "history": [
+          {
+            "at": "2026-10-24T07:32:37.881Z",
+            "ok": true
+          }
+        ],
+        "alert": false
+      }
+    },
+    {
       "id": "concellos-parroquias",
       "title": {
         "gl": "Concellos e parroquias",
@@ -272,8 +412,8 @@
       "meta": {
         "layer_id": "concellos-parroquias",
         "published_at": "2026-01-31T23:00:00.000Z",
-        "fetched_at": "2026-10-18T10:33:28.297Z",
-        "last_success_at": "2026-10-18T10:33:28.297Z",
+        "fetched_at": "2026-10-24T07:32:38.212Z",
+        "last_success_at": "2026-10-24T07:32:38.212Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 4098,
@@ -283,6 +423,10 @@
         "checksum": "sha256:b69a2c74c7c2bf7326369f9c647e0c558e486d35ca146e43bf105da3b10fc299",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-10-24T07:32:38.212Z",
+            "ok": true
+          },
           {
             "at": "2026-10-18T10:33:28.297Z",
             "ok": true
@@ -342,8 +486,8 @@
       "meta": {
         "layer_id": "espazos-naturais-galicia",
         "published_at": null,
-        "fetched_at": "2026-10-18T10:33:35.550Z",
-        "last_success_at": "2026-10-18T10:33:35.550Z",
+        "fetched_at": "2026-10-24T07:32:45.126Z",
+        "last_success_at": "2026-10-24T07:32:45.126Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 96,
@@ -353,6 +497,10 @@
         "checksum": "sha256:5f0841a2003aba7b4f12fffaff2b386faadd7c23bdfe84eedbafcd469ca5c57e",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-10-24T07:32:45.126Z",
+            "ok": true
+          },
           {
             "at": "2026-10-18T10:33:35.550Z",
             "ok": true
@@ -421,18 +569,22 @@
       },
       "meta": {
         "layer_id": "estacions-meteo",
-        "published_at": "2026-10-24T06:20:00.000Z",
-        "fetched_at": "2026-10-24T06:31:11.827Z",
-        "last_success_at": "2026-10-24T06:31:11.827Z",
+        "published_at": "2026-10-24T07:20:00.000Z",
+        "fetched_at": "2026-10-24T07:32:49.397Z",
+        "last_success_at": "2026-10-24T07:32:49.397Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 154,
         "source_url": "https://servizos.meteogalicia.gal/mgrss/observacion/ultimos10minEstacionsMeteo.action",
         "licence": "CC-BY-SA-4.0",
         "attribution": "Datos: MeteoGalicia (Xunta de Galicia)",
-        "checksum": "sha256:6dd7d85dc53be867ae2a412a3bdafa33cafa4e170d812a2e57304d0db7c7f6a6",
+        "checksum": "sha256:fbbb2deadc4cfc44dfa7532ad2a80f2eeb7e980bab0ef27894885ac16ec5d4be",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-10-24T07:32:49.397Z",
+            "ok": true
+          },
           {
             "at": "2026-10-24T06:31:11.827Z",
             "ok": true
@@ -647,17 +799,21 @@
       "meta": {
         "layer_id": "focos-calor",
         "published_at": null,
-        "fetched_at": "2026-10-24T06:31:12.831Z",
-        "last_success_at": "2026-10-24T01:45:39.012Z",
-        "status": "stale",
-        "consecutive_failures": 1,
+        "fetched_at": "2026-10-24T07:32:50.503Z",
+        "last_success_at": "2026-10-24T07:32:50.503Z",
+        "status": "fresh",
+        "consecutive_failures": 0,
         "feature_count": 0,
         "source_url": "https://firms.modaps.eosdis.nasa.gov/api/area/",
         "licence": "CC0-1.0",
         "attribution": "NASA LANCE FIRMS (NASA/GSFC/ESDIS)",
         "checksum": "sha256:ed778c73ea51338d6576fb5992b189f2b94d9f3d5e199f46c1af520d6b0b3e6c",
-        "last_error": "Failed after 4 attempts: fetch failed",
+        "last_error": null,
         "history": [
+          {
+            "at": "2026-10-24T07:32:50.503Z",
+            "ok": true
+          },
           {
             "at": "2026-10-24T06:31:12.831Z",
             "ok": false,
@@ -821,7 +977,7 @@
             "ok": true
           }
         ],
-        "alert": true
+        "alert": false
       }
     },
     {
@@ -877,8 +1033,8 @@
       "meta": {
         "layer_id": "patrimonio",
         "published_at": null,
-        "fetched_at": "2026-10-18T10:33:41.653Z",
-        "last_success_at": "2026-10-18T10:33:41.653Z",
+        "fetched_at": "2026-10-24T07:32:51.451Z",
+        "last_success_at": "2026-10-24T07:32:51.451Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 664,
@@ -888,6 +1044,10 @@
         "checksum": "sha256:ed56e00b716494bec07ac4ae8683f04488af8cc0c45b7cc40ad114d3d4dd7ddd",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-10-24T07:32:51.451Z",
+            "ok": true
+          },
           {
             "at": "2026-10-18T10:33:41.653Z",
             "ok": true
@@ -976,8 +1136,8 @@
       "meta": {
         "layer_id": "perimetros-queimados",
         "published_at": "2026-10-19T13:19:12.428Z",
-        "fetched_at": "2026-10-23T20:30:13.840Z",
-        "last_success_at": "2026-10-23T20:30:13.840Z",
+        "fetched_at": "2026-10-24T07:32:52.042Z",
+        "last_success_at": "2026-10-24T07:32:52.042Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 176,
@@ -987,6 +1147,10 @@
         "checksum": "sha256:5a4f2c11bcbf3f55d2a1e7603abae45ce75e20b8463c113c0c08b0c7beb7944f",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-10-24T07:32:52.042Z",
+            "ok": true
+          },
           {
             "at": "2026-10-23T20:30:13.840Z",
             "ok": true
@@ -1068,10 +1232,10 @@
       "meta": {
         "layer_id": "rede-natura",
         "published_at": null,
-        "fetched_at": "2026-10-18T10:33:44.751Z",
+        "fetched_at": "2026-10-24T07:32:54.318Z",
         "last_success_at": "2026-10-18T09:03:21.597Z",
         "status": "stale",
-        "consecutive_failures": 1,
+        "consecutive_failures": 2,
         "feature_count": 76,
         "source_url": "https://geoserver.iepnb.es/geoserver/RN2000/ows",
         "licence": "https://www.miteco.gob.es/es/atencion-al-ciudadano/aviso-legal.html",
@@ -1079,6 +1243,11 @@
         "checksum": "sha256:302244ac1781a3ee068ae74ef481c42043fe0448181a10201a6ede29f4427cc2",
         "last_error": "HTTP 403 for https://geoserver.iepnb.es/geoserver/RN2000/ows?service=WFS&version=2.0.0&request=GetCapabilities",
         "history": [
+          {
+            "at": "2026-10-24T07:32:54.318Z",
+            "ok": false,
+            "error": "HTTP 403 for https://geoserver.iepnb.es/geoserver/RN2000/ows?service=WFS&version=2.0.0&request=GetCapabilities"
+          },
           {
             "at": "2026-10-18T10:33:44.751Z",
             "ok": false,
@@ -1147,18 +1316,22 @@
       "volatile": true,
       "meta": {
         "layer_id": "tren",
-        "published_at": "2026-10-24T06:31:18.000Z",
-        "fetched_at": "2026-10-24T06:31:27.892Z",
-        "last_success_at": "2026-10-24T06:31:27.892Z",
+        "published_at": "2026-10-24T07:32:48.000Z",
+        "fetched_at": "2026-10-24T07:32:55.294Z",
+        "last_success_at": "2026-10-24T07:32:55.294Z",
         "status": "fresh",
         "consecutive_failures": 0,
-        "feature_count": 14,
+        "feature_count": 12,
         "source_url": "https://gtfsrt.renfe.com/vehicle_positions_LD.json",
         "licence": "CC-BY-4.0",
         "attribution": "Origen de los datos: Renfe Operadora",
-        "checksum": "sha256:def2cd57e628529e42bb062b90e41e3cc51b499cfee6b103572ddd58b55e235f",
+        "checksum": "sha256:23115715542f9c8fb3637732f936a3827a17638b145f6502aed13753be5d8d74",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-10-24T07:32:55.294Z",
+            "ok": true
+          },
           {
             "at": "2026-10-24T06:31:27.892Z",
             "ok": true

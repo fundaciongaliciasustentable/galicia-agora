@@ -1,8 +1,8 @@
 {
   "layer_id": "espazos-naturais-galicia",
   "published_at": null,
-  "fetched_at": "2026-10-18T10:33:35.550Z",
-  "last_success_at": "2026-10-18T10:33:35.550Z",
+  "fetched_at": "2026-10-24T07:32:45.126Z",
+  "last_success_at": "2026-10-24T07:32:45.126Z",
   "status": "fresh",
   "consecutive_failures": 0,
   "feature_count": 96,
@@ -12,6 +12,10 @@
   "checksum": "sha256:5f0841a2003aba7b4f12fffaff2b386faadd7c23bdfe84eedbafcd469ca5c57e",
   "last_error": null,
   "history": [
+    {
+      "at": "2026-10-24T07:32:45.126Z",
+      "ok": true
+    },
     {
       "at": "2026-10-18T10:33:35.550Z",
       "ok": true
