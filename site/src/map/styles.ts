@@ -17,6 +17,18 @@ export function layerStyles(layer: LayerLike, color: string, sourceLayer?: strin
     ...extra,
   });
 
+  if (layer.geometry === 'raster') {
+    // Keep the source's own colours (its legend); no source-layer for raster.
+    return [
+      {
+        id: `${layer.id}__raster`,
+        source: layer.id,
+        type: 'raster',
+        paint: { 'raster-opacity': 0.8, 'raster-resampling': 'nearest' },
+      },
+    ];
+  }
+
   switch (layer.id) {
     case 'concellos-parroquias':
       return [
@@ -245,6 +257,63 @@ export function layerStyles(layer: LayerLike, color: string, sourceLayer?: strin
             'circle-opacity': 0.85,
             'circle-stroke-color': '#ffffff',
             'circle-stroke-width': 1,
+          },
+        }),
+      ];
+    case 'distancia-servizos':
+      // Straight-line km to the nearest health centre: near → far.
+      return [
+        base('circle', {
+          type: 'circle',
+          minzoom: 9,
+          paint: {
+            'circle-radius': ['interpolate', ['linear'], ['zoom'], 9, 2, 14, 5],
+            'circle-color': [
+              'interpolate',
+              ['linear'],
+              ['coalesce', ['get', 'dist_centro_saude'], 0],
+              0,
+              '#2e6b8a',
+              3,
+              '#8db4c9',
+              6,
+              '#f2c94c',
+              10,
+              '#c0392b',
+            ],
+            'circle-opacity': 0.85,
+          },
+        }),
+      ];
+    case 'trafico-radares':
+      // Average-speed sections are lines, fixed cabins are points.
+      return [
+        base('line', {
+          type: 'line',
+          filter: ['==', ['geometry-type'], 'LineString'],
+          paint: { 'line-color': color, 'line-width': 3, 'line-dasharray': [1, 1] },
+        }),
+        base('circle', {
+          type: 'circle',
+          filter: ['==', ['geometry-type'], 'Point'],
+          paint: {
+            'circle-radius': ['interpolate', ['linear'], ['zoom'], 6, 3, 12, 6],
+            'circle-color': '#ffffff',
+            'circle-stroke-color': color,
+            'circle-stroke-width': 2,
+          },
+        }),
+      ];
+    case 'trafico-incidencias':
+    case 'trafico-balizas-v16':
+      return [
+        base('circle', {
+          type: 'circle',
+          paint: {
+            'circle-radius': ['interpolate', ['linear'], ['zoom'], 6, 4, 12, 8],
+            'circle-color': color,
+            'circle-stroke-color': layer.id === 'trafico-balizas-v16' ? '#f2994a' : '#ffffff',
+            'circle-stroke-width': 2,
           },
         }),
       ];
