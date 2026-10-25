@@ -156,8 +156,15 @@ jobs:
           mkdir -p deploy
           ftp "get ${dir:-/}/.deploy-manifest.json -o deploy/remote-manifest.json;" || true
           npx tsx site/scripts/deploy-plan.ts dist deploy/remote-manifest.json deploy/files
+          status=0
           if [ -n "$(ls -A deploy/files)" ]; then
-            ftp "mirror --reverse --parallel=4 --verbose=1 deploy/files/ ${dir:-/};"
+            ftp "mirror --reverse --parallel=4 --verbose=1 deploy/files/ ${dir:-/};" 2>&1 | tee deploy/mirror.log || true
+            status=${PIPESTATUS[0]}
           fi
-          # Manifest last: a failed upload above leaves the old one, so the next run retries.
+          # Manifest last, without the files that failed, so the next run retries only those.
+          failed=$(sed -nE 's/^mirror: (.+): Fatal error.*/\1/p' deploy/mirror.log 2>/dev/null | sort -u)
+          npx tsx site/scripts/deploy-plan.ts --drop deploy/.deploy-manifest.json $failed
           ftp "put -O ${dir:-/} deploy/.deploy-manifest.json;"
+          if [ "$status" != 0 ]; then
+            echo "::warning::FTPS: some files failed and will be retried next run: $(echo $failed)"
+          fi

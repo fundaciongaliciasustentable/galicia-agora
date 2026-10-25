@@ -2,7 +2,7 @@ import { mkdirSync, mkdtempSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
-import { changedFiles, hashTree, MANIFEST } from './deploy-plan.ts';
+import { changedFiles, dropFailed, hashTree, MANIFEST } from './deploy-plan.ts';
 
 describe('deploy-plan', () => {
   it('stages only new or changed files, by content', () => {
@@ -17,5 +17,10 @@ describe('deploy-plan', () => {
     expect(changedFiles(local, null)).toHaveLength(2);
     expect(changedFiles(local, local)).toEqual([]);
     expect(changedFiles(local, { ...local, 'index.html': 'old' })).toEqual(['index.html']);
+  });
+
+  it('drops failed uploads by base name so they are retried', () => {
+    const m = { 'index.html': 'a', 'es/index.html': 'b', 'data/x/table.json': 'c', 'a.js': 'd' };
+    expect(dropFailed(m, ['index.html', 'table.json'])).toEqual({ 'a.js': 'd' });
   });
 });

@@ -8,7 +8,14 @@
 // (uploaded last, only after the files went up).
 
 import { createHash } from 'node:crypto';
-import { copyFileSync, existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
+import {
+  copyFileSync,
+  existsSync,
+  mkdirSync,
+  readdirSync,
+  readFileSync,
+  writeFileSync,
+} from 'node:fs';
 import { dirname, join, relative } from 'node:path';
 
 export const MANIFEST = '.deploy-manifest.json';
@@ -48,7 +55,24 @@ function readRemote(path: string): Manifest | null {
   }
 }
 
-if (import.meta.url === `file://${process.argv[1]}`) {
+/** Drop entries whose file name failed to upload (lftp reports base names only). */
+export function dropFailed(manifest: Manifest, failedNames: string[]): Manifest {
+  const bad = new Set(failedNames);
+  return Object.fromEntries(
+    Object.entries(manifest).filter(([f]) => !bad.has(f.split('/').pop() ?? f)),
+  );
+}
+
+if (import.meta.url === `file://${process.argv[1]}` && process.argv[2] === '--drop') {
+  const [path, ...names] = process.argv.slice(3);
+  if (!path) process.exit(2);
+  const m = JSON.parse(readFileSync(path, 'utf8')) as Manifest;
+  const kept = dropFailed(m, names);
+  writeFileSync(path, JSON.stringify(kept));
+  console.log(
+    `deploy-plan: ${Object.keys(m).length - Object.keys(kept).length} entries left for retry`,
+  );
+} else if (import.meta.url === `file://${process.argv[1]}`) {
   const [dist, remotePath, staging] = process.argv.slice(2);
   if (!dist || !remotePath || !staging) {
     console.error('usage: deploy-plan.ts <dist> <remote-manifest|-> <staging>');
