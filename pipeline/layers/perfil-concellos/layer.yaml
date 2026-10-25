@@ -1,0 +1,129 @@
+id: perfil-concellos
+title:
+  gl: Perfil dos concellos (distancia mediana aos servizos)
+  es: Perfil de los ayuntamientos (distancia mediana a los servicios)
+theme: servizos
+operator:
+  name: Fundación Galicia Sustentable (cálculo propio con datos da Xunta de Galicia)
+  url: https://agora.galiciasustentable.org
+source_url: https://agora.galiciasustentable.org
+licence:
+  spdx: CC-BY-SA-4.0
+  text_url: https://creativecommons.org/licenses/by-sa/4.0/deed.gl
+  quote: "Creative Commons BY SA 4.0"
+  verified_at: 2026-10-25
+  odbl_compatible: doubt
+  collection: cc-by-sa-4.0
+  notes: >-
+    Capa derivada: cálculo propio da Fundación Galicia Sustentable sen descarga externa, a
+    partir das capas publicadas concellos-parroquias (IET, CC BY-SA 4.0) e distancia-servizos
+    (cálculo propio, CC BY-SA 4.0). Ao ser obra derivada de datos CC BY-SA, publícase baixo CC
+    BY-SA 4.0 (ADR 0005). Non mestura datos da base ODbL. Para cada concello: un punto
+    representativo (centroide do polígono maior ou, se cae fóra, o punto interior máis
+    próximo; serve para debuxar o concello como un punto, non é a capital), a superficie
+    calculada sobre os límites do IET e a MEDIANA da distancia en liña recta desde os seus
+    lugares ao servizo máis próximo de cada tipo. Mediana sen ponderar por poboación: a
+    poboación de entidades-poboacion está incompleta. O valor de Galicia é a mediana de todos
+    os lugares. NON é distancia por estrada nin tempo de viaxe. Rábade e Beade non teñen
+    lugares en entidades-poboacion (comprobado o 25/10/2026): as súas medianas publícanse
+    nulas, sen dato. Hora de publicación: a máis recente das capas de entrada.
+attribution: >-
+  Cálculo propio da Fundación Galicia Sustentable con datos de: © Instituto de Estudos do
+  Territorio. Xunta de Galicia (PBA); Xunta de Galicia. Consellería de Sanidade — Servizo
+  Galego de Saúde (SERGAS); Consellería de Educación (abertos.xunta.gal, conxunto 0257).
+update_frequency:
+  declared: P7D
+geometry: none
+output: geojson
+auth:
+  required: false
+privacy_notes: >-
+  Sen datos persoais: agregados por concello (medianas de distancias entre lugares da
+  toponimia oficial e centros públicos) e un punto xeométrico por concello.
+stale_after: P30D
+ingest:
+  every: P7D
+depends_on:
+  - concellos-parroquias
+  - distancia-servizos
+join:
+  layer: concellos-parroquias
+  key: codigo_ine
+  where: { nivel: concello }
+indicators:
+  - id: dist_centro_saude
+    label:
+      gl: Distancia mediana ao centro de saúde
+      es: Distancia mediana al centro de salud
+    unit: km en liña recta
+    comparison: points
+    higher_is: less
+    source: Cálculo propio sobre distancia-servizos (SERGAS e IET)
+    note:
+      gl: >-
+        Mediana, entre os lugares do concello, da distancia en liña recta ao centro de saúde
+        máis próximo (estea ou non no concello). Sen ponderar por poboación. Non é distancia por
+        estrada.
+      es: >-
+        Mediana, entre los lugares del ayuntamiento, de la distancia en línea recta al centro de
+        salud más próximo (esté o no en el ayuntamiento). Sin ponderar por población. No es
+        distancia por carretera.
+  - id: dist_hospital
+    label:
+      gl: Distancia mediana ao hospital
+      es: Distancia mediana al hospital
+    unit: km en liña recta
+    comparison: points
+    higher_is: less
+    source: Cálculo propio sobre distancia-servizos (SERGAS e IET)
+    note:
+      gl: >-
+        Mediana, entre os lugares do concello, da distancia en liña recta ao hospital do SERGAS
+        máis próximo (públicos e privados: a fonte non indica a titularidade).
+      es: >-
+        Mediana, entre los lugares del ayuntamiento, de la distancia en línea recta al hospital
+        del SERGAS más próximo (públicos y privados: la fuente no indica la titularidad).
+  - id: dist_farmacia
+    label:
+      gl: Distancia mediana á farmacia
+      es: Distancia mediana a la farmacia
+    unit: km en liña recta
+    comparison: points
+    higher_is: less
+    source: Cálculo propio sobre distancia-servizos (SERGAS e IET)
+  - id: dist_escola
+    label:
+      gl: Distancia mediana á escola pública
+      es: Distancia mediana a la escuela pública
+    unit: km en liña recta
+    comparison: points
+    higher_is: less
+    source: Cálculo propio sobre distancia-servizos (Consellería de Educación e IET)
+    note:
+      gl: Centros públicos de infantil e primaria, primaria ou integrados (CPI).
+      es: Centros públicos de infantil y primaria, primaria o integrados (CPI).
+  - id: dist_instituto
+    label:
+      gl: Distancia mediana ao instituto público
+      es: Distancia mediana al instituto público
+    unit: km en liña recta
+    comparison: points
+    higher_is: less
+    source: Cálculo propio sobre distancia-servizos (Consellería de Educación e IET)
+    note:
+      gl: Centros públicos de secundaria (IES) e integrados (CPI).
+      es: Centros públicos de secundaria (IES) e integrados (CPI).
+style:
+  kind: fill
+  label_field: nome
+table:
+  fields:
+    - nome
+    - codigo_ine
+    - lugares
+    - dist_centro_saude
+    - dist_hospital
+    - dist_farmacia
+    - dist_escola
+    - dist_instituto
+    - superficie_km2

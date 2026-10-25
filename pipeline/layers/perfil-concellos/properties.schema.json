@@ -1,0 +1,136 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "perfil-concellos feature properties",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "codigo_ine",
+    "nome",
+    "provincia",
+    "lon",
+    "lat",
+    "superficie_km2",
+    "lugares",
+    "dist_centro_saude",
+    "dist_centro_saude_galicia",
+    "dist_centro_saude_rel",
+    "dist_centro_saude_periodo",
+    "dist_hospital",
+    "dist_hospital_galicia",
+    "dist_hospital_rel",
+    "dist_hospital_periodo",
+    "dist_farmacia",
+    "dist_farmacia_galicia",
+    "dist_farmacia_rel",
+    "dist_farmacia_periodo",
+    "dist_escola",
+    "dist_escola_galicia",
+    "dist_escola_rel",
+    "dist_escola_periodo",
+    "dist_instituto",
+    "dist_instituto_galicia",
+    "dist_instituto_rel",
+    "dist_instituto_periodo"
+  ],
+  "properties": {
+    "codigo_ine": {
+      "type": "string",
+      "pattern": "^(15|27|32|36)\\d{3}$"
+    },
+    "nome": {
+      "type": "string",
+      "minLength": 1
+    },
+    "provincia": {
+      "type": ["string", "null"]
+    },
+    "lon": {
+      "type": "number",
+      "minimum": -9.4,
+      "maximum": -6.6,
+      "description": "Punto representativo (non é a capital)"
+    },
+    "lat": {
+      "type": "number",
+      "minimum": 41.7,
+      "maximum": 43.9
+    },
+    "superficie_km2": {
+      "type": "number",
+      "exclusiveMinimum": 0
+    },
+    "lugares": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Lugares con distancia calculada"
+    },
+    "dist_centro_saude": {
+      "$ref": "#/$defs/km"
+    },
+    "dist_centro_saude_galicia": {
+      "$ref": "#/$defs/km"
+    },
+    "dist_centro_saude_rel": {
+      "type": ["number", "null"]
+    },
+    "dist_centro_saude_periodo": {
+      "type": "string"
+    },
+    "dist_hospital": {
+      "$ref": "#/$defs/km"
+    },
+    "dist_hospital_galicia": {
+      "$ref": "#/$defs/km"
+    },
+    "dist_hospital_rel": {
+      "type": ["number", "null"]
+    },
+    "dist_hospital_periodo": {
+      "type": "string"
+    },
+    "dist_farmacia": {
+      "$ref": "#/$defs/km"
+    },
+    "dist_farmacia_galicia": {
+      "$ref": "#/$defs/km"
+    },
+    "dist_farmacia_rel": {
+      "type": ["number", "null"]
+    },
+    "dist_farmacia_periodo": {
+      "type": "string"
+    },
+    "dist_escola": {
+      "$ref": "#/$defs/km"
+    },
+    "dist_escola_galicia": {
+      "$ref": "#/$defs/km"
+    },
+    "dist_escola_rel": {
+      "type": ["number", "null"]
+    },
+    "dist_escola_periodo": {
+      "type": "string"
+    },
+    "dist_instituto": {
+      "$ref": "#/$defs/km"
+    },
+    "dist_instituto_galicia": {
+      "$ref": "#/$defs/km"
+    },
+    "dist_instituto_rel": {
+      "type": ["number", "null"]
+    },
+    "dist_instituto_periodo": {
+      "type": "string"
+    }
+  },
+  "$defs": {
+    "km": {
+      "type": ["number", "null"],
+      "minimum": 0,
+      "maximum": 300,
+      "description": "Mediana da distancia en liña recta (km, 1 decimal); non é distancia por estrada"
+    }
+  }
+}
