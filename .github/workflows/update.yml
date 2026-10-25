@@ -24,8 +24,9 @@ concurrency:
 jobs:
   update:
     runs-on: ubuntu-latest
-    # The first deploy uploads the ~140 MB basemap; later runs only send changes.
-    timeout-minutes: 45
+    # The first deploy (no manifest on the server) sends all ~8,400 files; later
+    # runs only send files whose content changed.
+    timeout-minutes: 75
     env:
       DATA_OUT_DIR: data-out
     steps:
@@ -143,8 +144,20 @@ jobs:
           host=$(printf %s "$FTPS_HOST" | tr -d '[:space:]' | sed -E 's#^[A-Za-z]+://##; s#/.*$##; s#:[0-9]*$##')
           dir=$(printf %s "$FTPS_DIR" | tr -d '\r\n')
           # Explicit FTPS (AUTH TLS on port 21): Dinahosting does not offer implicit FTPS (990).
-          lftp -u "$FTPS_USER","$FTPS_PASSWORD" "ftp://$host" -e "
-            set ftp:ssl-force true; set ftp:ssl-protect-data true; set ssl:verify-certificate true;
-            set net:timeout 30; set net:max-retries 3; set net:reconnect-interval-base 10;
-            mirror --reverse --only-newer --parallel=4 --verbose=1 --exclude-glob .git* dist/ ${dir:-/};
-            quit"
+          ftp() {
+            lftp -u "$FTPS_USER","$FTPS_PASSWORD" "ftp://$host" -e "
+              set ftp:ssl-force true; set ftp:ssl-protect-data true; set ssl:verify-certificate true;
+              set net:timeout 30; set net:max-retries 5; set net:reconnect-interval-base 10;
+              $1
+              quit"
+          }
+          # Every build rewrites all files, so upload by content: compare with the
+          # manifest of the last successful deploy and send only what changed.
+          mkdir -p deploy
+          ftp "get ${dir:-/}/.deploy-manifest.json -o deploy/remote-manifest.json;" || true
+          npx tsx site/scripts/deploy-plan.ts dist deploy/remote-manifest.json deploy/files
+          if [ -n "$(ls -A deploy/files)" ]; then
+            ftp "mirror --reverse --parallel=4 --verbose=1 deploy/files/ ${dir:-/};"
+          fi
+          # Manifest last: a failed upload above leaves the old one, so the next run retries.
+          ftp "put -O ${dir:-/} deploy/.deploy-manifest.json;"
