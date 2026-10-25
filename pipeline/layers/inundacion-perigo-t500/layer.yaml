@@ -1,0 +1,69 @@
+id: inundacion-perigo-t500
+title:
+  gl: Perigo de inundación fluvial (T = 500 anos)
+  es: Peligrosidad por inundación fluvial (T = 500 años)
+theme: auga-mar
+operator:
+  name: Ministerio para la Transición Ecológica y el Reto Demográfico (SNCZI)
+  url: https://www.miteco.gob.es/es/agua/temas/gestion-de-los-riesgos-de-inundacion/snczi.html
+source_url: https://wmts-snczi.idee.es/wmts/riesgos-naturales/inundaciones
+licence:
+  spdx: CC-BY-4.0
+  text_url: https://wmts-snczi.idee.es/wmts/riesgos-naturales/inundaciones?SERVICE=WMTS&REQUEST=GetCapabilities
+  quote: '<ows:AccessConstraints>CC BY 4.0</ows:AccessConstraints>'
+  verified_at: 2026-10-24
+  odbl_compatible: true
+  collection: odbl
+  notes: >-
+    Licenza declarada no GetCapabilities do WMTS do SNCZI (AccessConstraints CC BY 4.0,
+    Fees «No se aplican condiciones»). Capa NZ.Flood.FluvialT500, teselas PNG
+    GoogleMapsCompatible. Galicia Agora garda as teselas do recadro de Galicia (z6–z13)
+    nun PMTiles propio para non cargar nada doutro orixe no navegador; desde z14 o mapa
+    amplía as teselas de z13. As teselas baleiras chegan como PNG transparente (200) e
+    descártanse.
+attribution: © Ministerio para la Transición Ecológica y el Reto Demográfico (SNCZI)
+update_frequency:
+  declared: static
+  measured: static
+stale_after: P400D
+ingest:
+  every: P365D
+geometry: raster
+output: pmtiles
+auth:
+  required: false
+privacy_notes: Imaxe raster de perigo de inundación; ningún dato persoal.
+context:
+  - label:
+      gl: Cobertura
+      es: Cobertura
+    value: Só tramos ARPSI
+    source: SNCZI (MITECO)
+    source_url: https://wmts-snczi.idee.es/wmts/riesgos-naturales/inundaciones?SERVICE=WMTS&REQUEST=GetCapabilities
+    note:
+      gl: >-
+        Só cobre as Áreas de Risco Potencial Significativo de Inundación (ARPSI) das
+        demarcacións Galicia-Costa e Miño-Sil, non todos os ríos. Fóra deses tramos, que
+        non haxa cor non quere dicir que non haxa perigo.
+      es: >-
+        Solo cubre las Áreas de Riesgo Potencial Significativo de Inundación (ARPSI) de las
+        demarcaciones Galicia-Costa y Miño-Sil, no todos los ríos. Fuera de esos tramos, la
+        ausencia de color no significa ausencia de peligro.
+  - label:
+      gl: Lenda
+      es: Leyenda
+    value: Calado en metros, de < 0,2 m (azul claro) a > 2 m (azul escuro)
+    source: Lenda do WMTS do SNCZI
+    source_url: https://wmts-snczi.idee.es/wmts/riesgos-naturales/inundaciones/leyendas/riesgos-naturales-fluvial.png
+    note:
+      gl: >-
+        Sete clases: < 0,2 · 0,2–0,4 · 0,4–0,7 · 0,7–1,0 · 1,0–1,5 · 1,5–2,0 · > 2,0 m.
+        Período de retorno de 500 anos: probabilidade baixa (RD 903/2010).
+      es: >-
+        Siete clases: < 0,2 · 0,2–0,4 · 0,4–0,7 · 0,7–1,0 · 1,0–1,5 · 1,5–2,0 · > 2,0 m.
+        Periodo de retorno de 500 años: probabilidad baja (RD 903/2010).
+style:
+  kind: raster
+  color_token: --c-auga
+table:
+  fields: [periodo_retorno]
