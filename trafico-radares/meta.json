@@ -1,0 +1,20 @@
+{
+  "layer_id": "trafico-radares",
+  "published_at": "2025-12-18T08:56:52.406Z",
+  "fetched_at": "2026-10-25T11:16:17.927Z",
+  "last_success_at": "2026-10-25T11:16:17.927Z",
+  "status": "fresh",
+  "consecutive_failures": 0,
+  "feature_count": 81,
+  "source_url": "https://nap.dgt.es/datex2/dgt/PredefinedLocationsPublication/radares/content.xml",
+  "licence": "https://nap.dgt.es/es/dataset/radares-fijos-dgt",
+  "attribution": "Fonte: DGT, Punto de Acceso Nacional de Tráfico",
+  "checksum": "sha256:e41eaea7a11080f70f9b04ef762f3f92328faca5541799fadb4b04992ce2ec55",
+  "last_error": null,
+  "history": [
+    {
+      "at": "2026-10-25T11:16:17.927Z",
+      "ok": true
+    }
+  ]
+}

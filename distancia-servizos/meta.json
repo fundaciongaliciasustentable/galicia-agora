@@ -1,0 +1,21 @@
+{
+  "layer_id": "distancia-servizos",
+  "published_at": null,
+  "fetched_at": "2026-10-25T11:13:48.164Z",
+  "last_success_at": null,
+  "status": "failed",
+  "consecutive_failures": 1,
+  "feature_count": 0,
+  "source_url": "https://agora.galiciasustentable.org",
+  "licence": "CC-BY-SA-4.0",
+  "attribution": "Cálculo propio da Fundación Galicia Sustentable con datos de: © Instituto de Estudos do Territorio. Xunta de Galicia (PBA); Xunta de Galicia. Consellería de Sanidade — Servizo Galego de Saúde (SERGAS); Consellería de Educación (abertos.xunta.gal, conxunto 0257); Consellería de Política Social (RUEPSS; abertos.xunta.gal, conxunto 0299).",
+  "checksum": null,
+  "last_error": "input layer centros-educativos has no published data",
+  "history": [
+    {
+      "at": "2026-10-25T11:13:48.164Z",
+      "ok": false,
+      "error": "input layer centros-educativos has no published data"
+    }
+  ]
+}

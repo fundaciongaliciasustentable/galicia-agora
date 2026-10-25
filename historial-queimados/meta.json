@@ -1,8 +1,8 @@
 {
   "layer_id": "historial-queimados",
   "published_at": "2025-11-05T08:23:32.541Z",
-  "fetched_at": "2026-10-24T09:07:47.214Z",
-  "last_success_at": "2026-10-24T09:07:47.214Z",
+  "fetched_at": "2026-10-25T11:14:16.420Z",
+  "last_success_at": "2026-10-25T11:14:16.420Z",
   "status": "fresh",
   "consecutive_failures": 0,
   "feature_count": 977,
@@ -12,6 +12,10 @@
   "checksum": "sha256:b7cc2afc5134d9cf885d6dfa25addcbf47b8a93e978fe5a45d9a41786aab6cb3",
   "last_error": null,
   "history": [
+    {
+      "at": "2026-10-25T11:14:16.420Z",
+      "ok": true
+    },
     {
       "at": "2026-10-24T09:07:47.214Z",
       "ok": true

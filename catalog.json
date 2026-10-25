@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-25T09:22:46.175Z",
+  "generated_at": "2026-10-25T11:16:21.475Z",
   "layers": [
     {
       "id": "aeroportos",
@@ -54,8 +54,8 @@
       "meta": {
         "layer_id": "aeroportos",
         "published_at": "2026-10-21T21:00:00.000Z",
-        "fetched_at": "2026-10-25T09:21:43.743Z",
-        "last_success_at": "2026-10-25T09:21:43.743Z",
+        "fetched_at": "2026-10-25T11:10:58.000Z",
+        "last_success_at": "2026-10-25T11:10:58.000Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 40,
@@ -66,6 +66,10 @@
         "last_error": null,
         "history": [
           {
+            "at": "2026-10-25T11:10:58.000Z",
+            "ok": true
+          },
+          {
             "at": "2026-10-25T09:21:43.743Z",
             "ok": true
           },
@@ -75,6 +79,76 @@
           },
           {
             "at": "2026-10-24T07:54:03.142Z",
+            "ok": true
+          }
+        ],
+        "alert": false
+      }
+    },
+    {
+      "id": "aloxamento-reat",
+      "title": {
+        "gl": "Aloxamentos turísticos rexistrados",
+        "es": "Alojamientos turísticos registrados"
+      },
+      "theme": "territorio",
+      "operator": {
+        "name": "Turismo de Galicia (Rexistro de Empresas e Actividades Turísticas, REAT)",
+        "url": "https://aei.turismo.gal/es/rexistro-de-empresas-e-actividades-turisticas"
+      },
+      "source_url": "https://descargascdn.xunta.gal/interno/smarxa/reat_directorio-alojamientos_esp.csv",
+      "licence": {
+        "spdx": "CC-BY-SA-4.0",
+        "text_url": "https://creativecommons.org/licenses/by-sa/4.0/deed.gl",
+        "quote": "<dct:license rdf:resource=\"https://creativecommons.org/licenses/by-sa/4.0/deed.gl\">",
+        "verified_at": "2026-10-24",
+        "odbl_compatible": "doubt",
+        "collection": "cc-by-sa-4.0",
+        "notes": "Licenza declarada no RDF do conxunto 0022 de abertos.xunta.gal (Rexistro de empresas e actividades turísticas, dct:license CC BY-SA 4.0). Compatibilidade con ODbL en dúbida: colección CC BY-SA 4.0 (ADR 0005). O CSV descárgase da ligazón directa (<a href>) da páxina do Área de Estudos e Investigación de Turismo de Galicia; a ruta é fixa e non cambia co mes (comprobado o 24/10/2026), por iso vai escrita no código."
+      },
+      "attribution": "Fonte: Turismo de Galicia, Rexistro de Empresas e Actividades Turísticas (REAT), directorio de aloxamentos. CC BY-SA 4.0.",
+      "update_frequency": {
+        "declared": "P30D"
+      },
+      "geometry": "point",
+      "output": "geojson",
+      "privacy_notes": "Só establecementos inscritos como empresa turística (hoteis, pensións, apartamentos, turismo rural, albergues, cámpings e vivendas turísticas). As vivendas de uso turístico (VUT) son domicilios particulares e non se publican nunca como puntos: a capa vut-concello só dá o seu número por concello. Retíranse teléfono, correo electrónico e enderezo. O nome é a denominación comercial inscrita no rexistro público.",
+      "stale_after": "P45D",
+      "ingest": {
+        "every": "P7D"
+      },
+      "style": {
+        "kind": "circle",
+        "color_token": "--c-turismo",
+        "label_field": "nome"
+      },
+      "table": {
+        "fields": [
+          "nome",
+          "tipoloxia",
+          "categoria",
+          "prazas",
+          "concello",
+          "parroquia",
+          "lugar"
+        ]
+      },
+      "meta": {
+        "layer_id": "aloxamento-reat",
+        "published_at": "2026-09-30T22:00:00.000Z",
+        "fetched_at": "2026-10-25T11:10:59.001Z",
+        "last_success_at": "2026-10-25T11:10:59.001Z",
+        "status": "fresh",
+        "consecutive_failures": 0,
+        "feature_count": 4483,
+        "source_url": "https://descargascdn.xunta.gal/interno/smarxa/reat_directorio-alojamientos_esp.csv",
+        "licence": "CC-BY-SA-4.0",
+        "attribution": "Fonte: Turismo de Galicia, Rexistro de Empresas e Actividades Turísticas (REAT), directorio de aloxamentos. CC BY-SA 4.0.",
+        "checksum": "sha256:448ce8958c618e053b7fb479ac0607b7aed1a7c0f225c5e6e614fe4456195fc1",
+        "last_error": null,
+        "history": [
+          {
+            "at": "2026-10-25T11:10:59.001Z",
             "ok": true
           }
         ],
@@ -135,8 +209,8 @@
       "meta": {
         "layer_id": "avisos-aemet",
         "published_at": "2026-10-24T21:50:01.000Z",
-        "fetched_at": "2026-10-25T09:21:44.696Z",
-        "last_success_at": "2026-10-25T09:21:44.696Z",
+        "fetched_at": "2026-10-25T11:11:02.015Z",
+        "last_success_at": "2026-10-25T11:11:02.015Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 2,
@@ -146,6 +220,10 @@
         "checksum": "sha256:d8776b4c12258635a5e38781c16095e1631b2ede8d06f1b9df45cc0ecc130949",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-10-25T11:11:02.015Z",
+            "ok": true
+          },
           {
             "at": "2026-10-25T09:21:44.696Z",
             "ok": true
@@ -248,8 +326,8 @@
       "meta": {
         "layer_id": "avisos-meteogalicia",
         "published_at": null,
-        "fetched_at": "2026-10-25T09:21:45.389Z",
-        "last_success_at": "2026-10-25T09:21:45.389Z",
+        "fetched_at": "2026-10-25T11:11:02.691Z",
+        "last_success_at": "2026-10-25T11:11:02.691Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 313,
@@ -259,6 +337,10 @@
         "checksum": "sha256:b0d3259a42f56a43a11eff1268cfdbc5e2c722c39da0f71071f3559ef3833aac",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-10-25T11:11:02.691Z",
+            "ok": true
+          },
           {
             "at": "2026-10-25T09:21:45.389Z",
             "ok": true
@@ -353,18 +435,22 @@
       },
       "meta": {
         "layer_id": "bicis-arteixo",
-        "published_at": "2026-10-25T09:20:52.000Z",
-        "fetched_at": "2026-10-25T09:21:46.138Z",
-        "last_success_at": "2026-10-25T09:21:46.138Z",
+        "published_at": "2026-10-25T11:10:40.000Z",
+        "fetched_at": "2026-10-25T11:11:03.408Z",
+        "last_success_at": "2026-10-25T11:11:03.408Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 15,
         "source_url": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_aa/gbfs.json",
         "licence": "CC0-1.0",
         "attribution": "Datos: biciArteixo / nextbike (CC0)",
-        "checksum": "sha256:bb523d5c28d79545872eee5794a14ef304da0e32e885e6266a3ce80386e35cb9",
+        "checksum": "sha256:38843562445feb02deea65086acb237eef97bb48c363a43896c2aaa2b7ff7b6d",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-10-25T11:11:03.408Z",
+            "ok": true
+          },
           {
             "at": "2026-10-25T09:21:46.138Z",
             "ok": true
@@ -457,8 +543,8 @@
       "meta": {
         "layer_id": "buses-xunta",
         "published_at": "2026-10-23T19:29:27.000Z",
-        "fetched_at": "2026-10-25T09:21:46.890Z",
-        "last_success_at": "2026-10-25T09:21:46.890Z",
+        "fetched_at": "2026-10-25T11:11:04.190Z",
+        "last_success_at": "2026-10-25T11:11:04.190Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 25118,
@@ -468,6 +554,10 @@
         "checksum": "sha256:29c51b6e64a18daa454eb8abc5e5af9ac236d0f4107c8203f4688f0e051d1ebf",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-10-25T11:11:04.190Z",
+            "ok": true
+          },
           {
             "at": "2026-10-25T09:21:46.890Z",
             "ok": true
@@ -539,18 +629,22 @@
       },
       "meta": {
         "layer_id": "calidade-aire",
-        "published_at": "2026-10-25T09:00:00.000Z",
-        "fetched_at": "2026-10-25T09:22:11.172Z",
-        "last_success_at": "2026-10-25T09:22:11.172Z",
+        "published_at": "2026-10-25T10:00:00.000Z",
+        "fetched_at": "2026-10-25T11:11:27.376Z",
+        "last_success_at": "2026-10-25T11:11:27.376Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 46,
         "source_url": "https://servizos.meteogalicia.gal/mgrss/caire/jsonICAActual.action",
         "licence": "CC-BY-SA-4.0",
         "attribution": "Datos: Rede de Calidade do Aire de Galicia, MeteoGalicia (Xunta de Galicia). Datos provisionais, non validados.",
-        "checksum": "sha256:5452746689f66a5321d2aca2018f25dd27a1e410da4f0a0e7ba8b4d7b489b7f2",
+        "checksum": "sha256:f8d3e5bfbea5044593735482dbe75afdbde97517b10f62587211245d86dc7a8e",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-10-25T11:11:27.376Z",
+            "ok": true
+          },
           {
             "at": "2026-10-25T09:22:11.172Z",
             "ok": true
@@ -738,10 +832,6 @@
           {
             "at": "2026-10-18T13:21:17.599Z",
             "ok": true
-          },
-          {
-            "at": "2026-10-18T10:33:26.521Z",
-            "ok": true
           }
         ],
         "alert": false
@@ -796,18 +886,22 @@
       },
       "meta": {
         "layer_id": "caudais-rios",
-        "published_at": "2026-10-25T09:10:00.000Z",
-        "fetched_at": "2026-10-25T09:22:12.715Z",
-        "last_success_at": "2026-10-25T09:22:12.715Z",
+        "published_at": "2026-10-25T10:50:00.000Z",
+        "fetched_at": "2026-10-25T11:11:29.015Z",
+        "last_success_at": "2026-10-25T11:11:29.015Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 87,
         "source_url": "https://servizos.meteogalicia.gal/mgafos/json/estadoActual.action",
         "licence": "https://www.meteogalicia.gal/web/aviso-legal",
         "attribution": "Datos: Augas de Galicia e MeteoGalicia (Xunta de Galicia). Datos non validados.",
-        "checksum": "sha256:461cbfb4fa5bfc3ab66b1f43080ad19179008e55b82ee95cdfdf02da5b70bf77",
+        "checksum": "sha256:637a1df517259bf4719aaea2d05346ec12f75b99ac1b251c0d42aebd68ed9ae7",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-10-25T11:11:29.015Z",
+            "ok": true
+          },
           {
             "at": "2026-10-25T09:22:12.715Z",
             "ok": true
@@ -850,6 +944,221 @@
           },
           {
             "at": "2026-10-24T07:32:37.881Z",
+            "ok": true
+          }
+        ],
+        "alert": false
+      }
+    },
+    {
+      "id": "centros-educativos",
+      "title": {
+        "gl": "Centros educativos",
+        "es": "Centros educativos"
+      },
+      "theme": "servizos",
+      "operator": {
+        "name": "Xunta de Galicia — Consellería de Educación, Ciencia, Universidades e FP",
+        "url": "https://www.edu.xunta.gal/centroseducativos/"
+      },
+      "source_url": "https://abertos.xunta.gal/catalogo/ensino-formacion/-/dataset/0257/centros-educativos-galicia",
+      "licence": {
+        "spdx": "CC-BY-SA-4.0",
+        "text_url": "https://abertos.xunta.gal/catalogo/ensino-formacion/-/dataset/0257/centros-educativos-galicia",
+        "quote": "Creative Commons BY SA 4.0",
+        "verified_at": "2026-10-24",
+        "odbl_compatible": "doubt",
+        "collection": "cc-by-sa-4.0",
+        "notes": "Licenza indicada na ficha do conxunto 0257 en abertos.xunta.gal (CC BY-SA 4.0, ligazón a creativecommons.org/licenses/by-sa/4.0). Compatibilidade coa ODbL en dúbida: colección CC BY-SA (ADR 0005). Catro CSV, un por provincia (001, 003, 005, 007); cada URL redirixe (302) a unha exportación do buscador de edu.xunta.gal. A exportación non trae Last-Modified nin data propia: hora de publicación baleira. Frecuencia declarada «diario» na ficha; frecuencia medida: non verificado. Orde das coordenadas inconsistente: o adaptador proba (lat, lon) e (lon, lat) contra a caixa de Galicia e descarta as filas que non caen en Galicia (11 de 1.624 o 24/10/2026: 0/0 e -13,49/0). A etapa derívase só do tipo de centro cando o tipo a fixa (EEI infantil; CEIP e CRA infantil_primaria; CEP primaria; CPI primaria_secundaria; IES secundaria; CIFP formacion_profesional; CEE e CEEPR educacion_especial; EPAPU adultos; música, danza, artes, arte dramática, idiomas e deportes outros). CPR, CPREX, «Cen. Pub.», EFAG, EFOG, CFEA, ESCO, IGAFA e INSTITUTO quedan sen etapa (null): poden impartir varias ou non se comprobou. A fonte non dá niveis educativos por centro."
+      },
+      "attribution": "Xunta de Galicia. Consellería de Educación, centros educativos de Galicia (abertos.xunta.gal, conxunto 0257)",
+      "update_frequency": {
+        "declared": "P1D"
+      },
+      "geometry": "point",
+      "output": "geojson",
+      "privacy_notes": "Sen datos persoais: centros educativos (públicos e privados) e os seus enderezos. Retírase o teléfono do centro (non se precisa no mapa) e os campos Provincia e DEPENDENTE.",
+      "stale_after": "P3D",
+      "ingest": {
+        "every": "P1D"
+      },
+      "style": {
+        "kind": "circle",
+        "color_token": "--c-educacion",
+        "label_field": "nome"
+      },
+      "table": {
+        "fields": [
+          "nome",
+          "tipo",
+          "etapa",
+          "titularidade",
+          "concertado",
+          "concello",
+          "enderezo",
+          "cp"
+        ]
+      },
+      "meta": {
+        "layer_id": "centros-educativos",
+        "published_at": null,
+        "fetched_at": "2026-10-25T11:11:29.337Z",
+        "last_success_at": null,
+        "status": "failed",
+        "consecutive_failures": 1,
+        "feature_count": 0,
+        "source_url": "https://abertos.xunta.gal/catalogo/ensino-formacion/-/dataset/0257/centros-educativos-galicia",
+        "licence": "CC-BY-SA-4.0",
+        "attribution": "Xunta de Galicia. Consellería de Educación, centros educativos de Galicia (abertos.xunta.gal, conxunto 0257)",
+        "checksum": null,
+        "last_error": "Failed after 4 attempts: fetch failed",
+        "history": [
+          {
+            "at": "2026-10-25T11:11:29.337Z",
+            "ok": false,
+            "error": "Failed after 4 attempts: fetch failed"
+          }
+        ],
+        "alert": false
+      }
+    },
+    {
+      "id": "centros-maiores",
+      "title": {
+        "gl": "Centros para persoas maiores",
+        "es": "Centros para personas mayores"
+      },
+      "theme": "servizos",
+      "operator": {
+        "name": "Xunta de Galicia — Consellería de Política Social (RUEPSS)",
+        "url": "https://benestar.xunta.es/XiacWeb/"
+      },
+      "source_url": "https://abertos.xunta.gal/catalogo/saude-servicios-sociais/-/dataset/0299/centros-para-persoas-maiores",
+      "licence": {
+        "spdx": "CC-BY-SA-4.0",
+        "text_url": "https://abertos.xunta.gal/catalogo/saude-servicios-sociais/-/dataset/0299/centros-para-persoas-maiores",
+        "quote": "Creative Commons BY SA 4.0",
+        "verified_at": "2026-10-24",
+        "odbl_compatible": "doubt",
+        "collection": "cc-by-sa-4.0",
+        "notes": "Licenza indicada na ficha do conxunto 0299 en abertos.xunta.gal (CC BY-SA 4.0). Compatibilidade coa ODbL en dúbida: colección CC BY-SA (ADR 0005). Ficheiro único https://ficheiros-web.xunta.gal/abertos/servizos_sociais/centros_maiores.kml (703 centros, ~2,3 MB) con Last-Modified e ETag; a hora de publicación é o Last-Modified (05/10/2026 na última descarga). Frecuencia declarada «mensual» na ficha. A fonte non dá prazas nin capacidade. Que a ligazón RUEPSS (chaves codificadas como %7B %7D) abra a ficha do centro: non verificado."
+      },
+      "attribution": "Xunta de Galicia. Consellería de Política Social, centros para persoas maiores (RUEPSS; abertos.xunta.gal, conxunto 0299)",
+      "update_frequency": {
+        "declared": "P30D"
+      },
+      "geometry": "point",
+      "output": "geojson",
+      "privacy_notes": "Retíranse o correo electrónico (Mail, Correo), o teléfono, o horario e as instalacións. A entidade titular publícase só cando é unha organización (forma xurídica como SL, SA, SC ou cooperativa, ou palabras como fundación, asociación, concello, congregación); cando é unha persoa física (unhas 40 vivendas comunitarias e centros de día pequenos en outubro de 2026) ou o nome leva un NIF, queda baleira. O nome do centro é o rexistrado no RUEPSS.",
+      "stale_after": "P45D",
+      "ingest": {
+        "every": "P7D"
+      },
+      "style": {
+        "kind": "circle",
+        "color_token": "--c-maiores",
+        "label_field": "nome"
+      },
+      "table": {
+        "fields": [
+          "nome",
+          "tipo",
+          "iniciativa",
+          "entidade",
+          "concello",
+          "enderezo",
+          "cp",
+          "servizos",
+          "ligazon_ruepss"
+        ]
+      },
+      "meta": {
+        "layer_id": "centros-maiores",
+        "published_at": "2026-10-05T06:52:48.000Z",
+        "fetched_at": "2026-10-25T11:12:24.988Z",
+        "last_success_at": "2026-10-25T11:12:24.988Z",
+        "status": "fresh",
+        "consecutive_failures": 0,
+        "feature_count": 703,
+        "source_url": "https://abertos.xunta.gal/catalogo/saude-servicios-sociais/-/dataset/0299/centros-para-persoas-maiores",
+        "licence": "CC-BY-SA-4.0",
+        "attribution": "Xunta de Galicia. Consellería de Política Social, centros para persoas maiores (RUEPSS; abertos.xunta.gal, conxunto 0299)",
+        "checksum": "sha256:61729bad66478cf474786710a319198b3199f2abebbdbb5af084ecb79299fc78",
+        "last_error": null,
+        "history": [
+          {
+            "at": "2026-10-25T11:12:24.988Z",
+            "ok": true
+          }
+        ],
+        "alert": false
+      }
+    },
+    {
+      "id": "centros-saude",
+      "title": {
+        "gl": "Centros de saúde e PAC",
+        "es": "Centros de salud y PAC"
+      },
+      "theme": "servizos",
+      "operator": {
+        "name": "Consellería de Sanidade — Servizo Galego de Saúde (SERGAS)",
+        "url": "https://www.sergas.es/"
+      },
+      "source_url": "https://extranet.sergas.es/sixsanweb/SIXSAN_WEB/proxyKml.ashx?SIXSAN_WEB_KML/MapServer/KmlServer?Composite=false&BBOX=-9.35,41.8,-6.7,43.8",
+      "licence": {
+        "spdx": "CC-BY-SA-4.0",
+        "text_url": "https://abertos.xunta.gal/catalogo/saude-servicios-sociais/-/dataset/0253/mapa-dos-servizos-sanitarios-galicia",
+        "quote": "Creative Commons BY SA 4.0",
+        "verified_at": "2026-10-24",
+        "odbl_compatible": "doubt",
+        "collection": "cc-by-sa-4.0",
+        "notes": "Conxunto 0253 «Mapa dos servizos sanitarios de Galicia» en abertos.xunta.gal (CC BY-SA 4.0, actualización declarada diaria). O KMZ sae dun KmlServer de ArcGIS sen documentar tras un proxy ASP.NET do SERGAS, ligado desde a ficha; o servizo e a súa estabilidade: non verificado. Límites de uso: non verificado."
+      },
+      "attribution": "Xunta de Galicia. Consellería de Sanidade — Servizo Galego de Saúde (SERGAS)",
+      "update_frequency": {
+        "declared": "P1D",
+        "schedule": "40 5 * * *"
+      },
+      "geometry": "point",
+      "output": "geojson",
+      "privacy_notes": "Sen datos persoais: centros públicos de atención primaria. Non se publican os teléfonos. A fonte non dá código dos centros: o id fórmase con tipo + nome + concello e cambia se o SERGAS renomea o centro. 92 dos 100 PAC funcionan no mesmo centro de saúde e coinciden no mapa con el. O KMZ non trae hora de publicación (published_at baleiro). O código INE sae do nome do concello comparado coa táboa de concellos-parroquias; «Carballeda» (Avia ou Valdeorras) queda sen código.",
+      "stale_after": "P3D",
+      "ingest": {
+        "every": "P1D"
+      },
+      "style": {
+        "kind": "circle",
+        "color_token": "--c-saude",
+        "label_field": "nome"
+      },
+      "table": {
+        "fields": [
+          "nome",
+          "tipo",
+          "concello",
+          "enderezo",
+          "cp",
+          "codigo_ine",
+          "id"
+        ]
+      },
+      "meta": {
+        "layer_id": "centros-saude",
+        "published_at": null,
+        "fetched_at": "2026-10-25T11:12:27.110Z",
+        "last_success_at": "2026-10-25T11:12:27.110Z",
+        "status": "fresh",
+        "consecutive_failures": 0,
+        "feature_count": 557,
+        "source_url": "https://extranet.sergas.es/sixsanweb/SIXSAN_WEB/proxyKml.ashx?SIXSAN_WEB_KML/MapServer/KmlServer?Composite=false&BBOX=-9.35,41.8,-6.7,43.8",
+        "licence": "CC-BY-SA-4.0",
+        "attribution": "Xunta de Galicia. Consellería de Sanidade — Servizo Galego de Saúde (SERGAS)",
+        "checksum": "sha256:a6a82593cdcec7475512e047d6fe86d6e3a0b5ebeb9b6857c62d08fd570c574e",
+        "last_error": null,
+        "history": [
+          {
+            "at": "2026-10-25T11:12:27.110Z",
             "ok": true
           }
         ],
@@ -969,8 +1278,8 @@
       "meta": {
         "layer_id": "cobertura-banda-larga",
         "published_at": "2026-06-16T16:27:24.000Z",
-        "fetched_at": "2026-10-24T09:06:39.364Z",
-        "last_success_at": "2026-10-24T09:06:39.364Z",
+        "fetched_at": "2026-10-25T11:12:35.011Z",
+        "last_success_at": "2026-10-25T11:12:35.011Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 313,
@@ -981,11 +1290,87 @@
         "last_error": null,
         "history": [
           {
+            "at": "2026-10-25T11:12:35.011Z",
+            "ok": true
+          },
+          {
             "at": "2026-10-24T09:06:39.364Z",
             "ok": true
           },
           {
             "at": "2026-10-24T07:54:25.155Z",
+            "ok": true
+          }
+        ],
+        "alert": false
+      }
+    },
+    {
+      "id": "comercio-servizos-osm",
+      "title": {
+        "gl": "Comercio e servizos (OpenStreetMap)",
+        "es": "Comercio y servicios (OpenStreetMap)"
+      },
+      "theme": "territorio",
+      "operator": {
+        "name": "Colaboradores de OpenStreetMap (extracto de Geofabrik)",
+        "url": "https://www.openstreetmap.org/"
+      },
+      "source_url": "https://download.geofabrik.de/europe/spain/galicia-latest.osm.pbf",
+      "licence": {
+        "spdx": "ODbL-1.0",
+        "text_url": "https://www.openstreetmap.org/copyright",
+        "quote": "as long as you credit OpenStreetMap and its contributors",
+        "verified_at": "2026-10-24",
+        "odbl_compatible": true,
+        "collection": "odbl",
+        "notes": "Open Database License 1.0. O extracto diario de Geofabrik redistribúe os datos de OpenStreetMap sen cambiar a licenza. Os polígonos de concellos-parroquias (CC BY-SA 4.0) só se usan para descartar puntos fóra de Galicia; ningún dato deles pasa a esta capa."
+      },
+      "attribution": "© Colaboradores de OpenStreetMap",
+      "update_frequency": {
+        "declared": "P1D",
+        "measured": "P1D",
+        "schedule": "40 7 * * *"
+      },
+      "geometry": "point",
+      "output": "geojson",
+      "privacy_notes": "Só establecementos abertos ao público (comercios, hostalaría e servizos) e só estes campos: nome, categoría, etiqueta OSM, marca, horario e web. Descártanse teléfonos, correos, enderezos e o resto de etiquetas, aínda que estean en OSM. O nome pode coincidir co dun titular (farmacias, pequenos comercios): é o rótulo do negocio tal como figura en OSM. Hora de publicación = marca de tempo de replicación da cabeceira do PBF (estado dos datos OSM), ou Last-Modified do ficheiro se falta.",
+      "stale_after": "P3D",
+      "ingest": {
+        "every": "P1D"
+      },
+      "style": {
+        "kind": "circle",
+        "color_token": "--c-comercio",
+        "label_field": "nome"
+      },
+      "table": {
+        "fields": [
+          "nome",
+          "categoria",
+          "tag",
+          "marca",
+          "horario",
+          "web",
+          "osm_id"
+        ]
+      },
+      "meta": {
+        "layer_id": "comercio-servizos-osm",
+        "published_at": "2026-10-24T20:20:51Z",
+        "fetched_at": "2026-10-25T11:12:38.949Z",
+        "last_success_at": "2026-10-25T11:12:38.949Z",
+        "status": "fresh",
+        "consecutive_failures": 0,
+        "feature_count": 28256,
+        "source_url": "https://download.geofabrik.de/europe/spain/galicia-latest.osm.pbf",
+        "licence": "ODbL-1.0",
+        "attribution": "© Colaboradores de OpenStreetMap",
+        "checksum": "sha256:d5005a11903c018c05e1936283d797e541b9e5c0b7a49bd25b9766c34ee52732",
+        "last_error": null,
+        "history": [
+          {
+            "at": "2026-10-25T11:12:38.949Z",
             "ok": true
           }
         ],
@@ -1044,8 +1429,8 @@
       "meta": {
         "layer_id": "concellos-parroquias",
         "published_at": "2026-01-31T23:00:00.000Z",
-        "fetched_at": "2026-10-24T09:06:40.421Z",
-        "last_success_at": "2026-10-24T09:06:40.421Z",
+        "fetched_at": "2026-10-25T11:12:53.105Z",
+        "last_success_at": "2026-10-25T11:12:53.105Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 4098,
@@ -1055,6 +1440,10 @@
         "checksum": "sha256:b69a2c74c7c2bf7326369f9c647e0c558e486d35ca146e43bf105da3b10fc299",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-10-25T11:12:53.105Z",
+            "ok": true
+          },
           {
             "at": "2026-10-24T09:06:40.421Z",
             "ok": true
@@ -1066,14 +1455,90 @@
           {
             "at": "2026-10-24T07:32:38.212Z",
             "ok": true
-          },
+          }
+        ],
+        "alert": false
+      }
+    },
+    {
+      "id": "distancia-servizos",
+      "title": {
+        "gl": "Distancia en liña recta aos servizos desde cada lugar",
+        "es": "Distancia en línea recta a los servicios desde cada lugar"
+      },
+      "theme": "servizos",
+      "operator": {
+        "name": "Fundación Galicia Sustentable (cálculo propio con datos da Xunta de Galicia)",
+        "url": "https://agora.galiciasustentable.org"
+      },
+      "source_url": "https://agora.galiciasustentable.org",
+      "licence": {
+        "spdx": "CC-BY-SA-4.0",
+        "text_url": "https://abertos.xunta.gal/catalogo/saude-servicios-sociais/-/dataset/0253/mapa-dos-servizos-sanitarios-galicia",
+        "quote": "Creative Commons BY SA 4.0",
+        "verified_at": "2026-10-24",
+        "odbl_compatible": "doubt",
+        "collection": "cc-by-sa-4.0",
+        "notes": "Capa derivada: cálculo propio da Fundación Galicia Sustentable sen descarga externa, a partir das capas publicadas entidades-poboacion (IET, CC BY-SA 4.0 por dobre licenza), centros-saude, hospitais e farmacias (SERGAS, conxunto 0253, CC BY-SA 4.0), centros-educativos (conxunto 0257, CC BY-SA 4.0) e centros-maiores (conxunto 0299, CC BY-SA 4.0). Ao ser obra derivada de datos CC BY-SA, publícase baixo CC BY-SA 4.0 (ADR 0005). Distancia en LIÑA RECTA (círculo máximo, fórmula do haversine, en km cun decimal) desde o punto de cada entidade ao servizo máis próximo de cada tipo: NON é distancia por estrada nin tempo de viaxe; por estrada a distancia é maior, ás veces moito (rías, montañas). Servizos: centro de saúde e PAC (SERGAS; 92 dos 100 PAC están nun centro de saúde), hospital (todos os do SERGAS, públicos e privados: a fonte non indica a titularidade), farmacia, escola (centros públicos de etapa infantil e primaria, primaria ou integrados CPI), instituto (centros públicos de secundaria, IES, e CPI) e centro de día para maiores (tipo «Centro de día» do RUEPSS, de calquera iniciativa; non inclúe os de alzhéimer). Os centros educativos sen etapa deducible (CPR, «Cen. Pub.»…) non contan. Calcúlase contra o centro máis próximo, aínda que estea noutro concello ou noutra área sanitaria ou escolar: non indica a que centro corresponde cada lugar. Hora de publicación: para cada capa de entrada, a súa hora de publicación ou, se a fonte non a dá, a da última descarga boa; tómase a máis recente. Se falta unha capa de entrada ou está caducada, a capa non se recalcula e consérvase a última versión boa."
+      },
+      "attribution": "Cálculo propio da Fundación Galicia Sustentable con datos de: © Instituto de Estudos do Territorio. Xunta de Galicia (PBA); Xunta de Galicia. Consellería de Sanidade — Servizo Galego de Saúde (SERGAS); Consellería de Educación (abertos.xunta.gal, conxunto 0257); Consellería de Política Social (RUEPSS; abertos.xunta.gal, conxunto 0299).",
+      "update_frequency": {
+        "declared": "P7D"
+      },
+      "geometry": "point",
+      "output": "geojson",
+      "privacy_notes": "Sen datos persoais: lugares da toponimia oficial coa súa poboación agregada (padrón 2024) e distancias a centros públicos. Lugares e núcleos do planeamento sen poboación na fonte publícanse con poboación nula.",
+      "stale_after": "P30D",
+      "ingest": {
+        "every": "P7D"
+      },
+      "depends_on": [
+        "entidades-poboacion",
+        "centros-saude",
+        "hospitais",
+        "farmacias",
+        "centros-educativos",
+        "centros-maiores"
+      ],
+      "style": {
+        "kind": "circle",
+        "color_token": "--c-saude",
+        "label_field": "nome"
+      },
+      "table": {
+        "fields": [
+          "nome",
+          "poboacion",
+          "dist_centro_saude",
+          "centro_saude_nome",
+          "dist_pac",
+          "dist_hospital",
+          "dist_farmacia",
+          "dist_escola",
+          "dist_instituto",
+          "dist_centro_dia",
+          "codigo",
+          "codigo_ine"
+        ]
+      },
+      "meta": {
+        "layer_id": "distancia-servizos",
+        "published_at": null,
+        "fetched_at": "2026-10-25T11:13:48.164Z",
+        "last_success_at": null,
+        "status": "failed",
+        "consecutive_failures": 1,
+        "feature_count": 0,
+        "source_url": "https://agora.galiciasustentable.org",
+        "licence": "CC-BY-SA-4.0",
+        "attribution": "Cálculo propio da Fundación Galicia Sustentable con datos de: © Instituto de Estudos do Territorio. Xunta de Galicia (PBA); Xunta de Galicia. Consellería de Sanidade — Servizo Galego de Saúde (SERGAS); Consellería de Educación (abertos.xunta.gal, conxunto 0257); Consellería de Política Social (RUEPSS; abertos.xunta.gal, conxunto 0299).",
+        "checksum": null,
+        "last_error": "input layer centros-educativos has no published data",
+        "history": [
           {
-            "at": "2026-10-18T10:33:28.297Z",
-            "ok": true
-          },
-          {
-            "at": "2026-10-18T09:15:57.790Z",
-            "ok": true
+            "at": "2026-10-25T11:13:48.164Z",
+            "ok": false,
+            "error": "input layer centros-educativos has no published data"
           }
         ],
         "alert": false
@@ -1106,7 +1571,7 @@
       },
       "geometry": "point",
       "output": "geojson",
-      "privacy_notes": "Toponimia oficial e poboación agregada por entidade (padrón 2024); ningún dato persoal. Para lugares (LU) e núcleos do planeamento (PU) a fonte dá 0 habitantes porque non son entidades do INE: publícase sen dato (null).",
+      "privacy_notes": "Toponimia oficial e poboación agregada por entidade (padrón 2024); ningún dato persoal. Para lugares (LU) e núcleos do planeamento (PU) a fonte dá 0 habitantes porque non son entidades do INE: publícase sen dato (null). Aviso: a poboación da fonte está incompleta. A suma das entidades é de só 1.260.895 habitantes (menos da metade de Galicia) e os núcleos urbanos principais (Lugo, Ourense, Pontevedra, boa parte de Vigo) non teñen entidade con poboación. Non sumar por concello. Causa non verificada.",
       "stale_after": "P90D",
       "ingest": {
         "every": "P30D"
@@ -1129,8 +1594,8 @@
       "meta": {
         "layer_id": "entidades-poboacion",
         "published_at": "2025-11-30T23:00:00.000Z",
-        "fetched_at": "2026-10-24T09:06:49.730Z",
-        "last_success_at": "2026-10-24T09:06:49.730Z",
+        "fetched_at": "2026-10-25T11:13:00.017Z",
+        "last_success_at": "2026-10-25T11:13:00.017Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 36190,
@@ -1140,6 +1605,10 @@
         "checksum": "sha256:7e4fdd7f0cb378f173d43b959c082f27167e47776f9e564ef99d1c190edd7e58",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-10-25T11:13:00.017Z",
+            "ok": true
+          },
           {
             "at": "2026-10-24T09:06:49.730Z",
             "ok": true
@@ -1195,8 +1664,8 @@
       "meta": {
         "layer_id": "espazos-naturais-galicia",
         "published_at": null,
-        "fetched_at": "2026-10-24T09:07:23.099Z",
-        "last_success_at": "2026-10-24T09:07:23.099Z",
+        "fetched_at": "2026-10-25T11:13:48.240Z",
+        "last_success_at": "2026-10-25T11:13:48.240Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 96,
@@ -1207,6 +1676,10 @@
         "last_error": null,
         "history": [
           {
+            "at": "2026-10-25T11:13:48.240Z",
+            "ok": true
+          },
+          {
             "at": "2026-10-24T09:07:23.099Z",
             "ok": true
           },
@@ -1216,14 +1689,6 @@
           },
           {
             "at": "2026-10-24T07:32:45.126Z",
-            "ok": true
-          },
-          {
-            "at": "2026-10-18T10:33:35.550Z",
-            "ok": true
-          },
-          {
-            "at": "2026-10-18T09:16:04.637Z",
             "ok": true
           }
         ],
@@ -1286,18 +1751,22 @@
       },
       "meta": {
         "layer_id": "estacions-meteo",
-        "published_at": "2026-10-25T09:10:00.000Z",
-        "fetched_at": "2026-10-25T09:22:13.051Z",
-        "last_success_at": "2026-10-25T09:22:13.051Z",
+        "published_at": "2026-10-25T11:00:00.000Z",
+        "fetched_at": "2026-10-25T11:13:52.367Z",
+        "last_success_at": "2026-10-25T11:13:52.367Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 153,
         "source_url": "https://servizos.meteogalicia.gal/mgrss/observacion/ultimos10minEstacionsMeteo.action",
         "licence": "CC-BY-SA-4.0",
         "attribution": "Datos: MeteoGalicia (Xunta de Galicia)",
-        "checksum": "sha256:c9042fea3ab809cff83114ee94bc828d048bbd7e57e8b44a097675f663b83deb",
+        "checksum": "sha256:d3cd5318a51d117aefe0d15f1cf82e127cd1fbbb9b99654b7fa67a8fbc1b5532",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-10-25T11:13:52.367Z",
+            "ok": true
+          },
           {
             "at": "2026-10-25T09:22:13.051Z",
             "ok": true
@@ -1489,14 +1958,6 @@
           {
             "at": "2026-10-18T13:21:19.255Z",
             "ok": true
-          },
-          {
-            "at": "2026-10-18T11:09:24.137Z",
-            "ok": true
-          },
-          {
-            "at": "2026-10-18T10:33:39.428Z",
-            "ok": true
           }
         ],
         "alert": false
@@ -1553,8 +2014,8 @@
       "meta": {
         "layer_id": "estacions-tren",
         "published_at": "2026-10-25T03:08:01.000Z",
-        "fetched_at": "2026-10-25T09:22:13.993Z",
-        "last_success_at": "2026-10-25T09:22:13.993Z",
+        "fetched_at": "2026-10-25T11:13:54.187Z",
+        "last_success_at": "2026-10-25T11:13:54.187Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 137,
@@ -1565,11 +2026,83 @@
         "last_error": null,
         "history": [
           {
+            "at": "2026-10-25T11:13:54.187Z",
+            "ok": true
+          },
+          {
             "at": "2026-10-25T09:22:13.993Z",
             "ok": true
           },
           {
             "at": "2026-10-24T09:07:28.805Z",
+            "ok": true
+          }
+        ],
+        "alert": false
+      }
+    },
+    {
+      "id": "farmacias",
+      "title": {
+        "gl": "Farmacias",
+        "es": "Farmacias"
+      },
+      "theme": "servizos",
+      "operator": {
+        "name": "Consellería de Sanidade — Servizo Galego de Saúde (SERGAS)",
+        "url": "https://www.sergas.es/"
+      },
+      "source_url": "https://extranet.sergas.es/sixsanweb/SIXSAN_WEB/proxyKml.ashx?SIXSAN_WEB_KML/MapServer/KmlServer?Composite=false&BBOX=-9.35,41.8,-6.7,43.8",
+      "licence": {
+        "spdx": "CC-BY-SA-4.0",
+        "text_url": "https://abertos.xunta.gal/catalogo/saude-servicios-sociais/-/dataset/0253/mapa-dos-servizos-sanitarios-galicia",
+        "quote": "Creative Commons BY SA 4.0",
+        "verified_at": "2026-10-24",
+        "odbl_compatible": "doubt",
+        "collection": "cc-by-sa-4.0",
+        "notes": "Conxunto 0253 «Mapa dos servizos sanitarios de Galicia» en abertos.xunta.gal (CC BY-SA 4.0, actualización declarada diaria). O KMZ sae dun KmlServer de ArcGIS sen documentar tras un proxy ASP.NET do SERGAS, ligado desde a ficha; o servizo e a súa estabilidade: non verificado. Límites de uso: non verificado. Sen horarios nin gardas."
+      },
+      "attribution": "Xunta de Galicia. Consellería de Sanidade — Servizo Galego de Saúde (SERGAS)",
+      "update_frequency": {
+        "declared": "P1D",
+        "schedule": "40 5 * * *"
+      },
+      "geometry": "point",
+      "output": "geojson",
+      "privacy_notes": "A fonte identifica cada farmacia polos nomes das persoas titulares (TITULAR1–3) e dá un teléfono: non se publica ningún dos dous. Cada farmacia leva o seu código oficial (SIGLAS, por exemplo C-224-F) como id e como nome. Sen horarios nin servizo de garda. O KMZ non trae hora de publicación (published_at baleiro).",
+      "stale_after": "P3D",
+      "ingest": {
+        "every": "P1D"
+      },
+      "style": {
+        "kind": "circle",
+        "color_token": "--c-farmacia"
+      },
+      "table": {
+        "fields": [
+          "id",
+          "concello",
+          "enderezo",
+          "cp",
+          "codigo_ine"
+        ]
+      },
+      "meta": {
+        "layer_id": "farmacias",
+        "published_at": null,
+        "fetched_at": "2026-10-25T11:13:43.768Z",
+        "last_success_at": "2026-10-25T11:13:43.768Z",
+        "status": "fresh",
+        "consecutive_failures": 0,
+        "feature_count": 1382,
+        "source_url": "https://extranet.sergas.es/sixsanweb/SIXSAN_WEB/proxyKml.ashx?SIXSAN_WEB_KML/MapServer/KmlServer?Composite=false&BBOX=-9.35,41.8,-6.7,43.8",
+        "licence": "CC-BY-SA-4.0",
+        "attribution": "Xunta de Galicia. Consellería de Sanidade — Servizo Galego de Saúde (SERGAS)",
+        "checksum": "sha256:85c8cb149e2027b5f880fd5592824130a6d0fd91b68429792632c5cd02b61715",
+        "last_error": null,
+        "history": [
+          {
+            "at": "2026-10-25T11:13:43.768Z",
             "ok": true
           }
         ],
@@ -1626,8 +2159,8 @@
       "meta": {
         "layer_id": "focos-calor",
         "published_at": null,
-        "fetched_at": "2026-10-25T09:22:31.911Z",
-        "last_success_at": "2026-10-25T09:22:31.911Z",
+        "fetched_at": "2026-10-25T11:14:11.682Z",
+        "last_success_at": "2026-10-25T11:14:11.682Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 0,
@@ -1637,6 +2170,10 @@
         "checksum": "sha256:ed778c73ea51338d6576fb5992b189f2b94d9f3d5e199f46c1af520d6b0b3e6c",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-10-25T11:14:11.682Z",
+            "ok": true
+          },
           {
             "at": "2026-10-25T09:22:31.911Z",
             "ok": true
@@ -1830,14 +2367,6 @@
           {
             "at": "2026-10-18T13:21:20.469Z",
             "ok": true
-          },
-          {
-            "at": "2026-10-18T11:09:26.278Z",
-            "ok": true
-          },
-          {
-            "at": "2026-10-18T10:33:40.678Z",
-            "ok": true
           }
         ],
         "alert": false
@@ -1897,17 +2426,21 @@
       "meta": {
         "layer_id": "gasolineiras",
         "published_at": null,
-        "fetched_at": "2026-10-25T09:22:32.896Z",
-        "last_success_at": "2026-10-25T09:22:32.896Z",
+        "fetched_at": "2026-10-25T11:14:12.712Z",
+        "last_success_at": "2026-10-25T11:14:12.712Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 728,
         "source_url": "https://sedeaplicaciones.minetur.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/EstacionesTerrestres/FiltroCCAA/12",
         "licence": "https://www.miteco.gob.es/es/atencion-al-ciudadano/aviso-legal.html",
         "attribution": "Fonte: Ministerio para a Transición Ecolóxica (MITERD), xeoportal de gasolineiras",
-        "checksum": "sha256:3bf7bdc04e33628b04009a909734f8b6f20c3e23db2e7f5adc7e4d6a54ca9141",
+        "checksum": "sha256:cf914f2ad40691de491b999553c688e8e72cb071f3a194502c0e65fe3441b036",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-10-25T11:14:12.712Z",
+            "ok": true
+          },
           {
             "at": "2026-10-25T09:22:32.896Z",
             "ok": true
@@ -2129,8 +2662,8 @@
       "meta": {
         "layer_id": "historial-queimados",
         "published_at": "2025-11-05T08:23:32.541Z",
-        "fetched_at": "2026-10-24T09:07:47.214Z",
-        "last_success_at": "2026-10-24T09:07:47.214Z",
+        "fetched_at": "2026-10-25T11:14:16.420Z",
+        "last_success_at": "2026-10-25T11:14:16.420Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 977,
@@ -2141,7 +2674,83 @@
         "last_error": null,
         "history": [
           {
+            "at": "2026-10-25T11:14:16.420Z",
+            "ok": true
+          },
+          {
             "at": "2026-10-24T09:07:47.214Z",
+            "ok": true
+          }
+        ],
+        "alert": false
+      }
+    },
+    {
+      "id": "hospitais",
+      "title": {
+        "gl": "Hospitais e centros de especialidades",
+        "es": "Hospitales y centros de especialidades"
+      },
+      "theme": "servizos",
+      "operator": {
+        "name": "Consellería de Sanidade — Servizo Galego de Saúde (SERGAS)",
+        "url": "https://www.sergas.es/"
+      },
+      "source_url": "https://extranet.sergas.es/sixsanweb/SIXSAN_WEB/proxyKml.ashx?SIXSAN_WEB_KML/MapServer/KmlServer?Composite=false&BBOX=-9.35,41.8,-6.7,43.8",
+      "licence": {
+        "spdx": "CC-BY-SA-4.0",
+        "text_url": "https://abertos.xunta.gal/catalogo/saude-servicios-sociais/-/dataset/0253/mapa-dos-servizos-sanitarios-galicia",
+        "quote": "Creative Commons BY SA 4.0",
+        "verified_at": "2026-10-24",
+        "odbl_compatible": "doubt",
+        "collection": "cc-by-sa-4.0",
+        "notes": "Conxunto 0253 «Mapa dos servizos sanitarios de Galicia» en abertos.xunta.gal (CC BY-SA 4.0, actualización declarada diaria). O KMZ sae dun KmlServer de ArcGIS sen documentar tras un proxy ASP.NET do SERGAS, ligado desde a ficha; o servizo e a súa estabilidade: non verificado. Límites de uso: non verificado."
+      },
+      "attribution": "Xunta de Galicia. Consellería de Sanidade — Servizo Galego de Saúde (SERGAS)",
+      "update_frequency": {
+        "declared": "P1D",
+        "schedule": "40 5 * * *"
+      },
+      "geometry": "point",
+      "output": "geojson",
+      "privacy_notes": "Sen datos persoais: hospitais públicos e privados e os seus centros de especialidades. Non se publican os teléfonos. Titularidade pública ou privada: non verificado, a fonte non a indica (só o nome do complexo). Dous cartafoles da fonte solápanse: o dos edificios (83) e o dos complexos (31, todos no mesmo punto ca un edificio o 24/10/2026); un complexo só se engade se non hai no mesmo concello un edificio co mesmo nome ou a menos de 150 m. O id fórmase con nome + concello. O KMZ non trae hora de publicación (published_at baleiro).",
+      "stale_after": "P3D",
+      "ingest": {
+        "every": "P1D"
+      },
+      "style": {
+        "kind": "circle",
+        "color_token": "--c-hospital",
+        "label_field": "nome"
+      },
+      "table": {
+        "fields": [
+          "nome",
+          "tipo",
+          "complexo",
+          "concello",
+          "enderezo",
+          "cp",
+          "codigo_ine",
+          "id"
+        ]
+      },
+      "meta": {
+        "layer_id": "hospitais",
+        "published_at": null,
+        "fetched_at": "2026-10-25T11:13:38.646Z",
+        "last_success_at": "2026-10-25T11:13:38.646Z",
+        "status": "fresh",
+        "consecutive_failures": 0,
+        "feature_count": 83,
+        "source_url": "https://extranet.sergas.es/sixsanweb/SIXSAN_WEB/proxyKml.ashx?SIXSAN_WEB_KML/MapServer/KmlServer?Composite=false&BBOX=-9.35,41.8,-6.7,43.8",
+        "licence": "CC-BY-SA-4.0",
+        "attribution": "Xunta de Galicia. Consellería de Sanidade — Servizo Galego de Saúde (SERGAS)",
+        "checksum": "sha256:ed70a1a571a15921126650e7a3dc8a8dad50d0fc52bc65d97aa64a907626d1bb",
+        "last_error": null,
+        "history": [
+          {
+            "at": "2026-10-25T11:13:38.646Z",
             "ok": true
           }
         ],
@@ -2426,8 +3035,8 @@
       "meta": {
         "layer_id": "indicadores-concellos",
         "published_at": null,
-        "fetched_at": "2026-10-24T09:08:58.736Z",
-        "last_success_at": "2026-10-24T09:08:58.736Z",
+        "fetched_at": "2026-10-25T11:15:29.602Z",
+        "last_success_at": "2026-10-25T11:15:29.602Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 313,
@@ -2438,11 +3047,295 @@
         "last_error": null,
         "history": [
           {
+            "at": "2026-10-25T11:15:29.602Z",
+            "ok": true
+          },
+          {
             "at": "2026-10-24T09:08:58.736Z",
             "ok": true
           },
           {
             "at": "2026-10-24T07:54:40.008Z",
+            "ok": true
+          }
+        ],
+        "alert": false
+      }
+    },
+    {
+      "id": "inundacion-perigo-t10",
+      "title": {
+        "gl": "Perigo de inundación fluvial (T = 10 anos)",
+        "es": "Peligrosidad por inundación fluvial (T = 10 años)"
+      },
+      "theme": "auga-mar",
+      "operator": {
+        "name": "Ministerio para la Transición Ecológica y el Reto Demográfico (SNCZI)",
+        "url": "https://www.miteco.gob.es/es/agua/temas/gestion-de-los-riesgos-de-inundacion/snczi.html"
+      },
+      "source_url": "https://wmts-snczi.idee.es/wmts/riesgos-naturales/inundaciones",
+      "licence": {
+        "spdx": "CC-BY-4.0",
+        "text_url": "https://wmts-snczi.idee.es/wmts/riesgos-naturales/inundaciones?SERVICE=WMTS&REQUEST=GetCapabilities",
+        "quote": "<ows:AccessConstraints>CC BY 4.0</ows:AccessConstraints>",
+        "verified_at": "2026-10-24",
+        "odbl_compatible": true,
+        "collection": "odbl",
+        "notes": "Licenza declarada no GetCapabilities do WMTS do SNCZI (AccessConstraints CC BY 4.0, Fees «No se aplican condiciones»). Capa NZ.Flood.FluvialT10, teselas PNG GoogleMapsCompatible. Galicia Agora garda as teselas do recadro de Galicia (z6–z13) nun PMTiles propio para non cargar nada doutro orixe no navegador; desde z14 o mapa amplía as teselas de z13. As teselas baleiras chegan como PNG transparente (200) e descártanse."
+      },
+      "attribution": "© Ministerio para la Transición Ecológica y el Reto Demográfico (SNCZI)",
+      "update_frequency": {
+        "declared": "static",
+        "measured": "static"
+      },
+      "stale_after": "P400D",
+      "ingest": {
+        "every": "P365D"
+      },
+      "geometry": "raster",
+      "output": "pmtiles",
+      "privacy_notes": "Imaxe raster de perigo de inundación; ningún dato persoal.",
+      "context": [
+        {
+          "label": {
+            "gl": "Cobertura",
+            "es": "Cobertura"
+          },
+          "value": "Só tramos ARPSI",
+          "source": "SNCZI (MITECO)",
+          "source_url": "https://wmts-snczi.idee.es/wmts/riesgos-naturales/inundaciones?SERVICE=WMTS&REQUEST=GetCapabilities",
+          "note": {
+            "gl": "Só cobre as Áreas de Risco Potencial Significativo de Inundación (ARPSI) das demarcacións Galicia-Costa e Miño-Sil, non todos os ríos. Fóra deses tramos, que non haxa cor non quere dicir que non haxa perigo.",
+            "es": "Solo cubre las Áreas de Riesgo Potencial Significativo de Inundación (ARPSI) de las demarcaciones Galicia-Costa y Miño-Sil, no todos los ríos. Fuera de esos tramos, la ausencia de color no significa ausencia de peligro."
+          }
+        },
+        {
+          "label": {
+            "gl": "Lenda",
+            "es": "Leyenda"
+          },
+          "value": "Calado en metros, de < 0,2 m (azul claro) a > 2 m (azul escuro)",
+          "source": "Lenda do WMTS do SNCZI",
+          "source_url": "https://wmts-snczi.idee.es/wmts/riesgos-naturales/inundaciones/leyendas/riesgos-naturales-fluvial.png",
+          "note": {
+            "gl": "Sete clases: < 0,2 · 0,2–0,4 · 0,4–0,7 · 0,7–1,0 · 1,0–1,5 · 1,5–2,0 · > 2,0 m. Período de retorno de 10 anos: probabilidade alta (RD 903/2010).",
+            "es": "Siete clases: < 0,2 · 0,2–0,4 · 0,4–0,7 · 0,7–1,0 · 1,0–1,5 · 1,5–2,0 · > 2,0 m. Periodo de retorno de 10 años: probabilidad alta (RD 903/2010)."
+          }
+        }
+      ],
+      "style": {
+        "kind": "raster",
+        "color_token": "--c-auga"
+      },
+      "table": {
+        "fields": [
+          "periodo_retorno"
+        ]
+      },
+      "meta": {
+        "layer_id": "inundacion-perigo-t10",
+        "published_at": "2026-03-11T09:36:19.000Z",
+        "fetched_at": "2026-10-25T10:46:21.280Z",
+        "last_success_at": "2026-10-25T10:46:21.280Z",
+        "status": "fresh",
+        "consecutive_failures": 0,
+        "feature_count": 899,
+        "source_url": "https://wmts-snczi.idee.es/wmts/riesgos-naturales/inundaciones",
+        "licence": "CC-BY-4.0",
+        "attribution": "© Ministerio para la Transición Ecológica y el Reto Demográfico (SNCZI)",
+        "checksum": "sha256:90473087d74349b18e85ea1d7bd14d57828ea113c21375c826ea2f35893927eb",
+        "last_error": null,
+        "history": [
+          {
+            "at": "2026-10-25T10:46:21.280Z",
+            "ok": true
+          }
+        ],
+        "alert": false
+      }
+    },
+    {
+      "id": "inundacion-perigo-t100",
+      "title": {
+        "gl": "Perigo de inundación fluvial (T = 100 anos)",
+        "es": "Peligrosidad por inundación fluvial (T = 100 años)"
+      },
+      "theme": "auga-mar",
+      "operator": {
+        "name": "Ministerio para la Transición Ecológica y el Reto Demográfico (SNCZI)",
+        "url": "https://www.miteco.gob.es/es/agua/temas/gestion-de-los-riesgos-de-inundacion/snczi.html"
+      },
+      "source_url": "https://wmts-snczi.idee.es/wmts/riesgos-naturales/inundaciones",
+      "licence": {
+        "spdx": "CC-BY-4.0",
+        "text_url": "https://wmts-snczi.idee.es/wmts/riesgos-naturales/inundaciones?SERVICE=WMTS&REQUEST=GetCapabilities",
+        "quote": "<ows:AccessConstraints>CC BY 4.0</ows:AccessConstraints>",
+        "verified_at": "2026-10-24",
+        "odbl_compatible": true,
+        "collection": "odbl",
+        "notes": "Licenza declarada no GetCapabilities do WMTS do SNCZI (AccessConstraints CC BY 4.0, Fees «No se aplican condiciones»). Capa NZ.Flood.FluvialT100, teselas PNG GoogleMapsCompatible. Galicia Agora garda as teselas do recadro de Galicia (z6–z13) nun PMTiles propio para non cargar nada doutro orixe no navegador; desde z14 o mapa amplía as teselas de z13. As teselas baleiras chegan como PNG transparente (200) e descártanse."
+      },
+      "attribution": "© Ministerio para la Transición Ecológica y el Reto Demográfico (SNCZI)",
+      "update_frequency": {
+        "declared": "static",
+        "measured": "static"
+      },
+      "stale_after": "P400D",
+      "ingest": {
+        "every": "P365D"
+      },
+      "geometry": "raster",
+      "output": "pmtiles",
+      "privacy_notes": "Imaxe raster de perigo de inundación; ningún dato persoal.",
+      "context": [
+        {
+          "label": {
+            "gl": "Cobertura",
+            "es": "Cobertura"
+          },
+          "value": "Só tramos ARPSI",
+          "source": "SNCZI (MITECO)",
+          "source_url": "https://wmts-snczi.idee.es/wmts/riesgos-naturales/inundaciones?SERVICE=WMTS&REQUEST=GetCapabilities",
+          "note": {
+            "gl": "Só cobre as Áreas de Risco Potencial Significativo de Inundación (ARPSI) das demarcacións Galicia-Costa e Miño-Sil, non todos os ríos. Fóra deses tramos, que non haxa cor non quere dicir que non haxa perigo.",
+            "es": "Solo cubre las Áreas de Riesgo Potencial Significativo de Inundación (ARPSI) de las demarcaciones Galicia-Costa y Miño-Sil, no todos los ríos. Fuera de esos tramos, la ausencia de color no significa ausencia de peligro."
+          }
+        },
+        {
+          "label": {
+            "gl": "Lenda",
+            "es": "Leyenda"
+          },
+          "value": "Calado en metros, de < 0,2 m (azul claro) a > 2 m (azul escuro)",
+          "source": "Lenda do WMTS do SNCZI",
+          "source_url": "https://wmts-snczi.idee.es/wmts/riesgos-naturales/inundaciones/leyendas/riesgos-naturales-fluvial.png",
+          "note": {
+            "gl": "Sete clases: < 0,2 · 0,2–0,4 · 0,4–0,7 · 0,7–1,0 · 1,0–1,5 · 1,5–2,0 · > 2,0 m. Período de retorno de 100 anos: probabilidade media (RD 903/2010).",
+            "es": "Siete clases: < 0,2 · 0,2–0,4 · 0,4–0,7 · 0,7–1,0 · 1,0–1,5 · 1,5–2,0 · > 2,0 m. Periodo de retorno de 100 años: probabilidad media (RD 903/2010)."
+          }
+        }
+      ],
+      "style": {
+        "kind": "raster",
+        "color_token": "--c-auga"
+      },
+      "table": {
+        "fields": [
+          "periodo_retorno"
+        ]
+      },
+      "meta": {
+        "layer_id": "inundacion-perigo-t100",
+        "published_at": "2026-03-11T10:23:29.000Z",
+        "fetched_at": "2026-10-25T10:58:19.597Z",
+        "last_success_at": "2026-10-25T10:58:19.597Z",
+        "status": "fresh",
+        "consecutive_failures": 0,
+        "feature_count": 925,
+        "source_url": "https://wmts-snczi.idee.es/wmts/riesgos-naturales/inundaciones",
+        "licence": "CC-BY-4.0",
+        "attribution": "© Ministerio para la Transición Ecológica y el Reto Demográfico (SNCZI)",
+        "checksum": "sha256:16287213f994ab8bdabba2f60fab6311825a4c50a9994fdc77c12a98d9c62d8f",
+        "last_error": null,
+        "history": [
+          {
+            "at": "2026-10-25T10:58:19.597Z",
+            "ok": true
+          },
+          {
+            "at": "2026-10-25T09:51:09.389Z",
+            "ok": true
+          }
+        ],
+        "alert": false
+      }
+    },
+    {
+      "id": "inundacion-perigo-t500",
+      "title": {
+        "gl": "Perigo de inundación fluvial (T = 500 anos)",
+        "es": "Peligrosidad por inundación fluvial (T = 500 años)"
+      },
+      "theme": "auga-mar",
+      "operator": {
+        "name": "Ministerio para la Transición Ecológica y el Reto Demográfico (SNCZI)",
+        "url": "https://www.miteco.gob.es/es/agua/temas/gestion-de-los-riesgos-de-inundacion/snczi.html"
+      },
+      "source_url": "https://wmts-snczi.idee.es/wmts/riesgos-naturales/inundaciones",
+      "licence": {
+        "spdx": "CC-BY-4.0",
+        "text_url": "https://wmts-snczi.idee.es/wmts/riesgos-naturales/inundaciones?SERVICE=WMTS&REQUEST=GetCapabilities",
+        "quote": "<ows:AccessConstraints>CC BY 4.0</ows:AccessConstraints>",
+        "verified_at": "2026-10-24",
+        "odbl_compatible": true,
+        "collection": "odbl",
+        "notes": "Licenza declarada no GetCapabilities do WMTS do SNCZI (AccessConstraints CC BY 4.0, Fees «No se aplican condiciones»). Capa NZ.Flood.FluvialT500, teselas PNG GoogleMapsCompatible. Galicia Agora garda as teselas do recadro de Galicia (z6–z13) nun PMTiles propio para non cargar nada doutro orixe no navegador; desde z14 o mapa amplía as teselas de z13. As teselas baleiras chegan como PNG transparente (200) e descártanse."
+      },
+      "attribution": "© Ministerio para la Transición Ecológica y el Reto Demográfico (SNCZI)",
+      "update_frequency": {
+        "declared": "static",
+        "measured": "static"
+      },
+      "stale_after": "P400D",
+      "ingest": {
+        "every": "P365D"
+      },
+      "geometry": "raster",
+      "output": "pmtiles",
+      "privacy_notes": "Imaxe raster de perigo de inundación; ningún dato persoal.",
+      "context": [
+        {
+          "label": {
+            "gl": "Cobertura",
+            "es": "Cobertura"
+          },
+          "value": "Só tramos ARPSI",
+          "source": "SNCZI (MITECO)",
+          "source_url": "https://wmts-snczi.idee.es/wmts/riesgos-naturales/inundaciones?SERVICE=WMTS&REQUEST=GetCapabilities",
+          "note": {
+            "gl": "Só cobre as Áreas de Risco Potencial Significativo de Inundación (ARPSI) das demarcacións Galicia-Costa e Miño-Sil, non todos os ríos. Fóra deses tramos, que non haxa cor non quere dicir que non haxa perigo.",
+            "es": "Solo cubre las Áreas de Riesgo Potencial Significativo de Inundación (ARPSI) de las demarcaciones Galicia-Costa y Miño-Sil, no todos los ríos. Fuera de esos tramos, la ausencia de color no significa ausencia de peligro."
+          }
+        },
+        {
+          "label": {
+            "gl": "Lenda",
+            "es": "Leyenda"
+          },
+          "value": "Calado en metros, de < 0,2 m (azul claro) a > 2 m (azul escuro)",
+          "source": "Lenda do WMTS do SNCZI",
+          "source_url": "https://wmts-snczi.idee.es/wmts/riesgos-naturales/inundaciones/leyendas/riesgos-naturales-fluvial.png",
+          "note": {
+            "gl": "Sete clases: < 0,2 · 0,2–0,4 · 0,4–0,7 · 0,7–1,0 · 1,0–1,5 · 1,5–2,0 · > 2,0 m. Período de retorno de 500 anos: probabilidade baixa (RD 903/2010).",
+            "es": "Siete clases: < 0,2 · 0,2–0,4 · 0,4–0,7 · 0,7–1,0 · 1,0–1,5 · 1,5–2,0 · > 2,0 m. Periodo de retorno de 500 años: probabilidad baja (RD 903/2010)."
+          }
+        }
+      ],
+      "style": {
+        "kind": "raster",
+        "color_token": "--c-auga"
+      },
+      "table": {
+        "fields": [
+          "periodo_retorno"
+        ]
+      },
+      "meta": {
+        "layer_id": "inundacion-perigo-t500",
+        "published_at": "2026-03-11T11:08:29.000Z",
+        "fetched_at": "2026-10-25T10:51:39.478Z",
+        "last_success_at": "2026-10-25T10:51:39.478Z",
+        "status": "fresh",
+        "consecutive_failures": 0,
+        "feature_count": 932,
+        "source_url": "https://wmts-snczi.idee.es/wmts/riesgos-naturales/inundaciones",
+        "licence": "CC-BY-4.0",
+        "attribution": "© Ministerio para la Transición Ecológica y el Reto Demográfico (SNCZI)",
+        "checksum": "sha256:d47029bffdcb1845ab421958451619c7d2140fe533bd087ff5a888097ef34bce",
+        "last_error": null,
+        "history": [
+          {
+            "at": "2026-10-25T10:51:39.478Z",
             "ok": true
           }
         ],
@@ -2502,8 +3395,8 @@
       "meta": {
         "layer_id": "patrimonio",
         "published_at": null,
-        "fetched_at": "2026-10-24T09:09:28.417Z",
-        "last_success_at": "2026-10-24T09:09:28.417Z",
+        "fetched_at": "2026-10-25T11:16:07.188Z",
+        "last_success_at": "2026-10-25T11:16:07.188Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 664,
@@ -2514,6 +3407,10 @@
         "last_error": null,
         "history": [
           {
+            "at": "2026-10-25T11:16:07.188Z",
+            "ok": true
+          },
+          {
             "at": "2026-10-24T09:09:28.417Z",
             "ok": true
           },
@@ -2523,14 +3420,6 @@
           },
           {
             "at": "2026-10-24T07:32:51.451Z",
-            "ok": true
-          },
-          {
-            "at": "2026-10-18T10:33:41.653Z",
-            "ok": true
-          },
-          {
-            "at": "2026-10-18T09:16:09.089Z",
             "ok": true
           }
         ],
@@ -2613,8 +3502,8 @@
       "meta": {
         "layer_id": "perimetros-queimados",
         "published_at": "2026-10-19T13:19:12.428Z",
-        "fetched_at": "2026-10-25T09:22:36.029Z",
-        "last_success_at": "2026-10-25T09:22:36.029Z",
+        "fetched_at": "2026-10-25T11:16:08.338Z",
+        "last_success_at": "2026-10-25T11:16:08.338Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 176,
@@ -2624,6 +3513,10 @@
         "checksum": "sha256:5a4f2c11bcbf3f55d2a1e7603abae45ce75e20b8463c113c0c08b0c7beb7944f",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-10-25T11:16:08.338Z",
+            "ok": true
+          },
           {
             "at": "2026-10-25T09:22:36.029Z",
             "ok": true
@@ -2658,10 +3551,6 @@
           },
           {
             "at": "2026-10-19T13:46:38.221Z",
-            "ok": true
-          },
-          {
-            "at": "2026-10-18T10:33:42.227Z",
             "ok": true
           }
         ],
@@ -2719,8 +3608,8 @@
       "meta": {
         "layer_id": "puntos-recarga",
         "published_at": "2026-10-25T09:16:19.672Z",
-        "fetched_at": "2026-10-25T09:22:38.432Z",
-        "last_success_at": "2026-10-25T09:22:38.432Z",
+        "fetched_at": "2026-10-25T11:16:10.846Z",
+        "last_success_at": "2026-10-25T11:16:10.846Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 460,
@@ -2730,6 +3619,10 @@
         "checksum": "sha256:4f2e2c8be0bf1de82815c1191daaaa6a09936587bd4e1a628031ab89e45c28f8",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-10-25T11:16:10.846Z",
+            "ok": true
+          },
           {
             "at": "2026-10-25T09:22:38.432Z",
             "ok": true
@@ -2794,8 +3687,8 @@
       "meta": {
         "layer_id": "raios",
         "published_at": null,
-        "fetched_at": "2026-10-25T09:22:41.491Z",
-        "last_success_at": "2026-10-25T09:22:41.491Z",
+        "fetched_at": "2026-10-25T11:16:13.734Z",
+        "last_success_at": "2026-10-25T11:16:13.734Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 0,
@@ -2805,6 +3698,10 @@
         "checksum": "sha256:ed778c73ea51338d6576fb5992b189f2b94d9f3d5e199f46c1af520d6b0b3e6c",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-10-25T11:16:13.734Z",
+            "ok": true
+          },
           {
             "at": "2026-10-25T09:22:41.491Z",
             "ok": true
@@ -2898,10 +3795,10 @@
       "meta": {
         "layer_id": "rede-natura",
         "published_at": null,
-        "fetched_at": "2026-10-24T09:09:33.349Z",
+        "fetched_at": "2026-10-25T11:16:14.282Z",
         "last_success_at": "2026-10-18T09:03:21.597Z",
         "status": "stale",
-        "consecutive_failures": 4,
+        "consecutive_failures": 5,
         "feature_count": 76,
         "source_url": "https://geoserver.iepnb.es/geoserver/RN2000/ows",
         "licence": "https://www.miteco.gob.es/es/atencion-al-ciudadano/aviso-legal.html",
@@ -2909,6 +3806,11 @@
         "checksum": "sha256:302244ac1781a3ee068ae74ef481c42043fe0448181a10201a6ede29f4427cc2",
         "last_error": "HTTP 403 for https://geoserver.iepnb.es/geoserver/RN2000/ows?service=WFS&version=2.0.0&request=GetCapabilities",
         "history": [
+          {
+            "at": "2026-10-25T11:16:14.282Z",
+            "ok": false,
+            "error": "HTTP 403 for https://geoserver.iepnb.es/geoserver/RN2000/ows?service=WFS&version=2.0.0&request=GetCapabilities"
+          },
           {
             "at": "2026-10-24T09:09:33.349Z",
             "ok": false,
@@ -2923,15 +3825,6 @@
             "at": "2026-10-24T07:32:54.318Z",
             "ok": false,
             "error": "HTTP 403 for https://geoserver.iepnb.es/geoserver/RN2000/ows?service=WFS&version=2.0.0&request=GetCapabilities"
-          },
-          {
-            "at": "2026-10-18T10:33:44.751Z",
-            "ok": false,
-            "error": "HTTP 403 for https://geoserver.iepnb.es/geoserver/RN2000/ows?service=WFS&version=2.0.0&request=GetCapabilities"
-          },
-          {
-            "at": "2026-10-18T09:03:21.597Z",
-            "ok": true
           }
         ],
         "alert": false
@@ -2992,8 +3885,8 @@
       "meta": {
         "layer_id": "sismos-recentes",
         "published_at": "2026-10-24T08:42:46.087Z",
-        "fetched_at": "2026-10-25T09:22:42.069Z",
-        "last_success_at": "2026-10-25T09:22:42.069Z",
+        "fetched_at": "2026-10-25T11:16:16.252Z",
+        "last_success_at": "2026-10-25T11:16:16.252Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 51,
@@ -3003,6 +3896,10 @@
         "checksum": "sha256:2858b2b93837847d51fc3cd7995ac6e52ba9e2c17571591faa1aebb4fbff206d",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-10-25T11:16:16.252Z",
+            "ok": true
+          },
           {
             "at": "2026-10-25T09:22:42.069Z",
             "ok": true
@@ -3041,6 +3938,222 @@
           },
           {
             "at": "2026-10-24T07:55:00.943Z",
+            "ok": true
+          }
+        ],
+        "alert": false
+      }
+    },
+    {
+      "id": "trafico-balizas-v16",
+      "title": {
+        "gl": "Balizas V16 activas agora",
+        "es": "Balizas V16 activas ahora"
+      },
+      "theme": "mobilidade",
+      "operator": {
+        "name": "Dirección General de Tráfico (DGT 3.0), Punto de Acceso Nacional de Tráfico",
+        "url": "https://nap.dgt.es/es/dataset/incidencias-dgt-datex2-v3-7"
+      },
+      "source_url": "https://nap.dgt.es/datex2/v3/dgt/SituationPublication/datex2_v37.xml",
+      "licence": {
+        "text_url": "https://nap.dgt.es/es/dataset/incidencias-dgt-datex2-v3-7",
+        "quote": "Licencia Creative Commons Attribution",
+        "verified_at": "2026-10-25",
+        "odbl_compatible": true,
+        "collection": "odbl",
+        "notes": "Mesmo conxunto ca trafico-incidencias: CC BY na ficha do NAP e «Términos de Uso» que remiten ao aviso legal da DGT (https://www.dgt.es/contenido/aviso-legal/). Queda pendente pedir confirmación por escrito a nap@dgt.es."
+      },
+      "attribution": "Fonte: DGT, Punto de Acceso Nacional de Tráfico",
+      "update_frequency": {
+        "declared": "PT1M",
+        "measured": "PT2M",
+        "schedule": "*/10 * * * *"
+      },
+      "geometry": "point",
+      "output": "geojson",
+      "privacy_notes": "Unha baliza V16 sinala un vehículo particular detido na estrada. Só en directo: nunca se publica nin se garda o identificador V16_ nin ningún hash derivado. O id de cada punto é a súa orde nesta descarga (1..n, por estrada e quilómetro), polo que non permite seguir un dispositivo entre descargas. A hora de inicio redondéase a 5 minutos, as coordenadas a 4 decimais (uns 10 m) e o punto quilométrico a 100 m. Sen histórico: só o ficheiro actual.",
+      "stale_after": "PT30M",
+      "ingest": {
+        "every": "PT10M"
+      },
+      "volatile": true,
+      "style": {
+        "kind": "circle",
+        "color_token": "--c-aviso",
+        "label_field": "estrada"
+      },
+      "table": {
+        "fields": [
+          "estrada",
+          "pk",
+          "concello",
+          "provincia",
+          "desde"
+        ]
+      },
+      "meta": {
+        "layer_id": "trafico-balizas-v16",
+        "published_at": "2026-10-25T11:16:15.947Z",
+        "fetched_at": "2026-10-25T11:16:17.411Z",
+        "last_success_at": "2026-10-25T11:16:17.411Z",
+        "status": "fresh",
+        "consecutive_failures": 0,
+        "feature_count": 3,
+        "source_url": "https://nap.dgt.es/datex2/v3/dgt/SituationPublication/datex2_v37.xml",
+        "licence": "https://nap.dgt.es/es/dataset/incidencias-dgt-datex2-v3-7",
+        "attribution": "Fonte: DGT, Punto de Acceso Nacional de Tráfico",
+        "checksum": "sha256:23e072e8fcd61192e7ddc7ba66a150f7ad7c787f92dc2dcd7320fde3b7ccc4b1",
+        "last_error": null,
+        "history": [
+          {
+            "at": "2026-10-25T11:16:17.411Z",
+            "ok": true
+          }
+        ],
+        "alert": false
+      }
+    },
+    {
+      "id": "trafico-incidencias",
+      "title": {
+        "gl": "Incidencias de tráfico",
+        "es": "Incidencias de tráfico"
+      },
+      "theme": "mobilidade",
+      "operator": {
+        "name": "Dirección General de Tráfico (DGT), Punto de Acceso Nacional de Tráfico",
+        "url": "https://nap.dgt.es/es/dataset/incidencias-dgt-datex2-v3-7"
+      },
+      "source_url": "https://nap.dgt.es/datex2/v3/dgt/SituationPublication/datex2_v37.xml",
+      "licence": {
+        "text_url": "https://nap.dgt.es/es/dataset/incidencias-dgt-datex2-v3-7",
+        "quote": "Licencia Creative Commons Attribution",
+        "verified_at": "2026-10-25",
+        "odbl_compatible": true,
+        "collection": "odbl",
+        "notes": "A ficha do conxunto no NAP declara «Creative Commons Attribution» sen versión, pero os «Términos de Uso» da mesma ficha remiten ao aviso legal da DGT (https://www.dgt.es/contenido/aviso-legal/). Publícase na colección ODbL por decisión da FGS; queda pendente pedir confirmación por escrito a nap@dgt.es."
+      },
+      "attribution": "Fonte: DGT, Punto de Acceso Nacional de Tráfico",
+      "update_frequency": {
+        "declared": "PT1M",
+        "measured": "PT2M",
+        "schedule": "*/10 * * * *"
+      },
+      "geometry": "point",
+      "output": "geojson",
+      "privacy_notes": "Incidencias publicadas pola DGT (obras, accidentes, obstáculos, restricións). Non se publican referencias internas. Exclúense os rexistros de balizas V16 conectadas (referencia V16_), que van na capa trafico-balizas-v16 con regras propias. Os avisos de vehículo avariado doutras fontes (112, DGT 3.0) non levan identificador de vehículo.",
+      "stale_after": "PT30M",
+      "ingest": {
+        "every": "PT10M"
+      },
+      "volatile": true,
+      "style": {
+        "kind": "circle",
+        "color_token": "--c-aviso",
+        "label_field": "tipo"
+      },
+      "table": {
+        "fields": [
+          "tipo",
+          "causa",
+          "estrada",
+          "pk",
+          "sentido",
+          "concello",
+          "inicio",
+          "gravidade",
+          "fonte",
+          "descricion"
+        ]
+      },
+      "meta": {
+        "layer_id": "trafico-incidencias",
+        "published_at": "2026-10-25T11:16:15.947Z",
+        "fetched_at": "2026-10-25T11:16:17.836Z",
+        "last_success_at": "2026-10-25T11:16:17.836Z",
+        "status": "fresh",
+        "consecutive_failures": 0,
+        "feature_count": 61,
+        "source_url": "https://nap.dgt.es/datex2/v3/dgt/SituationPublication/datex2_v37.xml",
+        "licence": "https://nap.dgt.es/es/dataset/incidencias-dgt-datex2-v3-7",
+        "attribution": "Fonte: DGT, Punto de Acceso Nacional de Tráfico",
+        "checksum": "sha256:0134f4ebc490cc5e889b8ad607773d0c8e9fd1d5761793d380a4ad87d1a774c1",
+        "last_error": null,
+        "history": [
+          {
+            "at": "2026-10-25T11:16:17.836Z",
+            "ok": true
+          }
+        ],
+        "alert": false
+      }
+    },
+    {
+      "id": "trafico-radares",
+      "title": {
+        "gl": "Cabinas de radar fixo e tramos de velocidade media",
+        "es": "Cabinas de radar fijo y tramos de velocidad media"
+      },
+      "theme": "mobilidade",
+      "operator": {
+        "name": "Dirección General de Tráfico (DGT), Punto de Acceso Nacional de Tráfico",
+        "url": "https://nap.dgt.es/es/dataset/radares-fijos-dgt"
+      },
+      "source_url": "https://nap.dgt.es/datex2/dgt/PredefinedLocationsPublication/radares/content.xml",
+      "licence": {
+        "text_url": "https://nap.dgt.es/es/dataset/radares-fijos-dgt",
+        "quote": "Licencia Creative Commons Attribution",
+        "verified_at": "2026-10-25",
+        "odbl_compatible": true,
+        "collection": "odbl",
+        "notes": "A ficha do conxunto no NAP declara «Creative Commons Attribution» sen versión, pero os «Términos de Uso» remiten ao aviso legal da DGT (https://www.dgt.es/contenido/aviso-legal/). Publícase na colección ODbL por decisión da FGS; queda pendente pedir confirmación por escrito a nap@dgt.es. Unha cabina non quere dicir radar activo. Sen radares municipais nin móbiles. Os tramos debúxanse como liña recta entre os extremos, non co trazado da estrada."
+      },
+      "attribution": "Fonte: DGT, Punto de Acceso Nacional de Tráfico",
+      "update_frequency": {
+        "declared": "PT1H",
+        "measured": "static",
+        "schedule": "40 5 * * *"
+      },
+      "geometry": "point",
+      "output": "geojson",
+      "privacy_notes": "Localizacións de infraestrutura viaria; ningún dato persoal.",
+      "stale_after": "P7D",
+      "ingest": {
+        "every": "P1D"
+      },
+      "style": {
+        "kind": "circle",
+        "color_token": "--c-limite",
+        "label_field": "estrada"
+      },
+      "table": {
+        "fields": [
+          "tipo",
+          "estrada",
+          "pk",
+          "pk_fin",
+          "sentido",
+          "cara_a",
+          "provincia"
+        ]
+      },
+      "meta": {
+        "layer_id": "trafico-radares",
+        "published_at": "2025-12-18T08:56:52.406Z",
+        "fetched_at": "2026-10-25T11:16:17.927Z",
+        "last_success_at": "2026-10-25T11:16:17.927Z",
+        "status": "fresh",
+        "consecutive_failures": 0,
+        "feature_count": 81,
+        "source_url": "https://nap.dgt.es/datex2/dgt/PredefinedLocationsPublication/radares/content.xml",
+        "licence": "https://nap.dgt.es/es/dataset/radares-fijos-dgt",
+        "attribution": "Fonte: DGT, Punto de Acceso Nacional de Tráfico",
+        "checksum": "sha256:e41eaea7a11080f70f9b04ef762f3f92328faca5541799fadb4b04992ce2ec55",
+        "last_error": null,
+        "history": [
+          {
+            "at": "2026-10-25T11:16:17.927Z",
             "ok": true
           }
         ],
@@ -3102,18 +4215,22 @@
       "volatile": true,
       "meta": {
         "layer_id": "tren",
-        "published_at": "2026-10-25T08:22:33.000Z",
-        "fetched_at": "2026-10-25T09:22:44.881Z",
-        "last_success_at": "2026-10-25T09:22:44.881Z",
+        "published_at": "2026-10-25T10:16:18.000Z",
+        "fetched_at": "2026-10-25T11:16:18.709Z",
+        "last_success_at": "2026-10-25T11:16:18.709Z",
         "status": "fresh",
         "consecutive_failures": 0,
-        "feature_count": 17,
+        "feature_count": 15,
         "source_url": "https://gtfsrt.renfe.com/vehicle_positions_LD.json",
         "licence": "CC-BY-4.0",
         "attribution": "Origen de los datos: Renfe Operadora",
-        "checksum": "sha256:62a4f64fc7e2df13092eb4f56ef718daeb708f4c79c2c04f7ed177d9410ac150",
+        "checksum": "sha256:18d91a63776e010991febffd20d3aaa462c17ec52a3ce1aa1275f05fae784c5c",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-10-25T11:16:18.709Z",
+            "ok": true
+          },
           {
             "at": "2026-10-25T09:22:44.881Z",
             "ok": true
@@ -3317,13 +4434,113 @@
           {
             "at": "2026-10-18T13:21:21.315Z",
             "ok": true
+          }
+        ],
+        "alert": false
+      }
+    },
+    {
+      "id": "vut-concello",
+      "title": {
+        "gl": "Vivendas de uso turístico por concello",
+        "es": "Viviendas de uso turístico por ayuntamiento"
+      },
+      "theme": "territorio",
+      "operator": {
+        "name": "Turismo de Galicia (Rexistro de Empresas e Actividades Turísticas, REAT)",
+        "url": "https://aei.turismo.gal/es/rexistro-de-empresas-e-actividades-turisticas"
+      },
+      "source_url": "https://descargascdn.xunta.gal/interno/smarxa/reat_directorio-alojamientos_esp.csv",
+      "licence": {
+        "spdx": "CC-BY-SA-4.0",
+        "text_url": "https://creativecommons.org/licenses/by-sa/4.0/deed.gl",
+        "quote": "<dct:license rdf:resource=\"https://creativecommons.org/licenses/by-sa/4.0/deed.gl\">",
+        "verified_at": "2026-10-24",
+        "odbl_compatible": "doubt",
+        "collection": "cc-by-sa-4.0",
+        "notes": "REAT: licenza declarada no RDF do conxunto 0022 de abertos.xunta.gal (dct:license CC BY-SA 4.0). Compatibilidade con ODbL en dúbida: colección CC BY-SA 4.0 (ADR 0005). Poboación: IGE, táboa 1558, mesma API e mesmas condicións ca indicadores-concellos (aviso legal do IGE, https://www.ige.gal/web/avisolegal.jsp, reutilización citando «Fonte: IGE»; non modificar os datos: a poboación publícase co valor orixinal). O CSV do REAT descárgase da ligazón directa (<a href>) da páxina do Área de Estudos e Investigación de Turismo de Galicia; a ruta é fixa (comprobado o 24/10/2026)."
+      },
+      "attribution": "Fonte: Turismo de Galicia, Rexistro de Empresas e Actividades Turísticas (REAT), CC BY-SA 4.0. Poboación: IGE: https://www.ige.gal. Contas por concello, taxas e comparacións con Galicia: cálculo propio da Fundación Galicia Sustentable. Este produto emprega a API de datos do Instituto Galego de Estatística (IGE), pero non está certificado ou aprobado polo IGE.",
+      "update_frequency": {
+        "declared": "P30D"
+      },
+      "geometry": "none",
+      "output": "geojson",
+      "privacy_notes": "As vivendas de uso turístico son domicilios particulares: só se publica o seu número e as súas prazas por concello, nunca a súa situación, nome, enderezo nin contacto. O ficheiro orixinal non trae coordenadas para case ningunha.",
+      "stale_after": "P45D",
+      "ingest": {
+        "every": "P7D"
+      },
+      "join": {
+        "layer": "concellos-parroquias",
+        "key": "codigo_ine",
+        "where": {
+          "nivel": "concello"
+        }
+      },
+      "indicators": [
+        {
+          "id": "vut_1000hab",
+          "label": {
+            "gl": "Vivendas de uso turístico por 1.000 habitantes",
+            "es": "Viviendas de uso turístico por 1.000 habitantes"
           },
-          {
-            "at": "2026-10-18T11:09:27.233Z",
-            "ok": true
+          "unit": "VUT/1.000 hab.",
+          "comparison": "points",
+          "higher_is": "neutral",
+          "source": "Turismo de Galicia (REAT) e IGE, táboa 1558 (Poboación)",
+          "note": {
+            "gl": "Cálculo propio: vivendas de uso turístico inscritas no REAT na data de referencia ÷ poboación do concello a 1 de xaneiro do último ano do IGE × 1.000. Conta inscricións, non vivendas alugadas de verdade. A diferenza con Galicia (en VUT por 1.000 hab.) tamén é cálculo propio; úsase diferenza e non índice porque hai concellos sen ningunha VUT.",
+            "es": "Cálculo propio: viviendas de uso turístico inscritas en el REAT en la fecha de referencia ÷ población del ayuntamiento a 1 de enero del último año del IGE × 1.000. Cuenta inscripciones, no viviendas realmente alquiladas. La diferencia con Galicia (en VUT por 1.000 hab.) también es cálculo propio; se usa diferencia y no índice porque hay ayuntamientos sin ninguna VUT."
+          }
+        },
+        {
+          "id": "prazas_vut_1000hab",
+          "label": {
+            "gl": "Prazas en vivendas de uso turístico por 1.000 habitantes",
+            "es": "Plazas en viviendas de uso turístico por 1.000 habitantes"
           },
+          "unit": "prazas/1.000 hab.",
+          "comparison": "points",
+          "higher_is": "neutral",
+          "source": "Turismo de Galicia (REAT) e IGE, táboa 1558 (Poboación)",
+          "note": {
+            "gl": "Cálculo propio: suma das prazas declaradas das VUT inscritas ÷ poboación do concello × 1.000. Unhas poucas VUT non indican prazas (campo vut_sen_prazas) e non suman. A diferenza con Galicia tamén é cálculo propio.",
+            "es": "Cálculo propio: suma de las plazas declaradas de las VUT inscritas ÷ población del ayuntamiento × 1.000. Unas pocas VUT no indican plazas (campo vut_sen_prazas) y no suman. La diferencia con Galicia también es cálculo propio."
+          }
+        }
+      ],
+      "style": {
+        "kind": "fill",
+        "label_field": "nome"
+      },
+      "table": {
+        "fields": [
+          "nome",
+          "codigo_ine",
+          "vut",
+          "prazas_vut",
+          "vut_1000hab",
+          "prazas_vut_1000hab",
+          "poboacion"
+        ]
+      },
+      "meta": {
+        "layer_id": "vut-concello",
+        "published_at": "2026-09-30T22:00:00.000Z",
+        "fetched_at": "2026-10-25T11:16:19.873Z",
+        "last_success_at": "2026-10-25T11:16:19.873Z",
+        "status": "fresh",
+        "consecutive_failures": 0,
+        "feature_count": 313,
+        "source_url": "https://descargascdn.xunta.gal/interno/smarxa/reat_directorio-alojamientos_esp.csv",
+        "licence": "CC-BY-SA-4.0",
+        "attribution": "Fonte: Turismo de Galicia, Rexistro de Empresas e Actividades Turísticas (REAT), CC BY-SA 4.0. Poboación: IGE: https://www.ige.gal. Contas por concello, taxas e comparacións con Galicia: cálculo propio da Fundación Galicia Sustentable. Este produto emprega a API de datos do Instituto Galego de Estatística (IGE), pero non está certificado ou aprobado polo IGE.",
+        "checksum": "sha256:b8e9d35d9090c6be3b6138e8d5d1cd9f692fcd69fd6043f01cd25829b17ca520",
+        "last_error": null,
+        "history": [
           {
-            "at": "2026-10-18T10:33:45.553Z",
+            "at": "2026-10-25T11:16:19.873Z",
             "ok": true
           }
         ],
