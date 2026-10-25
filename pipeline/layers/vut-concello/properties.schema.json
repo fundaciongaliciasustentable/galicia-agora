@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "vut-concello feature properties",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "codigo_ine",
+    "nome",
+    "vut",
+    "prazas_vut",
+    "vut_sen_prazas",
+    "poboacion",
+    "poboacion_ano",
+    "data_referencia",
+    "vut_1000hab",
+    "vut_1000hab_galicia",
+    "vut_1000hab_rel",
+    "vut_1000hab_periodo",
+    "prazas_vut_1000hab",
+    "prazas_vut_1000hab_galicia",
+    "prazas_vut_1000hab_rel",
+    "prazas_vut_1000hab_periodo"
+  ],
+  "properties": {
+    "codigo_ine": { "type": "string", "pattern": "^(15|27|32|36)\\d{3}$" },
+    "nome": { "type": "string", "minLength": 1, "description": "Nome do concello segundo o IGE" },
+    "vut": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Vivendas de uso turístico inscritas"
+    },
+    "prazas_vut": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Suma das prazas declaradas (sen as VUT que non as indican)"
+    },
+    "vut_sen_prazas": { "type": "integer", "minimum": 0 },
+    "poboacion": { "type": ["integer", "null"], "minimum": 0, "description": "IGE, táboa 1558" },
+    "poboacion_ano": { "type": "string", "pattern": "^\\d{4}$" },
+    "data_referencia": {
+      "type": "string",
+      "format": "date",
+      "description": "Data de referencia do REAT"
+    },
+    "vut_1000hab": { "type": ["number", "null"], "minimum": 0 },
+    "vut_1000hab_galicia": { "type": ["number", "null"], "minimum": 0 },
+    "vut_1000hab_rel": { "type": ["number", "null"] },
+    "vut_1000hab_periodo": { "type": "string" },
+    "prazas_vut_1000hab": { "type": ["number", "null"], "minimum": 0 },
+    "prazas_vut_1000hab_galicia": { "type": ["number", "null"], "minimum": 0 },
+    "prazas_vut_1000hab_rel": { "type": ["number", "null"] },
+    "prazas_vut_1000hab_periodo": { "type": "string" }
+  }
+}

@@ -1,0 +1,96 @@
+id: vut-concello
+title:
+  gl: Vivendas de uso turístico por concello
+  es: Viviendas de uso turístico por ayuntamiento
+theme: territorio
+operator:
+  name: Turismo de Galicia (Rexistro de Empresas e Actividades Turísticas, REAT)
+  url: https://aei.turismo.gal/es/rexistro-de-empresas-e-actividades-turisticas
+source_url: https://descargascdn.xunta.gal/interno/smarxa/reat_directorio-alojamientos_esp.csv
+licence:
+  spdx: CC-BY-SA-4.0
+  text_url: https://creativecommons.org/licenses/by-sa/4.0/deed.gl
+  quote: '<dct:license rdf:resource="https://creativecommons.org/licenses/by-sa/4.0/deed.gl">'
+  verified_at: 2026-10-24
+  odbl_compatible: doubt
+  collection: cc-by-sa-4.0
+  notes: >-
+    REAT: licenza declarada no RDF do conxunto 0022 de abertos.xunta.gal (dct:license CC BY-SA
+    4.0). Compatibilidade con ODbL en dúbida: colección CC BY-SA 4.0 (ADR 0005). Poboación:
+    IGE, táboa 1558, mesma API e mesmas condicións ca indicadores-concellos (aviso legal do IGE,
+    https://www.ige.gal/web/avisolegal.jsp, reutilización citando «Fonte: IGE»; non modificar
+    os datos: a poboación publícase co valor orixinal). O CSV do REAT descárgase da ligazón
+    directa (<a href>) da páxina do Área de Estudos e Investigación de Turismo de Galicia; a
+    ruta é fixa (comprobado o 24/10/2026).
+attribution: >-
+  Fonte: Turismo de Galicia, Rexistro de Empresas e Actividades Turísticas (REAT), CC BY-SA
+  4.0. Poboación: IGE: https://www.ige.gal. Contas por concello, taxas e comparacións con
+  Galicia: cálculo propio da Fundación Galicia Sustentable. Este produto emprega a API de datos
+  do Instituto Galego de Estatística (IGE), pero non está certificado ou aprobado polo IGE.
+update_frequency:
+  declared: P30D
+geometry: none
+output: geojson
+auth:
+  required: false
+privacy_notes: >-
+  As vivendas de uso turístico son domicilios particulares: só se publica o seu número e as
+  súas prazas por concello, nunca a súa situación, nome, enderezo nin contacto. O ficheiro
+  orixinal non trae coordenadas para case ningunha.
+stale_after: P45D
+ingest:
+  every: P7D
+join:
+  layer: concellos-parroquias
+  key: codigo_ine
+  where: { nivel: concello }
+indicators:
+  - id: vut_1000hab
+    label:
+      gl: Vivendas de uso turístico por 1.000 habitantes
+      es: Viviendas de uso turístico por 1.000 habitantes
+    unit: VUT/1.000 hab.
+    comparison: points
+    higher_is: neutral
+    source: Turismo de Galicia (REAT) e IGE, táboa 1558 (Poboación)
+    note:
+      gl: >-
+        Cálculo propio: vivendas de uso turístico inscritas no REAT na data de referencia ÷
+        poboación do concello a 1 de xaneiro do último ano do IGE × 1.000. Conta inscricións,
+        non vivendas alugadas de verdade. A diferenza con Galicia (en VUT por 1.000 hab.) tamén
+        é cálculo propio; úsase diferenza e non índice porque hai concellos sen ningunha VUT.
+      es: >-
+        Cálculo propio: viviendas de uso turístico inscritas en el REAT en la fecha de
+        referencia ÷ población del ayuntamiento a 1 de enero del último año del IGE × 1.000.
+        Cuenta inscripciones, no viviendas realmente alquiladas. La diferencia con Galicia (en
+        VUT por 1.000 hab.) también es cálculo propio; se usa diferencia y no índice porque hay
+        ayuntamientos sin ninguna VUT.
+  - id: prazas_vut_1000hab
+    label:
+      gl: Prazas en vivendas de uso turístico por 1.000 habitantes
+      es: Plazas en viviendas de uso turístico por 1.000 habitantes
+    unit: prazas/1.000 hab.
+    comparison: points
+    higher_is: neutral
+    source: Turismo de Galicia (REAT) e IGE, táboa 1558 (Poboación)
+    note:
+      gl: >-
+        Cálculo propio: suma das prazas declaradas das VUT inscritas ÷ poboación do concello ×
+        1.000. Unhas poucas VUT non indican prazas (campo vut_sen_prazas) e non suman. A
+        diferenza con Galicia tamén é cálculo propio.
+      es: >-
+        Cálculo propio: suma de las plazas declaradas de las VUT inscritas ÷ población del
+        ayuntamiento × 1.000. Unas pocas VUT no indican plazas (campo vut_sen_prazas) y no
+        suman. La diferencia con Galicia también es cálculo propio.
+style:
+  kind: fill
+  label_field: nome
+table:
+  fields:
+    - nome
+    - codigo_ine
+    - vut
+    - prazas_vut
+    - vut_1000hab
+    - prazas_vut_1000hab
+    - poboacion
