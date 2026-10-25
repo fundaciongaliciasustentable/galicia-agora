@@ -1,8 +1,8 @@
 {
   "layer_id": "indicadores-concellos",
   "published_at": null,
-  "fetched_at": "2026-10-25T11:15:29.602Z",
-  "last_success_at": "2026-10-25T11:15:29.602Z",
+  "fetched_at": "2026-10-25T11:30:50.971Z",
+  "last_success_at": "2026-10-25T11:30:50.971Z",
   "status": "fresh",
   "consecutive_failures": 0,
   "feature_count": 313,
@@ -12,6 +12,10 @@
   "checksum": "sha256:19d81ffcdcbf05e243ac49ee01f65dd8a85253e941060423670b6e6b248567e2",
   "last_error": null,
   "history": [
+    {
+      "at": "2026-10-25T11:30:50.971Z",
+      "ok": true
+    },
     {
       "at": "2026-10-25T11:15:29.602Z",
       "ok": true

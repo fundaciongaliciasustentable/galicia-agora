@@ -1,8 +1,8 @@
 {
   "layer_id": "centros-saude",
   "published_at": null,
-  "fetched_at": "2026-10-25T11:12:27.110Z",
-  "last_success_at": "2026-10-25T11:12:27.110Z",
+  "fetched_at": "2026-10-25T11:27:38.410Z",
+  "last_success_at": "2026-10-25T11:27:38.410Z",
   "status": "fresh",
   "consecutive_failures": 0,
   "feature_count": 557,
@@ -12,6 +12,10 @@
   "checksum": "sha256:a6a82593cdcec7475512e047d6fe86d6e3a0b5ebeb9b6857c62d08fd570c574e",
   "last_error": null,
   "history": [
+    {
+      "at": "2026-10-25T11:27:38.410Z",
+      "ok": true
+    },
     {
       "at": "2026-10-25T11:12:27.110Z",
       "ok": true

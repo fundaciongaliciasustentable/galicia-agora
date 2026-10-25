@@ -1,8 +1,8 @@
 {
   "layer_id": "centros-maiores",
   "published_at": "2026-10-05T06:52:48.000Z",
-  "fetched_at": "2026-10-25T11:12:24.988Z",
-  "last_success_at": "2026-10-25T11:12:24.988Z",
+  "fetched_at": "2026-10-25T11:27:36.144Z",
+  "last_success_at": "2026-10-25T11:27:36.144Z",
   "status": "fresh",
   "consecutive_failures": 0,
   "feature_count": 703,
@@ -12,6 +12,10 @@
   "checksum": "sha256:61729bad66478cf474786710a319198b3199f2abebbdbb5af084ecb79299fc78",
   "last_error": null,
   "history": [
+    {
+      "at": "2026-10-25T11:27:36.144Z",
+      "ok": true
+    },
     {
       "at": "2026-10-25T11:12:24.988Z",
       "ok": true

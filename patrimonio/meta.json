@@ -1,8 +1,8 @@
 {
   "layer_id": "patrimonio",
   "published_at": null,
-  "fetched_at": "2026-10-25T11:16:07.188Z",
-  "last_success_at": "2026-10-25T11:16:07.188Z",
+  "fetched_at": "2026-10-25T11:31:27.719Z",
+  "last_success_at": "2026-10-25T11:31:27.719Z",
   "status": "fresh",
   "consecutive_failures": 0,
   "feature_count": 664,
@@ -12,6 +12,10 @@
   "checksum": "sha256:ed56e00b716494bec07ac4ae8683f04488af8cc0c45b7cc40ad114d3d4dd7ddd",
   "last_error": null,
   "history": [
+    {
+      "at": "2026-10-25T11:31:27.719Z",
+      "ok": true
+    },
     {
       "at": "2026-10-25T11:16:07.188Z",
       "ok": true

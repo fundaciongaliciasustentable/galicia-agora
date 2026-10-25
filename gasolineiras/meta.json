@@ -1,17 +1,21 @@
 {
   "layer_id": "gasolineiras",
   "published_at": null,
-  "fetched_at": "2026-10-25T11:14:12.712Z",
-  "last_success_at": "2026-10-25T11:14:12.712Z",
+  "fetched_at": "2026-10-25T11:29:29.934Z",
+  "last_success_at": "2026-10-25T11:29:29.934Z",
   "status": "fresh",
   "consecutive_failures": 0,
   "feature_count": 728,
   "source_url": "https://sedeaplicaciones.minetur.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/EstacionesTerrestres/FiltroCCAA/12",
   "licence": "https://www.miteco.gob.es/es/atencion-al-ciudadano/aviso-legal.html",
   "attribution": "Fonte: Ministerio para a Transición Ecolóxica (MITERD), xeoportal de gasolineiras",
-  "checksum": "sha256:cf914f2ad40691de491b999553c688e8e72cb071f3a194502c0e65fe3441b036",
+  "checksum": "sha256:83dc4c0b722d639c77e52f68b8c335166c1fac89ffc0f86f6db572e8069d266b",
   "last_error": null,
   "history": [
+    {
+      "at": "2026-10-25T11:29:29.934Z",
+      "ok": true
+    },
     {
       "at": "2026-10-25T11:14:12.712Z",
       "ok": true

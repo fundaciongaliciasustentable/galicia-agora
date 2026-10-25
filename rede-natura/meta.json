@@ -1,10 +1,10 @@
 {
   "layer_id": "rede-natura",
   "published_at": null,
-  "fetched_at": "2026-10-25T11:16:14.282Z",
+  "fetched_at": "2026-10-25T11:31:34.253Z",
   "last_success_at": "2026-10-18T09:03:21.597Z",
   "status": "stale",
-  "consecutive_failures": 5,
+  "consecutive_failures": 6,
   "feature_count": 76,
   "source_url": "https://geoserver.iepnb.es/geoserver/RN2000/ows",
   "licence": "https://www.miteco.gob.es/es/atencion-al-ciudadano/aviso-legal.html",
@@ -12,6 +12,11 @@
   "checksum": "sha256:302244ac1781a3ee068ae74ef481c42043fe0448181a10201a6ede29f4427cc2",
   "last_error": "HTTP 403 for https://geoserver.iepnb.es/geoserver/RN2000/ows?service=WFS&version=2.0.0&request=GetCapabilities",
   "history": [
+    {
+      "at": "2026-10-25T11:31:34.253Z",
+      "ok": false,
+      "error": "HTTP 403 for https://geoserver.iepnb.es/geoserver/RN2000/ows?service=WFS&version=2.0.0&request=GetCapabilities"
+    },
     {
       "at": "2026-10-25T11:16:14.282Z",
       "ok": false,

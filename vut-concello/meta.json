@@ -1,8 +1,8 @@
 {
   "layer_id": "vut-concello",
   "published_at": "2026-09-30T22:00:00.000Z",
-  "fetched_at": "2026-10-25T11:16:19.873Z",
-  "last_success_at": "2026-10-25T11:16:19.873Z",
+  "fetched_at": "2026-10-25T11:31:39.450Z",
+  "last_success_at": "2026-10-25T11:31:39.450Z",
   "status": "fresh",
   "consecutive_failures": 0,
   "feature_count": 313,
@@ -12,6 +12,10 @@
   "checksum": "sha256:b8e9d35d9090c6be3b6138e8d5d1cd9f692fcd69fd6043f01cd25829b17ca520",
   "last_error": null,
   "history": [
+    {
+      "at": "2026-10-25T11:31:39.450Z",
+      "ok": true
+    },
     {
       "at": "2026-10-25T11:16:19.873Z",
       "ok": true

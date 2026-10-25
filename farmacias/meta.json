@@ -1,8 +1,8 @@
 {
   "layer_id": "farmacias",
   "published_at": null,
-  "fetched_at": "2026-10-25T11:13:43.768Z",
-  "last_success_at": "2026-10-25T11:13:43.768Z",
+  "fetched_at": "2026-10-25T11:28:55.203Z",
+  "last_success_at": "2026-10-25T11:28:55.203Z",
   "status": "fresh",
   "consecutive_failures": 0,
   "feature_count": 1382,
@@ -12,6 +12,10 @@
   "checksum": "sha256:85c8cb149e2027b5f880fd5592824130a6d0fd91b68429792632c5cd02b61715",
   "last_error": null,
   "history": [
+    {
+      "at": "2026-10-25T11:28:55.203Z",
+      "ok": true
+    },
     {
       "at": "2026-10-25T11:13:43.768Z",
       "ok": true
