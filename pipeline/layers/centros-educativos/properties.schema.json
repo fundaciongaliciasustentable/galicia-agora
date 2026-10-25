@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "centros-educativos feature properties",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "codigo",
+    "nome",
+    "tipo",
+    "etapa",
+    "titularidade",
+    "concertado",
+    "concello",
+    "enderezo",
+    "cp"
+  ],
+  "properties": {
+    "codigo": { "type": "string", "pattern": "^\\d{8}$", "description": "Código do centro" },
+    "nome": { "type": "string", "minLength": 1 },
+    "tipo": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Tipo de centro tal como o dá a fonte (CEIP, IES, CPR, EOI…)"
+    },
+    "etapa": {
+      "enum": [
+        "infantil",
+        "infantil_primaria",
+        "primaria",
+        "primaria_secundaria",
+        "secundaria",
+        "formacion_profesional",
+        "educacion_especial",
+        "adultos",
+        "outros",
+        null
+      ],
+      "description": "Derivada só do tipo cando o tipo a fixa; null se o tipo admite varias etapas"
+    },
+    "titularidade": { "enum": ["publica", "privada"] },
+    "concertado": { "type": "boolean", "description": "ENSINO_CONCERTADO" },
+    "concello": { "type": "string" },
+    "enderezo": { "type": "string" },
+    "cp": { "type": ["string", "null"], "pattern": "^\\d{5}$" }
+  }
+}

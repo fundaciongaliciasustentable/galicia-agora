@@ -1,0 +1,58 @@
+id: centros-educativos
+title:
+  gl: Centros educativos
+  es: Centros educativos
+theme: servizos
+operator:
+  name: Xunta de Galicia — Consellería de Educación, Ciencia, Universidades e FP
+  url: https://www.edu.xunta.gal/centroseducativos/
+source_url: https://abertos.xunta.gal/catalogo/ensino-formacion/-/dataset/0257/centros-educativos-galicia
+licence:
+  spdx: CC-BY-SA-4.0
+  text_url: https://abertos.xunta.gal/catalogo/ensino-formacion/-/dataset/0257/centros-educativos-galicia
+  quote: "Creative Commons BY SA 4.0"
+  verified_at: 2026-10-24
+  odbl_compatible: doubt
+  collection: cc-by-sa-4.0
+  notes: >-
+    Licenza indicada na ficha do conxunto 0257 en abertos.xunta.gal (CC BY-SA 4.0, ligazón a
+    creativecommons.org/licenses/by-sa/4.0). Compatibilidade coa ODbL en dúbida: colección
+    CC BY-SA (ADR 0005). Catro CSV, un por provincia (001, 003, 005, 007); cada URL redirixe
+    (302) a unha exportación do buscador de edu.xunta.gal. A exportación non trae
+    Last-Modified nin data propia: hora de publicación baleira. Frecuencia declarada «diario»
+    na ficha; frecuencia medida: non verificado. Orde das coordenadas inconsistente: o
+    adaptador proba (lat, lon) e (lon, lat) contra a caixa de Galicia e descarta as filas que
+    non caen en Galicia (11 de 1.624 o 24/10/2026: 0/0 e -13,49/0). A etapa derívase só do
+    tipo de centro cando o tipo a fixa (EEI infantil; CEIP e CRA infantil_primaria; CEP
+    primaria; CPI primaria_secundaria; IES secundaria; CIFP formacion_profesional; CEE e
+    CEEPR educacion_especial; EPAPU adultos; música, danza, artes, arte dramática,
+    idiomas e deportes outros). CPR, CPREX, «Cen. Pub.», EFAG, EFOG, CFEA, ESCO, IGAFA e
+    INSTITUTO quedan sen etapa (null): poden impartir varias ou non se comprobou. A fonte
+    non dá niveis educativos por centro.
+attribution: "Xunta de Galicia. Consellería de Educación, centros educativos de Galicia (abertos.xunta.gal, conxunto 0257)"
+update_frequency:
+  declared: P1D
+geometry: point
+output: geojson
+auth:
+  required: false
+privacy_notes: >-
+  Sen datos persoais: centros educativos (públicos e privados) e os seus enderezos. Retírase o
+  teléfono do centro (non se precisa no mapa) e os campos Provincia e DEPENDENTE.
+stale_after: P3D
+ingest:
+  every: P1D
+style:
+  kind: circle
+  color_token: --c-educacion
+  label_field: nome
+table:
+  fields:
+    - nome
+    - tipo
+    - etapa
+    - titularidade
+    - concertado
+    - concello
+    - enderezo
+    - cp
