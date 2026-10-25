@@ -1,0 +1,44 @@
+id: trafico-incidencias
+title:
+  gl: Incidencias de tráfico
+  es: Incidencias de tráfico
+theme: mobilidade
+operator:
+  name: Dirección General de Tráfico (DGT), Punto de Acceso Nacional de Tráfico
+  url: https://nap.dgt.es/es/dataset/incidencias-dgt-datex2-v3-7
+source_url: https://nap.dgt.es/datex2/v3/dgt/SituationPublication/datex2_v37.xml
+licence:
+  text_url: https://nap.dgt.es/es/dataset/incidencias-dgt-datex2-v3-7
+  quote: "Licencia Creative Commons Attribution"
+  verified_at: 2026-10-25
+  odbl_compatible: true
+  collection: odbl
+  notes: >-
+    A ficha do conxunto no NAP declara «Creative Commons Attribution» sen versión, pero os
+    «Términos de Uso» da mesma ficha remiten ao aviso legal da DGT
+    (https://www.dgt.es/contenido/aviso-legal/). Publícase na colección ODbL por decisión
+    da FGS; pediuse confirmación por escrito a nap@dgt.es (pendente).
+attribution: "Fonte: DGT, Punto de Acceso Nacional de Tráfico"
+update_frequency:
+  declared: PT1M
+  measured: PT2M
+  schedule: "*/10 * * * *"
+geometry: point
+output: geojson
+auth:
+  required: false
+privacy_notes: >-
+  Incidencias publicadas pola DGT (obras, accidentes, obstáculos, restricións). Non se
+  publican referencias internas. Exclúense os rexistros de balizas V16 conectadas
+  (referencia V16_), que van na capa trafico-balizas-v16 con regras propias. Os avisos de
+  vehículo avariado doutras fontes (112, DGT 3.0) non levan identificador de vehículo.
+stale_after: PT30M
+ingest:
+  every: PT10M
+volatile: true
+style:
+  kind: circle
+  color_token: --c-aviso
+  label_field: tipo
+table:
+  fields: [tipo, causa, estrada, pk, sentido, concello, inicio, gravidade, fonte, descricion]

@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "trafico-incidencias feature properties",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "tipo",
+    "causa",
+    "estrada",
+    "pk",
+    "pk_fin",
+    "sentido",
+    "concello",
+    "provincia",
+    "inicio",
+    "fin",
+    "gravidade",
+    "fonte",
+    "descricion"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^\\d+-\\d+$",
+      "description": "situación-rexistro na DGT"
+    },
+    "tipo": { "type": "string", "minLength": 1 },
+    "causa": { "type": ["string", "null"], "minLength": 1 },
+    "estrada": { "type": ["string", "null"] },
+    "pk": {
+      "type": ["number", "null"],
+      "minimum": 0,
+      "description": "Punto quilométrico (inicio)"
+    },
+    "pk_fin": {
+      "type": ["number", "null"],
+      "minimum": 0,
+      "description": "Punto quilométrico do outro extremo"
+    },
+    "sentido": { "type": ["string", "null"] },
+    "concello": { "type": ["string", "null"] },
+    "provincia": { "type": ["string", "null"] },
+    "inicio": { "type": ["string", "null"], "format": "date-time" },
+    "fin": { "type": ["string", "null"], "format": "date-time" },
+    "gravidade": { "enum": ["máxima", "alta", "media", "baixa", "mínima", null] },
+    "fonte": { "type": ["string", "null"], "description": "DGT, DGT 3.0, 112…" },
+    "descricion": { "type": "string", "minLength": 1, "maxLength": 200 }
+  }
+}
