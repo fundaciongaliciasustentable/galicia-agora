@@ -46,6 +46,10 @@ jobs:
             git worktree add --orphan -b data data-out
           fi
 
+      - name: Install pipeline tools
+        # osmium reads the OpenStreetMap extract (comercio-servizos-osm).
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq osmium-tool
+
       - name: Ingest
         env:
           FIRMS_MAP_KEY: ${{ secrets.FIRMS_MAP_KEY }}

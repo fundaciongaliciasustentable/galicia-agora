@@ -18,6 +18,8 @@ jobs:
           node-version: 24
           cache: npm
       - run: npm ci
+      # osmium for the OpenStreetMap layer's fixture test.
+      - run: sudo apt-get update -qq && sudo apt-get install -y -qq osmium-tool
       - run: npm run lint
       - run: npm test
       - run: npm run validate

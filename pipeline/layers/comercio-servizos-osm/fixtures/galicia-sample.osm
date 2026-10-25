@@ -1,0 +1,163 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<osm version="0.6" generator="osmium/1.19.1">
+  <bounds minlat="41.767217" minlon="-10.360118" maxlat="44.308135" maxlon="-6.727066"/>
+  <node id="285702563" version="4" timestamp="2019-12-16T16:13:15Z" lat="42.394448" lon="-8.8230775"/>
+  <node id="285702564" version="4" timestamp="2019-12-16T16:13:15Z" lat="42.3946822" lon="-8.8228859"/>
+  <node id="285702565" version="4" timestamp="2019-12-16T16:13:15Z" lat="42.3944193" lon="-8.8222969"/>
+  <node id="285702566" version="4" timestamp="2019-12-16T16:13:15Z" lat="42.3941555" lon="-8.8223948"/>
+  <node id="1428601768" version="13" timestamp="2025-10-15T16:46:06Z" lat="43.5387426" lon="-7.0384582">
+    <tag k="addr:city" v="Ribadeo"/>
+    <tag k="addr:housenumber" v="41"/>
+    <tag k="addr:postcode" v="27700"/>
+    <tag k="addr:street" v="Rúa de Antonio Otero"/>
+    <tag k="amenity" v="restaurant"/>
+    <tag k="contact:facebook" v="lasolanaribadeo"/>
+    <tag k="contact:instagram" v="la_solana_ribadeo"/>
+    <tag k="cuisine" v="seafood"/>
+    <tag k="email" v="J_B_M30@HOTMAIL.COM"/>
+    <tag k="indoor_seating" v="yes"/>
+    <tag k="name" v="La Solana"/>
+    <tag k="opening_hours" v="Th-Mo 12:00-23:30; Tu 12:00-16:00"/>
+    <tag k="outdoor_seating" v="yes"/>
+    <tag k="panoramax" v="746c04b5-d5c8-4cac-8107-75fc483ed728"/>
+    <tag k="phone" v="+34 982128835"/>
+    <tag k="reservation" v="yes"/>
+    <tag k="website" v="https://www.lasolanarestaurante.com/es/ar/1/inicio.html"/>
+    <tag k="website:menu" v="https://www.lasolanarestaurante.com/es/ar/4/carta.html"/>
+  </node>
+  <node id="1651696139" version="3" timestamp="2019-12-16T16:13:15Z" lat="42.3942808" lon="-8.8222923"/>
+  <node id="1651696149" version="3" timestamp="2019-12-16T16:13:15Z" lat="42.3943193" lon="-8.8223787"/>
+  <node id="1838992725" version="5" timestamp="2020-11-30T15:05:26Z" lat="43.5349515" lon="-7.0422249">
+    <tag k="brand" v="Eroski"/>
+    <tag k="brand:wikidata" v="Q1361349"/>
+    <tag k="brand:wikipedia" v="en:Eroski"/>
+    <tag k="contact:phone" v="+34 982129685"/>
+    <tag k="name" v="Eroski"/>
+    <tag k="opening_hours" v="Mo-Sa 09:00-21:30; Su off"/>
+    <tag k="shop" v="supermarket"/>
+    <tag k="source" v="survey"/>
+  </node>
+  <node id="1838992766" version="3" timestamp="2019-09-29T00:13:44Z" lat="43.5346926" lon="-7.0414549">
+    <tag k="amenity" v="pharmacy"/>
+    <tag k="dispensing" v="yes"/>
+    <tag k="healthcare" v="pharmacy"/>
+  </node>
+  <node id="1999312165" version="5" timestamp="2024-12-21T16:29:07Z" lat="42.6461216" lon="-8.8823228">
+    <tag k="check_date" v="2024-12-21"/>
+    <tag k="name" v="O Forno de Vimbieiro"/>
+    <tag k="shop" v="vacant"/>
+  </node>
+  <node id="2405451918" version="3" timestamp="2024-02-03T19:47:39Z" lat="43.5363815" lon="-7.0447745">
+    <tag k="addr:housenumber" v="6"/>
+    <tag k="addr:street" v="Avenida de Galicia"/>
+    <tag k="contact:facebook" v="https://m.facebook.com/decoramaeo?wtsid=rdr_0gBWlX6qztsuloF2Z"/>
+    <tag k="description" v="Especialistas en el diseño, fabricación e instalación de muebles de cocina a medida. Armarios empotrados, muebles de baño y complementos, encimeras, fregaderos y grifería. Venta de electrodomésticos."/>
+    <tag k="name" v="Decorama"/>
+    <tag k="opening_hours" v="Mo-Fr 10:00-13:30; Sa 11:00-13:30"/>
+    <tag k="phone" v="+34 982130725"/>
+    <tag k="shop" v="furniture"/>
+    <tag k="website" v="https://sites.google.com/site/decorama1989/Home"/>
+  </node>
+  <node id="2405451923" version="4" timestamp="2025-10-10T08:50:10Z" lat="43.5364242" lon="-7.0464039">
+    <tag k="name" v="Imagen 365"/>
+    <tag k="shop" v="hairdresser"/>
+  </node>
+  <node id="4746811604" version="3" timestamp="2020-08-15T11:29:28Z" lat="43.5411193" lon="-7.0631681"/>
+  <node id="4746811605" version="3" timestamp="2020-08-15T11:29:28Z" lat="43.5409498" lon="-7.0626624"/>
+  <node id="4746811606" version="3" timestamp="2020-08-15T11:29:28Z" lat="43.5404606" lon="-7.0629745"/>
+  <node id="4746811607" version="3" timestamp="2020-08-15T11:29:28Z" lat="43.5406301" lon="-7.0634802"/>
+  <node id="4944409973" version="5" timestamp="2024-02-03T19:47:39Z" lat="43.5359521" lon="-7.0427539">
+    <tag k="addr:city" v="Ribadeo"/>
+    <tag k="addr:housenumber" v="4"/>
+    <tag k="addr:postcode" v="27700"/>
+    <tag k="addr:street" v="Rúa Doutor Moreda"/>
+    <tag k="contact:facebook" v="FumarelRibadeo"/>
+    <tag k="name" v="Vineria Fumarel"/>
+    <tag k="opening_hours" v="Su, Tu-Th 11:00-17:00, 20:00-00:00; Fr-Sa 11:00-17:00, 20:00-01:00"/>
+    <tag k="phone" v="+34 639156738"/>
+    <tag k="shop" v="wine"/>
+    <tag k="website" v="http://fumarelribadeo.com/"/>
+  </node>
+  <node id="5469472519" version="6" timestamp="2026-08-16T09:47:58Z" lat="43.5369151" lon="-7.0411802">
+    <tag k="amenity" v="atm"/>
+    <tag k="brand" v="Abanca"/>
+    <tag k="brand:wikidata" v="Q9598744"/>
+    <tag k="check_date" v="2026-08-16"/>
+    <tag k="name" v="Abanca"/>
+    <tag k="network" v="Euro 6000"/>
+    <tag k="official_name" v="ABANCA Corporación Bancaria"/>
+    <tag k="operator" v="Abanca"/>
+    <tag k="operator:wikidata" v="Q9598744"/>
+    <tag k="source" v="survey"/>
+  </node>
+  <node id="6785910564" version="2" timestamp="2019-12-16T16:13:15Z" lat="42.3943868" lon="-8.822913"/>
+  <node id="7060835653" version="1" timestamp="2019-12-16T16:13:15Z" lat="42.3943779" lon="-8.8229203"/>
+  <node id="7721536600" version="1" timestamp="2020-07-16T15:45:11Z" lat="42.0247856" lon="-8.656002"/>
+  <node id="7721536601" version="1" timestamp="2020-07-16T15:45:11Z" lat="42.0247534" lon="-8.6556646"/>
+  <node id="7721536602" version="1" timestamp="2020-07-16T15:45:11Z" lat="42.0247638" lon="-8.6556628"/>
+  <node id="7721536603" version="1" timestamp="2020-07-16T15:45:11Z" lat="42.0247588" lon="-8.6556105"/>
+  <node id="7721536604" version="1" timestamp="2020-07-16T15:45:11Z" lat="42.0248674" lon="-8.6556045"/>
+  <node id="7721536605" version="1" timestamp="2020-07-16T15:45:11Z" lat="42.0248704" lon="-8.6556353"/>
+  <node id="7721536606" version="1" timestamp="2020-07-16T15:45:11Z" lat="42.0248794" lon="-8.6556347"/>
+  <node id="7721536607" version="1" timestamp="2020-07-16T15:45:11Z" lat="42.0249292" lon="-8.6558238"/>
+  <node id="7721536608" version="1" timestamp="2020-07-16T15:45:11Z" lat="42.0249481" lon="-8.655974"/>
+  <node id="7814979889" version="1" timestamp="2020-08-15T11:29:28Z" lat="43.5406027" lon="-7.0633984"/>
+  <way id="26100054" version="8" timestamp="2019-12-16T16:13:15Z">
+    <nd ref="285702563"/>
+    <nd ref="285702564"/>
+    <nd ref="285702565"/>
+    <nd ref="1651696149"/>
+    <nd ref="1651696139"/>
+    <nd ref="285702566"/>
+    <nd ref="6785910564"/>
+    <nd ref="7060835653"/>
+    <nd ref="285702563"/>
+    <tag k="building" v="yes"/>
+    <tag k="name" v="Lonxa de Portonovo"/>
+    <tag k="name:en" v="Fish market of Portonovo"/>
+    <tag k="shop" v="seafood"/>
+  </way>
+  <way id="481782408" version="5" timestamp="2020-08-15T11:29:28Z">
+    <nd ref="4746811607"/>
+    <nd ref="4746811604"/>
+    <nd ref="4746811605"/>
+  </way>
+  <way id="827065030" version="1" timestamp="2020-07-16T15:45:11Z">
+    <nd ref="7721536608"/>
+    <nd ref="7721536607"/>
+    <nd ref="7721536606"/>
+    <nd ref="7721536605"/>
+    <nd ref="7721536604"/>
+    <nd ref="7721536603"/>
+    <nd ref="7721536602"/>
+    <nd ref="7721536601"/>
+    <nd ref="7721536600"/>
+    <nd ref="7721536608"/>
+    <tag k="amenity" v="restaurant"/>
+    <tag k="building" v="restaurant"/>
+    <tag k="cuisine" v="barbecue"/>
+    <tag k="name" v="Senhora da Cabeça"/>
+  </way>
+  <way id="837345232" version="1" timestamp="2020-08-15T11:29:28Z">
+    <nd ref="7814979889"/>
+    <nd ref="4746811607"/>
+  </way>
+  <way id="837345233" version="1" timestamp="2020-08-15T11:29:28Z">
+    <nd ref="4746811605"/>
+    <nd ref="4746811606"/>
+    <nd ref="7814979889"/>
+  </way>
+  <relation id="11506841" version="2" timestamp="2021-12-24T12:07:55Z">
+    <member type="way" ref="481782408" role="outer"/>
+    <member type="way" ref="837345232" role="outer"/>
+    <member type="way" ref="837345233" role="outer"/>
+    <tag k="brand" v="Mercadona"/>
+    <tag k="brand:wikidata" v="Q377705"/>
+    <tag k="brand:wikipedia" v="es:Mercadona"/>
+    <tag k="building" v="yes"/>
+    <tag k="name" v="Mercadona"/>
+    <tag k="shop" v="supermarket"/>
+    <tag k="type" v="multipolygon"/>
+    <tag k="website" v="https://www.mercadona.es"/>
+  </relation>
+</osm>

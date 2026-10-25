@@ -88,6 +88,7 @@
   --c-educacion: #2e6b8a;
   --c-maiores: #8a3b5c;
   --c-turismo: #b8860b;
+  --c-comercio: #5b6b2e;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -130,6 +131,7 @@
     --c-educacion: #6fa8c7;
     --c-maiores: #d48aa8;
     --c-turismo: #e0b85a;
+    --c-comercio: #b5c46a;
   }
 }
 
@@ -172,4 +174,5 @@
   --c-educacion: #6fa8c7;
   --c-maiores: #d48aa8;
   --c-turismo: #e0b85a;
+  --c-comercio: #b5c46a;
 }

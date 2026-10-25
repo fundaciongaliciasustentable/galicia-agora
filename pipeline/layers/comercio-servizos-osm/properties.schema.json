@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "comercio-servizos-osm feature properties",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["osm_id", "nome", "categoria", "tag", "marca", "horario", "web"],
+  "properties": {
+    "osm_id": {
+      "type": "string",
+      "pattern": "^[nwr]\\d+$",
+      "description": "OSM element: n node, w way, r relation"
+    },
+    "nome": { "type": ["string", "null"], "minLength": 1, "description": "name, else brand" },
+    "categoria": { "enum": ["alimentación", "hostalaría", "servizos", "outros comercios"] },
+    "tag": {
+      "type": "string",
+      "pattern": "^(amenity|shop)=\\S+$",
+      "description": "Source tag, e.g. amenity=cafe, shop=bakery"
+    },
+    "marca": { "type": ["string", "null"], "minLength": 1, "description": "brand" },
+    "horario": {
+      "type": ["string", "null"],
+      "minLength": 1,
+      "description": "opening_hours in OSM syntax"
+    },
+    "web": { "type": ["string", "null"], "pattern": "^https?://\\S+$", "description": "website" }
+  }
+}

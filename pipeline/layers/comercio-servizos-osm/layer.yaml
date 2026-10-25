@@ -1,0 +1,45 @@
+id: comercio-servizos-osm
+title:
+  gl: Comercio e servizos (OpenStreetMap)
+  es: Comercio y servicios (OpenStreetMap)
+theme: territorio
+operator:
+  name: Colaboradores de OpenStreetMap (extracto de Geofabrik)
+  url: https://www.openstreetmap.org/
+source_url: https://download.geofabrik.de/europe/spain/galicia-latest.osm.pbf
+licence:
+  spdx: ODbL-1.0
+  text_url: https://www.openstreetmap.org/copyright
+  quote: "as long as you credit OpenStreetMap and its contributors"
+  verified_at: 2026-10-24
+  odbl_compatible: true
+  collection: odbl
+  notes: >-
+    Open Database License 1.0. O extracto diario de Geofabrik redistribúe os datos de
+    OpenStreetMap sen cambiar a licenza. Os polígonos de concellos-parroquias (CC BY-SA 4.0)
+    só se usan para descartar puntos fóra de Galicia; ningún dato deles pasa a esta capa.
+attribution: "© Colaboradores de OpenStreetMap"
+update_frequency:
+  declared: P1D
+  measured: P1D
+  schedule: '40 7 * * *'
+geometry: point
+output: geojson
+auth:
+  required: false
+privacy_notes: >-
+  Só establecementos abertos ao público (comercios, hostalaría e servizos) e só estes campos:
+  nome, categoría, etiqueta OSM, marca, horario e web. Descártanse teléfonos, correos,
+  enderezos e o resto de etiquetas, aínda que estean en OSM. O nome pode coincidir co dun
+  titular (farmacias, pequenos comercios): é o rótulo do negocio tal como figura en OSM.
+  Hora de publicación = marca de tempo de replicación da cabeceira do PBF (estado dos datos
+  OSM), ou Last-Modified do ficheiro se falta.
+stale_after: P3D
+ingest:
+  every: P1D
+style:
+  kind: circle
+  color_token: --c-comercio
+  label_field: nome
+table:
+  fields: [nome, categoria, tag, marca, horario, web, osm_id]
