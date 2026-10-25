@@ -94,14 +94,15 @@ jobs:
           FTPS_HOST: ${{ secrets.FTPS_HOST }}
         run: |
           deploy=false
+          # Accept a pasted URL: drop whitespace, scheme, path and port.
+          host=$(printf %s "$FTPS_HOST" | tr -d '[:space:]' | sed -E 's#^[A-Za-z]+://##; s#/.*$##; s#:[0-9]*$##')
           if [ -z "$FTPS_HOST" ]; then
             echo "::notice::FTPS secrets not set: deploy skipped"
+          elif ! printf %s "$host" | grep -Eq '^[A-Za-z0-9.-]+\.[A-Za-z]{2,}$'; then
+            echo "::error::FTPS_HOST is not a server name even after removing ftp://, port and slashes: deploy skipped"
           else
-            case "$FTPS_HOST" in
-              *://*|*/*|*:*|*[[:space:]]*)
-                echo "::error::FTPS_HOST must be only the server name (no ftp://, port, slash or spaces): deploy skipped" ;;
-              *) deploy=true ;;
-            esac
+            [ "$host" != "$FTPS_HOST" ] && echo "::notice::FTPS_HOST normalised (scheme, port, slash or whitespace removed)"
+            deploy=true
           fi
           echo "deploy=$deploy" >> "$GITHUB_OUTPUT"
 
@@ -139,9 +140,11 @@ jobs:
           FTPS_PASSWORD: ${{ secrets.FTPS_PASSWORD }}
           FTPS_DIR: ${{ secrets.FTPS_DIR }}
         run: |
+          host=$(printf %s "$FTPS_HOST" | tr -d '[:space:]' | sed -E 's#^[A-Za-z]+://##; s#/.*$##; s#:[0-9]*$##')
+          dir=$(printf %s "$FTPS_DIR" | tr -d '\r\n')
           # Explicit FTPS (AUTH TLS on port 21): Dinahosting does not offer implicit FTPS (990).
-          lftp -u "$FTPS_USER","$FTPS_PASSWORD" "ftp://$FTPS_HOST" -e "
+          lftp -u "$FTPS_USER","$FTPS_PASSWORD" "ftp://$host" -e "
             set ftp:ssl-force true; set ftp:ssl-protect-data true; set ssl:verify-certificate true;
             set net:timeout 30; set net:max-retries 3; set net:reconnect-interval-base 10;
-            mirror --reverse --only-newer --parallel=4 --verbose=1 --exclude-glob .git* dist/ ${FTPS_DIR:-/};
+            mirror --reverse --only-newer --parallel=4 --verbose=1 --exclude-glob .git* dist/ ${dir:-/};
             quit"
