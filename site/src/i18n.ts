@@ -9,10 +9,11 @@ export const THEMES: Record<string, { gl: string; es: string }> = {
   'lume-monte': { gl: 'Lume e monte', es: 'Fuego y monte' },
   'tempo-aire': { gl: 'Tempo e aire', es: 'Tiempo y aire' },
   mobilidade: { gl: 'Mobilidade', es: 'Movilidad' },
+  servizos: { gl: 'Servizos', es: 'Servicios' },
   territorio: { gl: 'Territorio', es: 'Territorio' },
 };
 
-export const THEME_ORDER = ['auga-mar', 'lume-monte', 'tempo-aire', 'mobilidade', 'territorio'];
+export const THEME_ORDER = ['auga-mar', 'lume-monte', 'tempo-aire', 'mobilidade', 'servizos', 'territorio'];
 
 const STRINGS = {
   tagline: { gl: 'Galicia como é agora mesmo', es: 'Galicia tal como es ahora mismo' },

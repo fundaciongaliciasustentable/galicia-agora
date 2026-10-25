@@ -82,6 +82,11 @@
   --c-espazo: var(--gs-oliva);
   --c-patrimonio: #8a3b5c;
   --c-auga: var(--gs-azul);
+  --c-saude: #b4233a;
+  --c-hospital: #7a1426;
+  --c-farmacia: var(--gs-exito);
+  --c-educacion: #2e6b8a;
+  --c-maiores: #8a3b5c;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -118,6 +123,11 @@
     --c-espazo: #c4c46a;
     --c-patrimonio: #d48aa8;
     --c-auga: #6fa8c7;
+    --c-saude: #f08a9a;
+    --c-hospital: #e0607a;
+    --c-farmacia: #7fbf8e;
+    --c-educacion: #6fa8c7;
+    --c-maiores: #d48aa8;
   }
 }
 
@@ -154,4 +164,9 @@
   --c-espazo: #c4c46a;
   --c-patrimonio: #d48aa8;
   --c-auga: #6fa8c7;
+  --c-saude: #f08a9a;
+  --c-hospital: #e0607a;
+  --c-farmacia: #7fbf8e;
+  --c-educacion: #6fa8c7;
+  --c-maiores: #d48aa8;
 }

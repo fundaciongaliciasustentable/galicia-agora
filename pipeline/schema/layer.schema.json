@@ -32,7 +32,7 @@
       }
     },
     "theme": {
-      "enum": ["auga-mar", "lume-monte", "tempo-aire", "mobilidade", "territorio"]
+      "enum": ["auga-mar", "lume-monte", "tempo-aire", "mobilidade", "servizos", "territorio"]
     },
     "operator": {
       "type": "object",
