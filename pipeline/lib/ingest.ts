@@ -13,7 +13,7 @@ import type {
 } from './adapter.ts';
 import { parseDuration } from './duration.ts';
 import { fetchWithRetry } from './http.ts';
-import { type Attempt, ageStatus, type Decision, publish, readMeta } from './publish.ts';
+import { type Attempt, type Decision, publish, readMeta } from './publish.ts';
 import type { RasterAdapter } from './raster.ts';
 import { loadYaml, validate, validateWithSchema } from './schemas.ts';
 
@@ -55,8 +55,9 @@ export function staleAfterMs(layer: LayerDef): number {
 
 /**
  * Read another layer's last good published output (derived layers, depends_on).
- * Throws when the layer is undeclared, has no good file, or is stale by its own
- * stale_after: a derived layer must not be rebuilt from old inputs.
+ * Throws when the layer is undeclared, has no good file, or its last good data
+ * is older than its own stale_after: a derived layer must not be rebuilt from
+ * old inputs. A single failed attempt on a recent good file does not block it.
  */
 export async function readPublishedLayer(
   layer: LayerDef,
@@ -70,9 +71,10 @@ export async function readPublishedLayer(
   }
   const meta = await readMeta(join(outDir, depId, 'meta.json'));
   if (!meta?.checksum) throw new Error(`input layer ${depId} has no published data`);
-  const status = ageStatus(meta, now, staleAfterMs(await loadLayer(depId, layersDir)));
-  if (status !== 'fresh') {
-    throw new Error(`input layer ${depId} is ${status} (last success ${meta.last_success_at})`);
+  const maxAge = staleAfterMs(await loadLayer(depId, layersDir));
+  const success = meta.last_success_at ? Date.parse(meta.last_success_at) : Number.NaN;
+  if (!(now.getTime() - success <= maxAge)) {
+    throw new Error(`input layer ${depId} is stale: last good data ${meta.last_success_at}`);
   }
   const collection = JSON.parse(
     await readFile(join(outDir, depId, 'data.geojson'), 'utf8'),
