@@ -1,0 +1,55 @@
+id: centros-maiores
+title:
+  gl: Centros para persoas maiores
+  es: Centros para personas mayores
+theme: servizos
+operator:
+  name: Xunta de Galicia — Consellería de Política Social (RUEPSS)
+  url: https://benestar.xunta.es/XiacWeb/
+source_url: https://abertos.xunta.gal/catalogo/saude-servicios-sociais/-/dataset/0299/centros-para-persoas-maiores
+licence:
+  spdx: CC-BY-SA-4.0
+  text_url: https://abertos.xunta.gal/catalogo/saude-servicios-sociais/-/dataset/0299/centros-para-persoas-maiores
+  quote: "Creative Commons BY SA 4.0"
+  verified_at: 2026-10-24
+  odbl_compatible: doubt
+  collection: cc-by-sa-4.0
+  notes: >-
+    Licenza indicada na ficha do conxunto 0299 en abertos.xunta.gal (CC BY-SA 4.0).
+    Compatibilidade coa ODbL en dúbida: colección CC BY-SA (ADR 0005). Ficheiro único
+    https://ficheiros-web.xunta.gal/abertos/servizos_sociais/centros_maiores.kml (703 centros,
+    ~2,3 MB) con Last-Modified e ETag; a hora de publicación é o Last-Modified (05/10/2026
+    na última descarga). Frecuencia declarada «mensual» na ficha. A fonte non dá prazas nin
+    capacidade. Que a ligazón RUEPSS (chaves codificadas como %7B %7D) abra a ficha do
+    centro: non verificado.
+attribution: "Xunta de Galicia. Consellería de Política Social, centros para persoas maiores (RUEPSS; abertos.xunta.gal, conxunto 0299)"
+update_frequency:
+  declared: P30D
+geometry: point
+output: geojson
+auth:
+  required: false
+privacy_notes: >-
+  Retíranse o correo electrónico (Mail, Correo), o teléfono, o horario e as instalacións.
+  A entidade titular publícase só cando é unha organización (forma xurídica como SL, SA,
+  SC ou cooperativa, ou palabras como fundación, asociación, concello, congregación); cando
+  é unha persoa física (unhas 40 vivendas comunitarias e centros de día pequenos en outubro
+  de 2026) ou o nome leva un NIF, queda baleira. O nome do centro é o rexistrado no RUEPSS.
+stale_after: P45D
+ingest:
+  every: P7D
+style:
+  kind: circle
+  color_token: --c-maiores
+  label_field: nome
+table:
+  fields:
+    - nome
+    - tipo
+    - iniciativa
+    - entidade
+    - concello
+    - enderezo
+    - cp
+    - servizos
+    - ligazon_ruepss

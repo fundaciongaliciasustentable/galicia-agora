@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "centros-maiores feature properties",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "nome",
+    "tipo",
+    "iniciativa",
+    "entidade",
+    "concello",
+    "enderezo",
+    "cp",
+    "servizos",
+    "ligazon_ruepss"
+  ],
+  "properties": {
+    "id": { "type": "string", "minLength": 1, "description": "id do Placemark no KML" },
+    "nome": { "type": "string", "minLength": 1 },
+    "tipo": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Tipo de centro (residencia, centro de día, vivenda comunitaria…)"
+    },
+    "iniciativa": {
+      "enum": ["publica", "privada", "social"],
+      "description": "Iniciativa da entidade titular; privada = con ánimo de lucro"
+    },
+    "entidade": {
+      "type": ["string", "null"],
+      "minLength": 1,
+      "description": "Entidade titular, só se é unha organización; null se é unha persoa física"
+    },
+    "concello": { "type": "string" },
+    "enderezo": { "type": "string" },
+    "cp": { "type": ["string", "null"], "pattern": "^\\d{5}$" },
+    "servizos": {
+      "type": ["string", "null"],
+      "maxLength": 160,
+      "description": "Servizos do centro, lista recortada"
+    },
+    "ligazon_ruepss": {
+      "type": ["string", "null"],
+      "format": "uri",
+      "pattern": "^https://ruepss\\.xunta\\.gal/",
+      "description": "Ficha do centro no RUEPSS"
+    }
+  }
+}

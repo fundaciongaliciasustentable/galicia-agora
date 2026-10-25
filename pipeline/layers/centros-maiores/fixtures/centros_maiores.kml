@@ -1,0 +1,884 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<atom:author>
+		<atom:name>Xunta de Galicia</atom:name>
+	</atom:author>
+	<atom:link href="https://benestar.xunta.es/XiacWeb/" rel="related"/>
+	<name>Centros de benestar</name>
+	<open>1</open>
+	<description>703 centros de benestar da área de maiores</description>
+
+	<Style id="TemaXunta">
+		<IconStyle>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/shapes/schools.png</href>
+			</Icon>
+		</IconStyle>
+		<LineStyle>
+			<color>00B67F06</color>
+			<width>4</width>
+		</LineStyle>
+		<PolyStyle>
+			<color>92E09E00</color>
+		</PolyStyle>
+		<LabelStyle>
+			<color>FFFFFFFF</color>
+		</LabelStyle>
+		<BalloonStyle>
+			<bgColor>FFB67F06</bgColor>
+			<textColor>FFFFFFFF</textColor>
+
+			<text><![CDATA[
+				<style type="text/css">ul li{list-style-type:none;}</style>
+				<p><strong>$[name]</strong><br />
+					<em>$[description]</em></p>
+				<p><strong>Contacto:</strong>
+				<ul>
+					<li><strong>$[Enderezo/displayName]:</strong></li>
+					<p>$[Enderezo]<br/>$[CodigoPostal] $[Concello]<br/>$[Provincia]</p>
+					<li><strong>$[Telefono/displayName]:</strong> $[Telefono]</li>
+					<li>$[Correo]</li>
+				</ul>
+				<p><strong>Horario:</strong> $[Horario]</p>
+				<p><strong>Instalacións:</strong> $[Instalacions]</p>
+				<p><strong>Servizos:</strong> $[Servizos]</p>
+			]]></text>
+		</BalloonStyle>
+	</Style>
+
+	<ScreenOverlay>
+		<name>Xunta de Galicia</name>
+		<visibility>1</visibility>
+		<Icon>
+			<href>http://www.xunta.es/tema-portal-xunta/images/logoXuntaPe.png</href>
+		</Icon>
+		<overlayXY x="0.1" xunits="fraction" y="1.1" yunits="fraction"/>
+		<screenXY x="0.01" xunits="fraction" y="1" yunits="fraction"/>
+		<rotationXY x="0" xunits="fraction" y="0" yunits="fraction"/>
+		<size x="0" xunits="fraction" y="0" yunits="fraction"/>
+	</ScreenOverlay>
+
+	<Folder id="acoruna">
+		<name>A Coruña</name>
+		<open>1</open>
+ 	<description>207 centros de benestar na provincia</description>
+                  <Placemark id="E0C83">
+            <name>RESIDENCIA DE MAIORES DE RIBEIRA</name>
+            <description>RESIDENCIA</description>
+            <ExtendedData>
+               <Data name="Mail">
+                  <displayName>Correo electrónico</displayName>
+                  <value>redactado@example.invalid</value>
+               </Data>
+               <Data name="Correo">
+                  <displayName>Correo electrónico</displayName>
+                  <value><![CDATA[<a href="mailto:redactado@example.invalid" style="color:#FFF;">Correo electrónico</a><br />]]></value>
+               </Data>
+               <Data name="Web">
+                  <displayName>web RUEPSS</displayName>
+                  <value>https://ruepss.xunta.gal/XiacWeb/centros/publico/aCentroPublico.do?{actionForm.id_cent}=5634</value>
+               </Data>
+               <Data name="Enderezo">
+                  <displayName>Enderezo</displayName>
+                  <value>ROMERO ORTIZ Nº1 E Nº 8 RUAS CHURRUCA E PORTUGAL</value>
+               </Data>
+               <Data name="Concello">
+                  <displayName>Concello</displayName>
+                  <value>RIBEIRA</value>
+               </Data>
+               <Data name="CodigoPostal">
+                  <displayName>Código Postal</displayName>
+                  <value>15960</value>
+               </Data>
+               <Data name="Provincia">
+                  <displayName>Provincia</displayName>
+                  <value>CORUÑA (A)</value>
+               </Data>
+               <Data name="Telefono">
+                  <displayName>Teléfono</displayName>
+                  <value>981835420</value>
+               </Data>
+               <Data name="Horario">
+                  <displayName>Horario</displayName>
+                  <value>24 horas</value>
+               </Data>
+               <Data name="Servizos">
+                  <displayName>Servizos do centro</displayName>
+                  <value>animacion socio-cultural, atencion medica, fisioterapia, lavanderia, peluqueria, podoloxia, prazas de respiro familiar, servizo de cociña, servizo de comedor propio, servizos relixiosos, unidade de psicoxeriatria, ximnasia</value>
+               </Data>
+               <Data name="Instalacions">
+                  <displayName>Instalacións do centro</displayName>
+                  <value>ascensor, axudas tecnicas, cafeteria, patio cuberto, sala de curas/enfermeria, sala de estar, sala de lectura, sala de rehabilitación, sala de television, sala de usos multiples, velatorio</value>
+               </Data>
+               <Data name="Entidade">
+                  <displayName>Entidade</displayName>
+                  <value>XUNTA DE GALICIA</value>
+               </Data>
+               <Data name="Iniciativa_entidade">
+                  <displayName>Iniciativa da entidade</displayName>
+                  <value>INICIATIVA PÚBLICA</value>
+               </Data>
+            </ExtendedData>
+            <Point>
+               <coordinates>-8.98858,42.55286</coordinates>
+            </Point>
+            <styleUrl>#TemaXunta</styleUrl>
+         </Placemark>
+         <Placemark id="E0C84">
+            <name>RESIDENCIA DE MAIORES CONCEPCION ARENAL</name>
+            <description>GRAN CENTRO RESIDENCIAL</description>
+            <ExtendedData>
+               <Data name="Mail">
+                  <displayName>Correo electrónico</displayName>
+                  <value>redactado@example.invalid</value>
+               </Data>
+               <Data name="Correo">
+                  <displayName>Correo electrónico</displayName>
+                  <value><![CDATA[<a href="mailto:redactado@example.invalid" style="color:#FFF;">Correo electrónico</a><br />]]></value>
+               </Data>
+               <Data name="Web">
+                  <displayName>web RUEPSS</displayName>
+                  <value>https://ruepss.xunta.gal/XiacWeb/centros/publico/aCentroPublico.do?{actionForm.id_cent}=67842</value>
+               </Data>
+               <Data name="Enderezo">
+                  <displayName>Enderezo</displayName>
+                  <value>SEBASTIAN MARTINEZ RISCO S/N</value>
+               </Data>
+               <Data name="Concello">
+                  <displayName>Concello</displayName>
+                  <value>CORUÑA (A)</value>
+               </Data>
+               <Data name="CodigoPostal">
+                  <displayName>Código Postal</displayName>
+                  <value>15009</value>
+               </Data>
+               <Data name="Provincia">
+                  <displayName>Provincia</displayName>
+                  <value>CORUÑA (A)</value>
+               </Data>
+               <Data name="Telefono">
+                  <displayName>Teléfono</displayName>
+                  <value>981174188</value>
+               </Data>
+               <Data name="Horario">
+                  <displayName>Horario</displayName>
+                  <value>24 HORAS</value>
+               </Data>
+               <Data name="Servizos">
+                  <displayName>Servizos do centro</displayName>
+                  <value>actividades de terapia ocupacional, animacion socio-cultural, atencion  psicoloxica, atencion de enfermeria, fisioterapia, peluqueria, podoloxia, servizo de cociña, servizo de comedor propio</value>
+               </Data>
+               <Data name="Instalacions">
+                  <displayName>Instalacións do centro</displayName>
+                  <value>acceso mediante transporte publico, aire acondicionado, ascensor, axudas tecnicas, baño xeriatrico, biblioteca, cafeteria, capela, instalacións accesibles, recepcion, sala de curas/enfermeria, sala de estar, sala de rehabilitación, sala de television, sala de usos multiples, servizos hixienicos adaptados, terraza, velatorio, ximnasio</value>
+               </Data>
+               <Data name="Entidade">
+                  <displayName>Entidade</displayName>
+                  <value>XUNTA DE GALICIA</value>
+               </Data>
+               <Data name="Iniciativa_entidade">
+                  <displayName>Iniciativa da entidade</displayName>
+                  <value>INICIATIVA PÚBLICA</value>
+               </Data>
+            </ExtendedData>
+            <Point>
+               <coordinates>-8.401886,43.341451</coordinates>
+            </Point>
+            <styleUrl>#TemaXunta</styleUrl>
+         </Placemark>
+         <Placemark id="E0C93">
+            <name>RESIDENCIA DE MAIORES VOLTA DO CASTRO</name>
+            <description>RESIDENCIA</description>
+            <ExtendedData>
+               <Data name="Mail">
+                  <displayName>Correo electrónico</displayName>
+                  <value>redactado@example.invalid</value>
+               </Data>
+               <Data name="Correo">
+                  <displayName>Correo electrónico</displayName>
+                  <value><![CDATA[<a href="mailto:redactado@example.invalid" style="color:#FFF;">Correo electrónico</a><br />]]></value>
+               </Data>
+               <Data name="Web">
+                  <displayName>web RUEPSS</displayName>
+                  <value>https://ruepss.xunta.gal/XiacWeb/centros/publico/aCentroPublico.do?{actionForm.id_cent}=5377</value>
+               </Data>
+               <Data name="Enderezo">
+                  <displayName>Enderezo</displayName>
+                  <value>ILDEFONSO SÁNCHEZ MERA NÚM.7</value>
+               </Data>
+               <Data name="Concello">
+                  <displayName>Concello</displayName>
+                  <value>SANTIAGO DE COMPOSTELA</value>
+               </Data>
+               <Data name="CodigoPostal">
+                  <displayName>Código Postal</displayName>
+                  <value>15701</value>
+               </Data>
+               <Data name="Provincia">
+                  <displayName>Provincia</displayName>
+                  <value>CORUÑA (A)</value>
+               </Data>
+               <Data name="Telefono">
+                  <displayName>Teléfono</displayName>
+                  <value>881867670</value>
+               </Data>
+               <Data name="Horario">
+                  <displayName>Horario</displayName>
+                  <value/>
+               </Data>
+               <Data name="Servizos">
+                  <displayName>Servizos do centro</displayName>
+                  <value>actividades de ocio /socioculturais, actividades de terapia ocupacional, atencion  psicoloxica, atencion de caracter psicosocial, atencion de enfermeria, centro de dia, fisioterapia, lavanderia, servizo de cociña</value>
+               </Data>
+               <Data name="Instalacions">
+                  <displayName>Instalacións do centro</displayName>
+                  <value/>
+               </Data>
+               <Data name="Entidade">
+                  <displayName>Entidade</displayName>
+                  <value>XUNTA DE GALICIA</value>
+               </Data>
+               <Data name="Iniciativa_entidade">
+                  <displayName>Iniciativa da entidade</displayName>
+                  <value>INICIATIVA PÚBLICA</value>
+               </Data>
+            </ExtendedData>
+            <Point>
+               <coordinates>-8.559736,42.864464</coordinates>
+            </Point>
+            <styleUrl>#TemaXunta</styleUrl>
+         </Placemark>
+         <Placemark id="E0C94">
+            <name>CENTRO DE DIA DE ALZHEIMER DE VOLTA DO CASTRO</name>
+            <description>CENTRO DE DÍA, ALZHEIMER</description>
+            <ExtendedData>
+               <Data name="Mail">
+                  <displayName>Correo electrónico</displayName>
+                  <value>redactado@example.invalid</value>
+               </Data>
+               <Data name="Correo">
+                  <displayName>Correo electrónico</displayName>
+                  <value><![CDATA[<a href="mailto:redactado@example.invalid" style="color:#FFF;">Correo electrónico</a><br />]]></value>
+               </Data>
+               <Data name="Web">
+                  <displayName>web RUEPSS</displayName>
+                  <value>https://ruepss.xunta.gal/XiacWeb/centros/publico/aCentroPublico.do?{actionForm.id_cent}=78338</value>
+               </Data>
+               <Data name="Enderezo">
+                  <displayName>Enderezo</displayName>
+                  <value>RÚA ILDEFONSO SANCHEZ MERA NÚM.7</value>
+               </Data>
+               <Data name="Concello">
+                  <displayName>Concello</displayName>
+                  <value>SANTIAGO DE COMPOSTELA</value>
+               </Data>
+               <Data name="CodigoPostal">
+                  <displayName>Código Postal</displayName>
+                  <value>15701</value>
+               </Data>
+               <Data name="Provincia">
+                  <displayName>Provincia</displayName>
+                  <value>CORUÑA (A)</value>
+               </Data>
+               <Data name="Telefono">
+                  <displayName>Teléfono</displayName>
+                  <value>981534570</value>
+               </Data>
+               <Data name="Horario">
+                  <displayName>Horario</displayName>
+                  <value>Luns a venres agás festivos., , 08:00h-20:00h.</value>
+               </Data>
+               <Data name="Servizos">
+                  <displayName>Servizos do centro</displayName>
+                  <value>actividades de ocio /socioculturais, actividades de terapia ocupacional, animacion socio-cultural, asesoramento axudas tecnicas, asistencia as avds, atencion  psicoloxica, atencion  xeriatrica, atencion de caracter psicosocial, atencion social, atencion social familiar, dietas especificas, estimulacion cognitiva, evaluacion/valoracion, fisioterapia, orientacion/apoio en xestións admvas, peluqueria, podoloxia, preparacion /reparticion alimentos, programa comunitario de alzheimer, rehabilitación menor, servizo de cociña, servizo de comedor propio, servizo de información, sevizos de at.psicolóxica/formación/asesoramento familiar, transporte adaptado, voluntariado, ximnasia</value>
+               </Data>
+               <Data name="Instalacions">
+                  <displayName>Instalacións do centro</displayName>
+                  <value>acceso mediante transporte publico, aire acondicionado, ascensor, axudas tecnicas, cafeteria, instalacións accesibles, recepcion, sala de estar, sala de rehabilitación, sala de television, sala de usos multiples, sala de visitas, servizos hixienicos adaptados, terraza, xardin/patio exterior</value>
+               </Data>
+               <Data name="Entidade">
+                  <displayName>Entidade</displayName>
+                  <value>XUNTA DE GALICIA</value>
+               </Data>
+               <Data name="Iniciativa_entidade">
+                  <displayName>Iniciativa da entidade</displayName>
+                  <value>INICIATIVA PÚBLICA</value>
+               </Data>
+            </ExtendedData>
+            <Point>
+               <coordinates>-8.559736,42.864464</coordinates>
+            </Point>
+            <styleUrl>#TemaXunta</styleUrl>
+         </Placemark>
+         <Placemark id="E270C1">
+            <name>RESIDENCIA GARCIA HERMANOS</name>
+            <description>GRAN CENTRO RESIDENCIAL</description>
+            <ExtendedData>
+               <Data name="Mail">
+                  <displayName>Correo electrónico</displayName>
+                  <value>redactado@example.invalid</value>
+               </Data>
+               <Data name="Correo">
+                  <displayName>Correo electrónico</displayName>
+                  <value><![CDATA[<a href="mailto:redactado@example.invalid" style="color:#FFF;">Correo electrónico</a><br />]]></value>
+               </Data>
+               <Data name="Web">
+                  <displayName>web RUEPSS</displayName>
+                  <value>https://ruepss.xunta.gal/XiacWeb/centros/publico/aCentroPublico.do?{actionForm.id_cent}=22785</value>
+               </Data>
+               <Data name="Enderezo">
+                  <displayName>Enderezo</displayName>
+                  <value>EL COTO, 15</value>
+               </Data>
+               <Data name="Concello">
+                  <displayName>Concello</displayName>
+                  <value>BETANZOS</value>
+               </Data>
+               <Data name="CodigoPostal">
+                  <displayName>Código Postal</displayName>
+                  <value>15300</value>
+               </Data>
+               <Data name="Provincia">
+                  <displayName>Provincia</displayName>
+                  <value>CORUÑA (A)</value>
+               </Data>
+               <Data name="Telefono">
+                  <displayName>Teléfono</displayName>
+                  <value>981770325</value>
+               </Data>
+               <Data name="Horario">
+                  <displayName>Horario</displayName>
+                  <value>ABERTO AS 24 HORAS</value>
+               </Data>
+               <Data name="Servizos">
+                  <displayName>Servizos do centro</displayName>
+                  <value>actividades de ocio /socioculturais, animacion socio-cultural, arranxo de roupa, asistencia as avds, asistencia farmaceutica, atencion  psicoloxica, atencion de enfermeria, atencion psiquiatrica, atencion social, estimulacion cognitiva, evaluacion/valoracion, fisioterapia, peluqueria, podoloxia, servizos relixiosos, voluntariado</value>
+               </Data>
+               <Data name="Instalacions">
+                  <displayName>Instalacións do centro</displayName>
+                  <value>aparcadoiro privado, ascensor, axudas tecnicas, baño xeriatrico, cafeteria, capela, internet, recepcion, sala de curas/enfermeria, sala de estar, sala de lectura, sala de rehabilitación, sala de television, sala de usos multiples, sala de visitas, servizos hixienicos adaptados, terraza, velatorio, xardin/patio exterior, ximnasio</value>
+               </Data>
+               <Data name="Entidade">
+                  <displayName>Entidade</displayName>
+                  <value>CONGREGACION DE LAS HERMANITAS DE LOS ANCIANOS DESAMPARADOS (BETANZOS)</value>
+               </Data>
+               <Data name="Iniciativa_entidade">
+                  <displayName>Iniciativa da entidade</displayName>
+                  <value>INICIATIVA SOCIAL</value>
+               </Data>
+            </ExtendedData>
+            <Point>
+               <coordinates>-8.210314,43.280437</coordinates>
+            </Point>
+            <styleUrl>#TemaXunta</styleUrl>
+         </Placemark>
+         <Placemark id="E312C1">
+            <name>RESIDENCIA SANTA TERESA JORNET</name>
+            <description>GRAN CENTRO RESIDENCIAL</description>
+            <ExtendedData>
+               <Data name="Mail">
+                  <displayName>Correo electrónico</displayName>
+                  <value>redactado@example.invalid</value>
+               </Data>
+               <Data name="Correo">
+                  <displayName>Correo electrónico</displayName>
+                  <value><![CDATA[<a href="mailto:redactado@example.invalid" style="color:#FFF;">Correo electrónico</a><br />]]></value>
+               </Data>
+               <Data name="Web">
+                  <displayName>web RUEPSS</displayName>
+                  <value>https://ruepss.xunta.gal/XiacWeb/centros/publico/aCentroPublico.do?{actionForm.id_cent}=20226</value>
+               </Data>
+               <Data name="Enderezo">
+                  <displayName>Enderezo</displayName>
+                  <value>R/STA. TERESA JORNET, 4  - EIRIS</value>
+               </Data>
+               <Data name="Concello">
+                  <displayName>Concello</displayName>
+                  <value>CORUÑA (A)</value>
+               </Data>
+               <Data name="CodigoPostal">
+                  <displayName>Código Postal</displayName>
+                  <value>15009</value>
+               </Data>
+               <Data name="Provincia">
+                  <displayName>Provincia</displayName>
+                  <value>CORUÑA (A)</value>
+               </Data>
+               <Data name="Telefono">
+                  <displayName>Teléfono</displayName>
+                  <value>981202422</value>
+               </Data>
+               <Data name="Horario">
+                  <displayName>Horario</displayName>
+                  <value>24 HORAS</value>
+               </Data>
+               <Data name="Servizos">
+                  <displayName>Servizos do centro</displayName>
+                  <value>acompañamento a consultas médicas, actividades de terapia ocupacional, arranxo de roupa, asistencia as avds, asistencia farmaceutica, atencion  xeriatrica, atencion de enfermeria, atencion social, dietas especificas, estimulacion cognitiva, evaluacion/valoracion, fisioterapia, lavanderia, peluqueria, podoloxia, servizo de aseo/baño xeriatrico, servizo de cociña, servizo de comedor propio, servizos relixiosos, voluntariado</value>
+               </Data>
+               <Data name="Instalacions">
+                  <displayName>Instalacións do centro</displayName>
+                  <value>acceso mediante transporte publico, aire acondicionado, aparcadoiro privado, ascensor, axudas tecnicas, baño xeriatrico, cafeteria, capela, patio cuberto, recepcion, sala de curas/enfermeria, sala de estar, sala de lectura, sala de rehabilitación, sala de television, sala de usos multiples, sala de visitas, servizos hixienicos adaptados, terraza, unidade de hixiene, velatorio, xardin/patio exterior</value>
+               </Data>
+               <Data name="Entidade">
+                  <displayName>Entidade</displayName>
+                  <value>COMUNIDAD LOCAL DA RESIDENCIA SANTA TERESA JORNET DE LA CONGREGACION DE LAS HERMANITAS DE LOS ANCIANOS DESAMPARADOS</value>
+               </Data>
+               <Data name="Iniciativa_entidade">
+                  <displayName>Iniciativa da entidade</displayName>
+                  <value>INICIATIVA SOCIAL</value>
+               </Data>
+            </ExtendedData>
+            <Point>
+               <coordinates>-8.393646,43.338326</coordinates>
+            </Point>
+            <styleUrl>#TemaXunta</styleUrl>
+         </Placemark>
+         <Placemark id="E314C52">
+            <name>APARTAMENTOS TUTELADOS CONSUELO AGRA</name>
+            <description>APARTAMENTO TUTELADO</description>
+            <ExtendedData>
+               <Data name="Mail">
+                  <displayName>Correo electrónico</displayName>
+                  <value>redactado@example.invalid</value>
+               </Data>
+               <Data name="Correo">
+                  <displayName>Correo electrónico</displayName>
+                  <value><![CDATA[<a href="mailto:redactado@example.invalid" style="color:#FFF;">Correo electrónico</a><br />]]></value>
+               </Data>
+               <Data name="Web">
+                  <displayName>web RUEPSS</displayName>
+                  <value>https://ruepss.xunta.gal/XiacWeb/centros/publico/aCentroPublico.do?{actionForm.id_cent}=50179</value>
+               </Data>
+               <Data name="Enderezo">
+                  <displayName>Enderezo</displayName>
+                  <value>R/ CONSUELO AGRA BARRAL, 1</value>
+               </Data>
+               <Data name="Concello">
+                  <displayName>Concello</displayName>
+                  <value>ARZÚA</value>
+               </Data>
+               <Data name="CodigoPostal">
+                  <displayName>Código Postal</displayName>
+                  <value>15810</value>
+               </Data>
+               <Data name="Provincia">
+                  <displayName>Provincia</displayName>
+                  <value>CORUÑA (A)</value>
+               </Data>
+               <Data name="Telefono">
+                  <displayName>Teléfono</displayName>
+                  <value>981500336</value>
+               </Data>
+               <Data name="Horario">
+                  <displayName>Horario</displayName>
+                  <value>24 HORAS</value>
+               </Data>
+               <Data name="Servizos">
+                  <displayName>Servizos do centro</displayName>
+                  <value>actividades de ocio /socioculturais, animacion socio-cultural, arranxo de roupa, atencion  psicoloxica, atencion de enfermeria, atencion medica, dietas especificas, estimulacion cognitiva, evaluacion/valoracion, fisioterapia, lavanderia, servizo de cociña, servizo de comedor propio, servizos relixiosos</value>
+               </Data>
+               <Data name="Instalacions">
+                  <displayName>Instalacións do centro</displayName>
+                  <value>ascensor, baño xeriatrico, instalacións accesibles, recepcion, sala de estar, sala de rehabilitación, sala de television, sala de usos multiples, sala de visitas, xardin/patio exterior</value>
+               </Data>
+               <Data name="Entidade">
+                  <displayName>Entidade</displayName>
+                  <value>FUNDACION SAN ROSENDO</value>
+               </Data>
+               <Data name="Iniciativa_entidade">
+                  <displayName>Iniciativa da entidade</displayName>
+                  <value>INICIATIVA SOCIAL</value>
+               </Data>
+            </ExtendedData>
+            <Point>
+               <coordinates>-8.1656255,42.9225856</coordinates>
+            </Point>
+            <styleUrl>#TemaXunta</styleUrl>
+         </Placemark>
+         <Placemark id="E569C1">
+            <name>FOGAR DO MAIOR DO CONCELLO DE PADERNE</name>
+            <description>FOGARES E CLUBES</description>
+            <ExtendedData>
+               <Data name="Mail">
+                  <displayName>Correo electrónico</displayName>
+                  <value>redactado@example.invalid</value>
+               </Data>
+               <Data name="Correo">
+                  <displayName>Correo electrónico</displayName>
+                  <value><![CDATA[<a href="mailto:redactado@example.invalid" style="color:#FFF;">Correo electrónico</a><br />]]></value>
+               </Data>
+               <Data name="Web">
+                  <displayName>web RUEPSS</displayName>
+                  <value>https://ruepss.xunta.gal/XiacWeb/centros/publico/aCentroPublico.do?{actionForm.id_cent}=13058</value>
+               </Data>
+               <Data name="Enderezo">
+                  <displayName>Enderezo</displayName>
+                  <value>CONSISTORIO NUM.10</value>
+               </Data>
+               <Data name="Concello">
+                  <displayName>Concello</displayName>
+                  <value>PADERNE</value>
+               </Data>
+               <Data name="CodigoPostal">
+                  <displayName>Código Postal</displayName>
+                  <value>15314</value>
+               </Data>
+               <Data name="Provincia">
+                  <displayName>Provincia</displayName>
+                  <value>CORUÑA (A)</value>
+               </Data>
+               <Data name="Telefono">
+                  <displayName>Teléfono</displayName>
+                  <value>981776302</value>
+               </Data>
+               <Data name="Horario">
+                  <displayName>Horario</displayName>
+                  <value/>
+               </Data>
+               <Data name="Servizos">
+                  <displayName>Servizos do centro</displayName>
+                  <value/>
+               </Data>
+               <Data name="Instalacions">
+                  <displayName>Instalacións do centro</displayName>
+                  <value>instalacións accesibles, sala de estar, sala de television, sala de usos multiples</value>
+               </Data>
+               <Data name="Entidade">
+                  <displayName>Entidade</displayName>
+                  <value>CONCELLO DE PADERNE</value>
+               </Data>
+               <Data name="Iniciativa_entidade">
+                  <displayName>Iniciativa da entidade</displayName>
+                  <value>INICIATIVA PÚBLICA</value>
+               </Data>
+            </ExtendedData>
+            <Point>
+               <coordinates>-8.180337,43.28622</coordinates>
+            </Point>
+            <styleUrl>#TemaXunta</styleUrl>
+         </Placemark>
+         <Placemark id="E1030C1">
+            <name>CLUBE XUBILADOS VIRXE DO CARME</name>
+            <description>FOGARES E CLUBES</description>
+            <ExtendedData>
+               <Data name="Mail">
+                  <displayName>Correo electrónico</displayName>
+                  <value/>
+               </Data>
+               <Data name="Correo">
+                  <displayName>Correo electrónico</displayName>
+                  <value/>
+               </Data>
+               <Data name="Web">
+                  <displayName>web RUEPSS</displayName>
+                  <value>https://ruepss.xunta.gal/XiacWeb/centros/publico/aCentroPublico.do?{actionForm.id_cent}=41219</value>
+               </Data>
+               <Data name="Enderezo">
+                  <displayName>Enderezo</displayName>
+                  <value>CAMPO A TRAVES 6</value>
+               </Data>
+               <Data name="Concello">
+                  <displayName>Concello</displayName>
+                  <value>O PORTO DO SON</value>
+               </Data>
+               <Data name="CodigoPostal">
+                  <displayName>Código Postal</displayName>
+                  <value>15970</value>
+               </Data>
+               <Data name="Provincia">
+                  <displayName>Provincia</displayName>
+                  <value>CORUÑA (A)</value>
+               </Data>
+               <Data name="Telefono">
+                  <displayName>Teléfono</displayName>
+                  <value>981853424</value>
+               </Data>
+               <Data name="Horario">
+                  <displayName>Horario</displayName>
+                  <value/>
+               </Data>
+               <Data name="Servizos">
+                  <displayName>Servizos do centro</displayName>
+                  <value/>
+               </Data>
+               <Data name="Instalacions">
+                  <displayName>Instalacións do centro</displayName>
+                  <value/>
+               </Data>
+               <Data name="Entidade">
+                  <displayName>Entidade</displayName>
+                  <value>CLUB DE XUBILADOS VIRXE DO CARME</value>
+               </Data>
+               <Data name="Iniciativa_entidade">
+                  <displayName>Iniciativa da entidade</displayName>
+                  <value>INICIATIVA SOCIAL</value>
+               </Data>
+            </ExtendedData>
+            <Point>
+               <coordinates>-9.007541,42.724053</coordinates>
+            </Point>
+            <styleUrl>#TemaXunta</styleUrl>
+         </Placemark>
+         <Placemark id="E1764C1">
+            <name>CENTRO DE DÍA OS MUIÑOS</name>
+            <description>CENTRO DE DÍA</description>
+            <ExtendedData>
+               <Data name="Mail">
+                  <displayName>Correo electrónico</displayName>
+                  <value>redactado@example.invalid</value>
+               </Data>
+               <Data name="Correo">
+                  <displayName>Correo electrónico</displayName>
+                  <value><![CDATA[<a href="mailto:redactado@example.invalid" style="color:#FFF;">Correo electrónico</a><br />]]></value>
+               </Data>
+               <Data name="Web">
+                  <displayName>web RUEPSS</displayName>
+                  <value>https://ruepss.xunta.gal/XiacWeb/centros/publico/aCentroPublico.do?{actionForm.id_cent}=46082</value>
+               </Data>
+               <Data name="Enderezo">
+                  <displayName>Enderezo</displayName>
+                  <value>AVDA ACEA DA MA, Nº21 BAIXO</value>
+               </Data>
+               <Data name="Concello">
+                  <displayName>Concello</displayName>
+                  <value>CULLEREDO</value>
+               </Data>
+               <Data name="CodigoPostal">
+                  <displayName>Código Postal</displayName>
+                  <value>15670</value>
+               </Data>
+               <Data name="Provincia">
+                  <displayName>Provincia</displayName>
+                  <value>CORUÑA (A)</value>
+               </Data>
+               <Data name="Telefono">
+                  <displayName>Teléfono</displayName>
+                  <value>000000000</value>
+               </Data>
+               <Data name="Horario">
+                  <displayName>Horario</displayName>
+                  <value>De 08:00 HORAS A 20:00 HORAS DE LUNES A VIERNES.</value>
+               </Data>
+               <Data name="Servizos">
+                  <displayName>Servizos do centro</displayName>
+                  <value>actividades de ocio /socioculturais, actividades de terapia ocupacional, animacion socio-cultural, asistencia as avds, atencion  psicoloxica, atencion medica, centro de dia, dietas especificas, estadias temporais, estimulacion cognitiva, fisioterapia, formacion ocupacional, obradoiro formativo, servizo de aseo/baño xeriatrico, servizo de cociña, transporte adaptado, voluntariado, ximnasia</value>
+               </Data>
+               <Data name="Instalacions">
+                  <displayName>Instalacións do centro</displayName>
+                  <value>axudas tecnicas, baño xeriatrico, instalacións accesibles, internet, sala de usos multiples, servizos hixienicos adaptados</value>
+               </Data>
+               <Data name="Entidade">
+                  <displayName>Entidade</displayName>
+                  <value>APELIDO APELIDO NOME 00000000T, S.L.N.E.</value>
+               </Data>
+               <Data name="Iniciativa_entidade">
+                  <displayName>Iniciativa da entidade</displayName>
+                  <value>INICIATIVA PRIVADA CON ÁNIMO DE LUCRO</value>
+               </Data>
+            </ExtendedData>
+            <Point>
+               <coordinates>-8.367398,43.316904</coordinates>
+            </Point>
+            <styleUrl>#TemaXunta</styleUrl>
+         </Placemark>
+         <Placemark id="E6166C1">
+            <name>VIVENDA COMUNITARIA VIRXE DOS REMEDIOS</name>
+            <description>VIVENDA COMUNITARIA</description>
+            <ExtendedData>
+               <Data name="Mail">
+                  <displayName>Correo electrónico</displayName>
+                  <value>redactado@example.invalid</value>
+               </Data>
+               <Data name="Correo">
+                  <displayName>Correo electrónico</displayName>
+                  <value><![CDATA[<a href="mailto:redactado@example.invalid" style="color:#FFF;">Correo electrónico</a><br />]]></value>
+               </Data>
+               <Data name="Web">
+                  <displayName>web RUEPSS</displayName>
+                  <value>https://ruepss.xunta.gal/XiacWeb/centros/publico/aCentroPublico.do?{actionForm.id_cent}=241197</value>
+               </Data>
+               <Data name="Enderezo">
+                  <displayName>Enderezo</displayName>
+                  <value>AVDA DR MARTINEZ PARDO, 91 - TEIXEIRO</value>
+               </Data>
+               <Data name="Concello">
+                  <displayName>Concello</displayName>
+                  <value>CURTIS</value>
+               </Data>
+               <Data name="CodigoPostal">
+                  <displayName>Código Postal</displayName>
+                  <value>15310</value>
+               </Data>
+               <Data name="Provincia">
+                  <displayName>Provincia</displayName>
+                  <value>CORUÑA (A)</value>
+               </Data>
+               <Data name="Telefono">
+                  <displayName>Teléfono</displayName>
+                  <value>000000000</value>
+               </Data>
+               <Data name="Horario">
+                  <displayName>Horario</displayName>
+                  <value>365 dias ao ano</value>
+               </Data>
+               <Data name="Servizos">
+                  <displayName>Servizos do centro</displayName>
+                  <value>acompañamento a consultas médicas, atencion de necesidades domesticas, lavanderia, peluqueria, servizo de aseo/baño xeriatrico, servizo de cociña, servizo de comedor propio</value>
+               </Data>
+               <Data name="Instalacions">
+                  <displayName>Instalacións do centro</displayName>
+                  <value>ascensor, baño xeriatrico, instalacións accesibles, internet, patio cuberto, sala de estar, sala de television, servizos hixienicos adaptados, xardin/patio exterior</value>
+               </Data>
+               <Data name="Entidade">
+                  <displayName>Entidade</displayName>
+                  <value>NOME APELIDO APELIDO</value>
+               </Data>
+               <Data name="Iniciativa_entidade">
+                  <displayName>Iniciativa da entidade</displayName>
+                  <value>INICIATIVA PRIVADA CON ÁNIMO DE LUCRO</value>
+               </Data>
+            </ExtendedData>
+            <Point>
+               <coordinates>-8.035228,43.136545</coordinates>
+            </Point>
+            <styleUrl>#TemaXunta</styleUrl>
+         </Placemark>
+         	</Folder>
+	<Folder id="lugo">
+		<name>Lugo</name>
+		<open>1</open>
+ 	<description>126 centros de benestar na provincia</description>
+         <Placemark id="E0C154">
+            <name>CENTRO DE DIA DE MAIORES DE BURELA</name>
+            <description>CENTRO DE DÍA</description>
+            <ExtendedData>
+               <Data name="Mail">
+                  <displayName>Correo electrónico</displayName>
+                  <value/>
+               </Data>
+               <Data name="Correo">
+                  <displayName>Correo electrónico</displayName>
+                  <value/>
+               </Data>
+               <Data name="Web">
+                  <displayName>web RUEPSS</displayName>
+                  <value>https://ruepss.xunta.gal/XiacWeb/centros/publico/aCentroPublico.do?{actionForm.id_cent}=110337</value>
+               </Data>
+               <Data name="Enderezo">
+                  <displayName>Enderezo</displayName>
+                  <value>ROSALIA DE CASTRO   S/N</value>
+               </Data>
+               <Data name="Concello">
+                  <displayName>Concello</displayName>
+                  <value>BURELA</value>
+               </Data>
+               <Data name="CodigoPostal">
+                  <displayName>Código Postal</displayName>
+                  <value/>
+               </Data>
+               <Data name="Provincia">
+                  <displayName>Provincia</displayName>
+                  <value>LUGO</value>
+               </Data>
+               <Data name="Telefono">
+                  <displayName>Teléfono</displayName>
+                  <value/>
+               </Data>
+               <Data name="Horario">
+                  <displayName>Horario</displayName>
+                  <value/>
+               </Data>
+               <Data name="Servizos">
+                  <displayName>Servizos do centro</displayName>
+                  <value/>
+               </Data>
+               <Data name="Instalacions">
+                  <displayName>Instalacións do centro</displayName>
+                  <value/>
+               </Data>
+               <Data name="Entidade">
+                  <displayName>Entidade</displayName>
+                  <value>XUNTA DE GALICIA</value>
+               </Data>
+               <Data name="Iniciativa_entidade">
+                  <displayName>Iniciativa da entidade</displayName>
+                  <value>INICIATIVA PÚBLICA</value>
+               </Data>
+            </ExtendedData>
+            <Point>
+               <coordinates>-7.361822,43.662582</coordinates>
+            </Point>
+            <styleUrl>#TemaXunta</styleUrl>
+         </Placemark>
+         	</Folder>
+	<Folder id="pontevedra">
+		<name>Pontevedra</name>
+		<open>1</open>
+ 	<description>187 centros de benestar na provincia</description>
+         <Placemark id="E5431C1">
+            <name>CENTRO RESIDENCIAL TOMIÑO</name>
+            <description>MINIRESIDENCIA</description>
+            <ExtendedData>
+               <Data name="Mail">
+                  <displayName>Correo electrónico</displayName>
+                  <value>redactado@example.invalid</value>
+               </Data>
+               <Data name="Correo">
+                  <displayName>Correo electrónico</displayName>
+                  <value><![CDATA[<a href="mailto:redactado@example.invalid" style="color:#FFF;">Correo electrónico</a><br />]]></value>
+               </Data>
+               <Data name="Web">
+                  <displayName>web RUEPSS</displayName>
+                  <value>https://ruepss.xunta.gal/XiacWeb/centros/publico/aCentroPublico.do?{actionForm.id_cent}=240501</value>
+               </Data>
+               <Data name="Enderezo">
+                  <displayName>Enderezo</displayName>
+                  <value>LUGAR DE GANDARA Nº 19-B</value>
+               </Data>
+               <Data name="Concello">
+                  <displayName>Concello</displayName>
+                  <value>TOMIÑO</value>
+               </Data>
+               <Data name="CodigoPostal">
+                  <displayName>Código Postal</displayName>
+                  <value>36730</value>
+               </Data>
+               <Data name="Provincia">
+                  <displayName>Provincia</displayName>
+                  <value>PONTEVEDRA</value>
+               </Data>
+               <Data name="Telefono">
+                  <displayName>Teléfono</displayName>
+                  <value>986623595</value>
+               </Data>
+               <Data name="Horario">
+                  <displayName>Horario</displayName>
+                  <value>24 HORAS</value>
+               </Data>
+               <Data name="Servizos">
+                  <displayName>Servizos do centro</displayName>
+                  <value>acompañamento a consultas médicas, actividades de ocio /socioculturais, actividades deportivas, animacion socio-cultural, asistencia as avds, atencion de enfermeria, atencion social, dietas especificas, estadias temporais, estimulacion cognitiva, fisioterapia, lavanderia, masaxes terapeuticos, peluqueria, podoloxia, prazas de respiro familiar, servizo de aseo/baño xeriatrico, servizo de comedor propio, servizos relixiosos, ximnasia</value>
+               </Data>
+               <Data name="Instalacions">
+                  <displayName>Instalacións do centro</displayName>
+                  <value>aparcadoiro privado, ascensor, axudas tecnicas, baño xeriatrico, cafeteria, capela, instalacións accesibles, recepcion, sala de curas/enfermeria, sala de estar, sala de rehabilitación, sala de television, sala de usos multiples, servizos hixienicos adaptados, xardin/patio exterior</value>
+               </Data>
+               <Data name="Entidade">
+                  <displayName>Entidade</displayName>
+                  <value>NAV&amp;GER TOMIÑO SL</value>
+               </Data>
+               <Data name="Iniciativa_entidade">
+                  <displayName>Iniciativa da entidade</displayName>
+                  <value>INICIATIVA PRIVADA CON ÁNIMO DE LUCRO</value>
+               </Data>
+            </ExtendedData>
+            <Point>
+               <coordinates>-8.760996,41.991841</coordinates>
+            </Point>
+            <styleUrl>#TemaXunta</styleUrl>
+         </Placemark>
+         	</Folder>
+</Document>
+</kml>
