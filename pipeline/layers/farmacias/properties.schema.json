@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "farmacias feature properties",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "nome", "enderezo", "cp", "concello", "codigo_ine"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^(C|LU|OR|PO)-\\d+-F$",
+      "description": "SIGLAS"
+    },
+    "nome": {
+      "type": "string",
+      "pattern": "^Farmacia ",
+      "description": "Farmacia + SIGLAS"
+    },
+    "enderezo": {
+      "type": "string",
+      "description": "DIRECCION"
+    },
+    "cp": {
+      "type": ["string", "null"],
+      "pattern": "^\\d{5}$",
+      "description": "CODIGOPOST"
+    },
+    "concello": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Nome oficial (concellos-parroquias) se se recoñece; se non, o texto da fonte"
+    },
+    "codigo_ine": {
+      "type": ["string", "null"],
+      "pattern": "^(15|27|32|36)\\d{3}$",
+      "description": "Código INE do concello, ou null se o nome é ambiguo"
+    }
+  }
+}
