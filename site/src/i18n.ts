@@ -13,7 +13,14 @@ export const THEMES: Record<string, { gl: string; es: string }> = {
   territorio: { gl: 'Territorio', es: 'Territorio' },
 };
 
-export const THEME_ORDER = ['auga-mar', 'lume-monte', 'tempo-aire', 'mobilidade', 'servizos', 'territorio'];
+export const THEME_ORDER = [
+  'auga-mar',
+  'lume-monte',
+  'tempo-aire',
+  'mobilidade',
+  'servizos',
+  'territorio',
+];
 
 const STRINGS = {
   tagline: { gl: 'Galicia como é agora mesmo', es: 'Galicia tal como es ahora mismo' },
