@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "hospitais feature properties",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "nome", "tipo", "complexo", "enderezo", "cp", "concello", "codigo_ine"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]+$",
+      "description": "nome + concello (slug)"
+    },
+    "nome": {
+      "type": "string",
+      "minLength": 1,
+      "description": "NOMBRE"
+    },
+    "tipo": {
+      "type": ["string", "null"],
+      "description": "TIPOCENTRO (p. ex. HOSPITAIS XERAIS)"
+    },
+    "complexo": {
+      "type": ["string", "null"],
+      "description": "COMPLEJO: complexo hospitalario ou grupo ao que pertence"
+    },
+    "enderezo": {
+      "type": "string",
+      "description": "DIRECCION"
+    },
+    "cp": {
+      "type": ["string", "null"],
+      "pattern": "^\\d{5}$",
+      "description": "CODIGOPOST"
+    },
+    "concello": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Nome oficial (concellos-parroquias) se se recoñece; se non, o texto da fonte"
+    },
+    "codigo_ine": {
+      "type": ["string", "null"],
+      "pattern": "^(15|27|32|36)\\d{3}$",
+      "description": "Código INE do concello, ou null se o nome é ambiguo"
+    }
+  }
+}
