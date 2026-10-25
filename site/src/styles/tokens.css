@@ -87,6 +87,7 @@
   --c-farmacia: var(--gs-exito);
   --c-educacion: #2e6b8a;
   --c-maiores: #8a3b5c;
+  --c-turismo: #b8860b;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -128,6 +129,7 @@
     --c-farmacia: #7fbf8e;
     --c-educacion: #6fa8c7;
     --c-maiores: #d48aa8;
+    --c-turismo: #e0b85a;
   }
 }
 
@@ -169,4 +171,5 @@
   --c-farmacia: #7fbf8e;
   --c-educacion: #6fa8c7;
   --c-maiores: #d48aa8;
+  --c-turismo: #e0b85a;
 }

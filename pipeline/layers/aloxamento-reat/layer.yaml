@@ -1,0 +1,53 @@
+id: aloxamento-reat
+title:
+  gl: Aloxamentos turísticos rexistrados
+  es: Alojamientos turísticos registrados
+theme: territorio
+operator:
+  name: Turismo de Galicia (Rexistro de Empresas e Actividades Turísticas, REAT)
+  url: https://aei.turismo.gal/es/rexistro-de-empresas-e-actividades-turisticas
+source_url: https://descargascdn.xunta.gal/interno/smarxa/reat_directorio-alojamientos_esp.csv
+licence:
+  spdx: CC-BY-SA-4.0
+  text_url: https://creativecommons.org/licenses/by-sa/4.0/deed.gl
+  quote: '<dct:license rdf:resource="https://creativecommons.org/licenses/by-sa/4.0/deed.gl">'
+  verified_at: 2026-10-24
+  odbl_compatible: doubt
+  collection: cc-by-sa-4.0
+  notes: >-
+    Licenza declarada no RDF do conxunto 0022 de abertos.xunta.gal (Rexistro de empresas e
+    actividades turísticas, dct:license CC BY-SA 4.0). Compatibilidade con ODbL en dúbida:
+    colección CC BY-SA 4.0 (ADR 0005). O CSV descárgase da ligazón directa (<a href>) da páxina
+    do Área de Estudos e Investigación de Turismo de Galicia; a ruta é fixa e non cambia co
+    mes (comprobado o 24/10/2026), por iso vai escrita no código.
+attribution: >-
+  Fonte: Turismo de Galicia, Rexistro de Empresas e Actividades Turísticas (REAT), directorio
+  de aloxamentos. CC BY-SA 4.0.
+update_frequency:
+  declared: P30D
+geometry: point
+output: geojson
+auth:
+  required: false
+privacy_notes: >-
+  Só establecementos inscritos como empresa turística (hoteis, pensións, apartamentos, turismo
+  rural, albergues, cámpings e vivendas turísticas). As vivendas de uso turístico (VUT) son
+  domicilios particulares e non se publican nunca como puntos: a capa vut-concello só dá o
+  seu número por concello. Retíranse teléfono, correo electrónico e enderezo. O nome é a
+  denominación comercial inscrita no rexistro público.
+stale_after: P45D
+ingest:
+  every: P7D
+style:
+  kind: circle
+  color_token: --c-turismo
+  label_field: nome
+table:
+  fields:
+    - nome
+    - tipoloxia
+    - categoria
+    - prazas
+    - concello
+    - parroquia
+    - lugar

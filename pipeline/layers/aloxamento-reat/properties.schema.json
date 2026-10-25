@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "aloxamento-reat feature properties",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "signatura",
+    "nome",
+    "tipoloxia",
+    "categoria",
+    "especialidade",
+    "prazas",
+    "habitacions",
+    "concello",
+    "parroquia",
+    "lugar"
+  ],
+  "properties": {
+    "signatura": {
+      "type": ["string", "null"],
+      "pattern": "^[A-Z]{1,3}-[A-Z]{2}-\\d+$",
+      "description": "Número de inscrición no REAT; null nos albergues públicos xacobeos"
+    },
+    "nome": { "type": "string", "minLength": 1 },
+    "tipoloxia": {
+      "enum": [
+        "Hotel",
+        "Pensión",
+        "Apartamentos turísticos",
+        "Turismo rural",
+        "Albergue turístico",
+        "Vivenda turística",
+        "Cámping"
+      ]
+    },
+    "categoria": { "type": ["string", "null"], "description": "Texto orixinal do REAT" },
+    "especialidade": { "type": ["string", "null"], "description": "Texto orixinal do REAT" },
+    "prazas": { "type": ["integer", "null"], "minimum": 0 },
+    "habitacions": { "type": ["integer", "null"], "minimum": 0 },
+    "concello": { "type": ["string", "null"] },
+    "parroquia": { "type": ["string", "null"] },
+    "lugar": { "type": ["string", "null"] }
+  }
+}
