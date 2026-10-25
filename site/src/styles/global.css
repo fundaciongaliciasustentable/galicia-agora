@@ -107,13 +107,18 @@ a:hover {
     display: none;
   }
 }
-.ga-brand svg {
-  width: 28px;
-  height: 28px;
-  flex-shrink: 0;
+.ga-brand-name {
+  font-weight: 400;
+  letter-spacing: -0.01em;
 }
-.ga-brand svg path {
-  fill: currentColor;
+.ga-brand-name b {
+  font-weight: 700;
+}
+.ga-mark {
+  color: var(--gs-verde-moi-claro);
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
 }
 .ga-nav {
   margin-left: auto;
