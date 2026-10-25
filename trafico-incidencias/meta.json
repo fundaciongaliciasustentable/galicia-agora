@@ -1,17 +1,21 @@
 {
   "layer_id": "trafico-incidencias",
-  "published_at": "2026-10-25T14:38:16.013Z",
-  "fetched_at": "2026-10-25T14:38:52.941Z",
-  "last_success_at": "2026-10-25T14:38:52.941Z",
+  "published_at": "2026-10-25T17:14:16.054Z",
+  "fetched_at": "2026-10-25T17:15:35.941Z",
+  "last_success_at": "2026-10-25T17:15:35.941Z",
   "status": "fresh",
   "consecutive_failures": 0,
-  "feature_count": 69,
+  "feature_count": 64,
   "source_url": "https://nap.dgt.es/datex2/v3/dgt/SituationPublication/datex2_v37.xml",
   "licence": "https://nap.dgt.es/es/dataset/incidencias-dgt-datex2-v3-7",
   "attribution": "Fonte: DGT, Punto de Acceso Nacional de Tráfico",
-  "checksum": "sha256:cce0582a58f3a938c2ed48d714a81bc95954f6677a4b261ae34be479850d0a05",
+  "checksum": "sha256:fd3c8c0ca6f24e9266c1eaf13c9cffbe3511f7b40a7c0368b66a2422e6ba6e0c",
   "last_error": null,
   "history": [
+    {
+      "at": "2026-10-25T17:15:35.941Z",
+      "ok": true
+    },
     {
       "at": "2026-10-25T14:38:52.941Z",
       "ok": true
