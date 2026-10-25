@@ -1,0 +1,24 @@
+{
+  "layer_id": "inundacion-perigo-t100",
+  "published_at": "2026-03-11T10:23:29.000Z",
+  "fetched_at": "2026-10-25T10:58:19.597Z",
+  "last_success_at": "2026-10-25T10:58:19.597Z",
+  "status": "fresh",
+  "consecutive_failures": 0,
+  "feature_count": 925,
+  "source_url": "https://wmts-snczi.idee.es/wmts/riesgos-naturales/inundaciones",
+  "licence": "CC-BY-4.0",
+  "attribution": "© Ministerio para la Transición Ecológica y el Reto Demográfico (SNCZI)",
+  "checksum": "sha256:16287213f994ab8bdabba2f60fab6311825a4c50a9994fdc77c12a98d9c62d8f",
+  "last_error": null,
+  "history": [
+    {
+      "at": "2026-10-25T10:58:19.597Z",
+      "ok": true
+    },
+    {
+      "at": "2026-10-25T09:51:09.389Z",
+      "ok": true
+    }
+  ]
+}
