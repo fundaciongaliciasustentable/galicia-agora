@@ -1,21 +1,24 @@
 {
   "layer_id": "centros-educativos",
   "published_at": null,
-  "fetched_at": "2026-10-25T11:11:29.337Z",
-  "last_success_at": null,
-  "status": "failed",
-  "consecutive_failures": 1,
-  "feature_count": 0,
+  "fetched_at": "2026-10-25T11:25:08.832Z",
+  "last_success_at": "2026-10-25T11:25:08.832Z",
+  "status": "fresh",
+  "consecutive_failures": 0,
+  "feature_count": 1613,
   "source_url": "https://abertos.xunta.gal/catalogo/ensino-formacion/-/dataset/0257/centros-educativos-galicia",
   "licence": "CC-BY-SA-4.0",
   "attribution": "Xunta de Galicia. Consellería de Educación, centros educativos de Galicia (abertos.xunta.gal, conxunto 0257)",
-  "checksum": null,
-  "last_error": "Failed after 4 attempts: fetch failed",
+  "checksum": "sha256:14203cf7a41a8a52dfbd102a622062f21414610de51d35b09a2390c93962721e",
+  "last_error": null,
   "history": [
     {
-      "at": "2026-10-25T11:11:29.337Z",
-      "ok": false,
-      "error": "Failed after 4 attempts: fetch failed"
+      "at": "2026-10-25T11:25:08.832Z",
+      "ok": true
+    },
+    {
+      "at": "2026-10-25T09:52:49.878Z",
+      "ok": true
     }
   ]
 }
