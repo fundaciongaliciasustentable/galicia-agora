@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "trafico-balizas-v16 feature properties",
+  "description": "No identifier of any kind: the feature id is the position within the run.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["estrada", "pk", "concello", "provincia", "desde"],
+  "properties": {
+    "estrada": { "type": ["string", "null"] },
+    "pk": {
+      "type": ["number", "null"],
+      "minimum": 0,
+      "description": "Punto quilométrico, a 100 m"
+    },
+    "concello": { "type": ["string", "null"] },
+    "provincia": { "type": ["string", "null"] },
+    "desde": {
+      "type": ["string", "null"],
+      "format": "date-time",
+      "pattern": ":[0-5][05]:00\\.000Z$",
+      "description": "Inicio redondeado a 5 minutos"
+    }
+  }
+}

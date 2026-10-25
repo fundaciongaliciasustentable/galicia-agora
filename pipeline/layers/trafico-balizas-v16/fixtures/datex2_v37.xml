@@ -1,0 +1,426 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ns0:payload xmlns:ns0="http://levelC/schema/3/d2Payload" xmlns:ns2="http://levelC/schema/3/common" xmlns:ns3="http://levelC/schema/3/situation" xmlns:ns4="http://levelC/schema/3/locationReferencing" xmlns:ns5="http://levelC/schema/3/locationReferencingSpanishExtension" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="sit:SituationPublication" lang="es" modelBaseVersion="3" profileName="DGT (Spain) Profile RTTI SituationPublication" profileVersion="3.7_1.0" xsi:schemaLocation="http://levelC/schema/3/d2Payload https://nap.dgt.es/datex2/v3/dgt/SituationPublication/xsd/3.7_1.0/LevelC_3_D2Payload.xsd">
+    <ns2:feedDescription>
+        <ns2:values>
+            <ns2:value>Publicación de incidencias de trafico activas en las carreteras Españolas.</ns2:value>
+        </ns2:values>
+    </ns2:feedDescription>
+    <ns2:publicationTime>2026-10-24T10:11:15.501+02:00</ns2:publicationTime>
+    <ns2:publicationCreator>
+        <ns2:country>es</ns2:country>
+        <ns2:nationalIdentifier>DGT</ns2:nationalIdentifier>
+    </ns2:publicationCreator>
+    <ns3:situation id="24975971">
+        <ns3:headerInformation>
+            <ns2:informationStatus>real</ns2:informationStatus>
+        </ns3:headerInformation>
+        <ns3:situationRecord xsi:type="sit:GenericSituationRecord" id="29346573" version="1">
+            <ns3:situationRecordCreationReference>V16_REDACTED-0001</ns3:situationRecordCreationReference>
+            <ns3:situationRecordCreationTime>2026-10-24T09:09:40.000+02:00</ns3:situationRecordCreationTime>
+            <ns3:situationRecordVersionTime>2026-10-24T09:09:40.000+02:00</ns3:situationRecordVersionTime>
+            <ns3:probabilityOfOccurrence>certain</ns3:probabilityOfOccurrence>
+            <ns3:source>
+                <ns2:sourceIdentification>DGT3.0</ns2:sourceIdentification>
+            </ns3:source>
+            <ns3:validity>
+                <ns2:validityStatus>active</ns2:validityStatus>
+                <ns2:validityTimeSpecification>
+                    <ns2:overallStartTime>2026-10-24T09:09:40.000+02:00</ns2:overallStartTime>
+                </ns2:validityTimeSpecification>
+            </ns3:validity>
+            <ns3:cause>
+                <ns3:causeType>vehicleObstruction</ns3:causeType>
+                <ns3:detailedCauseType>
+                    <ns3:vehicleObstructionType>vehicleStuck</ns3:vehicleObstructionType>
+                </ns3:detailedCauseType>
+            </ns3:cause>
+            <ns3:locationReference xsi:type="loc:PointLocation">
+                <ns4:supplementaryPositionalDescription>
+                    <ns4:roadInformation>
+                        <ns4:roadName>DP-5903</ns4:roadName>
+                    </ns4:roadInformation>
+                </ns4:supplementaryPositionalDescription>
+                <ns4:tpegPointLocation xsi:type="loc:TpegSimplePoint">
+                    <ns4:tpegDirection>westBound</ns4:tpegDirection>
+                    <ns4:tpegSimplePointLocationType>nonLinkedPoint</ns4:tpegSimplePointLocationType>
+                    <ns4:point xsi:type="loc:TpegNonJunctionPoint">
+                        <ns4:pointCoordinates>
+                            <ns4:latitude>43.076363</ns4:latitude>
+                            <ns4:longitude>-8.408966</ns4:longitude>
+                        </ns4:pointCoordinates>
+                        <ns4:_tpegNonJunctionPointExtension>
+                            <ns4:extendedTpegNonJunctionPoint>
+                                <ns5:autonomousCommunity>Galicia</ns5:autonomousCommunity>
+                                <ns5:kilometerPoint>0.117</ns5:kilometerPoint>
+                                <ns5:municipality>Ordes</ns5:municipality>
+                                <ns5:province>A Coruña</ns5:province>
+                            </ns4:extendedTpegNonJunctionPoint>
+                        </ns4:_tpegNonJunctionPointExtension>
+                    </ns4:point>
+                    <ns4:_tpegSimplePointExtension>
+                        <ns4:extendedTpegSimplePoint>
+                            <ns5:tpegDirectionRoad>positive</ns5:tpegDirectionRoad>
+                        </ns4:extendedTpegSimplePoint>
+                    </ns4:_tpegSimplePointExtension>
+                </ns4:tpegPointLocation>
+            </ns3:locationReference>
+            <ns3:genericSituationRecordName>incident</ns3:genericSituationRecordName>
+        </ns3:situationRecord>
+    </ns3:situation>
+    <ns3:situation id="24976140">
+        <ns3:headerInformation>
+            <ns2:informationStatus>real</ns2:informationStatus>
+        </ns3:headerInformation>
+        <ns3:situationRecord xsi:type="sit:GenericSituationRecord" id="29346749" version="1">
+            <ns3:situationRecordCreationReference>V16_REDACTED-0002</ns3:situationRecordCreationReference>
+            <ns3:situationRecordCreationTime>2026-10-24T09:20:10.000+02:00</ns3:situationRecordCreationTime>
+            <ns3:situationRecordVersionTime>2026-10-24T09:20:10.000+02:00</ns3:situationRecordVersionTime>
+            <ns3:probabilityOfOccurrence>certain</ns3:probabilityOfOccurrence>
+            <ns3:source>
+                <ns2:sourceIdentification>DGT3.0</ns2:sourceIdentification>
+            </ns3:source>
+            <ns3:validity>
+                <ns2:validityStatus>active</ns2:validityStatus>
+                <ns2:validityTimeSpecification>
+                    <ns2:overallStartTime>2026-10-24T09:20:10.000+02:00</ns2:overallStartTime>
+                </ns2:validityTimeSpecification>
+            </ns3:validity>
+            <ns3:cause>
+                <ns3:causeType>vehicleObstruction</ns3:causeType>
+                <ns3:detailedCauseType>
+                    <ns3:vehicleObstructionType>vehicleStuck</ns3:vehicleObstructionType>
+                </ns3:detailedCauseType>
+            </ns3:cause>
+            <ns3:locationReference xsi:type="loc:PointLocation">
+                <ns4:supplementaryPositionalDescription>
+                    <ns4:roadInformation>
+                        <ns4:roadName>LU-P-2602</ns4:roadName>
+                    </ns4:roadInformation>
+                </ns4:supplementaryPositionalDescription>
+                <ns4:tpegPointLocation xsi:type="loc:TpegSimplePoint">
+                    <ns4:tpegDirection>eastBound</ns4:tpegDirection>
+                    <ns4:tpegSimplePointLocationType>nonLinkedPoint</ns4:tpegSimplePointLocationType>
+                    <ns4:point xsi:type="loc:TpegNonJunctionPoint">
+                        <ns4:pointCoordinates>
+                            <ns4:latitude>43.708843</ns4:latitude>
+                            <ns4:longitude>-7.48629</ns4:longitude>
+                        </ns4:pointCoordinates>
+                        <ns4:_tpegNonJunctionPointExtension>
+                            <ns4:extendedTpegNonJunctionPoint>
+                                <ns5:autonomousCommunity>Galicia</ns5:autonomousCommunity>
+                                <ns5:kilometerPoint>1.582</ns5:kilometerPoint>
+                                <ns5:municipality>Xove</ns5:municipality>
+                                <ns5:province>Lugo</ns5:province>
+                            </ns4:extendedTpegNonJunctionPoint>
+                        </ns4:_tpegNonJunctionPointExtension>
+                    </ns4:point>
+                    <ns4:_tpegSimplePointExtension>
+                        <ns4:extendedTpegSimplePoint>
+                            <ns5:tpegDirectionRoad>negative</ns5:tpegDirectionRoad>
+                        </ns4:extendedTpegSimplePoint>
+                    </ns4:_tpegSimplePointExtension>
+                </ns4:tpegPointLocation>
+            </ns3:locationReference>
+            <ns3:genericSituationRecordName>incident</ns3:genericSituationRecordName>
+        </ns3:situationRecord>
+    </ns3:situation>
+    <ns3:situation id="24975915">
+        <ns3:headerInformation>
+            <ns2:informationStatus>real</ns2:informationStatus>
+        </ns3:headerInformation>
+        <ns3:situationRecord xsi:type="sit:GenericSituationRecord" id="29346517" version="1">
+            <ns3:situationRecordCreationReference>V16_REDACTED-0003</ns3:situationRecordCreationReference>
+            <ns3:situationRecordCreationTime>2026-10-24T09:05:38.000+02:00</ns3:situationRecordCreationTime>
+            <ns3:situationRecordVersionTime>2026-10-24T09:05:38.000+02:00</ns3:situationRecordVersionTime>
+            <ns3:probabilityOfOccurrence>certain</ns3:probabilityOfOccurrence>
+            <ns3:source>
+                <ns2:sourceIdentification>DGT3.0</ns2:sourceIdentification>
+            </ns3:source>
+            <ns3:validity>
+                <ns2:validityStatus>active</ns2:validityStatus>
+                <ns2:validityTimeSpecification>
+                    <ns2:overallStartTime>2026-10-24T09:05:38.000+02:00</ns2:overallStartTime>
+                </ns2:validityTimeSpecification>
+            </ns3:validity>
+            <ns3:cause>
+                <ns3:causeType>vehicleObstruction</ns3:causeType>
+                <ns3:detailedCauseType>
+                    <ns3:vehicleObstructionType>vehicleStuck</ns3:vehicleObstructionType>
+                </ns3:detailedCauseType>
+            </ns3:cause>
+            <ns3:locationReference xsi:type="loc:PointLocation">
+                <ns4:supplementaryPositionalDescription>
+                    <ns4:roadInformation>
+                        <ns4:roadName>A-486</ns4:roadName>
+                    </ns4:roadInformation>
+                </ns4:supplementaryPositionalDescription>
+                <ns4:tpegPointLocation xsi:type="loc:TpegSimplePoint">
+                    <ns4:tpegDirection>southEastBound</ns4:tpegDirection>
+                    <ns4:tpegSimplePointLocationType>nonLinkedPoint</ns4:tpegSimplePointLocationType>
+                    <ns4:point xsi:type="loc:TpegNonJunctionPoint">
+                        <ns4:pointCoordinates>
+                            <ns4:latitude>37.302315</ns4:latitude>
+                            <ns4:longitude>-6.8211</ns4:longitude>
+                        </ns4:pointCoordinates>
+                        <ns4:_tpegNonJunctionPointExtension>
+                            <ns4:extendedTpegNonJunctionPoint>
+                                <ns5:autonomousCommunity>Andalucía</ns5:autonomousCommunity>
+                                <ns5:kilometerPoint>0.043</ns5:kilometerPoint>
+                                <ns5:municipality>Moguer</ns5:municipality>
+                                <ns5:province>Huelva</ns5:province>
+                            </ns4:extendedTpegNonJunctionPoint>
+                        </ns4:_tpegNonJunctionPointExtension>
+                    </ns4:point>
+                    <ns4:_tpegSimplePointExtension>
+                        <ns4:extendedTpegSimplePoint>
+                            <ns5:tpegDirectionRoad>positive</ns5:tpegDirectionRoad>
+                        </ns4:extendedTpegSimplePoint>
+                    </ns4:_tpegSimplePointExtension>
+                </ns4:tpegPointLocation>
+            </ns3:locationReference>
+            <ns3:genericSituationRecordName>incident</ns3:genericSituationRecordName>
+        </ns3:situationRecord>
+    </ns3:situation>
+    <ns3:situation id="23904376">
+        <ns3:headerInformation>
+            <ns2:informationStatus>real</ns2:informationStatus>
+        </ns3:headerInformation>
+        <ns3:situationRecord xsi:type="sit:GenericSituationRecord" id="28207631" version="2">
+            <ns3:situationRecordCreationReference>CYL_227077_desconocida_1790151417154</ns3:situationRecordCreationReference>
+            <ns3:situationRecordCreationTime>2026-09-29T12:51:40.000+02:00</ns3:situationRecordCreationTime>
+            <ns3:situationRecordVersionTime>2026-09-29T12:51:40.000+02:00</ns3:situationRecordVersionTime>
+            <ns3:probabilityOfOccurrence>certain</ns3:probabilityOfOccurrence>
+            <ns3:source>
+                <ns2:sourceIdentification>JCYL</ns2:sourceIdentification>
+            </ns3:source>
+            <ns3:validity>
+                <ns2:validityStatus>active</ns2:validityStatus>
+                <ns2:validityTimeSpecification>
+                    <ns2:overallStartTime>2026-09-23T10:16:00.000+02:00</ns2:overallStartTime>
+                </ns2:validityTimeSpecification>
+            </ns3:validity>
+            <ns3:cause>
+                <ns3:causeType>obstruction</ns3:causeType>
+                <ns3:detailedCauseType>
+                    <ns3:obstructionType>objectOnTheRoad</ns3:obstructionType>
+                </ns3:detailedCauseType>
+            </ns3:cause>
+            <ns3:locationReference xsi:type="loc:SingleRoadLinearLocation">
+                <ns4:supplementaryPositionalDescription>
+                    <ns4:roadInformation>
+                        <ns4:roadName>LE-164</ns4:roadName>
+                    </ns4:roadInformation>
+                </ns4:supplementaryPositionalDescription>
+                <ns4:tpegLinearLocation>
+                    <ns4:tpegDirection>unknown</ns4:tpegDirection>
+                    <ns4:tpegLinearLocationType>segment</ns4:tpegLinearLocationType>
+                    <ns4:to xsi:type="loc:TpegNonJunctionPoint">
+                        <ns4:pointCoordinates>
+                            <ns4:latitude>42.268406</ns4:latitude>
+                            <ns4:longitude>-6.6807737</ns4:longitude>
+                        </ns4:pointCoordinates>
+                        <ns4:_tpegNonJunctionPointExtension>
+                            <ns4:extendedTpegNonJunctionPoint>
+                                <ns5:autonomousCommunity>Castilla y León</ns5:autonomousCommunity>
+                                <ns5:kilometerPoint>42.9</ns5:kilometerPoint>
+                                <ns5:municipality>Encinedo</ns5:municipality>
+                                <ns5:province>León</ns5:province>
+                            </ns4:extendedTpegNonJunctionPoint>
+                        </ns4:_tpegNonJunctionPointExtension>
+                    </ns4:to>
+                    <ns4:from xsi:type="loc:TpegNonJunctionPoint">
+                        <ns4:pointCoordinates>
+                            <ns4:latitude>42.412834</ns4:latitude>
+                            <ns4:longitude>-6.8182316</ns4:longitude>
+                        </ns4:pointCoordinates>
+                        <ns4:_tpegNonJunctionPointExtension>
+                            <ns4:extendedTpegNonJunctionPoint>
+                                <ns5:autonomousCommunity>Castilla y León</ns5:autonomousCommunity>
+                                <ns5:kilometerPoint>0.5</ns5:kilometerPoint>
+                                <ns5:municipality>Puente de Domingo Flórez</ns5:municipality>
+                                <ns5:province>León</ns5:province>
+                            </ns4:extendedTpegNonJunctionPoint>
+                        </ns4:_tpegNonJunctionPointExtension>
+                    </ns4:from>
+                    <ns4:_tpegLinearLocationExtension>
+                        <ns4:extendedTpegLinearLocation>
+                            <ns5:tpegDirectionRoad>both</ns5:tpegDirectionRoad>
+                        </ns4:extendedTpegLinearLocation>
+                    </ns4:_tpegLinearLocationExtension>
+                </ns4:tpegLinearLocation>
+            </ns3:locationReference>
+            <ns3:genericSituationRecordName>incident</ns3:genericSituationRecordName>
+        </ns3:situationRecord>
+    </ns3:situation>
+    <ns3:situation id="24976724">
+        <ns3:headerInformation>
+            <ns2:informationStatus>real</ns2:informationStatus>
+        </ns3:headerInformation>
+        <ns3:situationRecord xsi:type="sit:GenericSituationRecord" id="29347336" version="1">
+            <ns3:situationRecordCreationReference>V16_REDACTED-0004</ns3:situationRecordCreationReference>
+            <ns3:situationRecordCreationTime>2026-10-24T09:52:42.000+02:00</ns3:situationRecordCreationTime>
+            <ns3:situationRecordVersionTime>2026-10-24T09:52:42.000+02:00</ns3:situationRecordVersionTime>
+            <ns3:probabilityOfOccurrence>certain</ns3:probabilityOfOccurrence>
+            <ns3:source>
+                <ns2:sourceIdentification>DGT3.0</ns2:sourceIdentification>
+            </ns3:source>
+            <ns3:validity>
+                <ns2:validityStatus>active</ns2:validityStatus>
+                <ns2:validityTimeSpecification>
+                    <ns2:overallStartTime>2026-10-24T09:52:42.000+02:00</ns2:overallStartTime>
+                </ns2:validityTimeSpecification>
+            </ns3:validity>
+            <ns3:cause>
+                <ns3:causeType>vehicleObstruction</ns3:causeType>
+                <ns3:detailedCauseType>
+                    <ns3:vehicleObstructionType>vehicleStuck</ns3:vehicleObstructionType>
+                </ns3:detailedCauseType>
+            </ns3:cause>
+            <ns3:locationReference xsi:type="loc:PointLocation">
+                <ns4:supplementaryPositionalDescription>
+                    <ns4:roadInformation>
+                        <ns4:roadName>SC-20</ns4:roadName>
+                    </ns4:roadInformation>
+                </ns4:supplementaryPositionalDescription>
+                <ns4:tpegPointLocation xsi:type="loc:TpegSimplePoint">
+                    <ns4:tpegDirection>northEastBound</ns4:tpegDirection>
+                    <ns4:tpegSimplePointLocationType>nonLinkedPoint</ns4:tpegSimplePointLocationType>
+                    <ns4:point xsi:type="loc:TpegNonJunctionPoint">
+                        <ns4:pointCoordinates>
+                            <ns4:latitude>42.88137</ns4:latitude>
+                            <ns4:longitude>-8.513828</ns4:longitude>
+                        </ns4:pointCoordinates>
+                        <ns4:_tpegNonJunctionPointExtension>
+                            <ns4:extendedTpegNonJunctionPoint>
+                                <ns5:autonomousCommunity>Galicia</ns5:autonomousCommunity>
+                                <ns5:kilometerPoint>3.398</ns5:kilometerPoint>
+                                <ns5:municipality>Santiago de Compostela</ns5:municipality>
+                                <ns5:province>A Coruña</ns5:province>
+                            </ns4:extendedTpegNonJunctionPoint>
+                        </ns4:_tpegNonJunctionPointExtension>
+                    </ns4:point>
+                    <ns4:_tpegSimplePointExtension>
+                        <ns4:extendedTpegSimplePoint>
+                            <ns5:tpegDirectionRoad>negative</ns5:tpegDirectionRoad>
+                        </ns4:extendedTpegSimplePoint>
+                    </ns4:_tpegSimplePointExtension>
+                </ns4:tpegPointLocation>
+            </ns3:locationReference>
+            <ns3:genericSituationRecordName>incident</ns3:genericSituationRecordName>
+        </ns3:situationRecord>
+    </ns3:situation>
+    <ns3:situation id="24977068">
+        <ns3:headerInformation>
+            <ns2:informationStatus>real</ns2:informationStatus>
+        </ns3:headerInformation>
+        <ns3:situationRecord xsi:type="sit:GenericSituationRecord" id="29347685" version="1">
+            <ns3:situationRecordCreationReference>V16_REDACTED-0005</ns3:situationRecordCreationReference>
+            <ns3:situationRecordCreationTime>2026-10-24T10:10:14.000+02:00</ns3:situationRecordCreationTime>
+            <ns3:situationRecordVersionTime>2026-10-24T10:10:14.000+02:00</ns3:situationRecordVersionTime>
+            <ns3:probabilityOfOccurrence>certain</ns3:probabilityOfOccurrence>
+            <ns3:source>
+                <ns2:sourceIdentification>DGT3.0</ns2:sourceIdentification>
+            </ns3:source>
+            <ns3:validity>
+                <ns2:validityStatus>active</ns2:validityStatus>
+                <ns2:validityTimeSpecification>
+                    <ns2:overallStartTime>2026-10-24T10:10:14.000+02:00</ns2:overallStartTime>
+                </ns2:validityTimeSpecification>
+            </ns3:validity>
+            <ns3:cause>
+                <ns3:causeType>vehicleObstruction</ns3:causeType>
+                <ns3:detailedCauseType>
+                    <ns3:vehicleObstructionType>vehicleStuck</ns3:vehicleObstructionType>
+                </ns3:detailedCauseType>
+            </ns3:cause>
+            <ns3:locationReference xsi:type="loc:PointLocation">
+                <ns4:supplementaryPositionalDescription>
+                    <ns4:roadInformation>
+                        <ns4:roadName>AC-840</ns4:roadName>
+                    </ns4:roadInformation>
+                </ns4:supplementaryPositionalDescription>
+                <ns4:tpegPointLocation xsi:type="loc:TpegSimplePoint">
+                    <ns4:tpegDirection>northBound</ns4:tpegDirection>
+                    <ns4:tpegSimplePointLocationType>nonLinkedPoint</ns4:tpegSimplePointLocationType>
+                    <ns4:point xsi:type="loc:TpegNonJunctionPoint">
+                        <ns4:pointCoordinates>
+                            <ns4:latitude>43.096348</ns4:latitude>
+                            <ns4:longitude>-8.128832</ns4:longitude>
+                        </ns4:pointCoordinates>
+                        <ns4:_tpegNonJunctionPointExtension>
+                            <ns4:extendedTpegNonJunctionPoint>
+                                <ns5:autonomousCommunity>Galicia</ns5:autonomousCommunity>
+                                <ns5:kilometerPoint>25.171</ns5:kilometerPoint>
+                                <ns5:municipality>Curtis</ns5:municipality>
+                                <ns5:province>A Coruña</ns5:province>
+                            </ns4:extendedTpegNonJunctionPoint>
+                        </ns4:_tpegNonJunctionPointExtension>
+                    </ns4:point>
+                    <ns4:_tpegSimplePointExtension>
+                        <ns4:extendedTpegSimplePoint>
+                            <ns5:tpegDirectionRoad>negative</ns5:tpegDirectionRoad>
+                        </ns4:extendedTpegSimplePoint>
+                    </ns4:_tpegSimplePointExtension>
+                </ns4:tpegPointLocation>
+            </ns3:locationReference>
+            <ns3:genericSituationRecordName>incident</ns3:genericSituationRecordName>
+        </ns3:situationRecord>
+    </ns3:situation>
+    <ns3:situation id="24975974">
+        <ns3:headerInformation>
+            <ns2:informationStatus>real</ns2:informationStatus>
+        </ns3:headerInformation>
+        <ns3:situationRecord xsi:type="sit:GenericSituationRecord" id="29346576" version="1">
+            <ns3:situationRecordCreationReference>V16_REDACTED-0006</ns3:situationRecordCreationReference>
+            <ns3:situationRecordCreationTime>2026-10-24T09:09:51.000+02:00</ns3:situationRecordCreationTime>
+            <ns3:situationRecordVersionTime>2026-10-24T09:09:51.000+02:00</ns3:situationRecordVersionTime>
+            <ns3:probabilityOfOccurrence>certain</ns3:probabilityOfOccurrence>
+            <ns3:source>
+                <ns2:sourceIdentification>DGT3.0</ns2:sourceIdentification>
+            </ns3:source>
+            <ns3:validity>
+                <ns2:validityStatus>active</ns2:validityStatus>
+                <ns2:validityTimeSpecification>
+                    <ns2:overallStartTime>2026-10-24T09:09:51.000+02:00</ns2:overallStartTime>
+                </ns2:validityTimeSpecification>
+            </ns3:validity>
+            <ns3:cause>
+                <ns3:causeType>vehicleObstruction</ns3:causeType>
+                <ns3:detailedCauseType>
+                    <ns3:vehicleObstructionType>vehicleStuck</ns3:vehicleObstructionType>
+                </ns3:detailedCauseType>
+            </ns3:cause>
+            <ns3:locationReference xsi:type="loc:PointLocation">
+                <ns4:supplementaryPositionalDescription>
+                    <ns4:roadInformation>
+                        <ns4:roadName>A-21</ns4:roadName>
+                    </ns4:roadInformation>
+                </ns4:supplementaryPositionalDescription>
+                <ns4:tpegPointLocation xsi:type="loc:TpegSimplePoint">
+                    <ns4:tpegDirection>westBound</ns4:tpegDirection>
+                    <ns4:tpegSimplePointLocationType>nonLinkedPoint</ns4:tpegSimplePointLocationType>
+                    <ns4:point xsi:type="loc:TpegNonJunctionPoint">
+                        <ns4:pointCoordinates>
+                            <ns4:latitude>42.62295</ns4:latitude>
+                            <ns4:longitude>-1.126323</ns4:longitude>
+                        </ns4:pointCoordinates>
+                        <ns4:_tpegNonJunctionPointExtension>
+                            <ns4:extendedTpegNonJunctionPoint>
+                                <ns5:autonomousCommunity>Aragón</ns5:autonomousCommunity>
+                                <ns5:kilometerPoint>54.525</ns5:kilometerPoint>
+                                <ns5:municipality>Sigüés</ns5:municipality>
+                                <ns5:province>Zaragoza</ns5:province>
+                            </ns4:extendedTpegNonJunctionPoint>
+                        </ns4:_tpegNonJunctionPointExtension>
+                    </ns4:point>
+                    <ns4:_tpegSimplePointExtension>
+                        <ns4:extendedTpegSimplePoint>
+                            <ns5:tpegDirectionRoad>negative</ns5:tpegDirectionRoad>
+                        </ns4:extendedTpegSimplePoint>
+                    </ns4:_tpegSimplePointExtension>
+                </ns4:tpegPointLocation>
+            </ns3:locationReference>
+            <ns3:genericSituationRecordName>incident</ns3:genericSituationRecordName>
+        </ns3:situationRecord>
+    </ns3:situation>
+    </ns0:payload>

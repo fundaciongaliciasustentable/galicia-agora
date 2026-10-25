@@ -1,0 +1,44 @@
+id: trafico-balizas-v16
+title:
+  gl: Balizas V16 activas agora
+  es: Balizas V16 activas ahora
+theme: mobilidade
+operator:
+  name: Dirección General de Tráfico (DGT 3.0), Punto de Acceso Nacional de Tráfico
+  url: https://nap.dgt.es/es/dataset/incidencias-dgt-datex2-v3-7
+source_url: https://nap.dgt.es/datex2/v3/dgt/SituationPublication/datex2_v37.xml
+licence:
+  text_url: https://nap.dgt.es/es/dataset/incidencias-dgt-datex2-v3-7
+  quote: "Licencia Creative Commons Attribution"
+  verified_at: 2026-10-25
+  odbl_compatible: true
+  collection: odbl
+  notes: >-
+    Mesmo conxunto ca trafico-incidencias: CC BY na ficha do NAP e «Términos de Uso» que
+    remiten ao aviso legal da DGT (https://www.dgt.es/contenido/aviso-legal/). Pediuse
+    confirmación por escrito a nap@dgt.es (pendente).
+attribution: "Fonte: DGT, Punto de Acceso Nacional de Tráfico"
+update_frequency:
+  declared: PT1M
+  measured: PT2M
+  schedule: "*/10 * * * *"
+geometry: point
+output: geojson
+auth:
+  required: false
+privacy_notes: >-
+  Unha baliza V16 sinala un vehículo particular detido na estrada. Só en directo: nunca se
+  publica nin se garda o identificador V16_ nin ningún hash derivado. O id de cada punto é
+  a súa orde nesta descarga (1..n, por estrada e quilómetro), polo que non permite seguir
+  un dispositivo entre descargas. A hora de inicio redondéase a 5 minutos, as coordenadas a
+  4 decimais (uns 10 m) e o punto quilométrico a 100 m. Sen histórico: só o ficheiro actual.
+stale_after: PT30M
+ingest:
+  every: PT10M
+volatile: true
+style:
+  kind: circle
+  color_token: --c-aviso
+  label_field: estrada
+table:
+  fields: [estrada, pk, concello, provincia, desde]
