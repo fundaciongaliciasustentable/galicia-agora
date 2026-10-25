@@ -8,7 +8,7 @@ import { access, readdir } from 'node:fs/promises';
 import { join } from 'node:path';
 import type { LayerDef } from './lib/adapter.ts';
 import { parseDuration } from './lib/duration.ts';
-import { LAYERS_DIR, loadLayer, runLayer } from './lib/ingest.ts';
+import { LAYERS_DIR, loadLayer, runLayer, staleAfterMs } from './lib/ingest.ts';
 import { ageStatus, type Meta, needsAlert, readMeta, writeAtomic } from './lib/publish.ts';
 import { loadYaml, validate } from './lib/schemas.ts';
 
@@ -33,11 +33,23 @@ async function layerIds(): Promise<string[]> {
   return ids.sort();
 }
 
-/** stale_after if set, otherwise three ingest cycles, otherwise one day. */
-function staleAfterMs(layer: LayerDef): number {
-  if (layer.stale_after) return parseDuration(layer.stale_after);
-  if (layer.ingest?.every) return 3 * parseDuration(layer.ingest.every);
-  return 24 * 3600_000;
+/** Order layer ids so every layer runs after the layers in its depends_on. */
+function dependencyOrder(layers: Array<Pick<LayerDef, 'id' | 'depends_on'>>): string[] {
+  const byId = new Map(layers.map((l) => [l.id, l]));
+  const done = new Set<string>();
+  const visiting = new Set<string>();
+  const order: string[] = [];
+  const visit = (id: string) => {
+    if (done.has(id)) return;
+    if (visiting.has(id)) throw new Error(`depends_on cycle at ${id}`);
+    visiting.add(id);
+    for (const dep of byId.get(id)?.depends_on ?? []) if (byId.has(dep)) visit(dep);
+    visiting.delete(id);
+    done.add(id);
+    order.push(id);
+  };
+  for (const l of layers) visit(l.id);
+  return order;
 }
 
 function cycleMs(layer: LayerDef): number {
@@ -62,7 +74,16 @@ async function cmdValidate(): Promise<number> {
 async function cmdIngest(): Promise<number> {
   const only = arg('layer');
   const force = process.argv.includes('--force');
-  const ids = only ? [only] : await layerIds();
+  // Raster layers take thousands of tile requests (15–20 min): they run only
+  // with --layer=<id> or --raster, never in the 10-minute scheduled job.
+  const withRaster = process.argv.includes('--raster');
+  const ids = only
+    ? [only]
+    : dependencyOrder(
+        (await Promise.all((await layerIds()).map((id) => loadLayer(id)))).filter(
+          (l) => withRaster || l.geometry !== 'raster',
+        ),
+      );
   let failed = 0;
   // Sequential on purpose: be gentle with public services.
   for (const id of ids) {

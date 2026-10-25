@@ -115,8 +115,14 @@ const licenceLabel = (l: CatalogLayer) => l.licence.spdx ?? l.licence.text_url;
                   )}
                   <p class="ga-layer-actions">
                     <a href={l.source_url} rel="noopener">{t(lang, 'source')}</a>
-                    <button type="button" class="ga-button" data-table={l.id}>{t(lang, 'as_table')}</button>
-                    <a href={asset(`data/${l.id}/data.geojson`)} download>{t(lang, 'download')}</a>
+                    {l.geometry === 'raster' ? (
+                      <a href={asset(`data/${l.id}/data.pmtiles`)} download>{t(lang, 'download')} (PMTiles)</a>
+                    ) : (
+                      <>
+                        <button type="button" class="ga-button" data-table={l.id}>{t(lang, 'as_table')}</button>
+                        <a href={asset(`data/${l.id}/data.geojson`)} download>{t(lang, 'download')}</a>
+                      </>
+                    )}
                   </p>
                 </details>
               </li>

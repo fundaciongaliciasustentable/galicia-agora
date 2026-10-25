@@ -115,6 +115,15 @@ function data() {
     if (!existsSync(join(srcDir, 'meta.json'))) continue;
     mkdirSync(dstDir, { recursive: true });
     cpSync(join(srcDir, 'meta.json'), join(dstDir, 'meta.json'));
+    // Raster layers arrive as a ready PMTiles archive (pipeline/lib/raster.ts).
+    if (layer.geometry === 'raster') {
+      const archive = join(srcDir, 'data.pmtiles');
+      if (!existsSync(archive)) continue;
+      cpSync(archive, join(dstDir, 'data.pmtiles'));
+      layer.tiles = `/data/${layer.id}/data.pmtiles`;
+      log(`${layer.id}: raster PMTiles ${(statSync(archive).size / 1e6).toFixed(1)} MB`);
+      continue;
+    }
     const geojson = join(srcDir, 'data.geojson');
     if (!existsSync(geojson)) continue;
     cpSync(geojson, join(dstDir, 'data.geojson'));

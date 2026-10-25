@@ -293,7 +293,15 @@ export async function start(): Promise<void> {
       return;
     }
     const origin = window.location.origin;
-    if (layer.tiles) {
+    if (layer.tiles && layer.geometry === 'raster') {
+      // PNG tiles from a raster PMTiles archive; MapLibre overzooms past its maxzoom.
+      map.addSource(id, {
+        type: 'raster',
+        url: `pmtiles://${origin}${asset(layer.tiles)}`,
+        tileSize: 256,
+        attribution: layer.attribution,
+      });
+    } else if (layer.tiles) {
       map.addSource(id, {
         type: 'vector',
         url: `pmtiles://${origin}${asset(layer.tiles)}`,

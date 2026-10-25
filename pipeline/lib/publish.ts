@@ -37,7 +37,7 @@ export interface Attempt {
   licence: string;
   attribution: string;
   /** Present when fetch + normalize succeeded. */
-  data?: { body: string; featureCount: number; publishedAt: string | null };
+  data?: { body: string | Buffer; featureCount: number; publishedAt: string | null };
   /** Result of schema validation on the normalized data. */
   validationErrors?: string[];
   /** Fetch/normalize error, if any. */
@@ -58,7 +58,7 @@ export interface Decision {
 export const ANOMALOUS_DROP = 0.5;
 const HISTORY_WINDOW_MS = 7 * 24 * 3600_000;
 
-export function sha256(body: string): string {
+export function sha256(body: string | Buffer): string {
   return `sha256:${createHash('sha256').update(body).digest('hex')}`;
 }
 
@@ -144,7 +144,7 @@ export function needsAlert(meta: Meta, now: Date, cycleMs: number, cycles = 3): 
   return now.getTime() - Date.parse(meta.last_success_at) > cycles * cycleMs;
 }
 
-export async function writeAtomic(path: string, content: string): Promise<void> {
+export async function writeAtomic(path: string, content: string | Buffer): Promise<void> {
   await mkdir(dirname(path), { recursive: true });
   const tmp = join(dirname(path), `.${Date.now()}.${process.pid}.tmp`);
   await writeFile(tmp, content);

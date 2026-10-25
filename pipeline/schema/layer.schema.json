@@ -115,6 +115,13 @@
         }
       }
     },
+    "depends_on": {
+      "description": "Derived layers: ids of layers whose published output this layer reads. The ingest runs them first; the adapter reads them with ctx.readLayer and fails if one is missing or stale.",
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" }
+    },
     "volatile": {
       "description": "True when zero features or large drops are normal (ADR 0004).",
       "type": "boolean"

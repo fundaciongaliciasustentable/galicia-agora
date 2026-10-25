@@ -4,6 +4,7 @@
 // write (via publish.ts), so adapters only fetch and normalize.
 
 import type { FetchOptions, FetchResult } from './http.ts';
+import type { Meta } from './publish.ts';
 
 export interface Feature {
   type: 'Feature';
@@ -28,6 +29,8 @@ export interface LayerDef {
   volatile?: boolean;
   join?: { layer: string; key: string; where?: Record<string, unknown> };
   indicators?: Array<{ id: string; comparison: 'index' | 'points' }>;
+  /** Derived layers: ids of layers whose published output this layer reads (run first). */
+  depends_on?: string[];
   [key: string]: unknown;
 }
 
@@ -38,6 +41,16 @@ export interface AdapterContext {
   env: Record<string, string | undefined>;
   /** HTTP with the project User-Agent and retries. Injected so tests can replay fixtures. */
   get(url: string, opts?: FetchOptions): Promise<FetchResult>;
+  /**
+   * Derived layers only: the last good published output of a layer listed in depends_on.
+   * Throws if it is undeclared, missing, failed or stale, so publish keeps the last good file.
+   */
+  readLayer?(id: string): Promise<PublishedLayer>;
+}
+
+export interface PublishedLayer {
+  collection: FeatureCollection;
+  meta: Meta;
 }
 
 export interface Normalized {
