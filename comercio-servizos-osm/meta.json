@@ -1,8 +1,8 @@
 {
   "layer_id": "comercio-servizos-osm",
   "published_at": "2026-10-24T20:20:51Z",
-  "fetched_at": "2026-10-25T11:27:47.935Z",
-  "last_success_at": "2026-10-25T11:27:47.935Z",
+  "fetched_at": "2026-10-25T11:35:34.150Z",
+  "last_success_at": "2026-10-25T11:35:34.150Z",
   "status": "fresh",
   "consecutive_failures": 0,
   "feature_count": 28256,
@@ -12,6 +12,10 @@
   "checksum": "sha256:d5005a11903c018c05e1936283d797e541b9e5c0b7a49bd25b9766c34ee52732",
   "last_error": null,
   "history": [
+    {
+      "at": "2026-10-25T11:35:34.150Z",
+      "ok": true
+    },
     {
       "at": "2026-10-25T11:27:47.935Z",
       "ok": true

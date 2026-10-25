@@ -1,8 +1,8 @@
 {
   "layer_id": "cobertura-banda-larga",
   "published_at": "2026-06-16T16:27:24.000Z",
-  "fetched_at": "2026-10-25T11:27:46.034Z",
-  "last_success_at": "2026-10-25T11:27:46.034Z",
+  "fetched_at": "2026-10-25T11:35:31.782Z",
+  "last_success_at": "2026-10-25T11:35:31.782Z",
   "status": "fresh",
   "consecutive_failures": 0,
   "feature_count": 313,
@@ -12,6 +12,10 @@
   "checksum": "sha256:79e5de1c866ad9b7651b6d05d2f4e2dd44cc101827575798ea7eef2e52589098",
   "last_error": null,
   "history": [
+    {
+      "at": "2026-10-25T11:35:31.782Z",
+      "ok": true
+    },
     {
       "at": "2026-10-25T11:27:46.034Z",
       "ok": true

@@ -1,8 +1,8 @@
 {
   "layer_id": "calidade-aire",
   "published_at": "2026-10-25T11:00:00.000Z",
-  "fetched_at": "2026-10-25T11:26:38.481Z",
-  "last_success_at": "2026-10-25T11:26:38.481Z",
+  "fetched_at": "2026-10-25T11:34:27.513Z",
+  "last_success_at": "2026-10-25T11:34:27.513Z",
   "status": "fresh",
   "consecutive_failures": 0,
   "feature_count": 46,
@@ -12,6 +12,10 @@
   "checksum": "sha256:fa73f4068ea99822d8877e90b2107bc50735b9f506d1cbffc88415cd765131a1",
   "last_error": null,
   "history": [
+    {
+      "at": "2026-10-25T11:34:27.513Z",
+      "ok": true
+    },
     {
       "at": "2026-10-25T11:26:38.481Z",
       "ok": true
