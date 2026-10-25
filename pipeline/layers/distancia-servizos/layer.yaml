@@ -1,0 +1,79 @@
+id: distancia-servizos
+title:
+  gl: Distancia en liña recta aos servizos desde cada lugar
+  es: Distancia en línea recta a los servicios desde cada lugar
+theme: servizos
+operator:
+  name: Fundación Galicia Sustentable (cálculo propio con datos da Xunta de Galicia)
+  url: https://agora.galiciasustentable.org
+source_url: https://agora.galiciasustentable.org
+licence:
+  spdx: CC-BY-SA-4.0
+  text_url: https://abertos.xunta.gal/catalogo/saude-servicios-sociais/-/dataset/0253/mapa-dos-servizos-sanitarios-galicia
+  quote: "Creative Commons BY SA 4.0"
+  verified_at: 2026-10-24
+  odbl_compatible: doubt
+  collection: cc-by-sa-4.0
+  notes: >-
+    Capa derivada: cálculo propio da Fundación Galicia Sustentable sen descarga externa, a
+    partir das capas publicadas entidades-poboacion (IET, CC BY-SA 4.0 por dobre licenza),
+    centros-saude, hospitais e farmacias (SERGAS, conxunto 0253, CC BY-SA 4.0),
+    centros-educativos (conxunto 0257, CC BY-SA 4.0) e centros-maiores (conxunto 0299, CC BY-SA
+    4.0). Ao ser obra derivada de datos CC BY-SA, publícase baixo CC BY-SA 4.0 (ADR 0005).
+    Distancia en LIÑA RECTA (círculo máximo, fórmula do haversine, en km cun decimal) desde o
+    punto de cada entidade ao servizo máis próximo de cada tipo: NON é distancia por estrada
+    nin tempo de viaxe; por estrada a distancia é maior, ás veces moito (rías, montañas).
+    Servizos: centro de saúde e PAC (SERGAS; 92 dos 100 PAC están nun centro de saúde),
+    hospital (todos os do SERGAS, públicos e privados: a fonte non indica a titularidade),
+    farmacia, escola (centros públicos de etapa infantil e primaria, primaria ou integrados
+    CPI), instituto (centros públicos de secundaria, IES, e CPI) e centro de día para maiores
+    (tipo «Centro de día» do RUEPSS, de calquera iniciativa; non inclúe os de alzhéimer). Os
+    centros educativos sen etapa deducible (CPR, «Cen. Pub.»…) non contan. Calcúlase contra
+    o centro máis próximo, aínda que estea noutro concello ou noutra área sanitaria ou
+    escolar: non indica a que centro corresponde cada lugar. Hora de publicación: para cada
+    capa de entrada, a súa hora de publicación ou, se a fonte non a dá, a da última descarga
+    boa; tómase a máis recente. Se falta unha capa de entrada ou está caducada, a capa non se
+    recalcula e consérvase a última versión boa.
+attribution: >-
+  Cálculo propio da Fundación Galicia Sustentable con datos de: © Instituto de Estudos do
+  Territorio. Xunta de Galicia (PBA); Xunta de Galicia. Consellería de Sanidade — Servizo
+  Galego de Saúde (SERGAS); Consellería de Educación (abertos.xunta.gal, conxunto 0257);
+  Consellería de Política Social (RUEPSS; abertos.xunta.gal, conxunto 0299).
+update_frequency:
+  declared: P7D
+geometry: point
+output: geojson
+auth:
+  required: false
+privacy_notes: >-
+  Sen datos persoais: lugares da toponimia oficial coa súa poboación agregada (padrón 2024) e
+  distancias a centros públicos. Lugares e núcleos do planeamento sen poboación na fonte
+  publícanse con poboación nula.
+stale_after: P30D
+ingest:
+  every: P7D
+depends_on:
+  - entidades-poboacion
+  - centros-saude
+  - hospitais
+  - farmacias
+  - centros-educativos
+  - centros-maiores
+style:
+  kind: circle
+  color_token: --c-saude
+  label_field: nome
+table:
+  fields:
+    - nome
+    - poboacion
+    - dist_centro_saude
+    - centro_saude_nome
+    - dist_pac
+    - dist_hospital
+    - dist_farmacia
+    - dist_escola
+    - dist_instituto
+    - dist_centro_dia
+    - codigo
+    - codigo_ine

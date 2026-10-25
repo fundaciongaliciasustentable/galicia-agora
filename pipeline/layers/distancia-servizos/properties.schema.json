@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "distancia-servizos feature properties",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "codigo",
+    "nome",
+    "codigo_ine",
+    "poboacion",
+    "dist_centro_saude",
+    "dist_pac",
+    "dist_hospital",
+    "dist_farmacia",
+    "dist_escola",
+    "dist_instituto",
+    "dist_centro_dia",
+    "centro_saude_nome"
+  ],
+  "properties": {
+    "codigo": {
+      "type": ["string", "null"],
+      "description": "Código da entidade (IET); non é único"
+    },
+    "nome": { "type": "string", "minLength": 1 },
+    "codigo_ine": { "type": "string", "pattern": "^(15|27|32|36)\\d{3}$" },
+    "poboacion": { "type": ["integer", "null"], "minimum": 0 },
+    "dist_centro_saude": { "$ref": "#/$defs/km" },
+    "dist_pac": { "$ref": "#/$defs/km" },
+    "dist_hospital": { "$ref": "#/$defs/km" },
+    "dist_farmacia": { "$ref": "#/$defs/km" },
+    "dist_escola": { "$ref": "#/$defs/km" },
+    "dist_instituto": { "$ref": "#/$defs/km" },
+    "dist_centro_dia": { "$ref": "#/$defs/km" },
+    "centro_saude_nome": {
+      "type": ["string", "null"],
+      "description": "Nome do centro de saúde máis próximo en liña recta"
+    }
+  },
+  "$defs": {
+    "km": {
+      "type": ["number", "null"],
+      "minimum": 0,
+      "maximum": 300,
+      "description": "Distancia en liña recta (km, 1 decimal) ao máis próximo; non é distancia por estrada"
+    }
+  }
+}

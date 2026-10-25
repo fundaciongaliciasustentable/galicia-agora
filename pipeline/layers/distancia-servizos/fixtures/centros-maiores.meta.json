@@ -1,0 +1,20 @@
+{
+  "layer_id": "centros-maiores",
+  "published_at": "2026-10-05T06:52:48.000Z",
+  "fetched_at": "2026-10-25T10:01:04.116Z",
+  "last_success_at": "2026-10-25T10:01:04.116Z",
+  "status": "fresh",
+  "consecutive_failures": 0,
+  "feature_count": 31,
+  "source_url": "https://abertos.xunta.gal/catalogo/saude-servicios-sociais/-/dataset/0299/centros-para-persoas-maiores",
+  "licence": "CC-BY-SA-4.0",
+  "attribution": "Xunta de Galicia. Consellería de Política Social, centros para persoas maiores (RUEPSS; abertos.xunta.gal, conxunto 0299)",
+  "checksum": "sha256:61729bad66478cf474786710a319198b3199f2abebbdbb5af084ecb79299fc78",
+  "last_error": null,
+  "history": [
+    {
+      "at": "2026-10-25T10:01:04.116Z",
+      "ok": true
+    }
+  ]
+}

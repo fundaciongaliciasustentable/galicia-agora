@@ -34,6 +34,10 @@ privacy_notes: >-
   Toponimia oficial e poboación agregada por entidade (padrón 2024); ningún dato
   persoal. Para lugares (LU) e núcleos do planeamento (PU) a fonte dá 0
   habitantes porque non son entidades do INE: publícase sen dato (null).
+  Aviso: a poboación da fonte está incompleta. A suma das entidades é de só
+  1.260.895 habitantes (menos da metade de Galicia) e os núcleos urbanos principais
+  (Lugo, Ourense, Pontevedra, boa parte de Vigo) non teñen entidade con poboación.
+  Non sumar por concello. Causa non verificada.
 stale_after: P90D
 ingest:
   every: P30D
