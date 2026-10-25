@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "trafico-radares feature properties",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "tipo", "estrada", "pk", "pk_fin", "sentido", "cara_a", "provincia"],
+  "properties": {
+    "id": { "type": "string", "pattern": "^(CABINACINEMOMETRO|CVM)_\\d+$" },
+    "tipo": { "enum": ["cabina", "tramo"] },
+    "estrada": { "type": ["string", "null"] },
+    "pk": { "type": ["number", "null"], "minimum": 0 },
+    "pk_fin": { "type": ["number", "null"], "minimum": 0, "description": "Só tramos" },
+    "sentido": { "enum": ["crecente", "decrecente", "ambos sentidos", null] },
+    "cara_a": {
+      "type": ["string", "null"],
+      "description": "Destino indicado pola fonte (directionNamed)"
+    },
+    "provincia": { "type": ["string", "null"] }
+  }
+}

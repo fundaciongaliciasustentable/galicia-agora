@@ -1,0 +1,41 @@
+id: trafico-radares
+title:
+  gl: Cabinas de radar fixo e tramos de velocidade media
+  es: Cabinas de radar fijo y tramos de velocidad media
+theme: mobilidade
+operator:
+  name: Dirección General de Tráfico (DGT), Punto de Acceso Nacional de Tráfico
+  url: https://nap.dgt.es/es/dataset/radares-fijos-dgt
+source_url: https://nap.dgt.es/datex2/dgt/PredefinedLocationsPublication/radares/content.xml
+licence:
+  text_url: https://nap.dgt.es/es/dataset/radares-fijos-dgt
+  quote: "Licencia Creative Commons Attribution"
+  verified_at: 2026-10-25
+  odbl_compatible: true
+  collection: odbl
+  notes: >-
+    A ficha do conxunto no NAP declara «Creative Commons Attribution» sen versión, pero os
+    «Términos de Uso» remiten ao aviso legal da DGT (https://www.dgt.es/contenido/aviso-legal/).
+    Publícase na colección ODbL por decisión da FGS; pediuse confirmación por escrito a
+    nap@dgt.es (pendente). Unha cabina non quere dicir radar activo. Sen radares
+    municipais nin móbiles. Os tramos debúxanse como liña recta entre os extremos, non co
+    trazado da estrada.
+attribution: "Fonte: DGT, Punto de Acceso Nacional de Tráfico"
+update_frequency:
+  declared: PT1H
+  measured: static
+  schedule: "40 5 * * *"
+geometry: point
+output: geojson
+auth:
+  required: false
+privacy_notes: Localizacións de infraestrutura viaria; ningún dato persoal.
+stale_after: P7D
+ingest:
+  every: P1D
+style:
+  kind: circle
+  color_token: --c-limite
+  label_field: estrada
+table:
+  fields: [tipo, estrada, pk, pk_fin, sentido, cara_a, provincia]
