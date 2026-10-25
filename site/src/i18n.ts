@@ -84,6 +84,49 @@ const STRINGS = {
   choose_indicator: { gl: 'Indicador', es: 'Indicador' },
   collection_odbl: { gl: 'Base ODbL', es: 'Base ODbL' },
   collection_bysa: { gl: 'Colección CC BY-SA 4.0', es: 'Colección CC BY-SA 4.0' },
+  portrait_nav: { gl: 'Retrato', es: 'Retrato' },
+  portrait_search: { gl: 'Concello', es: 'Ayuntamiento' },
+  portrait_places: { gl: 'lugares', es: 'lugares' },
+  portrait_lede: {
+    gl: 'Cada punto é un dos {n} concellos. Baixa para percorrer os indicadores: os puntos deixan o mapa e ordénanse segundo o valor, co teu concello destacado. Toca un punto para cambiar de concello.',
+    es: 'Cada punto es uno de los {n} ayuntamientos. Baja para recorrer los indicadores: los puntos dejan el mapa y se ordenan según el valor, con tu ayuntamiento destacado. Toca un punto para cambiar de ayuntamiento.',
+  },
+  portrait_canvas: {
+    gl: 'Os concellos de Galicia como puntos. As cifras están no texto de cada indicador.',
+    es: 'Los ayuntamientos de Galicia como puntos. Las cifras están en el texto de cada indicador.',
+  },
+  portrait_view: { gl: 'Vista', es: 'Vista' },
+  portrait_strip: { gl: 'Distribución', es: 'Distribución' },
+  portrait_map: { gl: 'Mapa', es: 'Mapa' },
+  portrait_legend: {
+    gl: 'Cor: distancia ao valor de Galicia (marrón por debaixo, azul por enriba), non mellor ou peor.',
+    es: 'Color: distancia al valor de Galicia (marrón por debajo, azul por encima), no mejor o peor.',
+  },
+  portrait_log: { gl: 'escala logarítmica', es: 'escala logarítmica' },
+  portrait_sqrt: { gl: 'escala de raíz cadrada', es: 'escala de raíz cuadrada' },
+  portrait_no_data: { gl: 'sen dato', es: 'sin dato' },
+  portrait_above: {
+    gl: 'Valor máis alto ca no {pct} % dos concellos con dato.',
+    es: 'Valor más alto que en el {pct} % de los ayuntamientos con dato.',
+  },
+  portrait_below: {
+    gl: 'Valor máis baixo ca no {pct} % dos concellos con dato.',
+    es: 'Valor más bajo que en el {pct} % de los ayuntamientos con dato.',
+  },
+  portrait_middle: {
+    gl: 'Valor no medio dos concellos con dato.',
+    es: 'Valor en el medio de los ayuntamientos con dato.',
+  },
+  portrait_sources: { gl: 'Fonte, licenza e atribución', es: 'Fuente, licencia y atribución' },
+  portrait_how: { gl: 'Como se calcula', es: 'Cómo se calcula' },
+  portrait_not_found: {
+    gl: 'Non hai ningún concello con ese nome.',
+    es: 'No hay ningún ayuntamiento con ese nombre.',
+  },
+  portrait_missing: {
+    gl: 'Aínda non hai datos do perfil dos concellos.',
+    es: 'Aún no hay datos del perfil de los ayuntamientos.',
+  },
 } as const;
 
 export type Key = keyof typeof STRINGS;

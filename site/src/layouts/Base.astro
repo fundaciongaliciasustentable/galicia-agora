@@ -18,6 +18,7 @@ const other: Lang = lang === 'gl' ? 'es' : 'gl';
 const here = `${base(lang)}${path}`;
 const nav = [
   { href: base(lang), label: t(lang, 'nav_map'), path: '' },
+  { href: `${base(lang)}retrato/`, label: t(lang, 'portrait_nav'), path: 'retrato/' },
   { href: `${base(lang)}estado/`, label: t(lang, 'nav_status'), path: 'estado/' },
   { href: `${base(lang)}fontes/`, label: t(lang, 'nav_sources'), path: 'fontes/' },
   { href: `${base(lang)}sobre/`, label: t(lang, 'nav_about'), path: 'sobre/' },

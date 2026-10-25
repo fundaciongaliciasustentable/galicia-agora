@@ -1,0 +1,305 @@
+---
+// Concello portrait: indicator cards on one side, a sticky stage on the other where the 313
+// concellos are dots that move between the map and the distribution of the active indicator.
+// Cards carry every figure as text; the canvas is a visual aid with a text label.
+import { dictionary, type Lang, t } from '../i18n';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+---
+
+<div class="rt-app" data-lang={lang} data-dict={JSON.stringify(dictionary(lang))}>
+  <div class="rt-side">
+    <div class="rt-search">
+      <label for="rt-q">{t(lang, 'portrait_search')}</label>
+      <input id="rt-q" type="search" list="rt-concellos" autocomplete="off" spellcheck="false" />
+      <datalist id="rt-concellos"></datalist>
+      <p class="rt-status" role="status">{t(lang, 'loading')}</p>
+    </div>
+    <div class="rt-list" id="contido"></div>
+  </div>
+  <div class="rt-stage-wrap">
+    <div class="rt-stage">
+      <canvas class="rt-canvas" role="img" aria-label={t(lang, 'portrait_canvas')}></canvas>
+      <div class="rt-tip" hidden></div>
+      <div class="rt-stage-foot">
+        <p class="rt-legend">{t(lang, 'portrait_legend')}</p>
+        <div class="rt-modes" role="group" aria-label={t(lang, 'portrait_view')}>
+          <button type="button" data-mode="strip" aria-pressed="true">{t(lang, 'portrait_strip')}</button>
+          <button type="button" data-mode="map" aria-pressed="false">{t(lang, 'portrait_map')}</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style is:global>
+  .rt-app {
+    display: grid;
+    grid-template-columns: 1fr;
+    background: var(--bg);
+    color: var(--text);
+  }
+  .rt-stage-wrap {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    order: -1;
+    height: 46dvh;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+  }
+  .rt-stage {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  /* Out of the flow, so its pixel size never feeds back into the stage width. */
+  .rt-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    touch-action: pan-y;
+  }
+  .rt-side {
+    padding: 16px;
+    min-width: 0;
+  }
+  @media (min-width: 900px) {
+    .rt-app {
+      grid-template-columns: minmax(340px, 420px) 1fr;
+    }
+    .rt-stage-wrap {
+      order: 0;
+      height: calc(100dvh - 52px);
+      top: 0;
+      border-bottom: 0;
+      border-left: 1px solid var(--border);
+    }
+    .rt-side {
+      padding: 24px 28px 40vh;
+    }
+  }
+  .rt-search {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-bottom: 8px;
+  }
+  .rt-search label {
+    font-size: var(--gs-texto-xs);
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .rt-search input {
+    font: inherit;
+    font-size: var(--gs-texto-lg);
+    padding: 8px 10px;
+    border: 1px solid var(--border);
+    border-radius: var(--gs-radius);
+    background: var(--surface);
+    color: var(--text);
+  }
+  .rt-status {
+    margin: 0;
+    min-height: 1.2em;
+    font-size: var(--gs-texto-sm);
+    color: var(--text-muted);
+  }
+  .rt-card {
+    padding: 20px 0 24px;
+    border-bottom: 1px solid var(--border);
+    opacity: 0.55;
+    transition: opacity 300ms ease;
+    cursor: pointer;
+    outline-offset: 4px;
+    /* scrollIntoView lands the card just under the sticky stage, inside the active band. */
+    scroll-margin-top: 48dvh;
+  }
+  @media (min-width: 900px) {
+    .rt-card {
+      scroll-margin-top: 40dvh;
+    }
+  }
+  .rt-card.is-active,
+  .rt-intro {
+    opacity: 1;
+  }
+  .rt-intro {
+    min-height: 40dvh;
+    cursor: default;
+  }
+  .rt-kicker {
+    margin: 12px 0 0;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: var(--gs-texto-sm);
+  }
+  .rt-name {
+    margin: 0;
+    font-size: clamp(2.25rem, 6vw, 3.5rem);
+    line-height: 1.02;
+    color: var(--heading);
+    letter-spacing: -0.01em;
+  }
+  .rt-facts {
+    margin: 8px 0 0;
+    font-variant-numeric: tabular-nums;
+  }
+  .rt-lede {
+    margin: 20px 0 0;
+    color: var(--text-muted);
+  }
+  .rt-group {
+    margin-top: 40px;
+    padding-top: 8px;
+    border-top: 3px solid var(--heading);
+  }
+  .rt-group h2 {
+    margin: 0;
+    font-size: var(--gs-texto-base);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .rt-source summary {
+    cursor: pointer;
+  }
+  .rt-source {
+    margin: 4px 0 0;
+    font-size: var(--gs-texto-xs);
+    color: var(--text-muted);
+  }
+  .rt-card h3 {
+    margin: 0 0 4px;
+    font-size: var(--gs-texto-base);
+    font-weight: 600;
+  }
+  .rt-value {
+    margin: 0;
+    font-variant-numeric: tabular-nums;
+    color: var(--text-muted);
+  }
+  .rt-value strong {
+    font-size: var(--gs-texto-3xl);
+    color: var(--text);
+    line-height: 1.1;
+  }
+  .rt-galicia,
+  .rt-pos,
+  .rt-meta {
+    margin: 2px 0 0;
+    font-size: var(--gs-texto-sm);
+    font-variant-numeric: tabular-nums;
+  }
+  .rt-meta {
+    color: var(--text-muted);
+    font-size: var(--gs-texto-xs);
+  }
+  .rt-mini {
+    display: block;
+    width: 100%;
+    height: 30px;
+    margin: 10px 0 6px;
+  }
+  .rt-mini-ticks {
+    stroke: var(--text-muted);
+    stroke-width: 1;
+    opacity: 0.35;
+    vector-effect: non-scaling-stroke;
+  }
+  .rt-mini-galicia {
+    stroke: var(--text-muted);
+    stroke-width: 1;
+    stroke-dasharray: 3 3;
+    vector-effect: non-scaling-stroke;
+  }
+  .rt-mini-me {
+    stroke: var(--heading);
+    stroke-width: 3;
+    vector-effect: non-scaling-stroke;
+  }
+  .rt-note summary {
+    font-size: var(--gs-texto-xs);
+    color: var(--text-muted);
+    cursor: pointer;
+  }
+  .rt-note p {
+    font-size: var(--gs-texto-sm);
+  }
+  .rt-tip {
+    position: absolute;
+    pointer-events: none;
+    background: var(--surface);
+    color: var(--text);
+    border-radius: var(--gs-radius);
+    box-shadow: var(--gs-sombra);
+    padding: 4px 8px;
+    font-size: var(--gs-texto-sm);
+    white-space: nowrap;
+    transform: translateX(-50%);
+  }
+  .rt-tip[hidden] {
+    display: none;
+  }
+  .rt-stage-foot {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 12px;
+  }
+  .rt-modes {
+    flex-shrink: 0;
+    display: flex;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 3px;
+    box-shadow: var(--gs-sombra);
+  }
+  .rt-modes button {
+    font: inherit;
+    font-size: var(--gs-texto-sm);
+    border: 0;
+    background: transparent;
+    color: var(--text);
+    padding: 4px 12px;
+    border-radius: 999px;
+    cursor: pointer;
+  }
+  .rt-modes button:disabled {
+    opacity: 0.45;
+    cursor: default;
+  }
+  .rt-modes button[aria-pressed="true"]:not(:disabled) {
+    background: var(--heading);
+    color: var(--surface);
+  }
+  .rt-legend {
+    flex: 1;
+    margin: 0;
+    line-height: 1.3;
+    font-size: var(--gs-texto-xs);
+    color: var(--text-muted);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .rt-card {
+      transition: none;
+    }
+  }
+</style>
+
+<script>
+  import { start } from '../retrato/retrato';
+  start();
+</script>
