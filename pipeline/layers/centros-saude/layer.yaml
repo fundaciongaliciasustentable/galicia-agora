@@ -1,0 +1,45 @@
+id: centros-saude
+title:
+  gl: Centros de saúde e PAC
+  es: Centros de salud y PAC
+theme: servizos
+operator:
+  name: Consellería de Sanidade — Servizo Galego de Saúde (SERGAS)
+  url: https://www.sergas.es/
+source_url: https://extranet.sergas.es/sixsanweb/SIXSAN_WEB/proxyKml.ashx?SIXSAN_WEB_KML/MapServer/KmlServer?Composite=false&BBOX=-9.35,41.8,-6.7,43.8
+licence:
+  spdx: CC-BY-SA-4.0
+  text_url: https://abertos.xunta.gal/catalogo/saude-servicios-sociais/-/dataset/0253/mapa-dos-servizos-sanitarios-galicia
+  quote: "Creative Commons BY SA 4.0"
+  verified_at: 2026-10-24
+  odbl_compatible: doubt
+  collection: cc-by-sa-4.0
+  notes: >-
+    Conxunto 0253 «Mapa dos servizos sanitarios de Galicia» en abertos.xunta.gal (CC BY-SA 4.0,
+    actualización declarada diaria). O KMZ sae dun KmlServer de ArcGIS sen documentar tras un
+    proxy ASP.NET do SERGAS, ligado desde a ficha; o servizo e a súa estabilidade: non
+    verificado. Límites de uso: non verificado.
+attribution: "Xunta de Galicia. Consellería de Sanidade — Servizo Galego de Saúde (SERGAS)"
+update_frequency:
+  declared: P1D
+  schedule: "40 5 * * *"
+geometry: point
+output: geojson
+auth:
+  required: false
+privacy_notes: >-
+  Sen datos persoais: centros públicos de atención primaria. Non se publican os teléfonos. A
+  fonte non dá código dos centros: o id fórmase con tipo + nome + concello e cambia se o SERGAS
+  renomea o centro. 92 dos 100 PAC funcionan no mesmo centro de saúde e coinciden no mapa con
+  el. O KMZ non trae hora de publicación (published_at baleiro). O código INE sae do nome do
+  concello comparado coa táboa de concellos-parroquias; «Carballeda» (Avia ou Valdeorras) queda
+  sen código.
+stale_after: P3D
+ingest:
+  every: P1D
+style:
+  kind: circle
+  color_token: --c-saude
+  label_field: nome
+table:
+  fields: [nome, tipo, concello, enderezo, cp, codigo_ine, id]
