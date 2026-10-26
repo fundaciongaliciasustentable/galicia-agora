@@ -1,17 +1,21 @@
 {
   "layer_id": "sismos-recentes",
-  "published_at": "2026-10-25T18:52:52.213Z",
-  "fetched_at": "2026-10-26T10:40:40.987Z",
-  "last_success_at": "2026-10-26T10:40:40.987Z",
+  "published_at": "2026-10-26T13:07:04.257Z",
+  "fetched_at": "2026-10-26T17:04:40.275Z",
+  "last_success_at": "2026-10-26T17:04:40.275Z",
   "status": "fresh",
   "consecutive_failures": 0,
-  "feature_count": 50,
+  "feature_count": 51,
   "source_url": "https://www.seismicportal.eu/fdsnws/event/1/query?minlatitude=41.5&maxlatitude=44.5&minlongitude=-10.5&maxlongitude=-6.5&format=json&limit=500",
   "licence": "CC-BY-4.0",
   "attribution": "EMSC-CSEM / Instituto Geográfico Nacional (solucións IGN)",
-  "checksum": "sha256:fec7b04ad9d00501e21ece7bb56924651e6b0cb8abede4dbaf1357b43039ca09",
+  "checksum": "sha256:14bb3b9a065efc943093e3dee0b2c90f56806a469b6d311b11808b8a2f0848e7",
   "last_error": null,
   "history": [
+    {
+      "at": "2026-10-26T17:04:40.275Z",
+      "ok": true
+    },
     {
       "at": "2026-10-26T10:40:40.987Z",
       "ok": true
