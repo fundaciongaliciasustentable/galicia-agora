@@ -26,18 +26,30 @@ jobs:
           case "$FTPS_HOST" in *:[0-9]*) echo "contains a port";; esac
           if getent hosts "$FTPS_HOST" >/dev/null; then echo "resolves: yes"; else echo "resolves: NO"; fi
           printf 'ends with .espacioseguro.com: %s\n' "$(case "$FTPS_HOST" in *.espacioseguro.com) echo yes;; *) echo no;; esac)"
-      - name: Connect, list and write a probe file
+      - name: Where do deploys land? (read only)
         env:
           FTPS_HOST: ${{ secrets.FTPS_HOST }}
           FTPS_USER: ${{ secrets.FTPS_USER }}
           FTPS_PASSWORD: ${{ secrets.FTPS_PASSWORD }}
           FTPS_DIR: ${{ secrets.FTPS_DIR }}
         run: |
-          echo "galicia-agora ftps probe $(date -u +%FT%TZ)" > ftps-probe.txt
-          timeout 120 lftp -d -u "$FTPS_USER","$FTPS_PASSWORD" "ftp://$FTPS_HOST" -e "
+          host=$(printf %s "$FTPS_HOST" | tr -d '[:space:]' | sed -E 's#^[A-Za-z]+://##; s#/.*$##; s#:[0-9]*$##')
+          dir=$(printf %s "$FTPS_DIR" | tr -d '\r\n')
+          # The value stays masked; describe its shape so it can be fixed.
+          printf 'FTPS_DIR length %s, starts with slash: %s, segments: %s\n' "${#dir}" \
+            "$(case "$dir" in /*) echo yes;; *) echo no;; esac)" "$(printf %s "$dir" | tr -s / '\n' | grep -c .)"
+          printf 'FTPS_DIR segments: %s\n' "$(printf %s "$dir" | tr -s / ' ')"
+          timeout 240 lftp -u "$FTPS_USER","$FTPS_PASSWORD" "ftp://$host" -e "
             set ftp:ssl-force true; set ftp:ssl-protect-data true; set ssl:verify-certificate true;
             set net:timeout 20; set net:max-retries 1;
-            pwd; cls -1 ${FTPS_DIR:-/};
-            put ftps-probe.txt -o ${FTPS_DIR:-/}ftps-probe.txt;
-            cls -l ${FTPS_DIR:-/}ftps-probe.txt;
-            quit" 2>&1 | grep -vE "^(<--- 2[0-9][0-9]-|---> PASS)" | tail -60
+            echo '== login directory'; pwd;
+            echo '== login directory contents'; cls -1;
+            echo '== every data/catalog.json up to 5 levels, with date';
+            find -d 6 . | grep 'data/catalog.json';
+            quit" 2>&1 | tail -80
+          echo '== dates'
+          timeout 240 lftp -u "$FTPS_USER","$FTPS_PASSWORD" "ftp://$host" -e "
+            set ftp:ssl-force true; set ftp:ssl-protect-data true; set ssl:verify-certificate true;
+            find -d 6 . | grep 'data/catalog.json' > /dev/stdout; quit" 2>/dev/null | while read -r f; do
+            timeout 60 lftp -u "$FTPS_USER","$FTPS_PASSWORD" "ftp://$host" -e "set ftp:ssl-force true; set ftp:ssl-protect-data true; cls -l --time-style=%FT%T '$f'; quit"
+          done
