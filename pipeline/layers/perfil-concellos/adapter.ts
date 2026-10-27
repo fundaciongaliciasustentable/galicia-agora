@@ -1,5 +1,5 @@
 // Concello profile: one row per concello with a representative point (for the dot views of
-// the /retrato page) and the median straight-line distance from its places to each service.
+// the concello portrait, concellos.galiciasustentable.org) and the median straight-line distance from its places to each service.
 // Derived layer: no network. It reads the last good published output of concellos-parroquias
 // and distancia-servizos through ctx.readLayer, which throws when an input is missing or
 // stale, so publish keeps the previous good file.

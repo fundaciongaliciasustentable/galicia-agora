@@ -9,7 +9,7 @@ Método: busca de referentes coñecidos e premiados, e comprobación de cada un 
 Non se trata de efectos, senón de representacións que **responden unha pregunta que un mapa de capas non responde**:
 - **Movemento:** o dato flúe ou viaxa (vento, trens, persoas).
 - **Escala humana:** cada edificio, cada lugar ou cada persoa simulada, non medias por concello.
-- **Comparación inmediata:** mapa e gráfico na mesma imaxe (o que xa fai `/retrato/`).
+- **Comparación inmediata:** mapa e gráfico na mesma imaxe (o que xa fai o retrato dos concellos, concellos.galiciasustentable.org).
 - **Tempo comprimido:** un día ou un século nunha soa vista.
 - **Outros sentidos:** son e relevo físico cando a cor non chega.
 
@@ -58,7 +58,7 @@ Regras do proxecto que filtran todo: nada de terceiros no navegador (bibliotecas
 - **Esforzo:** medio-alto, polo cálculo de rutas. **Impacto:** moi alto para o rural.
 
 ### G. Mapa e gráfico na mesma imaxe
-- **Referente propio:** `/retrato/`, os 313 concellos movéndose entre o mapa e a distribución. O estudo de 119 historias de NYT e Washington Post atopou menos interacción e máis animación co paso ao móbil e ao scroll ([Cartographic Perspectives](https://cartographicperspectives.org/index.php/journal/article/download/2039/2571/14852)). Vai na liña do retrato.
+- **Referente propio:** o retrato dos concellos ([concellos.galiciasustentable.org](https://concellos.galiciasustentable.org), proxecto propio desde o 27/10/2026), os 313 concellos movéndose entre o mapa e a distribución. O estudo de 119 historias de NYT e Washington Post atopou menos interacción e máis animación co paso ao móbil e ao scroll ([Cartographic Perspectives](https://cartographicperspectives.org/index.php/journal/article/download/2039/2571/14852)). Vai na liña do retrato.
 - **Seguintes pasos:** aplicar a mesma técnica a parroquias (3.700 puntos), ao tempo (como cambia un indicador entre 2015 e 2025, cos puntos movéndose) e a correlacións (os puntos colócanse nun gráfico de dispersión, por exemplo envellecemento fronte a distancia ao hospital).
 - **Esforzo:** baixo, porque reutiliza o retrato. **Impacto:** alto.
 

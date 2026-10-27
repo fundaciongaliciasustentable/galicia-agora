@@ -1,8 +1,23 @@
 ---
-import Base from '../../layouts/Base.astro';
-import View from '../../views/Retrato.astro';
+// The concello portrait moved to its own site on 27/10/2026. This page keeps old links
+// working: it sends visitors there, keeping the hash (#c=…&i=…) of shared views.
+const DEST = 'https://concellos.galiciasustentable.org/';
 ---
 
-<Base lang="gl" title="Retrato do concello — Galicia Agora" description="Cada concello fronte aos outros 312: indicadores de poboación, servizos, vivenda e conectividade nun mapa que se reordena." path="retrato/">
-  <View lang="gl" />
-</Base>
+<!doctype html>
+<html lang="gl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <title>Retrato — Galicia Agora</title>
+    <link rel="canonical" href={DEST} />
+    <meta http-equiv="refresh" content={`0; url=${DEST}`} />
+    <script is:inline define:vars={{ DEST }}>
+      window.location.replace(DEST + window.location.hash);
+    </script>
+  </head>
+  <body>
+    <p>O retrato dos concellos ten agora sitio propio: <a href={DEST}>{DEST}</a></p>
+  </body>
+</html>

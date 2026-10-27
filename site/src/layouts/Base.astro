@@ -15,11 +15,13 @@ interface Props {
 }
 
 const { lang, title, description, path, fullscreen = false } = Astro.props;
+const PORTRAIT = 'https://concellos.galiciasustentable.org/';
 const other: Lang = lang === 'gl' ? 'es' : 'gl';
 const here = `${base(lang)}${path}`;
 const nav = [
   { href: base(lang), label: t(lang, 'nav_map'), path: '' },
-  { href: `${base(lang)}retrato/`, label: t(lang, 'portrait_nav'), path: 'retrato/' },
+  // The concello portrait is its own site since 27/10/2026 (/retrato/ redirects there).
+  { href: `${PORTRAIT}${lang === 'es' ? 'es/' : ''}`, label: t(lang, 'portrait_nav'), path: null },
   { href: `${base(lang)}pulso/`, label: t(lang, 'pulse_nav'), path: 'pulso/' },
   { href: `${base(lang)}estado/`, label: t(lang, 'nav_status'), path: 'estado/' },
   { href: `${base(lang)}fontes/`, label: t(lang, 'nav_sources'), path: 'fontes/' },
