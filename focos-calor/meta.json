@@ -1,17 +1,21 @@
 {
   "layer_id": "focos-calor",
-  "published_at": "2026-10-26T02:49:00.000Z",
-  "fetched_at": "2026-10-26T21:36:21.093Z",
-  "last_success_at": "2026-10-26T21:36:21.093Z",
+  "published_at": null,
+  "fetched_at": "2026-10-27T00:46:51.679Z",
+  "last_success_at": "2026-10-27T00:46:51.679Z",
   "status": "fresh",
   "consecutive_failures": 0,
-  "feature_count": 3,
+  "feature_count": 0,
   "source_url": "https://firms.modaps.eosdis.nasa.gov/api/area/",
   "licence": "CC0-1.0",
   "attribution": "NASA LANCE FIRMS (NASA/GSFC/ESDIS)",
-  "checksum": "sha256:629c1d0c13b40247475eb57dd7999ce9798add774fc5291b9e21113b80571c26",
+  "checksum": "sha256:ed778c73ea51338d6576fb5992b189f2b94d9f3d5e199f46c1af520d6b0b3e6c",
   "last_error": null,
   "history": [
+    {
+      "at": "2026-10-27T00:46:51.679Z",
+      "ok": true
+    },
     {
       "at": "2026-10-26T21:36:21.093Z",
       "ok": true
@@ -224,10 +228,6 @@
     },
     {
       "at": "2026-10-20T01:43:44.958Z",
-      "ok": true
-    },
-    {
-      "at": "2026-10-19T23:03:25.608Z",
       "ok": true
     }
   ]
