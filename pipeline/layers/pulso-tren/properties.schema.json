@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "pulso feature properties",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["modo", "lina", "dia", "data", "t"],
+  "properties": {
+    "modo": {
+      "enum": ["tren", "bus"]
+    },
+    "lina": {
+      "type": "string",
+      "minLength": 1
+    },
+    "dia": {
+      "enum": ["laborable", "domingo"],
+      "description": "Mércores de referencia ou o domingo seguinte"
+    },
+    "data": {
+      "type": "string",
+      "format": "date"
+    },
+    "t": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 172800
+      },
+      "description": "Segundos desde a medianoite do día de servizo, un por vértice (GTFS: pode pasar das 24:00)"
+    }
+  }
+}

@@ -1,0 +1,44 @@
+id: pulso-tren
+title:
+  gl: Pulso do tren (todos os trens dun día)
+  es: Pulso del tren (todos los trenes de un día)
+theme: mobilidade
+operator:
+  name: Renfe Operadora
+  url: https://data.renfe.com
+source_url: https://ssl.renfe.com/gtransit/Fichero_AV_LD/google_transit.zip
+licence:
+  spdx: CC-BY-4.0
+  text_url: https://data.renfe.com/legal
+  quote: para fines comerciales y no comerciales
+  verified_at: 2026-10-25
+  odbl_compatible: true
+  collection: odbl
+  notes: >-
+    O mesmo GTFS estático ca estacions-tren: AV/LD/MD (google_transit.zip) e Cercanías e ancho
+    métrico (fomento_transit.zip, conxunto «horarios-cercanias» de data.renfe.com, CC BY 4.0).
+    Cálculo propio da Fundación Galicia Sustentable: cada viaxe que circula o día laborable de
+    referencia (primeiro mércores desde a descarga) e o domingo seguinte, como a liña recta
+    entre as súas paradas coa hora en cada unha. Non é a posición real dos trens nin o
+    trazado da vía. Só a parte da viaxe dentro de Galicia (bbox con 0,05° de marxe).
+attribution: 'Origen de los datos: Renfe Operadora. Traxectorias: cálculo propio da Fundación Galicia Sustentable.'
+update_frequency:
+  declared: P1D
+geometry: line
+output: geojson
+auth:
+  required: false
+privacy_notes: >-
+  Horarios do servizo público; ningún dato persoal. As liñas son rectas entre paradas e as
+  horas son as programadas, non as reais.
+stale_after: P7D
+ingest:
+  every: P1D
+style:
+  kind: line
+  color_token: --c-tren
+table:
+  fields:
+    - lina
+    - dia
+    - data

@@ -1,0 +1,47 @@
+id: pulso-bus
+title:
+  gl: Pulso do bus (todos os autobuses da Xunta dun día)
+  es: Pulso del bus (todos los autobuses de la Xunta de un día)
+theme: mobilidade
+operator:
+  name: Xunta de Galicia (publicado no Punto de Acceso Nacional do MITRAMS)
+  url: https://nap.transportes.gob.es/ConjuntoDato/Detail/1386
+source_url: https://nap.transportes.gob.es/api/Fichero/download/1584
+licence:
+  text_url: https://nap.transportes.gob.es/licencia-datos
+  quote: para fines comerciales y no comerciales
+  verified_at: 2026-10-25
+  odbl_compatible: doubt
+  collection: cc-by-sa-4.0
+  notes: >-
+    O mesmo GTFS e a mesma licenza ca buses-xunta (licenza de datos abertos do MITRAMS; a web
+    debe amosar «Powered by MITRAMS»): colección CC BY-SA 4.0, fóra da base ODbL e nun
+    ficheiro separado do tren (Renfe, base ODbL). Cálculo propio da Fundación Galicia
+    Sustentable: cada viaxe que circula o día laborable de referencia (primeiro mércores desde
+    a descarga) e o domingo seguinte, como a liña recta entre as súas paradas coa hora
+    programada en cada unha. Non é a posición real dos autobuses nin o percorrido exacto.
+attribution: "Fonte: Xunta de Galicia, vía Punto de Acceso Nacional (MITRAMS). Powered by MITRAMS. Traxectorias: cálculo propio da Fundación Galicia Sustentable."
+update_frequency:
+  declared: P1D
+geometry: line
+output: geojson
+auth:
+  required: true
+  env_var: NAP_API_KEY
+  notes: >-
+    Rexistro no NAP e chave de API na cabeceira ApiKey, como buses-xunta. A chave nunca se
+    escribe en source_url, meta.json, rexistros nin erros.
+privacy_notes: >-
+  Horarios da rede pública de autobuses; ningún dato persoal. Liñas rectas entre paradas e
+  horas programadas, non reais. Recórtase ao bbox de Galicia con 0,1° de marxe.
+stale_after: P3D
+ingest:
+  every: P1D
+style:
+  kind: line
+  color_token: --c-bus
+table:
+  fields:
+    - lina
+    - dia
+    - data
