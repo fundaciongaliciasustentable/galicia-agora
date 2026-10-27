@@ -24,7 +24,7 @@ jobs:
           host=$(printf %s "$FTPS_HOST" | tr -d '[:space:]' | sed -E 's#^[A-Za-z]+://##; s#/.*$##; s#:[0-9]*$##')
           lftp -u "$FTPS_USER","$FTPS_PASSWORD" "ftp://$host" -e "
             set ftp:ssl-force true; set ftp:ssl-protect-data true; set ssl:verify-certificate true;
-            set net:timeout 30; set net:max-retries 5;
+            set net:timeout 30; set net:max-retries 5; set ftp:list-options -a;
             echo '== before'; cls -1;
             rm -r ftp.galiciasustentable.org;
             echo '== after'; cls -1;
