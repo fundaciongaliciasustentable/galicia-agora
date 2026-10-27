@@ -1,0 +1,266 @@
+---
+// The pulse of public transport: every scheduled train and bus of one day over a dark map,
+// with the day's curve of vehicles running. Figures are also given as text (summary, counter).
+import { dictionary, type Lang, t } from '../i18n';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+---
+
+<div class="pu-app" data-lang={lang} data-dict={JSON.stringify(dictionary(lang))}>
+  <div class="pu-map" role="region" aria-label={t(lang, 'pulse_map_label')}></div>
+  <canvas class="pu-canvas" aria-hidden="true"></canvas>
+
+  <section class="pu-panel" id="contido">
+    <h1>{t(lang, 'pulse_title')}</h1>
+    <p class="pu-lede">{t(lang, 'pulse_lede')}</p>
+    <p class="pu-clock" aria-live="off">--:--</p>
+    <p class="pu-count" aria-live="off"></p>
+    <div class="pu-controls">
+      <div class="pu-seg" role="group" aria-label={t(lang, 'pulse_day')}>
+        <button type="button" data-day="laborable" aria-pressed="true">{t(lang, 'pulse_weekday')}</button>
+        <button type="button" data-day="domingo" aria-pressed="false">{t(lang, 'pulse_sunday')}</button>
+      </div>
+      <label class="pu-mode pu-mode-tren"><input type="checkbox" data-mode="tren" checked /> {t(lang, 'pulse_train')}</label>
+      <label class="pu-mode pu-mode-bus"><input type="checkbox" data-mode="bus" checked /> {t(lang, 'pulse_bus')}</label>
+    </div>
+    <div class="pu-controls">
+      <button type="button" class="pu-play" aria-pressed="false">{t(lang, 'pulse_play')}</button>
+      <label class="pu-speed-label">
+        <span class="visually-hidden">{t(lang, 'pulse_speed')}</span>
+        <select class="pu-speed"></select>
+      </label>
+    </div>
+    <label class="pu-range-label">
+      <span class="visually-hidden">{t(lang, 'pulse_time')}</span>
+      <input class="pu-range" type="range" />
+    </label>
+    <p class="pu-summary"></p>
+    <p class="pu-status" role="status">{t(lang, 'loading')}</p>
+    <details class="pu-about">
+      <summary>{t(lang, 'pulse_about')}</summary>
+      <p>{t(lang, 'pulse_note')}</p>
+      <p class="pu-sources"></p>
+    </details>
+  </section>
+
+  <figure class="pu-curve">
+    <figcaption>{t(lang, 'pulse_curve')}</figcaption>
+    <svg role="img" preserveAspectRatio="none"></svg>
+  </figure>
+</div>
+
+<style is:global>
+  .pu-app {
+    position: relative;
+    height: calc(100dvh - 52px);
+    overflow: hidden;
+    background: #111210;
+    color: #e6e6df;
+  }
+  .pu-map,
+  .pu-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .pu-canvas {
+    pointer-events: none;
+    z-index: 1;
+  }
+  .pu-panel {
+    position: absolute;
+    z-index: 2;
+    top: 16px;
+    left: 16px;
+    width: min(340px, calc(100% - 32px));
+    max-height: calc(100% - 180px);
+    overflow-y: auto;
+    padding: 16px 18px;
+    border-radius: var(--gs-radius-card);
+    background: rgba(17, 18, 16, 0.78);
+    backdrop-filter: blur(6px);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+  }
+  .pu-panel h1 {
+    margin: 0;
+    font-size: var(--gs-texto-xl);
+    color: #fff;
+  }
+  .pu-lede,
+  .pu-summary,
+  .pu-about {
+    font-size: var(--gs-texto-sm);
+    color: #b3b3aa;
+    margin: 6px 0 0;
+  }
+  .pu-about summary {
+    cursor: pointer;
+  }
+  .pu-sources {
+    font-size: var(--gs-texto-xs);
+  }
+  .pu-clock {
+    margin: 10px 0 0;
+    font-size: clamp(2.5rem, 7vw, 3.75rem);
+    font-weight: 700;
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+    color: #fff;
+    letter-spacing: -0.02em;
+  }
+  .pu-count {
+    margin: 4px 0 0;
+    font-variant-numeric: tabular-nums;
+    min-height: 1.4em;
+  }
+  .pu-status {
+    margin: 4px 0 0;
+    font-size: var(--gs-texto-sm);
+    color: #e0a95a;
+  }
+  .pu-status:empty {
+    display: none;
+  }
+  .pu-controls {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 12px;
+    margin-top: 12px;
+  }
+  .pu-seg {
+    display: flex;
+    border: 1px solid #3a3b35;
+    border-radius: 999px;
+    padding: 2px;
+  }
+  .pu-seg button,
+  .pu-play {
+    font: inherit;
+    font-size: var(--gs-texto-sm);
+    border: 0;
+    border-radius: 999px;
+    padding: 4px 12px;
+    background: transparent;
+    color: #e6e6df;
+    cursor: pointer;
+  }
+  .pu-seg button[aria-pressed="true"] {
+    background: #e6e6df;
+    color: #111210;
+  }
+  .pu-play {
+    border: 1px solid #e6e6df;
+    min-width: 6em;
+  }
+  .pu-mode {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: var(--gs-texto-sm);
+    cursor: pointer;
+  }
+  .pu-mode input {
+    width: 16px;
+    height: 16px;
+  }
+  .pu-mode-tren input {
+    accent-color: #ffc94d;
+  }
+  .pu-mode-bus input {
+    accent-color: #5fd3f3;
+  }
+  .pu-speed {
+    font: inherit;
+    font-size: var(--gs-texto-sm);
+    background: #1f201c;
+    color: #e6e6df;
+    border: 1px solid #3a3b35;
+    border-radius: var(--gs-radius);
+    padding: 3px 6px;
+  }
+  .pu-range-label {
+    display: block;
+    margin-top: 10px;
+  }
+  .pu-range {
+    width: 100%;
+    accent-color: #e6e6df;
+  }
+  .pu-curve {
+    position: absolute;
+    z-index: 2;
+    left: 16px;
+    right: 64px;
+    bottom: 12px;
+    margin: 0;
+    height: 120px;
+  }
+  .pu-curve figcaption {
+    font-size: var(--gs-texto-xs);
+    color: #b3b3aa;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .pu-curve svg {
+    display: block;
+    width: 100%;
+    height: 100px;
+    cursor: ew-resize;
+    touch-action: none;
+  }
+  .pu-area {
+    fill: rgba(230, 230, 223, 0.22);
+    stroke: rgba(230, 230, 223, 0.7);
+    stroke-width: 1.5;
+    vector-effect: non-scaling-stroke;
+  }
+  .pu-other {
+    fill: none;
+    stroke: rgba(230, 230, 223, 0.45);
+    stroke-width: 1;
+    stroke-dasharray: 4 4;
+    vector-effect: non-scaling-stroke;
+  }
+  .pu-tick {
+    fill: #8a8a82;
+    font-size: 11px;
+    text-anchor: middle;
+  }
+  .pu-playhead {
+    stroke: #fff;
+    stroke-width: 2;
+    vector-effect: non-scaling-stroke;
+  }
+  @media (max-width: 700px) {
+    .pu-panel {
+      top: 8px;
+      left: 8px;
+      right: 8px;
+      width: auto;
+      max-height: 55%;
+      padding: 12px 14px;
+    }
+    .pu-lede,
+    .pu-summary {
+      display: none;
+    }
+    .pu-curve {
+      left: 8px;
+      right: 8px;
+      height: 96px;
+    }
+    .pu-curve svg {
+      height: 76px;
+    }
+  }
+</style>
+
+<script>
+  import { start } from '../pulso/pulso';
+  start();
+</script>

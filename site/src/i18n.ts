@@ -127,6 +127,60 @@ const STRINGS = {
     gl: 'Aínda non hai datos do perfil dos concellos.',
     es: 'Aún no hay datos del perfil de los ayuntamientos.',
   },
+  pulse_nav: { gl: 'Pulso', es: 'Pulso' },
+  pulse_title: { gl: 'O pulso de Galicia', es: 'El pulso de Galicia' },
+  pulse_lede: {
+    gl: 'Todos os trens e autobuses públicos dun día, segundo os horarios oficiais. Compara un mércores cun domingo.',
+    es: 'Todos los trenes y autobuses públicos de un día, según los horarios oficiales. Compara un miércoles con un domingo.',
+  },
+  pulse_map_label: {
+    gl: 'Mapa de Galicia cos trens e autobuses programados movéndose. As cifras están no panel.',
+    es: 'Mapa de Galicia con los trenes y autobuses programados moviéndose. Las cifras están en el panel.',
+  },
+  pulse_day: { gl: 'Día', es: 'Día' },
+  pulse_weekday: { gl: 'Mércores', es: 'Miércoles' },
+  pulse_sunday: { gl: 'Domingo', es: 'Domingo' },
+  pulse_train: { gl: 'Tren', es: 'Tren' },
+  pulse_bus: { gl: 'Autobús', es: 'Autobús' },
+  pulse_play: { gl: 'Reproducir', es: 'Reproducir' },
+  pulse_pause: { gl: 'Pausa', es: 'Pausa' },
+  pulse_speed: { gl: 'Velocidade', es: 'Velocidad' },
+  pulse_speed_opt: { gl: 'O día en {s} s', es: 'El día en {s} s' },
+  pulse_time: { gl: 'Hora', es: 'Hora' },
+  pulse_running: {
+    gl: 'En circulación: {tren} trens · {bus} autobuses',
+    es: 'En circulación: {tren} trenes · {bus} autobuses',
+  },
+  pulse_weekdays: {
+    gl: 'domingo,luns,martes,mércores,xoves,venres,sábado',
+    es: 'domingo,lunes,martes,miércoles,jueves,viernes,sábado',
+  },
+  pulse_months: {
+    gl: 'xaneiro,febreiro,marzo,abril,maio,xuño,xullo,agosto,setembro,outubro,novembro,decembro',
+    es: 'enero,febrero,marzo,abril,mayo,junio,julio,agosto,septiembre,octubre,noviembre,diciembre',
+  },
+  pulse_date: { gl: '{weekday} {day} de {month}', es: '{weekday} {day} de {month}' },
+  pulse_day_total: {
+    gl: 'O {dia}: {tren} viaxes de tren e {bus} de autobús.',
+    es: 'El {dia}: {tren} viajes de tren y {bus} de autobús.',
+  },
+  pulse_curve: {
+    gl: 'Vehículos en circulación ao longo do día (raiado: o outro día)',
+    es: 'Vehículos en circulación a lo largo del día (rayado: el otro día)',
+  },
+  pulse_curve_label: {
+    gl: 'Curva de vehículos en circulación o {dia}; máximo de {max} á vez.',
+    es: 'Curva de vehículos en circulación el {dia}; máximo de {max} a la vez.',
+  },
+  pulse_about: { gl: 'Como se fai e fontes', es: 'Cómo se hace y fuentes' },
+  pulse_note: {
+    gl: 'Horas programadas nos horarios oficiais (GTFS), non posicións reais: atrasos e supresións non se ven. Cada vehículo vai en liña recta entre dúas paradas. Mércores de referencia e o domingo seguinte. Só a parte das viaxes dentro de Galicia.',
+    es: 'Horas programadas en los horarios oficiales (GTFS), no posiciones reales: retrasos y supresiones no se ven. Cada vehículo va en línea recta entre dos paradas. Miércoles de referencia y el domingo siguiente. Solo la parte de los viajes dentro de Galicia.',
+  },
+  pulse_missing_all: {
+    gl: 'Aínda non hai datos de horarios publicados.',
+    es: 'Aún no hay datos de horarios publicados.',
+  },
 } as const;
 
 export type Key = keyof typeof STRINGS;
