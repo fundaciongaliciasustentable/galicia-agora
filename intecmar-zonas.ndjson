@@ -61,3 +61,4 @@
 {"at":"2026-10-28T01:46:27.353Z","ok":true,"status":200,"last_modified":null,"etag":null,"hash":"sha256:2c01fa31ee4b2b5b785c9ffd602901572c2b62cd52655ab004a4c877915d679f","source_ts":"2026-10-27T21:25:00+01:00","bytes":58767,"ms":892}
 {"at":"2026-10-28T07:30:21.822Z","ok":true,"status":200,"last_modified":null,"etag":null,"hash":"sha256:2c01fa31ee4b2b5b785c9ffd602901572c2b62cd52655ab004a4c877915d679f","source_ts":"2026-10-27T21:25:00+01:00","bytes":58767,"ms":853}
 {"at":"2026-10-28T14:26:14.646Z","ok":true,"status":200,"last_modified":null,"etag":null,"hash":"sha256:9993a8d1d47f71d25569c9498d3b70612d3005748e3d51b30ef5ef5052138322","source_ts":"2026-10-28T15:17:00+01:00","bytes":58773,"ms":904}
+{"at":"2026-10-28T19:42:47.455Z","ok":false,"status":null,"last_modified":null,"etag":null,"hash":null,"source_ts":null,"bytes":0,"ms":46273,"error":"Failed after 3 attempts: fetch failed"}
