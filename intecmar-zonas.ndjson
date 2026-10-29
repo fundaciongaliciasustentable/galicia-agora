@@ -66,3 +66,4 @@
 {"at":"2026-10-29T02:47:18.419Z","ok":false,"status":null,"last_modified":null,"etag":null,"hash":null,"source_ts":null,"bytes":0,"ms":46302,"error":"Failed after 3 attempts: fetch failed"}
 {"at":"2026-10-29T08:57:04.405Z","ok":false,"status":null,"last_modified":null,"etag":null,"hash":null,"source_ts":null,"bytes":0,"ms":46357,"error":"Failed after 3 attempts: fetch failed"}
 {"at":"2026-10-29T15:47:34.719Z","ok":true,"status":200,"last_modified":null,"etag":null,"hash":"sha256:ca1b1f8c8fcc274f34c0c77c9d08a986826dd9b4fbfd91e0b1ad3554e481c5dd","source_ts":"2026-10-29T07:57:00+01:00","bytes":58773,"ms":744}
+{"at":"2026-10-29T20:40:38.256Z","ok":false,"status":null,"last_modified":null,"etag":null,"hash":null,"source_ts":null,"bytes":0,"ms":63095,"error":"Failed after 3 attempts: HTTP 503 for https://www.intecmar.gal/Api/EstadoZonasProducion/EstadoZonasBiotoxinas"}
