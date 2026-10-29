@@ -1,17 +1,21 @@
 {
   "layer_id": "pulso-tren",
-  "published_at": "2026-10-27T08:46:06.000Z",
-  "fetched_at": "2026-10-28T00:10:26.781Z",
-  "last_success_at": "2026-10-28T00:10:26.781Z",
+  "published_at": "2026-10-29T00:14:41.000Z",
+  "fetched_at": "2026-10-29T01:16:58.804Z",
+  "last_success_at": "2026-10-29T01:16:58.804Z",
   "status": "fresh",
   "consecutive_failures": 0,
-  "feature_count": 310,
+  "feature_count": 300,
   "source_url": "https://ssl.renfe.com/gtransit/Fichero_AV_LD/google_transit.zip",
   "licence": "CC-BY-4.0",
   "attribution": "Origen de los datos: Renfe Operadora. Traxectorias: cálculo propio da Fundación Galicia Sustentable.",
-  "checksum": "sha256:aa2901275a6943871dae1e22520f79f4f31f45162fe78ede458f7f484e63a571",
+  "checksum": "sha256:71d78d93ed833526d75f18691759b26a55572248004802e885610a58d5c3ff96",
   "last_error": null,
   "history": [
+    {
+      "at": "2026-10-29T01:16:58.804Z",
+      "ok": true
+    },
     {
       "at": "2026-10-28T00:10:26.781Z",
       "ok": true
