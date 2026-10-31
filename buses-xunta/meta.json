@@ -1,17 +1,21 @@
 {
   "layer_id": "buses-xunta",
-  "published_at": "2026-10-23T19:29:27.000Z",
-  "fetched_at": "2026-10-29T23:37:53.722Z",
-  "last_success_at": "2026-10-29T23:37:53.722Z",
+  "published_at": "2026-10-30T21:22:30.000Z",
+  "fetched_at": "2026-10-31T00:08:44.248Z",
+  "last_success_at": "2026-10-31T00:08:44.248Z",
   "status": "fresh",
   "consecutive_failures": 0,
-  "feature_count": 25118,
+  "feature_count": 27029,
   "source_url": "https://nap.transportes.gob.es/api/Fichero/download/1584",
   "licence": "https://nap.transportes.gob.es/licencia-datos",
   "attribution": "Fonte: Xunta de Galicia, vía Punto de Acceso Nacional (MITRAMS). Powered by MITRAMS",
-  "checksum": "sha256:29c51b6e64a18daa454eb8abc5e5af9ac236d0f4107c8203f4688f0e051d1ebf",
+  "checksum": "sha256:02e0d789b51f36479c7868907251bd8896cd59e0ce329ffe86b252d7b979566f",
   "last_error": null,
   "history": [
+    {
+      "at": "2026-10-31T00:08:44.248Z",
+      "ok": true
+    },
     {
       "at": "2026-10-29T23:37:53.722Z",
       "ok": true
