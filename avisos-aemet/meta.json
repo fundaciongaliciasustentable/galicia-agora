@@ -1,8 +1,8 @@
 {
   "layer_id": "avisos-aemet",
   "published_at": "2026-10-31T10:40:31.000Z",
-  "fetched_at": "2026-10-31T11:06:13.975Z",
-  "last_success_at": "2026-10-31T11:06:13.975Z",
+  "fetched_at": "2026-10-31T16:02:34.204Z",
+  "last_success_at": "2026-10-31T16:02:34.204Z",
   "status": "fresh",
   "consecutive_failures": 0,
   "feature_count": 4,
@@ -12,6 +12,10 @@
   "checksum": "sha256:366403acb4d6765bced165cf88e77d2ca087cf49d8a8025c2628fceec9e07322",
   "last_error": null,
   "history": [
+    {
+      "at": "2026-10-31T16:02:34.204Z",
+      "ok": true
+    },
     {
       "at": "2026-10-31T11:06:13.975Z",
       "ok": true
@@ -186,14 +190,6 @@
     },
     {
       "at": "2026-10-24T17:44:05.244Z",
-      "ok": true
-    },
-    {
-      "at": "2026-10-24T14:50:29.768Z",
-      "ok": true
-    },
-    {
-      "at": "2026-10-24T11:32:15.902Z",
       "ok": true
     }
   ]
