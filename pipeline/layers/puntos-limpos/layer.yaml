@@ -1,0 +1,44 @@
+id: puntos-limpos
+title:
+  gl: Puntos limpos
+  es: Puntos limpios
+theme: servizos
+operator:
+  name: Xunta de Galicia — Consellería de Medio Ambiente
+  url: https://cmatv.xunta.gal/
+source_url: https://abertos.xunta.gal/catalogo/administracion-publica/-/dataset/0303/puntos-limpos
+licence:
+  spdx: CC-BY-SA-4.0
+  text_url: https://abertos.xunta.gal/catalogo/administracion-publica/-/dataset/0303/puntos-limpos
+  quote: "Creative Commons BY SA 4.0"
+  verified_at: 2026-11-01
+  odbl_compatible: doubt
+  collection: cc-by-sa-4.0
+  notes: >-
+    Licenza indicada na ficha do conxunto 0303 en abertos.xunta.gal (CC BY-SA 4.0).
+    Compatibilidade coa ODbL en dúbida: colección CC BY-SA (ADR 0005). Ficheiro único
+    https://ficheiros-web.xunta.gal/abertos/puntos_limpos/Puntos_limpos.csv (151 puntos,
+    Windows-1252, «lat,lon» nunha columna) con Last-Modified (19/03/2025): os horarios poden
+    estar desfasados. Todos figuran como construídos; non di se están abertos. Algúns
+    concellos da fonte son anteriores ás fusións (Cerdedo, Oza dos Ríos) e lévanse ao
+    concello actual.
+attribution: "Xunta de Galicia. Consellería de Medio Ambiente, puntos limpos (abertos.xunta.gal, conxunto 0303)"
+update_frequency:
+  declared: static
+  measured: static
+geometry: point
+output: geojson
+auth:
+  required: false
+privacy_notes: >-
+  Non se publican os teléfonos (algúns son móbiles), a empresa xestora nin o custo da obra.
+  Si o horario de apertura, que é información pública do servizo.
+stale_after: P90D
+ingest:
+  every: P30D
+style:
+  kind: circle
+  color_token: --c-reciclaxe
+  label_field: nome
+table:
+  fields: [nome, concello, enderezo, horario, titular, concellos_servidos]

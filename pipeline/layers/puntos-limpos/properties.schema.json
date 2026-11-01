@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "puntos-limpos feature properties",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "nome",
+    "enderezo",
+    "concello",
+    "codigo_ine",
+    "horario",
+    "titular",
+    "concellos_servidos"
+  ],
+  "properties": {
+    "id": { "type": "string", "pattern": "^[a-z0-9-]+$", "description": "Slug do nome" },
+    "nome": { "type": "string", "minLength": 1 },
+    "enderezo": { "type": ["string", "null"] },
+    "concello": { "type": ["string", "null"] },
+    "codigo_ine": { "type": ["string", "null"], "pattern": "^(15|27|32|36)\\d{3}$" },
+    "horario": { "type": ["string", "null"] },
+    "titular": { "type": ["string", "null"] },
+    "concellos_servidos": { "type": ["string", "null"] }
+  }
+}

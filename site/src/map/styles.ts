@@ -1676,6 +1676,30 @@ export function encodeLayer(layer: LayerLike, ctx: StyleContext): Encoding {
         ],
       );
     }
+    case 'puntos-limpos':
+      return enc(
+        [
+          base('circle', {
+            type: 'circle',
+            paint: {
+              'circle-radius': byZoom([
+                [6, 3],
+                [12, 6.5],
+              ]),
+              'circle-color': color,
+              'circle-stroke-color': halo,
+              'circle-stroke-width': 1.2,
+            },
+          }),
+          label('label', ['get', 'nome'], 11),
+        ],
+        [
+          {
+            entries: [{ shape: 'dot', color, size: 10, label: T('Punto limpo', 'Punto limpio') }],
+            note: T('Horarios de marzo de 2025.', 'Horarios de marzo de 2025.'),
+          },
+        ],
+      );
     case 'distancia-servizos': {
       const stops: Array<[number, string]> = [
         [0, CHEAP_DEAR[0]],

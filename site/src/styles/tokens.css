@@ -98,6 +98,7 @@
   --c-inundacion: #1f4e8c;
   --c-humidal: #3d7a6a;
   --c-infancia: #c8872b;
+  --c-reciclaxe: #5b6b2e;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -150,6 +151,7 @@
     --c-inundacion: #7fa8e0;
     --c-humidal: #7cc4ad;
     --c-infancia: #e0a95a;
+    --c-reciclaxe: #b5c46a;
   }
 }
 
@@ -202,4 +204,5 @@
   --c-inundacion: #7fa8e0;
   --c-humidal: #7cc4ad;
   --c-infancia: #e0a95a;
+  --c-reciclaxe: #b5c46a;
 }
