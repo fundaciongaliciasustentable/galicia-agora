@@ -1,0 +1,42 @@
+id: humidais
+title:
+  gl: Inventario de zonas húmidas
+  es: Inventario de zonas húmedas
+theme: auga-mar
+operator:
+  name: Xunta de Galicia (Instituto de Estudos do Territorio / IDEG; Consellería de Medio Ambiente)
+  url: https://mapas.xunta.gal
+source_url: https://ideg.xunta.gal/servizos/rest/services/LugaresProtexidos/ENC_InventarioZonasHumidas/MapServer/0
+licence:
+  spdx: CC-BY-SA-4.0
+  text_url: https://mapas.xunta.gal/gl/aviso-legal
+  verified_at: 2026-11-01
+  odbl_compatible: doubt
+  collection: cc-by-sa-4.0
+  notes: >-
+    Dobre licenza (ADR 0005): IET «compatible con CC BY 4.0» / abertos.xunta.gal CC BY-SA
+    4.0; aplícase a máis restritiva ata confirmación escrita. Inventario de Zonas Húmidas de
+    Galicia: 1.170 elementos (dúas páxinas), con data de publicación no DOG de 2023 ou 2024;
+    111 humidais teñen varios elementos (lagoas L1, L2…). Inclúe humidais sen protección
+    legal: estar no inventario non é unha figura de protección (os 5 humidais protexidos
+    están na capa espazos-naturais-galicia). A tipoloxía (TIP_IZHG) vai como código porque o
+    servizo non publica a lenda. Polígonos xeneralizados no servidor (0,0002°, ≈ 20 m); os
+    elementos moi pequenos quedan como polígonos de poucos vértices.
+attribution: © Instituto de Estudos do Territorio. Xunta de Galicia
+update_frequency:
+  declared: static
+  measured: static
+geometry: polygon
+output: geojson
+auth:
+  required: false
+privacy_notes: Límites de humidais; ningún dato persoal.
+stale_after: P90D
+ingest:
+  every: P30D
+style:
+  kind: fill
+  color_token: --c-humidal
+  label_field: nome
+table:
+  fields: [nome, elemento, tipoloxia, superficie_ha, data_dog, codigo_humidal]

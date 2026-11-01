@@ -857,6 +857,37 @@ export function encodeLayer(layer: LayerLike, ctx: StyleContext): Encoding {
         ],
       );
     }
+    case 'humidais':
+      return enc(
+        [
+          base('fill', { type: 'fill', paint: { 'fill-color': color, 'fill-opacity': 0.4 } }),
+          base('line', { type: 'line', paint: { 'line-color': color, 'line-width': 0.8 } }),
+          // Most wetlands are tiny: a dot keeps them visible at low zoom.
+          base('dot', {
+            type: 'circle',
+            maxzoom: 11,
+            paint: { 'circle-radius': 2, 'circle-color': color, 'circle-opacity': 0.7 },
+          }),
+          label('label', ['get', 'nome'], 12, {
+            layout: { 'text-offset': [0, 0], 'text-anchor': 'center' },
+          }),
+        ],
+        [
+          {
+            entries: [
+              {
+                shape: 'fill',
+                color,
+                label: T('Zona húmida inventariada', 'Zona húmeda inventariada'),
+              },
+            ],
+            note: T(
+              'Estar no inventario non é unha figura de protección.',
+              'Estar en el inventario no es una figura de protección.',
+            ),
+          },
+        ],
+      );
     // ───────────────────────── Mobilidade ─────────────────────────
     case 'tren': {
       const cercanias = ['==', ['get', 'rede'], 'Cercanías'];

@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "humidais feature properties",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "codigo_humidal",
+    "nome",
+    "elemento",
+    "tipoloxia",
+    "superficie_ha",
+    "data_dog"
+  ],
+  "properties": {
+    "id": { "type": "string", "pattern": "^\\d+\\.\\d+$", "description": "CODELEM" },
+    "codigo_humidal": { "type": ["string", "null"], "description": "COD_IZHG" },
+    "nome": { "type": "string", "minLength": 1 },
+    "elemento": {
+      "type": ["string", "null"],
+      "description": "Nome do elemento cando o humidal ten varios"
+    },
+    "tipoloxia": {
+      "type": ["string", "null"],
+      "description": "Código TIP_IZHG, sen lenda no servizo"
+    },
+    "superficie_ha": { "type": ["number", "null"], "minimum": 0 },
+    "data_dog": {
+      "type": ["string", "null"],
+      "format": "date",
+      "description": "Publicación no DOG"
+    }
+  }
+}
