@@ -82,6 +82,20 @@ export const SERIES: PulseMap[] = [
     period: { gl: 'Calquera día', es: 'Cualquier día' },
   },
   {
+    slug: 'lostregos',
+    ready: true,
+    colour: '#c9dcff',
+    title: { gl: 'Lóstregos', es: 'Rayos' },
+    summary: {
+      gl: 'Cada raio sobre Galicia no último ano, á súa hora, tormenta a tormenta.',
+      es: 'Cada rayo sobre Galicia en el último año, a su hora, tormenta a tormenta.',
+    },
+    period: {
+      gl: 'Últimos doce meses; renóvase cada mes',
+      es: 'Últimos doce meses; se renueva cada mes',
+    },
+  },
+  {
     slug: 'aire',
     ready: true,
     colour: '#50ccaa',
@@ -127,6 +141,42 @@ export const SERIES: PulseMap[] = [
       es: 'Los censos de 1900 a 2021 ayuntamiento a ayuntamiento: dónde se fue la gente y dónde se juntó.',
     },
     period: { gl: 'Censos de 1900 a 2021', es: 'Censos de 1900 a 2021' },
+  },
+  {
+    slug: 'vida',
+    ready: true,
+    colour: '#a6dba0',
+    title: { gl: 'Nacer e morrer', es: 'Nacer y morir' },
+    summary: {
+      gl: 'Nacementos por cada 100 mortes en cada concello, de 1975 a hoxe.',
+      es: 'Nacimientos por cada 100 defunciones en cada ayuntamiento, de 1975 a hoy.',
+    },
+    period: { gl: '1975–2025, ano a ano', es: '1975–2025, año a año' },
+  },
+  {
+    slug: 'escolas',
+    ready: true,
+    colour: '#fdb863',
+    title: { gl: 'Escolas abertas e pechadas', es: 'Escuelas abiertas y cerradas' },
+    summary: {
+      gl: 'Os centros de ensino de cada concello ano a ano, contra os que tiña en 2005.',
+      es: 'Los centros de enseñanza de cada ayuntamiento año a año, frente a los que tenía en 2005.',
+    },
+    period: { gl: '2005–2025, ano a ano', es: '2005–2025, año a año' },
+  },
+  {
+    slug: 'pisos',
+    ready: true,
+    colour: '#f08a4b',
+    title: { gl: 'Pisos turísticos', es: 'Pisos turísticos' },
+    summary: {
+      gl: 'As vivendas de uso turístico inscritas en cada concello, mes a mes desde 2017.',
+      es: 'Las viviendas de uso turístico inscritas en cada ayuntamiento, mes a mes desde 2017.',
+    },
+    period: {
+      gl: 'Desde xuño de 2017; renóvase cada mes',
+      es: 'Desde junio de 2017; se renueva cada mes',
+    },
   },
   {
     slug: 'estacion',

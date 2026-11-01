@@ -430,6 +430,196 @@ const STRINGS = {
     gl: 'Non se puideron cargar os puntos dos concellos.',
     es: 'No se pudieron cargar los puntos de los ayuntamientos.',
   },
+  bolt_title: { gl: 'Lóstregos, doce meses', es: 'Rayos, doce meses' },
+  bolt_lede: {
+    gl: 'Cada raio que detectou a rede de MeteoGalicia sobre Galicia no último ano, á súa hora. Os días sen tormenta pásanse de largo.',
+    es: 'Cada rayo que detectó la red de MeteoGalicia sobre Galicia en el último año, a su hora. Los días sin tormenta se pasan de largo.',
+  },
+  bolt_map_label: {
+    gl: 'Mapa de Galicia cos raios detectados día a día durante doce meses. As cifras están no panel e na táboa.',
+    es: 'Mapa de Galicia con los rayos detectados día a día durante doce meses. Las cifras están en el panel y en la tabla.',
+  },
+  bolt_now: {
+    gl: '{n} raios este día; o momento máis intenso, entre as {h}:00 e as {h2}:00 ({k}). No período ata agora: {total} raios en {days} días con tormenta.',
+    es: '{n} rayos este día; el momento más intenso, entre las {h}:00 y las {h2}:00 ({k}). En el periodo hasta ahora: {total} rayos en {days} días con tormenta.',
+  },
+  bolt_quiet: {
+    gl: 'Día sen raios. No período ata agora: {total} raios en {days} días con tormenta.',
+    es: 'Día sin rayos. En el periodo hasta ahora: {total} rayos en {days} días con tormenta.',
+  },
+  bolt_legend: {
+    gl: 'Cada raio escintila ao caer, arrefría nunha hora e queda como marca tenue o resto do ano. A rede tamén detecta raios no mar e nos bordos de Asturias, León e Portugal.',
+    es: 'Cada rayo destella al caer, se enfría en una hora y queda como marca tenue el resto del año. La red también detecta rayos en el mar y en los bordes de Asturias, León y Portugal.',
+  },
+  bolt_speed_opt: { gl: 'Cada día de tormenta en {s} s', es: 'Cada día de tormenta en {s} s' },
+  bolt_curve: {
+    gl: 'Raios cada día (escala de raíz cadrada)',
+    es: 'Rayos cada día (escala de raíz cuadrada)',
+  },
+  bolt_curve_label: {
+    gl: 'Raios detectados cada día de {from} a {to}: máximo de {max} o {day}.',
+    es: 'Rayos detectados cada día de {from} a {to}: máximo de {max} el {day}.',
+  },
+  bolt_table_caption: {
+    gl: 'Os 15 días con máis raios ({n} raios en {days} días con tormenta).',
+    es: 'Los 15 días con más rayos ({n} rayos en {days} días con tormenta).',
+  },
+  bolt_col_day: { gl: 'Día', es: 'Día' },
+  bolt_col_n: { gl: 'Raios', es: 'Rayos' },
+  bolt_col_peak: { gl: 'Hora con máis', es: 'Hora con más' },
+  bolt_note: {
+    gl: 'Rede de detección de raios de MeteoGalicia, descargada en xanelas de sete días (o servizo garda o histórico desde 2010). Doce meses enteiros anteriores ao mes en curso; renóvase cada mes. Horas en hora oficial de Galicia. Recorte rectangular arredor de Galicia, con mar e parte das comunidades veciñas. A documentación non di se a rede conta tamén descargas entre nubes; case a metade dos raios son de polaridade positiva, máis do habitual nos raios que chegan ao chan. Unha detección é un raio rexistrado pola rede, non un impacto comprobado no terreo.',
+    es: 'Red de detección de rayos de MeteoGalicia, descargada en ventanas de siete días (el servicio guarda el histórico desde 2010). Doce meses enteros anteriores al mes en curso; se renueva cada mes. Horas en hora oficial de Galicia. Recorte rectangular alrededor de Galicia, con mar y parte de las comunidades vecinas. La documentación no dice si la red cuenta también descargas entre nubes; casi la mitad de los rayos son de polaridad positiva, más de lo habitual en los rayos que llegan al suelo. Una detección es un rayo registrado por la red, no un impacto comprobado en el terreno.',
+  },
+  bolt_missing: {
+    gl: 'Aínda non están publicados os raios dos últimos doce meses.',
+    es: 'Aún no están publicados los rayos de los últimos doce meses.',
+  },
+  pulse_provisional: { gl: 'provisional', es: 'provisional' },
+  life_title: {
+    gl: 'Nacer e morrer, concello a concello',
+    es: 'Nacer y morir, ayuntamiento a ayuntamiento',
+  },
+  life_lede: {
+    gl: 'Nacementos por cada 100 mortes en cada concello, ano a ano desde 1975. Por debaixo de 100 morre máis xente da que nace.',
+    es: 'Nacimientos por cada 100 defunciones en cada ayuntamiento, año a año desde 1975. Por debajo de 100 muere más gente de la que nace.',
+  },
+  life_map_label: {
+    gl: 'Mapa dos concellos de Galicia coloreados polos nacementos por cada 100 mortes de cada ano. As cifras están no panel e na táboa.',
+    es: 'Mapa de los ayuntamientos de Galicia coloreados por los nacimientos por cada 100 defunciones de cada año. Las cifras están en el panel y en la tabla.',
+  },
+  life_legend: {
+    gl: 'Nacementos por cada 100 mortes: marrón, máis mortes; branco, igual; verde, máis nacementos. Gris: sen dato (o concello aínda non existía).',
+    es: 'Nacimientos por cada 100 defunciones: marrón, más defunciones; blanco, igual; verde, más nacimientos. Gris: sin dato (el ayuntamiento aún no existía).',
+  },
+  life_now: {
+    gl: 'Galicia: {births} nacementos e {deaths} mortes (saldo {balance}). Concellos con máis nacementos ca mortes: {positive}.',
+    es: 'Galicia: {births} nacimientos y {deaths} defunciones (saldo {balance}). Ayuntamientos con más nacimientos que defunciones: {positive}.',
+  },
+  life_detail: {
+    gl: '{name}, {when}: {births} nacementos e {deaths} mortes, {value} nacementos por cada 100 mortes.',
+    es: '{name}, {when}: {births} nacimientos y {deaths} defunciones, {value} nacimientos por cada 100 defunciones.',
+  },
+  life_pick: {
+    gl: 'Preme nun concello para ver as súas cifras.',
+    es: 'Pulsa en un ayuntamiento para ver sus cifras.',
+  },
+  life_speed_opt: { gl: 'Un ano cada {s} s', es: 'Un año cada {s} s' },
+  life_curve: { gl: 'Nacementos en Galicia cada ano', es: 'Nacimientos en Galicia cada año' },
+  life_curve_label: {
+    gl: 'Nacementos en Galicia: {first} en {firstWhen}, {last} en {lastWhen}; máximo de {max} en {maxWhen}.',
+    es: 'Nacimientos en Galicia: {first} en {firstWhen}, {last} en {lastWhen}; máximo de {max} en {maxWhen}.',
+  },
+  life_table_caption: {
+    gl: 'Os 15 concellos con máis e menos nacementos por cada 100 mortes en {when}.',
+    es: 'Los 15 ayuntamientos con más y menos nacimientos por cada 100 defunciones en {when}.',
+  },
+  life_col_a: { gl: 'Nacementos', es: 'Nacimientos' },
+  life_col_b: { gl: 'Mortes', es: 'Defunciones' },
+  life_col_value: { gl: 'Por 100 mortes', es: 'Por 100 defunciones' },
+  life_note: {
+    gl: 'Movemento natural da poboación (IGE, INE), táboas 57 e 30 do IGE: nacementos segundo o concello de residencia da nai e defuncións segundo o concello de residencia, non onde ocorren. O último ano é provisional. Sobre os 313 concellos de hoxe: Oza dos Ríos e Cesuras suman en Oza-Cesuras e Cerdedo e Cotobade en Cerdedo-Cotobade antes da fusión; Cariño (1988), Burela (1995) e A Illa de Arousa (1997) non teñen dato antes de existir e os concellos dos que saíron inclúen esa poboación ata entón. O dato de Laxe en 1981 e 1982 é dubidoso na fonte. A relación nacementos por cada 100 mortes é cálculo propio; nos concellos pequenos un ano pode cambiar moito por poucos casos.',
+    es: 'Movimiento natural de la población (IGE, INE), tablas 57 y 30 del IGE: nacimientos según el ayuntamiento de residencia de la madre y defunciones según el ayuntamiento de residencia, no donde ocurren. El último año es provisional. Sobre los 313 ayuntamientos de hoy: Oza dos Ríos y Cesuras suman en Oza-Cesuras y Cerdedo y Cotobade en Cerdedo-Cotobade antes de la fusión; Cariño (1988), Burela (1995) y A Illa de Arousa (1997) no tienen dato antes de existir y los ayuntamientos de los que salieron incluyen esa población hasta entonces. El dato de Laxe en 1981 y 1982 es dudoso en la fuente. La relación nacimientos por cada 100 defunciones es cálculo propio; en los ayuntamientos pequeños un año puede cambiar mucho por pocos casos.',
+  },
+  life_missing: {
+    gl: 'Aínda non están publicados os nacementos e as mortes por concello.',
+    es: 'Aún no están publicados los nacimientos y las defunciones por ayuntamiento.',
+  },
+  flats_title: { gl: 'Pisos turísticos, mes a mes', es: 'Pisos turísticos, mes a mes' },
+  flats_lede: {
+    gl: 'As vivendas de uso turístico inscritas en cada concello desde 2017, por cada 1.000 habitantes.',
+    es: 'Las viviendas de uso turístico inscritas en cada ayuntamiento desde 2017, por cada 1.000 habitantes.',
+  },
+  flats_map_label: {
+    gl: 'Mapa dos concellos de Galicia coloreados polas vivendas de uso turístico por cada 1.000 habitantes de cada mes. As cifras están no panel e na táboa.',
+    es: 'Mapa de los ayuntamientos de Galicia coloreados por las viviendas de uso turístico por cada 1.000 habitantes de cada mes. Las cifras están en el panel y en la tabla.',
+  },
+  flats_legend: {
+    gl: 'Vivendas de uso turístico por cada 1.000 habitantes (censo de 2021). Son inscricións no rexistro, non vivendas alugadas.',
+    es: 'Viviendas de uso turístico por cada 1.000 habitantes (censo de 2021). Son inscripciones en el registro, no viviendas alquiladas.',
+  },
+  flats_now: {
+    gl: 'Galicia: {flats} vivendas de uso turístico ({places} prazas) en {with} concellos.',
+    es: 'Galicia: {flats} viviendas de uso turístico ({places} plazas) en {with} ayuntamientos.',
+  },
+  flats_detail: {
+    gl: '{name}, {when}: {flats} vivendas de uso turístico, {places} prazas, {value} por cada 1.000 habitantes.',
+    es: '{name}, {when}: {flats} viviendas de uso turístico, {places} plazas, {value} por cada 1.000 habitantes.',
+  },
+  flats_pick: {
+    gl: 'Preme nun concello para ver as súas cifras.',
+    es: 'Pulsa en un ayuntamiento para ver sus cifras.',
+  },
+  flats_speed_opt: { gl: 'Un mes cada {s} s', es: 'Un mes cada {s} s' },
+  flats_curve: {
+    gl: 'Vivendas de uso turístico en Galicia',
+    es: 'Viviendas de uso turístico en Galicia',
+  },
+  flats_curve_label: {
+    gl: 'Vivendas de uso turístico en Galicia: {first} en {firstWhen}, {last} en {lastWhen}; máximo de {max} en {maxWhen}.',
+    es: 'Viviendas de uso turístico en Galicia: {first} en {firstWhen}, {last} en {lastWhen}; máximo de {max} en {maxWhen}.',
+  },
+  flats_table_caption: {
+    gl: 'Os 15 concellos con máis e menos vivendas de uso turístico por habitante en {when}.',
+    es: 'Los 15 ayuntamientos con más y menos viviendas de uso turístico por habitante en {when}.',
+  },
+  flats_col_a: { gl: 'VUT', es: 'VUT' },
+  flats_col_b: { gl: 'Prazas', es: 'Plazas' },
+  flats_col_value: { gl: 'Por 1.000 hab.', es: 'Por 1.000 hab.' },
+  flats_note: {
+    gl: 'Serie mensual do Rexistro de Empresas e Actividades Turísticas (REAT) de Turismo de Galicia: as vivendas de uso turístico inscritas cada mes en cada concello, desde xuño de 2017. É o stock de cada mes, así que conta tamén as que despois deron de baixa mentres estiveron inscritas. Unha inscrición non di se a vivenda se aluga nin cantos días. O tipo «vivendas turísticas», outro do rexistro, non se suma. A taxa por 1.000 habitantes usa a poboación do censo de 2021 (INE) para todos os meses: é cálculo propio.',
+    es: 'Serie mensual del Registro de Empresas y Actividades Turísticas (REAT) de Turismo de Galicia: las viviendas de uso turístico inscritas cada mes en cada ayuntamiento, desde junio de 2017. Es el stock de cada mes, así que cuenta también las que después se dieron de baja mientras estuvieron inscritas. Una inscripción no dice si la vivienda se alquila ni cuántos días. El tipo «viviendas turísticas», otro del registro, no se suma. La tasa por 1.000 habitantes usa la población del censo de 2021 (INE) para todos los meses: es cálculo propio.',
+  },
+  flats_missing: {
+    gl: 'Aínda non está publicada a serie mensual de vivendas de uso turístico.',
+    es: 'Aún no está publicada la serie mensual de viviendas de uso turístico.',
+  },
+  school_title: { gl: 'Escolas abertas e pechadas', es: 'Escuelas abiertas y cerradas' },
+  school_lede: {
+    gl: 'Os centros de ensino de cada concello ano a ano desde 2005, contra os que tiña ese ano.',
+    es: 'Los centros de enseñanza de cada ayuntamiento año a año desde 2005, frente a los que tenía ese año.',
+  },
+  school_map_label: {
+    gl: 'Mapa dos concellos de Galicia coloreados pola diferenza de centros de ensino con 2005. As cifras están no panel e na táboa.',
+    es: 'Mapa de los ayuntamientos de Galicia coloreados por la diferencia de centros de enseñanza con 2005. Las cifras están en el panel y en la tabla.',
+  },
+  school_legend: {
+    gl: 'Centros de diferenza con 2005: marrón, menos; branco, os mesmos; verde, máis. Negro: o concello non ten ningún centro.',
+    es: 'Centros de diferencia con 2005: marrón, menos; blanco, los mismos; verde, más. Negro: el ayuntamiento no tiene ningún centro.',
+  },
+  school_now: {
+    gl: 'Galicia: {schools} centros ({first} en 2005). {fewer} concellos teñen menos ca en 2005 e {none} non teñen ningún.',
+    es: 'Galicia: {schools} centros ({first} en 2005). {fewer} ayuntamientos tienen menos que en 2005 y {none} no tienen ninguno.',
+  },
+  school_detail: {
+    gl: '{name}, {when}: {schools} centros ({first} en 2005).',
+    es: '{name}, {when}: {schools} centros ({first} en 2005).',
+  },
+  school_pick: {
+    gl: 'Preme nun concello para ver as súas cifras.',
+    es: 'Pulsa en un ayuntamiento para ver sus cifras.',
+  },
+  school_speed_opt: { gl: 'Un ano cada {s} s', es: 'Un año cada {s} s' },
+  school_curve: { gl: 'Centros de ensino en Galicia', es: 'Centros de enseñanza en Galicia' },
+  school_curve_label: {
+    gl: 'Centros de ensino en Galicia: {first} en {firstWhen}, {last} en {lastWhen}.',
+    es: 'Centros de enseñanza en Galicia: {first} en {firstWhen}, {last} en {lastWhen}.',
+  },
+  school_table_caption: {
+    gl: 'Os concellos que máis centros gañaron e perderon desde 2005, en {when}.',
+    es: 'Los ayuntamientos que más centros ganaron y perdieron desde 2005, en {when}.',
+  },
+  school_col_a: { gl: '2005', es: '2005' },
+  school_col_b: { gl: 'Centros', es: 'Centros' },
+  school_col_value: { gl: 'Diferenza', es: 'Diferencia' },
+  school_note: {
+    gl: 'IGE, táboa 1653: centros de ensino non universitario de réxime xeral por concello, públicos e privados, desde 2005 (non hai serie por concello anterior). Só o total: os tipos de ensinanza cambian de contido sen nota. É un reconto por ano, non a lista das escolas que abriron ou pecharon, e un centro rural agrupado (CRA) conta como un centro aínda que teña varias escolas; por iso non se ven os peches de escolas unitarias anteriores a 2005. Quedan fóra conservatorios, escolas de idiomas e de artes. Oza-Cesuras e Cerdedo-Cotobade suman os concellos de antes da fusión. A diferenza con 2005 é cálculo propio.',
+    es: 'IGE, tabla 1653: centros de enseñanza no universitaria de régimen general por ayuntamiento, públicos y privados, desde 2005 (no hay serie por ayuntamiento anterior). Solo el total: los tipos de enseñanza cambian de contenido sin nota. Es un recuento por año, no la lista de las escuelas que abrieron o cerraron, y un centro rural agrupado (CRA) cuenta como un centro aunque tenga varias escuelas; por eso no se ven los cierres de escuelas unitarias anteriores a 2005. Quedan fuera conservatorios, escuelas de idiomas y de artes. Oza-Cesuras y Cerdedo-Cotobade suman los ayuntamientos de antes de la fusión. La diferencia con 2005 es cálculo propio.',
+  },
+  school_missing: {
+    gl: 'Aínda non están publicados os centros de ensino por concello.',
+    es: 'Aún no están publicados los centros de enseñanza por ayuntamiento.',
+  },
   air_title: { gl: 'O aire hora a hora', es: 'El aire hora a hora' },
   air_lede: {
     gl: 'As estacións da Rede de Calidade do Aire de Galicia nas últimas 24 horas: o índice de calidade do aire de cada unha e o contaminante que o marca.',

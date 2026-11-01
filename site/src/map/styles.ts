@@ -65,6 +65,12 @@ export const SERIES_LAYERS = new Set([
   'mobilidade-cidades',
   'mobilidade-fluxos',
   'focos-agosto-2025',
+  'aire-24h',
+  'lonxas-2025',
+  'raios-ano',
+  'nacementos-mortes',
+  'escolas-concello',
+  'vut-mensual',
 ]);
 
 /** Time field per layer: the client adds `_h`, hours since that instant. */
