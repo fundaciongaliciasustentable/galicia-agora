@@ -1,13 +1,14 @@
-# Galicia Agora — Apache config for the hosting folder www/galicia-agora,
-# served as https://agora.galiciasustentable.org. Every block is guarded with
+# Galicia Agora — Apache config for the hosting folder www/subdominios/mapas,
+# served as https://mapas.galiciasustentable.org. Every block is guarded with
 # <IfModule> so a missing module never turns the site into a 500 error.
 
-# The same folder is also reachable as galiciasustentable.org/galicia-agora/.
-# Send those requests to the subdomain so there is a single address.
+# The same folder is also reachable under galiciasustentable.org, and the old
+# address agora.galiciasustentable.org may point here. Send every other host to
+# the subdomain so there is a single address.
 <IfModule mod_rewrite.c>
   RewriteEngine On
-  RewriteCond %{HTTP_HOST} !^agora\.galiciasustentable\.org$ [NC]
-  RewriteRule ^(.*)$ https://agora.galiciasustentable.org/$1 [R=301,L]
+  RewriteCond %{HTTP_HOST} !^mapas\.galiciasustentable\.org$ [NC]
+  RewriteRule ^(.*)$ https://mapas.galiciasustentable.org/$1 [R=301,L]
 </IfModule>
 
 <IfModule mod_mime.c>
