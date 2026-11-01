@@ -48,5 +48,5 @@ Taxa de carga no 3.º trimestre de 2024: Sanxenxo 173,9 %, Barreiros 170,6 %, Mo
 ## Avisos para a peza
 
 - Catro trimestres por ano: o mapa salta de trimestre en trimestre, sen interpolar (aviso 5 da fase 0).
-- Ano de referencia: 2024 é o último definitivo. 2025 aínda é provisional e o 3.º trimestre (o dos lumes) publicarase en 2027.
+- **Ano de referencia (decidido o 1/11/2026): 2025 provisional**, o mesmo ano que a mobilidade, a meteoroloxía e os lumes. Hoxe só hai os trimestres I e II (`mostra/ige_9043_202413-202514.csv` xa os inclúe). O verán, que é o pico estacional, e o outono chegarán coa publicación seguinte do IGE (o ano *a* sae completo en *a+2*, polo tanto 2027), e os valores provisionais poden cambiar ao revisarse. A peza debe marcar 2025 como provisional, deixar baleiros (non estimados) os trimestres III e IV ata que se publiquen e actualizarse cando saian. Se se quere ensinar como pode ser un verán, a única opción honesta é poñer 2024 ao lado como referencia, identificado.
 - Mostrar a taxa (%) para comparar concellos e a carga en persoas no detalle.

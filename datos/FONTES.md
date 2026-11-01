@@ -27,10 +27,8 @@ Tomadas por Marcos o 1/11/2026:
 
 1. Aneis das sete cidades: anel 0 = concello; anel 1 = concello e área urbana, coa GAU de Vigo–Pontevedra partida. Lista en [`fontes/mitma-mobilidade/aneis.json`](fontes/mitma-mobilidade/aneis.json).
 2. Mes tipo para o día: maio de 2025 (4 mércores e 4 domingos). O domingo 4 de maio, volta da ponte, cámbiase polo 1 de xuño.
+3. Día de referencia meteorolóxico: mércores 21 de maio de 2025, un dos catro da media de MITMA (seco e suave; o 28 chegou a 35 °C e o 14 tivo choiva).
+4. Ano da poboación estacional: 2025 provisional, para coincidir coas outras capas. Hoxe só ten os trimestres I e II; o verán chegará na próxima publicación do IGE (prevista en 2027). Os trimestres que falten van baleiros e marcados.
 
 Revisado: Ourense case non gaña poboación diúrna porque o seu polo de emprego (San Cibrao das Viñas, O Pereiro de Aguiar) queda fóra do anel. Coincide co IGE (taxa de carga diúrna 102,6 % en Ourense e 129,6 % en San Cibrao, 2.º trimestre de 2024). Detalle no README de MITMA.
 
-Pendentes:
-
-- Día de referencia meteorolóxico: o mesmo mércores que MITMA (para un reloxo común) ou un día escollido polo tempo.
-- Ano de referencia para a poboación estacional: 2024 (último definitivo).

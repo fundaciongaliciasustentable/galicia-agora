@@ -46,6 +46,15 @@ Verificado con descargas reais o 1 de novembro de 2026.
 
 ## Avisos para a peza
 
-- Usar o mesmo día de referencia que MITMA (mércores de maio de 2025) se a peza vai combinar capas nun só reloxo. Se non, escoller un día con interese meteorolóxico propio e dicilo.
+- **Día de referencia (decidido o 1/11/2026): mércores 21 de maio de 2025**, un dos catro mércores da media de MITMA, para compartir reloxo coa mobilidade. Xa está en `mostra/horario_2025-05-21.csv`. Foi o máis «normal» dos catro (media das estacións, datos diarios validados):
+
+  | Mércores | Temperatura media | Máxima | Mínima | Estacións con máis de 1 mm |
+  |---|---|---|---|---|
+  | 7 de maio | 12,9 °C | 26,1 °C | −1,4 °C | 0 |
+  | 14 de maio | 11,2 °C | 21,0 °C | 0,8 °C | 18 |
+  | **21 de maio** | **14,8 °C** | **27,3 °C** | **3,3 °C** | **2** |
+  | 28 de maio | 18,8 °C | 35,4 °C | 3,2 °C | 0 |
+
+  A nota da peza debe dicir que a mobilidade é a media de catro mércores e o tempo é un día real, un deses catro.
 - Interpolar entre estacións só para pintar, nunca para dar un valor nun punto sen estación.
 - Para «Un ano», serie diaria: unha chamada por mes e parámetro.
