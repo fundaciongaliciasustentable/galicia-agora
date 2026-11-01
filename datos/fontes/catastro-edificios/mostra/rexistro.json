@@ -1,0 +1,5032 @@
+{
+ "descargado_utc": "2026-11-01T12:17:25+00:00",
+ "user_agent": "GaliciaAgora/0.1 (+https://github.com/fundaciongaliciasustentable/galicia-agora; galiciasustentable@galiciasustentable.org)",
+ "resumo": {
+  "oficinas_feed_superior": 52,
+  "rights_feed_superior": {
+   "Copyright (c) 2012\", ES.SDGC; all rights reserved": 53,
+   "Visitar https://geo.araba.eus / Visit https://geo.araba.eus": 1,
+   "CC BY 3.0 ES": 1,
+   "This layer is published under the terms of the license Creative Commons Attribution 4.0 International (CC \r\n              BY 4.0). [ https://creativecommons.org/licenses/by/4.0/ ]": 1
+  },
+  "rights_feeds_galicia": {
+   "This service can be used free of charge in every instance,  as long as that the D. G. of the Cadastre (Ministry of Finance)  is mentioned as author and owner of the information": 320
+  },
+  "entradas_galicia": 315,
+  "entradas_por_oficina": {
+   "15": 94,
+   "27": 67,
+   "32": 92,
+   "36": 58,
+   "54": 4
+  },
+  "feed_updated": [
+   "2026-08-21T00:00:00Z"
+  ],
+  "zip_bytes_total": 596682299,
+  "zip_maior": {
+   "codigo": "54057",
+   "nome": "VIGO",
+   "bytes": 24898983
+  },
+  "zip_bytes_mediana": 1341455,
+  "licenza_pdf": {
+   "url": "https://www.catastro.hacienda.gob.es/webinspire/documentos/Licencia.pdf",
+   "status": 200,
+   "last_modified": "Thu, 22 Sep 2016 08:03:57 GMT"
+  },
+  "edificios_galicia_estimados": [
+   1101766,
+   1506231
+  ],
+  "mostras": {
+   "pequeno": {
+    "codigo": "32035",
+    "nome": "A GUDIÑA",
+    "zip_bytes": 824373,
+    "ficheiros_zip": {
+     "A.ES.SDGC.BU.32035.building.gml": 9429908,
+     "A.ES.SDGC.BU.32035.buildingpart.gml": 10838916,
+     "A.ES.SDGC.BU.32035.otherconstruction.gml": 36788,
+     "A.ES.SDGC.BU.MD.32035.xml": 20007
+    },
+    "resumo": {
+     "edificios": 2081,
+     "con_ano": 1987,
+     "pct_con_ano": 95.5,
+     "ano_min": 1700,
+     "ano_max": 2025,
+     "ano_mediana": 1900,
+     "pct_antes_1900": 1.4,
+     "pct_1900_xusto": 49.8,
+     "pct_ano_redondo_x0": 65.6,
+     "pct_varias_datas": 11.3,
+     "por_decada": {
+      "1700": 2,
+      "1730": 1,
+      "1800": 1,
+      "1870": 1,
+      "1880": 23,
+      "1900": 993,
+      "1910": 8,
+      "1920": 9,
+      "1930": 20,
+      "1940": 52,
+      "1950": 43,
+      "1960": 76,
+      "1970": 156,
+      "1980": 167,
+      "1990": 233,
+      "2000": 141,
+      "2010": 46,
+      "2020": 15
+     },
+     "uso": {
+      "1_residential": 1428,
+      "3_industrial": 332,
+      "2_agriculture": 159,
+      "": 101,
+      "4_3_publicServices": 34,
+      "4_2_retail": 25,
+      "4_1_office": 2
+     },
+     "estado": {
+      "functional": 1495,
+      "declined": 417,
+      "-": 94,
+      "ruin": 75
+     },
+     "alta_bd_por_ano": {
+      "2001": 122,
+      "2004": 168,
+      "2005": 389,
+      "2006": 211,
+      "2009": 19,
+      "2010": 44,
+      "2011": 7,
+      "2012": 102,
+      "2013": 58,
+      "2014": 26,
+      "2016": 92,
+      "2017": 215,
+      "2018": 12,
+      "2019": 9,
+      "2020": 20,
+      "2021": 417,
+      "2022": 43,
+      "2023": 21,
+      "2024": 70,
+      "2025": 24,
+      "2026": 12
+     },
+     "vivendas": 1389,
+     "m2_construidos": 444308
+    },
+    "mostra": "edificios_32035.csv",
+    "mostra_bytes": 124375
+   },
+   "cidade": {
+    "codigo": "27900",
+    "nome": "LUGO",
+    "zip_bytes": 11775877,
+    "ficheiros_zip": {
+     "A.ES.SDGC.BU.27900.building.gml": 101159255,
+     "A.ES.SDGC.BU.27900.buildingpart.gml": 171039096,
+     "A.ES.SDGC.BU.27900.otherconstruction.gml": 1724947,
+     "A.ES.SDGC.BU.MD.27900.xml": 20001
+    },
+    "resumo": {
+     "edificios": 21744,
+     "con_ano": 21691,
+     "pct_con_ano": 99.8,
+     "ano_min": 1000,
+     "ano_max": 2026,
+     "ano_mediana": 1975,
+     "pct_antes_1900": 13.1,
+     "pct_1900_xusto": 0.8,
+     "pct_ano_redondo_x0": 33.2,
+     "pct_varias_datas": 23.9,
+     "por_decada": {
+      "1000": 1,
+      "1050": 1,
+      "1070": 2,
+      "1180": 1,
+      "1680": 1,
+      "1690": 1,
+      "1750": 3,
+      "1770": 1,
+      "1800": 11,
+      "1820": 1,
+      "1840": 5,
+      "1850": 15,
+      "1860": 7,
+      "1870": 9,
+      "1880": 2754,
+      "1890": 39,
+      "1900": 206,
+      "1910": 87,
+      "1920": 224,
+      "1930": 504,
+      "1940": 1886,
+      "1950": 1723,
+      "1960": 2074,
+      "1970": 2597,
+      "1980": 3430,
+      "1990": 2905,
+      "2000": 2149,
+      "2010": 827,
+      "2020": 227
+     },
+     "uso": {
+      "1_residential": 15992,
+      "3_industrial": 4298,
+      "2_agriculture": 603,
+      "4_3_publicServices": 424,
+      "4_2_retail": 230,
+      "4_1_office": 108,
+      "": 89
+     },
+     "estado": {
+      "functional": 18909,
+      "declined": 2735,
+      "-": 51,
+      "ruin": 49
+     },
+     "alta_bd_por_ano": {
+      "2002": 857,
+      "2003": 23,
+      "2004": 157,
+      "2005": 685,
+      "2006": 3207,
+      "2007": 281,
+      "2008": 271,
+      "2009": 510,
+      "2010": 454,
+      "2011": 427,
+      "2012": 666,
+      "2013": 4043,
+      "2014": 923,
+      "2015": 3003,
+      "2016": 1783,
+      "2017": 583,
+      "2018": 483,
+      "2019": 454,
+      "2020": 210,
+      "2021": 203,
+      "2022": 370,
+      "2023": 525,
+      "2024": 352,
+      "2025": 771,
+      "2026": 503
+     },
+     "vivendas": 59687,
+     "m2_construidos": 18418232
+    },
+    "mostra": "grella100m_27900.csv",
+    "mostra_bytes": 186065,
+    "celas_100m": 5785
+   }
+  }
+ },
+ "entradas": [
+  {
+   "oficina": "15",
+   "codigo": "15007",
+   "nome": "A BAÑA",
+   "bytes": 1045622,
+   "last_modified": "Fri, 21 Aug 2026 14:05:36 GMT"
+  },
+  {
+   "oficina": "15",
+   "codigo": "15018",
+   "nome": "A CAPELA",
+   "bytes": 458121,
+   "last_modified": "Fri, 21 Aug 2026 14:06:01 GMT"
+  },
+  {
+   "oficina": "15",
+   "codigo": "15900",
+   "nome": "A CORUÑA",
+   "bytes": 9094780,
+   "last_modified": "Fri, 21 Aug 2026 14:15:05 GMT"
+  },
+  {
+   "oficina": "15",
+   "codigo": "15042",
+   "nome": "A LARACHA",
+   "bytes": 2967365,
+   "last_modified": "Fri, 21 Aug 2026 14:17:44 GMT"
+  },
+  {
+   "oficina": "15",
+   "codigo": "15068",
+   "nome": "A POBRA DO CARAMIÑAL",
+   "bytes": 1992102,
+   "last_modified": "Fri, 21 Aug 2026 14:19:28 GMT"
+  },
+  {
+   "oficina": "15",
+   "codigo": "15001",
+   "nome": "ABEGONDO",
+   "bytes": 2050850,
+   "last_modified": "Fri, 21 Aug 2026 14:21:15 GMT"
+  },
+  {
+   "oficina": "15",
+   "codigo": "15002",
+   "nome": "AMES",
+   "bytes": 3319951,
+   "last_modified": "Fri, 21 Aug 2026 14:24:18 GMT"
+  },
+  {
+   "oficina": "15",
+   "codigo": "15003",
+   "nome": "ARANGA",
+   "bytes": 633068,
+   "last_modified": "Fri, 21 Aug 2026 14:24:51 GMT"
+  },
+  {
+   "oficina": "15",
+   "codigo": "15004",
+   "nome": "ARES",
+   "bytes": 1582129,
+   "last_modified": "Fri, 21 Aug 2026 14:26:16 GMT"
+  },
+  {
+   "oficina": "15",
+   "codigo": "15005",
+   "nome": "ARTEIXO",
+   "bytes": 4070311,
+   "last_modified": "Fri, 21 Aug 2026 14:30:03 GMT"
+  },
+  {
+   "oficina": "15",
+   "codigo": "15006",
+   "nome": "ARZUA",
+   "bytes": 1927969,
+   "last_modified": "Fri, 21 Aug 2026 14:31:44 GMT"
+  },
+  {
+   "oficina": "15",
+   "codigo": "15071",
+   "nome": "AS PONTES DE GARCIA RODRIGUEZ",
+   "bytes": 1913525,
+   "last_modified": "Fri, 21 Aug 2026 14:33:15 GMT"
+  },
+  {
+   "oficina": "15",
+   "codigo": "15082",
+   "nome": "AS SOMOZAS",
+   "bytes": 554825,
+   "last_modified": "Fri, 21 Aug 2026 14:33:40 GMT"
+  },
+  {
+   "oficina": "15",
+   "codigo": "15008",
+   "nome": "BERGONDO",
+   "bytes": 2403788,
+   "last_modified": "Fri, 21 Aug 2026 14:35:53 GMT"
+  },
+  {
+   "oficina": "15",
+   "codigo": "15009",
+   "nome": "BETANZOS",
+   "bytes": 1907711,
+   "last_modified": "Fri, 21 Aug 2026 14:37:35 GMT"
+  },
+  {
+   "oficina": "15",
+   "codigo": "15010",
+   "nome": "BOIMORTO",
+   "bytes": 729310,
+   "last_modified": "Fri, 21 Aug 2026 14:38:10 GMT"
+  },
+  {
+   "oficina": "15",
+   "codigo": "15011",
+   "nome": "BOIRO",
+   "bytes": 3851294,
+   "last_modified": "Fri, 21 Aug 2026 14:41:33 GMT"
+  },
+  {
+   "oficina": "15",
+   "codigo": "15012",
+   "nome": "BOQUEIXON",
+   "bytes": 1198581,
+   "last_modified": "Fri, 21 Aug 2026 14:42:37 GMT"
+  },
+  {
+   "oficina": "15",
+   "codigo": "15013",
+   "nome": "BRION",
+   "bytes": 1704705,
+   "last_modified": "Fri, 21 Aug 2026 14:44:07 GMT"
+  },
+  {
+   "oficina": "15",
+   "codigo": "15014",
+   "nome": "CABANA DE BERGANTIÑOS",
+   "bytes": 1293605,
+   "last_modified": "Fri, 21 Aug 2026 14:45:22 GMT"
+  },
+  {
+   "oficina": "15",
+   "codigo": "15015",
+   "nome": "CABANAS",
+   "bytes": 987949,
+   "last_modified": "Fri, 21 Aug 2026 14:46:17 GMT"
+  },
+  {
+   "oficina": "15",
+   "codigo": "15016",
+   "nome": "CAMARIÑAS",
+   "bytes": 1626222,
+   "last_modified": "Fri, 21 Aug 2026 14:47:49 GMT"
+  },
+  {
+   "oficina": "15",
+   "codigo": "15017",
+   "nome": "CAMBRE",
+   "bytes": 3372519,
+   "last_modified": "Fri, 21 Aug 2026 14:50:48 GMT"
+  },
+  {
+   "oficina": "15",
+   "codigo": "15019",
+   "nome": "CARBALLO",
+   "bytes": 6461692,
+   "last_modified": "Fri, 21 Aug 2026 14:56:18 GMT"
+  },
+  {
+   "oficina": "15",
+   "codigo": "15095",
+   "nome": "CARIÑO",
+   "bytes": 1117720,
+   "last_modified": "Fri, 21 Aug 2026 14:57:14 GMT"
+  },
+  {
+   "oficina": "15",
+   "codigo": "15020",
+   "nome": "CARNOTA",
+   "bytes": 1653894,
+   "last_modified": "Fri, 21 Aug 2026 14:58:38 GMT"
+  },
+  {
+   "oficina": "15",
+   "codigo": "15021",
+   "nome": "CARRAL",
+   "bytes": 1545216,
+   "last_modified": "Fri, 21 Aug 2026 14:59:54 GMT"
+  },
+  {
+   "oficina": "15",
+   "codigo": "15022",
+   "nome": "CEDEIRA",
+   "bytes": 1649205,
+   "last_modified": "Fri, 21 Aug 2026 15:01:20 GMT"
+  },
+  {
+   "oficina": "15",
+   "codigo": "15023",
+   "nome": "CEE",
+   "bytes": 1568915,
+   "last_modified": "Fri, 21 Aug 2026 15:02:47 GMT"
+  },
+  {
+   "oficina": "15",
+   "codigo": "15024",
+   "nome": "CERCEDA",
+   "bytes": 1719287,
+   "last_modified": "Fri, 21 Aug 2026 15:04:19 GMT"
+  },
+  {
+   "oficina": "15",
+   "codigo": "15025",
+   "nome": "CERDIDO",
+   "bytes": 450013,
+   "last_modified": "Fri, 21 Aug 2026 15:04:44 GMT"
+  },
+  {
+   "oficina": "15",
+   "codigo": "15026",
+   "nome": "CESURAS",
+   "bytes": 775689,
+   "last_modified": "Fri, 21 Aug 2026 15:05:27 GMT"
+  },
+  {
+   "oficina": "15",
+   "codigo": "15027",
+   "nome": "COIROS",
+   "bytes": 634123,
+   "last_modified": "Fri, 21 Aug 2026 15:05:59 GMT"
+  },
+  {
+   "oficina": "15",
+   "codigo": "15028",
+   "nome": "CORCUBION",
+   "bytes": 409626,
+   "last_modified": "Fri, 21 Aug 2026 15:06:21 GMT"
+  },
+  {
+   "oficina": "15",
+   "codigo": "15029",
+   "nome": "CORISTANCO",
+   "bytes": 1826929,
+   "last_modified": "Fri, 21 Aug 2026 15:08:02 GMT"
+  },
+  {
+   "oficina": "15",
+   "codigo": "15031",
+   "nome": "CULLEREDO",
+   "bytes": 3522410,
+   "last_modified": "Fri, 21 Aug 2026 15:10:58 GMT"
+  },
+  {
+   "oficina": "15",
+   "codigo": "15032",
+   "nome": "CURTIS",
+   "bytes": 1135693,
+   "last_modified": "Fri, 21 Aug 2026 15:11:54 GMT"
+  },
+  {
+   "oficina": "15",
+   "codigo": "15033",
+   "nome": "DODRO",
+   "bytes": 774309,
+   "last_modified": "Fri, 21 Aug 2026 15:12:38 GMT"
+  },
+  {
+   "oficina": "15",
+   "codigo": "15034",
+   "nome": "DUMBRIA",
+   "bytes": 1105202,
+   "last_modified": "Fri, 21 Aug 2026 15:13:34 GMT"
+  },
+  {
+   "oficina": "15",
+   "codigo": "15036",
+   "nome": "FENE",
+   "bytes": 2281773,
+   "last_modified": "Fri, 21 Aug 2026 15:15:35 GMT"
+  },
+  {
+   "oficina": "15",
+   "codigo": "15037",
+   "nome": "FERROL",
+   "bytes": 6219765,
+   "last_modified": "Fri, 21 Aug 2026 15:21:16 GMT"
+  },
+  {
+   "oficina": "15",
+   "codigo": "15038",
+   "nome": "FISTERRA",
+   "bytes": 1142831,
+   "last_modified": "Fri, 21 Aug 2026 15:22:11 GMT"
+  },
+  {
+   "oficina": "15",
+   "codigo": "15039",
+   "nome": "FRADES",
+   "bytes": 819801,
+   "last_modified": "Fri, 21 Aug 2026 15:22:50 GMT"
+  },
+  {
+   "oficina": "15",
+   "codigo": "15040",
+   "nome": "IRIXOA",
+   "bytes": 607217,
+   "last_modified": "Fri, 21 Aug 2026 15:23:19 GMT"
+  },
+  {
+   "oficina": "15",
+   "codigo": "15041",
+   "nome": "LAXE",
+   "bytes": 930963,
+   "last_modified": "Fri, 21 Aug 2026 15:24:07 GMT"
+  },
+  {
+   "oficina": "15",
+   "codigo": "15043",
+   "nome": "LOUSAME",
+   "bytes": 1195187,
+   "last_modified": "Fri, 21 Aug 2026 15:25:05 GMT"
+  },
+  {
+   "oficina": "15",
+   "codigo": "15044",
+   "nome": "MALPICA DE BERGANTIÑOS",
+   "bytes": 1808612,
+   "last_modified": "Fri, 21 Aug 2026 15:26:38 GMT"
+  },
+  {
+   "oficina": "15",
+   "codigo": "15045",
+   "nome": "MAÑON",
+   "bytes": 603198,
+   "last_modified": "Fri, 21 Aug 2026 15:27:06 GMT"
+  },
+  {
+   "oficina": "15",
+   "codigo": "15046",
+   "nome": "MAZARICOS",
+   "bytes": 1525720,
+   "last_modified": "Fri, 21 Aug 2026 15:28:15 GMT"
+  },
+  {
+   "oficina": "15",
+   "codigo": "15047",
+   "nome": "MELIDE",
+   "bytes": 1973472,
+   "last_modified": "Fri, 21 Aug 2026 15:29:43 GMT"
+  },
+  {
+   "oficina": "15",
+   "codigo": "15048",
+   "nome": "MESIA",
+   "bytes": 822942,
+   "last_modified": "Fri, 21 Aug 2026 15:30:22 GMT"
+  },
+  {
+   "oficina": "15",
+   "codigo": "15049",
+   "nome": "MIÑO",
+   "bytes": 1782779,
+   "last_modified": "Fri, 21 Aug 2026 15:31:54 GMT"
+  },
+  {
+   "oficina": "15",
+   "codigo": "15050",
+   "nome": "MOECHE",
+   "bytes": 592329,
+   "last_modified": "Fri, 21 Aug 2026 15:32:25 GMT"
+  },
+  {
+   "oficina": "15",
+   "codigo": "15051",
+   "nome": "MONFERO",
+   "bytes": 777205,
+   "last_modified": "Fri, 21 Aug 2026 15:33:00 GMT"
+  },
+  {
+   "oficina": "15",
+   "codigo": "15052",
+   "nome": "MUGARDOS",
+   "bytes": 1449252,
+   "last_modified": "Fri, 21 Aug 2026 15:34:12 GMT"
+  },
+  {
+   "oficina": "15",
+   "codigo": "15054",
+   "nome": "MUROS",
+   "bytes": 2496356,
+   "last_modified": "Fri, 21 Aug 2026 15:36:33 GMT"
+  },
+  {
+   "oficina": "15",
+   "codigo": "15053",
+   "nome": "MUXIA",
+   "bytes": 1525405,
+   "last_modified": "Fri, 21 Aug 2026 15:37:53 GMT"
+  },
+  {
+   "oficina": "15",
+   "codigo": "15055",
+   "nome": "NARON",
+   "bytes": 4846349,
+   "last_modified": "Fri, 21 Aug 2026 15:42:08 GMT"
+  },
+  {
+   "oficina": "15",
+   "codigo": "15056",
+   "nome": "NEDA",
+   "bytes": 1406122,
+   "last_modified": "Fri, 21 Aug 2026 15:43:17 GMT"
+  },
+  {
+   "oficina": "15",
+   "codigo": "15057",
+   "nome": "NEGREIRA",
+   "bytes": 1429079,
+   "last_modified": "Fri, 21 Aug 2026 15:44:25 GMT"
+  },
+  {
+   "oficina": "15",
+   "codigo": "15058",
+   "nome": "NOIA",
+   "bytes": 2282886,
+   "last_modified": "Fri, 21 Aug 2026 15:46:28 GMT"
+  },
+  {
+   "oficina": "15",
+   "codigo": "15067",
+   "nome": "O PINO",
+   "bytes": 1416466,
+   "last_modified": "Fri, 21 Aug 2026 15:47:39 GMT"
+  },
+  {
+   "oficina": "15",
+   "codigo": "15072",
+   "nome": "O PORTO DO SON",
+   "bytes": 2838812,
+   "last_modified": "Fri, 21 Aug 2026 15:50:09 GMT"
+  },
+  {
+   "oficina": "15",
+   "codigo": "15059",
+   "nome": "OLEIROS",
+   "bytes": 6739924,
+   "last_modified": "Fri, 21 Aug 2026 15:55:50 GMT"
+  },
+  {
+   "oficina": "15",
+   "codigo": "15060",
+   "nome": "ORDES",
+   "bytes": 2515428,
+   "last_modified": "Fri, 21 Aug 2026 15:57:51 GMT"
+  },
+  {
+   "oficina": "15",
+   "codigo": "15061",
+   "nome": "OROSO",
+   "bytes": 1127192,
+   "last_modified": "Fri, 21 Aug 2026 15:58:57 GMT"
+  },
+  {
+   "oficina": "15",
+   "codigo": "15062",
+   "nome": "ORTIGUEIRA",
+   "bytes": 2579155,
+   "last_modified": "Fri, 21 Aug 2026 16:00:44 GMT"
+  },
+  {
+   "oficina": "15",
+   "codigo": "15063",
+   "nome": "OUTES",
+   "bytes": 2541577,
+   "last_modified": "Fri, 21 Aug 2026 16:02:35 GMT"
+  },
+  {
+   "oficina": "15",
+   "codigo": "15064",
+   "nome": "OZA DOS RIOS",
+   "bytes": 1116732,
+   "last_modified": "Fri, 21 Aug 2026 16:03:25 GMT"
+  },
+  {
+   "oficina": "15",
+   "codigo": "15065",
+   "nome": "PADERNE",
+   "bytes": 842128,
+   "last_modified": "Fri, 21 Aug 2026 16:04:01 GMT"
+  },
+  {
+   "oficina": "15",
+   "codigo": "15066",
+   "nome": "PADRON",
+   "bytes": 2027721,
+   "last_modified": "Fri, 21 Aug 2026 16:05:28 GMT"
+  },
+  {
+   "oficina": "15",
+   "codigo": "15069",
+   "nome": "PONTECESO",
+   "bytes": 1864775,
+   "last_modified": "Fri, 21 Aug 2026 16:07:08 GMT"
+  },
+  {
+   "oficina": "15",
+   "codigo": "15070",
+   "nome": "PONTEDEUME",
+   "bytes": 1437019,
+   "last_modified": "Fri, 21 Aug 2026 16:08:25 GMT"
+  },
+  {
+   "oficina": "15",
+   "codigo": "15073",
+   "nome": "RIANXO",
+   "bytes": 2527775,
+   "last_modified": "Fri, 21 Aug 2026 16:10:41 GMT"
+  },
+  {
+   "oficina": "15",
+   "codigo": "15074",
+   "nome": "RIBEIRA",
+   "bytes": 5147012,
+   "last_modified": "Fri, 21 Aug 2026 16:15:23 GMT"
+  },
+  {
+   "oficina": "15",
+   "codigo": "15075",
+   "nome": "ROIS",
+   "bytes": 1267710,
+   "last_modified": "Fri, 21 Aug 2026 16:16:28 GMT"
+  },
+  {
+   "oficina": "15",
+   "codigo": "15076",
+   "nome": "SADA",
+   "bytes": 3052938,
+   "last_modified": "Fri, 21 Aug 2026 16:19:09 GMT"
+  },
+  {
+   "oficina": "15",
+   "codigo": "15077",
+   "nome": "SAN SADURNIÑO",
+   "bytes": 1100350,
+   "last_modified": "Fri, 21 Aug 2026 16:20:03 GMT"
+  },
+  {
+   "oficina": "15",
+   "codigo": "15078",
+   "nome": "SANTA COMBA",
+   "bytes": 2874296,
+   "last_modified": "Fri, 21 Aug 2026 16:22:22 GMT"
+  },
+  {
+   "oficina": "15",
+   "codigo": "15079",
+   "nome": "SANTIAGO DE COMPOSTELA",
+   "bytes": 11194005,
+   "last_modified": "Fri, 21 Aug 2026 16:31:29 GMT"
+  },
+  {
+   "oficina": "15",
+   "codigo": "15080",
+   "nome": "SANTISO",
+   "bytes": 793436,
+   "last_modified": "Fri, 21 Aug 2026 16:32:01 GMT"
+  },
+  {
+   "oficina": "15",
+   "codigo": "15081",
+   "nome": "SOBRADO",
+   "bytes": 844554,
+   "last_modified": "Fri, 21 Aug 2026 16:32:38 GMT"
+  },
+  {
+   "oficina": "15",
+   "codigo": "15083",
+   "nome": "TEO",
+   "bytes": 3699449,
+   "last_modified": "Fri, 21 Aug 2026 16:35:38 GMT"
+  },
+  {
+   "oficina": "15",
+   "codigo": "15084",
+   "nome": "TOQUES",
+   "bytes": 463363,
+   "last_modified": "Fri, 21 Aug 2026 16:35:59 GMT"
+  },
+  {
+   "oficina": "15",
+   "codigo": "15085",
+   "nome": "TORDOIA",
+   "bytes": 1112889,
+   "last_modified": "Fri, 21 Aug 2026 16:36:49 GMT"
+  },
+  {
+   "oficina": "15",
+   "codigo": "15086",
+   "nome": "TOURO",
+   "bytes": 1341455,
+   "last_modified": "Fri, 21 Aug 2026 16:37:54 GMT"
+  },
+  {
+   "oficina": "15",
+   "codigo": "15087",
+   "nome": "TRAZO",
+   "bytes": 1097847,
+   "last_modified": "Fri, 21 Aug 2026 16:38:49 GMT"
+  },
+  {
+   "oficina": "15",
+   "codigo": "15089",
+   "nome": "VAL DO DUBRA",
+   "bytes": 1102457,
+   "last_modified": "Fri, 21 Aug 2026 16:39:41 GMT"
+  },
+  {
+   "oficina": "15",
+   "codigo": "15088",
+   "nome": "VALDOVIÑO",
+   "bytes": 2608271,
+   "last_modified": "Fri, 21 Aug 2026 16:41:59 GMT"
+  },
+  {
+   "oficina": "15",
+   "codigo": "15090",
+   "nome": "VEDRA",
+   "bytes": 1265611,
+   "last_modified": "Fri, 21 Aug 2026 16:43:08 GMT"
+  },
+  {
+   "oficina": "15",
+   "codigo": "15092",
+   "nome": "VILARMAIOR",
+   "bytes": 554971,
+   "last_modified": "Fri, 21 Aug 2026 16:43:37 GMT"
+  },
+  {
+   "oficina": "15",
+   "codigo": "15091",
+   "nome": "VILASANTAR",
+   "bytes": 581740,
+   "last_modified": "Fri, 21 Aug 2026 16:44:03 GMT"
+  },
+  {
+   "oficina": "15",
+   "codigo": "15093",
+   "nome": "VIMIANZO",
+   "bytes": 2141832,
+   "last_modified": "Fri, 21 Aug 2026 16:45:53 GMT"
+  },
+  {
+   "oficina": "15",
+   "codigo": "15094",
+   "nome": "ZAS",
+   "bytes": 1273174,
+   "last_modified": "Fri, 21 Aug 2026 16:47:05 GMT"
+  },
+  {
+   "oficina": "27",
+   "codigo": "27018",
+   "nome": "A FONSAGRADA",
+   "bytes": 2019046,
+   "last_modified": "Fri, 21 Aug 2026 13:26:42 GMT"
+  },
+  {
+   "oficina": "27",
+   "codigo": "27047",
+   "nome": "A POBRA DO BROLLON",
+   "bytes": 1202981,
+   "last_modified": "Fri, 21 Aug 2026 13:27:40 GMT"
+  },
+  {
+   "oficina": "27",
+   "codigo": "27048",
+   "nome": "A PONTENOVA",
+   "bytes": 1166397,
+   "last_modified": "Fri, 21 Aug 2026 13:28:34 GMT"
+  },
+  {
+   "oficina": "27",
+   "codigo": "27053",
+   "nome": "A RIBEIRA DE PIQUIN",
+   "bytes": 454356,
+   "last_modified": "Fri, 21 Aug 2026 13:28:54 GMT"
+  },
+  {
+   "oficina": "27",
+   "codigo": "27001",
+   "nome": "ABADIN",
+   "bytes": 1340865,
+   "last_modified": "Fri, 21 Aug 2026 13:29:51 GMT"
+  },
+  {
+   "oficina": "27",
+   "codigo": "27002",
+   "nome": "ALFOZ DO CASTRODOURO",
+   "bytes": 1104495,
+   "last_modified": "Fri, 21 Aug 2026 13:30:49 GMT"
+  },
+  {
+   "oficina": "27",
+   "codigo": "27003",
+   "nome": "ANTAS DE ULLA",
+   "bytes": 1262756,
+   "last_modified": "Fri, 21 Aug 2026 13:31:56 GMT"
+  },
+  {
+   "oficina": "27",
+   "codigo": "27037",
+   "nome": "AS NOGAIS",
+   "bytes": 534453,
+   "last_modified": "Fri, 21 Aug 2026 13:32:22 GMT"
+  },
+  {
+   "oficina": "27",
+   "codigo": "27004",
+   "nome": "BALEIRA",
+   "bytes": 839142,
+   "last_modified": "Fri, 21 Aug 2026 13:32:59 GMT"
+  },
+  {
+   "oficina": "27",
+   "codigo": "27036",
+   "nome": "BARALLA",
+   "bytes": 1130749,
+   "last_modified": "Fri, 21 Aug 2026 13:33:53 GMT"
+  },
+  {
+   "oficina": "27",
+   "codigo": "27005",
+   "nome": "BARREIROS",
+   "bytes": 1941057,
+   "last_modified": "Fri, 21 Aug 2026 13:35:41 GMT"
+  },
+  {
+   "oficina": "27",
+   "codigo": "27006",
+   "nome": "BECERREA",
+   "bytes": 1261994,
+   "last_modified": "Fri, 21 Aug 2026 13:36:46 GMT"
+  },
+  {
+   "oficina": "27",
+   "codigo": "27007",
+   "nome": "BEGONTE",
+   "bytes": 1451544,
+   "last_modified": "Fri, 21 Aug 2026 13:37:55 GMT"
+  },
+  {
+   "oficina": "27",
+   "codigo": "27008",
+   "nome": "BOVEDA",
+   "bytes": 792842,
+   "last_modified": "Fri, 21 Aug 2026 13:38:37 GMT"
+  },
+  {
+   "oficina": "27",
+   "codigo": "27068",
+   "nome": "BURELA",
+   "bytes": 927645,
+   "last_modified": "Fri, 21 Aug 2026 13:39:28 GMT"
+  },
+  {
+   "oficina": "27",
+   "codigo": "27009",
+   "nome": "CARBALLEDO",
+   "bytes": 1631284,
+   "last_modified": "Fri, 21 Aug 2026 13:40:48 GMT"
+  },
+  {
+   "oficina": "27",
+   "codigo": "27010",
+   "nome": "CASTRO DE REI",
+   "bytes": 2342452,
+   "last_modified": "Fri, 21 Aug 2026 13:42:40 GMT"
+  },
+  {
+   "oficina": "27",
+   "codigo": "27011",
+   "nome": "CASTROVERDE",
+   "bytes": 1403690,
+   "last_modified": "Fri, 21 Aug 2026 13:43:50 GMT"
+  },
+  {
+   "oficina": "27",
+   "codigo": "27012",
+   "nome": "CERVANTES",
+   "bytes": 876054,
+   "last_modified": "Fri, 21 Aug 2026 13:44:34 GMT"
+  },
+  {
+   "oficina": "27",
+   "codigo": "27013",
+   "nome": "CERVO",
+   "bytes": 1113095,
+   "last_modified": "Fri, 21 Aug 2026 13:45:27 GMT"
+  },
+  {
+   "oficina": "27",
+   "codigo": "27016",
+   "nome": "CHANTADA",
+   "bytes": 3431758,
+   "last_modified": "Fri, 21 Aug 2026 13:48:14 GMT"
+  },
+  {
+   "oficina": "27",
+   "codigo": "27015",
+   "nome": "COSPEITO",
+   "bytes": 2493756,
+   "last_modified": "Fri, 21 Aug 2026 13:50:08 GMT"
+  },
+  {
+   "oficina": "27",
+   "codigo": "27017",
+   "nome": "FOLGOSO DO COUREL",
+   "bytes": 903499,
+   "last_modified": "Fri, 21 Aug 2026 13:50:48 GMT"
+  },
+  {
+   "oficina": "27",
+   "codigo": "27019",
+   "nome": "FOZ",
+   "bytes": 2483764,
+   "last_modified": "Fri, 21 Aug 2026 13:53:06 GMT"
+  },
+  {
+   "oficina": "27",
+   "codigo": "27020",
+   "nome": "FRIOL",
+   "bytes": 2030909,
+   "last_modified": "Fri, 21 Aug 2026 13:54:34 GMT"
+  },
+  {
+   "oficina": "27",
+   "codigo": "27022",
+   "nome": "GUITIRIZ",
+   "bytes": 2516247,
+   "last_modified": "Fri, 21 Aug 2026 13:56:24 GMT"
+  },
+  {
+   "oficina": "27",
+   "codigo": "27023",
+   "nome": "GUNTIN",
+   "bytes": 1476709,
+   "last_modified": "Fri, 21 Aug 2026 13:57:37 GMT"
+  },
+  {
+   "oficina": "27",
+   "codigo": "27026",
+   "nome": "LANCARA",
+   "bytes": 1067736,
+   "last_modified": "Fri, 21 Aug 2026 13:58:30 GMT"
+  },
+  {
+   "oficina": "27",
+   "codigo": "27027",
+   "nome": "LOURENZA",
+   "bytes": 924509,
+   "last_modified": "Fri, 21 Aug 2026 13:59:16 GMT"
+  },
+  {
+   "oficina": "27",
+   "codigo": "27900",
+   "nome": "LUGO",
+   "bytes": 11775877,
+   "last_modified": "Fri, 21 Aug 2026 14:08:44 GMT"
+  },
+  {
+   "oficina": "27",
+   "codigo": "27029",
+   "nome": "MEIRA",
+   "bytes": 598314,
+   "last_modified": "Fri, 21 Aug 2026 14:09:12 GMT"
+  },
+  {
+   "oficina": "27",
+   "codigo": "27030",
+   "nome": "MONDOÑEDO",
+   "bytes": 1914572,
+   "last_modified": "Fri, 21 Aug 2026 14:10:45 GMT"
+  },
+  {
+   "oficina": "27",
+   "codigo": "27031",
+   "nome": "MONFORTE DE LEMOS",
+   "bytes": 4272572,
+   "last_modified": "Fri, 21 Aug 2026 14:14:24 GMT"
+  },
+  {
+   "oficina": "27",
+   "codigo": "27032",
+   "nome": "MONTERROSO",
+   "bytes": 1677206,
+   "last_modified": "Fri, 21 Aug 2026 14:15:46 GMT"
+  },
+  {
+   "oficina": "27",
+   "codigo": "27033",
+   "nome": "MURAS",
+   "bytes": 535750,
+   "last_modified": "Fri, 21 Aug 2026 14:16:07 GMT"
+  },
+  {
+   "oficina": "27",
+   "codigo": "27034",
+   "nome": "NAVIA DE SUARNA",
+   "bytes": 765177,
+   "last_modified": "Fri, 21 Aug 2026 14:16:43 GMT"
+  },
+  {
+   "oficina": "27",
+   "codigo": "27035",
+   "nome": "NEGUEIRA DE MUÑIZ",
+   "bytes": 151127,
+   "last_modified": "Fri, 21 Aug 2026 14:16:49 GMT"
+  },
+  {
+   "oficina": "27",
+   "codigo": "27014",
+   "nome": "O CORGO",
+   "bytes": 1749081,
+   "last_modified": "Fri, 21 Aug 2026 14:18:16 GMT"
+  },
+  {
+   "oficina": "27",
+   "codigo": "27024",
+   "nome": "O INCIO",
+   "bytes": 1073735,
+   "last_modified": "Fri, 21 Aug 2026 14:19:11 GMT"
+  },
+  {
+   "oficina": "27",
+   "codigo": "27043",
+   "nome": "O PARAMO",
+   "bytes": 767298,
+   "last_modified": "Fri, 21 Aug 2026 14:19:46 GMT"
+  },
+  {
+   "oficina": "27",
+   "codigo": "27058",
+   "nome": "O SAVIÑAO",
+   "bytes": 2199086,
+   "last_modified": "Fri, 21 Aug 2026 14:21:30 GMT"
+  },
+  {
+   "oficina": "27",
+   "codigo": "27063",
+   "nome": "O VALADOURO",
+   "bytes": 853012,
+   "last_modified": "Fri, 21 Aug 2026 14:22:12 GMT"
+  },
+  {
+   "oficina": "27",
+   "codigo": "27064",
+   "nome": "O VICEDO",
+   "bytes": 856247,
+   "last_modified": "Fri, 21 Aug 2026 14:23:00 GMT"
+  },
+  {
+   "oficina": "27",
+   "codigo": "27038",
+   "nome": "OUROL",
+   "bytes": 824321,
+   "last_modified": "Fri, 21 Aug 2026 14:23:37 GMT"
+  },
+  {
+   "oficina": "27",
+   "codigo": "27039",
+   "nome": "OUTEIRO DE REI",
+   "bytes": 2414678,
+   "last_modified": "Fri, 21 Aug 2026 14:25:27 GMT"
+  },
+  {
+   "oficina": "27",
+   "codigo": "27040",
+   "nome": "PALAS DE REI",
+   "bytes": 2236655,
+   "last_modified": "Fri, 21 Aug 2026 14:27:13 GMT"
+  },
+  {
+   "oficina": "27",
+   "codigo": "27041",
+   "nome": "PANTON",
+   "bytes": 2220824,
+   "last_modified": "Fri, 21 Aug 2026 14:28:44 GMT"
+  },
+  {
+   "oficina": "27",
+   "codigo": "27042",
+   "nome": "PARADELA",
+   "bytes": 987801,
+   "last_modified": "Fri, 21 Aug 2026 14:29:29 GMT"
+  },
+  {
+   "oficina": "27",
+   "codigo": "27044",
+   "nome": "PASTORIZA",
+   "bytes": 1700283,
+   "last_modified": "Fri, 21 Aug 2026 14:30:40 GMT"
+  },
+  {
+   "oficina": "27",
+   "codigo": "27045",
+   "nome": "PEDRAFITA DO CEBREIRO",
+   "bytes": 588387,
+   "last_modified": "Fri, 21 Aug 2026 14:31:06 GMT"
+  },
+  {
+   "oficina": "27",
+   "codigo": "27046",
+   "nome": "POL",
+   "bytes": 1061479,
+   "last_modified": "Fri, 21 Aug 2026 14:31:50 GMT"
+  },
+  {
+   "oficina": "27",
+   "codigo": "27049",
+   "nome": "PORTOMARIN",
+   "bytes": 874139,
+   "last_modified": "Fri, 21 Aug 2026 14:32:35 GMT"
+  },
+  {
+   "oficina": "27",
+   "codigo": "27050",
+   "nome": "QUIROGA",
+   "bytes": 2235984,
+   "last_modified": "Fri, 21 Aug 2026 14:34:47 GMT"
+  },
+  {
+   "oficina": "27",
+   "codigo": "27056",
+   "nome": "RABADE",
+   "bytes": 436403,
+   "last_modified": "Fri, 21 Aug 2026 14:35:07 GMT"
+  },
+  {
+   "oficina": "27",
+   "codigo": "27051",
+   "nome": "RIBADEO",
+   "bytes": 2021639,
+   "last_modified": "Fri, 21 Aug 2026 14:36:46 GMT"
+  },
+  {
+   "oficina": "27",
+   "codigo": "27052",
+   "nome": "RIBAS DE SIL",
+   "bytes": 753623,
+   "last_modified": "Fri, 21 Aug 2026 14:37:24 GMT"
+  },
+  {
+   "oficina": "27",
+   "codigo": "27054",
+   "nome": "RIOTORTO",
+   "bytes": 790518,
+   "last_modified": "Fri, 21 Aug 2026 14:37:58 GMT"
+  },
+  {
+   "oficina": "27",
+   "codigo": "27055",
+   "nome": "SAMOS",
+   "bytes": 908659,
+   "last_modified": "Fri, 21 Aug 2026 14:38:32 GMT"
+  },
+  {
+   "oficina": "27",
+   "codigo": "27057",
+   "nome": "SARRIA",
+   "bytes": 3369643,
+   "last_modified": "Fri, 21 Aug 2026 14:41:20 GMT"
+  },
+  {
+   "oficina": "27",
+   "codigo": "27059",
+   "nome": "SOBER",
+   "bytes": 2035107,
+   "last_modified": "Fri, 21 Aug 2026 14:42:54 GMT"
+  },
+  {
+   "oficina": "27",
+   "codigo": "27060",
+   "nome": "TABOADA",
+   "bytes": 1704424,
+   "last_modified": "Fri, 21 Aug 2026 14:44:15 GMT"
+  },
+  {
+   "oficina": "27",
+   "codigo": "27061",
+   "nome": "TRABADA",
+   "bytes": 582771,
+   "last_modified": "Fri, 21 Aug 2026 14:44:43 GMT"
+  },
+  {
+   "oficina": "27",
+   "codigo": "27062",
+   "nome": "TRIACASTELA",
+   "bytes": 357431,
+   "last_modified": "Fri, 21 Aug 2026 14:45:00 GMT"
+  },
+  {
+   "oficina": "27",
+   "codigo": "27065",
+   "nome": "VILALBA",
+   "bytes": 4666992,
+   "last_modified": "Fri, 21 Aug 2026 14:48:45 GMT"
+  },
+  {
+   "oficina": "27",
+   "codigo": "27067",
+   "nome": "VIVEIRO",
+   "bytes": 2761549,
+   "last_modified": "Fri, 21 Aug 2026 14:50:55 GMT"
+  },
+  {
+   "oficina": "27",
+   "codigo": "27021",
+   "nome": "XERMADE",
+   "bytes": 1308231,
+   "last_modified": "Fri, 21 Aug 2026 14:52:02 GMT"
+  },
+  {
+   "oficina": "27",
+   "codigo": "27025",
+   "nome": "XOVE",
+   "bytes": 1014403,
+   "last_modified": "Fri, 21 Aug 2026 14:52:55 GMT"
+  },
+  {
+   "oficina": "32",
+   "codigo": "32004",
+   "nome": "A ARNOIA",
+   "bytes": 768003,
+   "last_modified": "Fri, 21 Aug 2026 13:47:23 GMT"
+  },
+  {
+   "oficina": "32",
+   "codigo": "32015",
+   "nome": "A BOLA",
+   "bytes": 929445,
+   "last_modified": "Fri, 21 Aug 2026 13:48:17 GMT"
+  },
+  {
+   "oficina": "32",
+   "codigo": "32035",
+   "nome": "A GUDIÑA",
+   "bytes": 824373,
+   "last_modified": "Fri, 21 Aug 2026 13:48:59 GMT"
+  },
+  {
+   "oficina": "32",
+   "codigo": "32048",
+   "nome": "A MERCA",
+   "bytes": 1368980,
+   "last_modified": "Fri, 21 Aug 2026 13:50:11 GMT"
+  },
+  {
+   "oficina": "32",
+   "codigo": "32049",
+   "nome": "A MEZQUITA",
+   "bytes": 683519,
+   "last_modified": "Fri, 21 Aug 2026 13:50:45 GMT"
+  },
+  {
+   "oficina": "32",
+   "codigo": "32060",
+   "nome": "A PEROXA",
+   "bytes": 1126666,
+   "last_modified": "Fri, 21 Aug 2026 13:51:51 GMT"
+  },
+  {
+   "oficina": "32",
+   "codigo": "32064",
+   "nome": "A POBRA DE TRIVES",
+   "bytes": 1288211,
+   "last_modified": "Fri, 21 Aug 2026 13:52:57 GMT"
+  },
+  {
+   "oficina": "32",
+   "codigo": "32073",
+   "nome": "A RUA",
+   "bytes": 1168363,
+   "last_modified": "Fri, 21 Aug 2026 13:54:00 GMT"
+  },
+  {
+   "oficina": "32",
+   "codigo": "32081",
+   "nome": "A TEIXEIRA",
+   "bytes": 595642,
+   "last_modified": "Fri, 21 Aug 2026 13:54:37 GMT"
+  },
+  {
+   "oficina": "32",
+   "codigo": "32084",
+   "nome": "A VEIGA",
+   "bytes": 1383037,
+   "last_modified": "Fri, 21 Aug 2026 13:55:43 GMT"
+  },
+  {
+   "oficina": "32",
+   "codigo": "32002",
+   "nome": "ALLARIZ",
+   "bytes": 3261333,
+   "last_modified": "Fri, 21 Aug 2026 13:58:46 GMT"
+  },
+  {
+   "oficina": "32",
+   "codigo": "32003",
+   "nome": "AMOEIRO",
+   "bytes": 1757550,
+   "last_modified": "Fri, 21 Aug 2026 14:00:29 GMT"
+  },
+  {
+   "oficina": "32",
+   "codigo": "32005",
+   "nome": "AVION",
+   "bytes": 1593842,
+   "last_modified": "Fri, 21 Aug 2026 14:02:00 GMT"
+  },
+  {
+   "oficina": "32",
+   "codigo": "32006",
+   "nome": "BALTAR",
+   "bytes": 887857,
+   "last_modified": "Fri, 21 Aug 2026 14:02:46 GMT"
+  },
+  {
+   "oficina": "32",
+   "codigo": "32007",
+   "nome": "BANDE",
+   "bytes": 1379751,
+   "last_modified": "Fri, 21 Aug 2026 14:03:59 GMT"
+  },
+  {
+   "oficina": "32",
+   "codigo": "32008",
+   "nome": "BAÑOS DE MOLGAS",
+   "bytes": 1702929,
+   "last_modified": "Fri, 21 Aug 2026 14:05:36 GMT"
+  },
+  {
+   "oficina": "32",
+   "codigo": "32009",
+   "nome": "BARBADAS",
+   "bytes": 2228928,
+   "last_modified": "Fri, 21 Aug 2026 14:08:07 GMT"
+  },
+  {
+   "oficina": "32",
+   "codigo": "32011",
+   "nome": "BEADE",
+   "bytes": 305271,
+   "last_modified": "Fri, 21 Aug 2026 14:08:24 GMT"
+  },
+  {
+   "oficina": "32",
+   "codigo": "32012",
+   "nome": "BEARIZ",
+   "bytes": 741572,
+   "last_modified": "Fri, 21 Aug 2026 14:09:04 GMT"
+  },
+  {
+   "oficina": "32",
+   "codigo": "32014",
+   "nome": "BOBORAS",
+   "bytes": 1488084,
+   "last_modified": "Fri, 21 Aug 2026 14:10:20 GMT"
+  },
+  {
+   "oficina": "32",
+   "codigo": "32017",
+   "nome": "CALVOS DE RANDIN",
+   "bytes": 949561,
+   "last_modified": "Fri, 21 Aug 2026 14:11:06 GMT"
+  },
+  {
+   "oficina": "32",
+   "codigo": "32018",
+   "nome": "CARBALLEDA",
+   "bytes": 904411,
+   "last_modified": "Fri, 21 Aug 2026 14:11:49 GMT"
+  },
+  {
+   "oficina": "32",
+   "codigo": "32019",
+   "nome": "CARBALLEDA DE AVIA",
+   "bytes": 913260,
+   "last_modified": "Fri, 21 Aug 2026 14:12:38 GMT"
+  },
+  {
+   "oficina": "32",
+   "codigo": "32021",
+   "nome": "CARTELLE",
+   "bytes": 2527412,
+   "last_modified": "Fri, 21 Aug 2026 14:14:55 GMT"
+  },
+  {
+   "oficina": "32",
+   "codigo": "32023",
+   "nome": "CASTRELO DE MIÑO",
+   "bytes": 1141353,
+   "last_modified": "Fri, 21 Aug 2026 14:15:54 GMT"
+  },
+  {
+   "oficina": "32",
+   "codigo": "32022",
+   "nome": "CASTRELO DO VAL",
+   "bytes": 913656,
+   "last_modified": "Fri, 21 Aug 2026 14:16:44 GMT"
+  },
+  {
+   "oficina": "32",
+   "codigo": "32025",
+   "nome": "CELANOVA",
+   "bytes": 2160040,
+   "last_modified": "Fri, 21 Aug 2026 14:18:31 GMT"
+  },
+  {
+   "oficina": "32",
+   "codigo": "32026",
+   "nome": "CENLLE",
+   "bytes": 1102067,
+   "last_modified": "Fri, 21 Aug 2026 14:19:38 GMT"
+  },
+  {
+   "oficina": "32",
+   "codigo": "32030",
+   "nome": "CHANDREXA DE QUEIXA",
+   "bytes": 474436,
+   "last_modified": "Fri, 21 Aug 2026 14:20:02 GMT"
+  },
+  {
+   "oficina": "32",
+   "codigo": "32027",
+   "nome": "COLES",
+   "bytes": 1645094,
+   "last_modified": "Fri, 21 Aug 2026 14:21:35 GMT"
+  },
+  {
+   "oficina": "32",
+   "codigo": "32028",
+   "nome": "CORTEGADA",
+   "bytes": 951979,
+   "last_modified": "Fri, 21 Aug 2026 14:22:33 GMT"
+  },
+  {
+   "oficina": "32",
+   "codigo": "32029",
+   "nome": "CUALEDRO",
+   "bytes": 1709039,
+   "last_modified": "Fri, 21 Aug 2026 14:23:59 GMT"
+  },
+  {
+   "oficina": "32",
+   "codigo": "32031",
+   "nome": "ENTRIMO",
+   "bytes": 967992,
+   "last_modified": "Fri, 21 Aug 2026 14:24:50 GMT"
+  },
+  {
+   "oficina": "32",
+   "codigo": "32032",
+   "nome": "ESGOS",
+   "bytes": 762226,
+   "last_modified": "Fri, 21 Aug 2026 14:25:30 GMT"
+  },
+  {
+   "oficina": "32",
+   "codigo": "32034",
+   "nome": "GOMESENDE",
+   "bytes": 633759,
+   "last_modified": "Fri, 21 Aug 2026 14:26:00 GMT"
+  },
+  {
+   "oficina": "32",
+   "codigo": "32039",
+   "nome": "LAROUCO",
+   "bytes": 453779,
+   "last_modified": "Fri, 21 Aug 2026 14:26:21 GMT"
+  },
+  {
+   "oficina": "32",
+   "codigo": "32040",
+   "nome": "LAZA",
+   "bytes": 1338825,
+   "last_modified": "Fri, 21 Aug 2026 14:27:34 GMT"
+  },
+  {
+   "oficina": "32",
+   "codigo": "32041",
+   "nome": "LEIRO",
+   "bytes": 1264449,
+   "last_modified": "Fri, 21 Aug 2026 14:28:46 GMT"
+  },
+  {
+   "oficina": "32",
+   "codigo": "32042",
+   "nome": "LOBEIRA",
+   "bytes": 646255,
+   "last_modified": "Fri, 21 Aug 2026 14:29:21 GMT"
+  },
+  {
+   "oficina": "32",
+   "codigo": "32043",
+   "nome": "LOBIOS",
+   "bytes": 1632030,
+   "last_modified": "Fri, 21 Aug 2026 14:30:31 GMT"
+  },
+  {
+   "oficina": "32",
+   "codigo": "32044",
+   "nome": "MACEDA",
+   "bytes": 1661644,
+   "last_modified": "Fri, 21 Aug 2026 14:31:58 GMT"
+  },
+  {
+   "oficina": "32",
+   "codigo": "32045",
+   "nome": "MANZANEDA",
+   "bytes": 809717,
+   "last_modified": "Fri, 21 Aug 2026 14:32:37 GMT"
+  },
+  {
+   "oficina": "32",
+   "codigo": "32046",
+   "nome": "MASIDE",
+   "bytes": 1429834,
+   "last_modified": "Fri, 21 Aug 2026 14:33:43 GMT"
+  },
+  {
+   "oficina": "32",
+   "codigo": "32047",
+   "nome": "MELON",
+   "bytes": 1222667,
+   "last_modified": "Fri, 21 Aug 2026 14:34:52 GMT"
+  },
+  {
+   "oficina": "32",
+   "codigo": "32050",
+   "nome": "MONTEDERRAMO",
+   "bytes": 737703,
+   "last_modified": "Fri, 21 Aug 2026 14:35:27 GMT"
+  },
+  {
+   "oficina": "32",
+   "codigo": "32051",
+   "nome": "MONTERREI",
+   "bytes": 1792569,
+   "last_modified": "Fri, 21 Aug 2026 14:37:08 GMT"
+  },
+  {
+   "oficina": "32",
+   "codigo": "32052",
+   "nome": "MUIÑOS",
+   "bytes": 1154204,
+   "last_modified": "Fri, 21 Aug 2026 14:38:02 GMT"
+  },
+  {
+   "oficina": "32",
+   "codigo": "32053",
+   "nome": "NOGUEIRA DE RAMUIN",
+   "bytes": 1943843,
+   "last_modified": "Fri, 21 Aug 2026 14:39:31 GMT"
+  },
+  {
+   "oficina": "32",
+   "codigo": "32010",
+   "nome": "O BARCO DE VALDEORRAS",
+   "bytes": 2606910,
+   "last_modified": "Fri, 21 Aug 2026 14:41:46 GMT"
+  },
+  {
+   "oficina": "32",
+   "codigo": "32016",
+   "nome": "O BOLO",
+   "bytes": 1123663,
+   "last_modified": "Fri, 21 Aug 2026 14:42:43 GMT"
+  },
+  {
+   "oficina": "32",
+   "codigo": "32020",
+   "nome": "O CARBALLIÑO",
+   "bytes": 3184229,
+   "last_modified": "Fri, 21 Aug 2026 14:45:27 GMT"
+  },
+  {
+   "oficina": "32",
+   "codigo": "32024",
+   "nome": "O CASTRO DE CALDELAS",
+   "bytes": 1128245,
+   "last_modified": "Fri, 21 Aug 2026 14:46:20 GMT"
+  },
+  {
+   "oficina": "32",
+   "codigo": "32036",
+   "nome": "O IRIXO",
+   "bytes": 1136281,
+   "last_modified": "Fri, 21 Aug 2026 14:47:19 GMT"
+  },
+  {
+   "oficina": "32",
+   "codigo": "32059",
+   "nome": "O PEREIRO DE AGUIAR",
+   "bytes": 3218559,
+   "last_modified": "Fri, 21 Aug 2026 14:50:20 GMT"
+  },
+  {
+   "oficina": "32",
+   "codigo": "32072",
+   "nome": "O RIOS",
+   "bytes": 1337991,
+   "last_modified": "Fri, 21 Aug 2026 14:51:12 GMT"
+  },
+  {
+   "oficina": "32",
+   "codigo": "32054",
+   "nome": "OIMBRA",
+   "bytes": 984154,
+   "last_modified": "Fri, 21 Aug 2026 14:52:04 GMT"
+  },
+  {
+   "oficina": "32",
+   "codigo": "32013",
+   "nome": "OS BLANCOS",
+   "bytes": 803752,
+   "last_modified": "Fri, 21 Aug 2026 14:52:40 GMT"
+  },
+  {
+   "oficina": "32",
+   "codigo": "32900",
+   "nome": "OURENSE",
+   "bytes": 9914541,
+   "last_modified": "Fri, 21 Aug 2026 15:00:43 GMT"
+  },
+  {
+   "oficina": "32",
+   "codigo": "32056",
+   "nome": "PADERNE DE ALLARIZ",
+   "bytes": 1212468,
+   "last_modified": "Fri, 21 Aug 2026 15:01:47 GMT"
+  },
+  {
+   "oficina": "32",
+   "codigo": "32057",
+   "nome": "PADRENDA",
+   "bytes": 1139263,
+   "last_modified": "Fri, 21 Aug 2026 15:02:47 GMT"
+  },
+  {
+   "oficina": "32",
+   "codigo": "32058",
+   "nome": "PARADA DE SIL",
+   "bytes": 586485,
+   "last_modified": "Fri, 21 Aug 2026 15:03:20 GMT"
+  },
+  {
+   "oficina": "32",
+   "codigo": "32061",
+   "nome": "PETIN",
+   "bytes": 587680,
+   "last_modified": "Fri, 21 Aug 2026 15:03:56 GMT"
+  },
+  {
+   "oficina": "32",
+   "codigo": "32062",
+   "nome": "PIÑOR",
+   "bytes": 977259,
+   "last_modified": "Fri, 21 Aug 2026 15:04:44 GMT"
+  },
+  {
+   "oficina": "32",
+   "codigo": "32065",
+   "nome": "PONTEDEVA",
+   "bytes": 265319,
+   "last_modified": "Fri, 21 Aug 2026 15:04:57 GMT"
+  },
+  {
+   "oficina": "32",
+   "codigo": "32063",
+   "nome": "PORQUEIRA",
+   "bytes": 666447,
+   "last_modified": "Fri, 21 Aug 2026 15:05:34 GMT"
+  },
+  {
+   "oficina": "32",
+   "codigo": "32066",
+   "nome": "PUNXIN",
+   "bytes": 570824,
+   "last_modified": "Fri, 21 Aug 2026 15:06:00 GMT"
+  },
+  {
+   "oficina": "32",
+   "codigo": "32067",
+   "nome": "QUINTELA DE LEIRADO",
+   "bytes": 437031,
+   "last_modified": "Fri, 21 Aug 2026 15:06:20 GMT"
+  },
+  {
+   "oficina": "32",
+   "codigo": "32068",
+   "nome": "RAIRIZ DE VEIGA",
+   "bytes": 938614,
+   "last_modified": "Fri, 21 Aug 2026 15:07:16 GMT"
+  },
+  {
+   "oficina": "32",
+   "codigo": "32069",
+   "nome": "RAMIRAS",
+   "bytes": 1260858,
+   "last_modified": "Fri, 21 Aug 2026 15:08:20 GMT"
+  },
+  {
+   "oficina": "32",
+   "codigo": "32070",
+   "nome": "RIBADAVIA",
+   "bytes": 1445421,
+   "last_modified": "Fri, 21 Aug 2026 15:09:47 GMT"
+  },
+  {
+   "oficina": "32",
+   "codigo": "32074",
+   "nome": "RUBIA",
+   "bytes": 1067902,
+   "last_modified": "Fri, 21 Aug 2026 15:10:39 GMT"
+  },
+  {
+   "oficina": "32",
+   "codigo": "32075",
+   "nome": "SAN AMARO",
+   "bytes": 876168,
+   "last_modified": "Fri, 21 Aug 2026 15:11:24 GMT"
+  },
+  {
+   "oficina": "32",
+   "codigo": "32076",
+   "nome": "SAN CIBRAO DAS VIÑAS",
+   "bytes": 2370039,
+   "last_modified": "Fri, 21 Aug 2026 15:13:56 GMT"
+  },
+  {
+   "oficina": "32",
+   "codigo": "32077",
+   "nome": "SAN CRISTOVO DE CEA",
+   "bytes": 1767433,
+   "last_modified": "Fri, 21 Aug 2026 15:15:31 GMT"
+  },
+  {
+   "oficina": "32",
+   "codigo": "32071",
+   "nome": "SAN XOAN DE RIO",
+   "bytes": 684519,
+   "last_modified": "Fri, 21 Aug 2026 15:16:04 GMT"
+  },
+  {
+   "oficina": "32",
+   "codigo": "32078",
+   "nome": "SANDIAS",
+   "bytes": 889028,
+   "last_modified": "Fri, 21 Aug 2026 15:16:53 GMT"
+  },
+  {
+   "oficina": "32",
+   "codigo": "32079",
+   "nome": "SARREAUS",
+   "bytes": 966404,
+   "last_modified": "Fri, 21 Aug 2026 15:17:41 GMT"
+  },
+  {
+   "oficina": "32",
+   "codigo": "32080",
+   "nome": "TABOADELA",
+   "bytes": 1048353,
+   "last_modified": "Fri, 21 Aug 2026 15:18:41 GMT"
+  },
+  {
+   "oficina": "32",
+   "codigo": "32082",
+   "nome": "TOEN",
+   "bytes": 1339861,
+   "last_modified": "Fri, 21 Aug 2026 15:19:55 GMT"
+  },
+  {
+   "oficina": "32",
+   "codigo": "32083",
+   "nome": "TRASMIRAS",
+   "bytes": 1007615,
+   "last_modified": "Fri, 21 Aug 2026 15:20:48 GMT"
+  },
+  {
+   "oficina": "32",
+   "codigo": "32085",
+   "nome": "VEREA",
+   "bytes": 821164,
+   "last_modified": "Fri, 21 Aug 2026 15:21:27 GMT"
+  },
+  {
+   "oficina": "32",
+   "codigo": "32086",
+   "nome": "VERIN",
+   "bytes": 3595634,
+   "last_modified": "Fri, 21 Aug 2026 15:24:57 GMT"
+  },
+  {
+   "oficina": "32",
+   "codigo": "32087",
+   "nome": "VIANA DO BOLO",
+   "bytes": 1905340,
+   "last_modified": "Fri, 21 Aug 2026 15:26:18 GMT"
+  },
+  {
+   "oficina": "32",
+   "codigo": "32088",
+   "nome": "VILAMARIN",
+   "bytes": 1635047,
+   "last_modified": "Fri, 21 Aug 2026 15:27:28 GMT"
+  },
+  {
+   "oficina": "32",
+   "codigo": "32089",
+   "nome": "VILAMARTIN DE VALDEORRAS",
+   "bytes": 1127490,
+   "last_modified": "Fri, 21 Aug 2026 15:28:25 GMT"
+  },
+  {
+   "oficina": "32",
+   "codigo": "32090",
+   "nome": "VILAR DE BARRIO",
+   "bytes": 1054864,
+   "last_modified": "Fri, 21 Aug 2026 15:29:21 GMT"
+  },
+  {
+   "oficina": "32",
+   "codigo": "32091",
+   "nome": "VILAR DE SANTOS",
+   "bytes": 630785,
+   "last_modified": "Fri, 21 Aug 2026 15:29:55 GMT"
+  },
+  {
+   "oficina": "32",
+   "codigo": "32092",
+   "nome": "VILARDEVOS",
+   "bytes": 1703615,
+   "last_modified": "Fri, 21 Aug 2026 15:31:14 GMT"
+  },
+  {
+   "oficina": "32",
+   "codigo": "32093",
+   "nome": "VILARIÑO DE CONSO",
+   "bytes": 416837,
+   "last_modified": "Fri, 21 Aug 2026 15:31:34 GMT"
+  },
+  {
+   "oficina": "32",
+   "codigo": "32033",
+   "nome": "XINZO DE LIMIA",
+   "bytes": 3631985,
+   "last_modified": "Fri, 21 Aug 2026 15:35:21 GMT"
+  },
+  {
+   "oficina": "32",
+   "codigo": "32037",
+   "nome": "XUNQUEIRA DE AMBIA",
+   "bytes": 1352210,
+   "last_modified": "Fri, 21 Aug 2026 15:36:29 GMT"
+  },
+  {
+   "oficina": "32",
+   "codigo": "32038",
+   "nome": "XUNQUEIRA DE ESPADANEDO",
+   "bytes": 423550,
+   "last_modified": "Fri, 21 Aug 2026 15:36:51 GMT"
+  },
+  {
+   "oficina": "36",
+   "codigo": "36009",
+   "nome": "A CANIZA",
+   "bytes": 2003710,
+   "last_modified": "Fri, 21 Aug 2026 13:55:11 GMT"
+  },
+  {
+   "oficina": "36",
+   "codigo": "36017",
+   "nome": "A ESTRADA",
+   "bytes": 5259434,
+   "last_modified": "Fri, 21 Aug 2026 13:59:57 GMT"
+  },
+  {
+   "oficina": "36",
+   "codigo": "36023",
+   "nome": "A GUARDA",
+   "bytes": 2058509,
+   "last_modified": "Fri, 21 Aug 2026 14:01:52 GMT"
+  },
+  {
+   "oficina": "36",
+   "codigo": "36062",
+   "nome": "A ILLA DE AROUSA",
+   "bytes": 1004842,
+   "last_modified": "Fri, 21 Aug 2026 14:02:46 GMT"
+  },
+  {
+   "oficina": "36",
+   "codigo": "36025",
+   "nome": "A LAMA",
+   "bytes": 1044457,
+   "last_modified": "Fri, 21 Aug 2026 14:03:52 GMT"
+  },
+  {
+   "oficina": "36",
+   "codigo": "36020",
+   "nome": "AGOLADA",
+   "bytes": 1389872,
+   "last_modified": "Fri, 21 Aug 2026 14:04:58 GMT"
+  },
+  {
+   "oficina": "36",
+   "codigo": "36001",
+   "nome": "ARBO",
+   "bytes": 1216773,
+   "last_modified": "Fri, 21 Aug 2026 14:06:07 GMT"
+  },
+  {
+   "oficina": "36",
+   "codigo": "36034",
+   "nome": "AS NEVES",
+   "bytes": 1854453,
+   "last_modified": "Fri, 21 Aug 2026 14:07:45 GMT"
+  },
+  {
+   "oficina": "36",
+   "codigo": "36002",
+   "nome": "BARRO",
+   "bytes": 939984,
+   "last_modified": "Fri, 21 Aug 2026 14:08:42 GMT"
+  },
+  {
+   "oficina": "36",
+   "codigo": "36004",
+   "nome": "BUEU",
+   "bytes": 2424521,
+   "last_modified": "Fri, 21 Aug 2026 14:10:59 GMT"
+  },
+  {
+   "oficina": "36",
+   "codigo": "36005",
+   "nome": "CALDAS DE REIS",
+   "bytes": 2224795,
+   "last_modified": "Fri, 21 Aug 2026 14:12:51 GMT"
+  },
+  {
+   "oficina": "36",
+   "codigo": "36006",
+   "nome": "CAMBADOS",
+   "bytes": 3006071,
+   "last_modified": "Fri, 21 Aug 2026 14:15:34 GMT"
+  },
+  {
+   "oficina": "36",
+   "codigo": "36008",
+   "nome": "CANGAS DE MORRAZO",
+   "bytes": 5370792,
+   "last_modified": "Fri, 21 Aug 2026 14:20:50 GMT"
+  },
+  {
+   "oficina": "36",
+   "codigo": "36010",
+   "nome": "CATOIRA",
+   "bytes": 895115,
+   "last_modified": "Fri, 21 Aug 2026 14:21:40 GMT"
+  },
+  {
+   "oficina": "36",
+   "codigo": "36011",
+   "nome": "CERDEDO",
+   "bytes": 631090,
+   "last_modified": "Fri, 21 Aug 2026 14:22:16 GMT"
+  },
+  {
+   "oficina": "36",
+   "codigo": "36012",
+   "nome": "COTOBADE",
+   "bytes": 1493797,
+   "last_modified": "Fri, 21 Aug 2026 14:23:42 GMT"
+  },
+  {
+   "oficina": "36",
+   "codigo": "36013",
+   "nome": "COVELO",
+   "bytes": 1489822,
+   "last_modified": "Fri, 21 Aug 2026 14:25:07 GMT"
+  },
+  {
+   "oficina": "36",
+   "codigo": "36014",
+   "nome": "CRECENTE",
+   "bytes": 1123956,
+   "last_modified": "Fri, 21 Aug 2026 14:26:02 GMT"
+  },
+  {
+   "oficina": "36",
+   "codigo": "36015",
+   "nome": "CUNTIS",
+   "bytes": 1484991,
+   "last_modified": "Fri, 21 Aug 2026 14:27:14 GMT"
+  },
+  {
+   "oficina": "36",
+   "codigo": "36016",
+   "nome": "DOZON",
+   "bytes": 575599,
+   "last_modified": "Fri, 21 Aug 2026 14:27:40 GMT"
+  },
+  {
+   "oficina": "36",
+   "codigo": "36018",
+   "nome": "FORCAREI",
+   "bytes": 1455889,
+   "last_modified": "Fri, 21 Aug 2026 14:29:03 GMT"
+  },
+  {
+   "oficina": "36",
+   "codigo": "36019",
+   "nome": "FORNELOS DE MONTES",
+   "bytes": 697519,
+   "last_modified": "Fri, 21 Aug 2026 14:29:48 GMT"
+  },
+  {
+   "oficina": "36",
+   "codigo": "36024",
+   "nome": "LALIN",
+   "bytes": 5067469,
+   "last_modified": "Fri, 21 Aug 2026 14:34:07 GMT"
+  },
+  {
+   "oficina": "36",
+   "codigo": "36026",
+   "nome": "MARIN",
+   "bytes": 3313886,
+   "last_modified": "Fri, 21 Aug 2026 14:37:03 GMT"
+  },
+  {
+   "oficina": "36",
+   "codigo": "36027",
+   "nome": "MEAÑO",
+   "bytes": 1362421,
+   "last_modified": "Fri, 21 Aug 2026 14:38:20 GMT"
+  },
+  {
+   "oficina": "36",
+   "codigo": "36028",
+   "nome": "MEIS",
+   "bytes": 1255296,
+   "last_modified": "Fri, 21 Aug 2026 14:39:33 GMT"
+  },
+  {
+   "oficina": "36",
+   "codigo": "36029",
+   "nome": "MOAÑA",
+   "bytes": 4202913,
+   "last_modified": "Fri, 21 Aug 2026 14:43:38 GMT"
+  },
+  {
+   "oficina": "36",
+   "codigo": "36030",
+   "nome": "MONDARIZ",
+   "bytes": 1808307,
+   "last_modified": "Fri, 21 Aug 2026 14:45:20 GMT"
+  },
+  {
+   "oficina": "36",
+   "codigo": "36031",
+   "nome": "MONDARIZ BALNEARIO",
+   "bytes": 247035,
+   "last_modified": "Fri, 21 Aug 2026 14:45:34 GMT"
+  },
+  {
+   "oficina": "36",
+   "codigo": "36032",
+   "nome": "MORAÑA",
+   "bytes": 1073195,
+   "last_modified": "Fri, 21 Aug 2026 14:46:31 GMT"
+  },
+  {
+   "oficina": "36",
+   "codigo": "36033",
+   "nome": "MOS",
+   "bytes": 3975075,
+   "last_modified": "Fri, 21 Aug 2026 14:50:35 GMT"
+  },
+  {
+   "oficina": "36",
+   "codigo": "36007",
+   "nome": "O CAMPO LAMEIRO",
+   "bytes": 586358,
+   "last_modified": "Fri, 21 Aug 2026 14:51:05 GMT"
+  },
+  {
+   "oficina": "36",
+   "codigo": "36022",
+   "nome": "O GROVE",
+   "bytes": 2690376,
+   "last_modified": "Fri, 21 Aug 2026 14:53:21 GMT"
+  },
+  {
+   "oficina": "36",
+   "codigo": "36039",
+   "nome": "O PORRIÑO",
+   "bytes": 3645699,
+   "last_modified": "Fri, 21 Aug 2026 14:56:43 GMT"
+  },
+  {
+   "oficina": "36",
+   "codigo": "36048",
+   "nome": "O ROSAL",
+   "bytes": 2034361,
+   "last_modified": "Fri, 21 Aug 2026 14:58:32 GMT"
+  },
+  {
+   "oficina": "36",
+   "codigo": "36036",
+   "nome": "OIA",
+   "bytes": 1183139,
+   "last_modified": "Fri, 21 Aug 2026 14:59:39 GMT"
+  },
+  {
+   "oficina": "36",
+   "codigo": "36037",
+   "nome": "PAZOS DE BORBEN",
+   "bytes": 1039721,
+   "last_modified": "Fri, 21 Aug 2026 15:00:47 GMT"
+  },
+  {
+   "oficina": "36",
+   "codigo": "36041",
+   "nome": "POIO",
+   "bytes": 3298724,
+   "last_modified": "Fri, 21 Aug 2026 15:03:57 GMT"
+  },
+  {
+   "oficina": "36",
+   "codigo": "36043",
+   "nome": "PONTE CALDELAS",
+   "bytes": 1718547,
+   "last_modified": "Fri, 21 Aug 2026 15:05:49 GMT"
+  },
+  {
+   "oficina": "36",
+   "codigo": "36042",
+   "nome": "PONTEAREAS",
+   "bytes": 4657211,
+   "last_modified": "Fri, 21 Aug 2026 15:10:30 GMT"
+  },
+  {
+   "oficina": "36",
+   "codigo": "36044",
+   "nome": "PONTECESURES",
+   "bytes": 633148,
+   "last_modified": "Fri, 21 Aug 2026 15:11:04 GMT"
+  },
+  {
+   "oficina": "36",
+   "codigo": "36900",
+   "nome": "PONTEVEDRA",
+   "bytes": 9422800,
+   "last_modified": "Fri, 21 Aug 2026 15:19:39 GMT"
+  },
+  {
+   "oficina": "36",
+   "codigo": "36040",
+   "nome": "PORTAS",
+   "bytes": 982582,
+   "last_modified": "Fri, 21 Aug 2026 15:20:37 GMT"
+  },
+  {
+   "oficina": "36",
+   "codigo": "36045",
+   "nome": "REDONDELA",
+   "bytes": 5978198,
+   "last_modified": "Fri, 21 Aug 2026 15:26:16 GMT"
+  },
+  {
+   "oficina": "36",
+   "codigo": "36046",
+   "nome": "RIBADUMIA",
+   "bytes": 1163230,
+   "last_modified": "Fri, 21 Aug 2026 15:27:16 GMT"
+  },
+  {
+   "oficina": "36",
+   "codigo": "36047",
+   "nome": "RODEIRO",
+   "bytes": 1438639,
+   "last_modified": "Fri, 21 Aug 2026 15:28:23 GMT"
+  },
+  {
+   "oficina": "36",
+   "codigo": "36049",
+   "nome": "SALCEDA DE CASELAS",
+   "bytes": 1770446,
+   "last_modified": "Fri, 21 Aug 2026 15:30:02 GMT"
+  },
+  {
+   "oficina": "36",
+   "codigo": "36050",
+   "nome": "SALVATERRA DE MIÑO",
+   "bytes": 2720912,
+   "last_modified": "Fri, 21 Aug 2026 15:32:31 GMT"
+  },
+  {
+   "oficina": "36",
+   "codigo": "36051",
+   "nome": "SANXENXO",
+   "bytes": 5521702,
+   "last_modified": "Fri, 21 Aug 2026 15:37:36 GMT"
+  },
+  {
+   "oficina": "36",
+   "codigo": "36052",
+   "nome": "SILLEDA",
+   "bytes": 2746462,
+   "last_modified": "Fri, 21 Aug 2026 15:39:43 GMT"
+  },
+  {
+   "oficina": "36",
+   "codigo": "36053",
+   "nome": "SOUTOMAIOR",
+   "bytes": 1425536,
+   "last_modified": "Fri, 21 Aug 2026 15:41:01 GMT"
+  },
+  {
+   "oficina": "36",
+   "codigo": "36054",
+   "nome": "TOMIÑO",
+   "bytes": 3366615,
+   "last_modified": "Fri, 21 Aug 2026 15:44:01 GMT"
+  },
+  {
+   "oficina": "36",
+   "codigo": "36055",
+   "nome": "TUI",
+   "bytes": 3932494,
+   "last_modified": "Fri, 21 Aug 2026 15:47:17 GMT"
+  },
+  {
+   "oficina": "36",
+   "codigo": "36056",
+   "nome": "VALGA",
+   "bytes": 1497432,
+   "last_modified": "Fri, 21 Aug 2026 15:48:34 GMT"
+  },
+  {
+   "oficina": "36",
+   "codigo": "36059",
+   "nome": "VILA DE CRUCES",
+   "bytes": 1390855,
+   "last_modified": "Fri, 21 Aug 2026 15:49:45 GMT"
+  },
+  {
+   "oficina": "36",
+   "codigo": "36058",
+   "nome": "VILABOA",
+   "bytes": 1720292,
+   "last_modified": "Fri, 21 Aug 2026 15:51:29 GMT"
+  },
+  {
+   "oficina": "36",
+   "codigo": "36060",
+   "nome": "VILAGARCIA DE AROUSA",
+   "bytes": 5434285,
+   "last_modified": "Fri, 21 Aug 2026 15:55:57 GMT"
+  },
+  {
+   "oficina": "36",
+   "codigo": "36061",
+   "nome": "VILANOVA DE AROUSA",
+   "bytes": 2727446,
+   "last_modified": "Fri, 21 Aug 2026 15:58:11 GMT"
+  },
+  {
+   "oficina": "54",
+   "codigo": "54003",
+   "nome": "BAIONA",
+   "bytes": 2639744,
+   "last_modified": "Fri, 21 Aug 2026 17:07:41 GMT"
+  },
+  {
+   "oficina": "54",
+   "codigo": "54021",
+   "nome": "GONDOMAR",
+   "bytes": 4098107,
+   "last_modified": "Fri, 21 Aug 2026 17:11:24 GMT"
+  },
+  {
+   "oficina": "54",
+   "codigo": "54035",
+   "nome": "NIGRAN",
+   "bytes": 5379356,
+   "last_modified": "Fri, 21 Aug 2026 17:16:18 GMT"
+  },
+  {
+   "oficina": "54",
+   "codigo": "54057",
+   "nome": "VIGO",
+   "bytes": 24898983,
+   "last_modified": "Fri, 21 Aug 2026 17:36:53 GMT"
+  }
+ ],
+ "peticions": [
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/buildings/ES.SDGC.BU.atom.xml",
+   "metodo": "GET",
+   "status": 200,
+   "bytes": 682565,
+   "last_modified": "Fri, 28 Aug 2026 08:30:07 GMT",
+   "utc": "2026-11-01T12:09:33+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/buildings/15/ES.SDGC.bu.atom_15.xml",
+   "metodo": "GET",
+   "status": 200,
+   "bytes": 163917,
+   "last_modified": "Fri, 21 Aug 2026 16:47:05 GMT",
+   "utc": "2026-11-01T12:09:35+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/buildings/27/ES.SDGC.bu.atom_27.xml",
+   "metodo": "GET",
+   "status": 200,
+   "bytes": 117661,
+   "last_modified": "Fri, 21 Aug 2026 14:52:55 GMT",
+   "utc": "2026-11-01T12:09:36+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/buildings/32/ES.SDGC.bu.atom_32.xml",
+   "metodo": "GET",
+   "status": 200,
+   "bytes": 161187,
+   "last_modified": "Fri, 21 Aug 2026 15:36:51 GMT",
+   "utc": "2026-11-01T12:09:38+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/buildings/36/ES.SDGC.bu.atom_36.xml",
+   "metodo": "GET",
+   "status": 200,
+   "bytes": 101990,
+   "last_modified": "Fri, 21 Aug 2026 15:58:11 GMT",
+   "utc": "2026-11-01T12:09:39+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/buildings/54/ES.SDGC.bu.atom_54.xml",
+   "metodo": "GET",
+   "status": 200,
+   "bytes": 8601,
+   "last_modified": "Fri, 21 Aug 2026 17:36:53 GMT",
+   "utc": "2026-11-01T12:09:41+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/15/15007-A BAÑA/A.ES.SDGC.BU.15007.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1045622,
+   "last_modified": "Fri, 21 Aug 2026 14:05:36 GMT",
+   "utc": "2026-11-01T12:09:42+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/15/15018-A CAPELA/A.ES.SDGC.BU.15018.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 458121,
+   "last_modified": "Fri, 21 Aug 2026 14:06:01 GMT",
+   "utc": "2026-11-01T12:09:44+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/15/15900-A CORUÑA/A.ES.SDGC.BU.15900.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 9094780,
+   "last_modified": "Fri, 21 Aug 2026 14:15:05 GMT",
+   "utc": "2026-11-01T12:09:45+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/15/15042-A LARACHA/A.ES.SDGC.BU.15042.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 2967365,
+   "last_modified": "Fri, 21 Aug 2026 14:17:44 GMT",
+   "utc": "2026-11-01T12:09:46+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/15/15068-A POBRA DO CARAMIÑAL/A.ES.SDGC.BU.15068.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1992102,
+   "last_modified": "Fri, 21 Aug 2026 14:19:28 GMT",
+   "utc": "2026-11-01T12:09:48+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/15/15001-ABEGONDO/A.ES.SDGC.BU.15001.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 2050850,
+   "last_modified": "Fri, 21 Aug 2026 14:21:15 GMT",
+   "utc": "2026-11-01T12:09:49+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/15/15002-AMES/A.ES.SDGC.BU.15002.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 3319951,
+   "last_modified": "Fri, 21 Aug 2026 14:24:18 GMT",
+   "utc": "2026-11-01T12:09:51+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/15/15003-ARANGA/A.ES.SDGC.BU.15003.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 633068,
+   "last_modified": "Fri, 21 Aug 2026 14:24:51 GMT",
+   "utc": "2026-11-01T12:09:52+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/15/15004-ARES/A.ES.SDGC.BU.15004.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1582129,
+   "last_modified": "Fri, 21 Aug 2026 14:26:16 GMT",
+   "utc": "2026-11-01T12:09:53+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/15/15005-ARTEIXO/A.ES.SDGC.BU.15005.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 4070311,
+   "last_modified": "Fri, 21 Aug 2026 14:30:03 GMT",
+   "utc": "2026-11-01T12:09:55+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/15/15006-ARZUA/A.ES.SDGC.BU.15006.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1927969,
+   "last_modified": "Fri, 21 Aug 2026 14:31:44 GMT",
+   "utc": "2026-11-01T12:09:56+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/15/15071-AS PONTES DE GARCIA RODRIGUEZ/A.ES.SDGC.BU.15071.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1913525,
+   "last_modified": "Fri, 21 Aug 2026 14:33:15 GMT",
+   "utc": "2026-11-01T12:09:58+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/15/15082-AS SOMOZAS/A.ES.SDGC.BU.15082.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 554825,
+   "last_modified": "Fri, 21 Aug 2026 14:33:40 GMT",
+   "utc": "2026-11-01T12:09:59+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/15/15008-BERGONDO/A.ES.SDGC.BU.15008.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 2403788,
+   "last_modified": "Fri, 21 Aug 2026 14:35:53 GMT",
+   "utc": "2026-11-01T12:10:01+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/15/15009-BETANZOS/A.ES.SDGC.BU.15009.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1907711,
+   "last_modified": "Fri, 21 Aug 2026 14:37:35 GMT",
+   "utc": "2026-11-01T12:10:02+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/15/15010-BOIMORTO/A.ES.SDGC.BU.15010.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 729310,
+   "last_modified": "Fri, 21 Aug 2026 14:38:10 GMT",
+   "utc": "2026-11-01T12:10:03+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/15/15011-BOIRO/A.ES.SDGC.BU.15011.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 3851294,
+   "last_modified": "Fri, 21 Aug 2026 14:41:33 GMT",
+   "utc": "2026-11-01T12:10:05+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/15/15012-BOQUEIXON/A.ES.SDGC.BU.15012.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1198581,
+   "last_modified": "Fri, 21 Aug 2026 14:42:37 GMT",
+   "utc": "2026-11-01T12:10:06+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/15/15013-BRION/A.ES.SDGC.BU.15013.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1704705,
+   "last_modified": "Fri, 21 Aug 2026 14:44:07 GMT",
+   "utc": "2026-11-01T12:10:07+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/15/15014-CABANA DE BERGANTIÑOS/A.ES.SDGC.BU.15014.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1293605,
+   "last_modified": "Fri, 21 Aug 2026 14:45:22 GMT",
+   "utc": "2026-11-01T12:10:09+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/15/15015-CABANAS/A.ES.SDGC.BU.15015.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 987949,
+   "last_modified": "Fri, 21 Aug 2026 14:46:17 GMT",
+   "utc": "2026-11-01T12:10:10+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/15/15016-CAMARIÑAS/A.ES.SDGC.BU.15016.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1626222,
+   "last_modified": "Fri, 21 Aug 2026 14:47:49 GMT",
+   "utc": "2026-11-01T12:10:12+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/15/15017-CAMBRE/A.ES.SDGC.BU.15017.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 3372519,
+   "last_modified": "Fri, 21 Aug 2026 14:50:48 GMT",
+   "utc": "2026-11-01T12:10:13+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/15/15019-CARBALLO/A.ES.SDGC.BU.15019.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 6461692,
+   "last_modified": "Fri, 21 Aug 2026 14:56:18 GMT",
+   "utc": "2026-11-01T12:10:14+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/15/15095-CARIÑO/A.ES.SDGC.BU.15095.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1117720,
+   "last_modified": "Fri, 21 Aug 2026 14:57:14 GMT",
+   "utc": "2026-11-01T12:10:16+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/15/15020-CARNOTA/A.ES.SDGC.BU.15020.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1653894,
+   "last_modified": "Fri, 21 Aug 2026 14:58:38 GMT",
+   "utc": "2026-11-01T12:10:17+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/15/15021-CARRAL/A.ES.SDGC.BU.15021.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1545216,
+   "last_modified": "Fri, 21 Aug 2026 14:59:54 GMT",
+   "utc": "2026-11-01T12:10:19+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/15/15022-CEDEIRA/A.ES.SDGC.BU.15022.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1649205,
+   "last_modified": "Fri, 21 Aug 2026 15:01:20 GMT",
+   "utc": "2026-11-01T12:10:20+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/15/15023-CEE/A.ES.SDGC.BU.15023.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1568915,
+   "last_modified": "Fri, 21 Aug 2026 15:02:47 GMT",
+   "utc": "2026-11-01T12:10:21+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/15/15024-CERCEDA/A.ES.SDGC.BU.15024.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1719287,
+   "last_modified": "Fri, 21 Aug 2026 15:04:19 GMT",
+   "utc": "2026-11-01T12:10:23+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/15/15025-CERDIDO/A.ES.SDGC.BU.15025.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 450013,
+   "last_modified": "Fri, 21 Aug 2026 15:04:44 GMT",
+   "utc": "2026-11-01T12:10:24+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/15/15026-CESURAS/A.ES.SDGC.BU.15026.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 775689,
+   "last_modified": "Fri, 21 Aug 2026 15:05:27 GMT",
+   "utc": "2026-11-01T12:10:26+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/15/15027-COIROS/A.ES.SDGC.BU.15027.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 634123,
+   "last_modified": "Fri, 21 Aug 2026 15:05:59 GMT",
+   "utc": "2026-11-01T12:10:27+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/15/15028-CORCUBION/A.ES.SDGC.BU.15028.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 409626,
+   "last_modified": "Fri, 21 Aug 2026 15:06:21 GMT",
+   "utc": "2026-11-01T12:10:28+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/15/15029-CORISTANCO/A.ES.SDGC.BU.15029.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1826929,
+   "last_modified": "Fri, 21 Aug 2026 15:08:02 GMT",
+   "utc": "2026-11-01T12:10:30+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/15/15031-CULLEREDO/A.ES.SDGC.BU.15031.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 3522410,
+   "last_modified": "Fri, 21 Aug 2026 15:10:58 GMT",
+   "utc": "2026-11-01T12:10:31+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/15/15032-CURTIS/A.ES.SDGC.BU.15032.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1135693,
+   "last_modified": "Fri, 21 Aug 2026 15:11:54 GMT",
+   "utc": "2026-11-01T12:10:33+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/15/15033-DODRO/A.ES.SDGC.BU.15033.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 774309,
+   "last_modified": "Fri, 21 Aug 2026 15:12:38 GMT",
+   "utc": "2026-11-01T12:10:34+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/15/15034-DUMBRIA/A.ES.SDGC.BU.15034.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1105202,
+   "last_modified": "Fri, 21 Aug 2026 15:13:34 GMT",
+   "utc": "2026-11-01T12:10:35+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/15/15036-FENE/A.ES.SDGC.BU.15036.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 2281773,
+   "last_modified": "Fri, 21 Aug 2026 15:15:35 GMT",
+   "utc": "2026-11-01T12:10:37+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/15/15037-FERROL/A.ES.SDGC.BU.15037.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 6219765,
+   "last_modified": "Fri, 21 Aug 2026 15:21:16 GMT",
+   "utc": "2026-11-01T12:10:38+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/15/15038-FISTERRA/A.ES.SDGC.BU.15038.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1142831,
+   "last_modified": "Fri, 21 Aug 2026 15:22:11 GMT",
+   "utc": "2026-11-01T12:10:40+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/15/15039-FRADES/A.ES.SDGC.BU.15039.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 819801,
+   "last_modified": "Fri, 21 Aug 2026 15:22:50 GMT",
+   "utc": "2026-11-01T12:10:41+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/15/15040-IRIXOA/A.ES.SDGC.BU.15040.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 607217,
+   "last_modified": "Fri, 21 Aug 2026 15:23:19 GMT",
+   "utc": "2026-11-01T12:10:42+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/15/15041-LAXE/A.ES.SDGC.BU.15041.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 930963,
+   "last_modified": "Fri, 21 Aug 2026 15:24:07 GMT",
+   "utc": "2026-11-01T12:10:44+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/15/15043-LOUSAME/A.ES.SDGC.BU.15043.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1195187,
+   "last_modified": "Fri, 21 Aug 2026 15:25:05 GMT",
+   "utc": "2026-11-01T12:10:45+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/15/15044-MALPICA DE BERGANTIÑOS/A.ES.SDGC.BU.15044.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1808612,
+   "last_modified": "Fri, 21 Aug 2026 15:26:38 GMT",
+   "utc": "2026-11-01T12:10:47+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/15/15045-MAÑON/A.ES.SDGC.BU.15045.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 603198,
+   "last_modified": "Fri, 21 Aug 2026 15:27:06 GMT",
+   "utc": "2026-11-01T12:10:48+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/15/15046-MAZARICOS/A.ES.SDGC.BU.15046.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1525720,
+   "last_modified": "Fri, 21 Aug 2026 15:28:15 GMT",
+   "utc": "2026-11-01T12:10:49+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/15/15047-MELIDE/A.ES.SDGC.BU.15047.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1973472,
+   "last_modified": "Fri, 21 Aug 2026 15:29:43 GMT",
+   "utc": "2026-11-01T12:10:51+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/15/15048-MESIA/A.ES.SDGC.BU.15048.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 822942,
+   "last_modified": "Fri, 21 Aug 2026 15:30:22 GMT",
+   "utc": "2026-11-01T12:10:52+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/15/15049-MIÑO/A.ES.SDGC.BU.15049.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1782779,
+   "last_modified": "Fri, 21 Aug 2026 15:31:54 GMT",
+   "utc": "2026-11-01T12:10:54+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/15/15050-MOECHE/A.ES.SDGC.BU.15050.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 592329,
+   "last_modified": "Fri, 21 Aug 2026 15:32:25 GMT",
+   "utc": "2026-11-01T12:10:55+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/15/15051-MONFERO/A.ES.SDGC.BU.15051.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 777205,
+   "last_modified": "Fri, 21 Aug 2026 15:33:00 GMT",
+   "utc": "2026-11-01T12:10:56+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/15/15052-MUGARDOS/A.ES.SDGC.BU.15052.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1449252,
+   "last_modified": "Fri, 21 Aug 2026 15:34:12 GMT",
+   "utc": "2026-11-01T12:10:58+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/15/15054-MUROS/A.ES.SDGC.BU.15054.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 2496356,
+   "last_modified": "Fri, 21 Aug 2026 15:36:33 GMT",
+   "utc": "2026-11-01T12:10:59+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/15/15053-MUXIA/A.ES.SDGC.BU.15053.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1525405,
+   "last_modified": "Fri, 21 Aug 2026 15:37:53 GMT",
+   "utc": "2026-11-01T12:11:01+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/15/15055-NARON/A.ES.SDGC.BU.15055.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 4846349,
+   "last_modified": "Fri, 21 Aug 2026 15:42:08 GMT",
+   "utc": "2026-11-01T12:11:02+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/15/15056-NEDA/A.ES.SDGC.BU.15056.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1406122,
+   "last_modified": "Fri, 21 Aug 2026 15:43:17 GMT",
+   "utc": "2026-11-01T12:11:03+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/15/15057-NEGREIRA/A.ES.SDGC.BU.15057.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1429079,
+   "last_modified": "Fri, 21 Aug 2026 15:44:25 GMT",
+   "utc": "2026-11-01T12:11:05+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/15/15058-NOIA/A.ES.SDGC.BU.15058.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 2282886,
+   "last_modified": "Fri, 21 Aug 2026 15:46:28 GMT",
+   "utc": "2026-11-01T12:11:06+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/15/15067-O PINO/A.ES.SDGC.BU.15067.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1416466,
+   "last_modified": "Fri, 21 Aug 2026 15:47:39 GMT",
+   "utc": "2026-11-01T12:11:08+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/15/15072-O PORTO DO SON/A.ES.SDGC.BU.15072.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 2838812,
+   "last_modified": "Fri, 21 Aug 2026 15:50:09 GMT",
+   "utc": "2026-11-01T12:11:09+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/15/15059-OLEIROS/A.ES.SDGC.BU.15059.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 6739924,
+   "last_modified": "Fri, 21 Aug 2026 15:55:50 GMT",
+   "utc": "2026-11-01T12:11:10+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/15/15060-ORDES/A.ES.SDGC.BU.15060.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 2515428,
+   "last_modified": "Fri, 21 Aug 2026 15:57:51 GMT",
+   "utc": "2026-11-01T12:11:12+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/15/15061-OROSO/A.ES.SDGC.BU.15061.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1127192,
+   "last_modified": "Fri, 21 Aug 2026 15:58:57 GMT",
+   "utc": "2026-11-01T12:11:13+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/15/15062-ORTIGUEIRA/A.ES.SDGC.BU.15062.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 2579155,
+   "last_modified": "Fri, 21 Aug 2026 16:00:44 GMT",
+   "utc": "2026-11-01T12:11:15+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/15/15063-OUTES/A.ES.SDGC.BU.15063.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 2541577,
+   "last_modified": "Fri, 21 Aug 2026 16:02:35 GMT",
+   "utc": "2026-11-01T12:11:16+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/15/15064-OZA DOS RIOS/A.ES.SDGC.BU.15064.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1116732,
+   "last_modified": "Fri, 21 Aug 2026 16:03:25 GMT",
+   "utc": "2026-11-01T12:11:17+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/15/15065-PADERNE/A.ES.SDGC.BU.15065.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 842128,
+   "last_modified": "Fri, 21 Aug 2026 16:04:01 GMT",
+   "utc": "2026-11-01T12:11:19+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/15/15066-PADRON/A.ES.SDGC.BU.15066.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 2027721,
+   "last_modified": "Fri, 21 Aug 2026 16:05:28 GMT",
+   "utc": "2026-11-01T12:11:20+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/15/15069-PONTECESO/A.ES.SDGC.BU.15069.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1864775,
+   "last_modified": "Fri, 21 Aug 2026 16:07:08 GMT",
+   "utc": "2026-11-01T12:11:22+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/15/15070-PONTEDEUME/A.ES.SDGC.BU.15070.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1437019,
+   "last_modified": "Fri, 21 Aug 2026 16:08:25 GMT",
+   "utc": "2026-11-01T12:11:23+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/15/15073-RIANXO/A.ES.SDGC.BU.15073.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 2527775,
+   "last_modified": "Fri, 21 Aug 2026 16:10:41 GMT",
+   "utc": "2026-11-01T12:11:24+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/15/15074-RIBEIRA/A.ES.SDGC.BU.15074.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 5147012,
+   "last_modified": "Fri, 21 Aug 2026 16:15:23 GMT",
+   "utc": "2026-11-01T12:11:26+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/15/15075-ROIS/A.ES.SDGC.BU.15075.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1267710,
+   "last_modified": "Fri, 21 Aug 2026 16:16:28 GMT",
+   "utc": "2026-11-01T12:11:27+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/15/15076-SADA/A.ES.SDGC.BU.15076.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 3052938,
+   "last_modified": "Fri, 21 Aug 2026 16:19:09 GMT",
+   "utc": "2026-11-01T12:11:29+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/15/15077-SAN SADURNIÑO/A.ES.SDGC.BU.15077.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1100350,
+   "last_modified": "Fri, 21 Aug 2026 16:20:03 GMT",
+   "utc": "2026-11-01T12:11:30+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/15/15078-SANTA COMBA/A.ES.SDGC.BU.15078.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 2874296,
+   "last_modified": "Fri, 21 Aug 2026 16:22:22 GMT",
+   "utc": "2026-11-01T12:11:31+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/15/15079-SANTIAGO DE COMPOSTELA/A.ES.SDGC.BU.15079.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 11194005,
+   "last_modified": "Fri, 21 Aug 2026 16:31:29 GMT",
+   "utc": "2026-11-01T12:11:33+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/15/15080-SANTISO/A.ES.SDGC.BU.15080.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 793436,
+   "last_modified": "Fri, 21 Aug 2026 16:32:01 GMT",
+   "utc": "2026-11-01T12:11:34+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/15/15081-SOBRADO/A.ES.SDGC.BU.15081.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 844554,
+   "last_modified": "Fri, 21 Aug 2026 16:32:38 GMT",
+   "utc": "2026-11-01T12:11:36+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/15/15083-TEO/A.ES.SDGC.BU.15083.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 3699449,
+   "last_modified": "Fri, 21 Aug 2026 16:35:38 GMT",
+   "utc": "2026-11-01T12:11:37+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/15/15084-TOQUES/A.ES.SDGC.BU.15084.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 463363,
+   "last_modified": "Fri, 21 Aug 2026 16:35:59 GMT",
+   "utc": "2026-11-01T12:11:38+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/15/15085-TORDOIA/A.ES.SDGC.BU.15085.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1112889,
+   "last_modified": "Fri, 21 Aug 2026 16:36:49 GMT",
+   "utc": "2026-11-01T12:11:40+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/15/15086-TOURO/A.ES.SDGC.BU.15086.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1341455,
+   "last_modified": "Fri, 21 Aug 2026 16:37:54 GMT",
+   "utc": "2026-11-01T12:11:41+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/15/15087-TRAZO/A.ES.SDGC.BU.15087.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1097847,
+   "last_modified": "Fri, 21 Aug 2026 16:38:49 GMT",
+   "utc": "2026-11-01T12:11:43+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/15/15089-VAL DO DUBRA/A.ES.SDGC.BU.15089.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1102457,
+   "last_modified": "Fri, 21 Aug 2026 16:39:41 GMT",
+   "utc": "2026-11-01T12:11:44+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/15/15088-VALDOVIÑO/A.ES.SDGC.BU.15088.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 2608271,
+   "last_modified": "Fri, 21 Aug 2026 16:41:59 GMT",
+   "utc": "2026-11-01T12:11:45+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/15/15090-VEDRA/A.ES.SDGC.BU.15090.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1265611,
+   "last_modified": "Fri, 21 Aug 2026 16:43:08 GMT",
+   "utc": "2026-11-01T12:11:47+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/15/15092-VILARMAIOR/A.ES.SDGC.BU.15092.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 554971,
+   "last_modified": "Fri, 21 Aug 2026 16:43:37 GMT",
+   "utc": "2026-11-01T12:11:48+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/15/15091-VILASANTAR/A.ES.SDGC.BU.15091.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 581740,
+   "last_modified": "Fri, 21 Aug 2026 16:44:03 GMT",
+   "utc": "2026-11-01T12:11:50+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/15/15093-VIMIANZO/A.ES.SDGC.BU.15093.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 2141832,
+   "last_modified": "Fri, 21 Aug 2026 16:45:53 GMT",
+   "utc": "2026-11-01T12:11:51+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/15/15094-ZAS/A.ES.SDGC.BU.15094.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1273174,
+   "last_modified": "Fri, 21 Aug 2026 16:47:05 GMT",
+   "utc": "2026-11-01T12:11:52+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/27/27018-A FONSAGRADA/A.ES.SDGC.BU.27018.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 2019046,
+   "last_modified": "Fri, 21 Aug 2026 13:26:42 GMT",
+   "utc": "2026-11-01T12:11:54+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/27/27047-A POBRA DO BROLLON/A.ES.SDGC.BU.27047.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1202981,
+   "last_modified": "Fri, 21 Aug 2026 13:27:40 GMT",
+   "utc": "2026-11-01T12:11:55+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/27/27048-A PONTENOVA/A.ES.SDGC.BU.27048.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1166397,
+   "last_modified": "Fri, 21 Aug 2026 13:28:34 GMT",
+   "utc": "2026-11-01T12:11:57+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/27/27053-A RIBEIRA DE PIQUIN/A.ES.SDGC.BU.27053.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 454356,
+   "last_modified": "Fri, 21 Aug 2026 13:28:54 GMT",
+   "utc": "2026-11-01T12:11:58+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/27/27001-ABADIN/A.ES.SDGC.BU.27001.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1340865,
+   "last_modified": "Fri, 21 Aug 2026 13:29:51 GMT",
+   "utc": "2026-11-01T12:11:59+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/27/27002-ALFOZ DO CASTRODOURO/A.ES.SDGC.BU.27002.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1104495,
+   "last_modified": "Fri, 21 Aug 2026 13:30:49 GMT",
+   "utc": "2026-11-01T12:12:01+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/27/27003-ANTAS DE ULLA/A.ES.SDGC.BU.27003.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1262756,
+   "last_modified": "Fri, 21 Aug 2026 13:31:56 GMT",
+   "utc": "2026-11-01T12:12:02+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/27/27037-AS NOGAIS/A.ES.SDGC.BU.27037.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 534453,
+   "last_modified": "Fri, 21 Aug 2026 13:32:22 GMT",
+   "utc": "2026-11-01T12:12:04+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/27/27004-BALEIRA/A.ES.SDGC.BU.27004.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 839142,
+   "last_modified": "Fri, 21 Aug 2026 13:32:59 GMT",
+   "utc": "2026-11-01T12:12:05+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/27/27036-BARALLA/A.ES.SDGC.BU.27036.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1130749,
+   "last_modified": "Fri, 21 Aug 2026 13:33:53 GMT",
+   "utc": "2026-11-01T12:12:06+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/27/27005-BARREIROS/A.ES.SDGC.BU.27005.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1941057,
+   "last_modified": "Fri, 21 Aug 2026 13:35:41 GMT",
+   "utc": "2026-11-01T12:12:08+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/27/27006-BECERREA/A.ES.SDGC.BU.27006.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1261994,
+   "last_modified": "Fri, 21 Aug 2026 13:36:46 GMT",
+   "utc": "2026-11-01T12:12:09+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/27/27007-BEGONTE/A.ES.SDGC.BU.27007.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1451544,
+   "last_modified": "Fri, 21 Aug 2026 13:37:55 GMT",
+   "utc": "2026-11-01T12:12:11+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/27/27008-BOVEDA/A.ES.SDGC.BU.27008.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 792842,
+   "last_modified": "Fri, 21 Aug 2026 13:38:37 GMT",
+   "utc": "2026-11-01T12:12:12+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/27/27068-BURELA/A.ES.SDGC.BU.27068.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 927645,
+   "last_modified": "Fri, 21 Aug 2026 13:39:28 GMT",
+   "utc": "2026-11-01T12:12:13+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/27/27009-CARBALLEDO/A.ES.SDGC.BU.27009.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1631284,
+   "last_modified": "Fri, 21 Aug 2026 13:40:48 GMT",
+   "utc": "2026-11-01T12:12:15+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/27/27010-CASTRO DE REI/A.ES.SDGC.BU.27010.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 2342452,
+   "last_modified": "Fri, 21 Aug 2026 13:42:40 GMT",
+   "utc": "2026-11-01T12:12:16+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/27/27011-CASTROVERDE/A.ES.SDGC.BU.27011.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1403690,
+   "last_modified": "Fri, 21 Aug 2026 13:43:50 GMT",
+   "utc": "2026-11-01T12:12:18+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/27/27012-CERVANTES/A.ES.SDGC.BU.27012.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 876054,
+   "last_modified": "Fri, 21 Aug 2026 13:44:34 GMT",
+   "utc": "2026-11-01T12:12:19+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/27/27013-CERVO/A.ES.SDGC.BU.27013.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1113095,
+   "last_modified": "Fri, 21 Aug 2026 13:45:27 GMT",
+   "utc": "2026-11-01T12:12:20+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/27/27016-CHANTADA/A.ES.SDGC.BU.27016.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 3431758,
+   "last_modified": "Fri, 21 Aug 2026 13:48:14 GMT",
+   "utc": "2026-11-01T12:12:22+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/27/27015-COSPEITO/A.ES.SDGC.BU.27015.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 2493756,
+   "last_modified": "Fri, 21 Aug 2026 13:50:08 GMT",
+   "utc": "2026-11-01T12:12:23+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/27/27017-FOLGOSO DO COUREL/A.ES.SDGC.BU.27017.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 903499,
+   "last_modified": "Fri, 21 Aug 2026 13:50:48 GMT",
+   "utc": "2026-11-01T12:12:24+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/27/27019-FOZ/A.ES.SDGC.BU.27019.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 2483764,
+   "last_modified": "Fri, 21 Aug 2026 13:53:06 GMT",
+   "utc": "2026-11-01T12:12:26+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/27/27020-FRIOL/A.ES.SDGC.BU.27020.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 2030909,
+   "last_modified": "Fri, 21 Aug 2026 13:54:34 GMT",
+   "utc": "2026-11-01T12:12:27+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/27/27022-GUITIRIZ/A.ES.SDGC.BU.27022.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 2516247,
+   "last_modified": "Fri, 21 Aug 2026 13:56:24 GMT",
+   "utc": "2026-11-01T12:12:29+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/27/27023-GUNTIN/A.ES.SDGC.BU.27023.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1476709,
+   "last_modified": "Fri, 21 Aug 2026 13:57:37 GMT",
+   "utc": "2026-11-01T12:12:30+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/27/27026-LANCARA/A.ES.SDGC.BU.27026.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1067736,
+   "last_modified": "Fri, 21 Aug 2026 13:58:30 GMT",
+   "utc": "2026-11-01T12:12:31+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/27/27027-LOURENZA/A.ES.SDGC.BU.27027.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 924509,
+   "last_modified": "Fri, 21 Aug 2026 13:59:16 GMT",
+   "utc": "2026-11-01T12:12:33+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/27/27900-LUGO/A.ES.SDGC.BU.27900.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 11775877,
+   "last_modified": "Fri, 21 Aug 2026 14:08:44 GMT",
+   "utc": "2026-11-01T12:12:34+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/27/27029-MEIRA/A.ES.SDGC.BU.27029.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 598314,
+   "last_modified": "Fri, 21 Aug 2026 14:09:12 GMT",
+   "utc": "2026-11-01T12:12:36+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/27/27030-MONDOÑEDO/A.ES.SDGC.BU.27030.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1914572,
+   "last_modified": "Fri, 21 Aug 2026 14:10:45 GMT",
+   "utc": "2026-11-01T12:12:37+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/27/27031-MONFORTE DE LEMOS/A.ES.SDGC.BU.27031.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 4272572,
+   "last_modified": "Fri, 21 Aug 2026 14:14:24 GMT",
+   "utc": "2026-11-01T12:12:38+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/27/27032-MONTERROSO/A.ES.SDGC.BU.27032.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1677206,
+   "last_modified": "Fri, 21 Aug 2026 14:15:46 GMT",
+   "utc": "2026-11-01T12:12:40+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/27/27033-MURAS/A.ES.SDGC.BU.27033.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 535750,
+   "last_modified": "Fri, 21 Aug 2026 14:16:07 GMT",
+   "utc": "2026-11-01T12:12:41+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/27/27034-NAVIA DE SUARNA/A.ES.SDGC.BU.27034.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 765177,
+   "last_modified": "Fri, 21 Aug 2026 14:16:43 GMT",
+   "utc": "2026-11-01T12:12:43+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/27/27035-NEGUEIRA DE MUÑIZ/A.ES.SDGC.BU.27035.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 151127,
+   "last_modified": "Fri, 21 Aug 2026 14:16:49 GMT",
+   "utc": "2026-11-01T12:12:44+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/27/27014-O CORGO/A.ES.SDGC.BU.27014.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1749081,
+   "last_modified": "Fri, 21 Aug 2026 14:18:16 GMT",
+   "utc": "2026-11-01T12:12:45+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/27/27024-O INCIO/A.ES.SDGC.BU.27024.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1073735,
+   "last_modified": "Fri, 21 Aug 2026 14:19:11 GMT",
+   "utc": "2026-11-01T12:12:47+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/27/27043-O PARAMO/A.ES.SDGC.BU.27043.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 767298,
+   "last_modified": "Fri, 21 Aug 2026 14:19:46 GMT",
+   "utc": "2026-11-01T12:12:48+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/27/27058-O SAVIÑAO/A.ES.SDGC.BU.27058.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 2199086,
+   "last_modified": "Fri, 21 Aug 2026 14:21:30 GMT",
+   "utc": "2026-11-01T12:12:50+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/27/27063-O VALADOURO/A.ES.SDGC.BU.27063.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 853012,
+   "last_modified": "Fri, 21 Aug 2026 14:22:12 GMT",
+   "utc": "2026-11-01T12:12:51+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/27/27064-O VICEDO/A.ES.SDGC.BU.27064.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 856247,
+   "last_modified": "Fri, 21 Aug 2026 14:23:00 GMT",
+   "utc": "2026-11-01T12:12:52+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/27/27038-OUROL/A.ES.SDGC.BU.27038.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 824321,
+   "last_modified": "Fri, 21 Aug 2026 14:23:37 GMT",
+   "utc": "2026-11-01T12:12:54+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/27/27039-OUTEIRO DE REI/A.ES.SDGC.BU.27039.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 2414678,
+   "last_modified": "Fri, 21 Aug 2026 14:25:27 GMT",
+   "utc": "2026-11-01T12:12:55+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/27/27040-PALAS DE REI/A.ES.SDGC.BU.27040.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 2236655,
+   "last_modified": "Fri, 21 Aug 2026 14:27:13 GMT",
+   "utc": "2026-11-01T12:12:57+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/27/27041-PANTON/A.ES.SDGC.BU.27041.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 2220824,
+   "last_modified": "Fri, 21 Aug 2026 14:28:44 GMT",
+   "utc": "2026-11-01T12:12:58+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/27/27042-PARADELA/A.ES.SDGC.BU.27042.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 987801,
+   "last_modified": "Fri, 21 Aug 2026 14:29:29 GMT",
+   "utc": "2026-11-01T12:12:59+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/27/27044-PASTORIZA/A.ES.SDGC.BU.27044.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1700283,
+   "last_modified": "Fri, 21 Aug 2026 14:30:40 GMT",
+   "utc": "2026-11-01T12:13:01+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/27/27045-PEDRAFITA DO CEBREIRO/A.ES.SDGC.BU.27045.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 588387,
+   "last_modified": "Fri, 21 Aug 2026 14:31:06 GMT",
+   "utc": "2026-11-01T12:13:02+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/27/27046-POL/A.ES.SDGC.BU.27046.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1061479,
+   "last_modified": "Fri, 21 Aug 2026 14:31:50 GMT",
+   "utc": "2026-11-01T12:13:04+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/27/27049-PORTOMARIN/A.ES.SDGC.BU.27049.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 874139,
+   "last_modified": "Fri, 21 Aug 2026 14:32:35 GMT",
+   "utc": "2026-11-01T12:13:05+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/27/27050-QUIROGA/A.ES.SDGC.BU.27050.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 2235984,
+   "last_modified": "Fri, 21 Aug 2026 14:34:47 GMT",
+   "utc": "2026-11-01T12:13:06+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/27/27056-RABADE/A.ES.SDGC.BU.27056.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 436403,
+   "last_modified": "Fri, 21 Aug 2026 14:35:07 GMT",
+   "utc": "2026-11-01T12:13:08+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/27/27051-RIBADEO/A.ES.SDGC.BU.27051.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 2021639,
+   "last_modified": "Fri, 21 Aug 2026 14:36:46 GMT",
+   "utc": "2026-11-01T12:13:09+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/27/27052-RIBAS DE SIL/A.ES.SDGC.BU.27052.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 753623,
+   "last_modified": "Fri, 21 Aug 2026 14:37:24 GMT",
+   "utc": "2026-11-01T12:13:11+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/27/27054-RIOTORTO/A.ES.SDGC.BU.27054.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 790518,
+   "last_modified": "Fri, 21 Aug 2026 14:37:58 GMT",
+   "utc": "2026-11-01T12:13:12+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/27/27055-SAMOS/A.ES.SDGC.BU.27055.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 908659,
+   "last_modified": "Fri, 21 Aug 2026 14:38:32 GMT",
+   "utc": "2026-11-01T12:13:13+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/27/27057-SARRIA/A.ES.SDGC.BU.27057.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 3369643,
+   "last_modified": "Fri, 21 Aug 2026 14:41:20 GMT",
+   "utc": "2026-11-01T12:13:15+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/27/27059-SOBER/A.ES.SDGC.BU.27059.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 2035107,
+   "last_modified": "Fri, 21 Aug 2026 14:42:54 GMT",
+   "utc": "2026-11-01T12:13:16+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/27/27060-TABOADA/A.ES.SDGC.BU.27060.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1704424,
+   "last_modified": "Fri, 21 Aug 2026 14:44:15 GMT",
+   "utc": "2026-11-01T12:13:18+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/27/27061-TRABADA/A.ES.SDGC.BU.27061.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 582771,
+   "last_modified": "Fri, 21 Aug 2026 14:44:43 GMT",
+   "utc": "2026-11-01T12:13:19+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/27/27062-TRIACASTELA/A.ES.SDGC.BU.27062.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 357431,
+   "last_modified": "Fri, 21 Aug 2026 14:45:00 GMT",
+   "utc": "2026-11-01T12:13:20+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/27/27065-VILALBA/A.ES.SDGC.BU.27065.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 4666992,
+   "last_modified": "Fri, 21 Aug 2026 14:48:45 GMT",
+   "utc": "2026-11-01T12:13:22+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/27/27067-VIVEIRO/A.ES.SDGC.BU.27067.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 2761549,
+   "last_modified": "Fri, 21 Aug 2026 14:50:55 GMT",
+   "utc": "2026-11-01T12:13:23+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/27/27021-XERMADE/A.ES.SDGC.BU.27021.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1308231,
+   "last_modified": "Fri, 21 Aug 2026 14:52:02 GMT",
+   "utc": "2026-11-01T12:13:25+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/27/27025-XOVE/A.ES.SDGC.BU.27025.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1014403,
+   "last_modified": "Fri, 21 Aug 2026 14:52:55 GMT",
+   "utc": "2026-11-01T12:13:26+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/32/32004-A ARNOIA/A.ES.SDGC.BU.32004.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 768003,
+   "last_modified": "Fri, 21 Aug 2026 13:47:23 GMT",
+   "utc": "2026-11-01T12:13:27+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/32/32015-A BOLA/A.ES.SDGC.BU.32015.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 929445,
+   "last_modified": "Fri, 21 Aug 2026 13:48:17 GMT",
+   "utc": "2026-11-01T12:13:29+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/32/32035-A GUDIÑA/A.ES.SDGC.BU.32035.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 824373,
+   "last_modified": "Fri, 21 Aug 2026 13:48:59 GMT",
+   "utc": "2026-11-01T12:13:30+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/32/32048-A MERCA/A.ES.SDGC.BU.32048.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1368980,
+   "last_modified": "Fri, 21 Aug 2026 13:50:11 GMT",
+   "utc": "2026-11-01T12:13:32+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/32/32049-A MEZQUITA/A.ES.SDGC.BU.32049.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 683519,
+   "last_modified": "Fri, 21 Aug 2026 13:50:45 GMT",
+   "utc": "2026-11-01T12:13:33+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/32/32060-A PEROXA/A.ES.SDGC.BU.32060.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1126666,
+   "last_modified": "Fri, 21 Aug 2026 13:51:51 GMT",
+   "utc": "2026-11-01T12:13:34+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/32/32064-A POBRA DE TRIVES/A.ES.SDGC.BU.32064.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1288211,
+   "last_modified": "Fri, 21 Aug 2026 13:52:57 GMT",
+   "utc": "2026-11-01T12:13:36+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/32/32073-A RUA/A.ES.SDGC.BU.32073.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1168363,
+   "last_modified": "Fri, 21 Aug 2026 13:54:00 GMT",
+   "utc": "2026-11-01T12:13:37+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/32/32081-A TEIXEIRA/A.ES.SDGC.BU.32081.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 595642,
+   "last_modified": "Fri, 21 Aug 2026 13:54:37 GMT",
+   "utc": "2026-11-01T12:13:39+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/32/32084-A VEIGA/A.ES.SDGC.BU.32084.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1383037,
+   "last_modified": "Fri, 21 Aug 2026 13:55:43 GMT",
+   "utc": "2026-11-01T12:13:40+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/32/32002-ALLARIZ/A.ES.SDGC.BU.32002.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 3261333,
+   "last_modified": "Fri, 21 Aug 2026 13:58:46 GMT",
+   "utc": "2026-11-01T12:13:41+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/32/32003-AMOEIRO/A.ES.SDGC.BU.32003.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1757550,
+   "last_modified": "Fri, 21 Aug 2026 14:00:29 GMT",
+   "utc": "2026-11-01T12:13:43+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/32/32005-AVION/A.ES.SDGC.BU.32005.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1593842,
+   "last_modified": "Fri, 21 Aug 2026 14:02:00 GMT",
+   "utc": "2026-11-01T12:13:44+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/32/32006-BALTAR/A.ES.SDGC.BU.32006.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 887857,
+   "last_modified": "Fri, 21 Aug 2026 14:02:46 GMT",
+   "utc": "2026-11-01T12:13:46+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/32/32007-BANDE/A.ES.SDGC.BU.32007.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1379751,
+   "last_modified": "Fri, 21 Aug 2026 14:03:59 GMT",
+   "utc": "2026-11-01T12:13:47+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/32/32008-BAÑOS DE MOLGAS/A.ES.SDGC.BU.32008.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1702929,
+   "last_modified": "Fri, 21 Aug 2026 14:05:36 GMT",
+   "utc": "2026-11-01T12:13:48+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/32/32009-BARBADAS/A.ES.SDGC.BU.32009.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 2228928,
+   "last_modified": "Fri, 21 Aug 2026 14:08:07 GMT",
+   "utc": "2026-11-01T12:13:50+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/32/32011-BEADE/A.ES.SDGC.BU.32011.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 305271,
+   "last_modified": "Fri, 21 Aug 2026 14:08:24 GMT",
+   "utc": "2026-11-01T12:13:51+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/32/32012-BEARIZ/A.ES.SDGC.BU.32012.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 741572,
+   "last_modified": "Fri, 21 Aug 2026 14:09:04 GMT",
+   "utc": "2026-11-01T12:13:53+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/32/32014-BOBORAS/A.ES.SDGC.BU.32014.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1488084,
+   "last_modified": "Fri, 21 Aug 2026 14:10:20 GMT",
+   "utc": "2026-11-01T12:13:54+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/32/32017-CALVOS DE RANDIN/A.ES.SDGC.BU.32017.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 949561,
+   "last_modified": "Fri, 21 Aug 2026 14:11:06 GMT",
+   "utc": "2026-11-01T12:13:55+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/32/32018-CARBALLEDA/A.ES.SDGC.BU.32018.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 904411,
+   "last_modified": "Fri, 21 Aug 2026 14:11:49 GMT",
+   "utc": "2026-11-01T12:13:57+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/32/32019-CARBALLEDA DE AVIA/A.ES.SDGC.BU.32019.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 913260,
+   "last_modified": "Fri, 21 Aug 2026 14:12:38 GMT",
+   "utc": "2026-11-01T12:13:58+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/32/32021-CARTELLE/A.ES.SDGC.BU.32021.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 2527412,
+   "last_modified": "Fri, 21 Aug 2026 14:14:55 GMT",
+   "utc": "2026-11-01T12:14:00+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/32/32023-CASTRELO DE MIÑO/A.ES.SDGC.BU.32023.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1141353,
+   "last_modified": "Fri, 21 Aug 2026 14:15:54 GMT",
+   "utc": "2026-11-01T12:14:01+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/32/32022-CASTRELO DO VAL/A.ES.SDGC.BU.32022.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 913656,
+   "last_modified": "Fri, 21 Aug 2026 14:16:44 GMT",
+   "utc": "2026-11-01T12:14:02+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/32/32025-CELANOVA/A.ES.SDGC.BU.32025.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 2160040,
+   "last_modified": "Fri, 21 Aug 2026 14:18:31 GMT",
+   "utc": "2026-11-01T12:14:04+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/32/32026-CENLLE/A.ES.SDGC.BU.32026.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1102067,
+   "last_modified": "Fri, 21 Aug 2026 14:19:38 GMT",
+   "utc": "2026-11-01T12:14:05+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/32/32030-CHANDREXA DE QUEIXA/A.ES.SDGC.BU.32030.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 474436,
+   "last_modified": "Fri, 21 Aug 2026 14:20:02 GMT",
+   "utc": "2026-11-01T12:14:07+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/32/32027-COLES/A.ES.SDGC.BU.32027.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1645094,
+   "last_modified": "Fri, 21 Aug 2026 14:21:35 GMT",
+   "utc": "2026-11-01T12:14:08+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/32/32028-CORTEGADA/A.ES.SDGC.BU.32028.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 951979,
+   "last_modified": "Fri, 21 Aug 2026 14:22:33 GMT",
+   "utc": "2026-11-01T12:14:09+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/32/32029-CUALEDRO/A.ES.SDGC.BU.32029.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1709039,
+   "last_modified": "Fri, 21 Aug 2026 14:23:59 GMT",
+   "utc": "2026-11-01T12:14:11+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/32/32031-ENTRIMO/A.ES.SDGC.BU.32031.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 967992,
+   "last_modified": "Fri, 21 Aug 2026 14:24:50 GMT",
+   "utc": "2026-11-01T12:14:12+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/32/32032-ESGOS/A.ES.SDGC.BU.32032.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 762226,
+   "last_modified": "Fri, 21 Aug 2026 14:25:30 GMT",
+   "utc": "2026-11-01T12:14:14+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/32/32034-GOMESENDE/A.ES.SDGC.BU.32034.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 633759,
+   "last_modified": "Fri, 21 Aug 2026 14:26:00 GMT",
+   "utc": "2026-11-01T12:14:15+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/32/32039-LAROUCO/A.ES.SDGC.BU.32039.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 453779,
+   "last_modified": "Fri, 21 Aug 2026 14:26:21 GMT",
+   "utc": "2026-11-01T12:14:16+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/32/32040-LAZA/A.ES.SDGC.BU.32040.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1338825,
+   "last_modified": "Fri, 21 Aug 2026 14:27:34 GMT",
+   "utc": "2026-11-01T12:14:18+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/32/32041-LEIRO/A.ES.SDGC.BU.32041.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1264449,
+   "last_modified": "Fri, 21 Aug 2026 14:28:46 GMT",
+   "utc": "2026-11-01T12:14:19+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/32/32042-LOBEIRA/A.ES.SDGC.BU.32042.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 646255,
+   "last_modified": "Fri, 21 Aug 2026 14:29:21 GMT",
+   "utc": "2026-11-01T12:14:21+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/32/32043-LOBIOS/A.ES.SDGC.BU.32043.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1632030,
+   "last_modified": "Fri, 21 Aug 2026 14:30:31 GMT",
+   "utc": "2026-11-01T12:14:22+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/32/32044-MACEDA/A.ES.SDGC.BU.32044.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1661644,
+   "last_modified": "Fri, 21 Aug 2026 14:31:58 GMT",
+   "utc": "2026-11-01T12:14:23+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/32/32045-MANZANEDA/A.ES.SDGC.BU.32045.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 809717,
+   "last_modified": "Fri, 21 Aug 2026 14:32:37 GMT",
+   "utc": "2026-11-01T12:14:25+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/32/32046-MASIDE/A.ES.SDGC.BU.32046.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1429834,
+   "last_modified": "Fri, 21 Aug 2026 14:33:43 GMT",
+   "utc": "2026-11-01T12:14:26+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/32/32047-MELON/A.ES.SDGC.BU.32047.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1222667,
+   "last_modified": "Fri, 21 Aug 2026 14:34:52 GMT",
+   "utc": "2026-11-01T12:14:28+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/32/32050-MONTEDERRAMO/A.ES.SDGC.BU.32050.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 737703,
+   "last_modified": "Fri, 21 Aug 2026 14:35:27 GMT",
+   "utc": "2026-11-01T12:14:29+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/32/32051-MONTERREI/A.ES.SDGC.BU.32051.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1792569,
+   "last_modified": "Fri, 21 Aug 2026 14:37:08 GMT",
+   "utc": "2026-11-01T12:14:30+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/32/32052-MUIÑOS/A.ES.SDGC.BU.32052.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1154204,
+   "last_modified": "Fri, 21 Aug 2026 14:38:02 GMT",
+   "utc": "2026-11-01T12:14:32+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/32/32053-NOGUEIRA DE RAMUIN/A.ES.SDGC.BU.32053.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1943843,
+   "last_modified": "Fri, 21 Aug 2026 14:39:31 GMT",
+   "utc": "2026-11-01T12:14:33+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/32/32010-O BARCO DE VALDEORRAS/A.ES.SDGC.BU.32010.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 2606910,
+   "last_modified": "Fri, 21 Aug 2026 14:41:46 GMT",
+   "utc": "2026-11-01T12:14:35+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/32/32016-O BOLO/A.ES.SDGC.BU.32016.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1123663,
+   "last_modified": "Fri, 21 Aug 2026 14:42:43 GMT",
+   "utc": "2026-11-01T12:14:36+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/32/32020-O CARBALLIÑO/A.ES.SDGC.BU.32020.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 3184229,
+   "last_modified": "Fri, 21 Aug 2026 14:45:27 GMT",
+   "utc": "2026-11-01T12:14:37+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/32/32024-O CASTRO DE CALDELAS/A.ES.SDGC.BU.32024.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1128245,
+   "last_modified": "Fri, 21 Aug 2026 14:46:20 GMT",
+   "utc": "2026-11-01T12:14:39+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/32/32036-O IRIXO/A.ES.SDGC.BU.32036.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1136281,
+   "last_modified": "Fri, 21 Aug 2026 14:47:19 GMT",
+   "utc": "2026-11-01T12:14:40+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/32/32059-O PEREIRO DE AGUIAR/A.ES.SDGC.BU.32059.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 3218559,
+   "last_modified": "Fri, 21 Aug 2026 14:50:20 GMT",
+   "utc": "2026-11-01T12:14:42+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/32/32072-O RIOS/A.ES.SDGC.BU.32072.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1337991,
+   "last_modified": "Fri, 21 Aug 2026 14:51:12 GMT",
+   "utc": "2026-11-01T12:14:43+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/32/32054-OIMBRA/A.ES.SDGC.BU.32054.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 984154,
+   "last_modified": "Fri, 21 Aug 2026 14:52:04 GMT",
+   "utc": "2026-11-01T12:14:44+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/32/32013-OS BLANCOS/A.ES.SDGC.BU.32013.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 803752,
+   "last_modified": "Fri, 21 Aug 2026 14:52:40 GMT",
+   "utc": "2026-11-01T12:14:46+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/32/32900-OURENSE/A.ES.SDGC.BU.32900.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 9914541,
+   "last_modified": "Fri, 21 Aug 2026 15:00:43 GMT",
+   "utc": "2026-11-01T12:14:47+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/32/32056-PADERNE DE ALLARIZ/A.ES.SDGC.BU.32056.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1212468,
+   "last_modified": "Fri, 21 Aug 2026 15:01:47 GMT",
+   "utc": "2026-11-01T12:14:48+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/32/32057-PADRENDA/A.ES.SDGC.BU.32057.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1139263,
+   "last_modified": "Fri, 21 Aug 2026 15:02:47 GMT",
+   "utc": "2026-11-01T12:14:50+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/32/32058-PARADA DE SIL/A.ES.SDGC.BU.32058.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 586485,
+   "last_modified": "Fri, 21 Aug 2026 15:03:20 GMT",
+   "utc": "2026-11-01T12:14:51+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/32/32061-PETIN/A.ES.SDGC.BU.32061.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 587680,
+   "last_modified": "Fri, 21 Aug 2026 15:03:56 GMT",
+   "utc": "2026-11-01T12:14:53+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/32/32062-PIÑOR/A.ES.SDGC.BU.32062.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 977259,
+   "last_modified": "Fri, 21 Aug 2026 15:04:44 GMT",
+   "utc": "2026-11-01T12:14:54+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/32/32065-PONTEDEVA/A.ES.SDGC.BU.32065.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 265319,
+   "last_modified": "Fri, 21 Aug 2026 15:04:57 GMT",
+   "utc": "2026-11-01T12:14:55+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/32/32063-PORQUEIRA/A.ES.SDGC.BU.32063.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 666447,
+   "last_modified": "Fri, 21 Aug 2026 15:05:34 GMT",
+   "utc": "2026-11-01T12:14:57+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/32/32066-PUNXIN/A.ES.SDGC.BU.32066.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 570824,
+   "last_modified": "Fri, 21 Aug 2026 15:06:00 GMT",
+   "utc": "2026-11-01T12:14:58+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/32/32067-QUINTELA DE LEIRADO/A.ES.SDGC.BU.32067.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 437031,
+   "last_modified": "Fri, 21 Aug 2026 15:06:20 GMT",
+   "utc": "2026-11-01T12:15:00+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/32/32068-RAIRIZ DE VEIGA/A.ES.SDGC.BU.32068.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 938614,
+   "last_modified": "Fri, 21 Aug 2026 15:07:16 GMT",
+   "utc": "2026-11-01T12:15:01+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/32/32069-RAMIRAS/A.ES.SDGC.BU.32069.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1260858,
+   "last_modified": "Fri, 21 Aug 2026 15:08:20 GMT",
+   "utc": "2026-11-01T12:15:03+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/32/32070-RIBADAVIA/A.ES.SDGC.BU.32070.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1445421,
+   "last_modified": "Fri, 21 Aug 2026 15:09:47 GMT",
+   "utc": "2026-11-01T12:15:04+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/32/32074-RUBIA/A.ES.SDGC.BU.32074.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1067902,
+   "last_modified": "Fri, 21 Aug 2026 15:10:39 GMT",
+   "utc": "2026-11-01T12:15:05+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/32/32075-SAN AMARO/A.ES.SDGC.BU.32075.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 876168,
+   "last_modified": "Fri, 21 Aug 2026 15:11:24 GMT",
+   "utc": "2026-11-01T12:15:07+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/32/32076-SAN CIBRAO DAS VIÑAS/A.ES.SDGC.BU.32076.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 2370039,
+   "last_modified": "Fri, 21 Aug 2026 15:13:56 GMT",
+   "utc": "2026-11-01T12:15:08+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/32/32077-SAN CRISTOVO DE CEA/A.ES.SDGC.BU.32077.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1767433,
+   "last_modified": "Fri, 21 Aug 2026 15:15:31 GMT",
+   "utc": "2026-11-01T12:15:10+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/32/32071-SAN XOAN DE RIO/A.ES.SDGC.BU.32071.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 684519,
+   "last_modified": "Fri, 21 Aug 2026 15:16:04 GMT",
+   "utc": "2026-11-01T12:15:11+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/32/32078-SANDIAS/A.ES.SDGC.BU.32078.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 889028,
+   "last_modified": "Fri, 21 Aug 2026 15:16:53 GMT",
+   "utc": "2026-11-01T12:15:12+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/32/32079-SARREAUS/A.ES.SDGC.BU.32079.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 966404,
+   "last_modified": "Fri, 21 Aug 2026 15:17:41 GMT",
+   "utc": "2026-11-01T12:15:14+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/32/32080-TABOADELA/A.ES.SDGC.BU.32080.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1048353,
+   "last_modified": "Fri, 21 Aug 2026 15:18:41 GMT",
+   "utc": "2026-11-01T12:15:15+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/32/32082-TOEN/A.ES.SDGC.BU.32082.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1339861,
+   "last_modified": "Fri, 21 Aug 2026 15:19:55 GMT",
+   "utc": "2026-11-01T12:15:17+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/32/32083-TRASMIRAS/A.ES.SDGC.BU.32083.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1007615,
+   "last_modified": "Fri, 21 Aug 2026 15:20:48 GMT",
+   "utc": "2026-11-01T12:15:18+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/32/32085-VEREA/A.ES.SDGC.BU.32085.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 821164,
+   "last_modified": "Fri, 21 Aug 2026 15:21:27 GMT",
+   "utc": "2026-11-01T12:15:19+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/32/32086-VERIN/A.ES.SDGC.BU.32086.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 3595634,
+   "last_modified": "Fri, 21 Aug 2026 15:24:57 GMT",
+   "utc": "2026-11-01T12:15:21+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/32/32087-VIANA DO BOLO/A.ES.SDGC.BU.32087.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1905340,
+   "last_modified": "Fri, 21 Aug 2026 15:26:18 GMT",
+   "utc": "2026-11-01T12:15:22+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/32/32088-VILAMARIN/A.ES.SDGC.BU.32088.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1635047,
+   "last_modified": "Fri, 21 Aug 2026 15:27:28 GMT",
+   "utc": "2026-11-01T12:15:24+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/32/32089-VILAMARTIN DE VALDEORRAS/A.ES.SDGC.BU.32089.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1127490,
+   "last_modified": "Fri, 21 Aug 2026 15:28:25 GMT",
+   "utc": "2026-11-01T12:15:25+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/32/32090-VILAR DE BARRIO/A.ES.SDGC.BU.32090.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1054864,
+   "last_modified": "Fri, 21 Aug 2026 15:29:21 GMT",
+   "utc": "2026-11-01T12:15:26+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/32/32091-VILAR DE SANTOS/A.ES.SDGC.BU.32091.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 630785,
+   "last_modified": "Fri, 21 Aug 2026 15:29:55 GMT",
+   "utc": "2026-11-01T12:15:28+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/32/32092-VILARDEVOS/A.ES.SDGC.BU.32092.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1703615,
+   "last_modified": "Fri, 21 Aug 2026 15:31:14 GMT",
+   "utc": "2026-11-01T12:15:29+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/32/32093-VILARIÑO DE CONSO/A.ES.SDGC.BU.32093.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 416837,
+   "last_modified": "Fri, 21 Aug 2026 15:31:34 GMT",
+   "utc": "2026-11-01T12:15:31+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/32/32033-XINZO DE LIMIA/A.ES.SDGC.BU.32033.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 3631985,
+   "last_modified": "Fri, 21 Aug 2026 15:35:21 GMT",
+   "utc": "2026-11-01T12:15:32+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/32/32037-XUNQUEIRA DE AMBIA/A.ES.SDGC.BU.32037.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1352210,
+   "last_modified": "Fri, 21 Aug 2026 15:36:29 GMT",
+   "utc": "2026-11-01T12:15:33+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/32/32038-XUNQUEIRA DE ESPADANEDO/A.ES.SDGC.BU.32038.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 423550,
+   "last_modified": "Fri, 21 Aug 2026 15:36:51 GMT",
+   "utc": "2026-11-01T12:15:35+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/36/36009-A CANIZA/A.ES.SDGC.BU.36009.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 2003710,
+   "last_modified": "Fri, 21 Aug 2026 13:55:11 GMT",
+   "utc": "2026-11-01T12:15:36+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/36/36017-A ESTRADA/A.ES.SDGC.BU.36017.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 5259434,
+   "last_modified": "Fri, 21 Aug 2026 13:59:57 GMT",
+   "utc": "2026-11-01T12:15:38+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/36/36023-A GUARDA/A.ES.SDGC.BU.36023.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 2058509,
+   "last_modified": "Fri, 21 Aug 2026 14:01:52 GMT",
+   "utc": "2026-11-01T12:15:39+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/36/36062-A ILLA DE AROUSA/A.ES.SDGC.BU.36062.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1004842,
+   "last_modified": "Fri, 21 Aug 2026 14:02:46 GMT",
+   "utc": "2026-11-01T12:15:40+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/36/36025-A LAMA/A.ES.SDGC.BU.36025.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1044457,
+   "last_modified": "Fri, 21 Aug 2026 14:03:52 GMT",
+   "utc": "2026-11-01T12:15:42+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/36/36020-AGOLADA/A.ES.SDGC.BU.36020.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1389872,
+   "last_modified": "Fri, 21 Aug 2026 14:04:58 GMT",
+   "utc": "2026-11-01T12:15:43+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/36/36001-ARBO/A.ES.SDGC.BU.36001.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1216773,
+   "last_modified": "Fri, 21 Aug 2026 14:06:07 GMT",
+   "utc": "2026-11-01T12:15:45+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/36/36034-AS NEVES/A.ES.SDGC.BU.36034.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1854453,
+   "last_modified": "Fri, 21 Aug 2026 14:07:45 GMT",
+   "utc": "2026-11-01T12:15:46+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/36/36002-BARRO/A.ES.SDGC.BU.36002.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 939984,
+   "last_modified": "Fri, 21 Aug 2026 14:08:42 GMT",
+   "utc": "2026-11-01T12:15:48+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/36/36004-BUEU/A.ES.SDGC.BU.36004.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 2424521,
+   "last_modified": "Fri, 21 Aug 2026 14:10:59 GMT",
+   "utc": "2026-11-01T12:15:49+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/36/36005-CALDAS DE REIS/A.ES.SDGC.BU.36005.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 2224795,
+   "last_modified": "Fri, 21 Aug 2026 14:12:51 GMT",
+   "utc": "2026-11-01T12:15:50+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/36/36006-CAMBADOS/A.ES.SDGC.BU.36006.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 3006071,
+   "last_modified": "Fri, 21 Aug 2026 14:15:34 GMT",
+   "utc": "2026-11-01T12:15:52+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/36/36008-CANGAS DE MORRAZO/A.ES.SDGC.BU.36008.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 5370792,
+   "last_modified": "Fri, 21 Aug 2026 14:20:50 GMT",
+   "utc": "2026-11-01T12:15:53+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/36/36010-CATOIRA/A.ES.SDGC.BU.36010.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 895115,
+   "last_modified": "Fri, 21 Aug 2026 14:21:40 GMT",
+   "utc": "2026-11-01T12:15:55+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/36/36011-CERDEDO/A.ES.SDGC.BU.36011.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 631090,
+   "last_modified": "Fri, 21 Aug 2026 14:22:16 GMT",
+   "utc": "2026-11-01T12:15:56+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/36/36012-COTOBADE/A.ES.SDGC.BU.36012.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1493797,
+   "last_modified": "Fri, 21 Aug 2026 14:23:42 GMT",
+   "utc": "2026-11-01T12:15:57+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/36/36013-COVELO/A.ES.SDGC.BU.36013.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1489822,
+   "last_modified": "Fri, 21 Aug 2026 14:25:07 GMT",
+   "utc": "2026-11-01T12:15:59+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/36/36014-CRECENTE/A.ES.SDGC.BU.36014.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1123956,
+   "last_modified": "Fri, 21 Aug 2026 14:26:02 GMT",
+   "utc": "2026-11-01T12:16:00+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/36/36015-CUNTIS/A.ES.SDGC.BU.36015.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1484991,
+   "last_modified": "Fri, 21 Aug 2026 14:27:14 GMT",
+   "utc": "2026-11-01T12:16:02+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/36/36016-DOZON/A.ES.SDGC.BU.36016.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 575599,
+   "last_modified": "Fri, 21 Aug 2026 14:27:40 GMT",
+   "utc": "2026-11-01T12:16:03+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/36/36018-FORCAREI/A.ES.SDGC.BU.36018.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1455889,
+   "last_modified": "Fri, 21 Aug 2026 14:29:03 GMT",
+   "utc": "2026-11-01T12:16:04+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/36/36019-FORNELOS DE MONTES/A.ES.SDGC.BU.36019.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 697519,
+   "last_modified": "Fri, 21 Aug 2026 14:29:48 GMT",
+   "utc": "2026-11-01T12:16:06+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/36/36024-LALIN/A.ES.SDGC.BU.36024.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 5067469,
+   "last_modified": "Fri, 21 Aug 2026 14:34:07 GMT",
+   "utc": "2026-11-01T12:16:07+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/36/36026-MARIN/A.ES.SDGC.BU.36026.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 3313886,
+   "last_modified": "Fri, 21 Aug 2026 14:37:03 GMT",
+   "utc": "2026-11-01T12:16:09+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/36/36027-MEAÑO/A.ES.SDGC.BU.36027.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1362421,
+   "last_modified": "Fri, 21 Aug 2026 14:38:20 GMT",
+   "utc": "2026-11-01T12:16:10+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/36/36028-MEIS/A.ES.SDGC.BU.36028.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1255296,
+   "last_modified": "Fri, 21 Aug 2026 14:39:33 GMT",
+   "utc": "2026-11-01T12:16:11+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/36/36029-MOAÑA/A.ES.SDGC.BU.36029.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 4202913,
+   "last_modified": "Fri, 21 Aug 2026 14:43:38 GMT",
+   "utc": "2026-11-01T12:16:13+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/36/36030-MONDARIZ/A.ES.SDGC.BU.36030.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1808307,
+   "last_modified": "Fri, 21 Aug 2026 14:45:20 GMT",
+   "utc": "2026-11-01T12:16:14+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/36/36031-MONDARIZ BALNEARIO/A.ES.SDGC.BU.36031.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 247035,
+   "last_modified": "Fri, 21 Aug 2026 14:45:34 GMT",
+   "utc": "2026-11-01T12:16:16+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/36/36032-MORAÑA/A.ES.SDGC.BU.36032.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1073195,
+   "last_modified": "Fri, 21 Aug 2026 14:46:31 GMT",
+   "utc": "2026-11-01T12:16:17+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/36/36033-MOS/A.ES.SDGC.BU.36033.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 3975075,
+   "last_modified": "Fri, 21 Aug 2026 14:50:35 GMT",
+   "utc": "2026-11-01T12:16:19+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/36/36007-O CAMPO LAMEIRO/A.ES.SDGC.BU.36007.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 586358,
+   "last_modified": "Fri, 21 Aug 2026 14:51:05 GMT",
+   "utc": "2026-11-01T12:16:20+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/36/36022-O GROVE/A.ES.SDGC.BU.36022.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 2690376,
+   "last_modified": "Fri, 21 Aug 2026 14:53:21 GMT",
+   "utc": "2026-11-01T12:16:21+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/36/36039-O PORRIÑO/A.ES.SDGC.BU.36039.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 3645699,
+   "last_modified": "Fri, 21 Aug 2026 14:56:43 GMT",
+   "utc": "2026-11-01T12:16:23+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/36/36048-O ROSAL/A.ES.SDGC.BU.36048.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 2034361,
+   "last_modified": "Fri, 21 Aug 2026 14:58:32 GMT",
+   "utc": "2026-11-01T12:16:24+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/36/36036-OIA/A.ES.SDGC.BU.36036.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1183139,
+   "last_modified": "Fri, 21 Aug 2026 14:59:39 GMT",
+   "utc": "2026-11-01T12:16:26+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/36/36037-PAZOS DE BORBEN/A.ES.SDGC.BU.36037.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1039721,
+   "last_modified": "Fri, 21 Aug 2026 15:00:47 GMT",
+   "utc": "2026-11-01T12:16:27+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/36/36041-POIO/A.ES.SDGC.BU.36041.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 3298724,
+   "last_modified": "Fri, 21 Aug 2026 15:03:57 GMT",
+   "utc": "2026-11-01T12:16:29+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/36/36043-PONTE CALDELAS/A.ES.SDGC.BU.36043.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1718547,
+   "last_modified": "Fri, 21 Aug 2026 15:05:49 GMT",
+   "utc": "2026-11-01T12:16:30+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/36/36042-PONTEAREAS/A.ES.SDGC.BU.36042.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 4657211,
+   "last_modified": "Fri, 21 Aug 2026 15:10:30 GMT",
+   "utc": "2026-11-01T12:16:31+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/36/36044-PONTECESURES/A.ES.SDGC.BU.36044.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 633148,
+   "last_modified": "Fri, 21 Aug 2026 15:11:04 GMT",
+   "utc": "2026-11-01T12:16:33+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/36/36900-PONTEVEDRA/A.ES.SDGC.BU.36900.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 9422800,
+   "last_modified": "Fri, 21 Aug 2026 15:19:39 GMT",
+   "utc": "2026-11-01T12:16:34+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/36/36040-PORTAS/A.ES.SDGC.BU.36040.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 982582,
+   "last_modified": "Fri, 21 Aug 2026 15:20:37 GMT",
+   "utc": "2026-11-01T12:16:36+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/36/36045-REDONDELA/A.ES.SDGC.BU.36045.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 5978198,
+   "last_modified": "Fri, 21 Aug 2026 15:26:16 GMT",
+   "utc": "2026-11-01T12:16:37+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/36/36046-RIBADUMIA/A.ES.SDGC.BU.36046.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1163230,
+   "last_modified": "Fri, 21 Aug 2026 15:27:16 GMT",
+   "utc": "2026-11-01T12:16:38+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/36/36047-RODEIRO/A.ES.SDGC.BU.36047.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1438639,
+   "last_modified": "Fri, 21 Aug 2026 15:28:23 GMT",
+   "utc": "2026-11-01T12:16:40+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/36/36049-SALCEDA DE CASELAS/A.ES.SDGC.BU.36049.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1770446,
+   "last_modified": "Fri, 21 Aug 2026 15:30:02 GMT",
+   "utc": "2026-11-01T12:16:41+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/36/36050-SALVATERRA DE MIÑO/A.ES.SDGC.BU.36050.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 2720912,
+   "last_modified": "Fri, 21 Aug 2026 15:32:31 GMT",
+   "utc": "2026-11-01T12:16:43+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/36/36051-SANXENXO/A.ES.SDGC.BU.36051.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 5521702,
+   "last_modified": "Fri, 21 Aug 2026 15:37:36 GMT",
+   "utc": "2026-11-01T12:16:44+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/36/36052-SILLEDA/A.ES.SDGC.BU.36052.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 2746462,
+   "last_modified": "Fri, 21 Aug 2026 15:39:43 GMT",
+   "utc": "2026-11-01T12:16:45+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/36/36053-SOUTOMAIOR/A.ES.SDGC.BU.36053.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1425536,
+   "last_modified": "Fri, 21 Aug 2026 15:41:01 GMT",
+   "utc": "2026-11-01T12:16:47+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/36/36054-TOMIÑO/A.ES.SDGC.BU.36054.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 3366615,
+   "last_modified": "Fri, 21 Aug 2026 15:44:01 GMT",
+   "utc": "2026-11-01T12:16:48+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/36/36055-TUI/A.ES.SDGC.BU.36055.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 3932494,
+   "last_modified": "Fri, 21 Aug 2026 15:47:17 GMT",
+   "utc": "2026-11-01T12:16:50+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/36/36056-VALGA/A.ES.SDGC.BU.36056.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1497432,
+   "last_modified": "Fri, 21 Aug 2026 15:48:34 GMT",
+   "utc": "2026-11-01T12:16:51+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/36/36059-VILA DE CRUCES/A.ES.SDGC.BU.36059.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1390855,
+   "last_modified": "Fri, 21 Aug 2026 15:49:45 GMT",
+   "utc": "2026-11-01T12:16:53+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/36/36058-VILABOA/A.ES.SDGC.BU.36058.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 1720292,
+   "last_modified": "Fri, 21 Aug 2026 15:51:29 GMT",
+   "utc": "2026-11-01T12:16:54+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/36/36060-VILAGARCIA DE AROUSA/A.ES.SDGC.BU.36060.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 5434285,
+   "last_modified": "Fri, 21 Aug 2026 15:55:57 GMT",
+   "utc": "2026-11-01T12:16:55+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/36/36061-VILANOVA DE AROUSA/A.ES.SDGC.BU.36061.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 2727446,
+   "last_modified": "Fri, 21 Aug 2026 15:58:11 GMT",
+   "utc": "2026-11-01T12:16:57+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/54/54003-BAIONA/A.ES.SDGC.BU.54003.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 2639744,
+   "last_modified": "Fri, 21 Aug 2026 17:07:41 GMT",
+   "utc": "2026-11-01T12:16:58+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/54/54021-GONDOMAR/A.ES.SDGC.BU.54021.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 4098107,
+   "last_modified": "Fri, 21 Aug 2026 17:11:24 GMT",
+   "utc": "2026-11-01T12:17:00+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/54/54035-NIGRAN/A.ES.SDGC.BU.54035.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 5379356,
+   "last_modified": "Fri, 21 Aug 2026 17:16:18 GMT",
+   "utc": "2026-11-01T12:17:01+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/54/54057-VIGO/A.ES.SDGC.BU.54057.zip",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 24898983,
+   "last_modified": "Fri, 21 Aug 2026 17:36:53 GMT",
+   "utc": "2026-11-01T12:17:03+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/webinspire/documentos/Licencia.pdf",
+   "metodo": "HEAD",
+   "status": 200,
+   "bytes": 100483,
+   "last_modified": "Thu, 22 Sep 2016 08:03:57 GMT",
+   "utc": "2026-11-01T12:17:04+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/32/32035-A GUDIÑA/A.ES.SDGC.BU.32035.zip",
+   "metodo": "GET",
+   "status": 200,
+   "bytes": 824373,
+   "last_modified": "Fri, 21 Aug 2026 13:48:59 GMT",
+   "utc": "2026-11-01T12:17:06+00:00"
+  },
+  {
+   "url": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/27/27900-LUGO/A.ES.SDGC.BU.27900.zip",
+   "metodo": "GET",
+   "status": 200,
+   "bytes": 11775877,
+   "last_modified": "Fri, 21 Aug 2026 14:08:44 GMT",
+   "utc": "2026-11-01T12:17:23+00:00"
+  }
+ ]
+}

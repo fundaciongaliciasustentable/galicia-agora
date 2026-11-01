@@ -1,0 +1,524 @@
+{
+  "descargado_utc": "2026-11-01T12:20:03+00:00",
+  "user_agent": "GaliciaAgora/0.1 (+https://github.com/fundaciongaliciasustentable/galicia-agora; galiciasustentable@galiciasustentable.org)",
+  "resumo": {
+    "periodo": "2025-11-01–2026-10-31",
+    "dias": 365,
+    "raios_caixa_galicia": 64827,
+    "raios_terra_galicia_suma_numRaiosGalicia": 43629,
+    "dias_con_raios_caixa": 130,
+    "raios_por_mes": {
+      "2025-11": 972,
+      "2025-12": 387,
+      "2026-01": 3102,
+      "2026-02": 1165,
+      "2026-03": 1,
+      "2026-04": 5056,
+      "2026-05": 10194,
+      "2026-06": 21917,
+      "2026-07": 9296,
+      "2026-08": 5177,
+      "2026-09": 2082,
+      "2026-10": 5478
+    },
+    "dez_dias_con_mais_raios": [
+      [
+        "2026-06-17",
+        8282
+      ],
+      [
+        "2026-07-11",
+        6306
+      ],
+      [
+        "2026-10-06",
+        4954
+      ],
+      [
+        "2026-06-25",
+        4221
+      ],
+      [
+        "2026-05-24",
+        3403
+      ],
+      [
+        "2026-08-23",
+        3229
+      ],
+      [
+        "2026-06-14",
+        2147
+      ],
+      [
+        "2026-06-24",
+        2043
+      ],
+      [
+        "2026-06-13",
+        1920
+      ],
+      [
+        "2026-06-21",
+        1728
+      ]
+    ],
+    "positivos": 29917,
+    "negativos": 34910,
+    "proba_primeira_semana_xullo_numRaiosTotal": {
+      "2005": 0,
+      "2006": 0,
+      "2007": 0,
+      "2008": 0,
+      "2009": 0,
+      "2010": 2235,
+      "2011": 2127,
+      "2012": 18
+    },
+    "rama_data_instantaneas_raios": 54,
+    "rama_data_primeira": "2026-10-24T07:54:59.776Z",
+    "rama_data_ultima": "2026-11-01T09:54:22.322Z",
+    "rama_data_con_raios": 0,
+    "aemet_sen_chave": {
+      "status": 200,
+      "corpo": ""
+    },
+    "documentacion": "https://meteo-estaticos.xunta.gal/datosred/infoweb/meteo/docs/rss/JSON_RaiosHistorico_gl.pdf"
+  },
+  "peticions": [
+    {
+      "url": "https://servizos.meteogalicia.gal/mgrss/observacion/jsonRaios.action?dataIni=01/11/2025&dataFin=07/11/2025",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 185224,
+      "utc": "2026-11-01T12:18:20+00:00"
+    },
+    {
+      "url": "https://servizos.meteogalicia.gal/mgrss/observacion/jsonRaios.action?dataIni=08/11/2025&dataFin=14/11/2025",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 49266,
+      "utc": "2026-11-01T12:18:21+00:00"
+    },
+    {
+      "url": "https://servizos.meteogalicia.gal/mgrss/observacion/jsonRaios.action?dataIni=15/11/2025&dataFin=21/11/2025",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 59909,
+      "utc": "2026-11-01T12:18:23+00:00"
+    },
+    {
+      "url": "https://servizos.meteogalicia.gal/mgrss/observacion/jsonRaios.action?dataIni=22/11/2025&dataFin=28/11/2025",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 912,
+      "utc": "2026-11-01T12:18:25+00:00"
+    },
+    {
+      "url": "https://servizos.meteogalicia.gal/mgrss/observacion/jsonRaios.action?dataIni=29/11/2025&dataFin=05/12/2025",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 23402,
+      "utc": "2026-11-01T12:18:26+00:00"
+    },
+    {
+      "url": "https://servizos.meteogalicia.gal/mgrss/observacion/jsonRaios.action?dataIni=06/12/2025&dataFin=12/12/2025",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 2385,
+      "utc": "2026-11-01T12:18:28+00:00"
+    },
+    {
+      "url": "https://servizos.meteogalicia.gal/mgrss/observacion/jsonRaios.action?dataIni=13/12/2025&dataFin=19/12/2025",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 993,
+      "utc": "2026-11-01T12:18:29+00:00"
+    },
+    {
+      "url": "https://servizos.meteogalicia.gal/mgrss/observacion/jsonRaios.action?dataIni=20/12/2025&dataFin=26/12/2025",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 26166,
+      "utc": "2026-11-01T12:18:31+00:00"
+    },
+    {
+      "url": "https://servizos.meteogalicia.gal/mgrss/observacion/jsonRaios.action?dataIni=27/12/2025&dataFin=02/01/2026",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 1073,
+      "utc": "2026-11-01T12:18:32+00:00"
+    },
+    {
+      "url": "https://servizos.meteogalicia.gal/mgrss/observacion/jsonRaios.action?dataIni=03/01/2026&dataFin=09/01/2026",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 3842,
+      "utc": "2026-11-01T12:18:34+00:00"
+    },
+    {
+      "url": "https://servizos.meteogalicia.gal/mgrss/observacion/jsonRaios.action?dataIni=10/01/2026&dataFin=16/01/2026",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 5270,
+      "utc": "2026-11-01T12:18:36+00:00"
+    },
+    {
+      "url": "https://servizos.meteogalicia.gal/mgrss/observacion/jsonRaios.action?dataIni=17/01/2026&dataFin=23/01/2026",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 167373,
+      "utc": "2026-11-01T12:18:37+00:00"
+    },
+    {
+      "url": "https://servizos.meteogalicia.gal/mgrss/observacion/jsonRaios.action?dataIni=24/01/2026&dataFin=30/01/2026",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 266785,
+      "utc": "2026-11-01T12:18:39+00:00"
+    },
+    {
+      "url": "https://servizos.meteogalicia.gal/mgrss/observacion/jsonRaios.action?dataIni=31/01/2026&dataFin=06/02/2026",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 124289,
+      "utc": "2026-11-01T12:18:41+00:00"
+    },
+    {
+      "url": "https://servizos.meteogalicia.gal/mgrss/observacion/jsonRaios.action?dataIni=07/02/2026&dataFin=13/02/2026",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 29406,
+      "utc": "2026-11-01T12:18:42+00:00"
+    },
+    {
+      "url": "https://servizos.meteogalicia.gal/mgrss/observacion/jsonRaios.action?dataIni=14/02/2026&dataFin=20/02/2026",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 11993,
+      "utc": "2026-11-01T12:18:44+00:00"
+    },
+    {
+      "url": "https://servizos.meteogalicia.gal/mgrss/observacion/jsonRaios.action?dataIni=21/02/2026&dataFin=27/02/2026",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 10726,
+      "utc": "2026-11-01T12:18:45+00:00"
+    },
+    {
+      "url": "https://servizos.meteogalicia.gal/mgrss/observacion/jsonRaios.action?dataIni=28/02/2026&dataFin=06/03/2026",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 4864,
+      "utc": "2026-11-01T12:18:47+00:00"
+    },
+    {
+      "url": "https://servizos.meteogalicia.gal/mgrss/observacion/jsonRaios.action?dataIni=07/03/2026&dataFin=13/03/2026",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 1923,
+      "utc": "2026-11-01T12:18:49+00:00"
+    },
+    {
+      "url": "https://servizos.meteogalicia.gal/mgrss/observacion/jsonRaios.action?dataIni=14/03/2026&dataFin=20/03/2026",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 606,
+      "utc": "2026-11-01T12:18:50+00:00"
+    },
+    {
+      "url": "https://servizos.meteogalicia.gal/mgrss/observacion/jsonRaios.action?dataIni=21/03/2026&dataFin=27/03/2026",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 606,
+      "utc": "2026-11-01T12:18:52+00:00"
+    },
+    {
+      "url": "https://servizos.meteogalicia.gal/mgrss/observacion/jsonRaios.action?dataIni=28/03/2026&dataFin=03/04/2026",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 606,
+      "utc": "2026-11-01T12:18:53+00:00"
+    },
+    {
+      "url": "https://servizos.meteogalicia.gal/mgrss/observacion/jsonRaios.action?dataIni=04/04/2026&dataFin=10/04/2026",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 114907,
+      "utc": "2026-11-01T12:18:55+00:00"
+    },
+    {
+      "url": "https://servizos.meteogalicia.gal/mgrss/observacion/jsonRaios.action?dataIni=11/04/2026&dataFin=17/04/2026",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 1453,
+      "utc": "2026-11-01T12:18:56+00:00"
+    },
+    {
+      "url": "https://servizos.meteogalicia.gal/mgrss/observacion/jsonRaios.action?dataIni=18/04/2026&dataFin=24/04/2026",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 87228,
+      "utc": "2026-11-01T12:18:59+00:00"
+    },
+    {
+      "url": "https://servizos.meteogalicia.gal/mgrss/observacion/jsonRaios.action?dataIni=25/04/2026&dataFin=01/05/2026",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 391465,
+      "utc": "2026-11-01T12:19:01+00:00"
+    },
+    {
+      "url": "https://servizos.meteogalicia.gal/mgrss/observacion/jsonRaios.action?dataIni=02/05/2026&dataFin=08/05/2026",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 110539,
+      "utc": "2026-11-01T12:19:02+00:00"
+    },
+    {
+      "url": "https://servizos.meteogalicia.gal/mgrss/observacion/jsonRaios.action?dataIni=09/05/2026&dataFin=15/05/2026",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 159671,
+      "utc": "2026-11-01T12:19:04+00:00"
+    },
+    {
+      "url": "https://servizos.meteogalicia.gal/mgrss/observacion/jsonRaios.action?dataIni=16/05/2026&dataFin=22/05/2026",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 123243,
+      "utc": "2026-11-01T12:19:06+00:00"
+    },
+    {
+      "url": "https://servizos.meteogalicia.gal/mgrss/observacion/jsonRaios.action?dataIni=23/05/2026&dataFin=29/05/2026",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 645302,
+      "utc": "2026-11-01T12:19:08+00:00"
+    },
+    {
+      "url": "https://servizos.meteogalicia.gal/mgrss/observacion/jsonRaios.action?dataIni=30/05/2026&dataFin=05/06/2026",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 15120,
+      "utc": "2026-11-01T12:19:09+00:00"
+    },
+    {
+      "url": "https://servizos.meteogalicia.gal/mgrss/observacion/jsonRaios.action?dataIni=06/06/2026&dataFin=12/06/2026",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 606,
+      "utc": "2026-11-01T12:19:11+00:00"
+    },
+    {
+      "url": "https://servizos.meteogalicia.gal/mgrss/observacion/jsonRaios.action?dataIni=13/06/2026&dataFin=19/06/2026",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 1482625,
+      "utc": "2026-11-01T12:19:13+00:00"
+    },
+    {
+      "url": "https://servizos.meteogalicia.gal/mgrss/observacion/jsonRaios.action?dataIni=20/06/2026&dataFin=26/06/2026",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 1014084,
+      "utc": "2026-11-01T12:19:15+00:00"
+    },
+    {
+      "url": "https://servizos.meteogalicia.gal/mgrss/observacion/jsonRaios.action?dataIni=27/06/2026&dataFin=03/07/2026",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 1071,
+      "utc": "2026-11-01T12:19:16+00:00"
+    },
+    {
+      "url": "https://servizos.meteogalicia.gal/mgrss/observacion/jsonRaios.action?dataIni=04/07/2026&dataFin=10/07/2026",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 52612,
+      "utc": "2026-11-01T12:19:18+00:00"
+    },
+    {
+      "url": "https://servizos.meteogalicia.gal/mgrss/observacion/jsonRaios.action?dataIni=11/07/2026&dataFin=17/07/2026",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 1062500,
+      "utc": "2026-11-01T12:19:20+00:00"
+    },
+    {
+      "url": "https://servizos.meteogalicia.gal/mgrss/observacion/jsonRaios.action?dataIni=18/07/2026&dataFin=24/07/2026",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 117255,
+      "utc": "2026-11-01T12:19:21+00:00"
+    },
+    {
+      "url": "https://servizos.meteogalicia.gal/mgrss/observacion/jsonRaios.action?dataIni=25/07/2026&dataFin=31/07/2026",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 21328,
+      "utc": "2026-11-01T12:19:23+00:00"
+    },
+    {
+      "url": "https://servizos.meteogalicia.gal/mgrss/observacion/jsonRaios.action?dataIni=01/08/2026&dataFin=07/08/2026",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 14994,
+      "utc": "2026-11-01T12:19:25+00:00"
+    },
+    {
+      "url": "https://servizos.meteogalicia.gal/mgrss/observacion/jsonRaios.action?dataIni=08/08/2026&dataFin=14/08/2026",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 39131,
+      "utc": "2026-11-01T12:19:26+00:00"
+    },
+    {
+      "url": "https://servizos.meteogalicia.gal/mgrss/observacion/jsonRaios.action?dataIni=15/08/2026&dataFin=21/08/2026",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 65024,
+      "utc": "2026-11-01T12:19:28+00:00"
+    },
+    {
+      "url": "https://servizos.meteogalicia.gal/mgrss/observacion/jsonRaios.action?dataIni=22/08/2026&dataFin=28/08/2026",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 790005,
+      "utc": "2026-11-01T12:19:30+00:00"
+    },
+    {
+      "url": "https://servizos.meteogalicia.gal/mgrss/observacion/jsonRaios.action?dataIni=29/08/2026&dataFin=04/09/2026",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 606,
+      "utc": "2026-11-01T12:19:31+00:00"
+    },
+    {
+      "url": "https://servizos.meteogalicia.gal/mgrss/observacion/jsonRaios.action?dataIni=05/09/2026&dataFin=11/09/2026",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 203004,
+      "utc": "2026-11-01T12:19:33+00:00"
+    },
+    {
+      "url": "https://servizos.meteogalicia.gal/mgrss/observacion/jsonRaios.action?dataIni=12/09/2026&dataFin=18/09/2026",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 989,
+      "utc": "2026-11-01T12:19:34+00:00"
+    },
+    {
+      "url": "https://servizos.meteogalicia.gal/mgrss/observacion/jsonRaios.action?dataIni=19/09/2026&dataFin=25/09/2026",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 606,
+      "utc": "2026-11-01T12:19:36+00:00"
+    },
+    {
+      "url": "https://servizos.meteogalicia.gal/mgrss/observacion/jsonRaios.action?dataIni=26/09/2026&dataFin=02/10/2026",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 30372,
+      "utc": "2026-11-01T12:19:38+00:00"
+    },
+    {
+      "url": "https://servizos.meteogalicia.gal/mgrss/observacion/jsonRaios.action?dataIni=03/10/2026&dataFin=09/10/2026",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 849877,
+      "utc": "2026-11-01T12:19:40+00:00"
+    },
+    {
+      "url": "https://servizos.meteogalicia.gal/mgrss/observacion/jsonRaios.action?dataIni=10/10/2026&dataFin=16/10/2026",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 1774,
+      "utc": "2026-11-01T12:19:41+00:00"
+    },
+    {
+      "url": "https://servizos.meteogalicia.gal/mgrss/observacion/jsonRaios.action?dataIni=17/10/2026&dataFin=23/10/2026",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 11957,
+      "utc": "2026-11-01T12:19:43+00:00"
+    },
+    {
+      "url": "https://servizos.meteogalicia.gal/mgrss/observacion/jsonRaios.action?dataIni=24/10/2026&dataFin=30/10/2026",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 606,
+      "utc": "2026-11-01T12:19:44+00:00"
+    },
+    {
+      "url": "https://servizos.meteogalicia.gal/mgrss/observacion/jsonRaios.action?data=31/10/2026",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 96,
+      "utc": "2026-11-01T12:19:46+00:00"
+    },
+    {
+      "url": "https://servizos.meteogalicia.gal/mgrss/observacion/jsonRaios.action?dataIni=01/07/2005&dataFin=07/07/2005",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 606,
+      "utc": "2026-11-01T12:19:48+00:00"
+    },
+    {
+      "url": "https://servizos.meteogalicia.gal/mgrss/observacion/jsonRaios.action?dataIni=01/07/2006&dataFin=07/07/2006",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 606,
+      "utc": "2026-11-01T12:19:49+00:00"
+    },
+    {
+      "url": "https://servizos.meteogalicia.gal/mgrss/observacion/jsonRaios.action?dataIni=01/07/2007&dataFin=07/07/2007",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 606,
+      "utc": "2026-11-01T12:19:51+00:00"
+    },
+    {
+      "url": "https://servizos.meteogalicia.gal/mgrss/observacion/jsonRaios.action?dataIni=01/07/2008&dataFin=07/07/2008",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 606,
+      "utc": "2026-11-01T12:19:52+00:00"
+    },
+    {
+      "url": "https://servizos.meteogalicia.gal/mgrss/observacion/jsonRaios.action?dataIni=01/07/2009&dataFin=07/07/2009",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 606,
+      "utc": "2026-11-01T12:19:54+00:00"
+    },
+    {
+      "url": "https://servizos.meteogalicia.gal/mgrss/observacion/jsonRaios.action?dataIni=01/07/2010&dataFin=07/07/2010",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 173853,
+      "utc": "2026-11-01T12:19:55+00:00"
+    },
+    {
+      "url": "https://servizos.meteogalicia.gal/mgrss/observacion/jsonRaios.action?dataIni=01/07/2011&dataFin=07/07/2011",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 165661,
+      "utc": "2026-11-01T12:19:57+00:00"
+    },
+    {
+      "url": "https://servizos.meteogalicia.gal/mgrss/observacion/jsonRaios.action?dataIni=01/07/2012&dataFin=07/07/2012",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 1997,
+      "utc": "2026-11-01T12:19:59+00:00"
+    },
+    {
+      "url": "https://opendata.aemet.es/opendata/api/red/rayos/mapa",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 0,
+      "utc": "2026-11-01T12:20:01+00:00"
+    }
+  ]
+}

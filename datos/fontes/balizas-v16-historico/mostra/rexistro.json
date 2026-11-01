@@ -1,0 +1,127 @@
+{
+  "descargado_utc": "2026-11-01T12:34:32+00:00",
+  "user_agent": "GaliciaAgora/0.1 (+https://github.com/fundaciongaliciasustentable/galicia-agora; galiciasustentable@galiciasustentable.org)",
+  "resumo": {
+    "instantaneas": 44,
+    "primeira": "2026-10-25T11:16:17.411Z",
+    "ultima": "2026-11-01T09:54:23.628Z",
+    "oco_horas_mediana": 3.9,
+    "oco_horas_max": 7.2,
+    "instantaneas_por_hora_utc": {
+      "0": 4,
+      "1": 2,
+      "2": 1,
+      "4": 1,
+      "5": 3,
+      "7": 1,
+      "8": 1,
+      "9": 2,
+      "10": 1,
+      "11": 6,
+      "12": 1,
+      "13": 1,
+      "14": 2,
+      "16": 3,
+      "17": 3,
+      "18": 1,
+      "19": 3,
+      "20": 3,
+      "21": 2,
+      "22": 2,
+      "23": 1
+    },
+    "observacions_baliza": 197,
+    "activacions_distintas_aprox": 192,
+    "instantaneas_sen_balizas": 7,
+    "activas_max": 14,
+    "activas_media": 4.5,
+    "vivo": {
+      "status": 200,
+      "publicationTime": "2026-11-01T13:33:18.618+01:00",
+      "v16_espana": 73,
+      "v16_galicia": 10,
+      "minutos_activa_mediana_espana": 24
+    },
+    "nap_conxuntos": 37,
+    "nap_busca_historico": [
+      "here-traffic"
+    ],
+    "nap_licenza": "Creative Commons Attribution"
+  },
+  "nap_lista": [
+    "api-de-tomtom-de-informacion-de-trafico-relacionada-con-la-seguridad",
+    "camaras-dgt-datex2-v3-7",
+    "camino-de-santiago-puntos-de-interseccion-de-riesgo",
+    "camino-de-santiago-tramos-paralelos-de-riesgo",
+    "conos-conectados",
+    "envio-dinamico-de-posiciones-de-vehiculos-lentos1",
+    "estado-de-ocupacion-de-parkings-en-ayuntamientos",
+    "here-traffic",
+    "incidencias-de-trafico-srti-en-formato-lod-datex-ii",
+    "incidencias-dgt-datex2-v3-7",
+    "incidencias-dt-gv",
+    "incidencias-sct",
+    "informacion-trafico-tomtom",
+    "limites_de_velocidad",
+    "localizacion-de-conos-correspondientes-a-pruebas-deportivas",
+    "mapa-de-movilidad",
+    "mapa-de-trafico",
+    "paneles-dgt-localizaciones-datex2-v3-7",
+    "paneles-dgt-tiempo-real-datex2-v3-7",
+    "puntos-de-recarga-electrica-para-vehiculos",
+    "radares-fijos-dgt",
+    "segmentos-correspondientes-a-pruebas-deportivas",
+    "senalizacion-vertical-de-la-red-de-carreteras-de-la-diputacion-de-valencia",
+    "senalizacion-vertical-de-la-red-de-carreteras-de-la-diputacion-foral-de-gipuzkoa",
+    "tefiva",
+    "tomtom-map-api",
+    "traffic-data-from-variable-information-surface-panels",
+    "trafico-calle-30-camaras",
+    "trafico-calle-30-incidencias",
+    "trafico-calle-30-trabajos-planificados-en-tiempo-real",
+    "trafico-camaras",
+    "trafico-incidencias-en-via-publica",
+    "trafico-incidencias-en-via-publica-mapa",
+    "trafico-paneles-informacion-variable-ubicacion",
+    "tramos-de-elevado-riesgo-para-motocicletas",
+    "tramos-invive",
+    "zonas-de-bajas-emisiones"
+  ],
+  "peticions": [
+    {
+      "url": "https://nap.dgt.es/datex2/v3/dgt/SituationPublication/datex2_v37.xml",
+      "status": 200,
+      "bytes_rede": 116383,
+      "bytes": 3435846,
+      "utc": "2026-11-01T12:34:22+00:00"
+    },
+    {
+      "url": "https://nap.dgt.es/es/dataset?page=1",
+      "status": 200,
+      "bytes_rede": 9082,
+      "bytes": 55210,
+      "utc": "2026-11-01T12:34:24+00:00"
+    },
+    {
+      "url": "https://nap.dgt.es/es/dataset?page=2",
+      "status": 200,
+      "bytes_rede": 8771,
+      "bytes": 50392,
+      "utc": "2026-11-01T12:34:26+00:00"
+    },
+    {
+      "url": "https://nap.dgt.es/es/dataset?q=hist%C3%B3rico",
+      "status": 200,
+      "bytes_rede": 6496,
+      "bytes": 24185,
+      "utc": "2026-11-01T12:34:28+00:00"
+    },
+    {
+      "url": "https://nap.dgt.es/es/dataset/incidencias-dgt-datex2-v3-7",
+      "status": 200,
+      "bytes_rede": 9758,
+      "bytes": 39430,
+      "utc": "2026-11-01T12:34:30+00:00"
+    }
+  ]
+}

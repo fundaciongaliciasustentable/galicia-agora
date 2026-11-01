@@ -1,0 +1,465 @@
+{
+  "descargado_utc": "2026-11-01T12:33:33+00:00",
+  "user_agent": "GaliciaAgora/0.1 (+https://github.com/fundaciongaliciasustentable/galicia-agora; galiciasustentable@galiciasustentable.org)",
+  "resumo": {
+    "orzamentos_datos_abertos": {
+      "ano": 2026,
+      "cabeceira": "Consellería;Grupo;Capítulo;Orzamento",
+      "filas": 214
+    },
+    "orzamentos_aviso_legal": "Só está autorizado o uso persoal non comercial.",
+    "anexo_investimentos_territorializacion": {
+      "INV_II_V1_FR01": {
+        "proxectos": 4,
+        "codigos": {
+          "1500000 PROVINCIA DA CORU?A": 4
+        },
+        "codigos_non_provinciais": 0
+      },
+      "INV_II_V2_FR04": {
+        "proxectos": 47,
+        "codigos": {
+          "3600000 PROVINCIA DE PONTEVEDRA": 26,
+          "2700000 PROVINCIA DE LUGO": 24,
+          "1500000 PROVINCIA DA CORU?A": 30,
+          "3200000 PROVINCIA DE OURENSE": 20
+        },
+        "codigos_non_provinciais": 0
+      },
+      "INV_I_V1_FR07": {
+        "proxectos": 73,
+        "codigos": {
+          "1500000 PROVINCIA DA CORU?A": 66,
+          "2700000 PROVINCIA DE LUGO": 52,
+          "3200000 PROVINCIA DE OURENSE": 52,
+          "3600000 PROVINCIA DE PONTEVEDRA": 55
+        },
+        "codigos_non_provinciais": 0
+      }
+    },
+    "hacienda_cita": "Origen de los datos: Ministerio de Hacienda",
+    "conprel_bytes_zip_por_ano": {
+      "2002": 15045929,
+      "2003": 12968286,
+      "2004": 18209584,
+      "2005": 17580176,
+      "2006": 19011420,
+      "2007": 18849750,
+      "2008": 19034699,
+      "2009": 34847270,
+      "2010": 52337224,
+      "2011": 51645393,
+      "2012": 48972672,
+      "2013": 50448971,
+      "2014": 52767880,
+      "2015": 56320399,
+      "2016": 53545260,
+      "2017": 55899359,
+      "2018": 54691161,
+      "2019": 55320477,
+      "2020": 55752809,
+      "2021": 55029434,
+      "2022": 50415726,
+      "2023": 54769946,
+      "2024": 52555360,
+      "2025": 47509707
+    },
+    "conprel_avance_ano_anterior_access": "{\"success\":true}",
+    "conprel": [
+      {
+        "ano": 2003,
+        "ficheiro": "Liquidaciones2003.mdb",
+        "bytes_zip": 12968286,
+        "bytes_bd": 121270272,
+        "taboa": "tb_economica_cons",
+        "importe": "importe",
+        "concellos_con_liquidacion": 281,
+        "filas_overflow_sen_ler": 0
+      },
+      {
+        "ano": 2010,
+        "ficheiro": "Liquidaciones2010.mdb",
+        "bytes_zip": 52337224,
+        "bytes_bd": 394240000,
+        "taboa": "tb_economica_cons",
+        "importe": "importer",
+        "concellos_con_liquidacion": 315,
+        "filas_overflow_sen_ler": 0
+      },
+      {
+        "ano": 2023,
+        "ficheiro": "Liquidaciones2023.accdb",
+        "bytes_zip": 54769946,
+        "bytes_bd": 436633600,
+        "taboa": "tb_economica",
+        "importe": "importer",
+        "concellos_con_liquidacion": 292,
+        "filas_overflow_sen_ler": 0
+      }
+    ],
+    "conprel_galicia_por_ano": {
+      "2003": {
+        "art45": 147364407,
+        "ag45": 122335718,
+        "fcl": null,
+        "art75": 61138197,
+        "ag75": 49662723,
+        "concellos": 279,
+        "sen_art45_nin_art75": 0
+      },
+      "2010": {
+        "art45": 312095532,
+        "ag45": 267078285,
+        "fcl": 78279776,
+        "art75": 93892655,
+        "ag75": 80485850,
+        "concellos": 313,
+        "sen_art45_nin_art75": 0
+      },
+      "2023": {
+        "art45": 355362021,
+        "ag45": 351149758,
+        "fcl": 103237816,
+        "art75": 87654234,
+        "ag75": 65424395,
+        "concellos": 292,
+        "sen_art45_nin_art75": 0
+      }
+    },
+    "bdns": {
+      "mes": "2024-03",
+      "organos_galicia": 98,
+      "concesions_galicia_mes": 2025,
+      "concesions_a_concellos": 596,
+      "importe_a_concellos": 1039439.21,
+      "concellos_distintos": 206,
+      "advertencia_api": "La reutilización de los datos del Sistema Nacional de Publicidad de Subvenciones y Ayudas Públicas está sujeta a una serie de restricciones y consideraciones legales. Consulte el aviso legal en https://www.infosubvenciones.es/bdnstrans/GE/es/avisolegal.Además, el usuario debe ser consciente que la información presentada es de naturaleza dinámica, y que los datos pueden ser sometidos a correcciones, inserciones, modificaciones y eliminaciones en momentos posteriores a su extracción. Accesos al API del sistema Nacional de Publicidad de Subvenciones y Ayudas Públicas. La Administración Presupuestaria, para salvaguardar la protección del acceso libre e irrestricto de los ciudadanos a este Portal y a su información podrá adoptar medidas restrictivas de acceso al API ante situaciones de manifiesto abuso del servicio, riesgos de seguridad, o uso fraudulento de la información descargada, de acuerdo con las buenas prácticas de gestión de datos abiertos (https://datos.gob.es/es/blog/limitaciones-la-consulta-de-una-api) establecidas por el Ministerio para la Transformación Digital y de la Función Pública."
+    }
+  },
+  "peticions": [
+    {
+      "url": "https://orzamentos.xunta.gal/orzamentos/2026/DE/DATOS_ABERTOS/gastos.csv",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 24411,
+      "content_type": "text/csv",
+      "last_modified": "Mon, 19 Jan 2026 09:29:28 GMT",
+      "utc": "2026-11-01T12:31:33+00:00"
+    },
+    {
+      "url": "https://orzamentos.xunta.gal/web/orzamentos2026/aviso-legal",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 23280,
+      "content_type": "text/html; charset=UTF-8",
+      "last_modified": null,
+      "utc": "2026-11-01T12:31:35+00:00"
+    },
+    {
+      "url": "https://orzamentos.xunta.gal/orzamentos/2026/DE/LIBROS/INV_II_V1_FR01.PDF",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 169558,
+      "content_type": "application/pdf",
+      "last_modified": "Fri, 19 Dec 2025 13:08:07 GMT",
+      "utc": "2026-11-01T12:31:36+00:00"
+    },
+    {
+      "url": "https://orzamentos.xunta.gal/orzamentos/2026/DE/LIBROS/INV_II_V2_FR04.PDF",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 444761,
+      "content_type": "application/pdf",
+      "last_modified": "Fri, 19 Dec 2025 13:08:50 GMT",
+      "utc": "2026-11-01T12:31:37+00:00"
+    },
+    {
+      "url": "https://orzamentos.xunta.gal/orzamentos/2026/DE/LIBROS/INV_I_V1_FR07.PDF",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 585962,
+      "content_type": "application/pdf",
+      "last_modified": "Fri, 19 Dec 2025 13:06:45 GMT",
+      "utc": "2026-11-01T12:31:39+00:00"
+    },
+    {
+      "url": "https://www.hacienda.gob.es/es-ES/Paginas/AvisoLegal.aspx",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 58509,
+      "content_type": "text/html; charset=utf-8",
+      "last_modified": null,
+      "utc": "2026-11-01T12:31:40+00:00"
+    },
+    {
+      "url": "https://serviciostelematicosext.hacienda.gob.es/SGFAL/CONPREL/Consulta/DescargaFichero?CCAA=&TipoDato=Liquidaciones&Ejercicio=2002&TipoPublicacion=Access",
+      "metodo": "HEAD",
+      "status": 200,
+      "bytes": 15045929,
+      "content_type": "application/x-zip-compressed",
+      "last_modified": null,
+      "utc": "2026-11-01T12:31:42+00:00"
+    },
+    {
+      "url": "https://serviciostelematicosext.hacienda.gob.es/SGFAL/CONPREL/Consulta/DescargaFichero?CCAA=&TipoDato=Liquidaciones&Ejercicio=2003&TipoPublicacion=Access",
+      "metodo": "HEAD",
+      "status": 200,
+      "bytes": 12968286,
+      "content_type": "application/x-zip-compressed",
+      "last_modified": null,
+      "utc": "2026-11-01T12:31:43+00:00"
+    },
+    {
+      "url": "https://serviciostelematicosext.hacienda.gob.es/SGFAL/CONPREL/Consulta/DescargaFichero?CCAA=&TipoDato=Liquidaciones&Ejercicio=2004&TipoPublicacion=Access",
+      "metodo": "HEAD",
+      "status": 200,
+      "bytes": 18209584,
+      "content_type": "application/x-zip-compressed",
+      "last_modified": null,
+      "utc": "2026-11-01T12:31:45+00:00"
+    },
+    {
+      "url": "https://serviciostelematicosext.hacienda.gob.es/SGFAL/CONPREL/Consulta/DescargaFichero?CCAA=&TipoDato=Liquidaciones&Ejercicio=2005&TipoPublicacion=Access",
+      "metodo": "HEAD",
+      "status": 200,
+      "bytes": 17580176,
+      "content_type": "application/x-zip-compressed",
+      "last_modified": null,
+      "utc": "2026-11-01T12:31:46+00:00"
+    },
+    {
+      "url": "https://serviciostelematicosext.hacienda.gob.es/SGFAL/CONPREL/Consulta/DescargaFichero?CCAA=&TipoDato=Liquidaciones&Ejercicio=2006&TipoPublicacion=Access",
+      "metodo": "HEAD",
+      "status": 200,
+      "bytes": 19011420,
+      "content_type": "application/x-zip-compressed",
+      "last_modified": null,
+      "utc": "2026-11-01T12:31:48+00:00"
+    },
+    {
+      "url": "https://serviciostelematicosext.hacienda.gob.es/SGFAL/CONPREL/Consulta/DescargaFichero?CCAA=&TipoDato=Liquidaciones&Ejercicio=2007&TipoPublicacion=Access",
+      "metodo": "HEAD",
+      "status": 200,
+      "bytes": 18849750,
+      "content_type": "application/x-zip-compressed",
+      "last_modified": null,
+      "utc": "2026-11-01T12:31:50+00:00"
+    },
+    {
+      "url": "https://serviciostelematicosext.hacienda.gob.es/SGFAL/CONPREL/Consulta/DescargaFichero?CCAA=&TipoDato=Liquidaciones&Ejercicio=2008&TipoPublicacion=Access",
+      "metodo": "HEAD",
+      "status": 200,
+      "bytes": 19034699,
+      "content_type": "application/x-zip-compressed",
+      "last_modified": null,
+      "utc": "2026-11-01T12:31:51+00:00"
+    },
+    {
+      "url": "https://serviciostelematicosext.hacienda.gob.es/SGFAL/CONPREL/Consulta/DescargaFichero?CCAA=&TipoDato=Liquidaciones&Ejercicio=2009&TipoPublicacion=Access",
+      "metodo": "HEAD",
+      "status": 200,
+      "bytes": 34847270,
+      "content_type": "application/x-zip-compressed",
+      "last_modified": null,
+      "utc": "2026-11-01T12:31:53+00:00"
+    },
+    {
+      "url": "https://serviciostelematicosext.hacienda.gob.es/SGFAL/CONPREL/Consulta/DescargaFichero?CCAA=&TipoDato=Liquidaciones&Ejercicio=2010&TipoPublicacion=Access",
+      "metodo": "HEAD",
+      "status": 200,
+      "bytes": 52337224,
+      "content_type": "application/x-zip-compressed",
+      "last_modified": null,
+      "utc": "2026-11-01T12:31:54+00:00"
+    },
+    {
+      "url": "https://serviciostelematicosext.hacienda.gob.es/SGFAL/CONPREL/Consulta/DescargaFichero?CCAA=&TipoDato=Liquidaciones&Ejercicio=2011&TipoPublicacion=Access",
+      "metodo": "HEAD",
+      "status": 200,
+      "bytes": 51645393,
+      "content_type": "application/x-zip-compressed",
+      "last_modified": null,
+      "utc": "2026-11-01T12:31:56+00:00"
+    },
+    {
+      "url": "https://serviciostelematicosext.hacienda.gob.es/SGFAL/CONPREL/Consulta/DescargaFichero?CCAA=&TipoDato=Liquidaciones&Ejercicio=2012&TipoPublicacion=Access",
+      "metodo": "HEAD",
+      "status": 200,
+      "bytes": 48972672,
+      "content_type": "application/x-zip-compressed",
+      "last_modified": null,
+      "utc": "2026-11-01T12:31:58+00:00"
+    },
+    {
+      "url": "https://serviciostelematicosext.hacienda.gob.es/SGFAL/CONPREL/Consulta/DescargaFichero?CCAA=&TipoDato=Liquidaciones&Ejercicio=2013&TipoPublicacion=Access",
+      "metodo": "HEAD",
+      "status": 200,
+      "bytes": 50448971,
+      "content_type": "application/x-zip-compressed",
+      "last_modified": null,
+      "utc": "2026-11-01T12:32:00+00:00"
+    },
+    {
+      "url": "https://serviciostelematicosext.hacienda.gob.es/SGFAL/CONPREL/Consulta/DescargaFichero?CCAA=&TipoDato=Liquidaciones&Ejercicio=2014&TipoPublicacion=Access",
+      "metodo": "HEAD",
+      "status": 200,
+      "bytes": 52767880,
+      "content_type": "application/x-zip-compressed",
+      "last_modified": null,
+      "utc": "2026-11-01T12:32:01+00:00"
+    },
+    {
+      "url": "https://serviciostelematicosext.hacienda.gob.es/SGFAL/CONPREL/Consulta/DescargaFichero?CCAA=&TipoDato=Liquidaciones&Ejercicio=2015&TipoPublicacion=Access",
+      "metodo": "HEAD",
+      "status": 200,
+      "bytes": 56320399,
+      "content_type": "application/x-zip-compressed",
+      "last_modified": null,
+      "utc": "2026-11-01T12:32:03+00:00"
+    },
+    {
+      "url": "https://serviciostelematicosext.hacienda.gob.es/SGFAL/CONPREL/Consulta/DescargaFichero?CCAA=&TipoDato=Liquidaciones&Ejercicio=2016&TipoPublicacion=Access",
+      "metodo": "HEAD",
+      "status": 200,
+      "bytes": 53545260,
+      "content_type": "application/x-zip-compressed",
+      "last_modified": null,
+      "utc": "2026-11-01T12:32:05+00:00"
+    },
+    {
+      "url": "https://serviciostelematicosext.hacienda.gob.es/SGFAL/CONPREL/Consulta/DescargaFichero?CCAA=&TipoDato=Liquidaciones&Ejercicio=2017&TipoPublicacion=Access",
+      "metodo": "HEAD",
+      "status": 200,
+      "bytes": 55899359,
+      "content_type": "application/x-zip-compressed",
+      "last_modified": null,
+      "utc": "2026-11-01T12:32:07+00:00"
+    },
+    {
+      "url": "https://serviciostelematicosext.hacienda.gob.es/SGFAL/CONPREL/Consulta/DescargaFichero?CCAA=&TipoDato=Liquidaciones&Ejercicio=2018&TipoPublicacion=Access",
+      "metodo": "HEAD",
+      "status": 200,
+      "bytes": 54691161,
+      "content_type": "application/x-zip-compressed",
+      "last_modified": null,
+      "utc": "2026-11-01T12:32:08+00:00"
+    },
+    {
+      "url": "https://serviciostelematicosext.hacienda.gob.es/SGFAL/CONPREL/Consulta/DescargaFichero?CCAA=&TipoDato=Liquidaciones&Ejercicio=2019&TipoPublicacion=Access",
+      "metodo": "HEAD",
+      "status": 200,
+      "bytes": 55320477,
+      "content_type": "application/x-zip-compressed",
+      "last_modified": null,
+      "utc": "2026-11-01T12:32:10+00:00"
+    },
+    {
+      "url": "https://serviciostelematicosext.hacienda.gob.es/SGFAL/CONPREL/Consulta/DescargaFichero?CCAA=&TipoDato=Liquidaciones&Ejercicio=2020&TipoPublicacion=Access",
+      "metodo": "HEAD",
+      "status": 200,
+      "bytes": 55752809,
+      "content_type": "application/x-zip-compressed",
+      "last_modified": null,
+      "utc": "2026-11-01T12:32:12+00:00"
+    },
+    {
+      "url": "https://serviciostelematicosext.hacienda.gob.es/SGFAL/CONPREL/Consulta/DescargaFichero?CCAA=&TipoDato=Liquidaciones&Ejercicio=2021&TipoPublicacion=Access",
+      "metodo": "HEAD",
+      "status": 200,
+      "bytes": 55029434,
+      "content_type": "application/x-zip-compressed",
+      "last_modified": null,
+      "utc": "2026-11-01T12:32:14+00:00"
+    },
+    {
+      "url": "https://serviciostelematicosext.hacienda.gob.es/SGFAL/CONPREL/Consulta/DescargaFichero?CCAA=&TipoDato=Liquidaciones&Ejercicio=2022&TipoPublicacion=Access",
+      "metodo": "HEAD",
+      "status": 200,
+      "bytes": 50415726,
+      "content_type": "application/x-zip-compressed",
+      "last_modified": null,
+      "utc": "2026-11-01T12:32:15+00:00"
+    },
+    {
+      "url": "https://serviciostelematicosext.hacienda.gob.es/SGFAL/CONPREL/Consulta/DescargaFichero?CCAA=&TipoDato=Liquidaciones&Ejercicio=2023&TipoPublicacion=Access",
+      "metodo": "HEAD",
+      "status": 200,
+      "bytes": 54769946,
+      "content_type": "application/x-zip-compressed",
+      "last_modified": null,
+      "utc": "2026-11-01T12:32:17+00:00"
+    },
+    {
+      "url": "https://serviciostelematicosext.hacienda.gob.es/SGFAL/CONPREL/Consulta/DescargaFichero?CCAA=&TipoDato=Liquidaciones&Ejercicio=2024&TipoPublicacion=Access",
+      "metodo": "HEAD",
+      "status": 200,
+      "bytes": 52555360,
+      "content_type": "application/x-zip-compressed",
+      "last_modified": null,
+      "utc": "2026-11-01T12:32:19+00:00"
+    },
+    {
+      "url": "https://serviciostelematicosext.hacienda.gob.es/SGFAL/CONPREL/Consulta/DescargaFichero?CCAA=&TipoDato=Liquidaciones&Ejercicio=2025&TipoPublicacion=Access",
+      "metodo": "HEAD",
+      "status": 200,
+      "bytes": 47509707,
+      "content_type": "application/x-zip-compressed",
+      "last_modified": null,
+      "utc": "2026-11-01T12:32:21+00:00"
+    },
+    {
+      "url": "https://serviciostelematicosext.hacienda.gob.es/SGFAL/CONPREL/Consulta/ExisteFichero",
+      "metodo": "POST",
+      "status": 200,
+      "bytes": 16,
+      "content_type": "application/json; charset=utf-8",
+      "last_modified": null,
+      "utc": "2026-11-01T12:32:22+00:00"
+    },
+    {
+      "url": "https://serviciostelematicosext.hacienda.gob.es/SGFAL/CONPREL/Consulta/DescargaFichero?CCAA=&TipoDato=Liquidaciones&Ejercicio=2003&TipoPublicacion=Access",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 12968286,
+      "content_type": "application/x-zip-compressed",
+      "last_modified": null,
+      "utc": "2026-11-01T12:32:29+00:00"
+    },
+    {
+      "url": "https://serviciostelematicosext.hacienda.gob.es/SGFAL/CONPREL/Consulta/DescargaFichero?CCAA=&TipoDato=Liquidaciones&Ejercicio=2010&TipoPublicacion=Access",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 52337224,
+      "content_type": "application/x-zip-compressed",
+      "last_modified": null,
+      "utc": "2026-11-01T12:32:53+00:00"
+    },
+    {
+      "url": "https://serviciostelematicosext.hacienda.gob.es/SGFAL/CONPREL/Consulta/DescargaFichero?CCAA=&TipoDato=Liquidaciones&Ejercicio=2023&TipoPublicacion=Access",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 54769946,
+      "content_type": "application/x-zip-compressed",
+      "last_modified": null,
+      "utc": "2026-11-01T12:33:24+00:00"
+    },
+    {
+      "url": "https://www.infosubvenciones.es/bdnstrans/api/organos?vpd=GE&idAdmon=A",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 152008,
+      "content_type": "application/json",
+      "last_modified": null,
+      "utc": "2026-11-01T12:33:29+00:00"
+    },
+    {
+      "url": "https://www.infosubvenciones.es/bdnstrans/api/concesiones/busqueda?vpd=GE&page=0&pageSize=5000&organos=2095,2096,2097,2098,2099,4751,4414,2100,4730,2101,2102,2103,4724,2135,6062,2104,2105,2106,4726,4727,2107,4725,2136,2137,2138,2139,2108,2140,2114,2109,2110,2111,4721,2112,7086,4720,7083,2113,7087,7089,4723,2115,7082,2116,7085,2117,7080,6066,2118,7081,2119,2120,2672,2141,6063,2142,2121,2122,2143,2144,2145,4729,2146,2147,2148,2149,2150,2151,2152,2153,2154,2123,2124,2125,2126,2127,2128,4728,2129,2130,2131,1212,2155,2132,2156,2157,2158,2133,6065,2159,2160,2161,2162,2163,2134,4722,6064,2164&fechaDesde=01/03/2024&fechaHasta=31/03/2024",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 1752396,
+      "content_type": "application/json",
+      "last_modified": null,
+      "utc": "2026-11-01T12:33:32+00:00"
+    }
+  ]
+}

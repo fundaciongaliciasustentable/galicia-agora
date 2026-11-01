@@ -1,0 +1,259 @@
+{
+  "descargado_utc": "2026-11-01T12:32:39+00:00",
+  "user_agent": "GaliciaAgora/0.1 (+https://github.com/fundaciongaliciasustentable/galicia-agora; galiciasustentable@galiciasustentable.org)",
+  "chave_usada": false,
+  "resumo": {
+    "rama_data": {
+      "instantaneas": 55,
+      "primeira": "2026-10-24T07:32:57Z",
+      "ultima": "2026-11-01T09:54:25Z",
+      "estacions": 88,
+      "lecturas": 4807,
+      "oco_horas_mediana": 3.5,
+      "oco_horas_max": 7.2,
+      "maior_subida_max_entre_min": [
+        [
+          "Sar - Padrón",
+          14.53,
+          0.35,
+          5.085
+        ],
+        [
+          "Ulla - Padrón",
+          10.64,
+          8.252,
+          87.832
+        ],
+        [
+          "Xallas - Mazaricos",
+          5.95,
+          1.789,
+          10.642
+        ],
+        [
+          "Cee - Cee",
+          4.86,
+          0.051,
+          0.248
+        ],
+        [
+          "Grande - Vimianzo",
+          4.21,
+          0.191,
+          0.805
+        ]
+      ]
+    },
+    "datos10min": {
+      "sen_chave_status": 200,
+      "sen_chave_corpo": " Erro - MeteoGalicia var djConfig = { parseOnLoad: true, isDebug: false, baseUrl: \"/mgafos/resources/js/dojo/1.7.3/dojo/\", extraLocale: ['gl', 'es'] }; var locale = \"gl\" ; dojo.addOnLoad(actualizaObs)"
+    },
+    "chuvia": {
+      "dias": 365,
+      "episodios_3_dias_mm_media": [
+        [
+          "2026-01-26",
+          92.7
+        ],
+        [
+          "2025-11-12",
+          85.0
+        ],
+        [
+          "2025-11-05",
+          76.9
+        ],
+        [
+          "2026-02-05",
+          70.6
+        ],
+        [
+          "2026-02-11",
+          50.4
+        ],
+        [
+          "2026-01-20",
+          46.4
+        ],
+        [
+          "2025-12-20",
+          43.6
+        ],
+        [
+          "2025-12-03",
+          40.3
+        ]
+      ]
+    },
+    "anuario": {
+      "GALICIA COSTA": {
+        "bytes": 11292739,
+        "filas": 424440,
+        "estacions_con_caudal": 51,
+        "primeira_data": "1919-03-08",
+        "ultima_data": "2022-09-30",
+        "estacions_ata_2022": 41,
+        "dias_maior_caudal_suma_2021-22": [
+          [
+            "2021-12-07",
+            978.67
+          ],
+          [
+            "2021-12-08",
+            873.9299999999998
+          ],
+          [
+            "2021-12-10",
+            770.56
+          ],
+          [
+            "2021-12-28",
+            738.33
+          ],
+          [
+            "2021-12-09",
+            710.1699999999998
+          ]
+        ]
+      },
+      "MIÑO-SIL": {
+        "bytes": 19475789,
+        "filas": 738893,
+        "estacions_con_caudal": 85,
+        "primeira_data": "1912-05-02",
+        "ultima_data": "2022-09-30",
+        "estacions_ata_2022": 54
+      }
+    },
+    "licenza_miteco": "Esta información se puede usar de modo libre y gratuito siempre que se mencione al Ministerio para la Transición Ecológica y el Reto Demográfico como autor y propietario de la información de la siguiente manera: Fuente: «© Ministerio para la Transición Ecológica y el Reto Demográfico»",
+    "aviso_legal_cedex": "Todos los contenidos del sitio web, como textos, fotografías, gráficos, imágenes, iconos, tecnología, software, así como su diseño gráfico y códigos fuente, constituyen una obra cuya propiedad pertenece al Centro de Estudios Hidrográficos del CEDEX, sin que puedan entenderse cedidos al usuario ninguno de los derechos de explotación sobre los mismos más allá de lo estrictamente necesario para el correcto uso de la web."
+  },
+  "peticions": [
+    {
+      "url": "https://servizos.meteogalicia.gal/mgafos/json/datos10min.action?dataIni=05%2F10%2F2026+00%3A00&dataFin=05%2F10%2F2026+01%3A00",
+      "status": 200,
+      "bytes": 22285,
+      "last_modified": null,
+      "utc": "2026-11-01T12:31:24+00:00"
+    },
+    {
+      "url": "https://servizos.meteogalicia.gal/mgrss/observacion/datosDiariosEstacionsMeteo.action?dataIni=2025-11-01&dataFin=2025-11-30&idParam=PP_SUM_1.5m",
+      "status": 200,
+      "bytes": 1295244,
+      "last_modified": null,
+      "utc": "2026-11-01T12:31:27+00:00"
+    },
+    {
+      "url": "https://servizos.meteogalicia.gal/mgrss/observacion/datosDiariosEstacionsMeteo.action?dataIni=2025-12-01&dataFin=2025-12-31&idParam=PP_SUM_1.5m",
+      "status": 200,
+      "bytes": 1338110,
+      "last_modified": null,
+      "utc": "2026-11-01T12:31:29+00:00"
+    },
+    {
+      "url": "https://servizos.meteogalicia.gal/mgrss/observacion/datosDiariosEstacionsMeteo.action?dataIni=2026-01-01&dataFin=2026-01-31&idParam=PP_SUM_1.5m",
+      "status": 200,
+      "bytes": 1338495,
+      "last_modified": null,
+      "utc": "2026-11-01T12:31:32+00:00"
+    },
+    {
+      "url": "https://servizos.meteogalicia.gal/mgrss/observacion/datosDiariosEstacionsMeteo.action?dataIni=2026-02-01&dataFin=2026-02-28&idParam=PP_SUM_1.5m",
+      "status": 200,
+      "bytes": 1216621,
+      "last_modified": null,
+      "utc": "2026-11-01T12:31:35+00:00"
+    },
+    {
+      "url": "https://servizos.meteogalicia.gal/mgrss/observacion/datosDiariosEstacionsMeteo.action?dataIni=2026-03-01&dataFin=2026-03-31&idParam=PP_SUM_1.5m",
+      "status": 200,
+      "bytes": 1345111,
+      "last_modified": null,
+      "utc": "2026-11-01T12:31:38+00:00"
+    },
+    {
+      "url": "https://servizos.meteogalicia.gal/mgrss/observacion/datosDiariosEstacionsMeteo.action?dataIni=2026-04-01&dataFin=2026-04-30&idParam=PP_SUM_1.5m",
+      "status": 200,
+      "bytes": 1301758,
+      "last_modified": null,
+      "utc": "2026-11-01T12:31:41+00:00"
+    },
+    {
+      "url": "https://servizos.meteogalicia.gal/mgrss/observacion/datosDiariosEstacionsMeteo.action?dataIni=2026-05-01&dataFin=2026-05-31&idParam=PP_SUM_1.5m",
+      "status": 200,
+      "bytes": 1345525,
+      "last_modified": null,
+      "utc": "2026-11-01T12:31:43+00:00"
+    },
+    {
+      "url": "https://servizos.meteogalicia.gal/mgrss/observacion/datosDiariosEstacionsMeteo.action?dataIni=2026-06-01&dataFin=2026-06-30&idParam=PP_SUM_1.5m",
+      "status": 200,
+      "bytes": 1301721,
+      "last_modified": null,
+      "utc": "2026-11-01T12:31:46+00:00"
+    },
+    {
+      "url": "https://servizos.meteogalicia.gal/mgrss/observacion/datosDiariosEstacionsMeteo.action?dataIni=2026-07-01&dataFin=2026-07-31&idParam=PP_SUM_1.5m",
+      "status": 200,
+      "bytes": 1344964,
+      "last_modified": null,
+      "utc": "2026-11-01T12:31:49+00:00"
+    },
+    {
+      "url": "https://servizos.meteogalicia.gal/mgrss/observacion/datosDiariosEstacionsMeteo.action?dataIni=2026-08-01&dataFin=2026-08-31&idParam=PP_SUM_1.5m",
+      "status": 200,
+      "bytes": 1345381,
+      "last_modified": null,
+      "utc": "2026-11-01T12:31:51+00:00"
+    },
+    {
+      "url": "https://servizos.meteogalicia.gal/mgrss/observacion/datosDiariosEstacionsMeteo.action?dataIni=2026-09-01&dataFin=2026-09-30&idParam=PP_SUM_1.5m",
+      "status": 200,
+      "bytes": 1301805,
+      "last_modified": null,
+      "utc": "2026-11-01T12:31:54+00:00"
+    },
+    {
+      "url": "https://servizos.meteogalicia.gal/mgrss/observacion/datosDiariosEstacionsMeteo.action?dataIni=2026-10-01&dataFin=2026-10-31&idParam=PP_SUM_1.5m",
+      "status": 200,
+      "bytes": 1345107,
+      "last_modified": null,
+      "utc": "2026-11-01T12:31:57+00:00"
+    },
+    {
+      "url": "https://ceh.cedex.es/anuarioaforos/anuario-2021-2022/GALICIA%20COSTA/afliq.csv",
+      "status": 200,
+      "bytes": 11292739,
+      "last_modified": "Thu, 11 Dec 2025 08:57:45 GMT",
+      "utc": "2026-11-01T12:32:17+00:00"
+    },
+    {
+      "url": "https://ceh.cedex.es/anuarioaforos/anuario-2021-2022/GALICIA%20COSTA/estaf.csv",
+      "status": 200,
+      "bytes": 10125,
+      "last_modified": "Thu, 11 Dec 2025 08:57:50 GMT",
+      "utc": "2026-11-01T12:32:19+00:00"
+    },
+    {
+      "url": "https://ceh.cedex.es/anuarioaforos/anuario-2021-2022/MI%C3%91O-SIL/afliq.csv",
+      "status": 200,
+      "bytes": 19475789,
+      "last_modified": "Thu, 11 Dec 2025 09:02:41 GMT",
+      "utc": "2026-11-01T12:32:34+00:00"
+    },
+    {
+      "url": "https://www.miteco.gob.es/es/cartografia-y-sig/ide/descargas/agua/anuario-de-aforos.html",
+      "status": 200,
+      "bytes": 67621,
+      "last_modified": null,
+      "utc": "2026-11-01T12:32:36+00:00"
+    },
+    {
+      "url": "https://ceh.cedex.es/web/aviso_legal.htm",
+      "status": 200,
+      "bytes": 15474,
+      "last_modified": "Wed, 07 May 2025 13:15:02 GMT",
+      "utc": "2026-11-01T12:32:38+00:00"
+    }
+  ]
+}

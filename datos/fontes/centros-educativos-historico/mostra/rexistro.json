@@ -1,0 +1,663 @@
+{
+  "descargado_utc": "2026-11-01T12:59:46+00:00",
+  "user_agent": "GaliciaAgora/0.1 (+https://github.com/fundaciongaliciasustentable/galicia-agora; galiciasustentable@galiciasustentable.org)",
+  "resumo": {
+    "ige1653": {
+      "taboa": "1653",
+      "dimension": "Ensinanzas",
+      "anos": "2005–2025",
+      "n_anos": 21,
+      "ensinanzas": [
+        "Adultos",
+        "ESO e / ou postobrigatorias",
+        "Educación especial",
+        "Educación infantil",
+        "Educación infantil e primaria",
+        "Educación primaria e ESO",
+        "Educación primaria, ESO e postobrigatorias",
+        "Total"
+      ],
+      "filas_api": 54096,
+      "concellos_harmonizados": 313,
+      "galicia_total_por_ano": {
+        "2005": 1654,
+        "2006": 1617,
+        "2007": 1563,
+        "2008": 1547,
+        "2009": 1517,
+        "2010": 1494,
+        "2011": 1474,
+        "2012": 1460,
+        "2013": 1444,
+        "2014": 1421,
+        "2015": 1416,
+        "2016": 1397,
+        "2017": 1386,
+        "2018": 1376,
+        "2019": 1375,
+        "2020": 1368,
+        "2021": 1365,
+        "2022": 1361,
+        "2023": 1358,
+        "2024": 1352,
+        "2025": 1344
+      },
+      "galicia_por_ensinanza": {
+        "Adultos": {
+          "2005": 9,
+          "2015": 2,
+          "2025": 10
+        },
+        "ESO e / ou postobrigatorias": {
+          "2005": 349,
+          "2015": 351,
+          "2025": 378
+        },
+        "Educación especial": {
+          "2005": 36,
+          "2015": 34,
+          "2025": 1
+        },
+        "Educación infantil": {
+          "2005": 282,
+          "2015": 154,
+          "2025": 92
+        },
+        "Educación infantil e primaria": {
+          "2005": 720,
+          "2015": 638,
+          "2025": 601
+        },
+        "Educación primaria e ESO": {
+          "2005": 186,
+          "2015": 169,
+          "2025": 152
+        },
+        "Educación primaria, ESO e postobrigatorias": {
+          "2005": 72,
+          "2015": 68,
+          "2025": 110
+        },
+        "Total": {
+          "2005": 1654,
+          "2015": 1416,
+          "2025": 1344
+        }
+      },
+      "concellos_con_0_centros": {
+        "2005": 12,
+        "2006": 13,
+        "2007": 13,
+        "2008": 13,
+        "2009": 15,
+        "2010": 17,
+        "2011": 17,
+        "2012": 17,
+        "2013": 20,
+        "2014": 21,
+        "2015": 22,
+        "2016": 25,
+        "2017": 25,
+        "2018": 25,
+        "2019": 26,
+        "2020": 25,
+        "2021": 25,
+        "2022": 25,
+        "2023": 25,
+        "2024": 25,
+        "2025": 27
+      },
+      "celas_baleiras_orixinais": 63,
+      "concellos_que_perden": 143,
+      "concellos_que_gañan": 11,
+      "concellos_iguais": 159,
+      "maiores_perdas": [
+        [
+          "Coruña, A",
+          93,
+          83
+        ],
+        [
+          "Padrón",
+          13,
+          4
+        ],
+        [
+          "Pontevedra",
+          52,
+          43
+        ],
+        [
+          "Vigo",
+          143,
+          134
+        ],
+        [
+          "Poio",
+          17,
+          9
+        ],
+        [
+          "Boiro",
+          17,
+          10
+        ],
+        [
+          "Carballo",
+          19,
+          12
+        ],
+        [
+          "Ordes",
+          12,
+          5
+        ],
+        [
+          "Ourense",
+          57,
+          50
+        ],
+        [
+          "Vilagarcía de Arousa",
+          25,
+          18
+        ]
+      ]
+    },
+    "ige_aviso_legal": "Debe citarse a fonte dos documentos obxecto da reutilización. Esta cita poderá realizarse do seguinte xeito: “Fonte: IGE: https://www.ige.gal",
+    "abertos_0257_licenza": "Creative Commons BY SA 4.0",
+    "xunta_0257": {
+      "centros": 1624,
+      "columnas": [
+        "Código",
+        "Nome",
+        "Enderezo",
+        "Concello",
+        "Provincia",
+        "Cód. postal",
+        "Teléfono",
+        "Tipo de centro",
+        "COORDENADA_X",
+        "COORDENADA_Y",
+        "TITULARIDADE",
+        "ENSINO_CONCERTADO",
+        "DEPENDENTE"
+      ],
+      "columnas_con_data": [],
+      "tipos": [
+        [
+          "CEIP",
+          558
+        ],
+        [
+          "CPR",
+          280
+        ],
+        [
+          "IES",
+          247
+        ],
+        [
+          "EEI",
+          70
+        ],
+        [
+          "ESMU",
+          69
+        ],
+        [
+          "CPI",
+          64
+        ],
+        [
+          "EMUSPR",
+          56
+        ],
+        [
+          "CMUS",
+          36
+        ],
+        [
+          "CIFP",
+          31
+        ],
+        [
+          "CRA",
+          26
+        ],
+        [
+          "CEMU",
+          25
+        ],
+        [
+          "CEEPR",
+          22
+        ],
+        [
+          "CEP",
+          21
+        ],
+        [
+          "CAD",
+          19
+        ],
+        [
+          "CEE",
+          14
+        ],
+        [
+          "EOI",
+          11
+        ],
+        [
+          "EPAPU",
+          11
+        ],
+        [
+          "CPREX",
+          10
+        ],
+        [
+          "EDANPR",
+          9
+        ],
+        [
+          "CFEA",
+          6
+        ],
+        [
+          "CEDA",
+          6
+        ],
+        [
+          "Cen. Pub.",
+          5
+        ],
+        [
+          "CE.ART",
+          5
+        ],
+        [
+          "EASD",
+          4
+        ],
+        [
+          "EFAG",
+          3
+        ],
+        [
+          "ESCO",
+          3
+        ],
+        [
+          "CDAN",
+          2
+        ],
+        [
+          "ESDA",
+          2
+        ],
+        [
+          "CADF",
+          2
+        ],
+        [
+          "EFOG",
+          2
+        ],
+        [
+          "INSTITUTO",
+          1
+        ],
+        [
+          "ES",
+          1
+        ],
+        [
+          "IGAFA",
+          1
+        ],
+        [
+          "ESAD",
+          1
+        ],
+        [
+          "CADFS",
+          1
+        ]
+      ]
+    },
+    "rcd": {
+      "formato": "application/vnd.ms-excel;charset=UTF-8",
+      "bytes": 421888,
+      "centros": 1658,
+      "tamen_na_xunta": 1613,
+      "so_rcd": 45,
+      "so_xunta": 11,
+      "cabeceira_aprox": [
+        "COMUNIDAD AUTÓNOMA",
+        "PROVINCIA",
+        "LOCALIDAD",
+        "DENOMINACIÓN GENÉRICA",
+        "DENOMINACIÓN ESPECÍFICA",
+        "CÓDIGO",
+        "NATURALEZA",
+        "DOMICILIO",
+        "CÓD POSTAL",
+        "TELÉFONO"
+      ]
+    },
+    "cra": {
+      "cra": 26,
+      "lugares_docencia": 165
+    }
+  },
+  "peticions": [
+    {
+      "url": "https://www.ige.gal/igebdt/igeapi/csv/datos/1653",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 3693991,
+      "content_type": "text/plain;charset=ISO-8859-1",
+      "last_modified": null,
+      "utc": "2026-11-01T12:46:34+00:00"
+    },
+    {
+      "url": "https://www.ige.gal/web/avisolegal.jsp",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 32377,
+      "content_type": "text/html;charset=UTF-8",
+      "last_modified": null,
+      "utc": "2026-11-01T12:46:35+00:00"
+    },
+    {
+      "url": "https://abertos.xunta.gal/catalogo/ensino-formacion/-/dataset/0257/centros-educativos-galicia",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 197175,
+      "content_type": "text/html; charset=UTF-8",
+      "last_modified": null,
+      "utc": "2026-11-01T12:46:37+00:00"
+    },
+    {
+      "url": "https://abertos.xunta.gal/catalogo/ensino-formacion/-/dataset/0257/centros-educativos-galicia/001/descarga-directa-ficheiro.csv",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 87584,
+      "content_type": "text/csv;charset=UTF-8",
+      "last_modified": null,
+      "utc": "2026-11-01T12:46:59+00:00"
+    },
+    {
+      "url": "https://abertos.xunta.gal/catalogo/ensino-formacion/-/dataset/0257/centros-educativos-galicia/003/descarga-directa-ficheiro.csv",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 31105,
+      "content_type": "text/csv;charset=UTF-8",
+      "last_modified": null,
+      "utc": "2026-11-01T12:47:23+00:00"
+    },
+    {
+      "url": "https://abertos.xunta.gal/catalogo/ensino-formacion/-/dataset/0257/centros-educativos-galicia/005/descarga-directa-ficheiro.csv",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 28087,
+      "content_type": "text/csv;charset=UTF-8",
+      "last_modified": null,
+      "utc": "2026-11-01T12:53:15+00:00"
+    },
+    {
+      "url": "https://abertos.xunta.gal/catalogo/ensino-formacion/-/dataset/0257/centros-educativos-galicia/007/descarga-directa-ficheiro.csv",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 90154,
+      "content_type": "text/csv;charset=UTF-8",
+      "last_modified": null,
+      "utc": "2026-11-01T12:53:45+00:00"
+    },
+    {
+      "url": "https://www.educacion.gob.es/centros/exportarListadoCentrosExcel",
+      "metodo": "POST",
+      "status": 200,
+      "bytes": 421888,
+      "content_type": "application/vnd.ms-excel;charset=UTF-8",
+      "last_modified": null,
+      "utc": "2026-11-01T12:53:50+00:00"
+    },
+    {
+      "url": "https://www.edu.xunta.gal/centroseducativos/CargarLugaresDocencia.do?codigo=15026111",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 16617,
+      "content_type": "text/html;charset=UTF-8",
+      "last_modified": null,
+      "utc": "2026-11-01T12:54:18+00:00"
+    },
+    {
+      "url": "https://www.edu.xunta.gal/centroseducativos/CargarLugaresDocencia.do?codigo=15026169",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 17446,
+      "content_type": "text/html;charset=UTF-8",
+      "last_modified": null,
+      "utc": "2026-11-01T12:54:46+00:00"
+    },
+    {
+      "url": "https://www.edu.xunta.gal/centroseducativos/CargarLugaresDocencia.do?codigo=15026509",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 16560,
+      "content_type": "text/html;charset=UTF-8",
+      "last_modified": null,
+      "utc": "2026-11-01T12:55:07+00:00"
+    },
+    {
+      "url": "https://www.edu.xunta.gal/centroseducativos/CargarLugaresDocencia.do?codigo=15027551",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 17507,
+      "content_type": "text/html;charset=UTF-8",
+      "last_modified": null,
+      "utc": "2026-11-01T12:55:37+00:00"
+    },
+    {
+      "url": "https://www.edu.xunta.gal/centroseducativos/CargarLugaresDocencia.do?codigo=15027848",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 17084,
+      "content_type": "text/html;charset=UTF-8",
+      "last_modified": null,
+      "utc": "2026-11-01T12:55:59+00:00"
+    },
+    {
+      "url": "https://www.edu.xunta.gal/centroseducativos/CargarLugaresDocencia.do?codigo=15032251",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 18524,
+      "content_type": "text/html;charset=UTF-8",
+      "last_modified": null,
+      "utc": "2026-11-01T12:56:16+00:00"
+    },
+    {
+      "url": "https://www.edu.xunta.gal/centroseducativos/CargarLugaresDocencia.do?codigo=15032480",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 17092,
+      "content_type": "text/html;charset=UTF-8",
+      "last_modified": null,
+      "utc": "2026-11-01T12:56:30+00:00"
+    },
+    {
+      "url": "https://www.edu.xunta.gal/centroseducativos/CargarLugaresDocencia.do?codigo=15032492",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 18984,
+      "content_type": "text/html;charset=UTF-8",
+      "last_modified": null,
+      "utc": "2026-11-01T12:56:58+00:00"
+    },
+    {
+      "url": "https://www.edu.xunta.gal/centroseducativos/CargarLugaresDocencia.do?codigo=15032509",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 17041,
+      "content_type": "text/html;charset=UTF-8",
+      "last_modified": null,
+      "utc": "2026-11-01T12:57:21+00:00"
+    },
+    {
+      "url": "https://www.edu.xunta.gal/centroseducativos/CargarLugaresDocencia.do?codigo=15032561",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 17527,
+      "content_type": "text/html;charset=UTF-8",
+      "last_modified": null,
+      "utc": "2026-11-01T12:57:42+00:00"
+    },
+    {
+      "url": "https://www.edu.xunta.gal/centroseducativos/CargarLugaresDocencia.do?codigo=15032571",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 18094,
+      "content_type": "text/html;charset=UTF-8",
+      "last_modified": null,
+      "utc": "2026-11-01T12:58:09+00:00"
+    },
+    {
+      "url": "https://www.edu.xunta.gal/centroseducativos/CargarLugaresDocencia.do?codigo=15033198",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 18918,
+      "content_type": "text/html;charset=UTF-8",
+      "last_modified": null,
+      "utc": "2026-11-01T12:58:18+00:00"
+    },
+    {
+      "url": "https://www.edu.xunta.gal/centroseducativos/CargarLugaresDocencia.do?codigo=32020628",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 16663,
+      "content_type": "text/html;charset=UTF-8",
+      "last_modified": null,
+      "utc": "2026-11-01T12:58:39+00:00"
+    },
+    {
+      "url": "https://www.edu.xunta.gal/centroseducativos/CargarLugaresDocencia.do?codigo=32020801",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 16585,
+      "content_type": "text/html;charset=UTF-8",
+      "last_modified": null,
+      "utc": "2026-11-01T12:58:49+00:00"
+    },
+    {
+      "url": "https://www.edu.xunta.gal/centroseducativos/CargarLugaresDocencia.do?codigo=36018987",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 17469,
+      "content_type": "text/html;charset=UTF-8",
+      "last_modified": null,
+      "utc": "2026-11-01T12:58:51+00:00"
+    },
+    {
+      "url": "https://www.edu.xunta.gal/centroseducativos/CargarLugaresDocencia.do?codigo=36024045",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 20437,
+      "content_type": "text/html;charset=UTF-8",
+      "last_modified": null,
+      "utc": "2026-11-01T12:59:01+00:00"
+    },
+    {
+      "url": "https://www.edu.xunta.gal/centroseducativos/CargarLugaresDocencia.do?codigo=36024069",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 17955,
+      "content_type": "text/html;charset=UTF-8",
+      "last_modified": null,
+      "utc": "2026-11-01T12:59:08+00:00"
+    },
+    {
+      "url": "https://www.edu.xunta.gal/centroseducativos/CargarLugaresDocencia.do?codigo=36024070",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 18604,
+      "content_type": "text/html;charset=UTF-8",
+      "last_modified": null,
+      "utc": "2026-11-01T12:59:09+00:00"
+    },
+    {
+      "url": "https://www.edu.xunta.gal/centroseducativos/CargarLugaresDocencia.do?codigo=36024112",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 17073,
+      "content_type": "text/html;charset=UTF-8",
+      "last_modified": null,
+      "utc": "2026-11-01T12:59:16+00:00"
+    },
+    {
+      "url": "https://www.edu.xunta.gal/centroseducativos/CargarLugaresDocencia.do?codigo=36024161",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 18007,
+      "content_type": "text/html;charset=UTF-8",
+      "last_modified": null,
+      "utc": "2026-11-01T12:59:24+00:00"
+    },
+    {
+      "url": "https://www.edu.xunta.gal/centroseducativos/CargarLugaresDocencia.do?codigo=36024173",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 18064,
+      "content_type": "text/html;charset=UTF-8",
+      "last_modified": null,
+      "utc": "2026-11-01T12:59:25+00:00"
+    },
+    {
+      "url": "https://www.edu.xunta.gal/centroseducativos/CargarLugaresDocencia.do?codigo=36024318",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 18835,
+      "content_type": "text/html;charset=UTF-8",
+      "last_modified": null,
+      "utc": "2026-11-01T12:59:31+00:00"
+    },
+    {
+      "url": "https://www.edu.xunta.gal/centroseducativos/CargarLugaresDocencia.do?codigo=36024495",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 17655,
+      "content_type": "text/html;charset=UTF-8",
+      "last_modified": null,
+      "utc": "2026-11-01T12:59:33+00:00"
+    },
+    {
+      "url": "https://www.edu.xunta.gal/centroseducativos/CargarLugaresDocencia.do?codigo=36024604",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 18221,
+      "content_type": "text/html;charset=UTF-8",
+      "last_modified": null,
+      "utc": "2026-11-01T12:59:42+00:00"
+    },
+    {
+      "url": "https://www.edu.xunta.gal/centroseducativos/CargarLugaresDocencia.do?codigo=36024616",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 17032,
+      "content_type": "text/html;charset=UTF-8",
+      "last_modified": null,
+      "utc": "2026-11-01T12:59:44+00:00"
+    },
+    {
+      "url": "https://www.edu.xunta.gal/centroseducativos/CargarLugaresDocencia.do?codigo=36024938",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 17103,
+      "content_type": "text/html;charset=UTF-8",
+      "last_modified": null,
+      "utc": "2026-11-01T12:59:45+00:00"
+    }
+  ]
+}

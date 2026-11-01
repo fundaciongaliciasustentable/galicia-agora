@@ -1,0 +1,342 @@
+[
+  {
+    "fonte": "INE EOH",
+    "taboa": "2078",
+    "descricion": "puntos: viaxeiros e noites",
+    "url": "https://www.ine.es/jaxiT3/files/t/es/csv_bdsc/2078.csv",
+    "descargado_utc": "2026-11-01T12:19:47+00:00",
+    "bytes_espana": 9825725,
+    "cabeceira": [
+      "Puntos turísticos",
+      "Viajeros y pernoctaciones",
+      "Residencia",
+      "Periodo",
+      "Total"
+    ],
+    "filas_galicia": 10440,
+    "periodo": "2005M01–2026M09",
+    "valores": {
+      "número": 8354,
+      ".": 650,
+      "": 1232,
+      "..": 204
+    },
+    "unidades": {
+      "15030 Coruña, A": "2005M01–2026M09 (259 períodos con dato)",
+      "15078 Santiago de Compostela": "2005M01–2026M09 (259 períodos con dato)",
+      "27028 Lugo": "2005M01–2026M09 (247 períodos con dato)",
+      "27051 Ribadeo": "2005M01–2026M09 (234 períodos con dato)",
+      "27066 Viveiro": "2005M02–2026M09 (138 períodos con dato)",
+      "32054 Ourense": "2005M01–2026M09 (247 períodos con dato)",
+      "36022 Grove, O": "2005M03–2026M09 (201 períodos con dato)",
+      "36038 Pontevedra": "2024M01–2026M09 (33 períodos con dato)",
+      "36051 Sanxenxo": "2005M01–2026M09 (212 períodos con dato)",
+      "36057 Vigo": "2005M01–2026M09 (259 períodos con dato)"
+    }
+  },
+  {
+    "fonte": "INE EOH",
+    "taboa": "2076",
+    "descricion": "puntos: establecementos, prazas, grao de ocupación e persoal",
+    "url": "https://www.ine.es/jaxiT3/files/t/es/csv_bdsc/2076.csv",
+    "descargado_utc": "2026-11-01T12:19:52+00:00",
+    "bytes_espana": 16486019,
+    "cabeceira": [
+      "Puntos turísticos",
+      "Establecimientos y personal empleado (plazas)",
+      "Periodo",
+      "Total"
+    ],
+    "filas_galicia": 18270,
+    "periodo": "2005M01–2026M09",
+    "valores": {
+      "número": 13677,
+      ".": 1138,
+      "": 3139,
+      "..": 316
+    },
+    "unidades": {
+      "15030 Coruña, A": "2005M01–2026M09 (259 períodos con dato)",
+      "15078 Santiago de Compostela": "2005M01–2026M09 (259 períodos con dato)",
+      "27028 Lugo": "2005M01–2026M09 (247 períodos con dato)",
+      "27051 Ribadeo": "2005M01–2026M09 (234 períodos con dato)",
+      "27066 Viveiro": "2005M01–2026M09 (137 períodos con dato)",
+      "32054 Ourense": "2005M01–2026M09 (247 períodos con dato)",
+      "36022 Grove, O": "2005M03–2026M09 (201 períodos con dato)",
+      "36038 Pontevedra": "2024M01–2026M09 (33 períodos con dato)",
+      "36051 Sanxenxo": "2005M01–2026M09 (212 períodos con dato)",
+      "36057 Vigo": "2005M01–2026M09 (259 períodos con dato)"
+    }
+  },
+  {
+    "fonte": "INE EOH",
+    "taboa": "2039",
+    "descricion": "zonas: viaxeiros e noites",
+    "url": "https://www.ine.es/jaxiT3/files/t/es/csv_bdsc/2039.csv",
+    "descargado_utc": "2026-11-01T12:19:56+00:00",
+    "bytes_espana": 5284101,
+    "cabeceira": [
+      "Zonas Turísticas",
+      "Viajeros y pernoctaciones",
+      "Residencia",
+      "Periodo",
+      "Total"
+    ],
+    "filas_galicia": 5328,
+    "periodo": "1999M01–2026M09",
+    "valores": {
+      "número": 5296,
+      ".": 28,
+      "": 4
+    },
+    "unidades": {
+      "Galicia: Costa A Mariña Lucense (Lugo)": "1999M01–2026M09 (331 períodos con dato)",
+      "Galicia: Costa Da Morte (A Coruña)": "1999M01–2026M09 (331 períodos con dato)",
+      "Galicia: Rías Altas (A Coruña)": "1999M01–2026M09 (331 períodos con dato)",
+      "Galicia: Rías Baixas (Pontevedra  y  A Coruña)": "1999M01–2026M09 (331 períodos con dato)"
+    }
+  },
+  {
+    "fonte": "INE EOH",
+    "taboa": "2013",
+    "descricion": "zonas: establecementos, prazas, grao de ocupación e persoal",
+    "url": "https://www.ine.es/jaxiT3/files/t/es/csv_bdsc/2013.csv",
+    "descargado_utc": "2026-11-01T12:19:59+00:00",
+    "bytes_espana": 8888537,
+    "cabeceira": [
+      "Zonas Turísticas",
+      "Establecimientos y personal empleado (plazas)",
+      "Periodo",
+      "Total"
+    ],
+    "filas_galicia": 9324,
+    "periodo": "1999M01–2026M09",
+    "valores": {
+      "número": 8212,
+      ".": 56,
+      "": 1056
+    },
+    "unidades": {
+      "Galicia: Costa A Mariña Lucense (Lugo)": "1999M01–2026M09 (331 períodos con dato)",
+      "Galicia: Costa Da Morte (A Coruña)": "1999M01–2026M09 (331 períodos con dato)",
+      "Galicia: Rías Altas (A Coruña)": "1999M01–2026M09 (331 períodos con dato)",
+      "Galicia: Rías Baixas (Pontevedra  y  A Coruña)": "1999M01–2026M09 (331 períodos con dato)"
+    }
+  },
+  {
+    "fonte": "Turismo de Galicia",
+    "url": "https://descargascdn.xunta.gal/interno/smarxa/EOH_Puntos.csv",
+    "descargado_utc": "2026-11-01T12:20:00+00:00",
+    "bytes": 1848924,
+    "last_modified": "Fri, 23 Oct 2026 09:36:50 GMT",
+    "filas": 21252,
+    "cabeceira": [
+      "ANO",
+      "MES",
+      "VARIABLE",
+      "PUNTO",
+      "RESIDENCIA",
+      "ENQUISA",
+      "TIPO",
+      "VALOR"
+    ],
+    "periodo": "2015-01–2026-09",
+    "unidades": [
+      "Coruña, A",
+      "Ferrol",
+      "Grove, O",
+      "Lugo",
+      "Ourense",
+      "Pontevedra",
+      "Ribadeo",
+      "Santiago de Compostela",
+      "Sanxenxo",
+      "Vigo",
+      "Viveiro"
+    ],
+    "variables": [
+      "Estadía media",
+      "Grao de ocupación na fin de semana",
+      "Grao de ocupación por habitacións",
+      "Grao de ocupación por prazas",
+      "Noites",
+      "Número de establecementos abertos estimados",
+      "Número de habitacións estimadas",
+      "Número de prazas estimadas",
+      "Persoal empregado",
+      "Viaxeiros"
+    ],
+    "tipo": {
+      "Definitivo": 19866,
+      "Provisional": 1386
+    },
+    "baleiros": 201,
+    "saida": "turismogalicia_eoh_puntos_desde2024.csv"
+  },
+  {
+    "fonte": "Turismo de Galicia",
+    "url": "https://descargascdn.xunta.gal/interno/smarxa/EOH_Xeodestinos.csv",
+    "descargado_utc": "2026-11-01T12:20:02+00:00",
+    "bytes": 3005805,
+    "last_modified": "Fri, 23 Oct 2026 09:34:53 GMT",
+    "filas": 31850,
+    "cabeceira": [
+      "ANO",
+      "MES",
+      "VARIABLE",
+      "XEODESTINO",
+      "RESIDENCIA",
+      "ENQUISA",
+      "TIPO",
+      "VALOR"
+    ],
+    "periodo": "2012-01–2026-09",
+    "unidades": [
+      "A Coruña-As Mariñas",
+      "Costa da Morte",
+      "Ferrolterra",
+      "Lugo Central",
+      "Manzaneda-Trevinca",
+      "Mariña Lucense",
+      "Ourense",
+      "Ribeira Sacra",
+      "Ría de Arousa",
+      "Ría de Vigo e Baixo Miño",
+      "Rías Altas",
+      "Rías Baixas",
+      "Terras de Ourense e Allariz",
+      "Terras de Santiago-Deza"
+    ],
+    "variables": [
+      "Estadía media",
+      "Grao de ocupación por habitacións",
+      "Grao de ocupación por prazas",
+      "Noites",
+      "Número de establecementos abertos estimados",
+      "Número de habitacións estimadas",
+      "Número de prazas estimadas",
+      "Persoal empregado",
+      "Viaxeiros"
+    ],
+    "tipo": {
+      "Definitivo": 30212,
+      "Provisional": 1638
+    },
+    "baleiros": 0,
+    "saida": "turismogalicia_eoh_xeodestinos_desde2024.csv"
+  },
+  {
+    "fonte": "Turismo de Galicia",
+    "url": "https://descargascdn.xunta.gal/interno/smarxa/ConcellosGalicia_UTF8.csv",
+    "descargado_utc": "2026-11-01T12:20:03+00:00",
+    "bytes": 35737,
+    "last_modified": "Wed, 03 Jun 2026 13:59:17 GMT",
+    "filas": 313,
+    "cabeceira": [
+      "CodigoConcello",
+      "NomeConcello",
+      "CodigoProvincia",
+      "Provincia",
+      "CodigoAreaTuristica",
+      "NomeAreaTuristica",
+      "CodigoSubAreaTuristica",
+      "NomeSubAreaTuristica",
+      "CodigoXeodestino",
+      "NomeXeodestino",
+      "Concello polo que transcorre algún itinerario do Camiño de Santiago",
+      "Camiño de Santiago: Fisterra",
+      "Camiño de Santiago: Francés",
+      "Camiño de Santiago: Inglés",
+      "Camiño de Santiago: Norte",
+      "Camiño de Santiago: Portugués",
+      "Camiño de Santiago: Primitivo",
+      "Camiño de Santiago: Mozárabe-Vía da Prata",
+      "Camiño de Santiago: Inverno",
+      "Camiño de Santiago: Portugués pola costa"
+    ],
+    "saida": "turismogalicia_concellos_areas.csv"
+  },
+  {
+    "fonte": "INE turismo móbiles",
+    "taboa": "53464",
+    "filtro": "96:16473",
+    "chamadas": 13,
+    "url_exemplo": "https://servicios.ine.es/wstempus/js/ES/DATOS_TABLA/53464?tv=19:8537&tv=19:8538&tv=19:8539&tv=19:8557&tv=19:8558&tv=19:8559&tv=19:8560&tv=19:8561&tv=19:8562&tv=19:8563&tv=19:8564&tv=19:292661&tv=19:311422&tv=96:16473",
+    "descargado_utc": "2026-11-01T12:20:35+00:00",
+    "concellos_na_dimension": 313,
+    "periodo": "2019-07–2026-08",
+    "meses": 86,
+    "valores_secreto": 14,
+    "valores_nulos": 14,
+    "concellos_con_dato_por_mes_min_max": [
+      302,
+      313
+    ],
+    "concellos_con_dato": {
+      "2025-07": 312,
+      "2025-08": 312,
+      "2025-09": 312,
+      "2025-10": 312,
+      "2025-11": 311,
+      "2025-12": 312,
+      "2026-01": 312,
+      "2026-02": 312,
+      "2026-03": 312,
+      "2026-04": 312,
+      "2026-05": 312,
+      "2026-06": 312,
+      "2026-07": 312,
+      "2026-08": 312
+    },
+    "concellos_sen_ningun_dato": []
+  },
+  {
+    "fonte": "INE turismo móbiles",
+    "taboa": "52048",
+    "filtro": "96:16420",
+    "chamadas": 13,
+    "url_exemplo": "https://servicios.ine.es/wstempus/js/ES/DATOS_TABLA/52048?tv=19:8537&tv=19:8538&tv=19:8539&tv=19:8557&tv=19:8558&tv=19:8559&tv=19:8560&tv=19:8561&tv=19:8562&tv=19:8563&tv=19:8564&tv=19:292661&tv=19:311422&tv=96:16420",
+    "descargado_utc": "2026-11-01T12:21:06+00:00",
+    "concellos_na_dimension": 313,
+    "periodo": "2019-07–2025-12",
+    "meses": 78,
+    "valores_secreto": 0,
+    "valores_nulos": 163,
+    "concellos_con_dato_por_mes_min_max": [
+      160,
+      308
+    ],
+    "concellos_con_dato": {
+      "2024-11": 256,
+      "2024-12": 272,
+      "2025-01": 283,
+      "2025-02": 271,
+      "2025-03": 288,
+      "2025-04": 291,
+      "2025-05": 300,
+      "2025-06": 294,
+      "2025-07": 300,
+      "2025-08": 308,
+      "2025-09": 301,
+      "2025-10": 298,
+      "2025-11": 277,
+      "2025-12": 286
+    },
+    "concellos_sen_ningun_dato": [
+      "32010 Beade",
+      "32064 Pontedeva",
+      "32090 Vilar de Santos"
+    ]
+  },
+  {
+    "fonte": "IGE",
+    "taboa": "1826",
+    "titulo": "Aloxamentos turísticos",
+    "orixe": "Axencia de Turismo de Galicia. Presidencia da Xunta de Galicia",
+    "url": "https://www.ige.gal/igebdt/igeapi/csv/datos/1826/0:2026",
+    "descargado_utc": "2026-11-01T12:21:10+00:00",
+    "bytes": 597064,
+    "saida": "ige_1826_aloxamentos_2026.csv",
+    "notas_ige": "Datos referidos ao 1 de xaneiro de cada ano. Ata o ano 2011 a categoría \"Pensións\" engloba os Albergues Turísticos.   O IGE non dispón de información para os anos de 2014 a 2016. Enténdese por vivendas turísticas os establecementos unifamiliares illados nos cales se preste servizo de aloxamento turístico, cun número de prazas non superior a dez e que dispoñen, por estrutura e servizos, das instalacións e do mobiliario adecuado para a súa utilización inmediata, así como para a conservación, elaboración e consumo de alimentos dentro do establecemento. Son vivendas de uso turístico as cedidas a t"
+  }
+]

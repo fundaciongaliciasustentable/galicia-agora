@@ -1,0 +1,239 @@
+{
+  "descargado_utc": "2026-11-01T12:38:03+00:00",
+  "user_agent": "GaliciaAgora/0.1 (+https://github.com/fundaciongaliciasustentable/galicia-agora; galiciasustentable@galiciasustentable.org)",
+  "resumo": {
+    "serie_mensual": {
+      "bytes": 11092458,
+      "filas": 152292,
+      "meses": "2017M01–2026M10 (118)",
+      "tipos": {
+        "Hoteis": 22480,
+        "Pensións": 26963,
+        "Turismo rural": 24114,
+        "Vivendas turísticas": 13142,
+        "Campamentos turísticos": 7950,
+        "Albergues turísticos": 13998,
+        "Apartamentos turísticos": 13680,
+        "Vivendas de uso turístico": 29965
+      },
+      "primeiro_mes_vut": "2017M06",
+      "concellos_con_vut_ultimo_mes": 304,
+      "vut_galicia": {
+        "2017M06": 542,
+        "2017M10": 3620,
+        "2018M10": 7107,
+        "2019M10": 9397,
+        "2020M10": 11875,
+        "2021M10": 13799,
+        "2022M10": 16507,
+        "2023M10": 20920,
+        "2024M10": 25488,
+        "2025M10": 28383,
+        "2026M10": 28338
+      },
+      "meses_con_baixada": 6,
+      "maior_suba_2019M10_ultimo": [
+        [
+          "Sanxenxo",
+          1666,
+          3304
+        ],
+        [
+          "Vigo",
+          337,
+          1962
+        ],
+        [
+          "Coruña, A",
+          355,
+          1308
+        ],
+        [
+          "Vilagarcía de Arousa",
+          114,
+          633
+        ],
+        [
+          "Grove, O",
+          295,
+          809
+        ],
+        [
+          "Foz",
+          281,
+          767
+        ],
+        [
+          "Viveiro",
+          119,
+          512
+        ],
+        [
+          "Cangas de Morrazo",
+          258,
+          644
+        ]
+      ]
+    },
+    "directorio": {
+      "data_referencia": "2026-10-01",
+      "columnas": [
+        "signatura",
+        "denominacion",
+        "telefono",
+        "tipo",
+        "categoria",
+        "modalidad",
+        "especialidad",
+        "habitaciones",
+        "plazas",
+        "longitud",
+        "latitud",
+        "correo_promocional",
+        "direccion",
+        "parroquia",
+        "lugar",
+        "codigo_postal",
+        "municipio",
+        "provincia"
+      ],
+      "vut": 28338,
+      "ten_data_de_alta": false,
+      "numero_maximo_por_provincia": {
+        "CO": 13616,
+        "PO": 17618,
+        "LU": 5066,
+        "OR": 1784,
+        "SC": 4
+      },
+      "vivas_por_provincia": {
+        "CO": 9780,
+        "PO": 13197,
+        "LU": 4285,
+        "OR": 1073,
+        "SC": 3
+      }
+    },
+    "internet_archive": [
+      {
+        "captura": "20250315173132",
+        "data_referencia": "2025-03-01",
+        "vut": 26487,
+        "serie_mensual_mesmo_mes": 26487,
+        "baixas_ata_hoxe": 2701,
+        "altas_ata_hoxe": 4552
+      },
+      {
+        "captura": "20260602072821",
+        "data_referencia": "2026-06-01",
+        "vut": 27888,
+        "serie_mensual_mesmo_mes": 27888,
+        "baixas_ata_hoxe": 376,
+        "altas_ata_hoxe": 826
+      }
+    ],
+    "ine_vte": {
+      "bytes": 31461685,
+      "series_espana": 16414,
+      "concellos_galicia": 317,
+      "periodos": [
+        "2020M08",
+        "2021M02",
+        "2021M08",
+        "2022M02",
+        "2022M08",
+        "2023M02",
+        "2023M08",
+        "2024M02",
+        "2024M08",
+        "2024M11",
+        "2025M05",
+        "2025M11",
+        "2026M05"
+      ],
+      "vivendas_galicia_suma_concellos": {
+        "2020M08": 12548,
+        "2021M02": 11398,
+        "2021M08": 13502,
+        "2022M02": 12695,
+        "2022M08": 15966,
+        "2023M02": 14775,
+        "2023M08": 18080,
+        "2024M02": 17883,
+        "2024M08": 21984,
+        "2024M11": 19676,
+        "2025M05": 19996,
+        "2025M11": 15236,
+        "2026M05": 17361
+      }
+    },
+    "licenza_abertos_0022": "Creative Commons BY SA 4.0",
+    "aei_ligazon_serie_mensual": true,
+    "licenza_ine": "Creative Commons Reconocimiento 4.0 (CC BY 4.0)"
+  },
+  "peticions": [
+    {
+      "url": "https://descargascdn.xunta.gal/interno/smarxa/REAT_Serie_Mensual.csv",
+      "status": 200,
+      "bytes": 11092458,
+      "last_modified": "Tue, 27 Oct 2026 12:40:20 GMT",
+      "utc": "2026-11-01T12:37:22+00:00"
+    },
+    {
+      "url": "https://descargascdn.xunta.gal/interno/smarxa/reat_directorio-alojamientos_esp.csv",
+      "status": 200,
+      "bytes": 5793014,
+      "last_modified": "Fri, 23 Oct 2026 09:49:47 GMT",
+      "utc": "2026-11-01T12:37:24+00:00"
+    },
+    {
+      "url": "https://web.archive.org/cdx/search/cdx?url=descargascdn.xunta.gal/interno/smarxa/reat_directorio-alojamientos_esp.csv&output=json&fl=timestamp,statuscode",
+      "status": 200,
+      "bytes": 81,
+      "last_modified": null,
+      "utc": "2026-11-01T12:37:26+00:00"
+    },
+    {
+      "url": "https://web.archive.org/web/20250315173132id_/https://descargascdn.xunta.gal/interno/smarxa/reat_directorio-alojamientos_esp.csv",
+      "status": 200,
+      "bytes": 6297721,
+      "last_modified": null,
+      "utc": "2026-11-01T12:37:37+00:00"
+    },
+    {
+      "url": "https://web.archive.org/web/20260602072821id_/https://descargascdn.xunta.gal/interno/smarxa/reat_directorio-alojamientos_esp.csv",
+      "status": 200,
+      "bytes": 913143,
+      "last_modified": null,
+      "utc": "2026-11-01T12:37:40+00:00"
+    },
+    {
+      "url": "https://servicios.ine.es/wstempus/js/ES/DATOS_TABLA/39363?tv=433:382508&tv=433:382510&tv=3:72&nult=30&tip=AM",
+      "status": 200,
+      "bytes": 31461685,
+      "last_modified": "Sun, 01 Nov 2026 12:35:26 GMT",
+      "utc": "2026-11-01T12:37:55+00:00"
+    },
+    {
+      "url": "https://abertos.xunta.gal/catalogo/cultura-ocio-deporte/-/dataset/0022/rexistro-empresas-actividades-turisticas",
+      "status": 200,
+      "bytes": 191188,
+      "last_modified": null,
+      "utc": "2026-11-01T12:37:57+00:00"
+    },
+    {
+      "url": "https://aei.turismo.gal/es/rexistro-de-empresas-e-actividades-turisticas",
+      "status": 200,
+      "bytes": 42622,
+      "last_modified": null,
+      "utc": "2026-11-01T12:38:00+00:00"
+    },
+    {
+      "url": "https://www.ine.es/dyngs/AYU/index.htm?cid=125",
+      "status": 200,
+      "bytes": 36409,
+      "last_modified": "Sun, 01 Nov 2026 06:06:36 GMT",
+      "utc": "2026-11-01T12:38:02+00:00"
+    }
+  ]
+}
