@@ -1,0 +1,20 @@
+{
+  "layer_id": "puntos-limpos",
+  "published_at": "2025-03-19T12:00:30.000Z",
+  "fetched_at": "2026-11-01T21:07:27.956Z",
+  "last_success_at": "2026-11-01T21:07:27.956Z",
+  "status": "fresh",
+  "consecutive_failures": 0,
+  "feature_count": 151,
+  "source_url": "https://abertos.xunta.gal/catalogo/administracion-publica/-/dataset/0303/puntos-limpos",
+  "licence": "CC-BY-SA-4.0",
+  "attribution": "Xunta de Galicia. Consellería de Medio Ambiente, puntos limpos (abertos.xunta.gal, conxunto 0303)",
+  "checksum": "sha256:b123f2dfe4aaa157c9f0a8e9b8127f8c7ef00f2f369f0ea0b43e0676cc6e0437",
+  "last_error": null,
+  "history": [
+    {
+      "at": "2026-11-01T21:07:27.956Z",
+      "ok": true
+    }
+  ]
+}

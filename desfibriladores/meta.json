@@ -1,0 +1,20 @@
+{
+  "layer_id": "desfibriladores",
+  "published_at": "2026-07-10T07:42:38.000Z",
+  "fetched_at": "2026-11-01T21:07:06.938Z",
+  "last_success_at": "2026-11-01T21:07:06.938Z",
+  "status": "fresh",
+  "consecutive_failures": 0,
+  "feature_count": 2357,
+  "source_url": "https://abertos.xunta.gal/catalogo/saude-servicios-sociais/-/dataset/0604/desfibriladores-semiautomaticos-externos-situados",
+  "licence": "CC-BY-SA-4.0",
+  "attribution": "Xunta de Galicia. 061, rexistro de desfibriladores (abertos.xunta.gal, conxunto 0604)",
+  "checksum": "sha256:582e3a604e4928a0aff497e8f4bf7abc6688de61b7497d2fe9e6940a419ef6ed",
+  "last_error": null,
+  "history": [
+    {
+      "at": "2026-11-01T21:07:06.938Z",
+      "ok": true
+    }
+  ]
+}

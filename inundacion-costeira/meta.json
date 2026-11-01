@@ -1,0 +1,20 @@
+{
+  "layer_id": "inundacion-costeira",
+  "published_at": null,
+  "fetched_at": "2026-11-01T21:07:20.873Z",
+  "last_success_at": "2026-11-01T21:07:20.873Z",
+  "status": "fresh",
+  "consecutive_failures": 0,
+  "feature_count": 56,
+  "source_url": "https://ideg.xunta.gal/servizos/rest/services/IDE_DHGC/D2007_60_MapasInundablesCosteiros/MapServer",
+  "licence": "CC-BY-SA-4.0",
+  "attribution": "Augas de Galicia (Xunta de Galicia); mapas de perigosidade do SNCZI, Ministerio de Agricultura, Alimentación e Medio Ambiente",
+  "checksum": "sha256:8bde2b286435fa2c2e0b438cef0f1ba6e6b12f37fed659db8128b51c449c4e37",
+  "last_error": null,
+  "history": [
+    {
+      "at": "2026-11-01T21:07:20.873Z",
+      "ok": true
+    }
+  ]
+}

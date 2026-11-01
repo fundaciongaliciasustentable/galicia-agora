@@ -1,0 +1,20 @@
+{
+  "layer_id": "zonas-bano",
+  "published_at": null,
+  "fetched_at": "2026-11-01T21:07:35.571Z",
+  "last_success_at": "2026-11-01T21:07:35.571Z",
+  "status": "fresh",
+  "consecutive_failures": 0,
+  "feature_count": 442,
+  "source_url": "https://ideg.xunta.gal/servizos/rest/services/IDE_DHGC/PHGC2021_2027_ZProtex_NEuropeo/MapServer/4",
+  "licence": "CC-BY-SA-4.0",
+  "attribution": "Augas de Galicia. Plan hidrolóxico Galicia-Costa 2021–2027. Xunta de Galicia",
+  "checksum": "sha256:f79b0fc45e2810856d868438e149c74a282605d460a7517595cd76f1cf547503",
+  "last_error": null,
+  "history": [
+    {
+      "at": "2026-11-01T21:07:35.571Z",
+      "ok": true
+    }
+  ]
+}

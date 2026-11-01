@@ -1,0 +1,20 @@
+{
+  "layer_id": "centros-infancia",
+  "published_at": "2026-10-05T06:52:24.000Z",
+  "fetched_at": "2026-11-01T21:06:59.570Z",
+  "last_success_at": "2026-11-01T21:06:59.570Z",
+  "status": "fresh",
+  "consecutive_failures": 0,
+  "feature_count": 575,
+  "source_url": "https://abertos.xunta.gal/catalogo/saude-servicios-sociais/-/dataset/0298/centros-para-infancia",
+  "licence": "CC-BY-SA-4.0",
+  "attribution": "Xunta de Galicia. Consellería de Política Social, centros de infancia (RUEPSS; abertos.xunta.gal, conxunto 0298)",
+  "checksum": "sha256:3a4e1ab857fcdf9aae4ed4913606f3e8248818c55480d161d15d4d55fa02d269",
+  "last_error": null,
+  "history": [
+    {
+      "at": "2026-11-01T21:06:59.570Z",
+      "ok": true
+    }
+  ]
+}

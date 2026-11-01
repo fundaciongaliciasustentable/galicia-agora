@@ -1,0 +1,20 @@
+{
+  "layer_id": "bibliotecas",
+  "published_at": null,
+  "fetched_at": "2026-11-01T21:06:56.429Z",
+  "last_success_at": "2026-11-01T21:06:56.429Z",
+  "status": "fresh",
+  "consecutive_failures": 0,
+  "feature_count": 471,
+  "source_url": "https://abertos.xunta.gal/catalogo/cultura-ocio-deporte/-/dataset/0230/rede-bibliotecas-galicia",
+  "licence": "CC-BY-SA-4.0",
+  "attribution": "Xunta de Galicia. Consellería de Cultura, directorio da Rede de Bibliotecas de Galicia (abertos.xunta.gal, conxunto 0230)",
+  "checksum": "sha256:514064f6bcb48fe166dbffd3a62a472a5b42e788f5db27d7b4248056891e77b1",
+  "last_error": null,
+  "history": [
+    {
+      "at": "2026-11-01T21:06:56.429Z",
+      "ok": true
+    }
+  ]
+}

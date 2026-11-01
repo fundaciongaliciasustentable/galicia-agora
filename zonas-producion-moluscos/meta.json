@@ -1,0 +1,20 @@
+{
+  "layer_id": "zonas-producion-moluscos",
+  "published_at": null,
+  "fetched_at": "2026-11-01T21:07:38.454Z",
+  "last_success_at": "2026-11-01T21:07:38.454Z",
+  "status": "fresh",
+  "consecutive_failures": 0,
+  "feature_count": 155,
+  "source_url": "https://ideg.xunta.gal/servizos/rest/services/IDE_DHGC/PHGC2021_2027_ZProtex_NEuropeo/MapServer",
+  "licence": "CC-BY-SA-4.0",
+  "attribution": "Augas de Galicia. Plan hidrolóxico Galicia-Costa 2021–2027. Xunta de Galicia",
+  "checksum": "sha256:42b0f59bb06627c262a9e8e111920a1d59df5345b5c5b80c7c41e506aba49dce",
+  "last_error": null,
+  "history": [
+    {
+      "at": "2026-11-01T21:07:38.454Z",
+      "ok": true
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "layer_id": "sendas-paisaxe",
+  "published_at": null,
+  "fetched_at": "2026-11-01T21:07:29.206Z",
+  "last_success_at": "2026-11-01T21:07:29.206Z",
+  "status": "fresh",
+  "consecutive_failures": 0,
+  "feature_count": 318,
+  "source_url": "https://ideg.xunta.gal/servizos/rest/services/sendas",
+  "licence": "CC-BY-SA-4.0",
+  "attribution": "© Instituto de Estudos do Territorio. Xunta de Galicia",
+  "checksum": "sha256:01f5eabb63721675ed2376e89bc03abec0c556ad92e07958c0c5ed52d4d7be3b",
+  "last_error": null,
+  "history": [
+    {
+      "at": "2026-11-01T21:07:29.206Z",
+      "ok": true
+    }
+  ]
+}

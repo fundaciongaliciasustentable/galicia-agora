@@ -1,0 +1,20 @@
+{
+  "layer_id": "imd-estradas",
+  "published_at": null,
+  "fetched_at": "2026-11-01T21:07:19.740Z",
+  "last_success_at": "2026-11-01T21:07:19.740Z",
+  "status": "fresh",
+  "consecutive_failures": 0,
+  "feature_count": 1138,
+  "source_url": "https://ideg.xunta.gal/servizos/rest/services/AXI/MapaTrafico/MapServer/7",
+  "licence": "CC-BY-SA-4.0",
+  "attribution": "Axencia Galega de Infraestruturas e Instituto de Estudos do Territorio. Xunta de Galicia",
+  "checksum": "sha256:5378db3533083db793e84b4b863a72a67b3498467fb9f00e684486ae174ae5ce",
+  "last_error": null,
+  "history": [
+    {
+      "at": "2026-11-01T21:07:19.740Z",
+      "ok": true
+    }
+  ]
+}

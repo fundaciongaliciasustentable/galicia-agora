@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-01T20:03:25.204Z",
+  "generated_at": "2026-11-01T21:07:40.994Z",
   "layers": [
     {
       "id": "aeroportos",
@@ -156,18 +156,22 @@
       },
       "meta": {
         "layer_id": "aire-24h",
-        "published_at": "2026-11-01T19:00:00.000Z",
-        "fetched_at": "2026-11-01T19:33:27.829Z",
-        "last_success_at": "2026-11-01T19:33:27.829Z",
+        "published_at": "2026-11-01T20:00:00.000Z",
+        "fetched_at": "2026-11-01T21:06:18.852Z",
+        "last_success_at": "2026-11-01T21:06:18.852Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 46,
         "source_url": "https://servizos.meteogalicia.gal/mgrss/caire/jsonEvolucionIcaEstacion.action",
         "licence": "https://abertos.xunta.gal/condicions-de-uso",
         "attribution": "Fonte: Rede de Calidade do Aire de Galicia (MeteoGalicia, Xunta de Galicia). Datos en tempo real sen validar.",
-        "checksum": "sha256:b42c77a7afab7e241eb116577b54ce9a8c248c633fa0e5417b4a39195b9bb408",
+        "checksum": "sha256:31c3223dd9125d59104927f0c77a5a29a08347231073d96f4256e40dbb67e04e",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-11-01T21:06:18.852Z",
+            "ok": true
+          },
           {
             "at": "2026-11-01T19:33:27.829Z",
             "ok": true
@@ -308,8 +312,8 @@
       "meta": {
         "layer_id": "avisos-aemet",
         "published_at": "2026-11-01T10:27:51.000Z",
-        "fetched_at": "2026-11-01T20:03:22.705Z",
-        "last_success_at": "2026-11-01T20:03:22.705Z",
+        "fetched_at": "2026-11-01T21:06:55.461Z",
+        "last_success_at": "2026-11-01T21:06:55.461Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 4,
@@ -319,6 +323,10 @@
         "checksum": "sha256:1ef2efbac411d7e932e3bf630bfcfa6dded10092def3e0888d91692cbd48cfd6",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-11-01T21:06:55.461Z",
+            "ok": true
+          },
           {
             "at": "2026-11-01T20:03:22.705Z",
             "ok": true
@@ -537,8 +545,8 @@
       "meta": {
         "layer_id": "avisos-meteogalicia",
         "published_at": null,
-        "fetched_at": "2026-11-01T20:03:23.134Z",
-        "last_success_at": "2026-11-01T20:03:23.134Z",
+        "fetched_at": "2026-11-01T21:06:56.106Z",
+        "last_success_at": "2026-11-01T21:06:56.106Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 313,
@@ -548,6 +556,10 @@
         "checksum": "sha256:b0d3259a42f56a43a11eff1268cfdbc5e2c722c39da0f71071f3559ef3833aac",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-11-01T21:06:56.106Z",
+            "ok": true
+          },
           {
             "at": "2026-11-01T20:03:23.134Z",
             "ok": true
@@ -709,6 +721,78 @@
       }
     },
     {
+      "id": "bibliotecas",
+      "title": {
+        "gl": "Bibliotecas",
+        "es": "Bibliotecas"
+      },
+      "theme": "servizos",
+      "operator": {
+        "name": "Xunta de Galicia — Consellería de Cultura (Rede de Bibliotecas de Galicia)",
+        "url": "https://bibliotecas.xunta.gal/"
+      },
+      "source_url": "https://abertos.xunta.gal/catalogo/cultura-ocio-deporte/-/dataset/0230/rede-bibliotecas-galicia",
+      "licence": {
+        "spdx": "CC-BY-SA-4.0",
+        "text_url": "https://abertos.xunta.gal/catalogo/cultura-ocio-deporte/-/dataset/0230/rede-bibliotecas-galicia",
+        "quote": "Creative Commons BY SA 4.0",
+        "verified_at": "2026-11-01",
+        "odbl_compatible": "doubt",
+        "collection": "cc-by-sa-4.0",
+        "notes": "Licenza indicada na ficha do conxunto 0230 en abertos.xunta.gal (CC BY-SA 4.0). Compatibilidade coa ODbL en dúbida: colección CC BY-SA (ADR 0005). Descarga https://directorio-rbgalicia.xunta.gal/download?file=/csv/DirectorioBibliotecasPublicasGalicia.csv (486 bibliotecas, UTF-8, xerado en cada petición, sen Last-Modified: hora de publicación non indicada). 303 públicas, 182 especializadas e a Biblioteca de Galicia; 91 de acceso restrinxido. Quedan fóra 15 sen as dúas coordenadas (bibliotecas móbiles e filas só coa latitude). Sen horarios."
+      },
+      "attribution": "Xunta de Galicia. Consellería de Cultura, directorio da Rede de Bibliotecas de Galicia (abertos.xunta.gal, conxunto 0230)",
+      "update_frequency": {
+        "declared": "P1D"
+      },
+      "geometry": "point",
+      "output": "geojson",
+      "privacy_notes": "Non se publican o teléfono nin o correo. As titulares son todas institucións (concellos, universidades, colexios profesionais, fundacións, dioceses).",
+      "stale_after": "P30D",
+      "ingest": {
+        "every": "P7D"
+      },
+      "style": {
+        "kind": "circle",
+        "color_token": "--c-biblioteca",
+        "label_field": "nome"
+      },
+      "table": {
+        "fields": [
+          "nome",
+          "tipo",
+          "especializacion",
+          "concello",
+          "enderezo",
+          "titular",
+          "acceso",
+          "rede_bibliotecas",
+          "web"
+        ]
+      },
+      "meta": {
+        "layer_id": "bibliotecas",
+        "published_at": null,
+        "fetched_at": "2026-11-01T21:06:56.429Z",
+        "last_success_at": "2026-11-01T21:06:56.429Z",
+        "status": "fresh",
+        "consecutive_failures": 0,
+        "feature_count": 471,
+        "source_url": "https://abertos.xunta.gal/catalogo/cultura-ocio-deporte/-/dataset/0230/rede-bibliotecas-galicia",
+        "licence": "CC-BY-SA-4.0",
+        "attribution": "Xunta de Galicia. Consellería de Cultura, directorio da Rede de Bibliotecas de Galicia (abertos.xunta.gal, conxunto 0230)",
+        "checksum": "sha256:514064f6bcb48fe166dbffd3a62a472a5b42e788f5db27d7b4248056891e77b1",
+        "last_error": null,
+        "history": [
+          {
+            "at": "2026-11-01T21:06:56.429Z",
+            "ok": true
+          }
+        ],
+        "alert": false
+      }
+    },
+    {
       "id": "bicis-arteixo",
       "title": {
         "gl": "Bicicleta pública de Arteixo (biciArteixo)",
@@ -758,18 +842,22 @@
       },
       "meta": {
         "layer_id": "bicis-arteixo",
-        "published_at": "2026-11-01T20:03:20.000Z",
-        "fetched_at": "2026-11-01T20:03:23.938Z",
-        "last_success_at": "2026-11-01T20:03:23.938Z",
+        "published_at": "2026-11-01T21:06:21.000Z",
+        "fetched_at": "2026-11-01T21:06:57.436Z",
+        "last_success_at": "2026-11-01T21:06:57.436Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 15,
         "source_url": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_aa/gbfs.json",
         "licence": "CC0-1.0",
         "attribution": "Datos: biciArteixo / nextbike (CC0)",
-        "checksum": "sha256:72ef9dfdf4c7b5395f91ba449caebf797a3391fcfdd42a256660c4e2f5895247",
+        "checksum": "sha256:4c9e1354b491466e2a174f40930c08986e6d7eab4ea66ff7126edb04ba9bf30b",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-11-01T21:06:57.436Z",
+            "ok": true
+          },
           {
             "at": "2026-11-01T20:03:23.938Z",
             "ok": true
@@ -1084,18 +1172,22 @@
       },
       "meta": {
         "layer_id": "calidade-aire",
-        "published_at": "2026-11-01T19:00:00.000Z",
-        "fetched_at": "2026-11-01T19:34:02.555Z",
-        "last_success_at": "2026-11-01T19:34:02.555Z",
+        "published_at": "2026-11-01T20:00:00.000Z",
+        "fetched_at": "2026-11-01T21:06:58.210Z",
+        "last_success_at": "2026-11-01T21:06:58.210Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 46,
         "source_url": "https://servizos.meteogalicia.gal/mgrss/caire/jsonICAActual.action",
         "licence": "CC-BY-SA-4.0",
         "attribution": "Datos: Rede de Calidade do Aire de Galicia, MeteoGalicia (Xunta de Galicia). Datos provisionais, non validados.",
-        "checksum": "sha256:73c6ff7bede6582dfed071d1c070269ff111d0c8b497c9f164e12cfeeb10f30b",
+        "checksum": "sha256:06551113fef3ac291369513b95cb2aecf0605fc8c48807d1a530c422e91458b9",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-11-01T21:06:58.210Z",
+            "ok": true
+          },
           {
             "at": "2026-11-01T19:34:02.555Z",
             "ok": true
@@ -1243,10 +1335,6 @@
           {
             "at": "2026-10-25T22:05:41.676Z",
             "ok": true
-          },
-          {
-            "at": "2026-10-25T19:40:41.099Z",
-            "ok": true
           }
         ],
         "alert": false
@@ -1301,18 +1389,22 @@
       },
       "meta": {
         "layer_id": "caudais-rios",
-        "published_at": "2026-11-01T19:50:00.000Z",
-        "fetched_at": "2026-11-01T20:03:24.789Z",
-        "last_success_at": "2026-11-01T20:03:24.789Z",
+        "published_at": "2026-11-01T20:50:00.000Z",
+        "fetched_at": "2026-11-01T21:06:59.245Z",
+        "last_success_at": "2026-11-01T21:06:59.245Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 88,
         "source_url": "https://servizos.meteogalicia.gal/mgafos/json/estadoActual.action",
         "licence": "https://www.meteogalicia.gal/web/aviso-legal",
         "attribution": "Datos: Augas de Galicia e MeteoGalicia (Xunta de Galicia). Datos non validados.",
-        "checksum": "sha256:eedc22ef0e96f7831058e8b963cfb638e5dede72582df8ab7db9f98de9223e89",
+        "checksum": "sha256:5572f7bc7dc77d19f8ad20c8cf50bdabcd95db672714ba51ad737eb21f07c145",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-11-01T21:06:59.245Z",
+            "ok": true
+          },
           {
             "at": "2026-11-01T20:03:24.789Z",
             "ok": true
@@ -1586,6 +1678,78 @@
           }
         ],
         "alert": true
+      }
+    },
+    {
+      "id": "centros-infancia",
+      "title": {
+        "gl": "Escolas infantís e centros de infancia",
+        "es": "Escuelas infantiles y centros de infancia"
+      },
+      "theme": "servizos",
+      "operator": {
+        "name": "Xunta de Galicia — Consellería de Política Social (RUEPSS)",
+        "url": "https://benestar.xunta.es/XiacWeb/"
+      },
+      "source_url": "https://abertos.xunta.gal/catalogo/saude-servicios-sociais/-/dataset/0298/centros-para-infancia",
+      "licence": {
+        "spdx": "CC-BY-SA-4.0",
+        "text_url": "https://abertos.xunta.gal/catalogo/saude-servicios-sociais/-/dataset/0298/centros-para-infancia",
+        "quote": "Creative Commons BY SA 4.0",
+        "verified_at": "2026-11-01",
+        "odbl_compatible": "doubt",
+        "collection": "cc-by-sa-4.0",
+        "notes": "Licenza indicada na ficha do conxunto 0298 en abertos.xunta.gal (CC BY-SA 4.0). Compatibilidade coa ODbL en dúbida: colección CC BY-SA (ADR 0005). Ficheiro único https://ficheiros-web.xunta.gal/abertos/servizos_sociais/centros_infancia.kml (575 centros: 507 escolas infantís, 59 PAI, 8 ludotecas e 1 espazo infantil; ~1,7 MB) con Last-Modified e ETag; a hora de publicación é o Last-Modified (05/10/2026 na descarga do 01/11/2026). Mesmo formato ca centros-maiores. A fonte non dá prazas nin idades."
+      },
+      "attribution": "Xunta de Galicia. Consellería de Política Social, centros de infancia (RUEPSS; abertos.xunta.gal, conxunto 0298)",
+      "update_frequency": {
+        "declared": "P30D"
+      },
+      "geometry": "point",
+      "output": "geojson",
+      "privacy_notes": "Retíranse os correos (Mail, Correo; moitos son contas persoais de Gmail), o teléfono, o horario e as instalacións. A entidade titular publícase só cando é unha organización (mesma regra ca centros-maiores); cando é unha persoa física ou non se recoñece (84 centros en novembro de 2026, sobre todo escolas infantís privadas pequenas), queda baleira. O nome do centro é o rexistrado no RUEPSS.",
+      "stale_after": "P45D",
+      "ingest": {
+        "every": "P7D"
+      },
+      "style": {
+        "kind": "circle",
+        "color_token": "--c-infancia",
+        "label_field": "nome"
+      },
+      "table": {
+        "fields": [
+          "nome",
+          "tipo",
+          "iniciativa",
+          "entidade",
+          "concello",
+          "enderezo",
+          "cp",
+          "servizos",
+          "ligazon_ruepss"
+        ]
+      },
+      "meta": {
+        "layer_id": "centros-infancia",
+        "published_at": "2026-10-05T06:52:24.000Z",
+        "fetched_at": "2026-11-01T21:06:59.570Z",
+        "last_success_at": "2026-11-01T21:06:59.570Z",
+        "status": "fresh",
+        "consecutive_failures": 0,
+        "feature_count": 575,
+        "source_url": "https://abertos.xunta.gal/catalogo/saude-servicios-sociais/-/dataset/0298/centros-para-infancia",
+        "licence": "CC-BY-SA-4.0",
+        "attribution": "Xunta de Galicia. Consellería de Política Social, centros de infancia (RUEPSS; abertos.xunta.gal, conxunto 0298)",
+        "checksum": "sha256:3a4e1ab857fcdf9aae4ed4913606f3e8248818c55480d161d15d4d55fa02d269",
+        "last_error": null,
+        "history": [
+          {
+            "at": "2026-11-01T21:06:59.570Z",
+            "ok": true
+          }
+        ],
+        "alert": false
       }
     },
     {
@@ -2169,6 +2333,73 @@
       }
     },
     {
+      "id": "desfibriladores",
+      "title": {
+        "gl": "Desfibriladores (DESA)",
+        "es": "Desfibriladores (DESA)"
+      },
+      "theme": "servizos",
+      "operator": {
+        "name": "Xunta de Galicia — Consellería de Sanidade (061)",
+        "url": "https://061.sergas.gal/"
+      },
+      "source_url": "https://abertos.xunta.gal/catalogo/saude-servicios-sociais/-/dataset/0604/desfibriladores-semiautomaticos-externos-situados",
+      "licence": {
+        "spdx": "CC-BY-SA-4.0",
+        "text_url": "https://abertos.xunta.gal/catalogo/saude-servicios-sociais/-/dataset/0604/desfibriladores-semiautomaticos-externos-situados",
+        "quote": "Creative Commons BY SA 4.0",
+        "verified_at": "2026-11-01",
+        "odbl_compatible": "doubt",
+        "collection": "cc-by-sa-4.0",
+        "notes": "Licenza indicada na ficha do conxunto 0604 en abertos.xunta.gal (CC BY-SA 4.0). Compatibilidade coa ODbL en dúbida: colección CC BY-SA (ADR 0005). Ficheiro único https://ficheiros-web.xunta.gal/abertos/desfibriladores/equipos-DESA-061.csv (2.366 equipos, ~300 KB, Latin-1) con Last-Modified e ETag; a hora de publicación é o Last-Modified (10/07/2026 na descarga do 01/11/2026, aínda que a ficha di «mensual»). Son os equipos rexistrados no 061: non di se están accesibles a calquera hora nin se funcionan. Coordenadas a 4 decimais (~10 m)."
+      },
+      "attribution": "Xunta de Galicia. 061, rexistro de desfibriladores (abertos.xunta.gal, conxunto 0604)",
+      "update_frequency": {
+        "declared": "P30D"
+      },
+      "geometry": "point",
+      "output": "geojson",
+      "privacy_notes": "Non se publica o campo solicitante (quen rexistrou o equipo): ás veces é unha persoa física. Quítanse os equipos en domicilios particulares (tipo «En Domicilio particular» ou texto con domicilio, vivenda, piso ou particular; 8 en novembro de 2026). O texto da localización publícase sen teléfonos e queda baleiro cando o solicitante é unha persoa e o texto repite o seu nome (18 casos, sobre todo farmacias e clínicas co nome do titular).",
+      "stale_after": "P90D",
+      "ingest": {
+        "every": "P7D"
+      },
+      "style": {
+        "kind": "circle",
+        "color_token": "--c-desa",
+        "label_field": "ubicacion"
+      },
+      "table": {
+        "fields": [
+          "ubicacion",
+          "tipo",
+          "concello",
+          "codigo_ine"
+        ]
+      },
+      "meta": {
+        "layer_id": "desfibriladores",
+        "published_at": "2026-07-10T07:42:38.000Z",
+        "fetched_at": "2026-11-01T21:07:06.938Z",
+        "last_success_at": "2026-11-01T21:07:06.938Z",
+        "status": "fresh",
+        "consecutive_failures": 0,
+        "feature_count": 2357,
+        "source_url": "https://abertos.xunta.gal/catalogo/saude-servicios-sociais/-/dataset/0604/desfibriladores-semiautomaticos-externos-situados",
+        "licence": "CC-BY-SA-4.0",
+        "attribution": "Xunta de Galicia. 061, rexistro de desfibriladores (abertos.xunta.gal, conxunto 0604)",
+        "checksum": "sha256:582e3a604e4928a0aff497e8f4bf7abc6688de61b7497d2fe9e6940a419ef6ed",
+        "last_error": null,
+        "history": [
+          {
+            "at": "2026-11-01T21:07:06.938Z",
+            "ok": true
+          }
+        ],
+        "alert": false
+      }
+    },
+    {
       "id": "distancia-servizos",
       "title": {
         "gl": "Distancia en liña recta aos servizos desde cada lugar",
@@ -2538,18 +2769,22 @@
       },
       "meta": {
         "layer_id": "estacions-meteo",
-        "published_at": "2026-11-01T19:50:00.000Z",
-        "fetched_at": "2026-11-01T19:57:32.508Z",
-        "last_success_at": "2026-11-01T19:57:32.508Z",
+        "published_at": "2026-11-01T21:00:00.000Z",
+        "fetched_at": "2026-11-01T21:07:07.896Z",
+        "last_success_at": "2026-11-01T21:07:07.896Z",
         "status": "fresh",
         "consecutive_failures": 0,
-        "feature_count": 154,
+        "feature_count": 153,
         "source_url": "https://servizos.meteogalicia.gal/mgrss/observacion/ultimos10minEstacionsMeteo.action",
         "licence": "CC-BY-SA-4.0",
         "attribution": "Datos: MeteoGalicia (Xunta de Galicia)",
-        "checksum": "sha256:6f81b576876a2ab3cf163d211d2ba90b2df34d36817db1aa7addd6bb88aeac70",
+        "checksum": "sha256:a9158e61583485ca577d07692071f168446a4d87c344262ae61ebc3e62d490eb",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-11-01T21:07:07.896Z",
+            "ok": true
+          },
           {
             "at": "2026-11-01T19:57:32.508Z",
             "ok": true
@@ -2813,6 +3048,76 @@
       }
     },
     {
+      "id": "estado-masas-auga",
+      "title": {
+        "gl": "Estado das masas de auga",
+        "es": "Estado de las masas de agua"
+      },
+      "theme": "auga-mar",
+      "operator": {
+        "name": "Xunta de Galicia — Augas de Galicia (Plan hidrolóxico Galicia-Costa 2021–2027), servizo no IDEG",
+        "url": "https://augasdegalicia.xunta.gal/"
+      },
+      "source_url": "https://ideg.xunta.gal/servizos/rest/services/IDE_DHGC/PHGC2021_2027_Estado/MapServer",
+      "licence": {
+        "spdx": "CC-BY-SA-4.0",
+        "text_url": "https://augasdegalicia.xunta.gal/aviso-legal",
+        "verified_at": "2026-11-01",
+        "odbl_compatible": "doubt",
+        "collection": "cc-by-sa-4.0",
+        "notes": "Aviso legal de Augas de Galicia (reutilización con cita e sen desnaturalizar) e do IET para o IDEG («compatible con CC- BY 4.0 INT»); sen confirmación escrita, aplícase a máis restritiva (ADR 0005): colección CC BY-SA. Estado das masas de auga superficiais do plan 2021–2027 na demarcación Galicia-Costa: 412 ríos, 24 lagos e encoros, 22 de transición, 29 costeiras e 7 portos. O Miño-Sil (CHMS) non está. Sen as 18 masas subterráneas (cubrirían todo o territorio). Os ríos chegan en centos de anacos de dous puntos por masa: encadéanse e simplifícanse (Douglas–Peucker, 0,0003°, ≈ 30 m); polígonos xeneralizados no servidor (0,0002–0,0003°). Valores do plan traducidos ao galego; é a avaliación do plan, non medicións recentes."
+      },
+      "attribution": "Augas de Galicia. Plan hidrolóxico Galicia-Costa 2021–2027. Xunta de Galicia",
+      "update_frequency": {
+        "declared": "static",
+        "measured": "static"
+      },
+      "geometry": "line",
+      "output": "geojson",
+      "privacy_notes": "Estado ambiental de ríos, lagos e augas costeiras; ningún dato persoal.",
+      "stale_after": "P90D",
+      "ingest": {
+        "every": "P30D"
+      },
+      "style": {
+        "kind": "line",
+        "color_token": "--c-auga",
+        "label_field": "nome"
+      },
+      "table": {
+        "fields": [
+          "nome",
+          "categoria",
+          "estado_global",
+          "estado_ecoloxico",
+          "estado_quimico",
+          "natureza",
+          "codigo"
+        ]
+      },
+      "meta": {
+        "layer_id": "estado-masas-auga",
+        "published_at": null,
+        "fetched_at": "2026-11-01T21:07:08.980Z",
+        "last_success_at": "2026-11-01T21:07:08.980Z",
+        "status": "fresh",
+        "consecutive_failures": 0,
+        "feature_count": 494,
+        "source_url": "https://ideg.xunta.gal/servizos/rest/services/IDE_DHGC/PHGC2021_2027_Estado/MapServer",
+        "licence": "CC-BY-SA-4.0",
+        "attribution": "Augas de Galicia. Plan hidrolóxico Galicia-Costa 2021–2027. Xunta de Galicia",
+        "checksum": "sha256:3d7d4d71037ec439e9237214a046db738a06a42da667e277da7013e7994de513",
+        "last_error": null,
+        "history": [
+          {
+            "at": "2026-11-01T21:07:08.980Z",
+            "ok": true
+          }
+        ],
+        "alert": false
+      }
+    },
+    {
       "id": "farmacias",
       "title": {
         "gl": "Farmacias",
@@ -3032,8 +3337,8 @@
       "meta": {
         "layer_id": "focos-calor",
         "published_at": "2026-11-01T15:56:00.000Z",
-        "fetched_at": "2026-11-01T19:57:34.024Z",
-        "last_success_at": "2026-11-01T19:57:34.024Z",
+        "fetched_at": "2026-11-01T21:07:13.804Z",
+        "last_success_at": "2026-11-01T21:07:13.804Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 3,
@@ -3043,6 +3348,10 @@
         "checksum": "sha256:3ee8c28e1840f7accf8a67cb9d881fe2317c395a83edd95f0becb5138248ac8f",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-11-01T21:07:13.804Z",
+            "ok": true
+          },
           {
             "at": "2026-11-01T19:57:34.024Z",
             "ok": true
@@ -3256,17 +3565,21 @@
       "meta": {
         "layer_id": "gasolineiras",
         "published_at": null,
-        "fetched_at": "2026-11-01T19:57:34.863Z",
-        "last_success_at": "2026-11-01T19:57:34.863Z",
+        "fetched_at": "2026-11-01T21:07:14.981Z",
+        "last_success_at": "2026-11-01T21:07:14.981Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 736,
         "source_url": "https://sedeaplicaciones.minetur.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/EstacionesTerrestres/FiltroCCAA/12",
         "licence": "https://www.miteco.gob.es/es/atencion-al-ciudadano/aviso-legal.html",
         "attribution": "Fonte: Ministerio para a Transición Ecolóxica (MITERD), xeoportal de gasolineiras",
-        "checksum": "sha256:0ae19203507fe34449ff150a48588ed620ab12603d7db1247a0f4b4dc4ea5f45",
+        "checksum": "sha256:bac68ad0e6d885f4ae287dfc96d1ef09e1af467b7db0941c6b618c08839b8351",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-11-01T21:07:14.981Z",
+            "ok": true
+          },
           {
             "at": "2026-11-01T19:57:34.863Z",
             "ok": true
@@ -3736,6 +4049,147 @@
       }
     },
     {
+      "id": "humidais",
+      "title": {
+        "gl": "Inventario de zonas húmidas",
+        "es": "Inventario de zonas húmedas"
+      },
+      "theme": "auga-mar",
+      "operator": {
+        "name": "Xunta de Galicia (Instituto de Estudos do Territorio / IDEG; Consellería de Medio Ambiente)",
+        "url": "https://mapas.xunta.gal"
+      },
+      "source_url": "https://ideg.xunta.gal/servizos/rest/services/LugaresProtexidos/ENC_InventarioZonasHumidas/MapServer/0",
+      "licence": {
+        "spdx": "CC-BY-SA-4.0",
+        "text_url": "https://mapas.xunta.gal/gl/aviso-legal",
+        "verified_at": "2026-11-01",
+        "odbl_compatible": "doubt",
+        "collection": "cc-by-sa-4.0",
+        "notes": "Dobre licenza (ADR 0005): IET «compatible con CC BY 4.0» / abertos.xunta.gal CC BY-SA 4.0; aplícase a máis restritiva ata confirmación escrita. Inventario de Zonas Húmidas de Galicia: 1.170 elementos (dúas páxinas), con data de publicación no DOG de 2023 ou 2024; 111 humidais teñen varios elementos (lagoas L1, L2…). Inclúe humidais sen protección legal: estar no inventario non é unha figura de protección (os 5 humidais protexidos están na capa espazos-naturais-galicia). A tipoloxía (TIP_IZHG) vai como código porque o servizo non publica a lenda. Polígonos xeneralizados no servidor (0,0002°, ≈ 20 m); os elementos moi pequenos quedan como polígonos de poucos vértices."
+      },
+      "attribution": "© Instituto de Estudos do Territorio. Xunta de Galicia",
+      "update_frequency": {
+        "declared": "static",
+        "measured": "static"
+      },
+      "geometry": "polygon",
+      "output": "geojson",
+      "privacy_notes": "Límites de humidais; ningún dato persoal.",
+      "stale_after": "P90D",
+      "ingest": {
+        "every": "P30D"
+      },
+      "style": {
+        "kind": "fill",
+        "color_token": "--c-humidal",
+        "label_field": "nome"
+      },
+      "table": {
+        "fields": [
+          "nome",
+          "elemento",
+          "tipoloxia",
+          "superficie_ha",
+          "data_dog",
+          "codigo_humidal"
+        ]
+      },
+      "meta": {
+        "layer_id": "humidais",
+        "published_at": "2024-02-20T00:00:00.000Z",
+        "fetched_at": "2026-11-01T21:07:18.188Z",
+        "last_success_at": "2026-11-01T21:07:18.188Z",
+        "status": "fresh",
+        "consecutive_failures": 0,
+        "feature_count": 1170,
+        "source_url": "https://ideg.xunta.gal/servizos/rest/services/LugaresProtexidos/ENC_InventarioZonasHumidas/MapServer/0",
+        "licence": "CC-BY-SA-4.0",
+        "attribution": "© Instituto de Estudos do Territorio. Xunta de Galicia",
+        "checksum": "sha256:f6c5d63f8f7ef7e97c19cc4277b372f644c55c31af834203db2499c0b56cb61a",
+        "last_error": null,
+        "history": [
+          {
+            "at": "2026-11-01T21:07:18.188Z",
+            "ok": true
+          }
+        ],
+        "alert": false
+      }
+    },
+    {
+      "id": "imd-estradas",
+      "title": {
+        "gl": "Tráfico nas estradas autonómicas (IMD 2025)",
+        "es": "Tráfico en las carreteras autonómicas (IMD 2025)"
+      },
+      "theme": "mobilidade",
+      "operator": {
+        "name": "Xunta de Galicia — Axencia Galega de Infraestruturas (AXI), servizo no IDEG",
+        "url": "https://axi.xunta.gal/"
+      },
+      "source_url": "https://ideg.xunta.gal/servizos/rest/services/AXI/MapaTrafico/MapServer/7",
+      "licence": {
+        "spdx": "CC-BY-SA-4.0",
+        "text_url": "https://mapas.xunta.gal/gl/aviso-legal",
+        "verified_at": "2026-11-01",
+        "odbl_compatible": "doubt",
+        "collection": "cc-by-sa-4.0",
+        "notes": "Servizo da AXI aloxado no IDEG (copyright «Instituto de Estudos do Territorio, AXI, Xunta de Galiza»). Aviso legal do IET: «licenza de uso compatible con CC- BY 4.0 INT»; o aviso xeral da Xunta (https://www.xunta.gal/aviso-legal-do-portal-da-xunta) pide citar a fonte e prohibe desnaturalizar a información. Sen confirmación escrita, aplícase a máis restritiva (ADR 0005): colección CC BY-SA. 1.138 treitos da Rede Autonómica de Estradas (RAEG), unha páxina. Liñas xeneralizadas no servidor con maxAllowableOffset = 0,0002° (≈ 20 m). Coidado: a IMD de 2025 é a estimación da AXI para cada treito, non sempre un aforo de 2025. Cada treito leva o ano do último aforo (380 de 2025; 42 sen aforo; algúns de 2009) e o tipo (PER, COM, NEUM, CONCESIÓN: códigos da AXI sen lenda publicada no servizo). As capas 4 e 6 dan 2023 e 2024 (serie para un pulso futuro). Sen estradas estatais nin provinciais. Non se inclúen as 1.695 estacións de aforo."
+      },
+      "attribution": "Axencia Galega de Infraestruturas e Instituto de Estudos do Territorio. Xunta de Galicia",
+      "update_frequency": {
+        "declared": "P365D",
+        "measured": "static"
+      },
+      "geometry": "line",
+      "output": "geojson",
+      "privacy_notes": "Medias anuais de tráfico por treito de estrada; ningún dato persoal.",
+      "stale_after": "P400D",
+      "ingest": {
+        "every": "P30D"
+      },
+      "style": {
+        "kind": "line",
+        "color_token": "--c-trafico",
+        "label_field": "estrada"
+      },
+      "table": {
+        "fields": [
+          "estrada",
+          "treito",
+          "imd",
+          "pesados_pct",
+          "ano_aforo",
+          "tipo_aforo",
+          "rede",
+          "clase",
+          "lonxitude_km"
+        ]
+      },
+      "meta": {
+        "layer_id": "imd-estradas",
+        "published_at": null,
+        "fetched_at": "2026-11-01T21:07:19.740Z",
+        "last_success_at": "2026-11-01T21:07:19.740Z",
+        "status": "fresh",
+        "consecutive_failures": 0,
+        "feature_count": 1138,
+        "source_url": "https://ideg.xunta.gal/servizos/rest/services/AXI/MapaTrafico/MapServer/7",
+        "licence": "CC-BY-SA-4.0",
+        "attribution": "Axencia Galega de Infraestruturas e Instituto de Estudos do Territorio. Xunta de Galicia",
+        "checksum": "sha256:5378db3533083db793e84b4b863a72a67b3498467fb9f00e684486ae174ae5ce",
+        "last_error": null,
+        "history": [
+          {
+            "at": "2026-11-01T21:07:19.740Z",
+            "ok": true
+          }
+        ],
+        "alert": false
+      }
+    },
+    {
       "id": "indicadores-concellos",
       "title": {
         "gl": "Indicadores dos concellos comparados con Galicia",
@@ -4026,6 +4480,76 @@
         "history": [
           {
             "at": "2026-11-01T13:25:42.120Z",
+            "ok": true
+          }
+        ],
+        "alert": false
+      }
+    },
+    {
+      "id": "inundacion-costeira",
+      "title": {
+        "gl": "Zonas inundables na costa (100 e 500 anos)",
+        "es": "Zonas inundables en la costa (100 y 500 años)"
+      },
+      "theme": "auga-mar",
+      "operator": {
+        "name": "Xunta de Galicia — Augas de Galicia (Directiva 2007/60/CE), servizo no IDEG",
+        "url": "https://augasdegalicia.xunta.gal/"
+      },
+      "source_url": "https://ideg.xunta.gal/servizos/rest/services/IDE_DHGC/D2007_60_MapasInundablesCosteiros/MapServer",
+      "licence": {
+        "spdx": "CC-BY-SA-4.0",
+        "text_url": "https://augasdegalicia.xunta.gal/aviso-legal",
+        "verified_at": "2026-11-01",
+        "odbl_compatible": "doubt",
+        "collection": "cc-by-sa-4.0",
+        "notes": "Aviso legal de Augas de Galicia (reutilización con cita e sen desnaturalizar) e do IET para o IDEG («compatible con CC- BY 4.0 INT»); sen confirmación escrita, aplícase a máis restritiva (ADR 0005): colección CC BY-SA. O estudo é do SNCZI (Ministerio de Agricultura, Alimentación e Medio Ambiente, 2014) para a demarcación Galicia-Costa; MITECO publica o mesmo tema en ráster con CC BY 4.0 (fonte zonas-inundables), pero aquí úsase o vector do servizo de Augas. Subcapas 3 (T100, 28 polígonos) e 4 (T500, 28), unha por ARPSI costeira (áreas de risco potencial significativo), ciclo 2015–2021: só cobre eses tramos de costa, non toda a costa. Xeneralización no servidor con maxAllowableOffset = 0,0001° (≈ 10 m). Sen o risco para a poboación (subcapas 5–12)."
+      },
+      "attribution": "Augas de Galicia (Xunta de Galicia); mapas de perigosidade do SNCZI, Ministerio de Agricultura, Alimentación e Medio Ambiente",
+      "update_frequency": {
+        "declared": "static",
+        "measured": "static"
+      },
+      "geometry": "polygon",
+      "output": "geojson",
+      "privacy_notes": "Láminas de inundación por zonas; ningún dato persoal.",
+      "stale_after": "P90D",
+      "ingest": {
+        "every": "P30D"
+      },
+      "style": {
+        "kind": "fill",
+        "color_token": "--c-inundacion",
+        "label_field": "zona"
+      },
+      "table": {
+        "fields": [
+          "zona",
+          "periodo_retorno",
+          "superficie_km2",
+          "lonxitude_km",
+          "cota_max_m",
+          "arpsi",
+          "data_estudo"
+        ]
+      },
+      "meta": {
+        "layer_id": "inundacion-costeira",
+        "published_at": null,
+        "fetched_at": "2026-11-01T21:07:20.873Z",
+        "last_success_at": "2026-11-01T21:07:20.873Z",
+        "status": "fresh",
+        "consecutive_failures": 0,
+        "feature_count": 56,
+        "source_url": "https://ideg.xunta.gal/servizos/rest/services/IDE_DHGC/D2007_60_MapasInundablesCosteiros/MapServer",
+        "licence": "CC-BY-SA-4.0",
+        "attribution": "Augas de Galicia (Xunta de Galicia); mapas de perigosidade do SNCZI, Ministerio de Agricultura, Alimentación e Medio Ambiente",
+        "checksum": "sha256:8bde2b286435fa2c2e0b438cef0f1ba6e6b12f37fed659db8128b51c449c4e37",
+        "last_error": null,
+        "history": [
+          {
+            "at": "2026-11-01T21:07:20.873Z",
             "ok": true
           }
         ],
@@ -4427,18 +4951,22 @@
       },
       "meta": {
         "layer_id": "meteo-24h",
-        "published_at": "2026-11-01T19:00:00.000Z",
-        "fetched_at": "2026-11-01T19:57:38.572Z",
-        "last_success_at": "2026-11-01T19:57:38.572Z",
+        "published_at": "2026-11-01T21:00:00.000Z",
+        "fetched_at": "2026-11-01T21:07:21.317Z",
+        "last_success_at": "2026-11-01T21:07:21.317Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 152,
         "source_url": "https://servizos.meteogalicia.gal/mgrss/observacion/ultimosHorariosEstacions.action",
         "licence": "https://www.meteogalicia.gal/web/aviso-legal",
         "attribution": "Fonte: MeteoGalicia (Xunta de Galicia), observación horaria.",
-        "checksum": "sha256:57dc3031bed77c898c219a5b16b0310b1548b136451564eb2e7de49548c625b3",
+        "checksum": "sha256:93a34483bc0233d348ee6b08e679da37c724a4042adf104f7307b59c31de358c",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-11-01T21:07:21.317Z",
+            "ok": true
+          },
           {
             "at": "2026-11-01T19:57:38.572Z",
             "ok": true
@@ -5262,6 +5790,74 @@
       }
     },
     {
+      "id": "praias",
+      "title": {
+        "gl": "Praias",
+        "es": "Playas"
+      },
+      "theme": "auga-mar",
+      "operator": {
+        "name": "Xunta de Galicia (Instituto de Estudos do Territorio / IDEG)",
+        "url": "https://mapas.xunta.gal"
+      },
+      "source_url": "https://ideg.xunta.gal/servizos/rest/services/CubertaTerrestre/Clasificacion_PRAIAS/MapServer/0",
+      "licence": {
+        "spdx": "CC-BY-SA-4.0",
+        "text_url": "https://mapas.xunta.gal/gl/aviso-legal",
+        "verified_at": "2026-11-01",
+        "odbl_compatible": "doubt",
+        "collection": "cc-by-sa-4.0",
+        "notes": "Dobre licenza (ADR 0005): IET «compatible con CC BY 4.0» / abertos.xunta.gal CC BY-SA 4.0; aplícase a máis restritiva ata confirmación escrita. 987 praias costeiras (A Coruña, Lugo e Pontevedra) nunha soa páxina (maxRecordCount 1000). Sen bandeira azul: o campo B_AZUL do servizo non di de que ano é, e a lista de 2026 de abertos.xunta.gal (PraiasBandeiraAzul_2026.csv, 126 filas, 8 baleiras) non casa ben por posición co servizo (29 de 118 casaban con outra praia; as praias fluviais non están nesta capa). A clasificación natural/urbana é a da fonte; 42 urbanas levan «URBANA *» sen explicación. Praias partidas en tramos aparecen unha vez por tramo."
+      },
+      "attribution": "© Instituto de Estudos do Territorio. Xunta de Galicia",
+      "update_frequency": {
+        "declared": "static",
+        "measured": "static"
+      },
+      "geometry": "point",
+      "output": "geojson",
+      "privacy_notes": "Situación e nome das praias; ningún dato persoal.",
+      "stale_after": "P90D",
+      "ingest": {
+        "every": "P30D"
+      },
+      "style": {
+        "kind": "circle",
+        "color_token": "--c-praia",
+        "label_field": "nome"
+      },
+      "table": {
+        "fields": [
+          "nome",
+          "concello",
+          "provincia",
+          "categoria",
+          "tramo"
+        ]
+      },
+      "meta": {
+        "layer_id": "praias",
+        "published_at": null,
+        "fetched_at": "2026-11-01T21:07:23.240Z",
+        "last_success_at": "2026-11-01T21:07:23.240Z",
+        "status": "fresh",
+        "consecutive_failures": 0,
+        "feature_count": 987,
+        "source_url": "https://ideg.xunta.gal/servizos/rest/services/CubertaTerrestre/Clasificacion_PRAIAS/MapServer/0",
+        "licence": "CC-BY-SA-4.0",
+        "attribution": "© Instituto de Estudos do Territorio. Xunta de Galicia",
+        "checksum": "sha256:7af051c24a69e6e379e35f65a2b13c3369062940ecc933f2b03ccd74c65a108e",
+        "last_error": null,
+        "history": [
+          {
+            "at": "2026-11-01T21:07:23.240Z",
+            "ok": true
+          }
+        ],
+        "alert": false
+      }
+    },
+    {
       "id": "pulso-bus",
       "title": {
         "gl": "Pulso do bus (todos os autobuses da Xunta dun día)",
@@ -5423,6 +6019,76 @@
       }
     },
     {
+      "id": "puntos-limpos",
+      "title": {
+        "gl": "Puntos limpos",
+        "es": "Puntos limpios"
+      },
+      "theme": "servizos",
+      "operator": {
+        "name": "Xunta de Galicia — Consellería de Medio Ambiente",
+        "url": "https://cmatv.xunta.gal/"
+      },
+      "source_url": "https://abertos.xunta.gal/catalogo/administracion-publica/-/dataset/0303/puntos-limpos",
+      "licence": {
+        "spdx": "CC-BY-SA-4.0",
+        "text_url": "https://abertos.xunta.gal/catalogo/administracion-publica/-/dataset/0303/puntos-limpos",
+        "quote": "Creative Commons BY SA 4.0",
+        "verified_at": "2026-11-01",
+        "odbl_compatible": "doubt",
+        "collection": "cc-by-sa-4.0",
+        "notes": "Licenza indicada na ficha do conxunto 0303 en abertos.xunta.gal (CC BY-SA 4.0). Compatibilidade coa ODbL en dúbida: colección CC BY-SA (ADR 0005). Ficheiro único https://ficheiros-web.xunta.gal/abertos/puntos_limpos/Puntos_limpos.csv (151 puntos, Windows-1252, «lat,lon» nunha columna) con Last-Modified (19/03/2025): os horarios poden estar desfasados. Todos figuran como construídos; non di se están abertos. Algúns concellos da fonte son anteriores ás fusións (Cerdedo, Oza dos Ríos) e lévanse ao concello actual."
+      },
+      "attribution": "Xunta de Galicia. Consellería de Medio Ambiente, puntos limpos (abertos.xunta.gal, conxunto 0303)",
+      "update_frequency": {
+        "declared": "static",
+        "measured": "static"
+      },
+      "geometry": "point",
+      "output": "geojson",
+      "privacy_notes": "Non se publican os teléfonos (algúns son móbiles), a empresa xestora nin o custo da obra. Si o horario de apertura, que é información pública do servizo.",
+      "stale_after": "P90D",
+      "ingest": {
+        "every": "P30D"
+      },
+      "style": {
+        "kind": "circle",
+        "color_token": "--c-reciclaxe",
+        "label_field": "nome"
+      },
+      "table": {
+        "fields": [
+          "nome",
+          "concello",
+          "enderezo",
+          "horario",
+          "titular",
+          "concellos_servidos"
+        ]
+      },
+      "meta": {
+        "layer_id": "puntos-limpos",
+        "published_at": "2025-03-19T12:00:30.000Z",
+        "fetched_at": "2026-11-01T21:07:27.956Z",
+        "last_success_at": "2026-11-01T21:07:27.956Z",
+        "status": "fresh",
+        "consecutive_failures": 0,
+        "feature_count": 151,
+        "source_url": "https://abertos.xunta.gal/catalogo/administracion-publica/-/dataset/0303/puntos-limpos",
+        "licence": "CC-BY-SA-4.0",
+        "attribution": "Xunta de Galicia. Consellería de Medio Ambiente, puntos limpos (abertos.xunta.gal, conxunto 0303)",
+        "checksum": "sha256:b123f2dfe4aaa157c9f0a8e9b8127f8c7ef00f2f369f0ea0b43e0676cc6e0437",
+        "last_error": null,
+        "history": [
+          {
+            "at": "2026-11-01T21:07:27.956Z",
+            "ok": true
+          }
+        ],
+        "alert": false
+      }
+    },
+    {
       "id": "puntos-recarga",
       "title": {
         "gl": "Puntos de recarga de vehículos eléctricos",
@@ -5576,8 +6242,8 @@
       "meta": {
         "layer_id": "raios",
         "published_at": null,
-        "fetched_at": "2026-11-01T19:57:43.104Z",
-        "last_success_at": "2026-11-01T19:57:43.104Z",
+        "fetched_at": "2026-11-01T21:07:29.038Z",
+        "last_success_at": "2026-11-01T21:07:29.038Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 0,
@@ -5587,6 +6253,10 @@
         "checksum": "sha256:ed778c73ea51338d6576fb5992b189f2b94d9f3d5e199f46c1af520d6b0b3e6c",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-11-01T21:07:29.038Z",
+            "ok": true
+          },
           {
             "at": "2026-11-01T19:57:43.104Z",
             "ok": true
@@ -5902,6 +6572,74 @@
       }
     },
     {
+      "id": "sendas-paisaxe",
+      "title": {
+        "gl": "Sendas e itinerarios da paisaxe",
+        "es": "Sendas e itinerarios del paisaje"
+      },
+      "theme": "territorio",
+      "operator": {
+        "name": "Xunta de Galicia (Instituto de Estudos do Territorio / IDEG)",
+        "url": "https://mapas.xunta.gal"
+      },
+      "source_url": "https://ideg.xunta.gal/servizos/rest/services/sendas",
+      "licence": {
+        "spdx": "CC-BY-SA-4.0",
+        "text_url": "https://mapas.xunta.gal/gl/aviso-legal",
+        "verified_at": "2026-11-01",
+        "odbl_compatible": "doubt",
+        "collection": "cc-by-sa-4.0",
+        "notes": "Dobre licenza (ADR 0005): IET «compatible con CC BY 4.0» / abertos.xunta.gal CC BY-SA 4.0; aplícase a máis restritiva ata confirmación escrita. Dous servizos ArcGIS REST: sendas/sendas/MapServer/0 (266 itinerarios de interese paisaxístico: 25 panorámicos, 38 patrimoniais, 38 patrimoniais BIC, 109 naturais e 56 da Senda Litoral dos faros) e sendas/Camiño_do_Litoral/MapServer/0 (52 etapas, ~1.370 km). Liñas xeneralizadas no servidor con maxAllowableOffset = 0,0001° (≈ 10 m). A lonxitude é a que dá a fonte (LONXITUDE ou KM) e ás veces non coincide co trazado. Non se publican a pendente media (AVG_SLOPE, sen unidade indicada) nin as fichas PDF e fotos (só nomes de ficheiro, sen enderezo verificado)."
+      },
+      "attribution": "© Instituto de Estudos do Territorio. Xunta de Galicia",
+      "update_frequency": {
+        "declared": "static",
+        "measured": "static"
+      },
+      "geometry": "line",
+      "output": "geojson",
+      "privacy_notes": "Trazados de rutas a pé; ningún dato persoal.",
+      "stale_after": "P90D",
+      "ingest": {
+        "every": "P30D"
+      },
+      "style": {
+        "kind": "line",
+        "color_token": "--c-senda",
+        "label_field": "nome"
+      },
+      "table": {
+        "fields": [
+          "nome",
+          "tipo",
+          "lonxitude_km",
+          "concello_inicio",
+          "concello_fin"
+        ]
+      },
+      "meta": {
+        "layer_id": "sendas-paisaxe",
+        "published_at": null,
+        "fetched_at": "2026-11-01T21:07:29.206Z",
+        "last_success_at": "2026-11-01T21:07:29.206Z",
+        "status": "fresh",
+        "consecutive_failures": 0,
+        "feature_count": 318,
+        "source_url": "https://ideg.xunta.gal/servizos/rest/services/sendas",
+        "licence": "CC-BY-SA-4.0",
+        "attribution": "© Instituto de Estudos do Territorio. Xunta de Galicia",
+        "checksum": "sha256:01f5eabb63721675ed2376e89bc03abec0c556ad92e07958c0c5ed52d4d7be3b",
+        "last_error": null,
+        "history": [
+          {
+            "at": "2026-11-01T21:07:29.206Z",
+            "ok": true
+          }
+        ],
+        "alert": false
+      }
+    },
+    {
       "id": "sismos-recentes",
       "title": {
         "gl": "Terremotos recentes (30 días)",
@@ -5956,8 +6694,8 @@
       "meta": {
         "layer_id": "sismos-recentes",
         "published_at": "2026-10-31T09:17:54.575Z",
-        "fetched_at": "2026-11-01T19:57:43.239Z",
-        "last_success_at": "2026-11-01T19:57:43.239Z",
+        "fetched_at": "2026-11-01T21:07:30.978Z",
+        "last_success_at": "2026-11-01T21:07:30.978Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 64,
@@ -5967,6 +6705,10 @@
         "checksum": "sha256:bdfd693502aedc4a8dba867b1f341fdad5f2eaf0afa6ffd7696248a9f4e99ee4",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-11-01T21:07:30.978Z",
+            "ok": true
+          },
           {
             "at": "2026-11-01T19:57:43.239Z",
             "ok": true
@@ -6173,18 +6915,22 @@
       },
       "meta": {
         "layer_id": "trafico-balizas-v16",
-        "published_at": "2026-11-01T19:56:18.715Z",
-        "fetched_at": "2026-11-01T19:57:45.399Z",
-        "last_success_at": "2026-11-01T19:57:45.399Z",
+        "published_at": "2026-11-01T21:06:18.726Z",
+        "fetched_at": "2026-11-01T21:07:33.357Z",
+        "last_success_at": "2026-11-01T21:07:33.357Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 9,
         "source_url": "https://nap.dgt.es/datex2/v3/dgt/SituationPublication/datex2_v37.xml",
         "licence": "https://nap.dgt.es/es/dataset/incidencias-dgt-datex2-v3-7",
         "attribution": "Fonte: DGT, Punto de Acceso Nacional de Tráfico",
-        "checksum": "sha256:3a59eb76ea2ed5b1bcc302590e498ca97fe3894935fd4e5805d3e41750cea5c3",
+        "checksum": "sha256:b4d42d36afbc4e4905a5cb3a1fbc0eb5a7dd15a6be0ec1313afafc483150966a",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-11-01T21:07:33.357Z",
+            "ok": true
+          },
           {
             "at": "2026-11-01T19:57:45.399Z",
             "ok": true
@@ -6396,18 +7142,22 @@
       },
       "meta": {
         "layer_id": "trafico-incidencias",
-        "published_at": "2026-11-01T19:56:18.715Z",
-        "fetched_at": "2026-11-01T19:57:45.757Z",
-        "last_success_at": "2026-11-01T19:57:45.757Z",
+        "published_at": "2026-11-01T21:06:18.726Z",
+        "fetched_at": "2026-11-01T21:07:33.782Z",
+        "last_success_at": "2026-11-01T21:07:33.782Z",
         "status": "fresh",
         "consecutive_failures": 0,
-        "feature_count": 69,
+        "feature_count": 68,
         "source_url": "https://nap.dgt.es/datex2/v3/dgt/SituationPublication/datex2_v37.xml",
         "licence": "https://nap.dgt.es/es/dataset/incidencias-dgt-datex2-v3-7",
         "attribution": "Fonte: DGT, Punto de Acceso Nacional de Tráfico",
-        "checksum": "sha256:94333c5736b1fe1ad383a8a7827c37d40c0a7926b493b770fa6338a29e02b698",
+        "checksum": "sha256:301960c0ca4a5edbfe15460915f482bec6cd35b522f838cd8d6d8dfdf8842d33",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-11-01T21:07:33.782Z",
+            "ok": true
+          },
           {
             "at": "2026-11-01T19:57:45.757Z",
             "ok": true
@@ -6722,18 +7472,22 @@
       "volatile": true,
       "meta": {
         "layer_id": "tren",
-        "published_at": "2026-11-01T18:57:43.000Z",
-        "fetched_at": "2026-11-01T19:57:45.869Z",
-        "last_success_at": "2026-11-01T19:57:45.869Z",
+        "published_at": "2026-11-01T20:07:27.000Z",
+        "fetched_at": "2026-11-01T21:07:33.846Z",
+        "last_success_at": "2026-11-01T21:07:33.846Z",
         "status": "fresh",
         "consecutive_failures": 0,
-        "feature_count": 17,
+        "feature_count": 11,
         "source_url": "https://gtfsrt.renfe.com/vehicle_positions_LD.json",
         "licence": "CC-BY-4.0",
         "attribution": "Origen de los datos: Renfe Operadora",
-        "checksum": "sha256:d4be2c6424593072efeb456b854542dcb58f5764cca8a2e14b51411fe56d62c9",
+        "checksum": "sha256:4b150ff858317d786a7feeb946236e06a7e289666a821b382899dcc61c1b9b85",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-11-01T21:07:33.846Z",
+            "ok": true
+          },
           {
             "at": "2026-11-01T19:57:45.869Z",
             "ok": true
@@ -7067,6 +7821,145 @@
         "history": [
           {
             "at": "2026-11-01T13:38:13.343Z",
+            "ok": true
+          }
+        ],
+        "alert": false
+      }
+    },
+    {
+      "id": "zonas-bano",
+      "title": {
+        "gl": "Zonas de baño oficiais",
+        "es": "Zonas de baño oficiales"
+      },
+      "theme": "auga-mar",
+      "operator": {
+        "name": "Xunta de Galicia — Augas de Galicia (Plan hidrolóxico Galicia-Costa 2021–2027), servizo no IDEG",
+        "url": "https://augasdegalicia.xunta.gal/"
+      },
+      "source_url": "https://ideg.xunta.gal/servizos/rest/services/IDE_DHGC/PHGC2021_2027_ZProtex_NEuropeo/MapServer/4",
+      "licence": {
+        "spdx": "CC-BY-SA-4.0",
+        "text_url": "https://augasdegalicia.xunta.gal/aviso-legal",
+        "verified_at": "2026-11-01",
+        "odbl_compatible": "doubt",
+        "collection": "cc-by-sa-4.0",
+        "notes": "Aviso legal de Augas de Galicia (reutilización libre, comercial ou non, citando a fonte e sen desnaturalizar) e do IET para o IDEG («compatible con CC- BY 4.0 INT»). Sen confirmación escrita, aplícase a máis restritiva (ADR 0005): colección CC BY-SA. Zonas de baño do censo oficial (Náiade) na demarcación Galicia-Costa: 458 no servizo, 16 delas con data de baixa (non se publican). O Miño-Sil (CHMS) non está. A subcapa responde a `query` sen xeometría; as formas lense coa operación estándar `find` e compróbase que dá tantas como o reconto de `query`. Polígonos xeneralizados no servidor (0,0002°, ≈ 20 m). Só xeometría: a calidade da auga de cada tempada está nunha páxina HTML do SERGAS, sen feed. Nomes do censo en castelán, como os dá a fonte."
+      },
+      "attribution": "Augas de Galicia. Plan hidrolóxico Galicia-Costa 2021–2027. Xunta de Galicia",
+      "update_frequency": {
+        "declared": "static",
+        "measured": "static"
+      },
+      "geometry": "polygon",
+      "output": "geojson",
+      "privacy_notes": "Límites das zonas de baño; ningún dato persoal.",
+      "stale_after": "P90D",
+      "ingest": {
+        "every": "P30D"
+      },
+      "style": {
+        "kind": "fill",
+        "color_token": "--c-bano",
+        "label_field": "nome"
+      },
+      "table": {
+        "fields": [
+          "nome",
+          "tipo",
+          "superficie_ha",
+          "data_alta"
+        ]
+      },
+      "meta": {
+        "layer_id": "zonas-bano",
+        "published_at": null,
+        "fetched_at": "2026-11-01T21:07:35.571Z",
+        "last_success_at": "2026-11-01T21:07:35.571Z",
+        "status": "fresh",
+        "consecutive_failures": 0,
+        "feature_count": 442,
+        "source_url": "https://ideg.xunta.gal/servizos/rest/services/IDE_DHGC/PHGC2021_2027_ZProtex_NEuropeo/MapServer/4",
+        "licence": "CC-BY-SA-4.0",
+        "attribution": "Augas de Galicia. Plan hidrolóxico Galicia-Costa 2021–2027. Xunta de Galicia",
+        "checksum": "sha256:f79b0fc45e2810856d868438e149c74a282605d460a7517595cd76f1cf547503",
+        "last_error": null,
+        "history": [
+          {
+            "at": "2026-11-01T21:07:35.571Z",
+            "ok": true
+          }
+        ],
+        "alert": false
+      }
+    },
+    {
+      "id": "zonas-producion-moluscos",
+      "title": {
+        "gl": "Zonas de produción de moluscos e polígonos de bateas",
+        "es": "Zonas de producción de moluscos y polígonos de bateas"
+      },
+      "theme": "auga-mar",
+      "operator": {
+        "name": "Xunta de Galicia — Augas de Galicia (Plan hidrolóxico Galicia-Costa 2021–2027), servizo no IDEG",
+        "url": "https://augasdegalicia.xunta.gal/"
+      },
+      "source_url": "https://ideg.xunta.gal/servizos/rest/services/IDE_DHGC/PHGC2021_2027_ZProtex_NEuropeo/MapServer",
+      "licence": {
+        "spdx": "CC-BY-SA-4.0",
+        "text_url": "https://augasdegalicia.xunta.gal/aviso-legal",
+        "verified_at": "2026-11-01",
+        "odbl_compatible": "doubt",
+        "collection": "cc-by-sa-4.0",
+        "notes": "Aviso legal de Augas de Galicia (reutilización con cita e sen desnaturalizar) e do IET para o IDEG («compatible con CC- BY 4.0 INT»); sen confirmación escrita, aplícase a máis restritiva (ADR 0005): colección CC BY-SA. Subcapas 2 (84 zonas de produción) e 1 (71 polígonos de bateas) do rexistro de zonas protexidas do plan. Responden a `query` sen xeometría; as formas lense con `find` e compróbase o reconto. Xeneralización no servidor: zonas 0,0003° (≈ 30 m), bateas 0,0001° (≈ 10 m). Coidado: a clase A/B/C e o estado (estable, provisional, estacional) son os do plan 2021–2027, non a clasificación vixente nin o estado diario aberto/pechado, que publican a Consellería do Mar e o Intecmar (fonte intecmar-zonas, pendente de licenza). 15 polígonos de bateas non teñen clase e algúns levan só «GAL» como código."
+      },
+      "attribution": "Augas de Galicia. Plan hidrolóxico Galicia-Costa 2021–2027. Xunta de Galicia",
+      "update_frequency": {
+        "declared": "static",
+        "measured": "static"
+      },
+      "geometry": "polygon",
+      "output": "geojson",
+      "privacy_notes": "Límites de zonas marisqueiras e de polígonos de bateas; ningún dato persoal.",
+      "stale_after": "P90D",
+      "ingest": {
+        "every": "P30D"
+      },
+      "style": {
+        "kind": "fill",
+        "color_token": "--c-moluscos",
+        "label_field": "nome"
+      },
+      "table": {
+        "fields": [
+          "nome",
+          "tipo",
+          "codigo",
+          "clase",
+          "estado",
+          "nota",
+          "ria",
+          "limites",
+          "superficie_km2"
+        ]
+      },
+      "meta": {
+        "layer_id": "zonas-producion-moluscos",
+        "published_at": null,
+        "fetched_at": "2026-11-01T21:07:38.454Z",
+        "last_success_at": "2026-11-01T21:07:38.454Z",
+        "status": "fresh",
+        "consecutive_failures": 0,
+        "feature_count": 155,
+        "source_url": "https://ideg.xunta.gal/servizos/rest/services/IDE_DHGC/PHGC2021_2027_ZProtex_NEuropeo/MapServer",
+        "licence": "CC-BY-SA-4.0",
+        "attribution": "Augas de Galicia. Plan hidrolóxico Galicia-Costa 2021–2027. Xunta de Galicia",
+        "checksum": "sha256:42b0f59bb06627c262a9e8e111920a1d59df5345b5c5b80c7c41e506aba49dce",
+        "last_error": null,
+        "history": [
+          {
+            "at": "2026-11-01T21:07:38.454Z",
             "ok": true
           }
         ],

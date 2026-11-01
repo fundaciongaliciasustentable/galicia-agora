@@ -1,0 +1,20 @@
+{
+  "layer_id": "praias",
+  "published_at": null,
+  "fetched_at": "2026-11-01T21:07:23.240Z",
+  "last_success_at": "2026-11-01T21:07:23.240Z",
+  "status": "fresh",
+  "consecutive_failures": 0,
+  "feature_count": 987,
+  "source_url": "https://ideg.xunta.gal/servizos/rest/services/CubertaTerrestre/Clasificacion_PRAIAS/MapServer/0",
+  "licence": "CC-BY-SA-4.0",
+  "attribution": "© Instituto de Estudos do Territorio. Xunta de Galicia",
+  "checksum": "sha256:7af051c24a69e6e379e35f65a2b13c3369062940ecc933f2b03ccd74c65a108e",
+  "last_error": null,
+  "history": [
+    {
+      "at": "2026-11-01T21:07:23.240Z",
+      "ok": true
+    }
+  ]
+}
