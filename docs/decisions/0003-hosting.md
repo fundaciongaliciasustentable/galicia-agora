@@ -1,8 +1,9 @@
 # 0003 — Aloxamento e despregue
 
-- Estado: aceptada (2026-10-18)
+- Estado: aceptada (2026-10-18); enderezo e cartafol cambiados o 2026-11-01
 
 ## Decisión
+- **Cambio 2026-11-01** (decisión FGS): o sitio pasa a **https://mapas.galiciasustentable.org**, cartafol `www/subdominios/mapas`. Mesmo usuario e chaves FTPS; o directorio de entrada do usuario FTP apunta ao novo cartafol. O `.htaccess` redirixe (301) calquera outro nome, tamén `agora.galiciasustentable.org`, ao novo enderezo. O texto seguinte describe a decisión orixinal.
 - Enderezo: **https://agora.galiciasustentable.org**, subdominio con directorio propio: serve o cartafol `www/galicia-agora` do aloxamento de `galiciasustentable.org` (decisión FGS, 18/10/2026). Vantaxes: separación do resto de `galiciasustentable.org` (cookies, scripts e cabeceiras), configuración e caché propias, enderezo curto e fácil de mover. O mesmo cartafol tamén se ve en `galiciasustentable.org/galicia-agora/`; o `.htaccess` do sitio redirixe esas peticións (301) ao subdominio. Configuración en `site/site.config.json`; todo URL propio pasa por `site/src/paths.ts`.
 - `.htaccess` (`site/public/.htaccess`): redirección, tipos MIME, cabeceiras de seguridade e caché (datos e HTML sempre revalidados). A política CSP vai en modo `Report-Only` ata comprobala no sitio publicado; despois pásase a obrigatoria.
 - Sitio e ficheiros de datos: Dinahosting, mesmo orixe, despregue por FTPS desde GitHub Actions (como a revista da FGS).
