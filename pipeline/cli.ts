@@ -87,6 +87,12 @@ async function cmdIngest(): Promise<number> {
   let failed = 0;
   // Sequential on purpose: be gentle with public services.
   for (const id of ids) {
+    // Layers with their own workflow (e.g. the multi-GB orthophoto) never run here.
+    const workflow = (await loadLayer(id)).ingest?.workflow;
+    if (workflow) {
+      console.log(`${id}: skipped (built by ${workflow})`);
+      continue;
+    }
     const r = await runLayer(id, { outDir: OUT_DIR, force: force || !!only });
     if (r.skipped) {
       console.log(`${id}: skipped (${r.reason})`);

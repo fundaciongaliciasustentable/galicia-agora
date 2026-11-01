@@ -131,7 +131,14 @@
       "type": "object",
       "additionalProperties": false,
       "required": ["every"],
-      "properties": { "every": { "$ref": "#/$defs/duration" } }
+      "properties": {
+        "every": { "$ref": "#/$defs/duration" },
+        "workflow": {
+          "description": "Built by its own GitHub workflow (path), never by `npm run ingest`: large rasters uploaded straight to the server.",
+          "type": "string",
+          "pattern": "^\\.github/workflows/[a-z0-9-]+\\.yml$"
+        }
+      }
     },
     "context": {
       "description": "Extra facts shown next to the layer (e.g. discordant official figures), each with its source.",

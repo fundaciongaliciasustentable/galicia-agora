@@ -25,7 +25,8 @@ export interface LayerDef {
   licence: { spdx?: string; text_url: string; collection: 'odbl' | 'cc-by-sa-4.0' };
   attribution: string;
   stale_after?: string;
-  ingest?: { every: string };
+  /** `workflow`: built by that GitHub workflow, never by the ingest CLI. */
+  ingest?: { every: string; workflow?: string };
   volatile?: boolean;
   join?: { layer: string; key: string; where?: Record<string, unknown> };
   indicators?: Array<{ id: string; comparison: 'index' | 'points' }>;

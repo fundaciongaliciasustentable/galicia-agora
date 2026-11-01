@@ -170,7 +170,7 @@ export interface PmtilesMeta {
   maxzoom: number;
 }
 
-interface Entry {
+export interface Entry {
   tileId: number;
   offset: number;
   length: number;
@@ -207,7 +207,7 @@ function serializeDirectory(entries: Entry[]): Buffer {
 }
 
 /** Root directory, plus leaf directories when the root would not fit in 16 KiB. */
-function buildDirectories(entries: Entry[]): { root: Buffer; leaves: Buffer } {
+export function buildDirectories(entries: Entry[]): { root: Buffer; leaves: Buffer } {
   const root = serializeDirectory(entries);
   if (root.length <= ROOT_MAX_BYTES) return { root, leaves: Buffer.alloc(0) };
   for (let leafSize = 4096; ; leafSize = Math.ceil(leafSize * 1.2)) {
@@ -229,6 +229,82 @@ function buildDirectories(entries: Entry[]): { root: Buffer; leaves: Buffer } {
     const r = serializeDirectory(rootEntries);
     if (r.length <= ROOT_MAX_BYTES) return { root: r, leaves: Buffer.concat(leafBufs) };
   }
+}
+
+/** PMTiles v3 tile types this project writes. */
+const TILE_TYPES = { png: 2, jpeg: 3, webp: 4 } as const;
+
+export interface PreambleCounts {
+  /** Addressed tiles (entries expanded by their run length). */
+  addressed: number;
+  /** Distinct tile contents stored in the data section. */
+  contents: number;
+  /** Bytes of the tile data section that follows the preamble. */
+  dataLength: number;
+  tileType: keyof typeof TILE_TYPES;
+  /** TileJSON-like layer type in the metadata (default: overlay). */
+  layerType?: 'overlay' | 'baselayer';
+}
+
+/**
+ * Everything before the tile data: header, root directory, metadata and leaf
+ * directories. `entries` must be sorted by tile id with offsets relative to
+ * the start of the data section. Exported so large archives can stream their
+ * tile data from disk after it (see pipeline/layers/ortofoto-pnoa/pack.ts).
+ */
+export function pmtilesPreamble(
+  entries: Entry[],
+  meta: PmtilesMeta,
+  counts: PreambleCounts,
+): Buffer {
+  const { root, leaves } = buildDirectories(entries);
+  const metadata = gzipSync(
+    Buffer.from(
+      JSON.stringify({
+        name: meta.name,
+        attribution: meta.attribution,
+        ...(meta.description ? { description: meta.description } : {}),
+        type: counts.layerType ?? 'overlay',
+        format: counts.tileType,
+      }),
+    ),
+  );
+
+  const h = Buffer.alloc(HEADER_BYTES);
+  h.write('PMTiles', 0, 'latin1');
+  h.writeUInt8(3, 7);
+  const rootOffset = HEADER_BYTES;
+  const metaOffset = rootOffset + root.length;
+  const leafOffset = metaOffset + metadata.length;
+  const dataOffset = leafOffset + leaves.length;
+  const u64 = (pos: number, v: number) => h.writeBigUInt64LE(BigInt(v), pos);
+  u64(8, rootOffset);
+  u64(16, root.length);
+  u64(24, metaOffset);
+  u64(32, metadata.length);
+  u64(40, leafOffset);
+  u64(48, leaves.length);
+  u64(56, dataOffset);
+  u64(64, counts.dataLength);
+  u64(72, counts.addressed); // addressed tiles
+  u64(80, entries.length); // tile entries
+  u64(88, counts.contents); // tile contents
+  h.writeUInt8(1, 96); // clustered
+  h.writeUInt8(2, 97); // internal compression: gzip
+  h.writeUInt8(1, 98); // tile compression: none (images are already compressed)
+  h.writeUInt8(TILE_TYPES[counts.tileType], 99);
+  h.writeUInt8(meta.minzoom, 100);
+  h.writeUInt8(meta.maxzoom, 101);
+  const e7 = (v: number) => Math.round(v * 1e7);
+  h.writeInt32LE(e7(meta.bounds.west), 102);
+  h.writeInt32LE(e7(meta.bounds.south), 106);
+  h.writeInt32LE(e7(meta.bounds.east), 110);
+  h.writeInt32LE(e7(meta.bounds.north), 114);
+  h.writeUInt8(meta.minzoom, 118);
+  h.writeInt32LE(e7((meta.bounds.west + meta.bounds.east) / 2), 119);
+  h.writeInt32LE(e7((meta.bounds.south + meta.bounds.north) / 2), 123);
+
+  return Buffer.concat([h, root, metadata, leaves]);
 }
 
 /**
@@ -261,54 +337,13 @@ export function writePmtiles(tiles: Array<Tile & { data: Buffer }>, meta: Pmtile
     }
   }
 
-  const { root, leaves } = buildDirectories(entries);
-  const metadata = gzipSync(
-    Buffer.from(
-      JSON.stringify({
-        name: meta.name,
-        attribution: meta.attribution,
-        ...(meta.description ? { description: meta.description } : {}),
-        type: 'overlay',
-        format: 'png',
-      }),
-    ),
-  );
-
-  const h = Buffer.alloc(HEADER_BYTES);
-  h.write('PMTiles', 0, 'latin1');
-  h.writeUInt8(3, 7);
-  const rootOffset = HEADER_BYTES;
-  const metaOffset = rootOffset + root.length;
-  const leafOffset = metaOffset + metadata.length;
-  const dataOffset = leafOffset + leaves.length;
-  const u64 = (pos: number, v: number) => h.writeBigUInt64LE(BigInt(v), pos);
-  u64(8, rootOffset);
-  u64(16, root.length);
-  u64(24, metaOffset);
-  u64(32, metadata.length);
-  u64(40, leafOffset);
-  u64(48, leaves.length);
-  u64(56, dataOffset);
-  u64(64, dataLength);
-  u64(72, sorted.length); // addressed tiles
-  u64(80, entries.length); // tile entries
-  u64(88, chunks.length); // tile contents
-  h.writeUInt8(1, 96); // clustered
-  h.writeUInt8(2, 97); // internal compression: gzip
-  h.writeUInt8(1, 98); // tile compression: none (PNG is already compressed)
-  h.writeUInt8(2, 99); // tile type: png
-  h.writeUInt8(meta.minzoom, 100);
-  h.writeUInt8(meta.maxzoom, 101);
-  const e7 = (v: number) => Math.round(v * 1e7);
-  h.writeInt32LE(e7(meta.bounds.west), 102);
-  h.writeInt32LE(e7(meta.bounds.south), 106);
-  h.writeInt32LE(e7(meta.bounds.east), 110);
-  h.writeInt32LE(e7(meta.bounds.north), 114);
-  h.writeUInt8(meta.minzoom, 118);
-  h.writeInt32LE(e7((meta.bounds.west + meta.bounds.east) / 2), 119);
-  h.writeInt32LE(e7((meta.bounds.south + meta.bounds.north) / 2), 123);
-
-  return Buffer.concat([h, root, metadata, leaves, ...chunks]);
+  const preamble = pmtilesPreamble(entries, meta, {
+    addressed: sorted.length,
+    contents: chunks.length,
+    dataLength,
+    tileType: 'png',
+  });
+  return Buffer.concat([preamble, ...chunks]);
 }
 
 // ── WMTS → PMTiles adapter ──
