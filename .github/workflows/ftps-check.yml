@@ -26,6 +26,10 @@ jobs:
           case "$FTPS_HOST" in *:[0-9]*) echo "contains a port";; esac
           if getent hosts "$FTPS_HOST" >/dev/null; then echo "resolves: yes"; else echo "resolves: NO"; fi
           printf 'ends with .espacioseguro.com: %s\n' "$(case "$FTPS_HOST" in *.espacioseguro.com) echo yes;; *) echo no;; esac)"
+          host=$(printf %s "$FTPS_HOST" | tr -d '[:space:]' | sed -E 's#^[A-Za-z]+://##; s#/.*$##; s#:[0-9]*$##')
+          printf 'normalised host length %s, resolves: %s, ends with .espacioseguro.com: %s\n' "${#host}" \
+            "$(getent hosts "$host" >/dev/null && echo yes || echo NO)" \
+            "$(case "$host" in *.espacioseguro.com) echo yes;; *) echo no;; esac)"
       - name: Where do deploys land? (read only)
         env:
           FTPS_HOST: ${{ secrets.FTPS_HOST }}
@@ -50,6 +54,10 @@ jobs:
             echo '== every data/catalog.json up to 5 levels, with date';
             find -d 6 . | grep 'data/catalog.json';
             quit" 2>&1 | tail -80
+          echo '== connection errors (user and host replaced)'
+          timeout 60 lftp -d -u "$FTPS_USER","$FTPS_PASSWORD" "ftp://$host" -e "
+            set ftp:ssl-force true; set ftp:ssl-protect-data true; set net:max-retries 1; pwd; quit" 2>&1 \
+            | grep -E '^<--- [45][0-9][0-9]|ertificate|rror|Fatal' | sed "s#$FTPS_USER#<user>#g; s#$host#<host>#g" | head -10
           echo '== login path with the user name replaced'
           timeout 60 lftp -u "$FTPS_USER","$FTPS_PASSWORD" "ftp://$host" -e "
             set ftp:ssl-force true; set ftp:ssl-protect-data true; pwd; cls -1a; quit" 2>&1 \
