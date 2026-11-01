@@ -180,19 +180,7 @@ export async function start(): Promise<void> {
   const lang = app.dataset.lang ?? 'gl';
   const dict = JSON.parse(app.dataset.dict ?? '{}') as Dict;
 
-  // Mobile panel toggle.
-  const toggle = app.querySelector<HTMLButtonElement>('.ga-panel-toggle');
-  const setPanel = (open: boolean) => {
-    app.classList.toggle('panel-open', open);
-    toggle?.setAttribute('aria-expanded', String(open));
-    if (open) app.querySelector<HTMLElement>('#ga-panel input')?.focus();
-    else toggle?.focus();
-  };
-  toggle?.addEventListener('click', () => setPanel(!app.classList.contains('panel-open')));
-  app.querySelector('.ga-panel-close')?.addEventListener('click', () => setPanel(false));
-  app.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && app.classList.contains('panel-open')) setPanel(false);
-  });
+  const dock = setupDock(app, dict);
 
   // maplibre-gl 6 is ESM with named exports only.
   const [maplibregl, { Protocol }] = await Promise.all([import('maplibre-gl'), import('pmtiles')]);
@@ -230,6 +218,8 @@ export async function start(): Promise<void> {
     (window as unknown as { gaMap?: MlMap }).gaMap = map;
   }
   map.addControl(new maplibregl.ScaleControl({ unit: 'metric' }), 'bottom-right');
+  // Touching the map closes the open theme list so it does not cover the map.
+  map.on('click', () => dock.open(null));
 
   const active = new Set<string>();
   const hint = document.getElementById('ga-hint');
@@ -482,6 +472,7 @@ export async function start(): Promise<void> {
       }
       active.delete(id);
     }
+    dock.sync(id, on);
     updateHash();
   }
 
@@ -621,6 +612,123 @@ export async function start(): Promise<void> {
   });
 
   loadSearch(lang);
+}
+
+/**
+ * Layer dock: theme chips open one theme's list at a time; switched-on layers
+ * get a card under "No mapa" that holds their legend and indicator selector
+ * (moved there from the list, and back when switched off).
+ */
+function setupDock(app: HTMLElement, dict: Dict) {
+  app.classList.add('js-dock');
+  const buttons = [...app.querySelectorAll<HTMLButtonElement>('[data-theme-btn]')];
+  const panels = new Map(
+    [...app.querySelectorAll<HTMLElement>('[data-theme-panel]')].map((p) => [
+      p.dataset.themePanel ?? '',
+      p,
+    ]),
+  );
+  const open = (theme: string | null) => {
+    for (const b of buttons) {
+      const on = b.dataset.themeBtn === theme;
+      b.setAttribute('aria-expanded', String(on));
+      panels.get(b.dataset.themeBtn ?? '')?.classList.toggle('is-open', on);
+    }
+  };
+  for (const b of buttons) {
+    b.addEventListener('click', () =>
+      open(b.getAttribute('aria-expanded') === 'true' ? null : (b.dataset.themeBtn ?? null)),
+    );
+  }
+  app.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && buttons.some((b) => b.getAttribute('aria-expanded') === 'true')) {
+      const current = buttons.find((b) => b.getAttribute('aria-expanded') === 'true');
+      open(null);
+      current?.focus();
+    }
+  });
+
+  const section = app.querySelector<HTMLElement>('.ga-active');
+  const list = app.querySelector<HTMLElement>('.ga-active-list');
+  const cards = new Map<string, HTMLElement>();
+  const narrow = window.matchMedia('(max-width: 767px)');
+  const uncheck = (id: string) => {
+    const cb = app.querySelector<HTMLInputElement>(`input[data-toggle="${id}"]`);
+    if (cb?.checked) {
+      cb.checked = false;
+      cb.dispatchEvent(new Event('change'));
+    }
+  };
+  app.querySelector('[data-clear-layers]')?.addEventListener('click', () => {
+    for (const id of [...cards.keys()]) uncheck(id);
+  });
+  const counts = () => {
+    const n = new Map<string, number>();
+    for (const id of cards.keys()) {
+      const theme = app.querySelector<HTMLElement>(`[data-layer="${id}"]`)?.dataset.theme ?? '';
+      n.set(theme, (n.get(theme) ?? 0) + 1);
+    }
+    for (const badge of app.querySelectorAll<HTMLElement>('[data-count-for]')) {
+      const k = n.get(badge.dataset.countFor ?? '') ?? 0;
+      badge.textContent = String(k);
+      badge.hidden = k === 0;
+    }
+    if (section) section.hidden = cards.size === 0;
+  };
+
+  return {
+    open,
+    sync(id: string, on: boolean) {
+      const item = app.querySelector<HTMLElement>(`[data-layer="${id}"]`);
+      const extra = app.querySelector<HTMLElement>(`[data-extra-for="${id}"]`);
+      if (!item || !list) return;
+      const existing = cards.get(id);
+      if (on && !existing) {
+        const card = el('li', { class: 'ga-active-item' });
+        const row = el('div', { class: 'ga-active-row' });
+        const name = el('button', {
+          type: 'button',
+          class: 'ga-active-name',
+          'aria-expanded': 'true',
+          title: dict.show_legend ?? '',
+        });
+        const swatch = item.querySelector('.ga-swatch')?.cloneNode(true);
+        if (swatch) name.append(swatch);
+        name.append(
+          el('span', {}, item.querySelector('.ga-layer-name')?.textContent?.trim() ?? id),
+        );
+        name.addEventListener('click', () => {
+          const collapsed = card.classList.toggle('is-collapsed');
+          name.setAttribute('aria-expanded', String(!collapsed));
+        });
+        const remove = el('button', {
+          type: 'button',
+          class: 'ga-active-remove',
+          'aria-label': `${dict.remove_layer ?? ''}: ${name.textContent ?? id}`,
+          title: dict.remove_layer ?? '',
+        });
+        remove.textContent = '×';
+        remove.addEventListener('click', () => uncheck(id));
+        row.append(name, remove);
+        card.append(row);
+        if (extra) card.append(extra);
+        // On phones only the newest legend stays open.
+        if (narrow.matches) {
+          for (const other of cards.values()) {
+            other.classList.add('is-collapsed');
+            other.querySelector('.ga-active-name')?.setAttribute('aria-expanded', 'false');
+          }
+        }
+        list.prepend(card);
+        cards.set(id, card);
+      } else if (!on && existing) {
+        if (extra) item.querySelector('.ga-layer-row')?.after(extra);
+        existing.remove();
+        cards.delete(id);
+      }
+      counts();
+    },
+  };
 }
 
 function refreshFreshness(app: HTMLElement, layers: Layer[], lang: string, dict: Dict) {

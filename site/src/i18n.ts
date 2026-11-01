@@ -32,6 +32,11 @@ const STRINGS = {
   skip: { gl: 'Ir ao contido', es: 'Ir al contenido' },
   layers: { gl: 'Capas', es: 'Capas' },
   close: { gl: 'Pechar', es: 'Cerrar' },
+  active_layers: { gl: 'No mapa', es: 'En el mapa' },
+  layer_info: { gl: 'Ficha da capa', es: 'Ficha de la capa' },
+  remove_layer: { gl: 'Quitar do mapa', es: 'Quitar del mapa' },
+  clear_layers: { gl: 'Quitar todas', es: 'Quitar todas' },
+  show_legend: { gl: 'Mostrar ou ocultar a lenda', es: 'Mostrar u ocultar la leyenda' },
   operator: { gl: 'Operador', es: 'Operador' },
   published: { gl: 'Publicado pola fonte', es: 'Publicado por la fuente' },
   published_unknown: {

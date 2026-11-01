@@ -110,6 +110,12 @@ a:hover {
 .ga-brand-name {
   font-weight: 400;
   letter-spacing: -0.01em;
+  white-space: nowrap;
+}
+@media (max-width: 480px) {
+  .ga-brand-name {
+    font-size: 14px;
+  }
 }
 .ga-brand-name b {
   font-weight: 700;

@@ -23,116 +23,134 @@ const licenceLabel = (l: CatalogLayer) => l.licence.spdx ?? l.licence.text_url;
 ---
 
 <div class="ga-app" data-lang={lang} data-dict={JSON.stringify(dictionary(lang))}>
-  <button class="ga-panel-toggle ga-button" type="button" aria-expanded="false" aria-controls="ga-panel">
-    {t(lang, 'layers')}
-  </button>
-
-  <aside id="ga-panel" class="ga-panel" aria-label={t(lang, 'layers')}>
-    <div class="ga-panel-head">
-      <button type="button" class="ga-button ga-panel-close">{t(lang, 'close')}</button>
-      <p class="ga-tagline">{t(lang, 'tagline')}</p>
+  <aside id="ga-panel" class="ga-dock" aria-label={t(lang, 'layers')}>
+    <div class="ga-dock-card">
       <div id="ga-search" class="ga-search" data-label={t(lang, 'search')}></div>
+      <div class="ga-themes" role="group" aria-label={t(lang, 'layers')}>
+        {
+          byTheme.map((group) => (
+            <button
+              type="button"
+              class="ga-theme-btn"
+              data-theme-btn={group.theme}
+              aria-expanded="false"
+              aria-controls={`tp-${group.theme}`}
+            >
+              {THEMES[group.theme]?.[lang]}
+              <span class="ga-theme-count" data-count-for={group.theme} hidden />
+            </button>
+          ))
+        }
+      </div>
+      <div class="ga-theme-panels">
+        {
+          byTheme.map((group) => (
+            <section id={`tp-${group.theme}`} class="ga-theme" data-theme-panel={group.theme} aria-labelledby={`th-${group.theme}`}>
+              <h2 id={`th-${group.theme}`}>{THEMES[group.theme]?.[lang]}</h2>
+              <ul>
+                {group.layers.map((l) => (
+                  <li class="ga-layer" data-layer={l.id} data-theme={group.theme}>
+                    <div class="ga-layer-row">
+                      <input type="checkbox" id={`cb-${l.id}`} data-toggle={l.id} />
+                      <label for={`cb-${l.id}`}>
+                        <span class="ga-swatch" style={`background: var(${l.style.color_token ?? '--gs-verde-nato'})`} aria-hidden="true" />
+                        <span class="ga-layer-name">{l.title[lang]}</span>
+                      </label>
+                      <time
+                        class="ga-layer-time"
+                        datetime={l.meta?.published_at ?? undefined}
+                        title={absoluteTime(l.meta?.published_at ?? null, lang) ?? t(lang, 'published_unknown')}
+                        data-relative={l.meta?.published_at ?? ''}
+                      >
+                        {relativeTime(l.meta?.published_at ?? null, lang) ?? ''}
+                      </time>
+                      <span class="ga-status" data-status={displayStatus(l)} data-status-for={l.id} title={statusLabel(l)}>
+                        {statusLabel(l)}
+                      </span>
+                    </div>
+                    <div class="ga-layer-extra" data-extra-for={l.id}>
+                      {l.indicators && l.indicators.length > 0 && (
+                        <label class="ga-indicator">
+                          <span>{t(lang, 'choose_indicator')}</span>
+                          <select data-indicator-for={l.id}>
+                            {l.indicators.map((ind) => (
+                              <option value={ind.id}>{ind.label[lang]}</option>
+                            ))}
+                          </select>
+                        </label>
+                      )}
+                      <div class="ga-legend-box" data-legend-for={l.id} hidden />
+                    </div>
+                    <details class="ga-layer-info">
+                      <summary title={t(lang, 'layer_info')}>
+                        <span class="visually-hidden">{t(lang, 'layer_info')}: {l.title[lang]}</span>
+                      </summary>
+                      <dl>
+                        <dt>{t(lang, 'operator')}</dt>
+                        <dd><a href={l.operator.url} rel="noopener">{l.operator.name}</a></dd>
+                        <dt>{t(lang, 'published')}</dt>
+                        <dd>{absoluteTime(l.meta?.published_at ?? null, lang) ?? t(lang, 'published_unknown')}</dd>
+                        <dt>{t(lang, 'fetched')}</dt>
+                        <dd>{absoluteTime(l.meta?.fetched_at ?? null, lang) ?? '—'}</dd>
+                        <dt>{t(lang, 'licence')}</dt>
+                        <dd>
+                          <a href={l.licence.text_url} rel="noopener">{licenceLabel(l)}</a>
+                          {' · '}
+                          {l.licence.collection === 'odbl' ? t(lang, 'collection_odbl') : t(lang, 'collection_bysa')}
+                          <br />
+                          <small>{l.attribution}</small>
+                        </dd>
+                        {l.delay && (
+                          <>
+                            <dt>{t(lang, 'delay_note')}</dt>
+                            <dd>{l.delay.minutes} min · {l.delay.reason}</dd>
+                          </>
+                        )}
+                      </dl>
+                      {l.context && l.context.length > 0 && (
+                        <div class="ga-context">
+                          <h3>{t(lang, 'context')}</h3>
+                          <ul>
+                            {l.context.map((c) => (
+                              <li>
+                                <strong>{c.label[lang]}:</strong> {c.value}
+                                {' '}(<a href={c.source_url} rel="noopener">{c.source}</a>)
+                                {c.note && <p>{c.note[lang]}</p>}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+                      <p class="ga-layer-actions">
+                        <a href={l.source_url} rel="noopener">{t(lang, 'source')}</a>
+                        {l.geometry === 'raster' ? (
+                          <a href={asset(`data/${l.id}/data.pmtiles`)} download>{t(lang, 'download')} (PMTiles)</a>
+                        ) : (
+                          <>
+                            <button type="button" class="ga-button" data-table={l.id}>{t(lang, 'as_table')}</button>
+                            <a href={asset(`data/${l.id}/data.geojson`)} download>{t(lang, 'download')}</a>
+                          </>
+                        )}
+                      </p>
+                    </details>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          ))
+        }
+      </div>
     </div>
 
-    {
-      byTheme.map((group) => (
-        <section class="ga-theme" aria-labelledby={`th-${group.theme}`}>
-          <h2 id={`th-${group.theme}`}>{THEMES[group.theme]?.[lang]}</h2>
-          <ul>
-            {group.layers.map((l) => (
-              <li class="ga-layer" data-layer={l.id}>
-                <div class="ga-layer-row">
-                  <input type="checkbox" id={`cb-${l.id}`} data-toggle={l.id} />
-                  <label for={`cb-${l.id}`}>
-                    <span class="ga-swatch" style={`background: var(${l.style.color_token ?? '--gs-verde-nato'})`} aria-hidden="true" />
-                    {l.title[lang]}
-                  </label>
-                  <span class="ga-status" data-status={displayStatus(l)} data-status-for={l.id}>
-                    {statusLabel(l)}
-                  </span>
-                </div>
-                <div class="ga-layer-extra">
-                  {l.indicators && l.indicators.length > 0 && (
-                    <label class="ga-indicator">
-                      <span>{t(lang, 'choose_indicator')}</span>
-                      <select data-indicator-for={l.id}>
-                        {l.indicators.map((ind) => (
-                          <option value={ind.id}>{ind.label[lang]}</option>
-                        ))}
-                      </select>
-                    </label>
-                  )}
-                  <div class="ga-legend-box" data-legend-for={l.id} hidden />
-                </div>
-                <details class="ga-layer-info">
-                  <summary>
-                    <span class="visually-hidden">{l.title[lang]}: </span>
-                    {l.operator.name}
-                    {' · '}
-                    <time
-                      datetime={l.meta?.published_at ?? undefined}
-                      title={absoluteTime(l.meta?.published_at ?? null, lang) ?? undefined}
-                      data-relative={l.meta?.published_at ?? ''}
-                    >
-                      {relativeTime(l.meta?.published_at ?? null, lang) ?? t(lang, 'published_unknown')}
-                    </time>
-                  </summary>
-                  <dl>
-                    <dt>{t(lang, 'operator')}</dt>
-                    <dd><a href={l.operator.url} rel="noopener">{l.operator.name}</a></dd>
-                    <dt>{t(lang, 'published')}</dt>
-                    <dd>{absoluteTime(l.meta?.published_at ?? null, lang) ?? t(lang, 'published_unknown')}</dd>
-                    <dt>{t(lang, 'fetched')}</dt>
-                    <dd>{absoluteTime(l.meta?.fetched_at ?? null, lang) ?? '—'}</dd>
-                    <dt>{t(lang, 'licence')}</dt>
-                    <dd>
-                      <a href={l.licence.text_url} rel="noopener">{licenceLabel(l)}</a>
-                      {' · '}
-                      {l.licence.collection === 'odbl' ? t(lang, 'collection_odbl') : t(lang, 'collection_bysa')}
-                      <br />
-                      <small>{l.attribution}</small>
-                    </dd>
-                    {l.delay && (
-                      <>
-                        <dt>{t(lang, 'delay_note')}</dt>
-                        <dd>{l.delay.minutes} min · {l.delay.reason}</dd>
-                      </>
-                    )}
-                  </dl>
-                  {l.context && l.context.length > 0 && (
-                    <div class="ga-context">
-                      <h3>{t(lang, 'context')}</h3>
-                      <ul>
-                        {l.context.map((c) => (
-                          <li>
-                            <strong>{c.label[lang]}:</strong> {c.value}
-                            {' '}(<a href={c.source_url} rel="noopener">{c.source}</a>)
-                            {c.note && <p>{c.note[lang]}</p>}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
-                  <p class="ga-layer-actions">
-                    <a href={l.source_url} rel="noopener">{t(lang, 'source')}</a>
-                    {l.geometry === 'raster' ? (
-                      <a href={asset(`data/${l.id}/data.pmtiles`)} download>{t(lang, 'download')} (PMTiles)</a>
-                    ) : (
-                      <>
-                        <button type="button" class="ga-button" data-table={l.id}>{t(lang, 'as_table')}</button>
-                        <a href={asset(`data/${l.id}/data.geojson`)} download>{t(lang, 'download')}</a>
-                      </>
-                    )}
-                  </p>
-                </details>
-              </li>
-            ))}
-          </ul>
-        </section>
-      ))
-    }
+    <section class="ga-active" aria-labelledby="ga-active-title" hidden>
+      <header class="ga-active-head">
+        <h2 id="ga-active-title">{t(lang, 'active_layers')}</h2>
+        <button type="button" class="ga-link-button" data-clear-layers>{t(lang, 'clear_layers')}</button>
+      </header>
+      <ul class="ga-active-list"></ul>
+    </section>
     <p class="ga-panel-foot">
-      <small>© OpenStreetMap (ODbL) · Protomaps · Galicia Agora (ODbL / CC BY-SA 4.0)</small>
+      <small>© OpenStreetMap (ODbL) · Protomaps · Mapas Galicia Sustentable (ODbL / CC BY-SA 4.0)</small>
     </p>
   </aside>
 
@@ -155,13 +173,10 @@ const licenceLabel = (l: CatalogLayer) => l.licence.spdx ?? l.licence.text_url;
   .ga-app {
     position: relative;
     height: calc(100dvh - 52px);
-    display: flex;
-    flex-direction: column;
   }
   .ga-map-wrap {
-    position: relative;
-    flex: 1;
-    min-height: 0;
+    position: absolute;
+    inset: 0;
   }
   .ga-map {
     position: absolute;
@@ -185,114 +200,184 @@ const licenceLabel = (l: CatalogLayer) => l.licence.spdx ?? l.licence.text_url;
   .ga-hint[hidden] {
     display: none;
   }
-  .ga-panel-toggle {
-    position: absolute;
-    z-index: 3;
-    left: 16px;
-    bottom: 24px;
-    box-shadow: var(--gs-sombra);
-    padding: 8px 14px;
-    font-weight: 700;
-  }
-  .ga-panel {
+
+  /* Layer dock: search and theme chips on top, the open theme's layers below,
+     and the layers on the map (with their legends) in a second card. */
+  .ga-dock {
     position: absolute;
     z-index: 4;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    max-height: 70dvh;
-    overflow-y: auto;
+    left: 12px;
+    top: 12px;
+    bottom: 12px;
+    width: min(340px, calc(100% - 24px));
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    pointer-events: none;
+  }
+  .ga-dock > * {
+    pointer-events: auto;
+  }
+  .ga-dock-card,
+  .ga-active {
     background: var(--surface);
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
+    color: var(--text);
+    border-radius: var(--gs-radius-card);
     box-shadow: var(--gs-sombra);
-    padding: 12px 16px 24px;
+  }
+  .ga-dock-card {
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    flex-shrink: 1;
+  }
+  .ga-search {
+    min-height: 40px;
+  }
+  .ga-themes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-top: 6px;
+  }
+  .ga-theme-btn {
+    font: inherit;
+    font-size: var(--gs-texto-sm);
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 10px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--text);
+    cursor: pointer;
+  }
+  .ga-theme-btn:hover {
+    border-color: var(--gs-verde-nato);
+  }
+  .ga-theme-btn[aria-expanded="true"] {
+    background: var(--gs-verde-nato);
+    border-color: var(--gs-verde-nato);
+    color: #fff;
+  }
+  .ga-theme-count {
+    min-width: 16px;
+    height: 16px;
+    padding: 0 4px;
+    border-radius: 8px;
+    background: var(--gs-acento, #e0632a);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 16px;
+    text-align: center;
+  }
+  .ga-theme-count[hidden] {
     display: none;
   }
-  .ga-app.panel-open .ga-panel {
-    display: block;
-  }
-  @media (min-width: 768px) {
-    .ga-app {
-      flex-direction: row;
-    }
-    .ga-panel-toggle {
-      display: none;
-    }
-    .ga-panel {
-      position: relative;
-      display: block;
-      width: 360px;
-      max-height: none;
-      border-radius: 0;
-      box-shadow: none;
-      border-right: 1px solid var(--border);
-      flex-shrink: 0;
-    }
-  }
-  .ga-panel-close {
-    float: right;
-  }
-  @media (min-width: 768px) {
-    .ga-panel-close {
-      display: none;
-    }
-  }
-  .ga-tagline {
-    margin: 0 0 8px;
-    color: var(--text-muted);
-    font-size: var(--gs-texto-sm);
+  .ga-theme-panels {
+    overflow-y: auto;
+    min-height: 0;
+    overscroll-behavior: contain;
   }
   .ga-theme h2 {
-    font-size: var(--gs-texto-base);
-    margin: 16px 0 6px;
+    font-size: var(--gs-texto-xs);
+    color: var(--text-muted);
+    margin: 10px 4px 2px;
     text-transform: uppercase;
     letter-spacing: 0.06em;
+  }
+  /* With JS only the chosen theme is shown, and its title is the chip itself. */
+  .js-dock .ga-theme {
+    display: none;
+  }
+  .js-dock .ga-theme.is-open {
+    display: block;
+  }
+  .js-dock .ga-theme h2 {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
   }
   .ga-theme ul {
     list-style: none;
     margin: 0;
     padding: 0;
   }
+  .ga-theme > ul {
+    margin-top: 6px;
+  }
   .ga-layer {
-    border-bottom: 1px solid var(--border);
-    padding: 6px 0;
+    position: relative;
+    border-radius: var(--gs-radius);
+  }
+  .ga-layer:hover {
+    background: var(--surface-alt, rgba(74, 88, 70, 0.06));
   }
   .ga-layer-row {
     display: flex;
     align-items: center;
     gap: 8px;
+    padding: 5px 30px 5px 4px;
+    min-height: 34px;
   }
   .ga-layer-row input {
-    width: 18px;
-    height: 18px;
+    width: 16px;
+    height: 16px;
+    margin: 0;
+    flex-shrink: 0;
     accent-color: var(--gs-verde-nato);
   }
   .ga-layer-row label {
     flex: 1;
+    min-width: 0;
     display: flex;
     align-items: center;
     gap: 8px;
     cursor: pointer;
+    font-size: var(--gs-texto-sm);
+    line-height: 1.25;
+  }
+  .ga-layer-name {
+    min-width: 0;
   }
   .ga-swatch {
-    width: 12px;
-    height: 12px;
-    border-radius: 3px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
     flex-shrink: 0;
+  }
+  .ga-layer-time {
+    font-size: var(--gs-texto-xs);
+    color: var(--text-muted);
+    white-space: nowrap;
+  }
+  /* Freshness as a dot; the word stays for screen readers and as a tooltip. */
+  .ga-layer-row .ga-status {
+    font-size: 0;
+    gap: 0;
+    flex-shrink: 0;
+  }
+  .ga-layer-row .ga-status[data-status="fresh"] {
+    opacity: 0.5;
   }
   .ga-layer-extra {
     display: none;
-    margin: 6px 0 4px 26px;
-    font-size: var(--gs-texto-sm);
   }
-  .ga-layer:has(input[data-toggle]:checked) .ga-layer-extra {
+  .ga-active .ga-layer-extra {
     display: block;
+    font-size: var(--gs-texto-sm);
+    padding: 0 0 6px 18px;
   }
   .ga-indicator {
     display: flex;
     flex-direction: column;
     gap: 2px;
+    margin-bottom: 4px;
   }
   .ga-indicator span {
     font-size: var(--gs-texto-xs);
@@ -306,18 +391,45 @@ const licenceLabel = (l: CatalogLayer) => l.licence.spdx ?? l.licence.text_url;
     background: var(--surface);
     color: var(--text);
   }
-  .ga-layer-info summary {
+  .ga-layer-info > summary {
+    position: absolute;
+    right: 4px;
+    top: 7px;
+    width: 20px;
+    height: 20px;
+    list-style: none;
     cursor: pointer;
-    font-size: var(--gs-texto-xs);
+    border-radius: 50%;
     color: var(--text-muted);
-    margin-left: 26px;
+    display: grid;
+    place-items: center;
+  }
+  .ga-layer-info > summary::-webkit-details-marker {
+    display: none;
+  }
+  .ga-layer-info > summary::before {
+    content: "i";
+    font: italic 700 12px/1 Georgia, serif;
+    width: 16px;
+    height: 16px;
+    border: 1px solid currentColor;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+  }
+  .ga-layer-info > summary:hover,
+  .ga-layer-info[open] > summary {
+    color: var(--gs-verde-nato);
+  }
+  .ga-layer-info[open] {
+    padding: 0 8px 8px 28px;
   }
   .ga-layer-info dl {
     display: grid;
     grid-template-columns: max-content 1fr;
     gap: 2px 10px;
     font-size: var(--gs-texto-xs);
-    margin: 8px 0 8px 26px;
+    margin: 0 0 6px;
   }
   .ga-layer-info dt {
     color: var(--text-muted);
@@ -326,7 +438,6 @@ const licenceLabel = (l: CatalogLayer) => l.licence.spdx ?? l.licence.text_url;
     margin: 0;
   }
   .ga-context {
-    margin-left: 26px;
     font-size: var(--gs-texto-xs);
   }
   .ga-context h3 {
@@ -342,11 +453,140 @@ const licenceLabel = (l: CatalogLayer) => l.licence.spdx ?? l.licence.text_url;
     gap: 10px;
     align-items: center;
     font-size: var(--gs-texto-xs);
-    margin-left: 26px;
+    margin: 0;
+  }
+
+  /* Layers on the map. */
+  .ga-active {
+    padding: 6px 8px;
+    overflow-y: auto;
+    min-height: 0;
+    flex-shrink: 0;
+    max-height: 45%;
+    margin-top: auto;
+  }
+  .ga-active[hidden] {
+    display: none;
+  }
+  .ga-active-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin: 0 2px 2px;
+  }
+  .ga-active-head h2 {
+    font-size: var(--gs-texto-xs);
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin: 0;
+  }
+  .ga-link-button {
+    font: inherit;
+    font-size: var(--gs-texto-xs);
+    background: none;
+    border: 0;
+    padding: 0;
+    color: var(--text-muted);
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  .ga-active-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  :global(.ga-active-item) + :global(.ga-active-item) {
+    border-top: 1px solid var(--border);
+  }
+  :global(.ga-active-row) {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 30px;
+  }
+  :global(.ga-active-name) {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font: inherit;
+    font-size: var(--gs-texto-sm);
+    font-weight: 700;
+    text-align: left;
+    background: none;
+    border: 0;
+    padding: 4px 2px;
+    color: var(--text);
+    cursor: pointer;
+  }
+  :global(.ga-active-name::after) {
+    content: "";
+    margin-left: auto;
+    width: 6px;
+    height: 6px;
+    border-right: 1.5px solid var(--text-muted);
+    border-bottom: 1.5px solid var(--text-muted);
+    transform: rotate(45deg) translateY(-2px);
+    flex-shrink: 0;
+  }
+  :global(.ga-active-item.is-collapsed) :global(.ga-active-name::after) {
+    transform: rotate(-45deg);
+  }
+  :global(.ga-active-item.is-collapsed) .ga-layer-extra {
+    display: none;
+  }
+  :global(.ga-active-remove) {
+    font: inherit;
+    font-size: 18px;
+    line-height: 1;
+    width: 24px;
+    height: 24px;
+    border: 0;
+    border-radius: 50%;
+    background: none;
+    color: var(--text-muted);
+    cursor: pointer;
+  }
+  :global(.ga-active-remove:hover) {
+    background: var(--border);
+    color: var(--text);
   }
   .ga-panel-foot {
-    color: var(--text-muted);
-    margin-top: 16px;
+    display: none;
+  }
+
+  @media (max-width: 767px) {
+    /* Phones: the dock sits at the bottom; the open theme grows upwards. */
+    .ga-dock {
+      left: 8px;
+      right: 8px;
+      top: auto;
+      bottom: 8px;
+      width: auto;
+      max-height: calc(100% - 16px);
+      flex-direction: column-reverse;
+    }
+    .ga-dock-card {
+      max-height: 65dvh;
+    }
+    .ga-themes {
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .ga-theme-btn {
+      flex-shrink: 0;
+    }
+    .ga-active {
+      max-height: 30dvh;
+      margin-top: 0;
+    }
+    /* One thing at a time: while a theme list is open, hide the legends. */
+    .ga-dock:has(.ga-theme.is-open) .ga-active {
+      display: none;
+    }
   }
   .ga-ficha {
     position: absolute;
@@ -380,9 +620,6 @@ const licenceLabel = (l: CatalogLayer) => l.licence.spdx ?? l.licence.text_url;
   }
   .ga-dialog::backdrop {
     background: rgba(26, 26, 23, 0.5);
-  }
-  .ga-search {
-    min-height: 40px;
   }
 </style>
 
