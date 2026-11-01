@@ -1,0 +1,20 @@
+{
+  "layer_id": "satelite-mes",
+  "published_at": "2026-10-30T11:39:37.524000Z",
+  "fetched_at": "2026-11-01T22:20:43.002Z",
+  "last_success_at": "2026-11-01T22:20:43.002Z",
+  "status": "fresh",
+  "consecutive_failures": 0,
+  "feature_count": 3487,
+  "source_url": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a",
+  "licence": "https://ewds.climate.copernicus.eu/licences/ec-sentinel",
+  "attribution": "Contén datos Copernicus Sentinel modificados 2026 · Contorno de Galicia © IGN (CC BY 4.0)",
+  "checksum": "sha256:d332eefd8a43c5c9f421f94d947806b19330bc1709d2c61e3728629855fd8630",
+  "last_error": null,
+  "history": [
+    {
+      "at": "2026-11-01T22:20:43.002Z",
+      "ok": true
+    }
+  ]
+}

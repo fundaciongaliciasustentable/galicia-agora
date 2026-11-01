@@ -1,0 +1,47 @@
+{
+  "layer_id": "satelite-mes",
+  "archives": [
+    {
+      "month": "2026-10",
+      "file": "2026-10-d332eefd8a43.pmtiles",
+      "minzoom": 8,
+      "maxzoom": 13,
+      "bounds": [
+        -9.35,
+        41.8,
+        -6.7,
+        43.8
+      ],
+      "tiles": 3487,
+      "bytes": 31091656,
+      "sha256": "d332eefd8a43c5c9f421f94d947806b19330bc1709d2c61e3728629855fd8630",
+      "gap_share": 0.009,
+      "scenes": 71,
+      "first_date": "2026-10-03T11:39:13.094000Z",
+      "last_date": "2026-10-30T11:39:37.524000Z",
+      "built_at": "2026-11-01T22:20:43.002Z"
+    }
+  ],
+  "months": [
+    {
+      "month": "2026-10",
+      "file": "2026-10-d332eefd8a43.pmtiles",
+      "minzoom": 8,
+      "maxzoom": 13,
+      "bounds": [
+        -9.35,
+        41.8,
+        -6.7,
+        43.8
+      ],
+      "tiles": 3487,
+      "bytes": 31091656,
+      "sha256": "d332eefd8a43c5c9f421f94d947806b19330bc1709d2c61e3728629855fd8630",
+      "gap_share": 0.009,
+      "scenes": 71,
+      "first_date": "2026-10-03T11:39:13.094000Z",
+      "last_date": "2026-10-30T11:39:37.524000Z",
+      "built_at": "2026-11-01T22:20:43.002Z"
+    }
+  ]
+}
