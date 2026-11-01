@@ -231,4 +231,18 @@ export const SERIES: PulseMap[] = [
       es: 'Últimos doce meses; se renueva cada día',
     },
   },
+  {
+    slug: 'bluesky',
+    ready: true,
+    colour: '#5fa8f3',
+    title: { gl: 'Bluesky en galego', es: 'Bluesky en gallego' },
+    summary: {
+      gl: 'Publicacións en galego en Bluesky e cantas nomean cada unha das sete cidades, semana a semana.',
+      es: 'Publicaciones en gallego en Bluesky y cuántas nombran cada una de las siete ciudades, semana a semana.',
+    },
+    period: {
+      gl: 'Mencións desde hai un ano; galego desde novembro de 2026',
+      es: 'Menciones desde hace un año; gallego desde noviembre de 2026',
+    },
+  },
 ];

@@ -1,0 +1,20 @@
+{
+  "layer_id": "poboacion-seculo",
+  "published_at": null,
+  "fetched_at": "2026-11-01T10:05:57.474Z",
+  "last_success_at": "2026-11-01T10:05:57.474Z",
+  "status": "fresh",
+  "consecutive_failures": 0,
+  "feature_count": 313,
+  "source_url": "https://www.ine.es/intercensal/",
+  "licence": "CC-BY-4.0",
+  "attribution": "Elaboración propia con datos extraídos del sitio web del INE: www.ine.es (Alteraciones de los municipios en los Censos de Población desde 1842). Harmonización aos concellos actuais: cálculo propio da Fundación Galicia Sustentable.",
+  "checksum": "sha256:0d0843f5148df95aad951f3d454b65ddcd73a8706b3699774b87853b141163dd",
+  "last_error": null,
+  "history": [
+    {
+      "at": "2026-11-01T10:05:57.474Z",
+      "ok": true
+    }
+  ]
+}

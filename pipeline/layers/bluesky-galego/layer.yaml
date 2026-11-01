@@ -1,0 +1,55 @@
+id: bluesky-galego
+title:
+  gl: Bluesky en galego e as sete cidades en Bluesky
+  es: Bluesky en gallego y las siete ciudades en Bluesky
+theme: territorio
+operator:
+  name: Bluesky Social PBC (Jetstream e AppView do AT Protocol)
+  url: https://bsky.network/
+source_url: https://api.bsky.app/xrpc/app.bsky.feed.searchPosts
+licence:
+  text_url: https://bsky.network/docs/developer-guidelines/
+  quote: "All services must have a method for deleting content a user has requested to be deleted."
+  verified_at: 2026-11-01
+  odbl_compatible: doubt
+  collection: cc-by-sa-4.0
+  notes: >-
+    Sen licenza de datos: as publicacións son públicas no AT Protocol e as directrices para
+    desenvolvedores non prohiben publicar estatísticas agregadas; a obriga de borrar contido
+    que un usuario elimina non nos toca porque non gardamos contido (nin texto, nin conta,
+    nin URI): só contadores. Por prudencia vai na colección CC BY-SA, non na ODbL. Dúas
+    fontes: (1) Jetstream (wss://jetstream2.us-east.bsky.network/subscribe, sen chave), que
+    reproduce ~36 h desde un cursor: cada execución mostra 6 minutos de cada hora completa
+    das últimas 30 que aínda non contou e conta as publicacións novas e as marcadas `gl` e
+    `es`; (2) a busca da AppView (api.bsky.app, sen chave; public.api.bsky.app dá 403), co
+    total de publicacións (hitsTotal) que mencionan cada cidade en cada semana. Límite:
+    3.000 peticións / 5 min por IP (https://bsky.network/docs/rate-limits/).
+    Política de privacidade e termos: https://bsky.social/about/support/tos.
+attribution: >-
+  Fonte: Bluesky (AT Protocol): mostra de Jetstream e busca da AppView, só contas agregadas.
+  Lingua declarada pola app de quen publica; lugar tirado do texto. Estimacións: cálculo
+  propio da Fundación Galicia Sustentable.
+update_frequency:
+  declared: PT6H
+geometry: none
+output: geojson
+auth:
+  required: false
+privacy_notes: >-
+  Só contadores: publicacións por lingua declarada nunha mostra horaria e total semanal de
+  publicacións que nomean cada cidade (só se hai polo menos 10). Ningún texto, conta, DID,
+  alcume nin URI chega a gardarse: cada evento lese, cóntase e descártase.
+stale_after: P2D
+ingest:
+  every: PT6H
+depends_on:
+  - poboacion-seculo
+# Lives on its own /pulso/ page; the main map does not draw it (SERIES_LAYERS).
+style:
+  kind: fill
+  label_field: nome
+table:
+  fields:
+    - nome
+    - codigo_ine
+    - consulta

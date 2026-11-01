@@ -29,6 +29,8 @@ export interface Spec {
   monthly: boolean;
   /** Days ('2026-10-31') instead of years or months. */
   daily?: boolean;
+  /** Weeks (their Monday, '2026-10-26'), with daily layers' `desde`. */
+  weekly?: boolean;
   /** Suffix of the detail text key for a concello (e.g. '_week'), when it differs. */
   detailKey?: (c: Concello) => string;
   /** A colour that overrides the scale (e.g. no school left), or null. */
@@ -219,6 +221,39 @@ export const SPECS: Record<string, Spec> = {
     },
     bar: (g) => g.articles ?? 0,
     columns: ['articles', 'tone'],
+  },
+  bluesky: {
+    slug: 'bluesky',
+    layer: 'bluesky-galego',
+    prefix: 'bsky',
+    // Weekly posts naming the city per 10,000 residents.
+    stops: [
+      [0, '#262a2b'],
+      [10, '#2f5361'],
+      [25, '#3f8a8c'],
+      [50, '#9cc69b'],
+      [100, '#f0d77b'],
+      [200, '#f08a4b'],
+    ],
+    scale: ['0', '50', '200'],
+    speeds: [0.4, 0.8, 1.6],
+    monthly: false,
+    weekly: true,
+    vars: (c, i) => ({
+      mentions: arr(c, 'mencions')[i] ?? null,
+      people: (c.props.poboacion_2021 as number | null) ?? null,
+      value: c.value[i] ?? null,
+    }),
+    galicia: (list, i) => {
+      const p = list[0]?.props ?? {};
+      return {
+        gl: (p.galego as Array<number | null> | undefined)?.[i] ?? null,
+        permil: (p.galego_permil as Array<number | null> | undefined)?.[i] ?? null,
+        mentions: sumAt(list, 'mencions', i),
+      };
+    },
+    bar: (g) => g.mentions ?? 0,
+    columns: ['mentions', 'people'],
   },
 };
 

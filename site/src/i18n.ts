@@ -138,6 +138,7 @@ const STRINGS = {
     gl: 'xaneiro,febreiro,marzo,abril,maio,xuño,xullo,agosto,setembro,outubro,novembro,decembro',
     es: 'enero,febrero,marzo,abril,mayo,junio,julio,agosto,septiembre,octubre,noviembre,diciembre',
   },
+  pulse_week_of: { gl: 'semana do {day}', es: 'semana del {day}' },
   pulse_date: { gl: '{weekday} {day} de {month}', es: '{weekday} {day} de {month}' },
   pulse_day_total: {
     gl: 'O {dia}: {tren} viaxes de tren e {bus} de autobús.',
@@ -778,6 +779,55 @@ const STRINGS = {
   news_missing: {
     gl: 'Aínda non están publicados os artigos por concello.',
     es: 'Aún no están publicados los artículos por ayuntamiento.',
+  },
+  bsky_title: { gl: 'Bluesky en galego', es: 'Bluesky en gallego' },
+  bsky_lede: {
+    gl: 'Cantas publicacións en galego aparecen en Bluesky cada semana, e cantas nomean cada unha das sete cidades.',
+    es: 'Cuántas publicaciones en gallego aparecen en Bluesky cada semana, y cuántas nombran cada una de las siete ciudades.',
+  },
+  bsky_map_label: {
+    gl: 'Mapa das sete cidades galegas coloreadas polas publicacións de Bluesky que as nomean cada semana, por cada 10.000 habitantes. As cifras están no panel e na táboa.',
+    es: 'Mapa de las siete ciudades gallegas coloreadas por las publicaciones de Bluesky que las nombran cada semana, por cada 10.000 habitantes. Las cifras están en el panel y en la tabla.',
+  },
+  bsky_legend: {
+    gl: 'Publicacións da semana que nomean a cidade, por cada 10.000 habitantes. O lugar sae do texto, non de onde está quen escribe. Só as sete cidades.',
+    es: 'Publicaciones de la semana que nombran la ciudad, por cada 10.000 habitantes. El lugar sale del texto, no de dónde está quien escribe. Solo las siete ciudades.',
+  },
+  bsky_now: {
+    gl: 'Mencións das sete cidades: {mentions}. En galego: {gl} publicacións estimadas na semana, {permil} de cada 1.000 en Bluesky (– se a mostra non chega á metade).',
+    es: 'Menciones de las siete ciudades: {mentions}. En gallego: {gl} publicaciones estimadas en la semana, {permil} de cada 1.000 en Bluesky (– si la muestra no llega a la mitad).',
+  },
+  bsky_detail: {
+    gl: '{name}, {when}: {mentions} publicacións que a nomean, {value} por cada 10.000 habitantes.',
+    es: '{name}, {when}: {mentions} publicaciones que la nombran, {value} por cada 10.000 habitantes.',
+  },
+  bsky_pick: {
+    gl: 'Preme nunha das sete cidades para ver as súas cifras.',
+    es: 'Pulsa en una de las siete ciudades para ver sus cifras.',
+  },
+  bsky_speed_opt: { gl: 'Unha semana cada {s} s', es: 'Una semana cada {s} s' },
+  bsky_curve: {
+    gl: 'Publicacións que nomean as sete cidades, cada semana',
+    es: 'Publicaciones que nombran las siete ciudades, cada semana',
+  },
+  bsky_curve_label: {
+    gl: 'Publicacións semanais que nomean as sete cidades: {first} na {firstWhen}, {last} na {lastWhen}; máximo de {max} na {maxWhen}.',
+    es: 'Publicaciones semanales que nombran las siete ciudades: {first} en la {firstWhen}, {last} en la {lastWhen}; máximo de {max} en la {maxWhen}.',
+  },
+  bsky_table_caption: {
+    gl: 'As sete cidades na {when}.',
+    es: 'Las siete ciudades en la {when}.',
+  },
+  bsky_col_a: { gl: 'Mencións', es: 'Menciones' },
+  bsky_col_b: { gl: 'Habitantes', es: 'Habitantes' },
+  bsky_col_value: { gl: 'Por 10.000 hab.', es: 'Por 10.000 hab.' },
+  bsky_note: {
+    gl: 'Dúas contas feitas sobre Bluesky, sen gardar ningún texto, conta nin ligazón: cada publicación lese, cóntase e descártase. Galego: a lingua é a que marca a aplicación de quen publica (autodeclarada, e moitas apps poñen a do teléfono), non a que se le no texto. Contamos unha mostra de 6 minutos de cada hora no fluxo público de Bluesky (Jetstream) e multiplicamos ata a semana; só se publica se se mostrou polo menos a metade do previsto, e a serie empeza o 1 de novembro de 2026 porque o fluxo só garda día e medio. Cidades: o total de publicacións en calquera lingua cuxo texto contén o nome (Coruña, Ferrol, «Santiago de Compostela», Lugo, Ourense, Pontevedra, Vigo), segundo o buscador de Bluesky, semana a semana desde hai un ano. Bluesky non ten xeolocalización: é de que lugares se fala, non onde se publica. Lugo e Coruña tamén son apelidos, nomes de clubs e, Lugo, unha vila de Italia; «Santiago» só se conta xunto con «de Compostela». Semanas con menos de 10 mencións non se publican. Taxas e estimacións: cálculo propio.',
+    es: 'Dos cuentas hechas sobre Bluesky, sin guardar ningún texto, cuenta ni enlace: cada publicación se lee, se cuenta y se descarta. Gallego: la lengua es la que marca la aplicación de quien publica (autodeclarada, y muchas apps ponen la del teléfono), no la que se lee en el texto. Contamos una muestra de 6 minutos de cada hora en el flujo público de Bluesky (Jetstream) y multiplicamos hasta la semana; solo se publica si se muestreó al menos la mitad de lo previsto, y la serie empieza el 1 de noviembre de 2026 porque el flujo solo guarda día y medio. Ciudades: el total de publicaciones en cualquier lengua cuyo texto contiene el nombre (Coruña, Ferrol, «Santiago de Compostela», Lugo, Ourense, Pontevedra, Vigo), según el buscador de Bluesky, semana a semana desde hace un año. Bluesky no tiene geolocalización: es de qué lugares se habla, no dónde se publica. Lugo y Coruña también son apellidos, nombres de clubes y, Lugo, una villa de Italia; «Santiago» solo se cuenta junto con «de Compostela». Las semanas con menos de 10 menciones no se publican. Tasas y estimaciones: cálculo propio.',
+  },
+  bsky_missing: {
+    gl: 'Aínda non están publicadas as contas de Bluesky.',
+    es: 'Aún no están publicadas las cuentas de Bluesky.',
   },
   air_title: { gl: 'O aire hora a hora', es: 'El aire hora a hora' },
   air_lede: {
