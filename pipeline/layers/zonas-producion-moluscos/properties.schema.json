@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "zonas-producion-moluscos feature properties",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "tipo",
+    "codigo",
+    "nome",
+    "clase",
+    "estado",
+    "nota",
+    "limites",
+    "ria",
+    "superficie_km2"
+  ],
+  "properties": {
+    "id": { "type": "string", "pattern": "^(zona-(R-)?GAL .+|bateas-\\d+)$" },
+    "tipo": { "enum": ["zona", "poligono_bateas"] },
+    "codigo": { "type": ["string", "null"], "pattern": "^(R-)?GAL \\d", "description": "COD_ZPROT" },
+    "nome": { "type": "string", "minLength": 1 },
+    "clase": {
+      "enum": ["A", "B", "C", null],
+      "description": "Clase sanitaria rexistrada no plan hidrolóxico"
+    },
+    "estado": {
+      "enum": ["estable", "provisional", "estacional", null],
+      "description": "COMENTARIO da fonte"
+    },
+    "nota": {
+      "type": ["string", "null"],
+      "description": "Cambio estacional de clase, ou o COMENTARIO se non se recoñece"
+    },
+    "limites": { "type": ["string", "null"], "description": "Só nas zonas" },
+    "ria": { "type": ["string", "null"], "description": "Só nos polígonos de bateas" },
+    "superficie_km2": { "type": ["number", "null"], "minimum": 0 }
+  }
+}

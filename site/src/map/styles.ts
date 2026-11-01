@@ -679,6 +679,53 @@ export function encodeLayer(layer: LayerLike, ctx: StyleContext): Encoding {
         ],
       );
     }
+    case 'zonas-producion-moluscos': {
+      const bateas = ['==', ['get', 'tipo'], 'poligono_bateas'];
+      const c = ['match', ['get', 'clase'], 'A', '#2e6b8a', 'B', color, 'C', '#c8872b', muted];
+      return enc(
+        [
+          base('fill', {
+            type: 'fill',
+            filter: ['!', bateas],
+            paint: { 'fill-color': c, 'fill-opacity': 0.25 },
+          }),
+          base('line', {
+            type: 'line',
+            filter: ['!', bateas],
+            paint: { 'line-color': c, 'line-width': 0.8 },
+          }),
+          // Raft polygons on top, hatched look through a dark outline and stronger fill.
+          base('bateas', {
+            type: 'fill',
+            filter: bateas,
+            paint: { 'fill-color': ink, 'fill-opacity': 0.35 },
+          }),
+          base('bateas-line', {
+            type: 'line',
+            filter: bateas,
+            paint: { 'line-color': ink, 'line-width': 1, 'line-dasharray': [2, 1] },
+          }),
+          label('label', ['get', 'nome'], 10, {
+            layout: { 'text-offset': [0, 0], 'text-anchor': 'center' },
+          }),
+        ],
+        [
+          {
+            title: T('Clase no plan hidrolóxico', 'Clase en el plan hidrológico'),
+            entries: [
+              { shape: 'fill', color: '#2e6b8a', label: 'A' },
+              { shape: 'fill', color, label: 'B' },
+              { shape: 'fill', color: '#c8872b', label: 'C' },
+              { shape: 'fill', color: ink, label: T('Polígono de bateas', 'Polígono de bateas') },
+            ],
+            note: T(
+              'Non é o estado diario (aberta ou pechada), que publica o Intecmar.',
+              'No es el estado diario (abierta o cerrada), que publica el Intecmar.',
+            ),
+          },
+        ],
+      );
+    }
     // ───────────────────────── Mobilidade ─────────────────────────
     case 'tren': {
       const cercanias = ['==', ['get', 'rede'], 'Cercanías'];

@@ -1,0 +1,44 @@
+id: zonas-producion-moluscos
+title:
+  gl: Zonas de produción de moluscos e polígonos de bateas
+  es: Zonas de producción de moluscos y polígonos de bateas
+theme: auga-mar
+operator:
+  name: Xunta de Galicia — Augas de Galicia (Plan hidrolóxico Galicia-Costa 2021–2027), servizo no IDEG
+  url: https://augasdegalicia.xunta.gal/
+source_url: https://ideg.xunta.gal/servizos/rest/services/IDE_DHGC/PHGC2021_2027_ZProtex_NEuropeo/MapServer
+licence:
+  spdx: CC-BY-SA-4.0
+  text_url: https://augasdegalicia.xunta.gal/aviso-legal
+  verified_at: 2026-11-01
+  odbl_compatible: doubt
+  collection: cc-by-sa-4.0
+  notes: >-
+    Aviso legal de Augas de Galicia (reutilización con cita e sen desnaturalizar) e do IET
+    para o IDEG («compatible con CC- BY 4.0 INT»); sen confirmación escrita, aplícase a máis
+    restritiva (ADR 0005): colección CC BY-SA. Subcapas 2 (84 zonas de produción) e 1 (71
+    polígonos de bateas) do rexistro de zonas protexidas do plan. Responden a `query` sen
+    xeometría; as formas lense con `find` e compróbase o reconto. Xeneralización no servidor:
+    zonas 0,0003° (≈ 30 m), bateas 0,0001° (≈ 10 m). Coidado: a clase A/B/C e o estado
+    (estable, provisional, estacional) son os do plan 2021–2027, non a clasificación vixente
+    nin o estado diario aberto/pechado, que publican a Consellería do Mar e o Intecmar
+    (fonte intecmar-zonas, pendente de licenza). 15 polígonos de bateas non teñen clase e
+    algúns levan só «GAL» como código.
+attribution: "Augas de Galicia. Plan hidrolóxico Galicia-Costa 2021–2027. Xunta de Galicia"
+update_frequency:
+  declared: static
+  measured: static
+geometry: polygon
+output: geojson
+auth:
+  required: false
+privacy_notes: Límites de zonas marisqueiras e de polígonos de bateas; ningún dato persoal.
+stale_after: P90D
+ingest:
+  every: P30D
+style:
+  kind: fill
+  color_token: --c-moluscos
+  label_field: nome
+table:
+  fields: [nome, tipo, codigo, clase, estado, nota, ria, limites, superficie_km2]
