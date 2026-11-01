@@ -71,6 +71,20 @@ export const SERIES: PulseMap[] = [
     },
   },
   {
+    slug: 'aire',
+    ready: true,
+    colour: '#50ccaa',
+    title: { gl: 'O aire hora a hora', es: 'El aire hora a hora' },
+    summary: {
+      gl: 'O índice de calidade do aire de cada estación e o contaminante que o marca.',
+      es: 'El índice de calidad del aire de cada estación y el contaminante que lo marca.',
+    },
+    period: {
+      gl: 'Últimas 24 horas; renóvase cada hora',
+      es: 'Últimas 24 horas; se renueva cada hora',
+    },
+  },
+  {
     slug: 'lume',
     ready: true,
     colour: '#ff7a3d',
@@ -80,6 +94,17 @@ export const SERIES: PulseMap[] = [
       es: 'Lo que vieron los satélites, pasada a pasada, en el mes de los grandes incendios.',
     },
     period: { gl: 'Agosto de 2025', es: 'Agosto de 2025' },
+  },
+  {
+    slug: 'seculo',
+    ready: true,
+    colour: '#b2abd2',
+    title: { gl: 'Un século de poboación', es: 'Un siglo de población' },
+    summary: {
+      gl: 'Os censos de 1900 a 2021 concello a concello: onde se foi a xente e onde se xuntou.',
+      es: 'Los censos de 1900 a 2021 ayuntamiento a ayuntamiento: dónde se fue la gente y dónde se juntó.',
+    },
+    period: { gl: 'Censos de 1900 a 2021', es: 'Censos de 1900 a 2021' },
   },
   {
     slug: 'estacion',

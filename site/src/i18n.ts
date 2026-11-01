@@ -150,6 +150,63 @@ const STRINGS = {
     gl: 'Aínda non hai datos de horarios publicados.',
     es: 'Aún no hay datos de horarios publicados.',
   },
+  century_title: { gl: 'Un século de poboación', es: 'Un siglo de población' },
+  century_lede: {
+    gl: 'Os censos de 1900 a 2021, concello a concello e sobre os límites de hoxe: onde se foi a xente e onde se xuntou. Cada cor compara co mesmo concello en 1900.',
+    es: 'Los censos de 1900 a 2021, ayuntamiento a ayuntamiento y sobre los límites de hoy: dónde se fue la gente y dónde se juntó. Cada color compara con el mismo ayuntamiento en 1900.',
+  },
+  century_map_label: {
+    gl: 'Mapa dos concellos de Galicia coloreados pola súa poboación respecto a 1900 no censo escollido. As cifras están no panel e na táboa.',
+    es: 'Mapa de los ayuntamientos de Galicia coloreados por su población respecto a 1900 en el censo elegido. Las cifras están en el panel y en la tabla.',
+  },
+  century_census: { gl: 'Censo de {y}', es: 'Censo de {y}' },
+  century_now: {
+    gl: 'Galicia: {pop} habitantes ({index} % de 1900). Medran respecto a 1900: {up} concellos; perden: {down}.',
+    es: 'Galicia: {pop} habitantes ({index} % de 1900). Crecen respecto a 1900: {up} ayuntamientos; pierden: {down}.',
+  },
+  century_detail: {
+    gl: '{name}: {pop} habitantes en {y}, o {index} % de 1900.',
+    es: '{name}: {pop} habitantes en {y}, el {index} % de 1900.',
+  },
+  century_detail_unit: {
+    gl: 'Compárase xunto con {others}: unha parte do seu territorio era deles en 1900.',
+    es: 'Se compara junto con {others}: una parte de su territorio era suya en 1900.',
+  },
+  century_detail_includes: {
+    gl: 'Inclúe os antigos municipios de {names}.',
+    es: 'Incluye los antiguos municipios de {names}.',
+  },
+  century_pick: {
+    gl: 'Toca un concello no mapa para ver os seus cen anos.',
+    es: 'Toca un ayuntamiento en el mapa para ver sus cien años.',
+  },
+  century_legend: {
+    gl: 'Marrón: ten menos xente ca en 1900. Branco: a mesma. Morado: máis. A escala é de 25 % a 400 %.',
+    es: 'Marrón: tiene menos gente que en 1900. Blanco: la misma. Morado: más. La escala va de 25 % a 400 %.',
+  },
+  century_curve: {
+    gl: 'Poboación de Galicia en cada censo (branco: o concello escollido, en % de 1900)',
+    es: 'Población de Galicia en cada censo (blanco: el ayuntamiento elegido, en % de 1900)',
+  },
+  century_curve_label: {
+    gl: 'Poboación de Galicia en cada censo: de {first} en 1900 a {last} en 2021, cun máximo de {max} en {maxYear}.',
+    es: 'Población de Galicia en cada censo: de {first} en 1900 a {last} en 2021, con un máximo de {max} en {maxYear}.',
+  },
+  century_table_caption: {
+    gl: 'Os 15 concellos que máis medraron e os 15 que máis perderon entre 1900 e {y} (% de 1900).',
+    es: 'Los 15 ayuntamientos que más crecieron y los 15 que más perdieron entre 1900 y {y} (% de 1900).',
+  },
+  century_col_year: { gl: 'Censo', es: 'Censo' },
+  century_col_index: { gl: '% de 1900', es: '% de 1900' },
+  century_speed_opt: { gl: '{s} s por censo', es: '{s} s por censo' },
+  century_note: {
+    gl: 'INE, «Alteraciones de los municipios en los Censos de Población desde 1842»: poboación de dereito nos censos de 1900 a 1991 e residente de 2001 a 2021. Cálculo propio para levala aos 313 concellos de hoxe: os municipios desaparecidos (Conxo e Enfesta en Santiago, Oza na Coruña, Serantes en Ferrol, Bouzas e Lavadores en Vigo, Geve e Ponte Sampaio en Pontevedra, Carril e Vilaxoán en Vilagarcía, entre outros), as fusións de Oza-Cesuras e Cerdedo-Cotobade e o cambio de Neira de Xusá a Baralla súmanse ao concello de hoxe. Os concellos segregados despois de 1900 (Rábade, Negueira de Muñiz, Ribeira de Piquín, Mondariz-Balneario, Pontecesures, Cariño, Burela e A Illa de Arousa) compáranse xunto co concello do que saíron, porque en 1900 a súa xente estaba nel. Os cambios parciais de termo non se poden corrixir. Nos primeiros censos a poboación de dereito conta como veciños moitos emigrantes ausentes. Os censos saltan sen interpolar.',
+    es: 'INE, «Alteraciones de los municipios en los Censos de Población desde 1842»: población de derecho en los censos de 1900 a 1991 y residente de 2001 a 2021. Cálculo propio para llevarla a los 313 ayuntamientos de hoy: los municipios desaparecidos (Conxo y Enfesta en Santiago, Oza en A Coruña, Serantes en Ferrol, Bouzas y Lavadores en Vigo, Geve y Ponte Sampaio en Pontevedra, Carril y Vilaxoán en Vilagarcía, entre otros), las fusiones de Oza-Cesuras y Cerdedo-Cotobade y el cambio de Neira de Xusá a Baralla se suman al ayuntamiento de hoy. Los ayuntamientos segregados después de 1900 (Rábade, Negueira de Muñiz, Ribeira de Piquín, Mondariz-Balneario, Pontecesures, Cariño, Burela y A Illa de Arousa) se comparan junto con el ayuntamiento del que salieron, porque en 1900 su gente estaba en él. Los cambios parciales de término no se pueden corregir. En los primeros censos la población de derecho cuenta como vecinos a muchos emigrantes ausentes. Los censos saltan sin interpolar.',
+  },
+  century_missing: {
+    gl: 'Aínda non están publicados os datos dos censos.',
+    es: 'Aún no están publicados los datos de los censos.',
+  },
   season_title: { gl: 'Poboación estacional', es: 'Población estacional' },
   season_lede: {
     gl: 'Canta xente soporta cada concello, trimestre a trimestre, contra os seus residentes: turismo, segundas vivendas, estudos, traballo e saúde. 2025 é provisional e só ten dous trimestres; 2024 vai como referencia.',
@@ -254,6 +311,55 @@ const STRINGS = {
   fire_missing: {
     gl: 'Aínda non están publicados os focos de agosto de 2025.',
     es: 'Aún no están publicados los focos de agosto de 2025.',
+  },
+  air_title: { gl: 'O aire hora a hora', es: 'El aire hora a hora' },
+  air_lede: {
+    gl: 'As estacións da Rede de Calidade do Aire de Galicia nas últimas 24 horas: o índice de calidade do aire de cada unha e o contaminante que o marca.',
+    es: 'Las estaciones de la Red de Calidad del Aire de Galicia en las últimas 24 horas: el índice de calidad del aire de cada una y el contaminante que lo marca.',
+  },
+  air_map_label: {
+    gl: 'Mapa de Galicia coas estacións de calidade do aire coloreadas polo seu índice. As cifras están no panel e na táboa.',
+    es: 'Mapa de Galicia con las estaciones de calidad del aire coloreadas por su índice. Las cifras están en el panel y en la tabla.',
+  },
+  air_band_boa: { gl: 'Boa', es: 'Buena' },
+  air_band_favorable: { gl: 'Favorable', es: 'Favorable' },
+  air_band_regular: { gl: 'Regular', es: 'Regular' },
+  air_band_mala: { gl: 'Mala', es: 'Mala' },
+  air_band_moi_mala: { gl: 'Moi mala', es: 'Muy mala' },
+  air_band_pesima: { gl: 'Pésima', es: 'Pésima' },
+  air_now: {
+    gl: 'Estacións con dato: {n}. Boas ou favorables: {good}; regulares ou peores: {bad}. Peor índice: {worst} ({pollutant}).',
+    es: 'Estaciones con dato: {n}. Buenas o favorables: {good}; regulares o peores: {bad}. Peor índice: {worst} ({pollutant}).',
+  },
+  air_legend: {
+    gl: 'Cada punto é unha estación; a cor é a categoría do índice e o tamaño crece con el. As estacións con aire regular ou peor levan o nome e o contaminante que o marca.',
+    es: 'Cada punto es una estación; el color es la categoría del índice y el tamaño crece con él. Las estaciones con aire regular o peor llevan el nombre y el contaminante que lo marca.',
+  },
+  air_curve: {
+    gl: 'Estacións en cada categoría, hora a hora',
+    es: 'Estaciones en cada categoría, hora a hora',
+  },
+  air_curve_label: {
+    gl: 'Estacións por categoría de calidade do aire nas últimas 24 horas. Máximo de estacións regulares ou peores nunha hora: {bad}, ás {hour}.',
+    es: 'Estaciones por categoría de calidad del aire en las últimas 24 horas. Máximo de estaciones regulares o peores en una hora: {bad}, a las {hour}.',
+  },
+  air_table_caption: {
+    gl: 'Estacións por categoría cada hora ({n} estacións).',
+    es: 'Estaciones por categoría cada hora ({n} estaciones).',
+  },
+  air_col_worse: { gl: 'Mala ou peor', es: 'Mala o peor' },
+  air_col_worst: { gl: 'Peor estación', es: 'Peor estación' },
+  air_period: {
+    gl: 'As 24 horas ata a última medida: as {hour} do {date}. Actualízase cada hora.',
+    es: 'Las 24 horas hasta la última medida: las {hour} del {date}. Se actualiza cada hora.',
+  },
+  air_note: {
+    gl: 'Rede de Calidade do Aire de Galicia (MeteoGalicia): índice de calidade do aire (ICA) de cada estación nas últimas 24 horas, coa escala de MeteoGalicia (0–1 boa, 1–2 favorable, 2–3 regular, 3–4 mala, 4–5 moi mala, 5–6 pésima), e o contaminante que marca o índice. Son datos en tempo real sen validar: poden cambiar despois da revisión. As estacións industriais miden preto de fábricas e centrais; un valor alto nelas describe ese punto, non a vila enteira. Horas en hora oficial de Galicia.',
+    es: 'Red de Calidad del Aire de Galicia (MeteoGalicia): índice de calidad del aire (ICA) de cada estación en las últimas 24 horas, con la escala de MeteoGalicia (0–1 buena, 1–2 favorable, 2–3 regular, 3–4 mala, 4–5 muy mala, 5–6 pésima), y el contaminante que marca el índice. Son datos en tiempo real sin validar: pueden cambiar tras la revisión. Las estaciones industriales miden cerca de fábricas y centrales; un valor alto en ellas describe ese punto, no el pueblo entero. Horas en hora oficial de Galicia.',
+  },
+  air_missing: {
+    gl: 'Aínda non están publicados os datos de calidade do aire.',
+    es: 'Aún no están publicados los datos de calidad del aire.',
   },
   weather_title: { gl: 'O tempo hora a hora', es: 'El tiempo hora a hora' },
   weather_lede: {

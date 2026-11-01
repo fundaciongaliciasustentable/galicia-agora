@@ -1,0 +1,390 @@
+---
+// Air quality over the last 24 hours at the stations of the Galician network: each station a
+// dot coloured by its index band, breathing with it. The same figures are given as text:
+// panel, stacked hourly bars (labelled) and an hourly table.
+import { base, dictionary, type Lang, t } from '../i18n';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+---
+
+<div class="ai-app" data-lang={lang} data-dict={JSON.stringify(dictionary(lang))}>
+  <div class="ai-map" role="region" aria-label={t(lang, 'air_map_label')}></div>
+  <canvas class="ai-canvas" aria-hidden="true"></canvas>
+
+  <section class="ai-panel" id="contido">
+    <a class="ai-back" href={`${base(lang)}pulso/`}>← {t(lang, 'pulse_back')}</a>
+    <h1>{t(lang, 'air_title')}</h1>
+    <p class="ai-lede">{t(lang, 'air_lede')}</p>
+    <p class="ai-period"></p>
+    <p class="ai-clock" aria-live="off">--:--</p>
+    <p class="ai-now" aria-live="off"></p>
+    <div class="ai-controls">
+    </div>
+    <div class="ai-controls">
+      <button type="button" class="ai-play" aria-pressed="false">{t(lang, 'pulse_play')}</button>
+      <label>
+        <span class="visually-hidden">{t(lang, 'pulse_speed')}</span>
+        <select class="ai-speed"></select>
+      </label>
+    </div>
+    <label class="ai-range-label">
+      <span class="visually-hidden">{t(lang, 'pulse_time')}</span>
+      <input class="ai-range" type="range" />
+    </label>
+    <p class="ai-legend">
+      <span class="ai-bands" aria-hidden="true">
+        <span style="background:#50f0e6">{t(lang, 'air_band_boa')}</span><span style="background:#50ccaa">{t(lang, 'air_band_favorable')}</span><span style="background:#f0e641">{t(lang, 'air_band_regular')}</span><span style="background:#ff5050">{t(lang, 'air_band_mala')}</span><span style="background:#960032;color:#fff">{t(lang, 'air_band_moi_mala')}</span><span style="background:#7d2181;color:#fff">{t(lang, 'air_band_pesima')}</span>
+      </span>
+      {t(lang, 'air_legend')}
+    </p>
+    <p class="ai-status" role="status">{t(lang, 'loading')}</p>
+    <details class="ai-table">
+      <summary>{t(lang, 'cities_table')}</summary>
+      <table>
+        <caption></caption>
+        <thead>
+          <tr>
+            <th scope="col">{t(lang, 'pulse_time')}</th>
+            <th scope="col">{t(lang, 'air_band_boa')}</th>
+            <th scope="col">{t(lang, 'air_band_favorable')}</th>
+            <th scope="col">{t(lang, 'air_band_regular')}</th>
+            <th scope="col">{t(lang, 'air_col_worse')}</th>
+            <th scope="col">{t(lang, 'air_col_worst')}</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </details>
+    <details class="ai-about">
+      <summary>{t(lang, 'pulse_about')}</summary>
+      <p>{t(lang, 'air_note')}</p>
+      <p class="ai-sources"></p>
+    </details>
+  </section>
+
+  <figure class="ai-curve">
+    <figcaption>{t(lang, 'air_curve')}</figcaption>
+    <svg role="img" preserveAspectRatio="none"></svg>
+  </figure>
+</div>
+
+<style is:global>
+  .ai-app {
+    position: relative;
+    height: calc(100dvh - 52px);
+    overflow: hidden;
+    background: #111210;
+    color: #e6e6df;
+  }
+  .ai-map,
+  .ai-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .ai-canvas {
+    pointer-events: none;
+    z-index: 1;
+  }
+  .ai-panel {
+    position: absolute;
+    z-index: 2;
+    top: 16px;
+    left: 16px;
+    width: min(360px, calc(100% - 32px));
+    max-height: calc(100% - 190px);
+    overflow-y: auto;
+    padding: 16px 18px;
+    border-radius: var(--gs-radius-card);
+    background: rgba(17, 18, 16, 0.8);
+    backdrop-filter: blur(6px);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+  }
+  .ai-back {
+    display: inline-block;
+    margin-bottom: 6px;
+    font-size: var(--gs-texto-sm);
+    color: #b3b3aa;
+  }
+  .ai-back:hover,
+  .ai-back:focus-visible {
+    color: #fff;
+  }
+  .ai-panel h1 {
+    margin: 0;
+    font-size: var(--gs-texto-xl);
+    color: #fff;
+  }
+  .ai-lede,
+  .ai-legend,
+  .ai-about,
+  .ai-table {
+    font-size: var(--gs-texto-sm);
+    color: #b3b3aa;
+    margin: 6px 0 0;
+  }
+  .ai-about summary,
+  .ai-table summary {
+    cursor: pointer;
+  }
+  .ai-sources {
+    font-size: var(--gs-texto-xs);
+  }
+  .ai-bands {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2px;
+    margin-bottom: 4px;
+    font-size: var(--gs-texto-xs);
+  }
+  .ai-bands span {
+    padding: 1px 5px;
+    border-radius: 3px;
+    color: #111210;
+  }
+  .ai-period {
+    margin: 8px 0 0;
+    font-size: var(--gs-texto-sm);
+    color: #e6e6df;
+  }
+  .ai-seg button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+  .ai-clock {
+    margin: 10px 0 0;
+    font-size: clamp(2.5rem, 7vw, 3.75rem);
+    font-weight: 700;
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+    color: #fff;
+    letter-spacing: -0.02em;
+  }
+  .ai-now {
+    margin: 4px 0 0;
+    font-variant-numeric: tabular-nums;
+    min-height: 2.8em;
+    font-size: var(--gs-texto-sm);
+  }
+  .ai-status {
+    margin: 4px 0 0;
+    font-size: var(--gs-texto-sm);
+    color: #e0a95a;
+  }
+  .ai-status:empty {
+    display: none;
+  }
+  .ai-controls {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 12px;
+    margin-top: 12px;
+  }
+  .ai-seg {
+    display: flex;
+    border: 1px solid #3a3b35;
+    border-radius: 999px;
+    padding: 2px;
+  }
+  .ai-seg button,
+  .ai-play {
+    font: inherit;
+    font-size: var(--gs-texto-sm);
+    border: 0;
+    border-radius: 999px;
+    padding: 4px 12px;
+    background: transparent;
+    color: #e6e6df;
+    cursor: pointer;
+  }
+  .ai-seg button[aria-pressed="true"] {
+    background: #e6e6df;
+    color: #111210;
+  }
+  .ai-play {
+    border: 1px solid #e6e6df;
+    min-width: 6em;
+  }
+  .ai-speed {
+    font: inherit;
+    font-size: var(--gs-texto-sm);
+    background: #1f201c;
+    color: #e6e6df;
+    border: 1px solid #3a3b35;
+    border-radius: var(--gs-radius);
+    padding: 3px 6px;
+  }
+  .ai-range-label {
+    display: block;
+    margin-top: 10px;
+  }
+  .ai-range {
+    width: 100%;
+    accent-color: #e6e6df;
+  }
+  .ai-mode {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: var(--gs-texto-sm);
+    cursor: pointer;
+  }
+  .ai-mode input {
+    width: 16px;
+    height: 16px;
+    accent-color: #e6e6df;
+  }
+  .ai-scale {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4px;
+    padding: 2px 4px;
+    border-radius: 3px;
+    font-size: var(--gs-texto-xs);
+    color: #111210;
+    background: linear-gradient(
+      90deg,
+      rgb(49, 54, 149),
+      rgb(69, 117, 180) 21%,
+      rgb(116, 173, 209) 36%,
+      rgb(224, 243, 248) 46%,
+      rgb(254, 224, 144) 57%,
+      rgb(253, 174, 97) 71%,
+      rgb(244, 109, 67) 86%,
+      rgb(165, 0, 38)
+    );
+  }
+  .ai-scale span:first-child {
+    color: #fff;
+  }
+  .ai-scale span:last-child {
+    color: #fff;
+  }
+  .ai-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-right: 3px;
+  }
+  .ai-dot-in {
+    background: #5fd3f3;
+    margin-right: 6px;
+  }
+  .ai-table table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 6px;
+    font-variant-numeric: tabular-nums;
+    font-size: var(--gs-texto-xs);
+    color: #e6e6df;
+  }
+  .ai-table caption {
+    text-align: left;
+    color: #b3b3aa;
+    padding-bottom: 4px;
+  }
+  .ai-table th,
+  .ai-table td {
+    padding: 2px 4px;
+    border-bottom: 1px solid #2a2b26;
+    text-align: right;
+  }
+  .ai-table th:first-child,
+  .ai-table td:first-child {
+    text-align: left;
+  }
+  .ai-curve {
+    position: absolute;
+    z-index: 2;
+    left: 16px;
+    right: 64px;
+    bottom: 12px;
+    margin: 0;
+    height: 120px;
+  }
+  .ai-curve figcaption {
+    font-size: var(--gs-texto-xs);
+    color: #b3b3aa;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .ai-curve svg {
+    display: block;
+    width: 100%;
+    height: 100px;
+    cursor: ew-resize;
+    touch-action: none;
+  }
+  .ai-tick {
+    fill: #8a8a82;
+    font-size: 11px;
+    text-anchor: middle;
+  }
+  .ai-band {
+    fill: rgba(253, 174, 97, 0.18);
+  }
+  .ai-sun {
+    fill: rgba(255, 236, 160, 0.08);
+  }
+  .ai-area {
+    fill: none;
+    stroke: #fdae61;
+    stroke-width: 1.5;
+    vector-effect: non-scaling-stroke;
+  }
+  .ai-other {
+    fill: none;
+    stroke: rgba(230, 230, 223, 0.45);
+    stroke-width: 1;
+    stroke-dasharray: 3 3;
+    vector-effect: non-scaling-stroke;
+  }
+  .ai-playhead {
+    stroke: #fff;
+    stroke-width: 1.5;
+    vector-effect: non-scaling-stroke;
+  }
+  @media (max-width: 700px) {
+    .ai-panel {
+      top: 8px;
+      left: 8px;
+      right: 8px;
+      width: auto;
+      max-height: 48%;
+      padding: 12px 14px;
+    }
+    .ai-lede,
+    .ai-legend {
+      display: none;
+    }
+    .ai-clock {
+      margin-top: 4px;
+      font-size: 2.2rem;
+    }
+    .ai-now {
+      min-height: 0;
+    }
+    .ai-controls {
+      margin-top: 8px;
+    }
+    .ai-curve {
+      left: 8px;
+      right: 8px;
+      height: 96px;
+    }
+    .ai-curve svg {
+      height: 76px;
+    }
+  }
+</style>
+
+<script>
+  import { start } from '../pulso/aire/aire';
+  start();
+</script>

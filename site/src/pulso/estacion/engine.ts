@@ -10,15 +10,15 @@ export const RATE_STOPS: Array<[number, string]> = [
 ];
 
 /** Colour of a rate on the diverging scale (linear between stops). */
-export function colourOf(v: number): string {
+export function colourOf(v: number, stops: Array<[number, string]> = RATE_STOPS): string {
   const hex = (h: string) => [1, 3, 5].map((k) => Number.parseInt(h.slice(k, k + 2), 16));
-  const first = RATE_STOPS[0] as [number, string];
-  const last = RATE_STOPS[RATE_STOPS.length - 1] as [number, string];
+  const first = stops[0] as [number, string];
+  const last = stops[stops.length - 1] as [number, string];
   if (v <= first[0]) return first[1];
   if (v >= last[0]) return last[1];
-  for (let k = 1; k < RATE_STOPS.length; k++) {
-    const [v1, c1] = RATE_STOPS[k] as [number, string];
-    const [v0, c0] = RATE_STOPS[k - 1] as [number, string];
+  for (let k = 1; k < stops.length; k++) {
+    const [v1, c1] = stops[k] as [number, string];
+    const [v0, c0] = stops[k - 1] as [number, string];
     if (v <= v1) {
       const f = (v - v0) / (v1 - v0);
       const a = hex(c0);
