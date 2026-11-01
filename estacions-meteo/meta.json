@@ -1,17 +1,21 @@
 {
   "layer_id": "estacions-meteo",
-  "published_at": "2026-11-01T01:40:00.000Z",
-  "fetched_at": "2026-11-01T01:51:16.817Z",
-  "last_success_at": "2026-11-01T01:51:16.817Z",
+  "published_at": "2026-11-01T08:00:00.000Z",
+  "fetched_at": "2026-11-01T08:13:03.936Z",
+  "last_success_at": "2026-11-01T08:13:03.936Z",
   "status": "fresh",
   "consecutive_failures": 0,
   "feature_count": 154,
   "source_url": "https://servizos.meteogalicia.gal/mgrss/observacion/ultimos10minEstacionsMeteo.action",
   "licence": "CC-BY-SA-4.0",
   "attribution": "Datos: MeteoGalicia (Xunta de Galicia)",
-  "checksum": "sha256:5382a38bd9cf7b06be0eadf759d4551ee606d356ccb886f7153e929f0b6f4268",
+  "checksum": "sha256:4fe321b1f83ffee72ebea3293515420d3d8a12b05d5f59d071eb5e3b8197a85e",
   "last_error": null,
   "history": [
+    {
+      "at": "2026-11-01T08:13:03.936Z",
+      "ok": true
+    },
     {
       "at": "2026-11-01T01:51:16.817Z",
       "ok": true
@@ -182,10 +186,6 @@
     },
     {
       "at": "2026-10-25T09:22:13.051Z",
-      "ok": true
-    },
-    {
-      "at": "2026-10-25T04:31:36.702Z",
       "ok": true
     }
   ]
