@@ -26,3 +26,6 @@ dist/
 /galicia-agora-web/
 /deploy/
 /datos/fontes/*/bruto/
+
+# Built by .github/workflows/ortofoto.yml (tile cache and archives)
+/.ortofoto/

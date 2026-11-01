@@ -1,0 +1,227 @@
+# PNOA orthophoto (layer ortofoto-pnoa): download the IGN WMTS tiles that
+# touch Galicia (z6–z16, ~207,000 requests at 9 per second), re-encode them to
+# WebP, pack them into PMTiles of under 2 GB each and upload those straight to
+# the server under data/ortofoto-pnoa/. The imagery never enters git: only the
+# small index (archives.json) and meta.json go to the `data` branch, so the
+# site build knows the files exist and where they are.
+#
+# One run cannot download everything inside the 6-hour job limit. The tile
+# cache is kept with actions/cache, so run the workflow again until the log
+# says "all tiles fetched"; each run publishes the archives that are complete.
+# Manual only: it is a one-off job, repeated when the IGN flies Galicia again
+# (then run it with `fresh` so old tiles are not reused).
+name: ortofoto
+
+on:
+  workflow_dispatch:
+    inputs:
+      minutes:
+        description: Download time budget in minutes (leaves time to save the cache, pack and upload)
+        type: number
+        default: 285
+      zooms:
+        description: Zoom range to build
+        type: string
+        default: '6-16'
+      fresh:
+        description: Ignore the tile cache and download everything again (new PNOA flight)
+        type: boolean
+        default: false
+      publish:
+        description: Upload complete archives and publish their index on the data branch
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+  # Delete superseded tile caches (each is ~2.5 GB of the repository's 10 GB).
+  actions: write
+
+concurrency:
+  group: ortofoto
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 355
+    env:
+      WORK: .ortofoto
+      CACHE_KEY_PREFIX: ortofoto-tiles-v1-
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+
+      - name: Install tools
+        # webp: cwebp (libwebp, BSD-3-Clause) re-encodes the JPEG tiles.
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq webp lftp
+          curl -sSL -o pmtiles.tgz https://github.com/protomaps/go-pmtiles/releases/download/v1.31.2/go-pmtiles_1.31.2_Linux_x86_64.tar.gz
+          tar -xzf pmtiles.tgz pmtiles && sudo mv pmtiles /usr/local/bin/
+          df -h .
+
+      - name: Galicia mask (concellos from the data branch)
+        run: |
+          mkdir -p "$WORK/out"
+          git fetch -q origin data
+          git show origin/data:concellos-parroquias/data.geojson > "$WORK/concellos.geojson"
+          npx tsx pipeline/layers/ortofoto-pnoa/build.ts plan --mask="$WORK/concellos.geojson" --zooms=${{ inputs.zooms }}
+
+      - name: Restore tile cache
+        if: ${{ !inputs.fresh }}
+        uses: actions/cache/restore@v4
+        with:
+          path: .ortofoto/tiles
+          key: ${{ env.CACHE_KEY_PREFIX }}${{ github.run_id }}
+          restore-keys: ${{ env.CACHE_KEY_PREFIX }}
+
+      - name: Fetch tiles (resumable, at most 9 requests per second)
+        id: fetch
+        # Safety net above the default budget; the fetch itself stops at --minutes.
+        timeout-minutes: 320
+        run: |
+          npx tsx pipeline/layers/ortofoto-pnoa/build.ts fetch --mask="$WORK/concellos.geojson" \
+            --zooms=${{ inputs.zooms }} --cache="$WORK/tiles" --minutes=${{ inputs.minutes }} --rate=9 --concurrency=6
+          du -sh "$WORK/tiles" || true
+
+      - name: Save tile cache
+        if: ${{ always() && steps.fetch.outcome != 'skipped' }}
+        uses: actions/cache/save@v4
+        with:
+          path: .ortofoto/tiles
+          key: ${{ env.CACHE_KEY_PREFIX }}${{ github.run_id }}
+
+      - name: Drop older tile caches
+        if: ${{ always() && steps.fetch.outcome != 'skipped' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          current="${CACHE_KEY_PREFIX}${{ github.run_id }}"
+          gh cache list --key "$CACHE_KEY_PREFIX" --limit 100 --json key -q '.[].key' | while read -r k; do
+            [ "$k" != "$current" ] && gh cache delete "$k" && echo "deleted $k"
+          done || true
+
+      - name: Flight dates (81 points, one request per second)
+        run: npx tsx pipeline/layers/ortofoto-pnoa/build.ts flights --mask="$WORK/concellos.geojson" --out="$WORK/out" || true
+
+      - name: Pack complete archives
+        id: pack
+        run: |
+          npx tsx pipeline/layers/ortofoto-pnoa/build.ts pack --mask="$WORK/concellos.geojson" \
+            --zooms=${{ inputs.zooms }} --cache="$WORK/tiles" --out="$WORK/out" --limit-mb=1900
+          for f in "$WORK"/out/*.pmtiles; do
+            if [ -e "$f" ]; then pmtiles verify "$f"; fi
+          done
+          ls -la "$WORK/out"
+          if [ "${{ steps.fetch.outputs.complete }}" = "true" ]; then
+            echo "::notice::ortofoto: all tiles fetched"
+          else
+            echo "::notice::ortofoto: ${{ steps.fetch.outputs.remaining }} tiles left (${{ steps.fetch.outputs.failed }} failed): run the workflow again to continue"
+          fi
+
+      - name: Check deploy configuration
+        id: cfg
+        if: ${{ inputs.publish && steps.pack.outputs.archives != '0' }}
+        env:
+          FTPS_HOST: ${{ secrets.FTPS_HOST }}
+        run: |
+          deploy=false
+          # Same normalisation as update.yml: drop whitespace, scheme, path and port.
+          host=$(printf %s "$FTPS_HOST" | tr -d '[:space:]' | sed -E 's#^[A-Za-z]+://##; s#/.*$##; s#:[0-9]*$##')
+          if [ -z "$FTPS_HOST" ]; then
+            echo "::notice::FTPS secrets not set: upload skipped"
+          elif ! printf %s "$host" | grep -Eq '^[A-Za-z0-9.-]+\.[A-Za-z]{2,}$'; then
+            echo "::error::FTPS_HOST is not a server name even after removing ftp://, port and slashes: upload skipped"
+          else
+            deploy=true
+          fi
+          echo "deploy=$deploy" >> "$GITHUB_OUTPUT"
+
+      - name: Upload archives (FTPS) and check Range requests
+        if: ${{ steps.cfg.outputs.deploy == 'true' }}
+        env:
+          FTPS_HOST: ${{ secrets.FTPS_HOST }}
+          FTPS_USER: ${{ secrets.FTPS_USER }}
+          FTPS_PASSWORD: ${{ secrets.FTPS_PASSWORD }}
+          FTPS_DIR: ${{ secrets.FTPS_DIR }}
+        run: |
+          host=$(printf %s "$FTPS_HOST" | tr -d '[:space:]' | sed -E 's#^[A-Za-z]+://##; s#/.*$##; s#:[0-9]*$##')
+          dir=$(printf %s "$FTPS_DIR" | tr -d '\r\n')
+          remote="${dir:-.}/data/ortofoto-pnoa"
+          # Explicit FTPS (AUTH TLS on port 21), as in update.yml.
+          ftp() {
+            lftp -u "$FTPS_USER","$FTPS_PASSWORD" "ftp://$host" -e "
+              set ftp:ssl-force true; set ftp:ssl-protect-data true; set ssl:verify-certificate true;
+              set net:timeout 60; set net:max-retries 10; set net:reconnect-interval-base 10;
+              $1
+              quit"
+          }
+          ftp "mkdir -p -f $remote;"
+          ftp "cd $remote; cls -1" > "$WORK/remote.txt" 2>/dev/null || true
+          site=$(node -p "require('./site/site.config.json').site.replace(/\/$/, '')")
+          for f in ${{ steps.pack.outputs.files }}; do
+            # Names carry the content hash: a file already there is this exact archive.
+            if grep -qx "$f" "$WORK/remote.txt"; then
+              echo "$f: already on the server"
+            else
+              # Upload under .part (resumable with -c), then rename, so the site never sees half a file.
+              ftp "cd $remote; put -c $WORK/out/$f -o $f.part; mv $f.part $f;"
+              echo "$f: uploaded"
+            fi
+            url="$site/data/ortofoto-pnoa/$f"
+            code=$(curl -sS -r 0-6 -o "$WORK/head.bin" -w '%{http_code}' "$url")
+            size=$(curl -sSI "$url" | tr -d '\r' | awk 'tolower($1)=="content-length:"{print $2}')
+            local_size=$(stat -c %s "$WORK/out/$f")
+            if [ "$code" != 206 ] || [ "$(head -c 7 "$WORK/head.bin")" != PMTiles ] || [ "$size" != "$local_size" ]; then
+              echo "::error::$url: HTTP $code, size $size (local $local_size): not served correctly, index not published"
+              exit 1
+            fi
+            echo "$f: Range OK (206), $size bytes"
+          done
+
+      - name: Publish index (data branch) and drop superseded archives
+        if: ${{ steps.cfg.outputs.deploy == 'true' }}
+        env:
+          FTPS_HOST: ${{ secrets.FTPS_HOST }}
+          FTPS_USER: ${{ secrets.FTPS_USER }}
+          FTPS_PASSWORD: ${{ secrets.FTPS_PASSWORD }}
+          FTPS_DIR: ${{ secrets.FTPS_DIR }}
+        run: |
+          git config --global user.name "galicia-agora-ingest"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git show origin/data:ortofoto-pnoa/archives.json > "$WORK/prev.json" 2>/dev/null || echo '{"archives":[]}' > "$WORK/prev.json"
+          git worktree add -q --detach data-out origin/data
+          # update.yml pushes to the same branch every 10 minutes: retry on a moved branch.
+          for attempt in 1 2 3 4 5; do
+            npx tsx pipeline/layers/ortofoto-pnoa/build.ts publish --index="$WORK/out/archives.json" --data-out=data-out
+            git -C data-out add ortofoto-pnoa
+            git -C data-out commit -q -m "data: ortofoto-pnoa $(date -u +%Y-%m-%dT%H:%MZ)" || break
+            git -C data-out push -q origin HEAD:data && break
+            [ "$attempt" = 5 ] && { echo "::error::could not push the index to the data branch"; exit 1; }
+            sleep $((attempt * 20))
+            git fetch -q origin data && git -C data-out reset -q --hard origin/data
+          done
+          # Keep the archives of the published index and of the previous one (the
+          # live site may still point there until update.yml redeploys); delete the rest.
+          jq -r '.archives[].file' "$WORK/prev.json" data-out/ortofoto-pnoa/archives.json 2>/dev/null | sort -u > "$WORK/keep.txt" || true
+          if [ ! -s "$WORK/keep.txt" ]; then
+            echo "::warning::no published archive list: nothing deleted on the server"
+            exit 0
+          fi
+          sed 's/$/.part/' "$WORK/keep.txt" >> "$WORK/keep.txt"
+          host=$(printf %s "$FTPS_HOST" | tr -d '[:space:]' | sed -E 's#^[A-Za-z]+://##; s#/.*$##; s#:[0-9]*$##')
+          dir=$(printf %s "$FTPS_DIR" | tr -d '\r\n')
+          remote="${dir:-.}/data/ortofoto-pnoa"
+          lftp -u "$FTPS_USER","$FTPS_PASSWORD" "ftp://$host" -e "
+            set ftp:ssl-force true; set ftp:ssl-protect-data true; set ssl:verify-certificate true;
+            cd $remote; cls -1; quit" > "$WORK/remote.txt"
+          for f in $(grep -E '\.pmtiles(\.part)?$' "$WORK/remote.txt" | grep -vxFf "$WORK/keep.txt" || true); do
+            lftp -u "$FTPS_USER","$FTPS_PASSWORD" "ftp://$host" -e "
+              set ftp:ssl-force true; set ftp:ssl-protect-data true; set ssl:verify-certificate true;
+              cd $remote; rm $f; quit" && echo "deleted $f"
+          done
+          echo "::notice::Index published; the site shows it after the next update.yml deploy (every 10 minutes)."

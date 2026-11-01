@@ -1,0 +1,73 @@
+id: ortofoto-pnoa
+title:
+  gl: Ortofoto (PNOA)
+  es: Ortofoto (PNOA)
+theme: territorio
+operator:
+  name: Instituto Geográfico Nacional (IGN) e Centro Nacional de Información Geográfica (CNIG)
+  url: https://pnoa.ign.es/
+source_url: https://www.ign.es/wmts/pnoa-ma?request=GetCapabilities&service=WMTS
+licence:
+  spdx: CC-BY-4.0
+  text_url: https://www.ign.es/resources/licencia/Condiciones_licenciaUso_IGN.pdf
+  quote: '<ows:AccessConstraints>CC BY 4.0 scne.es</ows:AccessConstraints>; licenza do IGN: «conlleva la aceptación por el usuario de una licencia CC-BY 4.0»'
+  verified_at: 2026-11-01
+  odbl_compatible: true
+  collection: odbl
+  notes: >-
+    Licenza declarada no GetCapabilities do WMTS pnoa-ma (AccessConstraints «CC BY 4.0 scne.es»,
+    Fees «No se aplican condiciones») e na licenza de uso do IGN, ligada desde o aviso legal
+    (https://www.ign.es/web/ign/portal/info-aviso-legal). Como as teselas se recodifican a WebP,
+    a cita segue o punto 4 da licenza («Obra derivada de …»). Capa OI.OrthoimageCoverage,
+    teselas JPEG GoogleMapsCompatible. Mapas Galicia Sustentable garda só as teselas que tocan
+    Galicia (z6–z16) en PMTiles propios, subidos directamente ao servidor polo fluxo
+    .github/workflows/ortofoto.yml; non pasan pola rama de datos. Desde z17 o mapa non amplía máis.
+attribution: Obra derivada de PNOA máxima actualidade CC BY 4.0 scne.es · PNOA cedido por © Instituto Geográfico Nacional
+update_frequency:
+  declared: static
+  measured: static
+stale_after: P1100D
+ingest:
+  every: P730D
+  workflow: .github/workflows/ortofoto.yml
+geometry: raster
+output: pmtiles
+auth:
+  required: false
+privacy_notes: >-
+  Ortofoto aérea de 15–25 cm por píxel: no nivel máximo que publicamos (z16, uns 1,7 m por
+  píxel en Galicia) non se distinguen persoas nin matrículas.
+context:
+  - label:
+      gl: Datas de voo
+      es: Fechas de vuelo
+    value: PNOA 2023 (xullo–outubro), 15 cm por píxel
+    source: IGN, WMS pnoa-ma, capa OI.MosaicElement (FECHA, RESOLUCION)
+    source_url: https://www.ign.es/wms-inspire/pnoa-ma?request=GetCapabilities&service=WMS
+    note:
+      gl: >-
+        Consultado o 01/11/2026 en 81 puntos de Galicia (unha grella de 0,2°): todos son do voo
+        de 2023, de xullo (sur de Ourense) a outubro (Rías Baixas). O IGN substitúe as zonas
+        cando hai un voo novo; o fluxo que constrúe a capa volve medir as datas.
+      es: >-
+        Consultado el 01/11/2026 en 81 puntos de Galicia (una rejilla de 0,2°): todos son del
+        vuelo de 2023, de julio (sur de Ourense) a octubre (Rías Baixas). El IGN sustituye las
+        zonas cuando hay un vuelo nuevo; el flujo que construye la capa vuelve a medir las fechas.
+  - label:
+      gl: Escalas pequenas
+      es: Escalas pequeñas
+    value: Mosaico Sentinel-2 do IGN ata z12
+    source: Resumo do GetCapabilities do WMTS pnoa-ma
+    source_url: https://www.ign.es/wmts/pnoa-ma?request=GetCapabilities&service=WMTS
+    note:
+      gl: >-
+        O servizo mostra imaxe do satélite Sentinel-2 a escalas menores de 1:70.000 (ata z12)
+        e a ortofoto PNOA desde z13.
+      es: >-
+        El servicio muestra imagen del satélite Sentinel-2 a escalas menores de 1:70.000 (hasta
+        z12) y la ortofoto PNOA desde z13.
+style:
+  kind: raster
+  color_token: --gs-verde-nato
+table:
+  fields: [ortofoto]
