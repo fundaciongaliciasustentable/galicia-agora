@@ -41,6 +41,15 @@ Verificado con descargas reais o 1 de novembro de 2026.
 - Agosto de 2025 por importe: A Coruña (Lonja Coruña) 7,4 M€, Vigo 6,3, Burela 6,2, Ribeira 4,5, Celeiro 3,4. Especies: pescada 7,5 M€, sardiña 3,6, bonito do norte 3,0, bocarte 2,8, xurelo 2,8, ameixa xaponesa 2,4.
 - Filas por día da semana en agosto: de martes a venres ≈ 3.000–3.300, luns 2.431, sábado 655, domingo 2. O ritmo semanal vese no mapa.
 
+## Posición das lonxas
+
+Feito o 1 de novembro de 2026 para a capa `lonxas-2025` (`pipeline/layers/lonxas-2025/lonxas.json`). Fonte: Nomenclátor Geográfico Básico de España (IGN, CC BY 4.0), servizo WFS INSPIRE `https://www.ign.es/wfs-inspire/ngbe`, consultado na caixa de cada concello con lonxa.
+
+- Regra: o porto («Puerto» ou «Instalación portuaria») cando o NGBE nomea un co nome da lonxa (23 lonxas); se non, o núcleo que lle dá nome (capital de municipio, entidade singular ou colectiva).
+- Excepcións anotadas en `lonxas.json`: Vigo e Ferrol van na capital porque o porto do NGBE nomea a ría enteira; A Illa no peirao do Chufre (Xufre); O Barqueiro no barrio do porto (a entidade homónima está terra adentro); Río Anllóns na capital de Ponteceso, aproximada.
+- O Nomenclátor da Xunta (capa `entidades-poboacion`) non serve: faltan os núcleos principais (Vigo, Burela, Cedeira…).
+- Sen punto: Baldaio (non está no NGBE nin no Nomenclátor da Xunta) e Coop. Ría de Arosa (sen localización publicada). Van na capa sen xeometría.
+
 ## Proposta de mapa
 
 Reloxo de **días** dun ano (2025): cada lonxa é un punto que late co importe ou os kg do día, cor por grupo (peixe, cefalópodos, bivalvos, crustáceos); vense o ritmo semanal, as costeiras (bonito no verán, ameixa no inverno) e os peches por temporal. Como segunda capa, reloxo de **anos** 2003–2025 por lonxa. O dato non mostra onde se pescou (unha lonxa vende capturas de caladoiros afastados), nin a acuicultura, nin o peixe conxelado; e os puntos das lonxas hai que xeolocalizalos nós.

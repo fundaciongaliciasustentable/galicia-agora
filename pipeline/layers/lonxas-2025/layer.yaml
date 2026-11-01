@@ -1,0 +1,54 @@
+id: lonxas-2025
+title:
+  gl: Primeira venda nas lonxas, día a día (2025)
+  es: Primera venta en las lonjas, día a día (2025)
+theme: auga-mar
+operator:
+  name: Consellería do Mar (Xunta de Galicia)
+  url: https://www.pescadegalicia.gal
+source_url: https://www.pescadegalicia.gal/descargas/pescafresca/pescafresca2025.csv
+licence:
+  spdx: CC-BY-SA-4.0
+  text_url: https://abertos.xunta.gal/catalogo/economia-empresa-emprego/-/dataset/0154/principais-indicadores-vendas-produtos-pesqueiros
+  quote: "Creative Commons BY SA 4.0"
+  verified_at: 2026-11-01
+  odbl_compatible: doubt
+  collection: cc-by-sa-4.0
+  notes: >-
+    abertos.xunta.gal declara CC BY-SA 4.0 (fonte «Consellería do Mar») e o aviso legal de
+    pescadegalicia.gal permite reutilizar citando a fonte: aplícase a máis restritiva e vai na
+    colección CC BY-SA (ADR 0005). Ficheiro anual de pesca fresca de 2025, unha fila por día,
+    lonxa e especie. A posición de cada lonxa sae do Nomenclátor Geográfico Básico do IGN
+    (CC BY 4.0, compatible): o porto cando o NGBE o nomea, se non o núcleo que dá nome á
+    lonxa (lonxas.json, con identificador NGBE e nota de cada caso). Baldaio e a Coop. Ría de
+    Arosa non teñen punto verificable e van sen xeometría. Só pesca fresca: sen acuicultura
+    nin conxelado. Verificación en datos/fontes/lonxas-primeira-venda/README.md.
+attribution: >-
+  Consellería do Mar, Xunta de Galicia: notas de primeira venda (pescadegalicia.gal), 2025.
+  Posicións: Nomenclátor Geográfico Básico de España, © Instituto Geográfico Nacional. Cálculo
+  propio da Fundación Galicia Sustentable.
+update_frequency:
+  declared: static
+geometry: point
+output: geojson
+auth:
+  required: false
+privacy_notes: >-
+  Vendas agregadas por día, lonxa e especie, sen buque nin comprador. A capa só publica euros
+  por grupo de especies e kg totais por lonxa e día, e as tres especies de máis importe no ano;
+  non publica prezos de especies soltas por lonxa, porque nunha lonxa pequena unha fila pode
+  ser un só barco.
+# A closed year: recomputing gives the same answer.
+stale_after: P3650D
+ingest:
+  every: P365D
+style:
+  kind: circle
+  color_token: --c-auga
+table:
+  fields:
+    - nome
+    - zona
+    - importe_total
+    - kg_total
+    - dias_venda

@@ -1,0 +1,492 @@
+[
+  {
+    "lonxa": "Vigo",
+    "nome": "Vigo",
+    "ngbe_id": "2814045",
+    "ngbe_nome": "Vigo",
+    "ngbe_tipo": "Capital de municipio",
+    "lonlat": [-8.726788, 42.235886],
+    "nota": "O punto «Puerto de Vigo y su Ría» nomea a ría enteira: úsase a capital."
+  },
+  {
+    "lonxa": "A Coruña (Lonja Coruña, S.A.)",
+    "nome": "A Coruña (Lonja Coruña)",
+    "ngbe_id": "1648804",
+    "ngbe_nome": "Puerto de A Coruña",
+    "ngbe_tipo": "Puerto",
+    "lonlat": [-8.391672, 43.362671]
+  },
+  {
+    "lonxa": "A Coruña (Confraría)",
+    "nome": "A Coruña (Confraría)",
+    "ngbe_id": "1648804",
+    "ngbe_nome": "Puerto de A Coruña",
+    "ngbe_tipo": "Puerto",
+    "lonlat": [-8.391672, 43.362671],
+    "nota": "Mesmo porto ca a Lonja Coruña."
+  },
+  {
+    "lonxa": "Burela",
+    "nome": "Burela",
+    "ngbe_id": "1641842",
+    "ngbe_nome": "Porto de Burela",
+    "ngbe_tipo": "Puerto",
+    "lonlat": [-7.354797, 43.657471]
+  },
+  {
+    "lonxa": "Celeiro",
+    "nome": "Celeiro",
+    "ngbe_id": "1637075",
+    "ngbe_nome": "Porto de Celeiro",
+    "ngbe_tipo": "Puerto",
+    "lonlat": [-7.597595, 43.677123]
+  },
+  {
+    "lonxa": "Ribeira.",
+    "nome": "Ribeira",
+    "ngbe_id": "1790730",
+    "ngbe_nome": "Porto de Ribeira",
+    "ngbe_tipo": "Puerto",
+    "lonlat": [-8.990601, 42.561096]
+  },
+  {
+    "lonxa": "Cedeira",
+    "nome": "Cedeira",
+    "ngbe_id": "1638032",
+    "ngbe_nome": "Porto de Cedeira",
+    "ngbe_tipo": "Puerto",
+    "lonlat": [-8.07123, 43.657106]
+  },
+  {
+    "lonxa": "Carril",
+    "nome": "Carril",
+    "ngbe_id": "1791077",
+    "ngbe_nome": "Porto do Carril",
+    "ngbe_tipo": "Puerto",
+    "lonlat": [-8.777588, 42.614685]
+  },
+  {
+    "lonxa": "Cambados",
+    "nome": "Cambados",
+    "ngbe_id": "2813994",
+    "ngbe_nome": "Cambados",
+    "ngbe_tipo": "Capital de municipio",
+    "lonlat": [-8.814659, 42.515475]
+  },
+  {
+    "lonxa": "O Grove",
+    "nome": "O Grove",
+    "ngbe_id": "1817561",
+    "ngbe_nome": "Porto do Grove",
+    "ngbe_tipo": "Puerto",
+    "lonlat": [-8.862488, 42.49707]
+  },
+  {
+    "lonxa": "Noia",
+    "nome": "Noia",
+    "ngbe_id": "2810895",
+    "ngbe_nome": "Noia",
+    "ngbe_tipo": "Capital de municipio",
+    "lonlat": [-8.887825, 42.785198]
+  },
+  {
+    "lonxa": "Muros",
+    "nome": "Muros",
+    "ngbe_id": "2810891",
+    "ngbe_nome": "Muros",
+    "ngbe_tipo": "Capital de municipio",
+    "lonlat": [-9.057649, 42.774324]
+  },
+  {
+    "lonxa": "Cangas",
+    "nome": "Cangas",
+    "ngbe_id": "2813996",
+    "ngbe_nome": "Cangas",
+    "ngbe_tipo": "Capital de municipio",
+    "lonlat": [-8.780431, 42.263679]
+  },
+  {
+    "lonxa": "Portosín",
+    "nome": "Portosín",
+    "ngbe_id": "2830254",
+    "ngbe_nome": "Portosín",
+    "ngbe_tipo": "Entidad singular",
+    "lonlat": [-8.949357, 42.757099]
+  },
+  {
+    "lonxa": "Camariñas",
+    "nome": "Camariñas",
+    "ngbe_id": "1713697",
+    "ngbe_nome": "Porto de Camariñas",
+    "ngbe_tipo": "Puerto",
+    "lonlat": [-9.182922, 43.127075]
+  },
+  {
+    "lonxa": "Marín",
+    "nome": "Marín",
+    "ngbe_id": "2814014",
+    "ngbe_nome": "Marín",
+    "ngbe_tipo": "Capital de municipio",
+    "lonlat": [-8.698978, 42.392829]
+  },
+  {
+    "lonxa": "Malpica",
+    "nome": "Malpica",
+    "ngbe_id": "2810882",
+    "ngbe_nome": "Malpica",
+    "ngbe_tipo": "Capital de municipio",
+    "lonlat": [-8.811051, 43.322876]
+  },
+  {
+    "lonxa": "Fisterra",
+    "nome": "Fisterra",
+    "ngbe_id": "2810876",
+    "ngbe_nome": "Fisterra",
+    "ngbe_tipo": "Capital de municipio",
+    "lonlat": [-9.262372, 42.909082]
+  },
+  {
+    "lonxa": "Corcubión",
+    "nome": "Corcubión",
+    "ngbe_id": "2810867",
+    "ngbe_nome": "Corcubión",
+    "ngbe_tipo": "Capital de municipio",
+    "lonlat": [-9.19432, 42.944392]
+  },
+  {
+    "lonxa": "Bueu",
+    "nome": "Bueu",
+    "ngbe_id": "2813992",
+    "ngbe_nome": "Bueu",
+    "ngbe_tipo": "Capital de municipio",
+    "lonlat": [-8.784617, 42.326629]
+  },
+  {
+    "lonxa": "A Illa de Arousa",
+    "nome": "A Illa de Arousa",
+    "ngbe_id": "1790737",
+    "ngbe_nome": "Peirao do Chufre",
+    "ngbe_tipo": "Instalación portuaria",
+    "lonlat": [-8.867798, 42.564697],
+    "nota": "O porto da Illa está no Xufre (Chufre no NGBE)."
+  },
+  {
+    "lonxa": "Campelo",
+    "nome": "Campelo",
+    "ngbe_id": "1818685",
+    "ngbe_nome": "Muelle de Campelo",
+    "ngbe_tipo": "Instalación portuaria",
+    "lonlat": [-8.686279, 42.426697]
+  },
+  {
+    "lonxa": "Portonovo",
+    "nome": "Portonovo",
+    "ngbe_id": "1819086",
+    "ngbe_nome": "Porto de Portonovo",
+    "ngbe_tipo": "Puerto",
+    "lonlat": [-8.822205, 42.39447]
+  },
+  {
+    "lonxa": "Baiona",
+    "nome": "Baiona",
+    "ngbe_id": "2813991",
+    "ngbe_nome": "Baiona",
+    "ngbe_tipo": "Capital de municipio",
+    "lonlat": [-8.849618, 42.11921]
+  },
+  {
+    "lonxa": "Aguiño",
+    "nome": "Aguiño",
+    "ngbe_id": "1790729",
+    "ngbe_nome": "Porto de Aguiño",
+    "ngbe_tipo": "Puerto",
+    "lonlat": [-9.018127, 42.520325]
+  },
+  {
+    "lonxa": "Vilanova",
+    "nome": "Vilanova de Arousa",
+    "ngbe_id": "2814049",
+    "ngbe_nome": "Vilanova de Arousa",
+    "ngbe_tipo": "Capital de municipio",
+    "lonlat": [-8.826643, 42.56208]
+  },
+  {
+    "lonxa": "Porto do Son",
+    "nome": "Porto do Son",
+    "ngbe_id": "2810909",
+    "ngbe_nome": "Porto do Son",
+    "ngbe_tipo": "Capital de municipio",
+    "lonlat": [-9.006364, 42.724619]
+  },
+  {
+    "lonxa": "Laxe",
+    "nome": "Laxe",
+    "ngbe_id": "2810879",
+    "ngbe_nome": "Laxe",
+    "ngbe_tipo": "Capital de municipio",
+    "lonlat": [-9.004162, 43.217299]
+  },
+  {
+    "lonxa": "Cabo de Cruz",
+    "nome": "Cabo de Cruz",
+    "ngbe_id": "1790313",
+    "ngbe_nome": "Porto de Cabo de Cruz",
+    "ngbe_tipo": "Puerto",
+    "lonlat": [-8.888001, 42.614685]
+  },
+  {
+    "lonxa": "Moaña",
+    "nome": "Moaña",
+    "ngbe_id": "2814017",
+    "ngbe_nome": "Moaña",
+    "ngbe_tipo": "Capital de municipio",
+    "lonlat": [-8.733299, 42.287173]
+  },
+  {
+    "lonxa": "Rianxo",
+    "nome": "Rianxo",
+    "ngbe_id": "1791075",
+    "ngbe_nome": "Porto de Rianxo",
+    "ngbe_tipo": "Puerto",
+    "lonlat": [-8.822388, 42.647278]
+  },
+  {
+    "lonxa": "Vigo (Canido)",
+    "nome": "Canido (Vigo)",
+    "ngbe_id": "2870099",
+    "ngbe_nome": "Canido",
+    "ngbe_tipo": "Entidad singular",
+    "lonlat": [-8.795944, 42.194818],
+    "nota": "Hai outro Canido no NGBE; este é o da costa de Vigo (Oia)."
+  },
+  {
+    "lonxa": "A Guarda",
+    "nome": "A Guarda",
+    "ngbe_id": "2814011",
+    "ngbe_nome": "A Guarda",
+    "ngbe_tipo": "Capital de municipio",
+    "lonlat": [-8.874219, 41.90117]
+  },
+  {
+    "lonxa": "Vilaxoán",
+    "nome": "Vilaxoán",
+    "ngbe_id": "1791072",
+    "ngbe_nome": "Porto de Vilaxoán",
+    "ngbe_tipo": "Puerto",
+    "lonlat": [-8.791809, 42.588928]
+  },
+  {
+    "lonxa": "Ferrol",
+    "nome": "Ferrol",
+    "ngbe_id": "2810875",
+    "ngbe_nome": "Ferrol",
+    "ngbe_tipo": "Capital de municipio",
+    "lonlat": [-8.233105, 43.484709],
+    "nota": "O punto «Puerto de Ferrol y su Ría» nomea a ría enteira: úsase a capital."
+  },
+  {
+    "lonxa": "Carnota (Lira)",
+    "nome": "Lira (Carnota)",
+    "ngbe_id": "2824666",
+    "ngbe_nome": "Lira",
+    "ngbe_tipo": "Entidad singular",
+    "lonlat": [-9.127847, 42.799333]
+  },
+  {
+    "lonxa": "Sada",
+    "nome": "Sada",
+    "ngbe_id": "1649413",
+    "ngbe_nome": "Porto de Sada",
+    "ngbe_tipo": "Puerto",
+    "lonlat": [-8.249515, 43.357725]
+  },
+  {
+    "lonxa": "Aldán-Hio",
+    "nome": "Aldán-Hío",
+    "ngbe_id": "2522241",
+    "ngbe_nome": "Aldán (San Cibrán)",
+    "ngbe_tipo": "Entidad colectiva",
+    "lonlat": [-8.816711, 42.279114]
+  },
+  {
+    "lonxa": "Vilaboa",
+    "nome": "Vilaboa",
+    "ngbe_id": "2522704",
+    "ngbe_nome": "Vilaboa (San Martiño)",
+    "ngbe_tipo": "Entidad colectiva",
+    "lonlat": [-8.637512, 42.359924]
+  },
+  {
+    "lonxa": "Redondela",
+    "nome": "Redondela",
+    "ngbe_id": "2814033",
+    "ngbe_nome": "Redondela",
+    "ngbe_tipo": "Capital de municipio",
+    "lonlat": [-8.608908, 42.283782]
+  },
+  {
+    "lonxa": "Barallobre",
+    "nome": "Barallobre",
+    "ngbe_id": "1648399",
+    "ngbe_nome": "Rampla de Barallobre",
+    "ngbe_tipo": "Instalación portuaria",
+    "lonlat": [-8.195927, 43.46411]
+  },
+  {
+    "lonxa": "Arcade",
+    "nome": "Arcade",
+    "ngbe_id": "1819552",
+    "ngbe_nome": "Muelle de Arcade",
+    "ngbe_tipo": "Instalación portuaria",
+    "lonlat": [-8.615479, 42.339722]
+  },
+  {
+    "lonxa": "Esteiro",
+    "nome": "Esteiro",
+    "ngbe_id": "2520287",
+    "ngbe_nome": "Esteiro (Santa Mariña)",
+    "ngbe_tipo": "Entidad colectiva",
+    "lonlat": [-8.982936, 42.793751],
+    "nota": "Esteiro de Muros (zona IV), non o de Boiro."
+  },
+  {
+    "lonxa": "Pobra do Caramiñal",
+    "nome": "A Pobra do Caramiñal",
+    "ngbe_id": "1790309",
+    "ngbe_nome": "Porto da Pobra do Caramiñal",
+    "ngbe_tipo": "Puerto",
+    "lonlat": [-8.934204, 42.608887]
+  },
+  {
+    "lonxa": "Muxía",
+    "nome": "Muxía",
+    "ngbe_id": "2810890",
+    "ngbe_nome": "Muxía",
+    "ngbe_tipo": "Capital de municipio",
+    "lonlat": [-9.216836, 43.104417]
+  },
+  {
+    "lonxa": "Mugardos",
+    "nome": "Mugardos",
+    "ngbe_id": "1648376",
+    "ngbe_nome": "Porto de Mugardos",
+    "ngbe_tipo": "Puerto",
+    "lonlat": [-8.256415, 43.464903]
+  },
+  {
+    "lonxa": "Río Anllóns",
+    "nome": "Río Anllóns",
+    "ngbe_id": "2810906",
+    "ngbe_nome": "Ponteceso",
+    "ngbe_tipo": "Capital de municipio",
+    "lonlat": [-8.900697, 43.243253],
+    "nota": "Lonxa da ría do Anllóns: situada na capital de Ponteceso, aproximada."
+  },
+  {
+    "lonxa": "Pontedeume",
+    "nome": "Pontedeume",
+    "ngbe_id": "2810907",
+    "ngbe_nome": "Pontedeume",
+    "ngbe_tipo": "Capital de municipio",
+    "lonlat": [-8.170553, 43.40653]
+  },
+  {
+    "lonxa": "Panxón",
+    "nome": "Panxón",
+    "ngbe_id": "2522497",
+    "ngbe_nome": "Panxón (San Xoán)",
+    "ngbe_tipo": "Entidad colectiva",
+    "lonlat": [-8.824829, 42.142273]
+  },
+  {
+    "lonxa": "Camelle",
+    "nome": "Camelle",
+    "ngbe_id": "2824074",
+    "ngbe_nome": "Camelle",
+    "ngbe_tipo": "Entidad singular",
+    "lonlat": [-9.092061, 43.182462]
+  },
+  {
+    "lonxa": "Ribadeo",
+    "nome": "Ribadeo",
+    "ngbe_id": "2812979",
+    "ngbe_nome": "Ribadeo",
+    "ngbe_tipo": "Capital de municipio",
+    "lonlat": [-7.039512, 43.536292]
+  },
+  {
+    "lonxa": "O Barqueiro",
+    "nome": "O Barqueiro",
+    "ngbe_id": "1636420",
+    "ngbe_nome": "O Barqueiro",
+    "ngbe_tipo": "Barrio",
+    "lonlat": [-7.705018, 43.737121],
+    "nota": "A entidade singular homónima do NGBE está terra adentro; úsase o barrio do porto."
+  },
+  {
+    "lonxa": "Ortigueira",
+    "nome": "Ortigueira",
+    "ngbe_id": "2810899",
+    "ngbe_nome": "Ortigueira",
+    "ngbe_tipo": "Capital de municipio",
+    "lonlat": [-7.854588, 43.684903]
+  },
+  {
+    "lonxa": "Carnota (O Pindo)",
+    "nome": "O Pindo (Carnota)",
+    "ngbe_id": "1743138",
+    "ngbe_nome": "Porto do Pindo",
+    "ngbe_tipo": "Puerto",
+    "lonlat": [-9.131287, 42.899719]
+  },
+  {
+    "lonxa": "Miño",
+    "nome": "Miño",
+    "ngbe_id": "1649414",
+    "ngbe_nome": "Porto de Miño",
+    "ngbe_tipo": "Puerto",
+    "lonlat": [-8.216311, 43.3515]
+  },
+  {
+    "lonxa": "Corme",
+    "nome": "Corme",
+    "ngbe_id": "2829823",
+    "ngbe_nome": "O Porto de Corme",
+    "ngbe_tipo": "Entidad singular",
+    "lonlat": [-8.962894, 43.26495]
+  },
+  {
+    "lonxa": "Cariño.",
+    "nome": "Cariño",
+    "ngbe_id": "2810932",
+    "ngbe_nome": "Cariño",
+    "ngbe_tipo": "Capital de municipio",
+    "lonlat": [-7.868425, 43.740351]
+  },
+  {
+    "lonxa": "Foz-San Cosme",
+    "nome": "Foz-San Cosme",
+    "ngbe_id": "2812948",
+    "ngbe_nome": "Foz",
+    "ngbe_tipo": "Capital de municipio",
+    "lonlat": [-7.259717, 43.568499]
+  },
+  {
+    "lonxa": "Baldaio",
+    "nome": "Baldaio",
+    "ngbe_id": null,
+    "ngbe_nome": null,
+    "ngbe_tipo": null,
+    "lonlat": null,
+    "nota": "Sen punto no NGBE nin no Nomenclátor da Xunta: só na táboa."
+  },
+  {
+    "lonxa": "Coop. Ría de Arosa",
+    "nome": "Coop. Ría de Arosa",
+    "ngbe_id": null,
+    "ngbe_nome": null,
+    "ngbe_tipo": null,
+    "lonlat": null,
+    "nota": "Cooperativa sen localización publicada: só na táboa."
+  }
+]

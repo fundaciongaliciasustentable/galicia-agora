@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "lonxas-2025 feature properties",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "ambito",
+    "lonxa",
+    "nome",
+    "provincia",
+    "zona",
+    "posicion",
+    "nota_posicion",
+    "importe_total",
+    "kg_total",
+    "dias_venda",
+    "importe_dia",
+    "kg_dia",
+    "especies"
+  ],
+  "$defs": {
+    "days": {
+      "type": "array",
+      "minItems": 365,
+      "maxItems": 365,
+      "items": { "type": "integer", "minimum": 0 }
+    }
+  },
+  "properties": {
+    "ambito": { "enum": ["lonxa", "galicia"] },
+    "lonxa": { "type": ["string", "null"] },
+    "nome": { "type": "string", "minLength": 1 },
+    "provincia": { "type": ["string", "null"] },
+    "zona": { "type": ["string", "null"] },
+    "posicion": { "type": ["string", "null"] },
+    "nota_posicion": { "type": ["string", "null"] },
+    "importe_total": { "type": "integer", "minimum": 0 },
+    "kg_total": { "type": "integer", "minimum": 0 },
+    "dias_venda": { "type": "integer", "minimum": 0, "maximum": 365 },
+    "importe_dia": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["peixes", "bivalvos", "cefalopodos", "crustaceos", "outros"],
+      "properties": {
+        "peixes": { "$ref": "#/$defs/days" },
+        "bivalvos": { "$ref": "#/$defs/days" },
+        "cefalopodos": { "$ref": "#/$defs/days" },
+        "crustaceos": { "$ref": "#/$defs/days" },
+        "outros": { "$ref": "#/$defs/days" }
+      }
+    },
+    "kg_dia": { "$ref": "#/$defs/days" },
+    "especies": {
+      "type": "array",
+      "maxItems": 3,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["especie", "importe"],
+        "properties": {
+          "especie": { "type": "string" },
+          "importe": { "type": "integer" }
+        }
+      }
+    },
+    "especie_dia": {
+      "type": "array",
+      "minItems": 365,
+      "maxItems": 365,
+      "items": { "type": ["string", "null"] }
+    }
+  }
+}
