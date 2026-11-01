@@ -2,6 +2,7 @@
 // step): births per 100 deaths, tourist flats per 1,000 residents, schools against 2005. One
 // page view (ConcellosTempo.astro) and one client (concellos.ts) draw all of them from these
 // specs; the layers share the shape codigo_ine, nome, periodos[], valor[] plus their counts.
+// Daily layers give `desde` (the first day, YYYY-MM-DD) instead of a periodos[] of 365 dates.
 
 export interface Concello {
   code: string;
@@ -26,6 +27,10 @@ export interface Spec {
   speeds: number[];
   /** Step label kind: years ('1975') or months ('2017M06'). */
   monthly: boolean;
+  /** Days ('2026-10-31') instead of years or months. */
+  daily?: boolean;
+  /** Suffix of the detail text key for a concello (e.g. '_week'), when it differs. */
+  detailKey?: (c: Concello) => string;
   /** A colour that overrides the scale (e.g. no school left), or null. */
   special?: (c: Concello, i: number) => string | null;
   /** Figures of a concello at a step. */
@@ -130,6 +135,46 @@ export const SPECS: Record<string, Spec> = {
     }),
     bar: (g) => g.schools ?? 0,
     columns: ['first', 'schools'],
+  },
+  atencion: {
+    slug: 'atencion',
+    layer: 'atencion-wikipedia',
+    prefix: 'wiki',
+    // Spike index: the day's views against the concello's usual (100 = an ordinary day).
+    stops: [
+      [0, '#1f3347'],
+      [100, '#34362f'],
+      [150, '#6e5a2c'],
+      [200, '#c98a26'],
+      [400, '#ff6a3d'],
+      [800, '#ffd9c7'],
+    ],
+    scale: ['0', '×2', '×8'],
+    speeds: [0.08, 0.16, 0.4],
+    monthly: false,
+    daily: true,
+    detailKey: (c) => (c.props.agrupacion === 'semana' ? '_week' : ''),
+    vars: (c, i) => {
+      const gl = arr(c, 'gl')[i] ?? null;
+      const es = arr(c, 'es')[i] ?? null;
+      const views = gl === null || es === null ? null : gl + es;
+      const pop = c.props.poboacion_2021 as number | null;
+      return {
+        gl,
+        es,
+        views,
+        pmil: views !== null && pop ? Math.round((10000 * views) / pop) / 10 : null,
+        value: c.value[i] ?? null,
+      };
+    },
+    galicia: (list, i) => {
+      const gl = sumAt(list, 'gl', i);
+      const es = sumAt(list, 'es', i);
+      const peaks = list.filter((c) => (c.value[i] ?? 0) >= 200).length;
+      return { gl, es, views: gl + es, peaks };
+    },
+    bar: (g) => g.views ?? 0,
+    columns: ['views', 'pmil'],
   },
 };
 

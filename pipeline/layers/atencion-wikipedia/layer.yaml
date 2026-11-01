@@ -1,0 +1,53 @@
+id: atencion-wikipedia
+title:
+  gl: Atención en Wikipedia por concello, día a día
+  es: Atención en Wikipedia por ayuntamiento, día a día
+theme: territorio
+operator:
+  name: Wikimedia Foundation (Wikimedia Analytics API)
+  url: https://doc.wikimedia.org/generated-data-platform/aqs/analytics-api/
+source_url: https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article
+licence:
+  spdx: CC0-1.0
+  text_url: https://doc.wikimedia.org/generated-data-platform/aqs/analytics-api/documentation/access-policy.html
+  quote: "Data provided by the API is available under the CC0 1.0 license"
+  verified_at: 2026-11-01
+  odbl_compatible: true
+  collection: odbl
+  notes: >-
+    Vistas diarias do artigo de cada concello na Wikipedia en galego e en castelán, axente
+    `user` (Wikimedia retira os bots coñecidos e o tráfico automatizado que detecta),
+    todos os accesos (web e app). Correspondencia concello ↔ artigo lida unha vez de Wikidata
+    (P772, código INE) e gardada en artigos.json; só o título canónico, sen sumar
+    redireccións. A política de acceso pide User-Agent identificable e esperar cada resposta
+    antes da seguinte: unha petición tras outra (~630 ao día). Poboación: INE, censo de 2021
+    (poboacion-seculo, CC BY 4.0). O índice de picos e as vistas por 1.000 habitantes son
+    cálculo propio. Non di onde está quen le nin quen é: é cantas veces se abriu a páxina.
+attribution: >-
+  Fonte: Wikimedia Foundation, vistas de páxina (Wikimedia Analytics API, CC0), artigos da
+  Wikipedia en galego e en castelán; correspondencia por Wikidata (CC0). Poboación: INE, censo
+  de 2021. Índice de picos: cálculo propio da Fundación Galicia Sustentable.
+update_frequency:
+  declared: P1D
+geometry: none
+output: geojson
+auth:
+  required: false
+privacy_notes: >-
+  Contas diarias agregadas por Wikimedia para cada artigo; ningún dato de lectores (nin lugar,
+  nin dispositivo, nin conta).
+stale_after: P4D
+ingest:
+  every: P1D
+depends_on:
+  - poboacion-seculo
+# Lives on its own /pulso/ page; the main map does not draw it (SERIES_LAYERS).
+style:
+  kind: fill
+  label_field: nome
+table:
+  fields:
+    - nome
+    - codigo_ine
+    - vistas_ano
+    - vistas_ano_mil

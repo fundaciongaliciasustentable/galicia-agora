@@ -203,4 +203,18 @@ export const SERIES: PulseMap[] = [
       es: '2025 provisional (dos trimestres) y 2024',
     },
   },
+  {
+    slug: 'atencion',
+    ready: true,
+    colour: '#ff6a3d',
+    title: { gl: 'Atención en Wikipedia', es: 'Atención en Wikipedia' },
+    summary: {
+      gl: 'Cantas veces se le cada día o artigo de cada concello na Wikipedia, e os días de pico.',
+      es: 'Cuántas veces se lee cada día el artículo de cada ayuntamiento en la Wikipedia, y los días de pico.',
+    },
+    period: {
+      gl: 'Últimos doce meses; renóvase cada día',
+      es: 'Últimos doce meses; se renueva cada día',
+    },
+  },
 ];

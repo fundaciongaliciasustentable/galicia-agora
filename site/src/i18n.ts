@@ -673,6 +673,59 @@ const STRINGS = {
     gl: 'Aínda non están publicados os centros de ensino por concello.',
     es: 'Aún no están publicados los centros de enseñanza por ayuntamiento.',
   },
+  wiki_title: { gl: 'Atención en Wikipedia', es: 'Atención en Wikipedia' },
+  wiki_lede: {
+    gl: 'Cantas veces se abriu cada día o artigo de cada concello na Wikipedia en galego e en castelán, e os días en que se saíu do normal.',
+    es: 'Cuántas veces se abrió cada día el artículo de cada ayuntamiento en la Wikipedia en gallego y en castellano, y los días en que se salió de lo normal.',
+  },
+  wiki_map_label: {
+    gl: 'Mapa dos concellos de Galicia coloreados polas vistas do seu artigo na Wikipedia cada día, comparadas co habitual. As cifras están no panel e na táboa.',
+    es: 'Mapa de los ayuntamientos de Galicia coloreados por las visitas de su artículo en la Wikipedia cada día, comparadas con lo habitual. Las cifras están en el panel y en la tabla.',
+  },
+  wiki_legend: {
+    gl: 'Vistas do día fronte á mediana dos 28 días anteriores do mesmo concello: gris, un día normal; laranxa, o dobre ou máis.',
+    es: 'Visitas del día frente a la mediana de los 28 días anteriores del mismo ayuntamiento: gris, un día normal; naranja, el doble o más.',
+  },
+  wiki_now: {
+    gl: 'Galicia: {views} vistas ({gl} en galego, {es} en castelán); {peaks} concellos co dobre do habitual ou máis.',
+    es: 'Galicia: {views} visitas ({gl} en gallego, {es} en castellano); {peaks} ayuntamientos con el doble de lo habitual o más.',
+  },
+  wiki_detail: {
+    gl: '{name}, {when}: {views} vistas ({gl} gl, {es} es), {pmil} por cada 1.000 habitantes; índice {value} (100 = un día normal).',
+    es: '{name}, {when}: {views} visitas ({gl} gl, {es} es), {pmil} por cada 1.000 habitantes; índice {value} (100 = un día normal).',
+  },
+  wiki_detail_week: {
+    gl: '{name}, {when}: {views} vistas ({gl} gl, {es} es); índice da semana {value} (100 = unha semana normal), porque un día normal ten menos de 3 vistas.',
+    es: '{name}, {when}: {views} visitas ({gl} gl, {es} es); índice de la semana {value} (100 = una semana normal), porque un día normal tiene menos de 3 visitas.',
+  },
+  wiki_pick: {
+    gl: 'Preme nun concello para ver as súas cifras.',
+    es: 'Pulsa en un ayuntamiento para ver sus cifras.',
+  },
+  wiki_speed_opt: { gl: 'Un día cada {s} s', es: 'Un día cada {s} s' },
+  wiki_curve: {
+    gl: 'Vistas dos artigos dos 313 concellos, cada día',
+    es: 'Visitas de los artículos de los 313 ayuntamientos, cada día',
+  },
+  wiki_curve_label: {
+    gl: 'Vistas diarias dos artigos dos concellos: {first} o {firstWhen}, {last} o {lastWhen}; máximo de {max} o {maxWhen}.',
+    es: 'Visitas diarias de los artículos de los ayuntamientos: {first} el {firstWhen}, {last} el {lastWhen}; máximo de {max} el {maxWhen}.',
+  },
+  wiki_table_caption: {
+    gl: 'Os 15 concellos máis por riba e por baixo do seu habitual o {when}.',
+    es: 'Los 15 ayuntamientos más por encima y por debajo de su habitual el {when}.',
+  },
+  wiki_col_a: { gl: 'Vistas', es: 'Visitas' },
+  wiki_col_b: { gl: 'Por 1.000 hab.', es: 'Por 1.000 hab.' },
+  wiki_col_value: { gl: 'Índice', es: 'Índice' },
+  wiki_note: {
+    gl: 'Vistas de páxina da Wikimedia Foundation (CC0): as veces que alguén abriu o artigo do concello na Wikipedia en galego ou en castelán, sen os bots que Wikimedia detecta. Non di quen le nin desde onde: unha vista pode ser de calquera parte do mundo e unha persoa pode contar varias veces. Sobe con festas, sucesos, eleccións, lumes, partidos ou unha noticia que enlaza a páxina; tamén cando cambia a portada da Wikipedia ou un buscador. Algúns picos dun só día con centos de vistas nun concello pequeno son, seguramente, programas automáticos que Wikimedia non distinguiu dunha persoa. Conta só o título principal de cada artigo (as redireccións non), lido de Wikidata polo código INE. O índice compara o día coa mediana dos 28 días anteriores do mesmo concello; nos concellos con menos de 3 vistas nun día normal compárase a semana coas catro anteriores. As vistas por 1.000 habitantes usan o censo de 2021 (INE). Índice e taxa son cálculo propio. O último día é o de onte.',
+    es: 'Visitas de página de la Wikimedia Foundation (CC0): las veces que alguien abrió el artículo del ayuntamiento en la Wikipedia en gallego o en castellano, sin los bots que Wikimedia detecta. No dice quién lee ni desde dónde: una visita puede ser de cualquier parte del mundo y una persona puede contar varias veces. Sube con fiestas, sucesos, elecciones, incendios, partidos o una noticia que enlaza la página; también cuando cambia la portada de la Wikipedia o un buscador. Algunos picos de un solo día con cientos de visitas en un ayuntamiento pequeño son, seguramente, programas automáticos que Wikimedia no distinguió de una persona. Cuenta solo el título principal de cada artículo (las redirecciones no), leído de Wikidata por el código INE. El índice compara el día con la mediana de los 28 días anteriores del mismo ayuntamiento; en los ayuntamientos con menos de 3 visitas en un día normal se compara la semana con las cuatro anteriores. Las visitas por 1.000 habitantes usan el censo de 2021 (INE). Índice y tasa son cálculo propio. El último día es el de ayer.',
+  },
+  wiki_missing: {
+    gl: 'Aínda non están publicadas as vistas dos artigos dos concellos.',
+    es: 'Aún no están publicadas las visitas de los artículos de los ayuntamientos.',
+  },
   air_title: { gl: 'O aire hora a hora', es: 'El aire hora a hora' },
   air_lede: {
     gl: 'As estacións da Rede de Calidade do Aire de Galicia nas últimas 24 horas: o índice de calidade do aire de cada unha e o contaminante que o marca.',

@@ -77,6 +77,7 @@ export const SERIES_LAYERS = new Set([
   'nacementos-mortes',
   'escolas-concello',
   'vut-mensual',
+  'atencion-wikipedia',
 ]);
 
 /** Time field per layer: the client adds `_h`, hours since that instant. */

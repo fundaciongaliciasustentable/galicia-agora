@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "atencion-wikipedia feature properties",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "codigo_ine",
+    "nome",
+    "wikidata",
+    "artigo_gl",
+    "artigo_es",
+    "desde",
+    "gl",
+    "es",
+    "poboacion_2021",
+    "vistas_ano",
+    "vistas_ano_mil",
+    "agrupacion",
+    "valor"
+  ],
+  "properties": {
+    "codigo_ine": { "type": "string", "pattern": "^\\d{5}$" },
+    "nome": { "type": "string", "minLength": 1 },
+    "wikidata": { "type": "string", "pattern": "^Q\\d+$" },
+    "artigo_gl": { "type": "string", "minLength": 1 },
+    "artigo_es": { "type": "string", "minLength": 1 },
+    "desde": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+    "gl": { "type": "array", "items": { "type": "integer", "minimum": 0 } },
+    "es": { "type": "array", "items": { "type": "integer", "minimum": 0 } },
+    "poboacion_2021": { "type": ["integer", "null"] },
+    "vistas_ano": { "type": "integer", "minimum": 0 },
+    "vistas_ano_mil": { "type": ["number", "null"], "minimum": 0 },
+    "agrupacion": { "enum": ["dia", "semana"] },
+    "valor": { "type": "array", "items": { "type": ["integer", "null"], "minimum": 0 } }
+  }
+}

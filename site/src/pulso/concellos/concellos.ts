@@ -16,6 +16,15 @@ const NO_DATA = '#3a3b35';
 
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
+/** Dates (YYYY-MM-DD) of `n` days from `first`, for daily layers that give only `desde`. */
+export function daysFrom(first: unknown, n: number | undefined): string[] {
+  if (typeof first !== 'string' || !n) return [];
+  const t0 = Date.parse(`${first}T00:00:00Z`);
+  return Array.from({ length: n }, (_, i) =>
+    new Date(t0 + i * 86_400_000).toISOString().slice(0, 10),
+  );
+}
+
 export async function start(): Promise<void> {
   const found = document.querySelector<HTMLElement>('.ct-app');
   if (!found) return;
@@ -64,7 +73,9 @@ export async function start(): Promise<void> {
         props: p,
         value: p.valor as Array<number | null>,
       }));
-      steps = (fc.features[0]?.properties.periodos as string[]) ?? [];
+      const p0 = fc.features[0]?.properties ?? {};
+      steps =
+        (p0.periodos as string[] | undefined) ?? daysFrom(p0.desde, concellos[0]?.value.length);
       provisional = (fc.features[0]?.properties.provisional as string | undefined) ?? null;
       sources.textContent = layer.attribution;
     }
@@ -76,9 +87,21 @@ export async function start(): Promise<void> {
     return;
   }
   const byCode = new Map(concellos.map((c) => [c.code, c]));
+  // Day labels from the site's own month and weekday names: browsers without Galician locale
+  // data would print Spanish ones.
+  const weekdays = (dict.pulse_weekdays ?? '').split(',');
+  const dayLabel = (s: string) => {
+    const d = new Date(`${s}T00:00:00Z`);
+    const short = (x: string | undefined) => (x ?? '').slice(0, 3);
+    return `${short(weekdays[d.getUTCDay()])} ${d.getUTCDate()} ${short(months[d.getUTCMonth()])} ${d.getUTCFullYear()}`;
+  };
   const label = (i: number) => {
     const s = steps[i] as string;
-    const text = spec.monthly ? `${months[Number(s.slice(5)) - 1] ?? ''} ${s.slice(0, 4)}` : s;
+    const text = spec.daily
+      ? dayLabel(s)
+      : spec.monthly
+        ? `${months[Number(s.slice(5)) - 1] ?? ''} ${s.slice(0, 4)}`
+        : s;
     return s === provisional ? `${text} (${dict.pulse_provisional ?? 'provisional'})` : text;
   };
   const num = (v: number | null | undefined) =>
@@ -251,7 +274,7 @@ export async function start(): Promise<void> {
     }
     const p = document.createElement('p');
     const strong = document.createElement('strong');
-    strong.textContent = fill(k('detail'), {
+    strong.textContent = fill(k(`detail${spec.detailKey?.(c) ?? ''}`), {
       name: c.name,
       when: label(slot),
       ...texts(spec.vars(c, slot)),
@@ -293,15 +316,23 @@ export async function start(): Promise<void> {
       curve.append(r);
       return r;
     });
-    // Tick labels: every year start for months, every fifth year otherwise.
+    // Tick labels: every year start for months, every month start for days (the year in
+    // January), every fifth year otherwise.
     steps.forEach((s, i) => {
-      const show = spec.monthly ? s.endsWith('M01') : Number(s) % 5 === 0;
+      const show = spec.daily
+        ? s.endsWith('-01')
+        : spec.monthly
+          ? s.endsWith('M01')
+          : Number(s) % 5 === 0;
       if (!show) return;
       const tx = document.createElementNS(ns, 'text');
       tx.setAttribute('x', (i * step + step / 2).toFixed(1));
       tx.setAttribute('y', String(H - 2));
       tx.setAttribute('class', 'se-tick');
-      tx.textContent = s.slice(0, 4);
+      tx.textContent =
+        spec.daily && s.slice(5, 7) !== '01'
+          ? (months[Number(s.slice(5, 7)) - 1] ?? '').slice(0, 3)
+          : s.slice(0, 4);
       curve.append(tx);
     });
     const mine = selected ? byCode.get(selected) : undefined;
