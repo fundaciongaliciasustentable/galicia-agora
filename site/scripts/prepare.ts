@@ -128,6 +128,8 @@ interface CatalogLayer {
   tiles?: string;
   /** Raster archives uploaded straight to the server, one per zoom range or region. */
   archives?: Array<{ url: string; minzoom: number; maxzoom: number; bounds: number[] }>;
+  /** Monthly satellite layers: months on the server, newest first (pipeline/satelite). */
+  months?: Array<{ month: string; file: string; gap_share: number }>;
 }
 
 function data() {

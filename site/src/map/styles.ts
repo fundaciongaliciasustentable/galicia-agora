@@ -14,6 +14,8 @@ interface LayerLike {
   style: { kind: string; label_field?: string };
   /** Raster archives by zoom range or region (ortofoto-pnoa), lowest zoom first. */
   archives?: Array<{ minzoom: number; maxzoom: number }>;
+  /** Monthly series (satellite): months on the server, newest first. */
+  months?: Array<{ month: string; gap_share: number }>;
 }
 
 /** Source id of a layer's i-th raster archive. */
@@ -101,6 +103,41 @@ export const QUANTILE_FIELDS: Record<string, string[]> = {
 export const CATEGORY_FIELDS: Record<string, [string, string]> = {
   'calidade-aire': ['categoria_gl', 'cor'],
 };
+
+const MONTHS: Bi[] = [
+  ['xaneiro', 'enero'],
+  ['febreiro', 'febrero'],
+  ['marzo', 'marzo'],
+  ['abril', 'abril'],
+  ['maio', 'mayo'],
+  ['xuño', 'junio'],
+  ['xullo', 'julio'],
+  ['agosto', 'agosto'],
+  ['setembro', 'septiembre'],
+  ['outubro', 'octubre'],
+  ['novembro', 'noviembre'],
+  ['decembro', 'diciembre'],
+].map(([gl, es]) => ({ gl: gl as string, es: es as string }));
+
+/** "2026-09" → «setembro de 2026» / «septiembre de 2026». */
+export function monthLabel(month: string): Bi {
+  const name = MONTHS[Number(month.slice(5, 7)) - 1] ?? { gl: month, es: month };
+  const y = month.slice(0, 4);
+  return { gl: `${name.gl} de ${y}`, es: `${name.es} de ${y}` };
+}
+
+/** Legend note for a monthly satellite layer: which month and how much the clouds hid. */
+function monthNote(layer: LayerLike): Bi | undefined {
+  const m = layer.months?.[0];
+  if (!m) return undefined;
+  const label = monthLabel(m.month);
+  const pct = Math.round(m.gap_share * 100);
+  if (pct < 1) return { gl: `Mosaico de ${label.gl}.`, es: `Mosaico de ${label.es}.` };
+  return {
+    gl: `Mosaico de ${label.gl}. Un ${pct} % de Galicia non tivo ningunha vista sen nubes no mes e queda transparente.`,
+    es: `Mosaico de ${label.es}. Un ${pct} % de Galicia no tuvo ninguna vista sin nubes en el mes y queda transparente.`,
+  };
+}
 
 const FONT = ['Noto Sans Regular'];
 const FONT_BOLD = ['Noto Sans Medium'];
@@ -225,6 +262,22 @@ export function encodeLayer(layer: LayerLike, ctx: StyleContext): Encoding {
     legend,
     pulse: pulseIds,
   });
+
+  if (layer.id === 'satelite-mes' && layer.archives?.length) {
+    // Satellite month: one archive (the latest month, z8–z13), smooth when overzoomed.
+    const note = monthNote(layer);
+    return enc(
+      [
+        {
+          id: `${layer.id}__raster-0`,
+          source: archiveSourceId(layer.id, 0),
+          type: 'raster',
+          paint: { 'raster-opacity': 0.9, 'raster-resampling': 'linear' },
+        },
+      ],
+      note ? [{ note }] : [],
+    );
+  }
 
   if (layer.geometry === 'raster' && layer.archives?.length) {
     // Orthophoto as a base image: opaque, smooth. Each archive draws from its

@@ -126,7 +126,10 @@ const licenceLabel = (l: CatalogLayer) => l.licence.spdx ?? l.licence.text_url;
                       )}
                       <p class="ga-layer-actions">
                         <a href={l.source_url} rel="noopener">{t(lang, 'source')}</a>
-                        {l.geometry === 'raster' ? (
+                        {l.geometry === 'raster' && l.months?.[0] ? (
+                          // Monthly satellite layers: the month shown on the map.
+                          <a href={asset(`data/${l.id}/${l.months[0].file}`)} download>{t(lang, 'download')} (PMTiles, {l.months[0].month})</a>
+                        ) : l.geometry === 'raster' ? (
                           // Multi-GB rasters built by their own workflow (ortofoto-pnoa): no single file to offer.
                           !l.ingest?.workflow && (
                             <a href={asset(`data/${l.id}/data.pmtiles`)} download>{t(lang, 'download')} (PMTiles)</a>

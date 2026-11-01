@@ -57,6 +57,8 @@ export interface CatalogLayer {
     source: string;
     note?: Bilingual;
   }>;
+  /** Series layers (pipeline/satelite): months on the server, newest first. */
+  months?: Array<{ month: string; file: string; gap_share: number }>;
   meta: CatalogMeta | null;
 }
 

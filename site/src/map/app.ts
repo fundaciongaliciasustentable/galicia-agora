@@ -41,6 +41,8 @@ interface Layer {
   tiles?: string;
   /** Raster archives uploaded straight to the server (ortofoto-pnoa), lowest zoom first. */
   archives?: Array<{ url: string; minzoom: number; maxzoom: number; bounds: number[] }>;
+  /** Monthly series (satellite): months on the server, newest first. */
+  months?: Array<{ month: string; file: string; gap_share: number }>;
   join?: { layer: string; key: string; where?: Record<string, unknown> };
   indicators?: Indicator[];
   ingest?: { every?: string };
@@ -411,7 +413,7 @@ export async function start(): Promise<void> {
     } else if (!map.getSource(id)) {
       const origin = window.location.origin;
       if (layer.tiles && layer.geometry === 'raster') {
-        // PNG tiles from a raster PMTiles archive; MapLibre overzooms past its maxzoom.
+        // PNG or WebP tiles from a raster PMTiles archive; MapLibre overzooms past its maxzoom.
         map.addSource(id, {
           type: 'raster',
           url: `pmtiles://${origin}${asset(layer.tiles)}`,
