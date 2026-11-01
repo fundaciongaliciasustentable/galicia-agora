@@ -312,6 +312,62 @@ const STRINGS = {
     gl: 'Aínda non están publicados os focos de agosto de 2025.',
     es: 'Aún no están publicados los focos de agosto de 2025.',
   },
+  fish_title: { gl: 'O peixe das lonxas, 2025', es: 'El pescado de las lonjas, 2025' },
+  fish_lede: {
+    gl: 'A primeira venda de peixe e marisco fresco en cada lonxa galega, día a día durante 2025. Cada círculo é o importe vendido ese día, por grupos de especies.',
+    es: 'La primera venta de pescado y marisco fresco en cada lonja gallega, día a día durante 2025. Cada círculo es el importe vendido ese día, por grupos de especies.',
+  },
+  fish_map_label: {
+    gl: 'Mapa de Galicia coas lonxas e o importe vendido cada día de 2025. As cifras están no panel e na táboa.',
+    es: 'Mapa de Galicia con las lonjas y el importe vendido cada día de 2025. Las cifras están en el panel y en la tabla.',
+  },
+  fish_group_peixes: { gl: 'Peixe', es: 'Pescado' },
+  fish_group_bivalvos: { gl: 'Bivalvos', es: 'Bivalvos' },
+  fish_group_cefalopodos: { gl: 'Cefalópodos', es: 'Cefalópodos' },
+  fish_group_crustaceos: { gl: 'Crustáceos', es: 'Crustáceos' },
+  fish_group_outros: { gl: 'Outros', es: 'Otros' },
+  fish_now: {
+    gl: '{eur} en {n} lonxas. Máis vendido en Galicia: {species}. Á cabeza: {top} ({topEur}).',
+    es: '{eur} en {n} lonjas. Más vendido en Galicia: {species}. En cabeza: {top} ({topEur}).',
+  },
+  fish_now_none: {
+    gl: 'Sen vendas: as lonxas pecharon este día.',
+    es: 'Sin ventas: las lonjas cerraron este día.',
+  },
+  fish_year: {
+    gl: 'No ano: {eur} e {t} toneladas en {n} lonxas.',
+    es: 'En el año: {eur} y {t} toneladas en {n} lonjas.',
+  },
+  fish_legend: {
+    gl: 'A superficie do círculo é o importe do día; as porcións, os grupos de especies. Un punto apagado é unha lonxa sen vendas ese día. Os días pasan a saltos, sen mesturar un co seguinte.',
+    es: 'La superficie del círculo es el importe del día; las porciones, los grupos de especies. Un punto apagado es una lonja sin ventas ese día. Los días pasan a saltos, sin mezclar uno con el siguiente.',
+  },
+  fish_speed_opt: { gl: 'O ano en {s} s', es: 'El año en {s} s' },
+  fish_curve: {
+    gl: 'Importe vendido cada día en Galicia',
+    es: 'Importe vendido cada día en Galicia',
+  },
+  fish_curve_label: {
+    gl: 'Importe da primeira venda cada día de 2025 en Galicia: máximo de {max} o {day}.',
+    es: 'Importe de la primera venta cada día de 2025 en Galicia: máximo de {max} el {day}.',
+  },
+  fish_table_caption: {
+    gl: 'As {n} lonxas de 2025, por importe no ano. Con * as que non están no mapa.',
+    es: 'Las {n} lonjas de 2025, por importe en el año. Con * las que no están en el mapa.',
+  },
+  fish_col_lonxa: { gl: 'Lonxa', es: 'Lonja' },
+  fish_col_eur: { gl: 'M€', es: 'M€' },
+  fish_col_t: { gl: 't', es: 't' },
+  fish_col_days: { gl: 'Días', es: 'Días' },
+  fish_col_species: { gl: 'Especie principal', es: 'Especie principal' },
+  fish_note: {
+    gl: 'Notas de primeira venda da Consellería do Mar (pescadegalicia.gal), ficheiro de pesca fresca de 2025: unha fila por día, lonxa e especie, con quilos e euros. Só pesca fresca: a acuicultura (o mexillón de batea, por exemplo) e o peixe conxelado van noutras estatísticas e non están aquí. A lonxa é onde se vende, non onde se pescou: Vigo, A Coruña, Burela ou Celeiro venden capturas de caladoiros afastados. As lonxas non traen coordenadas: cada unha está no porto que lle corresponde no Nomenclátor Geográfico Básico do IGN ou, se o IGN non o nomea, no núcleo que lle dá nome; Baldaio e a Cooperativa Ría de Arosa non teñen un punto verificable e só están na táboa. Non se mostran prezos de especies por lonxa: nunha lonxa pequena unha venda pode ser dun só barco. Euros correntes de 2025.',
+    es: 'Notas de primera venta de la Consellería do Mar (pescadegalicia.gal), fichero de pesca fresca de 2025: una fila por día, lonja y especie, con kilos y euros. Solo pesca fresca: la acuicultura (el mejillón de batea, por ejemplo) y el pescado congelado van en otras estadísticas y no están aquí. La lonja es donde se vende, no donde se pescó: Vigo, A Coruña, Burela o Celeiro venden capturas de caladeros lejanos. Las lonjas no traen coordenadas: cada una está en el puerto que le corresponde en el Nomenclátor Geográfico Básico del IGN o, si el IGN no lo nombra, en el núcleo que le da nombre; Baldaio y la Cooperativa Ría de Arosa no tienen un punto verificable y solo están en la tabla. No se muestran precios de especies por lonja: en una lonja pequeña una venta puede ser de un solo barco. Euros corrientes de 2025.',
+  },
+  fish_missing: {
+    gl: 'Aínda non están publicadas as vendas das lonxas de 2025.',
+    es: 'Aún no están publicadas las ventas de las lonjas de 2025.',
+  },
   air_title: { gl: 'O aire hora a hora', es: 'El aire hora a hora' },
   air_lede: {
     gl: 'As estacións da Rede de Calidade do Aire de Galicia nas últimas 24 horas: o índice de calidade do aire de cada unha e o contaminante que o marca.',

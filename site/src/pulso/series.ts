@@ -96,6 +96,17 @@ export const SERIES: PulseMap[] = [
     period: { gl: 'Agosto de 2025', es: 'Agosto de 2025' },
   },
   {
+    slug: 'lonxas',
+    ready: true,
+    colour: '#5fd3f3',
+    title: { gl: 'O peixe das lonxas', es: 'El pescado de las lonjas' },
+    summary: {
+      gl: 'O que se vende cada día en cada lonxa, de peixe a marisco, ao ritmo da semana e das costeiras.',
+      es: 'Lo que se vende cada día en cada lonja, del pescado al marisco, al ritmo de la semana y de las costeras.',
+    },
+    period: { gl: '2025, día a día', es: '2025, día a día' },
+  },
+  {
     slug: 'seculo',
     ready: true,
     colour: '#b2abd2',
