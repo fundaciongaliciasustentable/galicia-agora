@@ -1,0 +1,20 @@
+{
+  "layer_id": "construcion-edificios",
+  "published_at": "2026-08-21T00:00:00Z",
+  "fetched_at": "2026-11-01T19:34:03.625Z",
+  "last_success_at": "2026-11-01T19:34:03.625Z",
+  "status": "fresh",
+  "consecutive_failures": 0,
+  "feature_count": 131,
+  "source_url": "https://www.catastro.hacienda.gob.es/INSPIRE/buildings/ES.SDGC.BU.atom.xml",
+  "licence": "https://www.catastro.hacienda.gob.es/webinspire/documentos/Licencia.pdf",
+  "attribution": "Fonte: Dirección General del Catastro (Ministerio de Hacienda), Edificios INSPIRE. Elaboración propia da Fundación Galicia Sustentable: contas por cela de 250 m; non é cartografía catastral.",
+  "checksum": "sha256:0b1f3d7ecc663ec2940c2383195c38e65968f2e15b6deec7ba1d97e66a82e294",
+  "last_error": null,
+  "history": [
+    {
+      "at": "2026-11-01T19:34:03.625Z",
+      "ok": true
+    }
+  ]
+}
