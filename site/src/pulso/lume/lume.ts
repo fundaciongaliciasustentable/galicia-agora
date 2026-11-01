@@ -8,7 +8,7 @@
 import type { Map as MlMap } from 'maplibre-gl';
 import { asset } from '../../paths.ts';
 import { clock } from '../engine.ts';
-import { fill, loadStyle } from '../pulso.ts';
+import { fill, loadStyle, pickerRoom } from '../pulso.ts';
 import { type Detection, ember, MONTH, passes, perDay, secondsOf, upTo } from './engine.ts';
 
 type Dict = Record<string, string>;
@@ -157,7 +157,7 @@ export async function start(): Promise<void> {
       {
         padding: {
           left: wide ? panel.width + 40 : 10,
-          right: wide ? 60 : 10,
+          right: wide ? 60 + pickerRoom() : 10,
           top: Math.max(10, top),
           bottom,
         },

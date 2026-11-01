@@ -9,7 +9,7 @@
 import type { ExpressionSpecification, Map as MlMap } from 'maplibre-gl';
 import { asset } from '../../paths.ts';
 import { colourOf } from '../estacion/engine.ts';
-import { fill, loadStyle } from '../pulso.ts';
+import { fill, loadStyle, pickerRoom } from '../pulso.ts';
 
 interface Concello {
   code: string;
@@ -218,7 +218,7 @@ export async function start(): Promise<void> {
       {
         padding: {
           left: wide ? panel.width + 40 : 10,
-          right: wide ? 60 : 10,
+          right: wide ? 60 + pickerRoom() : 10,
           top: Math.max(10, top),
           bottom,
         },

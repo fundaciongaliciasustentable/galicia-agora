@@ -440,3 +440,14 @@ a:hover {
 .ga-ficha-table tr.is-selected th {
   font-weight: 700;
 }
+
+/* Pulse maps inside the /pulso/ selector (?embed): no site chrome, the map takes the frame. */
+html.is-embed {
+  --ga-head: 0px;
+}
+html.is-embed .ga-header,
+html.is-embed .gs-footer,
+html.is-embed .skip-link,
+html.is-embed a[class$="-back"] {
+  display: none;
+}

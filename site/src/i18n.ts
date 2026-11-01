@@ -93,6 +93,11 @@ const STRINGS = {
     es: 'Mapas animados de un día de Galicia, cada uno con su reloj: cómo se mueve, dónde está la gente, qué tiempo hace. Cada uno dice de dónde salen los datos y qué no muestran.',
   },
   pulse_back: { gl: 'Todos os pulsos', es: 'Todos los pulsos' },
+  pulse_index_layers: { gl: 'Mapas', es: 'Mapas' },
+  pulse_index_hide: { gl: 'Recoller a lista de mapas', es: 'Recoger la lista de mapas' },
+  pulse_index_show: { gl: 'Ver a lista de mapas', es: 'Ver la lista de mapas' },
+  pulse_index_open: { gl: 'Abrir só este mapa', es: 'Abrir solo este mapa' },
+  pulse_index_frame: { gl: 'Mapa: {title}', es: 'Mapa: {title}' },
   pulse_index_soon: { gl: 'en preparación', es: 'en preparación' },
   pulse_index_note: {
     gl: 'Os mapas respectan a preferencia de movemento reducido do teu sistema e levan unha táboa coas mesmas cifras.',

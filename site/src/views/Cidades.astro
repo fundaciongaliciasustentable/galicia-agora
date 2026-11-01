@@ -79,7 +79,7 @@ const { lang } = Astro.props;
 <style is:global>
   .ci-app {
     position: relative;
-    height: calc(100dvh - 52px);
+    height: calc(100dvh - var(--ga-head, 52px));
     overflow: hidden;
     background: #111210;
     color: #e6e6df;

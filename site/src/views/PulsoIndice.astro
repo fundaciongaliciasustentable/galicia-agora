@@ -1,6 +1,9 @@
 ---
-// /pulso/: index of the pulse series (series.ts). Old shared links to the transport pulse
-// (/pulso/#t=…&d=…&m=…) are sent on to /pulso/transporte/ with their hash.
+// /pulso/: the pulse series as one map with a layer selector. The chosen map (series.ts) runs
+// in a frame in its embed mode (?embed: no header, no footer); the selector swaps it and keeps
+// the choice in the hash (#lonxas). Without JavaScript the selector entries are plain links to
+// each map. Old shared links to the transport pulse (/pulso/#t=…&d=…&m=…) are sent on to
+// /pulso/transporte/ with their hash.
 import { base, type Lang, t } from '../i18n';
 import { SERIES } from '../pulso/series';
 
@@ -9,117 +12,304 @@ interface Props {
 }
 const { lang } = Astro.props;
 const root = `${base(lang)}pulso/`;
+const ready = SERIES.filter((m) => m.ready);
+const first = ready[0];
 ---
 
 <script is:inline define:vars={{ dest: `${root}transporte/` }}>
   if (/(^#|&)(t|d|m)=/.test(window.location.hash)) window.location.replace(dest + window.location.hash);
 </script>
 
-<main id="contido" class="px-index">
-  <header class="px-head">
-    <h1>{t(lang, 'pulse_index_title')}</h1>
-    <p>{t(lang, 'pulse_index_lede')}</p>
-  </header>
-  <ol class="px-grid">
-    {
-      SERIES.map((m) => (
-        <li class:list={['px-card', { 'is-soon': !m.ready }]} style={`--px-accent: ${m.colour}`}>
-          {m.ready ? (
-            <a href={`${root}${m.slug}/`}>
-              <h2>{m.title[lang]}</h2>
-              <p class="px-sum">{m.summary[lang]}</p>
-              <p class="px-period">{m.period[lang]}</p>
-            </a>
-          ) : (
-            <div>
-              <h2>{m.title[lang]}</h2>
-              <p class="px-sum">{m.summary[lang]}</p>
-              <p class="px-period">
-                {m.period[lang]} · <span class="px-soon">{t(lang, 'pulse_index_soon')}</span>
-              </p>
-            </div>
-          )}
-        </li>
-      ))
-    }
-  </ol>
-  <p class="px-note">{t(lang, 'pulse_index_note')}</p>
-</main>
+<div
+  class="px-app"
+  data-root={root}
+  data-frame-title={t(lang, 'pulse_index_frame')}
+  data-show={t(lang, 'pulse_index_show')}
+  data-hide={t(lang, 'pulse_index_hide')}
+>
+  <iframe class="px-frame" title={first ? t(lang, 'pulse_index_frame').replace('{title}', first.title[lang]) : ''} hidden></iframe>
 
-<style>
-  .px-index {
+  <nav class="px-picker" id="contido" aria-labelledby="px-title">
+    <div class="px-picker-head">
+      <h1 id="px-title">{t(lang, 'pulse_index_title')}</h1>
+      <button type="button" class="px-toggle" aria-expanded="true" aria-controls="px-list" hidden>
+        <svg viewBox="0 0 20 20" aria-hidden="true" width="18" height="18">
+          <path d="M10 2 1 6.5l9 4.5 9-4.5L10 2Zm-9 9 9 4.5 9-4.5M1 14.5 10 19l9-4.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"></path>
+        </svg>
+        <span class="px-current"></span>
+      </button>
+    </div>
+    <p class="px-lede">{t(lang, 'pulse_index_lede')}</p>
+    <ol class="px-list" id="px-list">
+      {
+        SERIES.map((m) => (
+          <li style={`--px-accent: ${m.colour}`}>
+            {m.ready ? (
+              <a href={`${root}${m.slug}/`} data-slug={m.slug} data-title={m.title[lang]}>
+                <span class="px-dot" aria-hidden="true" />
+                <span class="px-name">{m.title[lang]}</span>
+                <span class="px-period">{m.period[lang]}</span>
+                <span class="px-sum">{m.summary[lang]}</span>
+              </a>
+            ) : (
+              <span class="px-item is-soon">
+                <span class="px-dot" aria-hidden="true" />
+                <span class="px-name">{m.title[lang]}</span>
+                <span class="px-period">{t(lang, 'pulse_index_soon')}</span>
+              </span>
+            )}
+          </li>
+        ))
+      }
+    </ol>
+    <p class="px-foot">
+      <a class="px-open" href={first ? `${root}${first.slug}/` : root}>{t(lang, 'pulse_index_open')} ↗</a>
+    </p>
+    <p class="px-note">{t(lang, 'pulse_index_note')}</p>
+  </nav>
+</div>
+
+<style is:global>
+  .px-app {
+    position: relative;
+    height: calc(100dvh - 52px);
+    overflow: hidden;
     background: #111210;
     color: #e6e6df;
-    min-height: calc(100dvh - 52px);
-    padding: 40px 16px 56px;
   }
-  .px-head,
-  .px-grid,
-  .px-note {
-    max-width: 1100px;
-    margin-left: auto;
-    margin-right: auto;
+  .px-frame {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    opacity: 0;
+    transition: opacity 0.35s ease;
   }
-  .px-head h1 {
+  .px-frame.is-loaded {
+    opacity: 1;
+  }
+  .px-picker {
+    position: absolute;
+    z-index: 3;
+    top: 16px;
+    right: 16px;
+    width: 280px;
+    max-height: calc(100% - 180px);
+    overflow-y: auto;
+    padding: 12px 14px;
+    border-radius: var(--gs-radius-card);
+    background: rgba(17, 18, 16, 0.86);
+    backdrop-filter: blur(6px);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.45);
+  }
+  .px-picker-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+  }
+  .px-picker h1 {
     margin: 0;
-    font-size: var(--gs-texto-3xl);
+    font-size: var(--gs-texto-lg);
     color: #fff;
   }
-  .px-head p {
-    margin: 8px 0 0;
-    max-width: 62ch;
+  .px-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font: inherit;
+    font-size: var(--gs-texto-sm);
+    color: #e6e6df;
+    background: transparent;
+    border: 1px solid #3a3b35;
+    border-radius: 999px;
+    padding: 4px 10px;
+    cursor: pointer;
+  }
+  .px-toggle:hover,
+  .px-toggle:focus-visible {
+    border-color: #e6e6df;
+  }
+  .px-current {
+    display: none;
+  }
+  .px-lede,
+  .px-note {
+    margin: 6px 0 0;
+    font-size: var(--gs-texto-xs);
     color: #b3b3aa;
   }
-  .px-grid {
+  .px-list {
     list-style: none;
+    margin: 10px 0 0;
     padding: 0;
-    margin-top: 32px;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 16px;
+    gap: 2px;
   }
-  .px-card > a,
-  .px-card > div {
-    display: block;
-    height: 100%;
-    padding: 18px 20px 20px;
-    border-radius: var(--gs-radius-card);
-    background: #1a1b18;
-    border-top: 3px solid var(--px-accent);
+  .px-list a,
+  .px-item {
+    display: grid;
+    grid-template-columns: 14px 1fr;
+    column-gap: 8px;
+    padding: 7px 8px;
+    border-radius: var(--gs-radius);
     color: inherit;
     text-decoration: none;
   }
-  .px-card > a:hover,
-  .px-card > a:focus-visible {
+  .px-list a:hover,
+  .px-list a:focus-visible {
     background: #22231f;
   }
-  .px-card h2 {
-    margin: 0;
-    font-size: var(--gs-texto-xl);
+  .px-list a[aria-current="true"] {
+    background: #2a2b26;
+    box-shadow: inset 3px 0 0 var(--px-accent);
+  }
+  .px-dot {
+    grid-row: span 2;
+    align-self: start;
+    margin-top: 5px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid var(--px-accent);
+  }
+  .px-list a[aria-current="true"] .px-dot {
+    background: var(--px-accent);
+  }
+  .px-name {
+    font-weight: 600;
     color: #fff;
   }
-  .px-card > a h2 {
-    text-decoration: underline;
-    text-decoration-color: var(--px-accent);
-    text-underline-offset: 4px;
+  .px-period {
+    font-size: var(--gs-texto-xs);
+    color: #b3b3aa;
   }
   .px-sum {
+    grid-column: 2;
+    font-size: var(--gs-texto-xs);
+    color: #b3b3aa;
+    display: none;
+  }
+  .px-list a[aria-current="true"] .px-sum {
+    display: block;
+    margin-top: 2px;
+  }
+  .is-soon {
+    opacity: 0.55;
+  }
+  .px-foot {
     margin: 8px 0 0;
-  }
-  .px-period {
-    margin: 10px 0 0;
     font-size: var(--gs-texto-sm);
-    color: #b3b3aa;
   }
-  .is-soon > div {
-    opacity: 0.6;
+  .px-open {
+    color: #e6e6df;
   }
-  .px-soon {
-    color: var(--px-accent);
+  /* Collapsed: only the title bar with the current map. */
+  .px-app.is-collapsed .px-lede,
+  .px-app.is-collapsed .px-list,
+  .px-app.is-collapsed .px-foot,
+  .px-app.is-collapsed .px-note {
+    display: none;
   }
-  .px-note {
-    margin-top: 32px;
-    font-size: var(--gs-texto-sm);
-    color: #b3b3aa;
+  .px-app.is-collapsed .px-picker h1 {
+    display: none;
+  }
+  .px-app.is-collapsed .px-picker {
+    width: auto;
+    padding: 6px;
+  }
+  .px-app.is-collapsed .px-current {
+    display: inline;
+  }
+  /* Without the frame (no JavaScript yet) the selector is the page. */
+  .px-app:not(.is-live) .px-picker {
+    position: static;
+    width: auto;
+    max-width: 640px;
+    max-height: none;
+    margin: 32px auto;
+    box-shadow: none;
+  }
+  @media (max-width: 700px) {
+    .px-picker {
+      top: auto;
+      bottom: 116px;
+      right: 8px;
+      left: auto;
+      width: calc(100% - 16px);
+      max-height: 60%;
+    }
+    .px-app.is-collapsed .px-picker {
+      width: auto;
+      bottom: 104px;
+      padding: 4px;
+    }
+    /* Just the icon beside the zoom buttons: the name would cover the curve. */
+    .px-app.is-collapsed .px-current {
+      display: none;
+    }
+    .px-app.is-collapsed .px-toggle {
+      padding: 6px;
+    }
+    .px-lede,
+    .px-note {
+      display: none;
+    }
   }
 </style>
+
+<script>
+  const app = document.querySelector<HTMLElement>('.px-app');
+  if (app) {
+    const frame = app.querySelector('.px-frame') as HTMLIFrameElement;
+    const toggle = app.querySelector('.px-toggle') as HTMLButtonElement;
+    const current = app.querySelector('.px-current') as HTMLElement;
+    const open = app.querySelector('.px-open') as HTMLAnchorElement;
+    const links = [...app.querySelectorAll<HTMLAnchorElement>('.px-list a[data-slug]')];
+    // Below this width the open list would cover the map (pickerRoom() in pulso.ts).
+    const narrow = window.matchMedia('(max-width: 1099px)');
+    const setCollapsed = (c: boolean) => {
+      app.classList.toggle('is-collapsed', c);
+      toggle.setAttribute('aria-expanded', String(!c));
+      toggle.setAttribute(
+        'aria-label',
+        c ? `${current.textContent} · ${app.dataset.show ?? ''}` : (app.dataset.hide ?? ''),
+      );
+    };
+    const choose = (slug: string, push: boolean) => {
+      const link = links.find((a) => a.dataset.slug === slug) ?? links[0];
+      if (!link) return;
+      const title = link.dataset.title ?? '';
+      for (const a of links) a.setAttribute('aria-current', String(a === link));
+      current.textContent = title;
+      open.href = link.href;
+      frame.title = (app.dataset.frameTitle ?? '').replace('{title}', title);
+      const src = `${link.href}?embed`;
+      if (frame.getAttribute('src') !== src) {
+        frame.classList.remove('is-loaded');
+        frame.src = src;
+      }
+      if (push) history.replaceState(null, '', `#${link.dataset.slug}`);
+    };
+    frame.addEventListener('load', () => frame.classList.add('is-loaded'));
+    for (const a of links) {
+      a.addEventListener('click', (e) => {
+        if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return;
+        e.preventDefault();
+        choose(a.dataset.slug as string, true);
+        setCollapsed(app.classList.contains('is-collapsed'));
+        // On a narrow screen the list covers the map: fold it once a map is chosen.
+        if (narrow.matches) setCollapsed(true);
+      });
+    }
+    toggle.addEventListener('click', () => setCollapsed(!app.classList.contains('is-collapsed')));
+    window.addEventListener('hashchange', () => choose(window.location.hash.slice(1), false));
+    frame.hidden = false;
+    toggle.hidden = false;
+    app.classList.add('is-live');
+    const slug = window.location.hash.slice(1);
+    choose(slug, false);
+    setCollapsed(narrow.matches && Boolean(slug));
+  }
+</script>

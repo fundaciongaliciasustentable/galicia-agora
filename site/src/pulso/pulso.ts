@@ -63,6 +63,9 @@ function el<K extends keyof HTMLElementTagNameMap>(
   return e;
 }
 
+/** Extra right margin when the map runs inside the /pulso/ selector, which floats on the right. */
+export const pickerRoom = () => (document.documentElement.classList.contains('is-embed') ? 300 : 0);
+
 export function fill(s: string, vars: Record<string, string | number>): string {
   return Object.entries(vars).reduce((acc, [k, v]) => acc.replaceAll(`{${k}}`, String(v)), s);
 }
@@ -259,7 +262,7 @@ export async function start(): Promise<void> {
       {
         padding: {
           left: wide ? panel.width + 40 : 12,
-          right: wide ? 60 : 12,
+          right: wide ? 60 + pickerRoom() : 12,
           top: wide ? 20 : panel.height + 12,
           bottom: wide ? 150 : 110,
         },

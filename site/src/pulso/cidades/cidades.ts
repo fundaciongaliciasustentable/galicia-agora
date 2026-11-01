@@ -9,7 +9,7 @@
 import type { Map as MlMap } from 'maplibre-gl';
 import { asset } from '../../paths.ts';
 import { clock } from '../engine.ts';
-import { fill, loadStyle } from '../pulso.ts';
+import { fill, loadStyle, pickerRoom } from '../pulso.ts';
 import {
   DAY,
   type DayKind,
@@ -176,7 +176,7 @@ export async function start(): Promise<void> {
       {
         padding: {
           left: wide ? panel.width + 60 : 30,
-          right: wide ? 80 : 30,
+          right: wide ? 80 + pickerRoom() : 30,
           top: Math.max(10, top),
           bottom,
         },
