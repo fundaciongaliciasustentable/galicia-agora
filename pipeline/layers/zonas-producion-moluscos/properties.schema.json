@@ -18,7 +18,11 @@
   "properties": {
     "id": { "type": "string", "pattern": "^(zona-(R-)?GAL .+|bateas-\\d+)$" },
     "tipo": { "enum": ["zona", "poligono_bateas"] },
-    "codigo": { "type": ["string", "null"], "pattern": "^(R-)?GAL \\d", "description": "COD_ZPROT" },
+    "codigo": {
+      "type": ["string", "null"],
+      "pattern": "^(R-)?GAL \\d",
+      "description": "COD_ZPROT"
+    },
     "nome": { "type": "string", "minLength": 1 },
     "clase": {
       "enum": ["A", "B", "C", null],

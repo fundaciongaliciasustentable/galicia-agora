@@ -95,6 +95,7 @@
   --c-trafico: #a64040;
   --c-bano: #1f7a99;
   --c-moluscos: #6b4c8a;
+  --c-inundacion: #1f4e8c;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -144,6 +145,7 @@
     --c-trafico: #e08a8a;
     --c-bano: #6cc0dc;
     --c-moluscos: #a58cc4;
+    --c-inundacion: #7fa8e0;
   }
 }
 
@@ -193,4 +195,5 @@
   --c-trafico: #e08a8a;
   --c-bano: #6cc0dc;
   --c-moluscos: #a58cc4;
+  --c-inundacion: #7fa8e0;
 }

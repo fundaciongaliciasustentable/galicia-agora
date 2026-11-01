@@ -726,6 +726,52 @@ export function encodeLayer(layer: LayerLike, ctx: StyleContext): Encoding {
         ],
       );
     }
+    case 'inundacion-costeira': {
+      const t100 = ['==', num('periodo_retorno'), 100];
+      return enc(
+        [
+          base('fill', {
+            type: 'fill',
+            paint: { 'fill-color': color, 'fill-opacity': ['case', t100, 0.45, 0.18] },
+          }),
+          base('line', {
+            type: 'line',
+            filter: t100,
+            paint: { 'line-color': color, 'line-width': 0.8 },
+          }),
+          label('label', ['get', 'zona'], 11, {
+            filter: t100,
+            layout: { 'text-offset': [0, 0], 'text-anchor': 'center' },
+          }),
+        ],
+        [
+          {
+            entries: [
+              {
+                shape: 'fill',
+                color,
+                label: T(
+                  'Inundable cada 100 anos (probabilidade media)',
+                  'Inundable cada 100 años (probabilidad media)',
+                ),
+              },
+              {
+                shape: 'fill',
+                color: `${color}55`,
+                label: T(
+                  'Inundable cada 500 anos (probabilidade baixa)',
+                  'Inundable cada 500 años (probabilidad baja)',
+                ),
+              },
+            ],
+            note: T(
+              'Só nos 28 tramos de costa estudados (ARPSI), estudo de 2014.',
+              'Solo en los 28 tramos de costa estudiados (ARPSI), estudio de 2014.',
+            ),
+          },
+        ],
+      );
+    }
     // ───────────────────────── Mobilidade ─────────────────────────
     case 'tren': {
       const cercanias = ['==', ['get', 'rede'], 'Cercanías'];

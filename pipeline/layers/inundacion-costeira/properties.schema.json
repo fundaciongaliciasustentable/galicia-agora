@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "inundacion-costeira feature properties",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "arpsi",
+    "zona",
+    "periodo_retorno",
+    "superficie_km2",
+    "lonxitude_km",
+    "cota_max_m",
+    "data_estudo"
+  ],
+  "properties": {
+    "id": { "type": "string", "pattern": "^ES014-.+_T(100|500)$", "description": "ID_ZONA" },
+    "arpsi": { "type": ["string", "null"], "description": "Código da ARPSI costeira (ZI_DIRECTI)" },
+    "zona": { "type": ["string", "null"] },
+    "periodo_retorno": { "enum": [100, 500], "description": "Anos" },
+    "superficie_km2": { "type": ["number", "null"], "minimum": 0 },
+    "lonxitude_km": {
+      "type": ["number", "null"],
+      "minimum": 0,
+      "description": "Lonxitude do tramo de costa"
+    },
+    "cota_max_m": {
+      "type": ["number", "null"],
+      "description": "Cota máxima da lámina de auga (COTA_MAX)"
+    },
+    "data_estudo": { "type": ["string", "null"], "format": "date" }
+  }
+}
