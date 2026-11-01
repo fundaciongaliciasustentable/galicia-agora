@@ -1,0 +1,49 @@
+id: focos-agosto-2025
+title:
+  gl: Focos de calor de agosto de 2025 (satélite, pasada a pasada)
+  es: Focos de calor de agosto de 2025 (satélite, pasada a pasada)
+theme: lume-monte
+operator:
+  name: NASA LANCE FIRMS (NASA/GSFC/ESDIS)
+  url: https://firms.modaps.eosdis.nasa.gov
+source_url: https://firms.modaps.eosdis.nasa.gov/data/country/
+licence:
+  spdx: CC-BY-SA-4.0
+  text_url: https://creativecommons.org/licenses/by-sa/4.0/deed.gl
+  quote: "Creative Commons BY SA 4.0"
+  verified_at: 2026-11-01
+  odbl_compatible: doubt
+  collection: cc-by-sa-4.0
+  notes: >-
+    Detección de FIRMS: CC0 (misións NASA). Capa derivada: o concello de cada detección sae dos
+    polígonos de concellos-parroquias (IET, CC BY-SA 4.0), así que vai na colección CC BY-SA
+    4.0 (ADR 0005), como perfil-concellos. Arquivos anuais por país de 2025 (VIIRS S-NPP,
+    375 m, e MODIS, 1 km), sen chave; NOAA-20 e NOAA-21 non teñen arquivo por país e quedan
+    fóra. Só agosto de 2025, só tipo 0 (lume de vexetación presunto) e só dentro dun concello
+    galego. Unha detección é un píxel quente nunha pasada do satélite, non un lume nin unha
+    superficie. Horas en UTC. Verificación en datos/fontes/nasa-firms/README.md.
+attribution: >-
+  NASA FIRMS (LANCE, NASA/GSFC/ESDIS), VIIRS S-NPP e MODIS, agosto de 2025; concello: IET,
+  Xunta de Galicia. Cálculo propio da Fundación Galicia Sustentable.
+update_frequency:
+  declared: static
+geometry: point
+output: geojson
+auth:
+  required: false
+privacy_notes: Detección de calor por satélite; ningún dato persoal.
+stale_after: P3650D
+ingest:
+  every: P365D
+depends_on:
+  - concellos-parroquias
+style:
+  kind: circle
+  color_token: --c-lume
+table:
+  fields:
+    - instante
+    - concello
+    - produto
+    - frp
+    - dia_noite

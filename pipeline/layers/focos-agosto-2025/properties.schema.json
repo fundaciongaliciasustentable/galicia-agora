@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "focos-agosto-2025 feature properties",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "instante",
+    "produto",
+    "satelite",
+    "dia_noite",
+    "frp",
+    "confianza",
+    "codigo_ine",
+    "concello"
+  ],
+  "properties": {
+    "instante": { "type": "string", "pattern": "^2025-08-\\d{2}T\\d{2}:\\d{2}:00Z$" },
+    "produto": { "enum": ["VIIRS S-NPP", "MODIS"] },
+    "satelite": { "type": "string" },
+    "dia_noite": { "enum": ["día", "noite"] },
+    "frp": { "type": "number" },
+    "confianza": { "type": "string" },
+    "codigo_ine": { "type": "string", "pattern": "^\\d{5}$" },
+    "concello": { "type": "string", "minLength": 1 }
+  }
+}
