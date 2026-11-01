@@ -1,0 +1,182 @@
+# Monthly Sentinel-2 mosaic of Galicia (layers satelite-mes and ndvi-mes), ADR 0009.
+# Same mechanism as ortofoto.yml (ADR 0008): build the month just ended (or
+# the one asked for), upload the two PMTiles archives straight to the server
+# by FTPS (too large for the data branch), check that they are served with
+# Range, then commit only archives.json and meta.json to the `data` branch, so
+# the next `update` run builds and deploys a site that points at them.
+# Archives in neither the new nor the previous index (past the 12 months, or
+# a rebuilt month) are deleted from the server last.
+name: satelite
+
+on:
+  schedule:
+    # Day 3 at 03:00 UTC: scenes of the last days of the month are in the catalogue by then.
+    - cron: '0 3 3 * *'
+  workflow_dispatch:
+    inputs:
+      month:
+        description: Month to build (YYYY-MM); empty = the month just ended
+        type: string
+        default: ''
+
+permissions:
+  contents: write
+
+concurrency:
+  group: satelite
+  cancel-in-progress: false
+
+jobs:
+  satelite:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    env:
+      DATA_OUT_DIR: data-out
+      SATELITE_OUT_DIR: satelite-out
+      NODE_OPTIONS: --max-old-space-size=6144
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+
+      - name: Restore last published data (data branch)
+        # Same mechanism as update.yml; the build reads the previous
+        # archives.json and meta.json of both layers from here.
+        run: |
+          git fetch origin data
+          git worktree add data-out origin/data
+          git -C data-out switch -c data
+
+      - name: Check deploy configuration
+        id: cfg
+        env:
+          FTPS_HOST: ${{ secrets.FTPS_HOST }}
+        run: |
+          deploy=false
+          # Accept a pasted URL: drop whitespace, scheme, path and port (as update.yml).
+          host=$(printf %s "$FTPS_HOST" | tr -d '[:space:]' | sed -E 's#^[A-Za-z]+://##; s#/.*$##; s#:[0-9]*$##')
+          if [ -z "$FTPS_HOST" ]; then
+            echo "::notice::FTPS secrets not set: the month is built but neither uploaded nor indexed"
+          elif ! printf %s "$host" | grep -Eq '^[A-Za-z0-9.-]+\.[A-Za-z]{2,}$'; then
+            echo "::error::FTPS_HOST is not a server name even after removing ftp://, port and slashes"
+          else
+            deploy=true
+          fi
+          echo "deploy=$deploy" >> "$GITHUB_OUTPUT"
+
+      - name: Build the month
+        id: build
+        env:
+          MONTH: ${{ inputs.month }}
+        run: |
+          set +e
+          npx tsx pipeline/satelite/cli.ts ${MONTH:+--month=$MONTH}
+          echo "code=$?" >> "$GITHUB_OUTPUT"
+          set -e
+          ls -l satelite-out/*/ 2>/dev/null || true
+          cat satelite-out/upload.txt 2>/dev/null || true
+
+      - name: Install lftp
+        if: steps.cfg.outputs.deploy == 'true'
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq lftp
+
+      - name: Upload archives (FTPS) and check Range requests
+        if: steps.cfg.outputs.deploy == 'true' && steps.build.outputs.code == '0'
+        env:
+          FTPS_HOST: ${{ secrets.FTPS_HOST }}
+          FTPS_USER: ${{ secrets.FTPS_USER }}
+          FTPS_PASSWORD: ${{ secrets.FTPS_PASSWORD }}
+          FTPS_DIR: ${{ secrets.FTPS_DIR }}
+        run: |
+          host=$(printf %s "$FTPS_HOST" | tr -d '[:space:]' | sed -E 's#^[A-Za-z]+://##; s#/.*$##; s#:[0-9]*$##')
+          dir=$(printf %s "$FTPS_DIR" | tr -d '\r\n')
+          # Explicit FTPS (AUTH TLS on port 21), as in update.yml and ortofoto.yml.
+          ftp() {
+            lftp -u "$FTPS_USER","$FTPS_PASSWORD" "ftp://$host" -e "
+              set ftp:ssl-force true; set ftp:ssl-protect-data true; set ssl:verify-certificate true;
+              set net:timeout 60; set net:max-retries 10; set net:reconnect-interval-base 10;
+              $1
+              quit"
+          }
+          site=$(node -p "require('./site/site.config.json').site.replace(/\/$/, '')")
+          while read -r p; do
+            [ -n "$p" ] || continue
+            remote="${dir:-.}/data/$(dirname "$p")"
+            f=$(basename "$p")
+            # Upload under .part, then rename, so the site never sees half a file.
+            # Names carry the content hash, so a new month never reuses an old URL.
+            ftp "mkdir -p -f $remote; cd $remote; put -c satelite-out/$p -o $f.part; mv $f.part $f;"
+            url="$site/data/$p"
+            code=$(curl -sS -r 0-6 -o head.bin -w '%{http_code}' "$url")
+            size=$(curl -sSI "$url" | tr -d '\r' | awk 'tolower($1)=="content-length:"{print $2}')
+            local_size=$(stat -c %s "satelite-out/$p")
+            if [ "$code" != 206 ] || [ "$(head -c 7 head.bin)" != PMTiles ] || [ "$size" != "$local_size" ]; then
+              echo "::error::$url: HTTP $code, size $size (local $local_size): not served correctly, index not published"
+              exit 1
+            fi
+            echo "$p: uploaded, Range OK (206), $size bytes"
+          done < satelite-out/upload.txt
+
+      - name: Publish index and meta (data branch)
+        # Only after the upload: the index must never list a month the server lacks.
+        # A month that was not published still records its failed attempt in meta.json.
+        if: steps.cfg.outputs.deploy == 'true'
+        run: |
+          git config --global user.name "galicia-agora-ingest"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          mkdir -p prev
+          for id in satelite-mes ndvi-mes; do
+            git show "origin/data:$id/archives.json" > "prev/$id.json" 2>/dev/null || echo '{"months":[]}' > "prev/$id.json"
+            mkdir -p "prev/$id" && cp -R "data-out/$id/." "prev/$id/" 2>/dev/null || true
+          done
+          # update.yml pushes to the same branch every 10 minutes and never touches
+          # these folders: on a moved branch, reset to it and lay our files on top.
+          for attempt in 1 2 3 4 5; do
+            git -C data-out add satelite-mes ndvi-mes
+            git -C data-out commit -q -m "data: satelite $(date -u +%Y-%m-%dT%H:%MZ)" || break
+            git -C data-out push -q origin HEAD:data && break
+            [ "$attempt" = 5 ] && { echo "::error::could not push the index to the data branch"; exit 1; }
+            sleep $((attempt * 20))
+            git fetch -q origin data && git -C data-out reset -q --hard origin/data
+            for id in satelite-mes ndvi-mes; do mkdir -p "data-out/$id" && cp -R "prev/$id/." "data-out/$id/"; done
+          done
+
+      - name: Drop archives no index lists (FTPS)
+        if: steps.cfg.outputs.deploy == 'true' && steps.build.outputs.code == '0'
+        env:
+          FTPS_HOST: ${{ secrets.FTPS_HOST }}
+          FTPS_USER: ${{ secrets.FTPS_USER }}
+          FTPS_PASSWORD: ${{ secrets.FTPS_PASSWORD }}
+          FTPS_DIR: ${{ secrets.FTPS_DIR }}
+        run: |
+          host=$(printf %s "$FTPS_HOST" | tr -d '[:space:]' | sed -E 's#^[A-Za-z]+://##; s#/.*$##; s#:[0-9]*$##')
+          dir=$(printf %s "$FTPS_DIR" | tr -d '\r\n')
+          for id in satelite-mes ndvi-mes; do
+            # Keep the months of the published index and of the previous one (the
+            # live site may still point there until update.yml redeploys).
+            jq -r '.months[].file' "prev/$id.json" "data-out/$id/archives.json" 2>/dev/null | sort -u > keep.txt || true
+            if [ ! -s keep.txt ]; then
+              echo "::warning::$id: no published month list, nothing deleted"
+              continue
+            fi
+            sed 's/$/.part/' keep.txt >> keep.txt
+            remote="${dir:-.}/data/$id"
+            lftp -u "$FTPS_USER","$FTPS_PASSWORD" "ftp://$host" -e "
+              set ftp:ssl-force true; set ftp:ssl-protect-data true; set ssl:verify-certificate true;
+              cd $remote; cls -1; quit" > remote.txt
+            for f in $(grep -E '\.pmtiles(\.part)?$' remote.txt | grep -vxFf keep.txt || true); do
+              lftp -u "$FTPS_USER","$FTPS_PASSWORD" "ftp://$host" -e "
+                set ftp:ssl-force true; set ftp:ssl-protect-data true; set ssl:verify-certificate true;
+                cd $remote; rm $f; quit" && echo "$id: deleted $f"
+            done
+          done
+          echo "::notice::Index published; the site shows the month after the next update.yml deploy (every 10 minutes)."
+
+      - name: Fail when nothing was published
+        if: steps.build.outputs.code != '0'
+        run: |
+          echo "::error::the month was not published (see the build log and meta.json)"
+          exit 1
