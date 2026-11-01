@@ -1,0 +1,57 @@
+id: mobilidade-fluxos
+title:
+  gl: Galicia en movemento (viaxes entre concellos por hora)
+  es: Galicia en movimiento (viajes entre ayuntamientos por hora)
+theme: mobilidade
+operator:
+  name: Ministerio de Transportes y Movilidad Sostenible (MITMA)
+  url: https://www.transportes.gob.es/ministerio/proyectos-singulares/estudios-de-movilidad-con-big-data/opendata-movilidad
+source_url: https://movilidad-opendata.mitma.es/estudios_basicos/por-municipios/viajes/ficheros-diarios/
+licence:
+  text_url: https://movilidad-opendata.mitma.es/LICENCIA%20de%20datos%20abiertos%20del%20MITMA%2020201203.pdf
+  quote: >-
+    las obras derivadas añadiendo valor pueden ofrecerse bajo licencias diferentes
+  verified_at: 2026-11-01
+  odbl_compatible: true
+  collection: odbl
+  notes: >-
+    Licenza de datos abertos do MITMA (3/12/2020): uso comercial e non comercial e obras
+    derivadas con outra licenza. Esixe a mención «Basado en datos abiertos MITMA» con ligazón
+    á orixe, conservar a data de actualización e non suxerir que o ministerio apoia a peza.
+    Cálculo propio da Fundación Galicia Sustentable: media de catro mércores (7, 14, 21 e 28
+    de maio de 2025) e catro domingos (11, 18 e 25 de maio e 1 de xuño de 2025) dos estudos
+    básicos por municipios. Unha liña por par orixe–destino de zonas MITMA de Galicia, do
+    centroide de MITMA dunha ao da outra, con polo menos 50 viaxes no mércores ou no domingo
+    medios (uns 4.200 pares, o 97 % das viaxes entre zonas). Quedan fóra as viaxes dentro
+    dunha zona e as que entran ou saen de Galicia (1 %). Os concellos rurais van en zonas
+    agrupadas de MITMA (_AM): a liña sae do centroide do grupo. Conta viaxes, non persoas;
+    só residentes en España. Período do bloque metodolóxico xaneiro 2022–xuño 2025.
+    Verificación completa en datos/fontes/mitma-mobilidade/README.md.
+attribution: >-
+  Basado en datos abiertos MITMA (estudios de movilidad con big data, mayo de 2025). Cálculo
+  propio da Fundación Galicia Sustentable.
+update_frequency:
+  declared: static
+geometry: line
+output: geojson
+auth:
+  required: false
+privacy_notes: >-
+  Agregados de MITMA, anonimizados na orixe e con chan mínimo nos fluxos pequenos; aquí
+  medias por par de zonas e hora; quedan fóra os pares con menos de 50 viaxes ao día.
+  Ningún dato persoal. Os extremos das liñas son centroides de zonas MITMA, non capitais.
+# Fixed reference period: recomputing gives the same answer, so a rare refresh is enough and
+# the file never turns stale for being old.
+stale_after: P3650D
+ingest:
+  every: P365D
+style:
+  kind: line
+  color_token: --c-tren
+table:
+  fields:
+    - nome_orixe
+    - nome_destino
+    - distancia_km
+    - viaxes_mercores
+    - viaxes_domingo

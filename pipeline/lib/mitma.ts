@@ -23,6 +23,37 @@ export const DAY_TIMEOUT_MS = 600_000;
 
 export type Level = 'municipios' | 'distritos' | 'GAU';
 
+export const DAY_KINDS = ['mercores', 'domingo'] as const;
+export type DayKind = (typeof DAY_KINDS)[number];
+/**
+ * Reference days of the animated maps (decided 1/11/2026): May 2025, inside MITMA's
+ * January 2022–June 2025 method block. 4 May (end of a long weekend) is replaced by 1 June.
+ */
+export const REFERENCE_DAYS: Record<DayKind, string[]> = {
+  mercores: ['2025-05-07', '2025-05-14', '2025-05-21', '2025-05-28'],
+  domingo: ['2025-05-11', '2025-05-18', '2025-05-25', '2025-06-01'],
+};
+export const NAMES_URL = `${MITMA_BASE}/zonificacion/zonificacion_municipios/nombres_municipios.csv`;
+
+/** Readable zone names: «Coruña, A» → «A Coruña»; grouped zones keep their head concello. */
+export function zoneNames(csv: string): Map<string, string> {
+  const out = new Map<string, string>();
+  const lines = csv.split(/\r?\n/);
+  const head = (lines[0] ?? '').split('|');
+  const iId = head.indexOf('ID');
+  const iName = head.indexOf('name');
+  if (iId < 0 || iName < 0) throw new Error('Unexpected MITMA names header');
+  for (const line of lines.slice(1)) {
+    if (!line) continue;
+    const cols = line.split('|');
+    let name = (cols[iName] ?? '').replace(/ agregacion de municipios$/, '').trim();
+    const m = /^(.*), (A|O|As|Os)$/.exec(name);
+    if (m) name = `${m[2]} ${m[1]}`;
+    out.set(cols[iId] as string, name);
+  }
+  return out;
+}
+
 export function dayUrl(isoDate: string, level: Level = 'municipios'): string {
   const ymd = isoDate.replaceAll('-', '');
   return `${MITMA_BASE}/estudios_basicos/por-${level}/viajes/ficheros-diarios/${isoDate.slice(0, 7)}/${ymd}_Viajes_${level}.csv.gz`;

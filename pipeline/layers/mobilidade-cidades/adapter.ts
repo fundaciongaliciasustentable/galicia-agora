@@ -12,7 +12,9 @@ import type { Adapter, AdapterContext, Feature } from '../../lib/adapter.ts';
 import { point } from '../../lib/adapter.ts';
 import {
   CENTROIDS_URL,
+  DAY_KINDS,
   DAY_TIMEOUT_MS,
+  REFERENCE_DAYS as DAYS,
   dayUrl,
   municipalZones,
   POPULATION_URL,
@@ -23,14 +25,7 @@ import {
 } from '../../lib/mitma.ts';
 import aneis from './aneis.json' with { type: 'json' };
 
-export const DAY_KINDS = ['mercores', 'domingo'] as const;
-export type DayKind = (typeof DAY_KINDS)[number];
-/** Reference days: May 2025, inside MITMA's 2022–June 2025 method block. 4 May (end of a
- * long weekend) is replaced by 1 June. */
-export const DAYS: Record<DayKind, string[]> = {
-  mercores: ['2025-05-07', '2025-05-14', '2025-05-21', '2025-05-28'],
-  domingo: ['2025-05-11', '2025-05-18', '2025-05-25', '2025-06-01'],
-};
+export { DAY_KINDS, type DayKind, REFERENCE_DAYS as DAYS } from '../../lib/mitma.ts';
 export const RINGS = ['anel0', 'anel1'] as const;
 export type Ring = (typeof RINGS)[number];
 const OUTSIDE = 'x';

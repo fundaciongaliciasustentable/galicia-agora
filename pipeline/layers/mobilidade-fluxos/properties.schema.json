@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "mobilidade-fluxos feature properties",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "orixe",
+    "destino",
+    "nome_orixe",
+    "nome_destino",
+    "distancia_km",
+    "viaxes_mercores",
+    "viaxes_domingo",
+    "mercores",
+    "domingo"
+  ],
+  "properties": {
+    "orixe": { "type": "string", "pattern": "^\\d{5}(_AM)?$" },
+    "destino": { "type": "string", "pattern": "^\\d{5}(_AM)?$" },
+    "nome_orixe": { "type": "string", "minLength": 1 },
+    "nome_destino": { "type": "string", "minLength": 1 },
+    "distancia_km": { "type": "number", "minimum": 0 },
+    "viaxes_mercores": { "type": "integer", "minimum": 0 },
+    "viaxes_domingo": { "type": "integer", "minimum": 0 },
+    "mercores": { "$ref": "#/$defs/hours" },
+    "domingo": { "$ref": "#/$defs/hours" }
+  },
+  "$defs": {
+    "hours": {
+      "type": "array",
+      "minItems": 24,
+      "maxItems": 24,
+      "items": { "type": "integer", "minimum": 0 }
+    }
+  }
+}
