@@ -726,6 +726,59 @@ const STRINGS = {
     gl: 'Aínda non están publicadas as vistas dos artigos dos concellos.',
     es: 'Aún no están publicadas las visitas de los artículos de los ayuntamientos.',
   },
+  news_title: { gl: 'Os concellos nas noticias', es: 'Los ayuntamientos en las noticias' },
+  news_lede: {
+    gl: 'Cantos artigos de medios dixitais con sede en España nomean cada concello, día a día, segundo o GDELT.',
+    es: 'Cuántos artículos de medios digitales con sede en España nombran cada ayuntamiento, día a día, según GDELT.',
+  },
+  news_map_label: {
+    gl: 'Mapa dos concellos de Galicia coloreados polos artigos de prensa que os nomean nos últimos 7 días. As cifras están no panel e na táboa.',
+    es: 'Mapa de los ayuntamientos de Galicia coloreados por los artículos de prensa que los nombran en los últimos 7 días. Las cifras están en el panel y en la tabla.',
+  },
+  news_legend: {
+    gl: 'Artigos que nomean o concello nos 7 días ata a data. Gris escuro: sen dato ou concello fóra do mapa por ter un nome ambiguo.',
+    es: 'Artículos que nombran el ayuntamiento en los 7 días hasta la fecha. Gris oscuro: sin dato o ayuntamiento fuera del mapa por tener un nombre ambiguo.',
+  },
+  news_now: {
+    gl: 'Galicia: {articles} artigos nos concellos do mapa; {with} concellos con algún na semana; ton medio {tone} (de −10, negativo, a +10, positivo).',
+    es: 'Galicia: {articles} artículos en los ayuntamientos del mapa; {with} ayuntamientos con alguno en la semana; tono medio {tone} (de −10, negativo, a +10, positivo).',
+  },
+  news_detail: {
+    gl: '{name}, {when}: {articles} artigos ese día, {value} nos últimos 7; ton {tone} (só con 5 artigos ou máis).',
+    es: '{name}, {when}: {articles} artículos ese día, {value} en los últimos 7; tono {tone} (solo con 5 artículos o más).',
+  },
+  news_detail_excluded: {
+    gl: '{name} non está no mapa: o seu nome tamén é unha palabra común, un apelido ou outro lugar, e os artigos contados non serían del.',
+    es: '{name} no está en el mapa: su nombre también es una palabra común, un apellido u otro lugar, y los artículos contados no serían suyos.',
+  },
+  news_pick: {
+    gl: 'Preme nun concello para ver as súas cifras.',
+    es: 'Pulsa en un ayuntamiento para ver sus cifras.',
+  },
+  news_speed_opt: { gl: 'Un día cada {s} s', es: 'Un día cada {s} s' },
+  news_curve: {
+    gl: 'Artigos que nomean concellos galegos, cada día',
+    es: 'Artículos que nombran ayuntamientos gallegos, cada día',
+  },
+  news_curve_label: {
+    gl: 'Artigos diarios que nomean os concellos do mapa: {first} o {firstWhen}, {last} o {lastWhen}; máximo de {max} o {maxWhen}.',
+    es: 'Artículos diarios que nombran los ayuntamientos del mapa: {first} el {firstWhen}, {last} el {lastWhen}; máximo de {max} el {maxWhen}.',
+  },
+  news_table_caption: {
+    gl: 'Os 15 concellos con máis e menos artigos nos 7 días ata o {when}.',
+    es: 'Los 15 ayuntamientos con más y menos artículos en los 7 días hasta el {when}.',
+  },
+  news_col_a: { gl: 'Artigos (día)', es: 'Artículos (día)' },
+  news_col_b: { gl: 'Ton', es: 'Tono' },
+  news_col_value: { gl: '7 días', es: '7 días' },
+  news_note: {
+    gl: 'The GDELT Project (gdeltproject.org) le medios dixitais de todo o mundo e conta os artigos que conteñen unhas palabras. Aquí: medios con sede en España e unha consulta por concello, o nome oficial entre comiñas, revisada á man. Quedan fóra os concellos cun nome que tamén é palabra común, apelido frecuente ou outro lugar (Mos, Ares, Cangas, Marín, Carballo, Sarria...); a lista e o motivo de cada un están nos datos. Nas catro capitais o nome conta tamén a provincia. Un artigo pode nomear o concello de pasada, e GDELT non ve todos os medios galegos (sobre todo os que escriben en galego). Os días en que o propio GDELT case non recolleu nada quedan sen dato, non a cero. O ton é a media que calcula GDELT a partir das palabras do artigo, de −10 a +10, e só se amosa con 5 artigos ou máis nun día. Non se garda ningún titular nin ligazón. GDELT só garante uns meses de histórico, así que esta páxina garda o seu desde o 1 de novembro de 2026 e o ano anterior vén da primeira descarga. Suma de 7 días e ton de Galicia: cálculo propio.',
+    es: 'The GDELT Project (gdeltproject.org) lee medios digitales de todo el mundo y cuenta los artículos que contienen unas palabras. Aquí: medios con sede en España y una consulta por ayuntamiento, el nombre oficial entre comillas, revisada a mano. Quedan fuera los ayuntamientos con un nombre que también es palabra común, apellido frecuente u otro lugar (Mos, Ares, Cangas, Marín, Carballo, Sarria...); la lista y el motivo de cada uno están en los datos. En las cuatro capitales el nombre cuenta también la provincia. Un artículo puede nombrar el ayuntamiento de pasada, y GDELT no ve todos los medios gallegos (sobre todo los que escriben en gallego). Los días en que el propio GDELT casi no recogió nada quedan sin dato, no a cero. El tono es la media que calcula GDELT a partir de las palabras del artículo, de −10 a +10, y solo se muestra con 5 artículos o más en un día. No se guarda ningún titular ni enlace. GDELT solo garantiza unos meses de histórico, así que esta página guarda el suyo desde el 1 de noviembre de 2026 y el año anterior viene de la primera descarga. Suma de 7 días y tono de Galicia: cálculo propio.',
+  },
+  news_missing: {
+    gl: 'Aínda non están publicados os artigos por concello.',
+    es: 'Aún no están publicados los artículos por ayuntamiento.',
+  },
   air_title: { gl: 'O aire hora a hora', es: 'El aire hora a hora' },
   air_lede: {
     gl: 'As estacións da Rede de Calidade do Aire de Galicia nas últimas 24 horas: o índice de calidade do aire de cada unha e o contaminante que o marca.',

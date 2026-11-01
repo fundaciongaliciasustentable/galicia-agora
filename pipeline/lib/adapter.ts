@@ -47,6 +47,11 @@ export interface AdapterContext {
    * Throws if it is undeclared, missing, failed or stale, so publish keeps the last good file.
    */
   readLayer?(id: string): Promise<PublishedLayer>;
+  /**
+   * This layer's own last good published output, or null if there is none. For layers that
+   * keep their own history because the source only gives recent days (whatever its age).
+   */
+  readPrevious?(): Promise<PublishedLayer | null>;
 }
 
 export interface PublishedLayer {

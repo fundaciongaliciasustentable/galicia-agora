@@ -1,0 +1,53 @@
+id: galicia-noticias
+title:
+  gl: Concellos nas noticias, día a día (GDELT)
+  es: Ayuntamientos en las noticias, día a día (GDELT)
+theme: territorio
+operator:
+  name: The GDELT Project
+  url: https://www.gdeltproject.org/
+source_url: https://api.gdeltproject.org/api/v2/doc/doc
+licence:
+  text_url: https://www.gdeltproject.org/about.html#termsofuse
+  quote: "any use or redistribution of the data must include a citation to the GDELT Project and a link to this website"
+  verified_at: 2026-11-01
+  odbl_compatible: doubt
+  collection: cc-by-sa-4.0
+  notes: >-
+    Termos de GDELT (https://www.gdeltproject.org/about.html): uso «unlimited and
+    unrestricted» con cita e ligazón a gdeltproject.org. Só atribución, pero sen texto de
+    licenza estándar: colección CC BY-SA por prudencia. API DOC 2.0, modos timelinevolraw
+    (artigos por día e total vixiado polo GDELT, `norm`) e timelinetone (ton medio), cunha
+    consulta revisada á man por concello (consultas.json) e `sourcecountry:spain`. A
+    documentación fala de 3 meses de xanela; con timespan=12m devolveu 335 días o 1/11/2026,
+    así que a capa garda o seu propio histórico. GDELT pide unha petición cada 5 s e
+    bloquea a IP un tempo se non (comprobado: 429 durante máis de 20 min): 10 s entre
+    peticións (o dobre do pedido), 9 concellos por execución horaria (uns 216 ao día, case
+    os 217 con consulta) e parar ao primeiro erro. Non se publica ningún titular, URL nin
+    medio. Ton só con 5 artigos ou máis no día.
+attribution: >-
+  Fonte: The GDELT Project (https://www.gdeltproject.org/), API DOC 2.0: artigos de medios
+  con sede en España que nomean cada concello e o seu ton medio. Consultas e suma de 7 días:
+  cálculo propio da Fundación Galicia Sustentable.
+update_frequency:
+  declared: P1D
+geometry: none
+output: geojson
+auth:
+  required: false
+privacy_notes: >-
+  Contas de artigos de medios por concello e día e ton medio; ningún titular, URL, medio nin
+  nome de persoa.
+stale_after: P2D
+ingest:
+  every: PT1H
+# Lives on its own /pulso/ page; the main map does not draw it (SERIES_LAYERS).
+style:
+  kind: fill
+  label_field: nome
+table:
+  fields:
+    - nome
+    - codigo_ine
+    - consulta
+    - motivo

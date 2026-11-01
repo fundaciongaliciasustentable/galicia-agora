@@ -82,6 +82,24 @@ export async function readPublishedLayer(
   return { collection, meta };
 }
 
+/** A layer's own last good published output (layers that keep their history), or null. */
+export async function readPreviousOutput(
+  id: string,
+  outDir: string,
+): Promise<PublishedLayer | null> {
+  const meta = await readMeta(join(outDir, id, 'meta.json'));
+  if (!meta?.checksum) return null;
+  try {
+    const collection = JSON.parse(
+      await readFile(join(outDir, id, 'data.geojson'), 'utf8'),
+    ) as FeatureCollection;
+    return { collection, meta };
+  } catch (err) {
+    if ((err as NodeJS.ErrnoException).code === 'ENOENT') return null;
+    throw err;
+  }
+}
+
 export async function runLayer(id: string, opts: RunOptions): Promise<RunResult> {
   const layersDir = opts.layersDir ?? LAYERS_DIR;
   const now = opts.now ?? new Date();
@@ -110,6 +128,7 @@ export async function runLayer(id: string, opts: RunOptions): Promise<RunResult>
     env: opts.env ?? process.env,
     get: opts.get ?? ((url, o) => fetchWithRetry(url, o)),
     readLayer: (depId) => readPublishedLayer(layer, depId, opts.outDir, now, layersDir),
+    readPrevious: () => readPreviousOutput(id, opts.outDir),
   };
 
   const attempt: Attempt = {

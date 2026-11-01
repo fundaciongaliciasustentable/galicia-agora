@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "galicia-noticias feature properties",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "codigo_ine",
+    "nome",
+    "consulta",
+    "motivo",
+    "desde",
+    "ata",
+    "actualizado",
+    "artigos",
+    "ton",
+    "valor"
+  ],
+  "properties": {
+    "codigo_ine": { "type": "string", "pattern": "^\\d{5}$" },
+    "nome": { "type": "string", "minLength": 1 },
+    "consulta": { "type": ["string", "null"] },
+    "motivo": { "type": ["string", "null"] },
+    "desde": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+    "ata": { "type": ["string", "null"], "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+    "actualizado": { "type": ["string", "null"] },
+    "artigos": { "type": "array", "items": { "type": ["integer", "null"], "minimum": 0 } },
+    "ton": { "type": "array", "items": { "type": ["number", "null"] } },
+    "valor": { "type": "array", "items": { "type": ["integer", "null"], "minimum": 0 } }
+  }
+}

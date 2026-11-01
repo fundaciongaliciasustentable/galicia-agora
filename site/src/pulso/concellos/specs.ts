@@ -176,6 +176,50 @@ export const SPECS: Record<string, Spec> = {
     bar: (g) => g.views ?? 0,
     columns: ['views', 'pmil'],
   },
+  noticias: {
+    slug: 'noticias',
+    layer: 'galicia-noticias',
+    prefix: 'news',
+    // Articles in the last 7 days.
+    stops: [
+      [0, '#262a2b'],
+      [1, '#2f4a5c'],
+      [3, '#3f7a8c'],
+      [10, '#8cc0a0'],
+      [30, '#f0d77b'],
+      [100, '#f08a4b'],
+      [300, '#c2241a'],
+    ],
+    scale: ['0', '30', '300+'],
+    speeds: [0.08, 0.16, 0.4],
+    monthly: false,
+    daily: true,
+    detailKey: (c) => (c.props.consulta === null ? '_excluded' : ''),
+    vars: (c, i) => ({
+      articles: arr(c, 'artigos')[i] ?? null,
+      tone: arr(c, 'ton')[i] ?? null,
+      value: c.value[i] ?? null,
+    }),
+    galicia: (list, i) => {
+      let n = 0;
+      let toneSum = 0;
+      for (const c of list) {
+        const a = arr(c, 'artigos')[i];
+        const t = arr(c, 'ton')[i];
+        if (a && t !== null && t !== undefined) {
+          n += a;
+          toneSum += a * t;
+        }
+      }
+      return {
+        articles: sumAt(list, 'artigos', i),
+        with: list.filter((c) => (c.value[i] ?? 0) > 0).length,
+        tone: n ? Math.round((10 * toneSum) / n) / 10 : null,
+      };
+    },
+    bar: (g) => g.articles ?? 0,
+    columns: ['articles', 'tone'],
+  },
 };
 
 /** CSS gradient of a colour scale, stops placed by value. */

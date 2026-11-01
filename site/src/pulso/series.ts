@@ -217,4 +217,18 @@ export const SERIES: PulseMap[] = [
       es: 'Últimos doce meses; se renueva cada día',
     },
   },
+  {
+    slug: 'noticias',
+    ready: false,
+    colour: '#f0d77b',
+    title: { gl: 'Os concellos nas noticias', es: 'Los ayuntamientos en las noticias' },
+    summary: {
+      gl: 'Cantos artigos de prensa dixital nomean cada concello, día a día, e o seu ton.',
+      es: 'Cuántos artículos de prensa digital nombran cada ayuntamiento, día a día, y su tono.',
+    },
+    period: {
+      gl: 'Últimos doce meses; renóvase cada día',
+      es: 'Últimos doce meses; se renueva cada día',
+    },
+  },
 ];

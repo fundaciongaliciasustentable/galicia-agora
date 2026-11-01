@@ -80,6 +80,22 @@ describe('runLayer', () => {
     expect(data.features).toHaveLength(2);
   });
 
+  it('hands a layer its own last good output (layers that keep their history)', async () => {
+    const { layersDir, outDir } = await setup();
+    const seen: Array<number | null> = [];
+    const growing: Adapter<number> = {
+      fetch: async (ctx) => {
+        const prev = await ctx.readPrevious?.();
+        seen.push(prev ? prev.collection.features.length : null);
+        return (prev?.collection.features.length ?? 0) + 1;
+      },
+      normalize: good.normalize,
+    };
+    await runLayer('proba', { layersDir, outDir, adapter: growing });
+    await runLayer('proba', { layersDir, outDir, adapter: growing, force: true });
+    expect(seen).toEqual([null, 1]);
+  });
+
   it('rejects output that is not valid GeoJSON', async () => {
     const { layersDir, outDir } = await setup();
     const bad: Adapter = {
