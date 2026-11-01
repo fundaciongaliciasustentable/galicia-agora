@@ -6,6 +6,7 @@ Só a Fase 0 e a Fase 1 están en construción. O resto é backlog: documentado,
 |---|---|---|
 | 0 | Verificación das fontes | Entregada (provisional ata medir frecuencias) |
 | 1 | Lanzamento: 13 capas (12 do encargo e tren), mapa base, buscador, `/estado`, `/fontes`, `/sobre` | En curso: 9 capas, sitio e CI feitos; pendentes chaves, Intecmar, entidades, VPS e FTPS |
+| 1+ | Lote de mapas abertos da Xunta (01/11/2026): praias, desfibriladores, sendas, IMD das estradas, zonas de baño, moluscos e bateas, inundación costeira, estado das masas de auga, humidais, centros de infancia, puntos limpos e bibliotecas | Feitas 12 capas (colección CC BY-SA); detalle en `sources-report-xunta.md` |
 | 2 | Territorio e litoral | Backlog |
 | 3 | Economía, vivenda e transparencia | Backlog |
 | 4 | O que ninguén máis pode copiar | Backlog |

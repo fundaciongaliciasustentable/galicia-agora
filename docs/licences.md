@@ -20,6 +20,7 @@ Licenzas propias: datos derivados en **ODbL 1.0**; textos en **CC BY-NC-SA 4.0**
 | AISStream | Non publicada | **Descoñecida** | Non publicar sen permiso escrito |
 | NAP (GTFS buses) | Licenza MITRAMS: brutos coa mesma licenza; derivados poden ir noutra | Derivados si; brutos non | Obriga «Powered by MITRAMS» e de manter datos actualizados |
 | IET / IDEG (límites, entidades, espazos, PBA) | «compatible con CC BY 4.0» | Probable, con atribución | O mesmo dato está en abertos como BY-SA |
+| Augas de Galicia e AXI no IDEG (zonas protexidas, inundación costeira, estado das masas de auga, IMD) | Aviso de Augas / aviso xeral da Xunta (cita, sen desnaturalizar) e aviso do IET | **Dúbida** | Colección CC BY-SA ata ter confirmación (lote do 01/11/2026) |
 | abertos.xunta.gal (Nomenclátor e outros) | CC BY-SA 4.0 | **Non** para relicenciar | Share-alike |
 | IGN / CNIG | CC BY 4.0 | Si | |
 | MITECO / IEPNB | Reutilización citando a fonte | Si | |
@@ -37,7 +38,7 @@ O caso OSM confirma que a dúbida é real: OpenStreetMap pediu ao IET unha autor
 
 ## Decisión (18/10/2026, ADR 0005)
 
-Aplícase a licenza máis restritiva. As capas da Xunta con dobre declaración publícanse como **colección separada baixo CC BY-SA 4.0**, fóra da base ODbL: estacións meteorolóxicas, calidade do aire, concellos e parroquias, Nomenclátor, espazos protexidos da Rede galega e patrimonio. Mantense a consulta á Xunta; se confirma CC BY 4.0, esas capas pasan á base ODbL.
+Aplícase a licenza máis restritiva. As capas da Xunta con dobre declaración publícanse como **colección separada baixo CC BY-SA 4.0**, fóra da base ODbL: estacións meteorolóxicas, calidade do aire, concellos e parroquias, Nomenclátor, espazos protexidos da Rede galega e patrimonio; e, desde o 01/11/2026, as doce capas do lote de mapas abertos da Xunta (`docs/sources-report-xunta.md`). Mantense a consulta á Xunta; se confirma CC BY 4.0, esas capas pasan á base ODbL.
 
 ## Opcións que se valoraron
 
