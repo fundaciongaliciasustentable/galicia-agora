@@ -1,0 +1,68 @@
+id: poboacion-estacional
+title:
+  gl: Poboación estacional dos concellos (carga de poboación por trimestre)
+  es: Población estacional de los ayuntamientos (carga de población por trimestre)
+theme: territorio
+operator:
+  name: Instituto Galego de Estatística (IGE)
+  url: https://www.ige.gal/web/mostrar_actividade_estatistica.jsp?codigo=0201001008&idioma=gl
+source_url: https://www.ige.gal/igebdt/igeapi/csv/datos/9043/0:202413:202414:202415:202416:202513:202514
+licence:
+  text_url: https://www.ige.gal/web/avisolegal.jsp
+  quote: Está prohibido desnaturalizar o sentido da información
+  verified_at: 2026-11-01
+  odbl_compatible: doubt
+  collection: cc-by-sa-4.0
+  notes: >-
+    Como indicadores-concellos: aviso legal do IGE (reutilización citando «Fonte: IGE»),
+    colección CC BY-SA 4.0 (ADR 0005), condicións da API (non modificar os datos; o valor
+    orixinal vai xunto á comparación propia). Táboas 9043 (carga, residentes, entrada, saída
+    e taxa) e 9046 (compoñentes: turismo, segundas vivendas, estudos, traballo e saúde) da
+    actividade «Carga de poboación estacional dos concellos de Galicia». Ano de referencia
+    da serie: 2025, provisional (decidido o 1/11/2026); hoxe só hai os trimestres I e II, e o
+    IGE publica o ano a en a+2. Vai tamén 2024, último ano definitivo, identificado. É unha
+    estimación con modelos, non un reconto (metodoloxía en datos/fontes/ige-poboacion-estacional).
+attribution: >-
+  Fonte: IGE, Carga de poboación estacional dos concellos de Galicia (táboas 9043 e 9046;
+  2025 provisional). Comparación con Galicia: cálculo propio da Fundación Galicia
+  Sustentable. Este produto emprega a API de datos do Instituto Galego de Estatística (IGE),
+  pero non está certificado ou aprobado polo IGE.
+update_frequency:
+  declared: P30D
+geometry: none
+output: geojson
+auth:
+  required: false
+privacy_notes: Estimacións estatísticas agregadas por concello; ningún dato persoal.
+# Annual source with provisional quarters: check monthly for new quarters.
+stale_after: P120D
+ingest:
+  every: P30D
+join:
+  layer: concellos-parroquias
+  key: codigo_ine
+  where: { nivel: concello }
+indicators:
+  - id: taxa_carga
+    label: { gl: Taxa de carga poboacional, es: Tasa de carga poblacional }
+    unit: '% dos residentes'
+    comparison: points
+    source: IGE, táboa 9043 (Carga de poboación estacional dos concellos)
+    note:
+      gl: >-
+        Carga de poboación (persoas equivalentes a tempo completo que soporta o concello) en
+        porcentaxe dos residentes, no último trimestre publicado. Valor orixinal do IGE; a
+        diferenza con Galicia (en puntos) é cálculo propio.
+      es: >-
+        Carga de población (personas equivalentes a tiempo completo que soporta el municipio)
+        en porcentaje de los residentes, en el último trimestre publicado. Valor original del
+        IGE; la diferencia con Galicia (en puntos) es cálculo propio.
+style:
+  kind: fill
+  label_field: nome
+table:
+  fields:
+    - nome
+    - taxa_carga
+    - taxa_carga_galicia
+    - taxa_carga_periodo
