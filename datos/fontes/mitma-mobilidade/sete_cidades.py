@@ -75,7 +75,7 @@ def main():
             for c in r["concellos_ine"].split():
                 zone_of[c] = r["zona_mitma"]
                 zone_members[r["zona_mitma"]].add(c)
-    aneis = json.loads((HERE / "aneis.json").read_text())
+    aneis = json.loads((HERE.parents[2] / "pipeline/layers/mobilidade-cidades/aneis.json").read_text())
     rings = {}
     for c in aneis["cidades"]:
         for ring in ("anel0", "anel1"):

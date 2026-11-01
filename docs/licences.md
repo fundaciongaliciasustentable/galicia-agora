@@ -24,6 +24,7 @@ Licenzas propias: datos derivados en **ODbL 1.0**; textos en **CC BY-NC-SA 4.0**
 | IGN / CNIG | CC BY 4.0 | Si | |
 | MITECO / IEPNB | Reutilización citando a fonte | Si | |
 | Renfe GTFS-RT | CC BY 4.0 | Si | Cita: «Origen de los datos: Renfe Operadora» |
+| MITMA mobilidade big data | Licenza de datos abertos do MITMA (3/12/2020): brutos coa mesma licenza; derivados poden ir noutra | Derivados si | Obriga «Basado en datos abiertos MITMA» con ligazón, conservar a data e «garantizar que la información esté siempre actualizada»: a capa é dun período de referencia fixo (maio de 2025) e dío coa data, porque MITMA xa non publica todos os días. Ver datos/fontes/mitma-mobilidade |
 | IGE grella | Aviso legal do portal (sen CC) | **Dúbida** | |
 | Eólica IDEG | Non declarada | Descoñecida | |
 

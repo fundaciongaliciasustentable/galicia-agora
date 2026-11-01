@@ -75,7 +75,7 @@ O patrón é coherente (entrada ás 8, saída ás 14 nun mércores; volta ás 19
 
 O domingo 4 de maio (volta da ponte do 1 de maio) substituíuse polo 1 de xuño de 2025, aínda no bloque metodolóxico 2. O nome dos ficheiros segue sendo `maio2025`.
 
-Le os 8 días filtrados (en `bruto/`, fóra do repositorio: 9 MB, uns 80 s de descarga por día con `descargar.py ... --saida bruto`), os aneis de `aneis.json` e a poboación da zonificación MITMA (`zonificacion/poblacion.csv`, só ten `NA` en zonas de Portugal e Francia). O script falla se un anel colle media zona `_AM`.
+Le os 8 días filtrados (en `bruto/`, fóra do repositorio: 9 MB, uns 80 s de descarga por día con `descargar.py ... --saida bruto`), os aneis de `pipeline/layers/mobilidade-cidades/aneis.json` e a poboación da zonificación MITMA (`zonificacion/poblacion.csv`, só ten `NA` en zonas de Portugal e Francia). O script falla se un anel colle media zona `_AM`.
 
 | Ficheiro | Contido |
 |---|---|
@@ -112,7 +112,7 @@ Entradas = orixe fóra do anel e destino dentro; saídas, o contrario; internas,
 
 ## Aneis das sete cidades (decidido o 1/11/2026)
 
-A zonificación GAU de MITMA (Grandes Áreas Urbanas) serve de punto de partida, pero xunta Vigo e Pontevedra nunha soa área de 14 concellos. Definición aprobada, en dous niveis (códigos INE en `aneis.json`):
+A zonificación GAU de MITMA (Grandes Áreas Urbanas) serve de punto de partida, pero xunta Vigo e Pontevedra nunha soa área de 14 concellos. Definición aprobada, en dous niveis (códigos INE en `pipeline/layers/mobilidade-cidades/aneis.json`):
 
 - **Anel 0:** só o concello (as sete cidades son zonas MITMA propias en todos os niveis).
 - **Anel 1:** concello + área urbana, sempre con zonas MITMA completas (que ningún bloque `_AM` mesture concellos de dentro e de fóra):

@@ -25,7 +25,7 @@ Verificación feita o 1 de novembro de 2026 con descargas reais. Cada fonte ten 
 
 Tomadas por Marcos o 1/11/2026:
 
-1. Aneis das sete cidades: anel 0 = concello; anel 1 = concello e área urbana, coa GAU de Vigo–Pontevedra partida. Lista en [`fontes/mitma-mobilidade/aneis.json`](fontes/mitma-mobilidade/aneis.json).
+1. Aneis das sete cidades: anel 0 = concello; anel 1 = concello e área urbana, coa GAU de Vigo–Pontevedra partida. Lista en [`pipeline/layers/mobilidade-cidades/aneis.json`](../pipeline/layers/mobilidade-cidades/aneis.json).
 2. Mes tipo para o día: maio de 2025 (4 mércores e 4 domingos). O domingo 4 de maio, volta da ponte, cámbiase polo 1 de xuño.
 3. Día de referencia meteorolóxico: mércores 21 de maio de 2025, un dos catro da media de MITMA (seco e suave; o 28 chegou a 35 °C e o 14 tivo choiva).
 4. Ano da poboación estacional: 2025 provisional, para coincidir coas outras capas. Hoxe só ten os trimestres I e II; o verán chegará na próxima publicación do IGE (prevista en 2027). Os trimestres que falten van baleiros e marcados.
