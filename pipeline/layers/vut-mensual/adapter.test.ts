@@ -50,6 +50,6 @@ describe('vut-mensual adapter', () => {
   it('gives flats per 1,000 residents of the 2021 census', async () => {
     const sanxenxo = (await run()).get('36051');
     expect(sanxenxo?.poboacion_2021).toBe(17622);
-    expect((sanxenxo?.valor as number[]).at(-1)).toBe(187.5);
+    expect((sanxenxo?.valor as number[] | undefined)?.at(-1)).toBe(187.5);
   });
 });

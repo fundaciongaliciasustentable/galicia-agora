@@ -26,7 +26,7 @@ async function run() {
   );
 }
 const at = (p: Record<string, unknown> | undefined, k: string, y: number) =>
-  (p?.[k] as Array<number | null>)[y - 1975];
+  (p?.[k] as Array<number | null> | undefined)?.[y - 1975];
 
 describe('nacementos-mortes adapter', () => {
   it('brings merged concellos into today’s code, exactly', async () => {
@@ -51,7 +51,7 @@ describe('nacementos-mortes adapter', () => {
     const coruna = (await run()).get('15030');
     expect(coruna?.nome).toBe('A Coruña');
     expect(at(coruna, 'valor', 2024)).toBe(52.4);
-    expect((coruna?.periodos as string[]).at(-1)).toBe('2025');
+    expect((coruna?.periodos as string[] | undefined)?.at(-1)).toBe('2025');
     expect(coruna?.provisional).toBe('2025');
   });
 });

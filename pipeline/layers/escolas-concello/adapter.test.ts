@@ -24,7 +24,7 @@ async function run() {
   );
 }
 const at = (p: Record<string, unknown> | undefined, k: string, y: number) =>
-  (p?.[k] as Array<number | null>)[y - 2005];
+  (p?.[k] as Array<number | null> | undefined)?.[y - 2005];
 
 describe('escolas-concello adapter', () => {
   it('counts the Total of centres on today’s concellos', async () => {
@@ -43,6 +43,6 @@ describe('escolas-concello adapter', () => {
     expect(pobra?.nome).toBe('A Pobra do Caramiñal');
     expect([2005, 2012, 2025].map((y) => at(pobra, 'centros', y))).toEqual([10, 9, 9]);
     expect(at(pobra, 'valor', 2025)).toBe(-1);
-    expect((pobra?.periodos as string[])[0]).toBe('2005');
+    expect((pobra?.periodos as string[] | undefined)?.[0]).toBe('2005');
   });
 });
