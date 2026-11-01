@@ -44,6 +44,9 @@ jobs:
             set net:timeout 20; set net:max-retries 1;
             echo '== login directory'; pwd;
             echo '== login directory contents'; cls -1;
+            echo '== parent directory'; cls -1 ..;
+            echo '== server root'; cls -1 /;
+            echo '== www/subdominios'; cls -1 /www/subdominios/; cls -1 ../subdominios/; cls -1 ../www/subdominios/;
             echo '== every data/catalog.json up to 5 levels, with date';
             find -d 6 . | grep 'data/catalog.json';
             quit" 2>&1 | tail -80
