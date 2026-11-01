@@ -1,6 +1,16 @@
 import { describe, expect, it } from 'vitest';
 import type { LayerDef } from './adapter.ts';
-import { cleanGeometry, esriToGeoJSON, fetchLayer, num, queryUrl, str } from './arcgis.ts';
+import {
+  cleanGeometry,
+  esriToGeoJSON,
+  fetchLayer,
+  mergeLineParts,
+  num,
+  queryUrl,
+  simplifyLine,
+  str,
+  tidyLines,
+} from './arcgis.ts';
 
 const layer = { id: 'x' } as unknown as LayerDef;
 
@@ -142,5 +152,61 @@ describe('esriToGeoJSON', () => {
     ).toBe('LineString');
     expect(esriToGeoJSON({ x: 1, y: 2 })).toEqual({ type: 'Point', coordinates: [1, 2] });
     expect(esriToGeoJSON(null)).toBeNull();
+  });
+});
+
+describe('line clean-up', () => {
+  it('chains two-point parts in any order and simplifies straight runs', () => {
+    const parts = [
+      [
+        [1, 0],
+        [2, 0],
+      ],
+      [
+        [0, 0],
+        [1, 0],
+      ],
+      [
+        [2, 0],
+        [3, 1],
+      ],
+    ];
+    expect(mergeLineParts(parts)).toEqual([
+      [
+        [0, 0],
+        [1, 0],
+        [2, 0],
+        [3, 1],
+      ],
+    ]);
+    expect(tidyLines({ type: 'MultiLineString', coordinates: parts }, 0.1)).toEqual({
+      type: 'LineString',
+      coordinates: [
+        [0, 0],
+        [2, 0],
+        [3, 1],
+      ],
+    });
+  });
+
+  it('keeps separate chains apart', () => {
+    const g = tidyLines(
+      {
+        type: 'MultiLineString',
+        coordinates: [
+          [
+            [0, 0],
+            [1, 1],
+          ],
+          [
+            [5, 5],
+            [6, 6],
+          ],
+        ],
+      },
+      0.1,
+    );
+    expect(g?.type).toBe('MultiLineString');
+    expect(simplifyLine([[0, 0]], 1)).toEqual([[0, 0]]);
   });
 });

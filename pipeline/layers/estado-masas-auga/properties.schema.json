@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "estado-masas-auga feature properties",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "codigo",
+    "nome",
+    "categoria",
+    "natureza",
+    "estado_global",
+    "estado_ecoloxico",
+    "estado_quimico"
+  ],
+  "properties": {
+    "id": { "type": "string", "pattern": "^(rio|lago|transicion|costeira|porto)-ES" },
+    "codigo": { "type": "string", "pattern": "^ES", "description": "COD_MASA" },
+    "nome": { "type": "string", "minLength": 1 },
+    "categoria": { "enum": ["rio", "lago", "transicion", "costeira", "porto"] },
+    "natureza": { "enum": ["natural", "moi modificada", "artificial", null] },
+    "estado_global": { "enum": ["bo ou mellor", "peor que bo", null] },
+    "estado_ecoloxico": {
+      "enum": ["moi bo", "bo", "bo ou superior", "moderado", "deficiente", "malo", null]
+    },
+    "estado_quimico": { "enum": ["bo", "non alcanza o bo", null] }
+  }
+}

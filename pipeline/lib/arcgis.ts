@@ -278,3 +278,96 @@ export async function fetchByFind(
   }
   return { count: c.count, results };
 }
+
+// ── Line clean-up ──────────────────────────────────────────────────────────────────────────
+// Some IDEG line layers (river water bodies) come as hundreds of two-point parts per feature,
+// which server-side generalisation cannot simplify. Parts are chained end to start and then
+// simplified with Douglas–Peucker.
+
+type Pos = number[];
+
+/** Chain line parts whose end equals another part's start (after rounding). */
+export function mergeLineParts(parts: Pos[][]): Pos[][] {
+  const key = (p: Pos) => `${p[0]},${p[1]}`;
+  const chains = parts.filter((p) => p.length >= 2).map((p) => [...p]);
+  const byStart = new Map<string, number[]>();
+  chains.forEach((c, i) => {
+    const k = key(c[0] as Pos);
+    byStart.set(k, [...(byStart.get(k) ?? []), i]);
+  });
+  const used = new Set<number>();
+  const out: Pos[][] = [];
+  // Start from chains that no other chain flows into, then from whatever is left (loops).
+  const ends = new Set(chains.map((c) => key(c[c.length - 1] as Pos)));
+  const order = chains
+    .map((_, i) => i)
+    .sort(
+      (a, b) =>
+        Number(ends.has(key(chains[a]?.[0] as Pos))) - Number(ends.has(key(chains[b]?.[0] as Pos))),
+    );
+  for (const i of order) {
+    if (used.has(i)) continue;
+    used.add(i);
+    const line = [...(chains[i] as Pos[])];
+    for (;;) {
+      const next = (byStart.get(key(line[line.length - 1] as Pos)) ?? []).find((j) => !used.has(j));
+      if (next === undefined) break;
+      used.add(next);
+      line.push(...(chains[next] as Pos[]).slice(1));
+    }
+    out.push(line);
+  }
+  return out;
+}
+
+/** Douglas–Peucker simplification in coordinate units (degrees). Keeps both ends. */
+export function simplifyLine(pts: Pos[], tolerance: number): Pos[] {
+  if (pts.length < 3) return pts;
+  const keep = new Uint8Array(pts.length);
+  keep[0] = 1;
+  keep[pts.length - 1] = 1;
+  const stack: Array<[number, number]> = [[0, pts.length - 1]];
+  while (stack.length) {
+    const [s, e] = stack.pop() as [number, number];
+    const [ax, ay] = pts[s] as [number, number];
+    const [bx, by] = pts[e] as [number, number];
+    const dx = bx - ax;
+    const dy = by - ay;
+    const len = Math.hypot(dx, dy);
+    let max = 0;
+    let idx = -1;
+    for (let i = s + 1; i < e; i++) {
+      const [px, py] = pts[i] as [number, number];
+      const d =
+        len === 0
+          ? Math.hypot(px - ax, py - ay)
+          : Math.abs(dy * px - dx * py + bx * ay - by * ax) / len;
+      if (d > max) {
+        max = d;
+        idx = i;
+      }
+    }
+    if (idx > 0 && max > tolerance) {
+      keep[idx] = 1;
+      stack.push([s, idx], [idx, e]);
+    }
+  }
+  return pts.filter((_, i) => keep[i]);
+}
+
+/** Merge and simplify a (Multi)LineString; returns a LineString when one chain is left. */
+export function tidyLines(
+  g: { type: string; coordinates: unknown } | null,
+  tolerance: number,
+): { type: string; coordinates: unknown } | null {
+  if (!g) return null;
+  let parts: Pos[][];
+  if (g.type === 'LineString') parts = [g.coordinates as Pos[]];
+  else if (g.type === 'MultiLineString') parts = g.coordinates as Pos[][];
+  else return g;
+  const lines = mergeLineParts(parts).map((l) => simplifyLine(l, tolerance));
+  if (lines.length === 0) return null;
+  return lines.length === 1
+    ? { type: 'LineString', coordinates: lines[0] }
+    : { type: 'MultiLineString', coordinates: lines };
+}

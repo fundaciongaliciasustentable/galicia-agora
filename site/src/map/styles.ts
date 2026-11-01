@@ -772,6 +772,91 @@ export function encodeLayer(layer: LayerLike, ctx: StyleContext): Encoding {
         ],
       );
     }
+    case 'estado-masas-auga': {
+      // Ecological status where given, colour scale of the Water Framework Directive.
+      const eco = [
+        'match',
+        ['get', 'estado_ecoloxico'],
+        'moi bo',
+        '#2e6b8a',
+        ['bo', 'bo ou superior'],
+        '#4a7c59',
+        'moderado',
+        '#d8b02a',
+        'deficiente',
+        '#c8872b',
+        'malo',
+        '#a64040',
+        muted,
+      ];
+      const rio = ['==', ['get', 'categoria'], 'rio'];
+      return enc(
+        [
+          base('fill', {
+            type: 'fill',
+            filter: ['!', rio],
+            paint: { 'fill-color': eco, 'fill-opacity': 0.35 },
+          }),
+          base('outline', {
+            type: 'line',
+            filter: ['!', rio],
+            paint: { 'line-color': eco, 'line-width': 0.8 },
+          }),
+          base('line', {
+            type: 'line',
+            filter: rio,
+            layout: { 'line-cap': 'round', 'line-join': 'round' },
+            paint: {
+              'line-color': eco,
+              'line-width': byZoom([
+                [7, 1.2],
+                [12, 3],
+              ]),
+            },
+          }),
+          // Chemical status below good: a dark casing on rivers.
+          base('quimico', {
+            type: 'line',
+            filter: ['all', rio, ['==', ['get', 'estado_quimico'], 'non alcanza o bo']],
+            paint: {
+              'line-color': ink,
+              'line-width': 1,
+              'line-dasharray': [1, 1.5],
+              'line-offset': 2.5,
+            },
+          }),
+          label('label', ['get', 'nome'], 11, {
+            layout: {
+              'symbol-placement': 'line',
+              'text-offset': [0, 0.8],
+              'text-anchor': 'center',
+            },
+            filter: rio,
+          }),
+        ],
+        [
+          {
+            title: T('Estado ecolóxico (plan 2021–2027)', 'Estado ecológico (plan 2021–2027)'),
+            entries: [
+              { shape: 'line', color: '#2e6b8a', label: T('Moi bo', 'Muy bueno') },
+              { shape: 'line', color: '#4a7c59', label: T('Bo', 'Bueno') },
+              { shape: 'line', color: '#d8b02a', label: T('Moderado', 'Moderado') },
+              { shape: 'line', color: '#c8872b', label: T('Deficiente', 'Deficiente') },
+              { shape: 'line', color: '#a64040', label: T('Malo', 'Malo') },
+              {
+                shape: 'dash',
+                color: ink,
+                label: T('Estado químico peor que bo', 'Estado químico peor que bueno'),
+              },
+            ],
+            note: T(
+              'Ríos como liñas; lagos, rías e costa como áreas. Só Galicia-Costa.',
+              'Ríos como líneas; lagos, rías y costa como áreas. Solo Galicia-Costa.',
+            ),
+          },
+        ],
+      );
+    }
     // ───────────────────────── Mobilidade ─────────────────────────
     case 'tren': {
       const cercanias = ['==', ['get', 'rede'], 'Cercanías'];

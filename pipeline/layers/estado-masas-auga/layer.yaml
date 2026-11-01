@@ -1,0 +1,43 @@
+id: estado-masas-auga
+title:
+  gl: Estado das masas de auga
+  es: Estado de las masas de agua
+theme: auga-mar
+operator:
+  name: Xunta de Galicia — Augas de Galicia (Plan hidrolóxico Galicia-Costa 2021–2027), servizo no IDEG
+  url: https://augasdegalicia.xunta.gal/
+source_url: https://ideg.xunta.gal/servizos/rest/services/IDE_DHGC/PHGC2021_2027_Estado/MapServer
+licence:
+  spdx: CC-BY-SA-4.0
+  text_url: https://augasdegalicia.xunta.gal/aviso-legal
+  verified_at: 2026-11-01
+  odbl_compatible: doubt
+  collection: cc-by-sa-4.0
+  notes: >-
+    Aviso legal de Augas de Galicia (reutilización con cita e sen desnaturalizar) e do IET
+    para o IDEG («compatible con CC- BY 4.0 INT»); sen confirmación escrita, aplícase a máis
+    restritiva (ADR 0005): colección CC BY-SA. Estado das masas de auga superficiais do plan
+    2021–2027 na demarcación Galicia-Costa: 412 ríos, 24 lagos e encoros, 22 de transición,
+    29 costeiras e 7 portos. O Miño-Sil (CHMS) non está. Sen as 18 masas subterráneas
+    (cubrirían todo o territorio). Os ríos chegan en centos de anacos de dous puntos por
+    masa: encadéanse e simplifícanse (Douglas–Peucker, 0,0003°, ≈ 30 m); polígonos
+    xeneralizados no servidor (0,0002–0,0003°). Valores do plan traducidos ao galego; é a
+    avaliación do plan, non medicións recentes.
+attribution: "Augas de Galicia. Plan hidrolóxico Galicia-Costa 2021–2027. Xunta de Galicia"
+update_frequency:
+  declared: static
+  measured: static
+geometry: line
+output: geojson
+auth:
+  required: false
+privacy_notes: Estado ambiental de ríos, lagos e augas costeiras; ningún dato persoal.
+stale_after: P90D
+ingest:
+  every: P30D
+style:
+  kind: line
+  color_token: --c-auga
+  label_field: nome
+table:
+  fields: [nome, categoria, estado_global, estado_ecoloxico, estado_quimico, natureza, codigo]
