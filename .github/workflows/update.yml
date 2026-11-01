@@ -144,10 +144,13 @@ jobs:
           host=$(printf %s "$FTPS_HOST" | tr -d '[:space:]' | sed -E 's#^[A-Za-z]+://##; s#/.*$##; s#:[0-9]*$##')
           dir=$(printf %s "$FTPS_DIR" | tr -d '\r\n')
           # Explicit FTPS (AUTH TLS on port 21): Dinahosting does not offer implicit FTPS (990).
+          # Uploads go to a temporary name and are renamed when complete, so a dropped
+          # connection never leaves a truncated file on the live site.
           ftp() {
             lftp -u "$FTPS_USER","$FTPS_PASSWORD" "ftp://$host" -e "
               set ftp:ssl-force true; set ftp:ssl-protect-data true; set ssl:verify-certificate true;
               set net:timeout 30; set net:max-retries 5; set net:reconnect-interval-base 10;
+              set xfer:use-temp-file yes; set xfer:temp-file-name .in.*;
               $1
               quit"
           }
@@ -158,7 +161,7 @@ jobs:
           npx tsx site/scripts/deploy-plan.ts dist deploy/remote-manifest.json deploy/files
           status=0
           if [ -n "$(ls -A deploy/files)" ]; then
-            ftp "mirror --reverse --parallel=4 --verbose=1 deploy/files/ ${dir:-.};" 2>&1 | tee deploy/mirror.log || true
+            ftp "mirror --reverse --parallel=2 --verbose=1 deploy/files/ ${dir:-.};" 2>&1 | tee deploy/mirror.log || true
             status=${PIPESTATUS[0]}
           fi
           # Manifest last, without the files that failed, so the next run retries only those.
