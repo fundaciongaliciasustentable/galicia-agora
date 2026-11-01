@@ -373,6 +373,63 @@ const STRINGS = {
     gl: 'Aínda non están publicadas as vendas das lonxas de 2025.',
     es: 'Aún no están publicadas las ventas de las lonjas de 2025.',
   },
+  sun_title: { gl: 'O día e a noite sobre Galicia', es: 'El día y la noche sobre Galicia' },
+  sun_lede: {
+    gl: 'A sombra da noite e os crepúsculos cruzando Galicia nun día que escollas. Cada concello acéndese cando sae o sol alí.',
+    es: 'La sombra de la noche y los crepúsculos cruzando Galicia en el día que elijas. Cada ayuntamiento se enciende cuando sale el sol allí.',
+  },
+  sun_map_label: {
+    gl: 'Mapa de Galicia coa luz do sol e a noite ao longo dun día. As horas de cada concello están no panel e na táboa.',
+    es: 'Mapa de Galicia con la luz del sol y la noche a lo largo de un día. Las horas de cada ayuntamiento están en el panel y en la tabla.',
+  },
+  sun_presets: { gl: 'Días sinalados', es: 'Días señalados' },
+  sun_preset_inverno: { gl: 'Inverno', es: 'Invierno' },
+  sun_preset_equinoccio: { gl: 'Equinoccio', es: 'Equinoccio' },
+  sun_preset_veran: { gl: 'Verán', es: 'Verano' },
+  sun_preset_hoxe: { gl: 'Hoxe', es: 'Hoy' },
+  sun_date: { gl: 'Data', es: 'Fecha' },
+  sun_speed_opt: { gl: 'O día en {s} s', es: 'El día en {s} s' },
+  sun_band_day: { gl: 'Día', es: 'Día' },
+  sun_band_civil: { gl: 'Crepúsculo civil', es: 'Crepúsculo civil' },
+  sun_band_nautical: { gl: 'Náutico', es: 'Náutico' },
+  sun_band_astro: { gl: 'Astronómico', es: 'Astronómico' },
+  sun_band_night: { gl: 'Noite', es: 'Noche' },
+  sun_now: {
+    gl: 'Sol sobre o horizonte en {n} de {total} concellos.',
+    es: 'Sol sobre el horizonte en {n} de {total} ayuntamientos.',
+  },
+  sun_rises: {
+    gl: 'Amence primeiro en {first} ({t1}) e último en {last} ({t2}): {m} min despois.',
+    es: 'Amanece primero en {first} ({t1}) y último en {last} ({t2}): {m} min después.',
+  },
+  sun_place: {
+    gl: '{name}: amence ás {rise} e ponse ás {set}, {light} de luz. Altura do sol agora: {elev}°.',
+    es: '{name}: amanece a las {rise} y se pone a las {set}, {light} de luz. Altura del sol ahora: {elev}°.',
+  },
+  sun_legend: {
+    gl: 'Preme nun concello para ver as súas horas. A animación vai máis amodo mentres amence ou se pon o sol nalgún concello.',
+    es: 'Pulsa en un ayuntamiento para ver sus horas. La animación va más despacio mientras amanece o se pone el sol en algún ayuntamiento.',
+  },
+  sun_curve: { gl: 'Altura do sol en {name}', es: 'Altura del sol en {name}' },
+  sun_curve_label: {
+    gl: 'Altura do sol ao longo do día en {name}: máximo de {max}° ás {time}.',
+    es: 'Altura del sol a lo largo del día en {name}: máximo de {max}° a las {time}.',
+  },
+  sun_table_caption: {
+    gl: 'Os {n} concellos, do primeiro ao último en ver o sol o {date}.',
+    es: 'Los {n} ayuntamientos, del primero al último en ver el sol el {date}.',
+  },
+  sun_col_rise: { gl: 'Amence', es: 'Amanece' },
+  sun_col_set: { gl: 'Ponse', es: 'Se pone' },
+  sun_col_light: { gl: 'Luz', es: 'Luz' },
+  sun_note: {
+    gl: 'Calculado no navegador coas ecuacións do calculador solar da NOAA (algoritmos de Meeus), sen datos externos; contrastado coa táboa da NOAA para Santiago, con menos dun minuto de diferenza. O amencer e o solpor son o momento en que o bordo de arriba do sol toca o horizonte, coa refracción media (centro do sol a −0,833°); os crepúsculos civil, náutico e astronómico rematan co sol a −6°, −12° e −18°. Horizonte ideal: as montañas e os vales adiantan o solpor e atrasan o amencer, e iso non se ve aquí. Cada concello mídese no seu punto representativo (capa perfil-concellos). Horas en hora oficial de Galicia; os días de cambio de hora teñen 23 ou 25 horas.',
+    es: 'Calculado en el navegador con las ecuaciones del calculador solar de la NOAA (algoritmos de Meeus), sin datos externos; contrastado con la tabla de la NOAA para Santiago, con menos de un minuto de diferencia. El amanecer y la puesta son el momento en que el borde superior del sol toca el horizonte, con la refracción media (centro del sol a −0,833°); los crepúsculos civil, náutico y astronómico terminan con el sol a −6°, −12° y −18°. Horizonte ideal: las montañas y los valles adelantan la puesta y retrasan el amanecer, y eso no se ve aquí. Cada ayuntamiento se mide en su punto representativo (capa perfil-concellos). Horas en hora oficial de Galicia; los días de cambio de hora tienen 23 o 25 horas.',
+  },
+  sun_missing: {
+    gl: 'Non se puideron cargar os puntos dos concellos.',
+    es: 'No se pudieron cargar los puntos de los ayuntamientos.',
+  },
   air_title: { gl: 'O aire hora a hora', es: 'El aire hora a hora' },
   air_lede: {
     gl: 'As estacións da Rede de Calidade do Aire de Galicia nas últimas 24 horas: o índice de calidade do aire de cada unha e o contaminante que o marca.',

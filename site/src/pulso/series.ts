@@ -71,6 +71,17 @@ export const SERIES: PulseMap[] = [
     },
   },
   {
+    slug: 'sol',
+    ready: true,
+    colour: '#ffd36b',
+    title: { gl: 'O día e a noite', es: 'El día y la noche' },
+    summary: {
+      gl: 'A noite e os crepúsculos cruzando Galicia, e a hora en que amence en cada concello.',
+      es: 'La noche y los crepúsculos cruzando Galicia, y la hora en que amanece en cada ayuntamiento.',
+    },
+    period: { gl: 'Calquera día', es: 'Cualquier día' },
+  },
+  {
     slug: 'aire',
     ready: true,
     colour: '#50ccaa',

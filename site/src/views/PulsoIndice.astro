@@ -27,6 +27,7 @@ const first = ready[0];
   data-show={t(lang, 'pulse_index_show')}
   data-hide={t(lang, 'pulse_index_hide')}
 >
+  <p class="px-loading" aria-hidden="true">{t(lang, 'loading')}</p>
   <iframe class="px-frame" title={first ? t(lang, 'pulse_index_frame').replace('{title}', first.title[lang]) : ''} hidden></iframe>
 
   <nav class="px-picker" id="contido" aria-labelledby="px-title">
@@ -88,6 +89,19 @@ const first = ready[0];
   }
   .px-frame.is-loaded {
     opacity: 1;
+  }
+  .px-loading {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    top: 45%;
+    width: 100%;
+    margin: 0;
+    text-align: center;
+    color: #b3b3aa;
+  }
+  .px-app.is-live:has(.px-frame:not(.is-loaded)) .px-loading {
+    display: block;
   }
   .px-picker {
     position: absolute;
