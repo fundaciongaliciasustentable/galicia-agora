@@ -50,6 +50,10 @@ jobs:
             echo '== every data/catalog.json up to 5 levels, with date';
             find -d 6 . | grep 'data/catalog.json';
             quit" 2>&1 | tail -80
+          echo '== login path with the user name replaced'
+          timeout 60 lftp -u "$FTPS_USER","$FTPS_PASSWORD" "ftp://$host" -e "
+            set ftp:ssl-force true; set ftp:ssl-protect-data true; pwd; cls -1a; quit" 2>&1 \
+            | sed "s#$FTPS_USER#<user>#g; s#$host#<host>#g"
           echo '== dates'
           timeout 240 lftp -u "$FTPS_USER","$FTPS_PASSWORD" "ftp://$host" -e "
             set ftp:ssl-force true; set ftp:ssl-protect-data true; set ssl:verify-certificate true;
