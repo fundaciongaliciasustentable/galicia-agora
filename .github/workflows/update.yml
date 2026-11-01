@@ -164,8 +164,31 @@ jobs:
             ftp "mirror --reverse --parallel=2 --verbose=1 deploy/files/ ${dir:-.};" 2>&1 | tee deploy/mirror.log || true
             status=${PIPESTATUS[0]}
           fi
+          # Check what the site serves: any staged file whose size differs (a transfer
+          # cut short) is uploaded again on its own, up to three times.
+          site=$(node -p "require('./site/site.config.json').site")
+          : > deploy/mismatch.txt
+          if [ -n "$(ls -A deploy/files)" ]; then
+            (cd deploy/files && find . -type f ! -name '.*' | sed 's#^\./##') | while read -r f; do
+              want=$(stat -c %s "deploy/files/$f")
+              got=$(curl -s -o /dev/null -w '%{size_download}' --max-time 120 -H 'Cache-Control: no-cache' "$site/${f// /%20}?v=$GITHUB_RUN_ID")
+              [ "$want" = "$got" ] || echo "$f" >> deploy/mismatch.txt
+            done
+          fi
+          for attempt in 1 2 3; do
+            [ -s deploy/mismatch.txt ] || break
+            echo "Re-uploading $(wc -l < deploy/mismatch.txt) files whose size on the site differs (attempt $attempt)"
+            : > deploy/still.txt
+            while read -r f; do
+              d=$(dirname "$f")
+              ftp "put -O '${dir:-.}/$d' 'deploy/files/$f';" >/dev/null 2>&1 || true
+              got=$(curl -s -o /dev/null -w '%{size_download}' --max-time 120 -H 'Cache-Control: no-cache' "$site/${f// /%20}?v=$GITHUB_RUN_ID")
+              [ "$got" = "$(stat -c %s "deploy/files/$f")" ] || echo "$f" >> deploy/still.txt
+            done < deploy/mismatch.txt
+            mv deploy/still.txt deploy/mismatch.txt
+          done
           # Manifest last, without the files that failed, so the next run retries only those.
-          failed=$(sed -nE 's/^mirror: (.+): Fatal error.*/\1/p' deploy/mirror.log 2>/dev/null | sort -u)
+          failed=$( { sed -nE 's/^mirror: (.+): Fatal error.*/\1/p' deploy/mirror.log 2>/dev/null; sed 's#.*/##' deploy/mismatch.txt; } | sort -u)
           npx tsx site/scripts/deploy-plan.ts --drop deploy/.deploy-manifest.json $failed
           ftp "put -O ${dir:-.} deploy/.deploy-manifest.json;"
           if [ "$status" != 0 ]; then
