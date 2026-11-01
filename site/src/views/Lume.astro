@@ -1,0 +1,356 @@
+---
+// August 2025, pass by pass: every heat focus the satellites saw over Galicia flashes when its
+// pass comes and cools to an ember, leaving the month's scar. The same figures are given as
+// text: panel, daily curve (labelled) and a table of the concellos with most detections.
+import { base, dictionary, type Lang, t } from '../i18n';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+---
+
+<div class="lu-app" data-lang={lang} data-dict={JSON.stringify(dictionary(lang))}>
+  <div class="lu-map" role="region" aria-label={t(lang, 'fire_map_label')}></div>
+  <canvas class="lu-canvas" aria-hidden="true"></canvas>
+
+  <section class="lu-panel" id="contido">
+    <a class="lu-back" href={`${base(lang)}pulso/`}>← {t(lang, 'pulse_back')}</a>
+    <h1>{t(lang, 'fire_title')}</h1>
+    <p class="lu-lede">{t(lang, 'fire_lede')}</p>
+    <p class="lu-clock" aria-live="off">--:--</p>
+    <p class="lu-now" aria-live="off"></p>
+    <div class="lu-controls">
+      <label class="lu-mode"><input type="checkbox" data-product="VIIRS S-NPP" checked /> VIIRS (375 m)</label>
+      <label class="lu-mode"><input type="checkbox" data-product="MODIS" checked /> MODIS (1 km)</label>
+    </div>
+    <div class="lu-controls">
+      <button type="button" class="lu-play" aria-pressed="false">{t(lang, 'pulse_play')}</button>
+      <label>
+        <span class="visually-hidden">{t(lang, 'pulse_speed')}</span>
+        <select class="lu-speed"></select>
+      </label>
+    </div>
+    <label class="lu-range-label">
+      <span class="visually-hidden">{t(lang, 'pulse_time')}</span>
+      <input class="lu-range" type="range" />
+    </label>
+    <p class="lu-legend">
+      <span class="lu-scale" aria-hidden="true"><span>{t(lang, 'fire_now_seen')}</span><span>{t(lang, 'fire_days_after')}</span></span>
+      {t(lang, 'fire_legend')}
+    </p>
+    <p class="lu-status" role="status">{t(lang, 'loading')}</p>
+    <details class="lu-table">
+      <summary>{t(lang, 'cities_table')}</summary>
+      <table>
+        <caption></caption>
+        <thead>
+          <tr>
+            <th scope="col">{t(lang, 'fire_col_concello')}</th>
+            <th scope="col">{t(lang, 'fire_col_count')}</th>
+            <th scope="col">{t(lang, 'fire_col_first')}</th>
+            <th scope="col">{t(lang, 'fire_col_peak')}</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </details>
+    <details class="lu-about">
+      <summary>{t(lang, 'pulse_about')}</summary>
+      <p>{t(lang, 'fire_note')}</p>
+      <p class="lu-sources"></p>
+    </details>
+  </section>
+
+  <figure class="lu-curve">
+    <figcaption>{t(lang, 'fire_curve')}</figcaption>
+    <svg role="img" preserveAspectRatio="none"></svg>
+  </figure>
+</div>
+
+<style is:global>
+  .lu-app {
+    position: relative;
+    height: calc(100dvh - 52px);
+    overflow: hidden;
+    background: #111210;
+    color: #e6e6df;
+  }
+  .lu-map,
+  .lu-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .lu-canvas {
+    pointer-events: none;
+    z-index: 1;
+  }
+  .lu-panel {
+    position: absolute;
+    z-index: 2;
+    top: 16px;
+    left: 16px;
+    width: min(360px, calc(100% - 32px));
+    max-height: calc(100% - 190px);
+    overflow-y: auto;
+    padding: 16px 18px;
+    border-radius: var(--gs-radius-card);
+    background: rgba(17, 18, 16, 0.8);
+    backdrop-filter: blur(6px);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+  }
+  .lu-back {
+    display: inline-block;
+    margin-bottom: 6px;
+    font-size: var(--gs-texto-sm);
+    color: #b3b3aa;
+  }
+  .lu-back:hover,
+  .lu-back:focus-visible {
+    color: #fff;
+  }
+  .lu-panel h1 {
+    margin: 0;
+    font-size: var(--gs-texto-xl);
+    color: #fff;
+  }
+  .lu-lede,
+  .lu-legend,
+  .lu-about,
+  .lu-table {
+    font-size: var(--gs-texto-sm);
+    color: #b3b3aa;
+    margin: 6px 0 0;
+  }
+  .lu-about summary,
+  .lu-table summary {
+    cursor: pointer;
+  }
+  .lu-sources {
+    font-size: var(--gs-texto-xs);
+  }
+  .lu-clock {
+    margin: 10px 0 0;
+    font-size: clamp(2.5rem, 7vw, 3.75rem);
+    font-weight: 700;
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+    color: #fff;
+    letter-spacing: -0.02em;
+  }
+  .lu-now {
+    margin: 4px 0 0;
+    font-variant-numeric: tabular-nums;
+    min-height: 2.8em;
+    font-size: var(--gs-texto-sm);
+  }
+  .lu-status {
+    margin: 4px 0 0;
+    font-size: var(--gs-texto-sm);
+    color: #e0a95a;
+  }
+  .lu-status:empty {
+    display: none;
+  }
+  .lu-controls {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 12px;
+    margin-top: 12px;
+  }
+  .lu-seg {
+    display: flex;
+    border: 1px solid #3a3b35;
+    border-radius: 999px;
+    padding: 2px;
+  }
+  .lu-seg button,
+  .lu-play {
+    font: inherit;
+    font-size: var(--gs-texto-sm);
+    border: 0;
+    border-radius: 999px;
+    padding: 4px 12px;
+    background: transparent;
+    color: #e6e6df;
+    cursor: pointer;
+  }
+  .lu-seg button[aria-pressed="true"] {
+    background: #e6e6df;
+    color: #111210;
+  }
+  .lu-play {
+    border: 1px solid #e6e6df;
+    min-width: 6em;
+  }
+  .lu-speed {
+    font: inherit;
+    font-size: var(--gs-texto-sm);
+    background: #1f201c;
+    color: #e6e6df;
+    border: 1px solid #3a3b35;
+    border-radius: var(--gs-radius);
+    padding: 3px 6px;
+  }
+  .lu-range-label {
+    display: block;
+    margin-top: 10px;
+  }
+  .lu-range {
+    width: 100%;
+    accent-color: #e6e6df;
+  }
+  .lu-mode {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: var(--gs-texto-sm);
+    cursor: pointer;
+  }
+  .lu-mode input {
+    width: 16px;
+    height: 16px;
+    accent-color: #e6e6df;
+  }
+  .lu-scale {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4px;
+    padding: 2px 4px;
+    border-radius: 3px;
+    font-size: var(--gs-texto-xs);
+    color: #111210;
+    background: linear-gradient(90deg, rgb(255, 236, 150), rgb(255, 120, 40) 30%, rgb(165, 20, 10) 75%, rgb(90, 12, 6));
+  }
+  .lu-scale span:first-child {
+    color: #111210;
+  }
+  .lu-scale span:last-child {
+    color: #fff;
+  }
+  .lu-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-right: 3px;
+  }
+  .lu-dot-in {
+    background: #5fd3f3;
+    margin-right: 6px;
+  }
+  .lu-table table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 6px;
+    font-variant-numeric: tabular-nums;
+    font-size: var(--gs-texto-xs);
+    color: #e6e6df;
+  }
+  .lu-table caption {
+    text-align: left;
+    color: #b3b3aa;
+    padding-bottom: 4px;
+  }
+  .lu-table th,
+  .lu-table td {
+    padding: 2px 4px;
+    border-bottom: 1px solid #2a2b26;
+    text-align: right;
+  }
+  .lu-table th:first-child,
+  .lu-table td:first-child {
+    text-align: left;
+  }
+  .lu-curve {
+    position: absolute;
+    z-index: 2;
+    left: 16px;
+    right: 64px;
+    bottom: 12px;
+    margin: 0;
+    height: 120px;
+  }
+  .lu-curve figcaption {
+    font-size: var(--gs-texto-xs);
+    color: #b3b3aa;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .lu-curve svg {
+    display: block;
+    width: 100%;
+    height: 100px;
+    cursor: ew-resize;
+    touch-action: none;
+  }
+  .lu-tick {
+    fill: #8a8a82;
+    font-size: 11px;
+    text-anchor: middle;
+  }
+  .lu-bar {
+    fill: rgba(255, 120, 40, 0.55);
+  }
+  .lu-bar.is-past {
+    fill: #ff7a3d;
+  }
+  .lu-area {
+    fill: none;
+    stroke: #ff7a3d;
+    stroke-width: 1.5;
+    vector-effect: non-scaling-stroke;
+  }
+  .lu-other {
+    fill: none;
+    stroke: rgba(230, 230, 223, 0.45);
+    stroke-width: 1;
+    stroke-dasharray: 3 3;
+    vector-effect: non-scaling-stroke;
+  }
+  .lu-playhead {
+    stroke: #fff;
+    stroke-width: 1.5;
+    vector-effect: non-scaling-stroke;
+  }
+  @media (max-width: 700px) {
+    .lu-panel {
+      top: 8px;
+      left: 8px;
+      right: 8px;
+      width: auto;
+      max-height: 48%;
+      padding: 12px 14px;
+    }
+    .lu-lede,
+    .lu-legend {
+      display: none;
+    }
+    .lu-clock {
+      margin-top: 4px;
+      font-size: 2.2rem;
+    }
+    .lu-now {
+      min-height: 0;
+    }
+    .lu-controls {
+      margin-top: 8px;
+    }
+    .lu-curve {
+      left: 8px;
+      right: 8px;
+      height: 96px;
+    }
+    .lu-curve svg {
+      height: 76px;
+    }
+  }
+</style>
+
+<script>
+  import { start } from '../pulso/lume/lume';
+  start();
+</script>

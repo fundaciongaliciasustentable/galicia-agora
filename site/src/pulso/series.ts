@@ -69,7 +69,7 @@ export const SERIES: PulseMap[] = [
   },
   {
     slug: 'lume',
-    ready: false,
+    ready: true,
     colour: '#ff7a3d',
     title: { gl: 'Focos de calor', es: 'Focos de calor' },
     summary: {
