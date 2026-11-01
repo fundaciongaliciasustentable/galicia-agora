@@ -1,0 +1,20 @@
+{
+  "layer_id": "poboacion-estacional",
+  "published_at": null,
+  "fetched_at": "2026-11-01T09:54:15.879Z",
+  "last_success_at": "2026-11-01T09:54:15.879Z",
+  "status": "fresh",
+  "consecutive_failures": 0,
+  "feature_count": 313,
+  "source_url": "https://www.ige.gal/igebdt/igeapi/csv/datos/9043/0:202413:202414:202415:202416:202513:202514",
+  "licence": "https://www.ige.gal/web/avisolegal.jsp",
+  "attribution": "Fonte: IGE, Carga de poboación estacional dos concellos de Galicia (táboas 9043 e 9046; 2025 provisional). Comparación con Galicia: cálculo propio da Fundación Galicia Sustentable. Este produto emprega a API de datos do Instituto Galego de Estatística (IGE), pero non está certificado ou aprobado polo IGE.",
+  "checksum": "sha256:f01ec9985f5ad8b7e6378261b6ba156a1ab11fa8a14b4ac7bf11d03b9cdc4b4f",
+  "last_error": null,
+  "history": [
+    {
+      "at": "2026-11-01T09:54:15.879Z",
+      "ok": true
+    }
+  ]
+}

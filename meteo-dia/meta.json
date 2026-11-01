@@ -1,0 +1,20 @@
+{
+  "layer_id": "meteo-dia",
+  "published_at": "2025-05-21T21:59:00.000Z",
+  "fetched_at": "2026-11-01T09:50:33.943Z",
+  "last_success_at": "2026-11-01T09:50:33.943Z",
+  "status": "fresh",
+  "consecutive_failures": 0,
+  "feature_count": 153,
+  "source_url": "https://servizos.meteogalicia.gal/mgrss/observacion/datosHorariosEstacions.action",
+  "licence": "https://www.meteogalicia.gal/web/aviso-legal",
+  "attribution": "Fonte: MeteoGalicia (Xunta de Galicia), observación horaria do 21 de maio de 2025.",
+  "checksum": "sha256:aa49bed8afe848d3b037bb68f09418ffeb45b9d09933c93f027e4d8a4322da8b",
+  "last_error": null,
+  "history": [
+    {
+      "at": "2026-11-01T09:50:33.943Z",
+      "ok": true
+    }
+  ]
+}

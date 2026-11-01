@@ -1,0 +1,20 @@
+{
+  "layer_id": "focos-agosto-2025",
+  "published_at": "2026-10-10T13:23:51.000Z",
+  "fetched_at": "2026-11-01T09:50:29.281Z",
+  "last_success_at": "2026-11-01T09:50:29.281Z",
+  "status": "fresh",
+  "consecutive_failures": 0,
+  "feature_count": 10427,
+  "source_url": "https://firms.modaps.eosdis.nasa.gov/data/country/",
+  "licence": "CC-BY-SA-4.0",
+  "attribution": "NASA FIRMS (LANCE, NASA/GSFC/ESDIS), VIIRS S-NPP e MODIS, agosto de 2025; concello: IET, Xunta de Galicia. Cálculo propio da Fundación Galicia Sustentable.",
+  "checksum": "sha256:39d2622276fd7006b0c478a450ed50a845c7cba99c0fe0b8d6828b3153938f48",
+  "last_error": null,
+  "history": [
+    {
+      "at": "2026-11-01T09:50:29.281Z",
+      "ok": true
+    }
+  ]
+}
