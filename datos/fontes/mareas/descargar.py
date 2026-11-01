@@ -35,8 +35,8 @@ import urllib.request
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
-UA = ("GaliciaAgora/0.1 (+https://github.com/fundaciongaliciasustentable/"
-      "galicia-agora; galiciasustentable@galiciasustentable.org)")
+UA = ("MapasGaliciaSustentable/0.1 (+https://mapas.galiciasustentable.org; "
+      "galiciasustentable@galiciasustentable.org)")
 ROOT = "https://s3.waw3-1.cloudferro.com/mdl-native-03/native/"
 DATASET = ("INSITU_IBI_PHYBGCWAV_DISCRETE_MYNRT_013_033/"
            "cmems_obs-ins_ibi_phybgcwav_mynrt_na_irr_202311")

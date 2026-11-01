@@ -14,7 +14,7 @@
   - unha capa `fresh` pasa a `stale` cando a última descarga boa supera `stale_after` (por defecto 3 × frecuencia);
   - alerta cando leva máis de tres ciclos sen éxito;
   - historial de intentos dos últimos 7 días para `/estado`.
-- HTTP: User-Agent `GaliciaAgora/<versión> (+<url do repo>; <correo de contacto>)`, tres reintentos con backoff exponencial (respecta `Retry-After`), ETag/Last-Modified.
+- HTTP: User-Agent `MapasGaliciaSustentable/<versión> (+<url do repo>; <correo de contacto>)`, tres reintentos con backoff exponencial (respecta `Retry-After`), ETag/Last-Modified.
 
 ## Pendente
 Ningún. Contacto do User-Agent: galiciasustentable@galiciasustentable.org (decisión do 18/10/2026; pode cambiarse por un enderezo específico máis adiante).

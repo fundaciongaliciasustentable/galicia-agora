@@ -1,10 +1,10 @@
-# Auditoría de utilidade: que datos faltan en Galicia Agora
+# Auditoría de utilidade: que datos faltan en Mapas Galicia Sustentable
 
 Data: 24/10/2026. Base: as 21 capas publicadas, os informes de fontes (`sources-report.md`, `sources-report-1b.md`), o backlog (`roadmap.md`) e o encargo.
 
 ## 1. Diagnóstico
 
-Galicia Agora ten hoxe 21 capas. Están ben cubertos o tempo e o aire (6 capas), a mobilidade (6) e o territorio administrativo e ambiental (7). Faltan os temas que máis lle importan á fundación e a quen vive no rural:
+Mapas Galicia Sustentable ten hoxe 21 capas. Están ben cubertos o tempo e o aire (6 capas), a mobilidade (6) e o territorio administrativo e ambiental (7). Faltan os temas que máis lle importan á fundación e a quen vive no rural:
 
 | Tema | Capas hoxe | Baleiro principal |
 |---|---|---|

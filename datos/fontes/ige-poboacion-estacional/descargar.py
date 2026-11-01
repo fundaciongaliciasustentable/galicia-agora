@@ -19,7 +19,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 BASE = "https://www.ige.gal/igebdt/igeapi"
-UA = "galicia-agora-fase0 (galiciasustentable@galiciasustentable.org)"
+UA = "mapas-galicia-sustentable-fase0 (galiciasustentable@galiciasustentable.org)"
 # 9041/9042: overnight and daytime load with flows; 9044/9045: their components.
 TAXOAS = {
     "9043": "carga e fluxos de entrada e saída",

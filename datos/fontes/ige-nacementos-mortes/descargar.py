@@ -26,7 +26,7 @@ from pathlib import Path
 
 IGE = "https://www.ige.gal/igebdt/igeapi"
 INE = "https://www.ine.es/jaxiT3/files/t/es/csv_bdsc/{t}.csv"
-UA = "galicia-agora-fase0 (galiciasustentable@galiciasustentable.org)"
+UA = "mapas-galicia-sustentable-fase0 (galiciasustentable@galiciasustentable.org)"
 TABLES = {"57": "nacementos", "30": "defuncions"}
 INE_TABLES = {"6525": "nacementos", "6562": "defuncions"}
 PAUSE = 1.5

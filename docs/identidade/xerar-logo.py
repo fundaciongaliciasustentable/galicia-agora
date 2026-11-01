@@ -1,4 +1,4 @@
-"""Xera o símbolo Constelación de Galicia Agora a partir dos 313 concellos.
+"""Xera o símbolo Constelación de Mapas Galicia Sustentable a partir dos 313 concellos.
 
 Uso: python3 docs/identidade/xerar-logo.py data-out/perfil-concellos/data.geojson
 
@@ -8,7 +8,7 @@ Escribe en docs/identidade/ e site/public/. Dúas variantes:
 
 Tamén escribe site/src/components/BrandMark.astro co símbolo da cabeceira. Despois, o PNG para iOS:
   node -e "require('sharp')('docs/identidade/icona-fondo.svg',{density:300}).resize(180,180).png().toFile('site/public/apple-touch-icon.png')"
-En ambas, o punto de Santiago late en laranxa: «agora».
+En ambas, o punto de Santiago late en laranxa.
 """
 
 import json
@@ -95,7 +95,7 @@ def grella(cols, size=64):
 
 def svg(body, size, color=VERDE, extra=''):
     return (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {size} {size}" color="{color}">'
-            f'<title>Galicia Agora</title>{extra}{body}</svg>\n')
+            f'<title>Mapas Galicia Sustentable</title>{extra}{body}</svg>\n')
 
 
 def write(path, text):
@@ -116,17 +116,17 @@ write(OUT_PUB / 'favicon.svg', svg(fav, 64, extra=dark))
 # Fonte para os PNG (fondo verde nato, símbolo claro): apple-touch-icon e iconas de manifesto.
 write(OUT_DOC / 'icona-fondo.svg',
       f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="-30 -30 260 260" color="{VERDE_CLARO}">'
-      f'<title>Galicia Agora</title><rect x="-30" y="-30" width="260" height="260" fill="{VERDE}"/>{sim}</svg>\n')
+      f'<title>Mapas Galicia Sustentable</title><rect x="-30" y="-30" width="260" height="260" fill="{VERDE}"/>{sim}</svg>\n')
 
 FONT = "'Source Sans 3', system-ui, sans-serif"
 for name, fg, bg in [('logo', '#1a1a17', None), ('logo-escuro', '#f2f2ec', VERDE)]:
     col = VERDE if bg is None else VERDE_CLARO
-    rect = f'<rect width="640" height="200" fill="{bg}"/>' if bg else ''
+    rect = f'<rect width="940" height="200" fill="{bg}"/>' if bg else ''
     write(OUT_DOC / f'{name}.svg',
-          f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 200"><title>Galicia Agora</title>{rect}'
+          f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 200"><title>Mapas Galicia Sustentable</title>{rect}'
           f'<g color="{col}">{sim}</g>'
           f'<text x="216" y="114" font-family="{FONT}" font-size="64" fill="{fg}" letter-spacing="-1">'
-          f'<tspan font-weight="400">galicia</tspan><tspan font-weight="700" dx="14">agora</tspan></text>'
+          f'<tspan font-weight="400">mapas</tspan><tspan font-weight="700" dx="14">galicia sustentable</tspan></text>'
           f'<text x="219" y="148" font-family="{FONT}" font-size="16" fill="{fg}" opacity=".72" letter-spacing="2.4">'
           f'DATOS ABERTOS · EN DIRECTO</text></svg>\n')
 

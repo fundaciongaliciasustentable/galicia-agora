@@ -1,7 +1,7 @@
 # Fixtures — historial-queimados
 
 Real responses from Copernicus EFFIS (WFS 2.0, "EFFIS - OGC/WFS Test Service"), recorded with the
-GaliciaAgora User-Agent.
+project User-Agent.
 
 - `wfs_capabilities.xml`: GetCapabilities recorded on 2026-10-18 (07:46 UTC) from
   https://maps.effis.emergency.copernicus.eu/effis?service=WFS&request=GetCapabilities

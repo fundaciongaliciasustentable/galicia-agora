@@ -1,4 +1,4 @@
-# Galicia Agora — Apache config for the hosting folder www/subdominios/mapas,
+# Mapas Galicia Sustentable — Apache config for the hosting folder www/subdominios/mapas,
 # served as https://mapas.galiciasustentable.org. Every block is guarded with
 # <IfModule> so a missing module never turns the site into a 500 error.
 

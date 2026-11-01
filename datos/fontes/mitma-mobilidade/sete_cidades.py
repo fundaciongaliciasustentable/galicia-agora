@@ -30,7 +30,7 @@ from collections import defaultdict
 from pathlib import Path
 
 HERE = Path(__file__).parent
-UA = "galicia-agora-fase0 (galiciasustentable@galiciasustentable.org)"
+UA = "mapas-galicia-sustentable-fase0 (galiciasustentable@galiciasustentable.org)"
 POB_URL = "https://movilidad-opendata.mitma.es/zonificacion/poblacion.csv"
 
 

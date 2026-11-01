@@ -38,8 +38,8 @@ from collections import Counter
 from datetime import datetime, timezone
 from pathlib import Path
 
-UA = ("GaliciaAgora/0.1 (+https://github.com/fundaciongaliciasustentable/"
-      "galicia-agora; galiciasustentable@galiciasustentable.org)")
+UA = ("MapasGaliciaSustentable/0.1 (+https://mapas.galiciasustentable.org; "
+      "galiciasustentable@galiciasustentable.org)")
 OVERPASS = "https://overpass-api.de/api/interpreter"
 ELECTRA = "https://energia.serviciosmin.gob.es/Electra/descargarExcelProduccion.aspx"
 BBOX = (-9.35, 41.8, -6.7, 43.8)  # lon_min, lat_min, lon_max, lat_max

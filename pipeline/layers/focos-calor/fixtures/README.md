@@ -1,6 +1,6 @@
 # Fixtures — focos-calor
 
-Real responses recorded on 2026-10-18 (07:44 UTC) with the GaliciaAgora User-Agent, unmodified.
+Real responses recorded on 2026-10-18 (07:44 UTC) with the project User-Agent, unmodified.
 
 | File | Source URL |
 |---|---|

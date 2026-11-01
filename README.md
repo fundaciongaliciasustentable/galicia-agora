@@ -1,4 +1,4 @@
-# Galicia Agora
+# Mapas Galicia Sustentable
 
 Galicia como é agora mesmo: un mapa público con datos abertos de fontes oficiais, universitarias, comunitarias e comerciais con licenza aberta. Cada capa nomea o operador orixinal e a hora de publicación do dato. Sen rexistro, sen cookies, sen analítica. Nada se vende.
 

@@ -1,6 +1,6 @@
 # Licenza dos datos derivados
 
-A base de datos derivada que publica Galicia Agora distribúese baixo a **Open Data Commons Open Database License (ODbL) v1.0**:
+A base de datos derivada que publica Mapas Galicia Sustentable distribúese baixo a **Open Data Commons Open Database License (ODbL) v1.0**:
 https://opendatacommons.org/licenses/odbl/1-0/
 
 Quen reutilice a base derivada debe atribuíla e compartir as súas adaptacións baixo a mesma licenza.

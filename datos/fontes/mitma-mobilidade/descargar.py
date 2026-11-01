@@ -25,7 +25,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 BASE = "https://movilidad-opendata.mitma.es"
-UA = "galicia-agora-fase0 (galiciasustentable@galiciasustentable.org)"
+UA = "mapas-galicia-sustentable-fase0 (galiciasustentable@galiciasustentable.org)"
 GALICIA = ("15", "27", "32", "36")
 NIVEL_COL = {"municipios": "municipio_mitma", "distritos": "distrito_mitma", "GAU": "gau_mitma"}
 

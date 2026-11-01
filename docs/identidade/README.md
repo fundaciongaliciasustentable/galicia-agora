@@ -1,12 +1,12 @@
-# Identidade de Galicia Agora
+# Identidade de Mapas Galicia Sustentable
 
-Símbolo «Constelación»: os 313 concellos de Galicia como puntos (punto representativo da capa `perfil-concellos`), co tamaño segundo o número de lugares. O punto de Santiago, en laranxa, é o «agora».
+Símbolo «Constelación»: os 313 concellos de Galicia como puntos (punto representativo da capa `perfil-concellos`), co tamaño segundo o número de lugares. O punto de Santiago, en laranxa, marca o presente.
 
 | Ficheiro | Uso |
 | --- | --- |
 | `simbolo.svg`, `simbolo-claro.svg` | Símbolo completo, para 48 px ou máis. `color` define a cor dos puntos. |
 | `simbolo-grella.svg` | Versión en grella hexagonal (9 columnas) para tamaños pequenos; é a da cabeceira do sitio. |
-| `logo.svg`, `logo-escuro.svg` | Símbolo + «galicia **agora**» + «DATOS ABERTOS · EN DIRECTO». Texto en Source Sans 3, non convertido a trazos. |
+| `logo.svg`, `logo-escuro.svg` | Símbolo + «mapas **galicia sustentable**» + «DATOS ABERTOS · EN DIRECTO». Texto en Source Sans 3, non convertido a trazos. |
 | `icona-fondo.svg` | Fonte do `apple-touch-icon.png`. |
 | `../../site/public/favicon.svg` | Grella de 6 columnas; cambia a verde claro en modo escuro. |
 

@@ -23,7 +23,7 @@ import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
 
-UA = "GaliciaAgora/0.1 (+https://github.com/fundaciongaliciasustentable/galicia-agora; galiciasustentable@galiciasustentable.org)"
+UA = "MapasGaliciaSustentable/0.1 (+https://mapas.galiciasustentable.org; galiciasustentable@galiciasustentable.org)"
 BASE = "https://www.ine.es/intercensal/"
 PROVINCES = ("15", "27", "32", "36")
 

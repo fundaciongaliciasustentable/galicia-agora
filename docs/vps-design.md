@@ -59,4 +59,4 @@ Se na proba de despregue Dinahosting non admite peticións HTTP Range, o mapa ba
 1. Aprobación da opción e do custo.
 2. Que a FGS cree a conta no provedor. Eu non podo crear contas nin pagar.
 3. Credenciais FTPS de Dinahosting como segredos do repositorio (`FTPS_HOST`, `FTPS_USER`, `FTPS_PASSWORD`, `FTPS_DIR`), tamén para o despregue do sitio.
-4. O subdominio ou dominio onde vai vivir Galicia Agora.
+4. O subdominio ou dominio onde vai vivir Mapas Galicia Sustentable.

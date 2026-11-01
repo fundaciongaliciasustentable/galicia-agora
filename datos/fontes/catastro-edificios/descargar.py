@@ -38,7 +38,7 @@ from collections import Counter
 from datetime import datetime, timezone
 from pathlib import Path
 
-UA = ("GaliciaAgora/0.1 (+https://github.com/fundaciongaliciasustentable/galicia-agora; "
+UA = ("MapasGaliciaSustentable/0.1 (+https://mapas.galiciasustentable.org; "
       "galiciasustentable@galiciasustentable.org)")
 BASE = "https://www.catastro.hacienda.gob.es/INSPIRE/buildings"
 TOP = f"{BASE}/ES.SDGC.BU.atom.xml"

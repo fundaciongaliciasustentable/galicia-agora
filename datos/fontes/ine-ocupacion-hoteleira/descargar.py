@@ -33,7 +33,7 @@ from collections import Counter, defaultdict
 from datetime import datetime, timezone
 from pathlib import Path
 
-UA = "galicia-agora-fase0 (galiciasustentable@galiciasustentable.org)"
+UA = "mapas-galicia-sustentable-fase0 (galiciasustentable@galiciasustentable.org)"
 PAUSE = 1.2
 INE_CSV = "https://www.ine.es/jaxiT3/files/t/es/csv_bdsc/{t}.csv"
 TEMPUS = "https://servicios.ine.es/wstempus/js/ES"

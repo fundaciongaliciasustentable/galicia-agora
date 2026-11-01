@@ -26,7 +26,7 @@ from collections import Counter
 from datetime import datetime, timezone
 from pathlib import Path
 
-UA = "galicia-agora-fase0 (galiciasustentable@galiciasustentable.org)"
+UA = "mapas-galicia-sustentable-fase0 (galiciasustentable@galiciasustentable.org)"
 BASE = "https://firms.modaps.eosdis.nasa.gov/data/country"
 PRODUTOS = {"viirs-snpp": "VIIRS S-NPP (375 m)", "modis": "MODIS Aqua/Terra (1 km)"}
 BBOX = (-9.35, 41.8, -6.7, 43.8)  # lon_min, lat_min, lon_max, lat_max

@@ -27,7 +27,7 @@ from datetime import date, datetime, timezone
 from pathlib import Path
 
 BASE = "https://servizos.meteogalicia.gal/mgrss/observacion"
-UA = "galicia-agora-fase0 (galiciasustentable@galiciasustentable.org)"
+UA = "mapas-galicia-sustentable-fase0 (galiciasustentable@galiciasustentable.org)"
 
 
 def get_json(url):

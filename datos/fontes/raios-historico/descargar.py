@@ -30,7 +30,7 @@ from collections import Counter, defaultdict
 from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 
-UA = ("GaliciaAgora/0.1 (+https://github.com/fundaciongaliciasustentable/galicia-agora; "
+UA = ("MapasGaliciaSustentable/0.1 (+https://mapas.galiciasustentable.org; "
       "galiciasustentable@galiciasustentable.org)")
 BASE = "https://servizos.meteogalicia.gal/mgrss/observacion/jsonRaios.action"
 DOC = "https://meteo-estaticos.xunta.gal/datosred/infoweb/meteo/docs/rss/JSON_RaiosHistorico_gl.pdf"
