@@ -87,6 +87,17 @@ const STRINGS = {
   portrait_nav: { gl: 'Retrato', es: 'Retrato' },
   pulse_nav: { gl: 'Pulso', es: 'Pulso' },
   pulse_title: { gl: 'O pulso de Galicia', es: 'El pulso de Galicia' },
+  pulse_index_title: { gl: 'O pulso de Galicia', es: 'El pulso de Galicia' },
+  pulse_index_lede: {
+    gl: 'Mapas animados dun día de Galicia, cada un co seu reloxo: como se move, onde está a xente, que tempo fai. Cada un di de onde saen os datos e que non mostran.',
+    es: 'Mapas animados de un día de Galicia, cada uno con su reloj: cómo se mueve, dónde está la gente, qué tiempo hace. Cada uno dice de dónde salen los datos y qué no muestran.',
+  },
+  pulse_back: { gl: 'Todos os pulsos', es: 'Todos los pulsos' },
+  pulse_index_soon: { gl: 'en preparación', es: 'en preparación' },
+  pulse_index_note: {
+    gl: 'Os mapas respectan a preferencia de movemento reducido do teu sistema e levan unha táboa coas mesmas cifras.',
+    es: 'Los mapas respetan la preferencia de movimiento reducido de tu sistema y llevan una tabla con las mismas cifras.',
+  },
   pulse_lede: {
     gl: 'Todos os trens e autobuses públicos dun día, segundo os horarios oficiais. Compara un mércores cun domingo.',
     es: 'Todos los trenes y autobuses públicos de un día, según los horarios oficiales. Compara un miércoles con un domingo.',
@@ -139,7 +150,47 @@ const STRINGS = {
     gl: 'Aínda non hai datos de horarios publicados.',
     es: 'Aún no hay datos de horarios publicados.',
   },
-  cities_nav: { gl: 'Cidades', es: 'Ciudades' },
+  moves_title: { gl: 'Galicia en movemento', es: 'Galicia en movimiento' },
+  moves_lede: {
+    gl: 'As viaxes entre concellos dun mércores e dun domingo medios de maio de 2025, hora a hora. Cada sentido vai polo seu carril.',
+    es: 'Los viajes entre ayuntamientos de un miércoles y un domingo medios de mayo de 2025, hora a hora. Cada sentido va por su carril.',
+  },
+  moves_map_label: {
+    gl: 'Mapa de Galicia con partículas que viaxan entre concellos. As cifras están no panel e na táboa.',
+    es: 'Mapa de Galicia con partículas que viajan entre ayuntamientos. Las cifras están en el panel y en la tabla.',
+  },
+  moves_now: {
+    gl: 'Nesta hora: {n} viaxes entre concellos.',
+    es: 'En esta hora: {n} viajes entre ayuntamientos.',
+  },
+  moves_legend: {
+    gl: 'Cada punto son 100 viaxes. Van en liña curva do centro dunha zona ao doutra, a unha velocidade esquemática: non son traxectos reais.',
+    es: 'Cada punto son 100 viajes. Van en línea curva del centro de una zona al de otra, a una velocidad esquemática: no son trayectos reales.',
+  },
+  moves_curve: {
+    gl: 'Viaxes entre concellos por hora (raiado: o outro día)',
+    es: 'Viajes entre ayuntamientos por hora (rayado: el otro día)',
+  },
+  moves_curve_label: {
+    gl: 'Viaxes entre concellos por hora o {dia} medio; máximo de {max} ás {hour}.',
+    es: 'Viajes entre ayuntamientos por hora el {dia} medio; máximo de {max} a las {hour}.',
+  },
+  moves_table_caption: {
+    gl: 'As 20 relacións con máis viaxes no {dia} medio (os dous sentidos sumados).',
+    es: 'Las 20 relaciones con más viajes en el {dia} medio (los dos sentidos sumados).',
+  },
+  moves_col_pair: { gl: 'Entre', es: 'Entre' },
+  moves_col_km: { gl: 'km', es: 'km' },
+  moves_col_day: { gl: 'Viaxes ao día', es: 'Viajes al día' },
+  moves_col_peak: { gl: 'Hora punta', es: 'Hora punta' },
+  moves_note: {
+    gl: 'Datos de telefonía móbil do Ministerio de Transportes (estudos básicos por municipios): media de catro mércores (7, 14, 21 e 28 de maio de 2025) e catro domingos (11, 18 e 25 de maio e 1 de xuño). Contan viaxes, non persoas, e só de residentes en España. Móstranse os pares de zonas con polo menos 50 viaxes ao día, que suman o 97 % das viaxes entre zonas; quedan fóra as viaxes dentro dunha mesma zona e as que entran ou saen de Galicia. O ministerio agrupa moitos concellos rurais en zonas: a viaxe sae do centro do grupo, non do concello. A curva e a velocidade son un esquema: só a hora de saída e os extremos veñen dos datos.',
+    es: 'Datos de telefonía móvil del Ministerio de Transportes (estudios básicos por municipios): media de cuatro miércoles (7, 14, 21 y 28 de mayo de 2025) y cuatro domingos (11, 18 y 25 de mayo y 1 de junio). Cuentan viajes, no personas, y solo de residentes en España. Se muestran los pares de zonas con al menos 50 viajes al día, que suman el 97 % de los viajes entre zonas; quedan fuera los viajes dentro de una misma zona y los que entran o salen de Galicia. El ministerio agrupa muchos municipios rurales en zonas: el viaje sale del centro del grupo, no del municipio. La curva y la velocidad son un esquema: solo la hora de salida y los extremos vienen de los datos.',
+  },
+  moves_missing: {
+    gl: 'Aínda non están publicados os datos de viaxes entre concellos.',
+    es: 'Aún no están publicados los datos de viajes entre ayuntamientos.',
+  },
   cities_title: {
     gl: 'Entradas e saídas das sete cidades',
     es: 'Entradas y salidas de las siete ciudades',

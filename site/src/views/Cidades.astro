@@ -2,7 +2,7 @@
 // Trips into and out of the seven cities through a mean Wednesday and Sunday (May 2025).
 // Each city breathes with its running balance in % of its residents; particles stand for
 // trips. The same figures are given as text: panel, small multiples (labelled) and a table.
-import { dictionary, type Lang, t } from '../i18n';
+import { base, dictionary, type Lang, t } from '../i18n';
 
 interface Props {
   lang: Lang;
@@ -15,6 +15,7 @@ const { lang } = Astro.props;
   <canvas class="ci-canvas" aria-hidden="true"></canvas>
 
   <section class="ci-panel" id="contido">
+    <a class="ci-back" href={`${base(lang)}pulso/`}>← {t(lang, 'pulse_back')}</a>
     <h1>{t(lang, 'cities_title')}</h1>
     <p class="ci-lede">{t(lang, 'cities_lede')}</p>
     <p class="ci-clock" aria-live="off">--:--</p>
@@ -107,6 +108,16 @@ const { lang } = Astro.props;
     background: rgba(17, 18, 16, 0.8);
     backdrop-filter: blur(6px);
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+  }
+  .ci-back {
+    display: inline-block;
+    margin-bottom: 6px;
+    font-size: var(--gs-texto-sm);
+    color: #b3b3aa;
+  }
+  .ci-back:hover,
+  .ci-back:focus-visible {
+    color: #fff;
   }
   .ci-panel h1 {
     margin: 0;
@@ -345,6 +356,6 @@ const { lang } = Astro.props;
 </style>
 
 <script>
-  import { start } from '../cidades/cidades';
+  import { start } from '../pulso/cidades/cidades';
   start();
 </script>

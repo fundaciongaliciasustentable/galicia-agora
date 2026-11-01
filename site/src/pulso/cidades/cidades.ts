@@ -7,9 +7,9 @@
 // Data: the mobilidade-cidades layer (MITMA, May 2025), served from this site.
 
 import type { Map as MlMap } from 'maplibre-gl';
-import { asset } from '../paths.ts';
-import { clock } from '../pulso/engine.ts';
-import { fill, loadStyle } from '../pulso/pulso.ts';
+import { asset } from '../../paths.ts';
+import { clock } from '../engine.ts';
+import { fill, loadStyle } from '../pulso.ts';
 import {
   DAY,
   type DayKind,

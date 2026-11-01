@@ -1,7 +1,7 @@
 ---
 // The pulse of public transport: every scheduled train and bus of one day over a dark map,
 // with the day's curve of vehicles running. Figures are also given as text (summary, counter).
-import { dictionary, type Lang, t } from '../i18n';
+import { base, dictionary, type Lang, t } from '../i18n';
 
 interface Props {
   lang: Lang;
@@ -14,6 +14,7 @@ const { lang } = Astro.props;
   <canvas class="pu-canvas" aria-hidden="true"></canvas>
 
   <section class="pu-panel" id="contido">
+    <a class="pu-back" href={`${base(lang)}pulso/`}>← {t(lang, 'pulse_back')}</a>
     <h1>{t(lang, 'pulse_title')}</h1>
     <p class="pu-lede">{t(lang, 'pulse_lede')}</p>
     <p class="pu-clock" aria-live="off">--:--</p>
@@ -84,6 +85,16 @@ const { lang } = Astro.props;
     background: rgba(17, 18, 16, 0.78);
     backdrop-filter: blur(6px);
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+  }
+  .pu-back {
+    display: inline-block;
+    margin-bottom: 6px;
+    font-size: var(--gs-texto-sm);
+    color: #b3b3aa;
+  }
+  .pu-back:hover,
+  .pu-back:focus-visible {
+    color: #fff;
   }
   .pu-panel h1 {
     margin: 0;

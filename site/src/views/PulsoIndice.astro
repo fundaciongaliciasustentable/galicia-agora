@@ -1,0 +1,125 @@
+---
+// /pulso/: index of the pulse series (series.ts). Old shared links to the transport pulse
+// (/pulso/#t=…&d=…&m=…) are sent on to /pulso/transporte/ with their hash.
+import { base, type Lang, t } from '../i18n';
+import { SERIES } from '../pulso/series';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const root = `${base(lang)}pulso/`;
+---
+
+<script is:inline define:vars={{ dest: `${root}transporte/` }}>
+  if (/(^#|&)(t|d|m)=/.test(window.location.hash)) window.location.replace(dest + window.location.hash);
+</script>
+
+<main id="contido" class="px-index">
+  <header class="px-head">
+    <h1>{t(lang, 'pulse_index_title')}</h1>
+    <p>{t(lang, 'pulse_index_lede')}</p>
+  </header>
+  <ol class="px-grid">
+    {
+      SERIES.map((m) => (
+        <li class:list={['px-card', { 'is-soon': !m.ready }]} style={`--px-accent: ${m.colour}`}>
+          {m.ready ? (
+            <a href={`${root}${m.slug}/`}>
+              <h2>{m.title[lang]}</h2>
+              <p class="px-sum">{m.summary[lang]}</p>
+              <p class="px-period">{m.period[lang]}</p>
+            </a>
+          ) : (
+            <div>
+              <h2>{m.title[lang]}</h2>
+              <p class="px-sum">{m.summary[lang]}</p>
+              <p class="px-period">
+                {m.period[lang]} · <span class="px-soon">{t(lang, 'pulse_index_soon')}</span>
+              </p>
+            </div>
+          )}
+        </li>
+      ))
+    }
+  </ol>
+  <p class="px-note">{t(lang, 'pulse_index_note')}</p>
+</main>
+
+<style>
+  .px-index {
+    background: #111210;
+    color: #e6e6df;
+    min-height: calc(100dvh - 52px);
+    padding: 40px 16px 56px;
+  }
+  .px-head,
+  .px-grid,
+  .px-note {
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .px-head h1 {
+    margin: 0;
+    font-size: var(--gs-texto-3xl);
+    color: #fff;
+  }
+  .px-head p {
+    margin: 8px 0 0;
+    max-width: 62ch;
+    color: #b3b3aa;
+  }
+  .px-grid {
+    list-style: none;
+    padding: 0;
+    margin-top: 32px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+  }
+  .px-card > a,
+  .px-card > div {
+    display: block;
+    height: 100%;
+    padding: 18px 20px 20px;
+    border-radius: var(--gs-radius-card);
+    background: #1a1b18;
+    border-top: 3px solid var(--px-accent);
+    color: inherit;
+    text-decoration: none;
+  }
+  .px-card > a:hover,
+  .px-card > a:focus-visible {
+    background: #22231f;
+  }
+  .px-card h2 {
+    margin: 0;
+    font-size: var(--gs-texto-xl);
+    color: #fff;
+  }
+  .px-card > a h2 {
+    text-decoration: underline;
+    text-decoration-color: var(--px-accent);
+    text-underline-offset: 4px;
+  }
+  .px-sum {
+    margin: 8px 0 0;
+  }
+  .px-period {
+    margin: 10px 0 0;
+    font-size: var(--gs-texto-sm);
+    color: #b3b3aa;
+  }
+  .is-soon > div {
+    opacity: 0.6;
+  }
+  .px-soon {
+    color: var(--px-accent);
+  }
+  .px-note {
+    margin-top: 32px;
+    font-size: var(--gs-texto-sm);
+    color: #b3b3aa;
+  }
+</style>
