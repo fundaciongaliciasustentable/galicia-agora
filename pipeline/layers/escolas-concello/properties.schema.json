@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "escolas-concello feature properties",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["codigo_ine", "nome", "periodos", "centros", "valor"],
+  "properties": {
+    "codigo_ine": { "type": "string", "pattern": "^\\d{5}$" },
+    "nome": { "type": "string", "minLength": 1 },
+    "periodos": { "type": "array", "items": { "type": "string", "pattern": "^\\d{4}$" } },
+    "centros": { "type": "array", "items": { "type": ["integer", "null"], "minimum": 0 } },
+    "valor": { "type": "array", "items": { "type": ["integer", "null"] } }
+  }
+}

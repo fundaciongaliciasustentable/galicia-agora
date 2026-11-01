@@ -1,0 +1,46 @@
+id: escolas-concello
+title:
+  gl: Centros de ensino por concello desde 2005
+  es: Centros de enseñanza por ayuntamiento desde 2005
+theme: servizos
+operator:
+  name: Instituto Galego de Estatística (IGE)
+  url: https://www.ige.gal/igebdt/selector.jsp?COD=1653
+source_url: https://www.ige.gal/igebdt/igeapi/csv/datos/1653
+licence:
+  text_url: https://www.ige.gal/web/avisolegal.jsp
+  quote: "Está prohibido desnaturalizar o sentido da información. Debe citarse a fonte"
+  verified_at: 2026-11-01
+  odbl_compatible: doubt
+  collection: cc-by-sa-4.0
+  notes: >-
+    Aviso legal do IGE (reutilización citando «Fonte: IGE: https://www.ige.gal» e sen
+    desnaturalizar), como as outras táboas do IGE do proxecto. Táboa 1653, centros de réxime
+    xeral por concello, só a fila Total (os tipos de ensinanza cambian de contido sen nota).
+    2005 ata o último ano publicado; non hai serie por concello antes de 2005 nin datas de
+    apertura ou peche de cada escola. Un CRA conta como un centro. Públicos e privados xuntos;
+    fóra conservatorios, idiomas e artes. Harmonizado aos 313 concellos de hoxe sumando os
+    fusionados. Valor do mapa: centros de diferenza co primeiro ano (cálculo propio).
+    Verificación en datos/fontes/centros-educativos-historico.
+attribution: >-
+  Fonte: IGE: https://www.ige.gal, Ensinanza non universitaria (táboa 1653). Diferenza con
+  2005: cálculo propio da Fundación Galicia Sustentable. Este produto emprega a API de datos
+  do Instituto Galego de Estatística (IGE), pero non está certificado ou aprobado polo IGE.
+update_frequency:
+  declared: P365D
+geometry: none
+output: geojson
+auth:
+  required: false
+privacy_notes: Número de centros por concello e ano; ningún dato persoal.
+stale_after: P400D
+ingest:
+  every: P30D
+# Lives on its own /pulso/ page; the main map does not draw it (SERIES_LAYERS).
+style:
+  kind: fill
+  label_field: nome
+table:
+  fields:
+    - nome
+    - codigo_ine
