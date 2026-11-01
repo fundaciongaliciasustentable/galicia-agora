@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "sendas-paisaxe feature properties",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "nome", "tipo", "lonxitude_km", "concello_inicio", "concello_fin"],
+  "properties": {
+    "id": { "type": "string", "pattern": "^(itinerario-\\d+|litoral-\\d+)$" },
+    "nome": { "type": "string", "minLength": 1 },
+    "tipo": {
+      "enum": [
+        "Itinerario panorámico",
+        "Itinerario patrimonial",
+        "Itinerario patrimonial (BIC)",
+        "Itinerario natural",
+        "Senda Litoral (faros)",
+        "Camiño do Litoral (etapa)"
+      ]
+    },
+    "lonxitude_km": {
+      "type": ["number", "null"],
+      "minimum": 0,
+      "description": "LONXITUDE ou KM da fonte"
+    },
+    "concello_inicio": {
+      "type": ["string", "null"],
+      "description": "Só nas etapas do Camiño do Litoral"
+    },
+    "concello_fin": {
+      "type": ["string", "null"],
+      "description": "Só nas etapas do Camiño do Litoral"
+    }
+  }
+}

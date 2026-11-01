@@ -1,0 +1,43 @@
+id: sendas-paisaxe
+title:
+  gl: Sendas e itinerarios da paisaxe
+  es: Sendas e itinerarios del paisaje
+theme: territorio
+operator:
+  name: Xunta de Galicia (Instituto de Estudos do Territorio / IDEG)
+  url: https://mapas.xunta.gal
+source_url: https://ideg.xunta.gal/servizos/rest/services/sendas
+licence:
+  spdx: CC-BY-SA-4.0
+  text_url: https://mapas.xunta.gal/gl/aviso-legal
+  verified_at: 2026-11-01
+  odbl_compatible: doubt
+  collection: cc-by-sa-4.0
+  notes: >-
+    Dobre licenza (ADR 0005): IET «compatible con CC BY 4.0» / abertos.xunta.gal CC BY-SA
+    4.0; aplícase a máis restritiva ata confirmación escrita. Dous servizos ArcGIS REST:
+    sendas/sendas/MapServer/0 (266 itinerarios de interese paisaxístico: 25 panorámicos,
+    38 patrimoniais, 38 patrimoniais BIC, 109 naturais e 56 da Senda Litoral dos faros) e
+    sendas/Camiño_do_Litoral/MapServer/0 (52 etapas, ~1.370 km). Liñas xeneralizadas no
+    servidor con maxAllowableOffset = 0,0001° (≈ 10 m). A lonxitude é a que dá a fonte
+    (LONXITUDE ou KM) e ás veces non coincide co trazado. Non se publican a pendente media
+    (AVG_SLOPE, sen unidade indicada) nin as fichas PDF e fotos (só nomes de ficheiro, sen
+    enderezo verificado).
+attribution: © Instituto de Estudos do Territorio. Xunta de Galicia
+update_frequency:
+  declared: static
+  measured: static
+geometry: line
+output: geojson
+auth:
+  required: false
+privacy_notes: Trazados de rutas a pé; ningún dato persoal.
+stale_after: P90D
+ingest:
+  every: P30D
+style:
+  kind: line
+  color_token: --c-senda
+  label_field: nome
+table:
+  fields: [nome, tipo, lonxitude_km, concello_inicio, concello_fin]

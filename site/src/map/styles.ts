@@ -1532,6 +1532,89 @@ export function encodeLayer(layer: LayerLike, ctx: StyleContext): Encoding {
         ],
       );
     }
+    case 'sendas-paisaxe': {
+      const tipo = ['get', 'tipo'];
+      const etapa = ['==', tipo, 'Camiño do Litoral (etapa)'];
+      const c = [
+        'match',
+        tipo,
+        ['Camiño do Litoral (etapa)', 'Senda Litoral (faros)'],
+        '#2e6b8a',
+        'Itinerario natural',
+        '#6b8f47',
+        'Itinerario panorámico',
+        '#b8860b',
+        color,
+      ];
+      return enc(
+        [
+          base('etapas', {
+            type: 'line',
+            filter: etapa,
+            layout: { 'line-cap': 'round', 'line-join': 'round' },
+            paint: {
+              'line-color': c,
+              'line-width': byZoom([
+                [7, 1.6],
+                [13, 4],
+              ]),
+            },
+          }),
+          // Dashed so the routes read as paths over roads and the coastal stages.
+          base('itinerarios', {
+            type: 'line',
+            filter: ['!', etapa],
+            layout: { 'line-join': 'round' },
+            paint: {
+              'line-color': c,
+              'line-width': byZoom([
+                [7, 1],
+                [13, 2.5],
+              ]),
+              'line-dasharray': [2, 1.5],
+            },
+          }),
+          label('label', ['get', 'nome'], 12, {
+            layout: {
+              'symbol-placement': 'line',
+              'text-offset': [0, 0.8],
+              'text-anchor': 'center',
+            },
+          }),
+        ],
+        [
+          {
+            entries: [
+              {
+                shape: 'line',
+                color: '#2e6b8a',
+                label: T('Camiño do Litoral (etapas)', 'Camiño do Litoral (etapas)'),
+              },
+              {
+                shape: 'dash',
+                color: '#2e6b8a',
+                label: T('Senda Litoral dos faros', 'Senda Litoral de los faros'),
+              },
+              {
+                shape: 'dash',
+                color: '#6b8f47',
+                label: T('Itinerario natural', 'Itinerario natural'),
+              },
+              {
+                shape: 'dash',
+                color: '#b8860b',
+                label: T('Itinerario panorámico', 'Itinerario panorámico'),
+              },
+              {
+                shape: 'dash',
+                color,
+                label: T('Itinerario patrimonial', 'Itinerario patrimonial'),
+              },
+            ],
+          },
+        ],
+      );
+    }
     case 'patrimonio': {
       const c = [
         'match',
