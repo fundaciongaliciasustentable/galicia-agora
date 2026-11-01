@@ -8,6 +8,8 @@
 // (price quantiles, categories present); `_h` is the age in hours that the
 // client adds to time-stamped features (see TIME_FIELD).
 
+import { NDVI_STOPS } from '../../../pipeline/satelite/ndvi.ts';
+
 interface LayerLike {
   id: string;
   geometry: string;
@@ -263,19 +265,37 @@ export function encodeLayer(layer: LayerLike, ctx: StyleContext): Encoding {
     pulse: pulseIds,
   });
 
-  if (layer.id === 'satelite-mes' && layer.archives?.length) {
+  if ((layer.id === 'satelite-mes' || layer.id === 'ndvi-mes') && layer.archives?.length) {
     // Satellite month: one archive (the latest month, z8–z13), smooth when overzoomed.
     const note = monthNote(layer);
+    const ndvi = layer.id === 'ndvi-mes';
     return enc(
       [
         {
           id: `${layer.id}__raster-0`,
           source: archiveSourceId(layer.id, 0),
           type: 'raster',
-          paint: { 'raster-opacity': 0.9, 'raster-resampling': 'linear' },
+          paint: { 'raster-opacity': ndvi ? 0.85 : 0.9, 'raster-resampling': 'linear' },
         },
       ],
-      note ? [{ note }] : [],
+      ndvi
+        ? [
+            {
+              title: T('Índice de vexetación (NDVI)', 'Índice de vegetación (NDVI)'),
+              ramp: {
+                colors: NDVI_STOPS.map(([, c]) => c),
+                labels: [
+                  T('< 0: auga', '< 0: agua'),
+                  T('0,4', '0,4'),
+                  T('1: vexetación densa', '1: vegetación densa'),
+                ],
+              },
+              ...(note ? { note } : {}),
+            },
+          ]
+        : note
+          ? [{ note }]
+          : [],
     );
   }
 

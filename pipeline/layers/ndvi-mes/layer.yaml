@@ -1,0 +1,80 @@
+id: ndvi-mes
+title:
+  gl: Vexetación desde o satélite (NDVI), mes a mes
+  es: Vegetación desde el satélite (NDVI), mes a mes
+theme: territorio
+operator:
+  name: Comisión Europea e ESA (Copernicus Sentinel-2)
+  url: https://dataspace.copernicus.eu/explore-data/data-collections/sentinel-data/sentinel-2
+source_url: https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a
+licence:
+  text_url: https://ewds.climate.copernicus.eu/licences/ec-sentinel
+  quote: 'users shall have a free, full and open access to Copernicus Sentinel Data'
+  verified_at: 2026-11-01
+  odbl_compatible: true
+  collection: odbl
+  notes: >-
+    Aviso legal dos datos Copernicus Sentinel (rev. 1). Se se modifican, a nota é
+    «Contains modified Copernicus Sentinel data [Year]», que a interface dá en galego co ano
+    do mes que se mostra. A colección do catálogo de Earth Search (Element84) enlaza o mesmo
+    aviso legal da ESA. Escenas Sentinel-2 L2A en COG públicos de AWS Open Data
+    (sentinel-cogs), sen conta. Mapas Galicia Sustentable fai a composición mensual
+    (mediana sen nubes) e serve as teselas desde o seu propio servidor. A imaxe recórtase
+    co contorno de Galicia do IGN (WFS INSPIRE de unidades administrativas, «CC BY 4.0
+    ign.es», en pipeline/satelite/galicia-ign.geojson), non cos polígonos do IET, para que
+    a capa siga na colección ODbL.
+attribution: Contén datos Copernicus Sentinel modificados [ano] · Contorno de Galicia © IGN (CC BY 4.0)
+update_frequency:
+  declared: P5D
+  measured: P30D
+  schedule: '0 3 3 * *'
+stale_after: P70D
+ingest:
+  every: P31D
+  workflow: .github/workflows/satelite.yml
+geometry: raster
+output: pmtiles
+auth:
+  required: false
+privacy_notes: Imaxe de satélite a 20 m por píxel; non se distinguen persoas nin vehículos.
+context:
+  - label:
+      gl: Como se fai
+      es: Cómo se hace
+    value: Mediana das escenas máis limpas de cada mes, a 20 m
+    source: Sentinel-2 L2A (Earth Search, Element84)
+    source_url: https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a
+    note:
+      gl: >-
+        Para cada cadro MGRS que cobre Galicia escóllense ata oito escenas do mes coa menor
+        nubosidade. Quítanse nubes, sombras de nubes e cirros coa clasificación da propia
+        escena (SCL) e cada píxel toma a mediana do que queda. Resolución de 20 m: desde o
+        zoom 14 o mapa amplía as teselas do 13. Onde ningunha escena do mes viu o chan sen
+        nubes queda un oco transparente; non se enche con meses anteriores.
+      es: >-
+        Para cada cuadro MGRS que cubre Galicia se eligen hasta ocho escenas del mes con
+        menor nubosidad. Se quitan nubes, sombras de nubes y cirros con la clasificación de la
+        propia escena (SCL) y cada píxel toma la mediana de lo que queda. Resolución de 20 m:
+        desde el zoom 14 el mapa amplía las teselas del 13. Donde ninguna escena del mes vio el
+        suelo sin nubes queda un hueco transparente; no se rellena con meses anteriores.
+  - label:
+      gl: Que mide
+      es: Qué mide
+    value: NDVI = (NIR − vermello) / (NIR + vermello), bandas B08 e B04
+    source: Sentinel-2 L2A (Earth Search, Element84)
+    source_url: https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a
+    note:
+      gl: >-
+        Índice de vexetación de diferenza normalizada, de −1 a 1. Por debaixo de 0, auga; de 0
+        a 0,2, chan espido, rocha ou cidade; de 0,2 a 0,5, pasto, mato ou cultivo; por riba de
+        0,6, vexetación densa e vigorosa. Calcúlase en cada escena e tómase a mediana do mes.
+        Cambia coa estación: compárese o mesmo mes de anos distintos.
+      es: >-
+        Índice de vegetación de diferencia normalizada, de −1 a 1. Por debajo de 0, agua; de 0
+        a 0,2, suelo desnudo, roca o ciudad; de 0,2 a 0,5, pasto, matorral o cultivo; por
+        encima de 0,6, vegetación densa y vigorosa. Se calcula en cada escena y se toma la
+        mediana del mes. Cambia con la estación: compárese el mismo mes de años distintos.
+style:
+  kind: raster
+table:
+  fields: [mes]
