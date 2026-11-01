@@ -1,4 +1,4 @@
-# 0008 — Capas que gardan o seu propio histórico
+# 0010 — Capas que gardan o seu propio histórico
 
 - Estado: proposta (2026-11-01)
 
