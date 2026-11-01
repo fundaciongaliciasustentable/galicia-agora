@@ -139,6 +139,61 @@ const STRINGS = {
     gl: 'Aínda non hai datos de horarios publicados.',
     es: 'Aún no hay datos de horarios publicados.',
   },
+  cities_nav: { gl: 'Cidades', es: 'Ciudades' },
+  cities_title: {
+    gl: 'Entradas e saídas das sete cidades',
+    es: 'Entradas y salidas de las siete ciudades',
+  },
+  cities_lede: {
+    gl: 'Viaxes que entran e saen de cada cidade hora a hora, nun mércores e nun domingo medios de maio de 2025. Cada cidade mídese contra os seus residentes.',
+    es: 'Viajes que entran y salen de cada ciudad hora a hora, en un miércoles y un domingo medios de mayo de 2025. Cada ciudad se mide contra sus residentes.',
+  },
+  cities_map_label: {
+    gl: 'Mapa das sete cidades galegas con partículas que entran e saen. As cifras están no panel e na táboa.',
+    es: 'Mapa de las siete ciudades gallegas con partículas que entran y salen. Las cifras están en el panel y en la tabla.',
+  },
+  cities_ring: { gl: 'Ámbito', es: 'Ámbito' },
+  cities_ring0: { gl: 'Concello', es: 'Concello' },
+  cities_ring1: { gl: 'Área urbana', es: 'Área urbana' },
+  cities_legend: {
+    gl: 'Cada punto é o 0,1 % dos residentes: amarelo entra, azul sae. O aro mide a xente de máis (ou de menos) respecto ás 00:00.',
+    es: 'Cada punto es el 0,1 % de los residentes: amarillo entra, azul sale. El aro mide la gente de más (o de menos) respecto a las 00:00.',
+  },
+  cities_now: {
+    gl: 'Agora entran {in} e saen {out} viaxes por hora nas sete cidades.',
+    es: 'Ahora entran {in} y salen {out} viajes por hora en las siete ciudades.',
+  },
+  cities_curves: {
+    gl: 'Xente de máis respecto ás 00:00, en % dos residentes (raiado: o outro día)',
+    es: 'Gente de más respecto a las 00:00, en % de los residentes (rayado: el otro día)',
+  },
+  cities_curve_label: {
+    gl: '{city}: máximo de {max} % ás {hour}.',
+    es: '{city}: máximo de {max} % a las {hour}.',
+  },
+  cities_curve_label_neg: {
+    gl: '{city}: non gaña xente en todo o día; mínimo de {min} % ás {hour}.',
+    es: '{city}: no gana gente en todo el día; mínimo de {min} % a las {hour}.',
+  },
+  cities_table: { gl: 'Táboa', es: 'Tabla' },
+  cities_table_caption: {
+    gl: '{ambito}, {dia} medio. Viaxes por día; presenza máxima = maior saldo acumulado desde as 00:00.',
+    es: '{ambito}, {dia} medio. Viajes por día; presencia máxima = mayor saldo acumulado desde las 00:00.',
+  },
+  cities_col_city: { gl: 'Cidade', es: 'Ciudad' },
+  cities_col_res: { gl: 'Residentes', es: 'Residentes' },
+  cities_col_in: { gl: 'Entradas', es: 'Entradas' },
+  cities_col_out: { gl: 'Saídas', es: 'Salidas' },
+  cities_col_peak: { gl: 'Presenza máxima', es: 'Presencia máxima' },
+  cities_col_hour: { gl: 'Hora', es: 'Hora' },
+  cities_note: {
+    gl: 'Datos de telefonía móbil do Ministerio de Transportes (estudos básicos por municipios): media de catro mércores (7, 14, 21 e 28 de maio de 2025) e catro domingos (11, 18 e 25 de maio e 1 de xuño; o 4 de maio, volta da ponte, queda fóra). Contan viaxes, non persoas, e só de residentes en España. Entrada é unha viaxe que empeza fóra e acaba dentro. O «Concello» é o termo municipal; a «Área urbana» suma os concellos contiguos (a partir das áreas urbanas do ministerio; a de Vigo e Pontevedra pártese en dúas). Cada cidade mídese en % dos seus residentes: non comparar volumes. Ourense case non gaña xente de día porque o seu polo de emprego (San Cibrao das Viñas, O Pereiro de Aguiar) queda fóra do ámbito. Desde xullo de 2025 o ministerio só publica semanas soltas e cambiou o método, por iso o período é fixo.',
+    es: 'Datos de telefonía móvil del Ministerio de Transportes (estudios básicos por municipios): media de cuatro miércoles (7, 14, 21 y 28 de mayo de 2025) y cuatro domingos (11, 18 y 25 de mayo y 1 de junio; el 4 de mayo, vuelta del puente, queda fuera). Cuentan viajes, no personas, y solo de residentes en España. Entrada es un viaje que empieza fuera y acaba dentro. El «Concello» es el término municipal; el «Área urbana» suma los municipios contiguos (a partir de las áreas urbanas del ministerio; la de Vigo y Pontevedra se parte en dos). Cada ciudad se mide en % de sus residentes: no comparar volúmenes. Ourense casi no gana gente de día porque su polo de empleo (San Cibrao das Viñas, O Pereiro de Aguiar) queda fuera del ámbito. Desde julio de 2025 el ministerio solo publica semanas sueltas y cambió el método, por eso el periodo es fijo.',
+  },
+  cities_missing: {
+    gl: 'Aínda non están publicados os datos das cidades.',
+    es: 'Aún no están publicados los datos de las ciudades.',
+  },
 } as const;
 
 export type Key = keyof typeof STRINGS;

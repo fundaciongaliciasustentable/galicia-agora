@@ -7,6 +7,7 @@ Mapa público de Galicia con datos abertos. Promotor: Fundación Galicia Sustent
 Fase 1 en curso (aprobada o 18/10/2026 para as capas que non precisan VPS). Backlog (fases 2–5) só documentado en `docs/roadmap.md`.
 
 - Capas feitas (21): estacions-meteo, calidade-aire, raios, avisos-aemet, avisos-meteogalicia, focos-calor, perimetros-queimados, caudais-rios, tren, buses-xunta, gasolineiras, puntos-recarga, bicis-arteixo, aeroportos, concellos-parroquias, indicadores-concellos, cobertura-banda-larga, sismos-recentes, rede-natura, espazos-naturais-galicia, patrimonio.
+- Mapas animados (serie inspirada no Pulso; fase 0 en `datos/FONTES.md`): /cidades/ feita (capa estática mobilidade-cidades, MITMA maio de 2025). Pendentes: Galicia en movemento, meteoroloxía hora a hora, focos de calor de agosto de 2025, poboación estacional.
 - Capas por concello (`geometry: none` + `join` + `indicators`): debúxanse sobre os polígonos de concellos-parroquias; comparación con Galicia como índice (escala en proporcións, log2) ou diferenza en puntos, sempre co valor orixinal ao lado.
 - Pendentes: zonas de produción (Intecmar), avións e buques (VPS de Dinahosting, acceso SSH pendente; buques sen termos de AISStream), condicionais de `docs/sources-report-1b.md` (METAR, boias Copernicus, BiciCoruña, satélites CelesTrak, antenas OpenCelliD, cámaras DGT).
 - Despregue: `update.yml` despregará por FTPS cando existan os segredos `FTPS_*`.
