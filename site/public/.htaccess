@@ -17,6 +17,12 @@
   AddType text/javascript .mjs
 </IfModule>
 
+<IfModule mod_deflate.c>
+  # The data layers are plain-text GeoJSON and JSON of up to a few MB (construcion-edificios
+  # goes from 4.7 MB to 1.2 MB); PMTiles, fonts and images are compressed already.
+  AddOutputFilterByType DEFLATE text/html text/css text/javascript application/json application/geo+json image/svg+xml
+</IfModule>
+
 <IfModule mod_headers.c>
   # Only resources from this origin may load. Report-only until it has been
   # checked on the published site; then rename the header to enforce it.
