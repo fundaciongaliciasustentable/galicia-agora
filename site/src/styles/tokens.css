@@ -97,6 +97,7 @@
   --c-moluscos: #6b4c8a;
   --c-inundacion: #1f4e8c;
   --c-humidal: #3d7a6a;
+  --c-infancia: #c8872b;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -148,6 +149,7 @@
     --c-moluscos: #a58cc4;
     --c-inundacion: #7fa8e0;
     --c-humidal: #7cc4ad;
+    --c-infancia: #e0a95a;
   }
 }
 
@@ -199,4 +201,5 @@
   --c-moluscos: #a58cc4;
   --c-inundacion: #7fa8e0;
   --c-humidal: #7cc4ad;
+  --c-infancia: #e0a95a;
 }

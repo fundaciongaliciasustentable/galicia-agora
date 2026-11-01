@@ -1629,6 +1629,53 @@ export function encodeLayer(layer: LayerLike, ctx: StyleContext): Encoding {
           },
         ],
       );
+    case 'centros-infancia': {
+      const ini = ['get', 'iniciativa'];
+      const c = ['match', ini, 'publica', color, 'social', '#2e6b8a', '#a89bb8'];
+      const escola = ['==', ['get', 'tipo'], 'Escola infantil'];
+      return enc(
+        [
+          base('circle', {
+            type: 'circle',
+            paint: {
+              'circle-radius': zoomCase(
+                escola,
+                [
+                  [6, 2.5],
+                  [12, 6],
+                ],
+                [
+                  [6, 1.8],
+                  [12, 4.5],
+                ],
+              ),
+              'circle-color': ['case', escola, c, halo],
+              'circle-stroke-color': ['case', escola, halo, c],
+              'circle-stroke-width': ['case', escola, 1, 1.6],
+            },
+          }),
+          label('label', ['get', 'nome'], 12),
+        ],
+        [
+          {
+            entries: [
+              { shape: 'dot', color, size: 9, label: T('Pública', 'Pública') },
+              {
+                shape: 'dot',
+                color: '#2e6b8a',
+                size: 9,
+                label: T('Iniciativa social', 'Iniciativa social'),
+              },
+              { shape: 'dot', color: '#a89bb8', size: 9, label: T('Privada', 'Privada') },
+            ],
+            note: T(
+              'Cheo, escola infantil; baleiro, PAI, ludoteca ou espazo infantil.',
+              'Lleno, escuela infantil; vacío, PAI, ludoteca o espacio infantil.',
+            ),
+          },
+        ],
+      );
+    }
     case 'distancia-servizos': {
       const stops: Array<[number, string]> = [
         [0, CHEAP_DEAR[0]],

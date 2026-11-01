@@ -1,0 +1,54 @@
+id: centros-infancia
+title:
+  gl: Escolas infantís e centros de infancia
+  es: Escuelas infantiles y centros de infancia
+theme: servizos
+operator:
+  name: Xunta de Galicia — Consellería de Política Social (RUEPSS)
+  url: https://benestar.xunta.es/XiacWeb/
+source_url: https://abertos.xunta.gal/catalogo/saude-servicios-sociais/-/dataset/0298/centros-para-infancia
+licence:
+  spdx: CC-BY-SA-4.0
+  text_url: https://abertos.xunta.gal/catalogo/saude-servicios-sociais/-/dataset/0298/centros-para-infancia
+  quote: "Creative Commons BY SA 4.0"
+  verified_at: 2026-11-01
+  odbl_compatible: doubt
+  collection: cc-by-sa-4.0
+  notes: >-
+    Licenza indicada na ficha do conxunto 0298 en abertos.xunta.gal (CC BY-SA 4.0).
+    Compatibilidade coa ODbL en dúbida: colección CC BY-SA (ADR 0005). Ficheiro único
+    https://ficheiros-web.xunta.gal/abertos/servizos_sociais/centros_infancia.kml (575 centros:
+    507 escolas infantís, 59 PAI, 8 ludotecas e 1 espazo infantil; ~1,7 MB) con Last-Modified e
+    ETag; a hora de publicación é o Last-Modified (05/10/2026 na descarga do 01/11/2026). Mesmo
+    formato ca centros-maiores. A fonte non dá prazas nin idades.
+attribution: "Xunta de Galicia. Consellería de Política Social, centros de infancia (RUEPSS; abertos.xunta.gal, conxunto 0298)"
+update_frequency:
+  declared: P30D
+geometry: point
+output: geojson
+auth:
+  required: false
+privacy_notes: >-
+  Retíranse os correos (Mail, Correo; moitos son contas persoais de Gmail), o teléfono, o
+  horario e as instalacións. A entidade titular publícase só cando é unha organización (mesma
+  regra ca centros-maiores); cando é unha persoa física ou non se recoñece (84 centros en
+  novembro de 2026, sobre todo escolas infantís privadas pequenas), queda baleira. O nome do
+  centro é o rexistrado no RUEPSS.
+stale_after: P45D
+ingest:
+  every: P7D
+style:
+  kind: circle
+  color_token: --c-infancia
+  label_field: nome
+table:
+  fields:
+    - nome
+    - tipo
+    - iniciativa
+    - entidade
+    - concello
+    - enderezo
+    - cp
+    - servizos
+    - ligazon_ruepss

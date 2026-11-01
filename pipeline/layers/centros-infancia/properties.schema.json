@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "centros-infancia feature properties",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "nome",
+    "tipo",
+    "iniciativa",
+    "entidade",
+    "concello",
+    "codigo_ine",
+    "enderezo",
+    "cp",
+    "servizos",
+    "ligazon_ruepss"
+  ],
+  "properties": {
+    "id": { "type": "string", "minLength": 1, "description": "id do Placemark (código RUEPSS)" },
+    "nome": { "type": "string", "minLength": 1 },
+    "tipo": { "type": "string", "minLength": 1 },
+    "iniciativa": { "enum": ["publica", "privada", "social"] },
+    "entidade": { "type": ["string", "null"], "description": "Titular só se é unha organización" },
+    "concello": { "type": "string" },
+    "codigo_ine": { "type": ["string", "null"], "pattern": "^(15|27|32|36)\\d{3}$" },
+    "enderezo": { "type": "string" },
+    "cp": { "type": ["string", "null"], "pattern": "^\\d{5}$" },
+    "servizos": { "type": ["string", "null"] },
+    "ligazon_ruepss": { "type": ["string", "null"], "pattern": "^https://ruepss\\.xunta\\.gal/" }
+  }
+}

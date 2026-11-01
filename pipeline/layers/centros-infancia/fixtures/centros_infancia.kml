@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<atom:author>
+		<atom:name>Xunta de Galicia</atom:name>
+	</atom:author>
+	<atom:link href="https://benestar.xunta.es/XiacWeb/" rel="related"/>
+	<name>Centros de benestar</name>
+	<open>1</open>
+	<description>575 centros de benestar da área de infancia</description>
+
+	<Style id="TemaXunta">
+		<IconStyle>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/shapes/schools.png</href>
+			</Icon>
+		</IconStyle>
+		<LineStyle>
+			<color>00B67F06</color>
+			<width>4</width>
+		</LineStyle>
+		<PolyStyle>
+			<color>92E09E00</color>
+		</PolyStyle>
+		<LabelStyle>
+			<color>FFFFFFFF</color>
+		</LabelStyle>
+		<BalloonStyle>
+			<bgColor>FFB67F06</bgColor>
+			<textColor>FFFFFFFF</textColor>
+
+			<text><![CDATA[
+				<style type="text/css">ul li{list-style-type:none;}</style>
+				<p><strong>$[name]</strong><br />
+					<em>$[description]</em></p>
+				<p><strong>Contacto:</strong>
+				<ul>
+					<li><strong>$[Enderezo/displayName]:</strong></li>
+					<p>$[Enderezo]<br/>$[CodigoPostal] $[Concello]<br/>$[Provincia]</p>
+					<li><strong>$[Telefono/displayName]:</strong> $[Telefono]</li>
+					<li>$[Correo]</li>
+				</ul>
+				<p><strong>Horario:</strong> $[Horario]</p>
+				<p><strong>Instalacións:</strong> $[Instalacions]</p>
+				<p><strong>Servizos:</strong> $[Servizos]</p>
+			]]></text>
+		</BalloonStyle>
+	</Style>
+
+	<ScreenOverlay>
+		<name>Xunta de Galicia</name>
+		<visibility>1</visibility>
+		<Icon>
+			<href>http://www.xunta.es/tema-portal-xunta/images/logoXuntaPe.png</href>
+		</Icon>
+		<overlayXY x="0.1" xunits="fraction" y="1.1" yunits="fraction"/>
+		<screenXY x="0.01" xunits="fraction" y="1" yunits="fraction"/>
+		<rotationXY x="0" xunits="fraction" y="0" yunits="fraction"/>
+		<size x="0" xunits="fraction" y="0" yunits="fraction"/>
+	</ScreenOverlay>
+
+	<Folder id="acoruna">
+		<name>A Coruña</name>
+		<open>1</open>
+ 	<description>233 centros de benestar na provincia</description>
+         <Placemark id="E3025C1">
+            <name>XARDIN DE INFANCIA RAIOLA</name>
+            <description>ESCOLA INFANTIL</description>
+            <ExtendedData>
+               <Data name="Mail">
+                  <displayName>Correo electrónico</displayName>
+                  <value>redactado@example.invalid</value>
+               </Data>
+               <Data name="Correo">
+                  <displayName>Correo electrónico</displayName>
+                  <value><![CDATA[<a href="mailto:redactado@example.invalid" style="color:#FFF;">Correo electrónico</a><br />]]></value>
+               </Data>
+               <Data name="Web">
+                  <displayName>web RUEPSS</displayName>
+                  <value>https://ruepss.xunta.gal/XiacWeb/centros/publico/aCentroPublico.do?{actionForm.id_cent}=217413</value>
+               </Data>
+               <Data name="Enderezo">
+                  <displayName>Enderezo</displayName>
+                  <value>R/ RAIOLA, Nº 2</value>
+               </Data>
+               <Data name="Concello">
+                  <displayName>Concello</displayName>
+                  <value>SANTIAGO DE COMPOSTELA</value>
+               </Data>
+               <Data name="CodigoPostal">
+                  <displayName>Código Postal</displayName>
+                  <value>15702</value>
+               </Data>
+               <Data name="Provincia">
+                  <displayName>Provincia</displayName>
+                  <value>CORUÑA (A)</value>
+               </Data>
+               <Data name="Telefono">
+                  <displayName>Teléfono</displayName>
+                  <value>000000000</value>
+               </Data>
+               <Data name="Horario">
+                  <displayName>Horario</displayName>
+                  <value>DE LUNS A VENRES, DE 7:45 A 17:00 AGÁS PERÍODOS VACACIONAIS DE NADAL, ENTROIDO, SEMANA SANTA  DE 07:45 A 15:45. XULLO DE 07:45 A 16:30. PECHADO DÍA ENSINO, 24 E 31 DECEMBRO, MES DE AGOSTO.</value>
+               </Data>
+               <Data name="Servizos">
+                  <displayName>Servizos do centro</displayName>
+                  <value>servizo de comedor externo/catering</value>
+               </Data>
+               <Data name="Instalacions">
+                  <displayName>Instalacións do centro</displayName>
+                  <value>sala de usos multiples, xardin/patio exterior</value>
+               </Data>
+               <Data name="Entidade">
+                  <displayName>Entidade</displayName>
+                  <value>ASOCIACION PAIS DO XARDIN DE INFANCIA RAIOLA</value>
+               </Data>
+               <Data name="Iniciativa_entidade">
+                  <displayName>Iniciativa da entidade</displayName>
+                  <value>INICIATIVA SOCIAL</value>
+               </Data>
+            </ExtendedData>
+            <Point>
+               <coordinates>-8.535827,42.861046</coordinates>
+            </Point>
+            <styleUrl>#TemaXunta</styleUrl>
+         </Placemark>
+<Placemark id="E443C1">
+            <name>PUNTO DE ATENCION A INFANCIA DE LOUSAME</name>
+            <description>PUNTOS DE ATENCIÓN Á INFANCIA (PAI)</description>
+            <ExtendedData>
+               <Data name="Mail">
+                  <displayName>Correo electrónico</displayName>
+                  <value>redactado@example.invalid</value>
+               </Data>
+               <Data name="Correo">
+                  <displayName>Correo electrónico</displayName>
+                  <value><![CDATA[<a href="mailto:redactado@example.invalid" style="color:#FFF;">Correo electrónico</a><br />]]></value>
+               </Data>
+               <Data name="Web">
+                  <displayName>web RUEPSS</displayName>
+                  <value>https://ruepss.xunta.gal/XiacWeb/centros/publico/aCentroPublico.do?{actionForm.id_cent}=230981</value>
+               </Data>
+               <Data name="Enderezo">
+                  <displayName>Enderezo</displayName>
+                  <value>IGREXA - TALLARA</value>
+               </Data>
+               <Data name="Concello">
+                  <displayName>Concello</displayName>
+                  <value>LOUSAME</value>
+               </Data>
+               <Data name="CodigoPostal">
+                  <displayName>Código Postal</displayName>
+                  <value>15216</value>
+               </Data>
+               <Data name="Provincia">
+                  <displayName>Provincia</displayName>
+                  <value>CORUÑA (A)</value>
+               </Data>
+               <Data name="Telefono">
+                  <displayName>Teléfono</displayName>
+                  <value>000000000</value>
+               </Data>
+               <Data name="Horario">
+                  <displayName>Horario</displayName>
+                  <value>8.30-16.30</value>
+               </Data>
+               <Data name="Servizos">
+                  <displayName>Servizos do centro</displayName>
+                  <value>servizo de cociña</value>
+               </Data>
+               <Data name="Instalacions">
+                  <displayName>Instalacións do centro</displayName>
+                  <value>recepcion, sala de usos multiples, servizos hixienicos adaptados, xardin/patio exterior</value>
+               </Data>
+               <Data name="Entidade">
+                  <displayName>Entidade</displayName>
+                  <value>CONCELLO DE LOUSAME</value>
+               </Data>
+               <Data name="Iniciativa_entidade">
+                  <displayName>Iniciativa da entidade</displayName>
+                  <value>INICIATIVA PÚBLICA</value>
+               </Data>
+            </ExtendedData>
+            <Point>
+               <coordinates>-8.84892,42.76421</coordinates>
+            </Point>
+            <styleUrl>#TemaXunta</styleUrl>
+         </Placemark>
+<Placemark id="E1184C3">
+            <name>LUDOTECA MUNICIPAL DA SOLAINA DE NARON</name>
+            <description>LUDOTECA</description>
+            <ExtendedData>
+               <Data name="Mail">
+                  <displayName>Correo electrónico</displayName>
+                  <value>redactado@example.invalid,redactado@example.invalid</value>
+               </Data>
+               <Data name="Correo">
+                  <displayName>Correo electrónico</displayName>
+                  <value><![CDATA[<a href="mailto:redactado@example.invalid,redactado@example.invalid" style="color:#FFF;">Correo electrónico</a><br />]]></value>
+               </Data>
+               <Data name="Web">
+                  <displayName>web RUEPSS</displayName>
+                  <value>https://ruepss.xunta.gal/XiacWeb/centros/publico/aCentroPublico.do?{actionForm.id_cent}=229957</value>
+               </Data>
+               <Data name="Enderezo">
+                  <displayName>Enderezo</displayName>
+                  <value>CARDENAL CISNEROS Nº 2-ESQUINA AVDA. SANTA CECILIA</value>
+               </Data>
+               <Data name="Concello">
+                  <displayName>Concello</displayName>
+                  <value>NARÓN</value>
+               </Data>
+               <Data name="CodigoPostal">
+                  <displayName>Código Postal</displayName>
+                  <value>15570</value>
+               </Data>
+               <Data name="Provincia">
+                  <displayName>Provincia</displayName>
+                  <value>CORUÑA (A)</value>
+               </Data>
+               <Data name="Telefono">
+                  <displayName>Teléfono</displayName>
+                  <value>000000000</value>
+               </Data>
+               <Data name="Horario">
+                  <displayName>Horario</displayName>
+                  <value>DE LUNS A VENRES, SETEMBRO-XUÑO:16:00-20:00,        XULLO: 10:00-14:00</value>
+               </Data>
+               <Data name="Servizos">
+                  <displayName>Servizos do centro</displayName>
+                  <value>actividades de ocio /socioculturais</value>
+               </Data>
+               <Data name="Instalacions">
+                  <displayName>Instalacións do centro</displayName>
+                  <value>instalacións accesibles, internet, recepcion, sala de lectura, sala de usos multiples, servizos hixienicos adaptados</value>
+               </Data>
+               <Data name="Entidade">
+                  <displayName>Entidade</displayName>
+                  <value>CONCELLO DE NARON</value>
+               </Data>
+               <Data name="Iniciativa_entidade">
+                  <displayName>Iniciativa da entidade</displayName>
+                  <value>INICIATIVA PÚBLICA</value>
+               </Data>
+            </ExtendedData>
+            <Point>
+               <coordinates>-8.2,43.5</coordinates>
+            </Point>
+            <styleUrl>#TemaXunta</styleUrl>
+         </Placemark>
+<Placemark id="E3917C2">
+            <name>ESCOLA INFANTIL SIVIR-2</name>
+            <description>ESCOLA INFANTIL</description>
+            <ExtendedData>
+               <Data name="Mail">
+                  <displayName>Correo electrónico</displayName>
+                  <value>redactado@example.invalid</value>
+               </Data>
+               <Data name="Correo">
+                  <displayName>Correo electrónico</displayName>
+                  <value><![CDATA[<a href="mailto:redactado@example.invalid" style="color:#FFF;">Correo electrónico</a><br />]]></value>
+               </Data>
+               <Data name="Web">
+                  <displayName>web RUEPSS</displayName>
+                  <value>https://ruepss.xunta.gal/XiacWeb/centros/publico/aCentroPublico.do?{actionForm.id_cent}=222019</value>
+               </Data>
+               <Data name="Enderezo">
+                  <displayName>Enderezo</displayName>
+                  <value>R/ PORTELA, 2</value>
+               </Data>
+               <Data name="Concello">
+                  <displayName>Concello</displayName>
+                  <value>ARTEIXO</value>
+               </Data>
+               <Data name="CodigoPostal">
+                  <displayName>Código Postal</displayName>
+                  <value>15142</value>
+               </Data>
+               <Data name="Provincia">
+                  <displayName>Provincia</displayName>
+                  <value>CORUÑA (A)</value>
+               </Data>
+               <Data name="Telefono">
+                  <displayName>Teléfono</displayName>
+                  <value>000000000</value>
+               </Data>
+               <Data name="Horario">
+                  <displayName>Horario</displayName>
+                  <value>TODO O ANO:, 7:30 A 20.00</value>
+               </Data>
+               <Data name="Servizos">
+                  <displayName>Servizos do centro</displayName>
+                  <value>horario ampliado, servizo de comedor propio</value>
+               </Data>
+               <Data name="Instalacions">
+                  <displayName>Instalacións do centro</displayName>
+                  <value>recepcion, sala de usos multiples, xardin/patio exterior</value>
+               </Data>
+               <Data name="Entidade">
+                  <displayName>Entidade</displayName>
+                  <value>NOME APELIDO APELIDO</value>
+               </Data>
+               <Data name="Iniciativa_entidade">
+                  <displayName>Iniciativa da entidade</displayName>
+                  <value>INICIATIVA PRIVADA CON ÁNIMO DE LUCRO</value>
+               </Data>
+            </ExtendedData>
+            <Point>
+               <coordinates>-8.51974,43.30897</coordinates>
+            </Point>
+            <styleUrl>#TemaXunta</styleUrl>
+         </Placemark>
+<Placemark id="E3049C1">
+            <name>ESCOLA INFANTIL CASA DO NENO DE SANTIAGO</name>
+            <description>ESCOLA INFANTIL</description>
+            <ExtendedData>
+               <Data name="Mail">
+                  <displayName>Correo electrónico</displayName>
+                  <value>redactado@example.invalid,redactado@example.invalid</value>
+               </Data>
+               <Data name="Correo">
+                  <displayName>Correo electrónico</displayName>
+                  <value><![CDATA[<a href="mailto:redactado@example.invalid,redactado@example.invalid" style="color:#FFF;">Correo electrónico</a><br />]]></value>
+               </Data>
+               <Data name="Web">
+                  <displayName>web RUEPSS</displayName>
+                  <value>https://ruepss.xunta.gal/XiacWeb/centros/publico/aCentroPublico.do?{actionForm.id_cent}=207940</value>
+               </Data>
+               <Data name="Enderezo">
+                  <displayName>Enderezo</displayName>
+                  <value>CANTEIRA DE ARRIBA,  17</value>
+               </Data>
+               <Data name="Concello">
+                  <displayName>Concello</displayName>
+                  <value>SANTIAGO DE COMPOSTELA</value>
+               </Data>
+               <Data name="CodigoPostal">
+                  <displayName>Código Postal</displayName>
+                  <value>15703</value>
+               </Data>
+               <Data name="Provincia">
+                  <displayName>Provincia</displayName>
+                  <value>CORUÑA (A)</value>
+               </Data>
+               <Data name="Telefono">
+                  <displayName>Teléfono</displayName>
+                  <value>000000000</value>
+               </Data>
+               <Data name="Horario">
+                  <displayName>Horario</displayName>
+                  <value>7:45 A 18:30 DE LUNS A VENRES</value>
+               </Data>
+               <Data name="Servizos">
+                  <displayName>Servizos do centro</displayName>
+                  <value>actividades complementarias/extraescolares, dietas especificas, horario ampliado, servizo de comedor externo/catering</value>
+               </Data>
+               <Data name="Instalacions">
+                  <displayName>Instalacións do centro</displayName>
+                  <value>ascensor, biblioteca, instalacións accesibles, internet, recepcion, sala de usos multiples, sala de visitas, xardin/patio exterior, zona de carriños</value>
+               </Data>
+               <Data name="Entidade">
+                  <displayName>Entidade</displayName>
+                  <value>PATRONATO CASA DEL NIÑO</value>
+               </Data>
+               <Data name="Iniciativa_entidade">
+                  <displayName>Iniciativa da entidade</displayName>
+                  <value>INICIATIVA SOCIAL</value>
+               </Data>
+            </ExtendedData>
+            <Point>
+               <coordinates>-8.520198,42.886121</coordinates>
+            </Point>
+            <styleUrl>#TemaXunta</styleUrl>
+         </Placemark>
+      </Folder>
+	<Folder id="exterior">
+		<name>Exterior</name>
+		<open>1</open>
+		<description>Centros de benestar fora de Galicia</description>		
+ 	</Folder>
+</Document>
+</kml>
