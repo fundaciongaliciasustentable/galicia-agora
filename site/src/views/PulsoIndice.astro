@@ -103,100 +103,122 @@ const first = ready[0];
   .px-app.is-live:has(.px-frame:not(.is-loaded)) .px-loading {
     display: block;
   }
+  /* Same card language as the layer dock of the main map (MapApp.astro): translucent card,
+     pill chips, compact rows with a colour dot. */
   .px-picker {
     position: absolute;
     z-index: 3;
-    top: 16px;
-    right: 16px;
-    width: 280px;
+    top: 12px;
+    right: 12px;
+    width: 284px;
     max-height: calc(100% - 180px);
     overflow-y: auto;
-    padding: 12px 14px;
-    border-radius: var(--gs-radius-card);
-    background: rgba(17, 18, 16, 0.86);
-    backdrop-filter: blur(6px);
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.45);
+    overscroll-behavior: contain;
+    padding: 8px 6px 6px;
+    border-radius: 14px;
+    background: color-mix(in srgb, #1f201c 86%, transparent);
+    -webkit-backdrop-filter: blur(10px) saturate(1.2);
+    backdrop-filter: blur(10px) saturate(1.2);
+    border: 1px solid color-mix(in srgb, #3a3b35 60%, transparent);
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.3);
   }
   .px-picker-head {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 8px;
+    padding: 0 4px;
   }
   .px-picker h1 {
     margin: 0;
-    font-size: var(--gs-texto-lg);
-    color: #fff;
+    font-size: var(--gs-texto-xs);
+    font-weight: 700;
+    color: #b3b3aa;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
   }
   .px-toggle {
     display: inline-flex;
     align-items: center;
     gap: 6px;
     font: inherit;
-    font-size: var(--gs-texto-sm);
+    font-size: var(--gs-texto-xs);
     color: #e6e6df;
-    background: transparent;
-    border: 1px solid #3a3b35;
+    background: color-mix(in srgb, #e6e6df 7%, transparent);
+    border: 0;
     border-radius: 999px;
     padding: 4px 10px;
     cursor: pointer;
+    transition: background-color 0.15s;
   }
   .px-toggle:hover,
   .px-toggle:focus-visible {
-    border-color: #e6e6df;
+    background: color-mix(in srgb, #e6e6df 14%, transparent);
+  }
+  .px-toggle svg {
+    width: 15px;
+    height: 15px;
   }
   .px-current {
     display: none;
   }
   .px-lede,
   .px-note {
-    margin: 6px 0 0;
+    margin: 4px 4px 0;
     font-size: var(--gs-texto-xs);
     color: #b3b3aa;
   }
   .px-list {
     list-style: none;
-    margin: 10px 0 0;
+    margin: 6px 0 0;
     padding: 0;
     display: grid;
-    gap: 2px;
+    gap: 1px;
   }
   .px-list a,
   .px-item {
     display: grid;
-    grid-template-columns: 14px 1fr;
-    column-gap: 8px;
-    padding: 7px 8px;
+    grid-template-columns: 10px 1fr;
+    column-gap: 9px;
+    align-items: center;
+    min-height: 30px;
+    padding: 4px 6px;
     border-radius: var(--gs-radius);
     color: inherit;
     text-decoration: none;
   }
   .px-list a:hover,
   .px-list a:focus-visible {
-    background: #22231f;
+    background: color-mix(in srgb, #e6e6df 7%, transparent);
   }
   .px-list a[aria-current="true"] {
-    background: #2a2b26;
-    box-shadow: inset 3px 0 0 var(--px-accent);
+    background: color-mix(in srgb, #e6e6df 11%, transparent);
   }
   .px-dot {
     grid-row: span 2;
     align-self: start;
     margin-top: 5px;
-    width: 12px;
-    height: 12px;
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
-    border: 2px solid var(--px-accent);
+    background: var(--px-accent);
+    opacity: 0.75;
   }
   .px-list a[aria-current="true"] .px-dot {
-    background: var(--px-accent);
+    opacity: 1;
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--px-accent) 30%, transparent);
   }
   .px-name {
-    font-weight: 600;
+    font-size: 13px;
+    line-height: 1.25;
+    color: #e6e6df;
+  }
+  .px-list a[aria-current="true"] .px-name {
+    font-weight: 700;
     color: #fff;
   }
   .px-period {
-    font-size: var(--gs-texto-xs);
+    font-size: 11px;
     color: #b3b3aa;
   }
   .px-sum {
@@ -210,11 +232,11 @@ const first = ready[0];
     margin-top: 2px;
   }
   .is-soon {
-    opacity: 0.55;
+    opacity: 0.5;
   }
   .px-foot {
-    margin: 8px 0 0;
-    font-size: var(--gs-texto-sm);
+    margin: 6px 4px 0;
+    font-size: var(--gs-texto-xs);
   }
   .px-open {
     color: #e6e6df;
@@ -231,7 +253,7 @@ const first = ready[0];
   }
   .px-app.is-collapsed .px-picker {
     width: auto;
-    padding: 6px;
+    padding: 4px;
   }
   .px-app.is-collapsed .px-current {
     display: inline;
