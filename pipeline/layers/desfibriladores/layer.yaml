@@ -1,0 +1,45 @@
+id: desfibriladores
+title:
+  gl: Desfibriladores (DESA)
+  es: Desfibriladores (DESA)
+theme: servizos
+operator:
+  name: Xunta de Galicia — Consellería de Sanidade (061)
+  url: https://061.sergas.gal/
+source_url: https://abertos.xunta.gal/catalogo/saude-servicios-sociais/-/dataset/0604/desfibriladores-semiautomaticos-externos-situados
+licence:
+  spdx: CC-BY-SA-4.0
+  text_url: https://abertos.xunta.gal/catalogo/saude-servicios-sociais/-/dataset/0604/desfibriladores-semiautomaticos-externos-situados
+  quote: "Creative Commons BY SA 4.0"
+  verified_at: 2026-11-01
+  odbl_compatible: doubt
+  collection: cc-by-sa-4.0
+  notes: >-
+    Licenza indicada na ficha do conxunto 0604 en abertos.xunta.gal (CC BY-SA 4.0).
+    Compatibilidade coa ODbL en dúbida: colección CC BY-SA (ADR 0005). Ficheiro único
+    https://ficheiros-web.xunta.gal/abertos/desfibriladores/equipos-DESA-061.csv (2.366 equipos,
+    ~300 KB, Latin-1) con Last-Modified e ETag; a hora de publicación é o Last-Modified (10/07/2026
+    na descarga do 01/11/2026, aínda que a ficha di «mensual»). Son os equipos rexistrados no 061:
+    non di se están accesibles a calquera hora nin se funcionan. Coordenadas a 4 decimais (~10 m).
+attribution: "Xunta de Galicia. 061, rexistro de desfibriladores (abertos.xunta.gal, conxunto 0604)"
+update_frequency:
+  declared: P30D
+geometry: point
+output: geojson
+auth:
+  required: false
+privacy_notes: >-
+  Non se publica o campo solicitante (quen rexistrou o equipo): ás veces é unha persoa física.
+  Quítanse os equipos en domicilios particulares (tipo «En Domicilio particular» ou texto con
+  domicilio, vivenda, piso ou particular; 8 en novembro de 2026). O texto da localización
+  publícase sen teléfonos e queda baleiro cando o solicitante é unha persoa e o texto repite o
+  seu nome (18 casos, sobre todo farmacias e clínicas co nome do titular).
+stale_after: P90D
+ingest:
+  every: P7D
+style:
+  kind: circle
+  color_token: --c-desa
+  label_field: ubicacion
+table:
+  fields: [ubicacion, tipo, concello, codigo_ine]

@@ -90,6 +90,7 @@
   --c-turismo: #b8860b;
   --c-comercio: #5b6b2e;
   --c-praia: #3d8f9e;
+  --c-desa: #b42318;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -134,6 +135,7 @@
     --c-turismo: #e0b85a;
     --c-comercio: #b5c46a;
     --c-praia: #7cc4cf;
+    --c-desa: #f07a6a;
   }
 }
 
@@ -178,4 +180,5 @@
   --c-turismo: #e0b85a;
   --c-comercio: #b5c46a;
   --c-praia: #7cc4cf;
+  --c-desa: #f07a6a;
 }

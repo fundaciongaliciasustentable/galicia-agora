@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "desfibriladores feature properties",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "ubicacion", "tipo", "concello", "codigo_ine"],
+  "properties": {
+    "id": { "type": "string", "pattern": "^\\d+$", "description": "codequipo do rexistro do 061" },
+    "ubicacion": {
+      "type": ["string", "null"],
+      "minLength": 1,
+      "description": "Texto da fonte sen teléfonos; null se repite o nome dunha persoa"
+    },
+    "tipo": {
+      "enum": [
+        "Empresa privada",
+        "Instalación deportiva",
+        "Outros",
+        "Administración pública",
+        "Centro docente",
+        "Protección civil",
+        "Residencia de maiores",
+        "Albergue de peregrinos",
+        "Piscina",
+        "Cruz Vermella",
+        "Praia",
+        "Aeroporto ou estación",
+        "Hotel ou aloxamento",
+        "Tótem na vía pública"
+      ]
+    },
+    "concello": { "type": ["string", "null"] },
+    "codigo_ine": { "type": ["string", "null"], "pattern": "^(15|27|32|36)\\d{3}$" }
+  }
+}

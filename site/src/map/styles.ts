@@ -1290,6 +1290,34 @@ export function encodeLayer(layer: LayerLike, ctx: StyleContext): Encoding {
         ],
       );
     }
+    case 'desfibriladores':
+      return enc(
+        [
+          base('circle', {
+            type: 'circle',
+            paint: {
+              'circle-radius': byZoom([
+                [6, 1.8],
+                [12, 4.5],
+                [15, 6.5],
+              ]),
+              'circle-color': color,
+              'circle-stroke-color': halo,
+              'circle-stroke-width': ['interpolate', ['linear'], ['zoom'], 9, 0, 12, 1],
+            },
+          }),
+          label('label', ['get', 'ubicacion'], 14),
+        ],
+        [
+          {
+            entries: [{ shape: 'dot', color, size: 8, label: T('Desfibrilador', 'Desfibrilador') }],
+            note: T(
+              'Equipos rexistrados no 061. O acceso depende do horario de cada lugar.',
+              'Equipos registrados en el 061. El acceso depende del horario de cada lugar.',
+            ),
+          },
+        ],
+      );
     case 'distancia-servizos': {
       const stops: Array<[number, string]> = [
         [0, CHEAP_DEAR[0]],
