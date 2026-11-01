@@ -1,0 +1,209 @@
+{
+  "descargado_utc": "2026-11-01T10:26:41+00:00",
+  "user_agent": "GaliciaAgora/0.1 (+https://github.com/fundaciongaliciasustentable/galicia-agora; galiciasustentable@galiciasustentable.org)",
+  "resumo": {
+    "EstadoZonasBiotoxinas": {
+      "dataActualizacion": "2026-10-31T07:48:00+01:00",
+      "zonas": 186,
+      "por_estado": {
+        "Aberta": 165,
+        "Pechada": 21
+      }
+    },
+    "ClasificacionMicrobioloxicaZonas": {
+      "dataActualizacion": "2026-10-31T07:48:00+01:00",
+      "zonas": 143,
+      "por_estado": {
+        "B": 102,
+        "A": 22,
+        "C": 19
+      }
+    },
+    "dias_peche_batea": {
+      "ficheiro": "dias_peche_batea_2026.csv",
+      "ano": "2026",
+      "filas": 56
+    },
+    "dias_peche_infaunais": {
+      "ficheiro": "dias_peche_infaunais_2026.csv",
+      "ano": "2026",
+      "filas": 39
+    },
+    "historico_batea": {
+      "paxina": "Historico_Batea.aspx",
+      "informes_na_primeira_paxina": 10,
+      "ultimo": [
+        "383",
+        "31/10/2026 07:46"
+      ],
+      "primeira_paxina": [
+        {
+          "n": "383",
+          "data": "31/10/2026 07:46"
+        },
+        {
+          "n": "382",
+          "data": "30/10/2026 15:17"
+        },
+        {
+          "n": "381",
+          "data": "30/10/2026 12:13"
+        },
+        {
+          "n": "380",
+          "data": "28/10/2026 16:55"
+        },
+        {
+          "n": "379",
+          "data": "28/10/2026 09:03"
+        },
+        {
+          "n": "378",
+          "data": "27/10/2026 20:13"
+        },
+        {
+          "n": "377",
+          "data": "27/10/2026 08:56"
+        },
+        {
+          "n": "376",
+          "data": "26/10/2026 16:27"
+        },
+        {
+          "n": "375",
+          "data": "26/10/2026 07:56"
+        },
+        {
+          "n": "374",
+          "data": "24/10/2026 08:36"
+        }
+      ],
+      "pdf_descargado": "informe_batea_202610310746_383.PDF",
+      "pdf_e_imaxe_raster": true
+    },
+    "historico_infaunais": {
+      "paxina": "Historico_Infaunais.aspx",
+      "informes_na_primeira_paxina": 10,
+      "ultimo": [
+        "084",
+        "28/10/2026 14:37"
+      ],
+      "primeira_paxina": [
+        {
+          "n": "084",
+          "data": "28/10/2026 14:37"
+        },
+        {
+          "n": "083",
+          "data": "20/10/2026 19:55"
+        },
+        {
+          "n": "082",
+          "data": "02/10/2026 09:13"
+        },
+        {
+          "n": "081",
+          "data": "24/09/2026 10:35"
+        },
+        {
+          "n": "080",
+          "data": "24/09/2026 08:58"
+        },
+        {
+          "n": "079",
+          "data": "10/09/2026 11:17"
+        },
+        {
+          "n": "078",
+          "data": "21/08/2026 10:26"
+        },
+        {
+          "n": "077",
+          "data": "12/08/2026 09:35"
+        },
+        {
+          "n": "076",
+          "data": "11/08/2026 14:04"
+        },
+        {
+          "n": "075",
+          "data": "01/08/2026 08:43"
+        }
+      ],
+      "pdf_descargado": "informe_infaunais_202610281437_084.PDF",
+      "pdf_e_imaxe_raster": true
+    }
+  },
+  "peticions": [
+    {
+      "url": "https://www.intecmar.gal/Api/EstadoZonasProducion/EstadoZonasBiotoxinas",
+      "status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "bytes": 58746,
+      "utc": "2026-11-01T10:26:23+00:00"
+    },
+    {
+      "url": "https://www.intecmar.gal/Api/EstadoZonasProducion/ClasificacionMicrobioloxicaZonas",
+      "status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "bytes": 36926,
+      "utc": "2026-11-01T10:26:24+00:00"
+    },
+    {
+      "url": "https://www.intecmar.gal/Informacion/biotoxinas/Evolucion/CierresBatea.aspx",
+      "status": 200,
+      "content_type": "text/html;charset=utf-8",
+      "bytes": 268505,
+      "utc": "2026-11-01T10:26:26+00:00"
+    },
+    {
+      "url": "https://www.intecmar.gal/Informacion/biotoxinas/Evolucion/CierresInfaunais.aspx",
+      "status": 200,
+      "content_type": "text/html;charset=utf-8",
+      "bytes": 237027,
+      "utc": "2026-11-01T10:26:28+00:00"
+    },
+    {
+      "url": "https://www.intecmar.gal/Informacion/biotoxinas/EstadoZonas/Historico_Batea.aspx",
+      "status": 200,
+      "content_type": "text/html;charset=utf-8",
+      "bytes": 31871,
+      "utc": "2026-11-01T10:26:29+00:00"
+    },
+    {
+      "url": "https://www.intecmar.gal/PDFs/EstadoZonas/VFlotantes/202610310746_383.PDF",
+      "status": 200,
+      "content_type": "application/pdf",
+      "bytes": 331136,
+      "utc": "2026-11-01T10:26:31+00:00"
+    },
+    {
+      "url": "https://www.intecmar.gal/Informacion/biotoxinas/EstadoZonas/Historico_Infaunais.aspx",
+      "status": 200,
+      "content_type": "text/html;charset=utf-8",
+      "bytes": 31853,
+      "utc": "2026-11-01T10:26:32+00:00"
+    },
+    {
+      "url": "https://www.intecmar.gal/PDFs/EstadoZonas/Infaunais/202610281437_084.PDF",
+      "status": 200,
+      "content_type": "application/pdf",
+      "bytes": 310751,
+      "utc": "2026-11-01T10:26:34+00:00"
+    },
+    {
+      "url": "https://www.intecmar.gal/Informacion/CondicionsLegais.aspx",
+      "status": 200,
+      "content_type": "text/html;charset=utf-8",
+      "bytes": 24280,
+      "utc": "2026-11-01T10:26:35+00:00"
+    },
+    {
+      "url": "http://sig.intecmar.gal/EstadoZonas",
+      "status": 503,
+      "content_type": "text/html; charset=iso-8859-1",
+      "bytes": 0,
+      "utc": "2026-11-01T10:26:40+00:00"
+    }
+  ]
+}

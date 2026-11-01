@@ -1,0 +1,203 @@
+[
+  {
+    "descargas": [
+      {
+        "fonte": "perfiles",
+        "url": "https://contrataciondelsectorpublico.gob.es/sindicacion/sindicacion_643/licitacionesPerfilesContratanteCompleto3_202609.zip",
+        "bytes": 302945644,
+        "bytes_descomprimido": 2927953541,
+        "ficheiros_atom": 193,
+        "last_modified": "Thu, 01 Oct 2026 04:00:30 GMT",
+        "descargado_utc": "2026-11-01T10:41:49+00:00",
+        "entradas": 95910,
+        "galicia": 5485,
+        "borradas": 218
+      },
+      {
+        "fonte": "agregadas",
+        "url": "https://contrataciondelsectorpublico.gob.es/sindicacion/sindicacion_1044/PlataformasAgregadasSinMenores_202609.zip",
+        "bytes": 20082335,
+        "bytes_descomprimido": 386744231,
+        "ficheiros_atom": 76,
+        "last_modified": "Thu, 01 Oct 2026 04:01:03 GMT",
+        "descargado_utc": "2026-11-01T10:42:09+00:00",
+        "entradas": 34501,
+        "galicia": 1276,
+        "borradas": 3070
+      },
+      {
+        "fonte": "menores",
+        "url": "https://contrataciondelsectorpublico.gob.es/sindicacion/sindicacion_1143/contratosMenoresPerfilesContratantes_202609.zip",
+        "bytes": 36893844,
+        "bytes_descomprimido": 668229018,
+        "ficheiros_atom": 136,
+        "last_modified": "Thu, 01 Oct 2026 04:01:20 GMT",
+        "descargado_utc": "2026-11-01T10:42:49+00:00",
+        "entradas": 67623,
+        "galicia": 2298,
+        "borradas": 112
+      }
+    ],
+    "saida": "placsp_galicia_202609.csv",
+    "filas": 4664,
+    "resumo_adxudicatarias": {
+      "agregadas": {
+        "contratos": 726,
+        "adxudicatarias": 690,
+        "adx_con_cp": 0,
+        "adx_mesma_provincia": 0,
+        "adx_resto_galicia": 0,
+        "adx_resto_espana": 0,
+        "adx_estranxeiro": 0,
+        "adx_sen_localizacion": 690,
+        "adx_nif_persoa_fisica": 26
+      },
+      "menores": {
+        "contratos": 1645,
+        "adxudicatarias": 1672,
+        "adx_con_cp": 558,
+        "adx_mesma_provincia": 373,
+        "adx_resto_galicia": 66,
+        "adx_resto_espana": 119,
+        "adx_estranxeiro": 3,
+        "adx_sen_localizacion": 1111,
+        "adx_nif_persoa_fisica": 222
+      },
+      "perfiles": {
+        "contratos": 2293,
+        "adxudicatarias": 1358,
+        "adx_con_cp": 888,
+        "adx_mesma_provincia": 487,
+        "adx_resto_galicia": 138,
+        "adx_resto_espana": 263,
+        "adx_estranxeiro": 1,
+        "adx_sen_localizacion": 469,
+        "adx_nif_persoa_fisica": 13
+      }
+    },
+    "privacidade": "sen nomes nin NIF de adxudicatarias; sen títulos de contrato"
+  },
+  {
+    "descargas": [
+      {
+        "fonte": "perfiles",
+        "url": "https://contrataciondelsectorpublico.gob.es/sindicacion/sindicacion_643/licitacionesPerfilesContratanteCompleto3.atom",
+        "bytes": 8845981,
+        "descargado_utc": "2026-11-01T10:43:24+00:00",
+        "entradas": 279,
+        "galicia": 12,
+        "borradas": 0
+      },
+      {
+        "fonte": "perfiles",
+        "url": "https://contrataciondelsectorpublico.gob.es/sindicacion/sindicacion_643/licitacionesPerfilesContratanteCompleto3_20261030_202205.atom",
+        "bytes": 17230211,
+        "descargado_utc": "2026-11-01T10:43:42+00:00",
+        "entradas": 498,
+        "galicia": 32,
+        "borradas": 2
+      },
+      {
+        "fonte": "perfiles",
+        "url": "https://contrataciondelsectorpublico.gob.es/sindicacion/sindicacion_643/licitacionesPerfilesContratanteCompleto3_20261030_202205_1.atom",
+        "bytes": 18003904,
+        "descargado_utc": "2026-11-01T10:43:59+00:00",
+        "entradas": 499,
+        "galicia": 23,
+        "borradas": 1
+      },
+      {
+        "fonte": "agregadas",
+        "url": "https://contrataciondelsectorpublico.gob.es/sindicacion/sindicacion_1044/PlataformasAgregadasSinMenores.atom",
+        "bytes": 4301172,
+        "descargado_utc": "2026-11-01T10:44:01+00:00",
+        "entradas": 337,
+        "galicia": 0,
+        "borradas": 16
+      },
+      {
+        "fonte": "agregadas",
+        "url": "https://contrataciondelsectorpublico.gob.es/sindicacion/sindicacion_1044/PlataformasAgregadasSinMenores_20261031_030101.atom",
+        "bytes": 5258972,
+        "descargado_utc": "2026-11-01T10:44:09+00:00",
+        "entradas": 500,
+        "galicia": 23,
+        "borradas": 0
+      },
+      {
+        "fonte": "agregadas",
+        "url": "https://contrataciondelsectorpublico.gob.es/sindicacion/sindicacion_1044/PlataformasAgregadasSinMenores_20261031_030101_1.atom",
+        "bytes": 5235787,
+        "descargado_utc": "2026-11-01T10:44:14+00:00",
+        "entradas": 495,
+        "galicia": 10,
+        "borradas": 5
+      },
+      {
+        "fonte": "menores",
+        "url": "https://contrataciondelsectorpublico.gob.es/sindicacion/sindicacion_1143/contratosMenoresPerfilesContratantes.atom",
+        "bytes": 4920264,
+        "descargado_utc": "2026-11-01T10:44:19+00:00",
+        "entradas": 494,
+        "galicia": 15,
+        "borradas": 0
+      },
+      {
+        "fonte": "menores",
+        "url": "https://contrataciondelsectorpublico.gob.es/sindicacion/sindicacion_1143/contratosMenoresPerfilesContratantes_20261031_031232.atom",
+        "bytes": 5144842,
+        "descargado_utc": "2026-11-01T10:44:24+00:00",
+        "entradas": 500,
+        "galicia": 33,
+        "borradas": 0
+      },
+      {
+        "fonte": "menores",
+        "url": "https://contrataciondelsectorpublico.gob.es/sindicacion/sindicacion_1143/contratosMenoresPerfilesContratantes_20261031_031232_1.atom",
+        "bytes": 5149052,
+        "descargado_utc": "2026-11-01T10:44:30+00:00",
+        "entradas": 497,
+        "galicia": 36,
+        "borradas": 3
+      }
+    ],
+    "saida": "placsp_galicia_20261101.csv",
+    "filas": 184,
+    "resumo_adxudicatarias": {
+      "agregadas": {
+        "contratos": 33,
+        "adxudicatarias": 22,
+        "adx_con_cp": 0,
+        "adx_mesma_provincia": 0,
+        "adx_resto_galicia": 0,
+        "adx_resto_espana": 0,
+        "adx_estranxeiro": 0,
+        "adx_sen_localizacion": 22,
+        "adx_nif_persoa_fisica": 0
+      },
+      "menores": {
+        "contratos": 84,
+        "adxudicatarias": 83,
+        "adx_con_cp": 64,
+        "adx_mesma_provincia": 45,
+        "adx_resto_galicia": 8,
+        "adx_resto_espana": 11,
+        "adx_estranxeiro": 0,
+        "adx_sen_localizacion": 19,
+        "adx_nif_persoa_fisica": 5
+      },
+      "perfiles": {
+        "contratos": 67,
+        "adxudicatarias": 29,
+        "adx_con_cp": 21,
+        "adx_mesma_provincia": 16,
+        "adx_resto_galicia": 0,
+        "adx_resto_espana": 5,
+        "adx_estranxeiro": 0,
+        "adx_sen_localizacion": 8,
+        "adx_nif_persoa_fisica": 0
+      }
+    },
+    "privacidade": "sen nomes nin NIF de adxudicatarias; sen títulos de contrato"
+  }
+]

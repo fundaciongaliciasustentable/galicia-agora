@@ -1,0 +1,16 @@
+{
+ "id": "MOD13Q1.A2026273.h17v04.061.2026290000104",
+ "start": "2026-09-30",
+ "end": "2026-10-15",
+ "href": "https://modiseuwest.blob.core.windows.net/modis-061-cogs/MOD13Q1/17/04/2026273/MOD13Q1.A2026273.h17v04.061.2026290000104_250m_16_days_NDVI.tif",
+ "rows": 481,
+ "cols": 513,
+ "pixel_m": 463.3127165279167,
+ "x0": -775122.1747512047,
+ "y0": 4870806.588855988,
+ "nodata": -3000,
+ "scale": 0.0001,
+ "pixels": 246753,
+ "valid_positive": 176954,
+ "ndvi_mean": 0.7289
+}

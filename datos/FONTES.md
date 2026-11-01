@@ -13,6 +13,16 @@ Verificación feita o 1 de novembro de 2026 con descargas reais. Cada fonte ten 
 | Poboación estacional | [IGE, carga de poboación](fontes/ige-poboacion-estacional/) | Verde | Trimestre · 313 concellos | 2025/II (provisional) | 2,0 MB | API aberta, serie desde 2011, compoñentes desde 2016. |
 | Un século de poboación | [INE, alteracións dos municipios](fontes/ine-censos-historicos/) | Verde | Censo · 313 concellos (1900–2021) | Censo 2021 | 0,2 MB | Sen descarga masiva: 472 consultas por código. Harmonizado aos límites de hoxe. |
 | O aire hora a hora | [MeteoGalicia, calidade do aire](fontes/meteogalicia-aire/) | Verde (24 h) | Hora · 46 estacións | Tempo real | — | Datos sen validar; histórico máis longo non dispoñible no servizo. |
+| Lonxas, primeira venda | [Pesca de Galicia](fontes/lonxas-primeira-venda/) | Verde | Día · lonxa · especie (2003–2025) | 2025 | 1,4 MB | CSV anuais abertos, CC BY-SA 4.0. Falta situar as 60 lonxas no mapa. |
+| Migracións entre concellos | [INE EMCR](fontes/ine-emcr-migracions/) | Amarelo | Ano/trimestre · comarca (completa) ou 56 concellos grandes | 2024 | 3,7 MB | O INE borra o código dos concellos de menos de 10.000 habitantes; matriz completa só por comarcas (IGE 10616, 563). Quebra 2020→2021. |
+| Galegos no estranxeiro | [IGE / PERE](fontes/ige-pere-estranxeiro/) | Amarelo | Ano · concello (sen país) | 2026 | 3,5 MB | País × concello non publicado; é un stock e mide a diáspora con nacionalidade, non a emigración. |
+| PAC, beneficiarios | [FEGA](fontes/fega-pac/) | Amarelo | Exercicio · concello × medida | 2025 | 0,2 MB | Só 2024 e 2025 descargables; agregado sen nomes, cela mínima 10. |
+| Contratación pública | [PLACSP](fontes/contratacion-publica/) | Amarelo | Mes · órgano; CP do adxudicatario no 33–65 % | 10/2026 | 1,3 MB | Ficheiros grandes, incidencias xullo–outubro 2026, Xunta sen CP nin menores. Só contas, sen adxudicatarios. |
+| Zonas de marisqueo | [Intecmar](fontes/intecmar-zonas/) | Amarelo | Día · zona (só estado actual) | Hoxe | 0,7 MB | API aberta sen histórico nin polígonos; licenza non verificada. Pedir a Intecmar e arquivar xa. |
+| Mareas | [Copernicus Marine IBI](fontes/mareas/) | Amarelo | Minuto · 8 mareógrafos | Tempo real | 1,3 MB | NetCDF (dependencia nova); ceros distintos por porto; orixe Portos do Estado, confirmar. |
+| Verdor (NDVI) | [MODIS MOD13Q1](fontes/ndvi/) | Amarelo | 16 días · 250 m | 30/09/2026 | 3,0 MB | Sen chave vía Planetary Computer, pero faltan composicións de 2025; a oficial pide conta. |
+| Parques eólicos | [MITECO + OSM](fontes/parques-eolicos/) | Amarelo | Ano de entrada · parque | 2025 | 0,5 MB | Datas sen coordenadas e coordenadas sen datas; 78 de 165 casados por nome. |
+| Oficina do Peregrino | [Catedral de Santiago](fontes/oficina-peregrino/) | Vermello | Mes · camiño, país… | 31/10/2026 | — | Só un panel Power BI; o aviso legal prohibe reproducir sen autorización. Pedir permiso. |
 
 ## Achados que cambian o encargo
 

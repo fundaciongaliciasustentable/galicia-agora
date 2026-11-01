@@ -1,0 +1,96 @@
+{
+ "started_utc": "2026-11-01T10:37:10+00:00",
+ "finished_utc": "2026-11-01T10:39:12+00:00",
+ "overpass_query": "[out:json][timeout:180];\n(\n  nwr[\"power\"=\"plant\"][\"plant:source\"=\"wind\"](41.8,-9.35,43.8,-6.7);\n  node[\"power\"=\"generator\"][\"generator:source\"=\"wind\"](41.8,-9.35,43.8,-6.7);\n);\nout tags center;",
+ "requests": [
+  {
+   "url": "https://overpass-api.de/api/interpreter",
+   "method": "POST",
+   "status": 200,
+   "bytes": 1174839,
+   "content_type": "application/json",
+   "last_modified": null
+  },
+  {
+   "url": "https://energia.serviciosmin.gob.es/Electra/descargarExcelProduccion.aspx",
+   "method": "GET",
+   "status": 200,
+   "bytes": 5266348,
+   "content_type": "application/vnd.ms-excel",
+   "last_modified": null
+  }
+ ],
+ "files": {
+  "electra_fases_galicia.csv": 161129,
+  "osm_eolica_galicia.csv": 349165
+ },
+ "counts": {
+  "osm_timestamp": "2026-11-01T10:36:51Z",
+  "osm_plants": 173,
+  "osm_plants_with_start_date": 13,
+  "osm_plants_with_output": 124,
+  "osm_generators": 4079,
+  "osm_generators_with_start_date": 0,
+  "osm_plant_start_years": {
+   "2005": 2,
+   "2006": 1,
+   "2007": 2,
+   "2019": 6,
+   "2020": 1,
+   "2021": 1
+  },
+  "electra": {
+   "sheets": [
+    "Instalaciones",
+    "Fases"
+   ],
+   "fases_rows": 72554,
+   "columns": [
+    "INSTALACION",
+    "POTENCIANETA",
+    "POTENCIABRUTA",
+    "FECHAPUESTASERVICIO",
+    "FECHAALTAINSTALACION",
+    "FECHABAJA",
+    "FECHAALTAPROVISIONAL",
+    "ALTAREGISTROOPENDATA",
+    "NumeroFase",
+    "NumeroRegistro",
+    "Autonomia"
+   ]
+  },
+  "electra_galicia_rows": 1320,
+  "electra_galicia_wind_by_name": 213,
+  "electra_galicia_wind_by_name_mw": 4068.1,
+  "electra_wind_without_commissioning_date": 54,
+  "electra_wind_with_deregistration": 4,
+  "electra_wind_commissioning_years": {
+   "1995": 3,
+   "1998": 4,
+   "1999": 7,
+   "2000": 5,
+   "2001": 4,
+   "2002": 5,
+   "2003": 5,
+   "2004": 13,
+   "2005": 18,
+   "2006": 10,
+   "2007": 24,
+   "2008": 8,
+   "2009": 9,
+   "2010": 5,
+   "2012": 3,
+   "2013": 2,
+   "2014": 3,
+   "2016": 2,
+   "2018": 2,
+   "2019": 17,
+   "2020": 1,
+   "2021": 1,
+   "2022": 5,
+   "2024": 2,
+   "2025": 1
+  },
+  "concellos_filter": true
+ }
+}

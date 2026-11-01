@@ -1,0 +1,198 @@
+[
+  {
+    "fonte": "IGE API",
+    "taboa": "10616",
+    "descricion": "EMCR: migracións internas comarca orixe x comarca destino",
+    "url": "https://www.ige.gal/igebdt/igeapi/csv/datos/10616/0:2021:2022:2023:2024",
+    "descargado_utc": "2026-11-01T10:26:06+00:00",
+    "http": 200,
+    "bytes": 619026,
+    "filas": 12996,
+    "saida": "ige_10616.csv"
+  },
+  {
+    "fonte": "IGE API",
+    "taboa": "563",
+    "descricion": "EVR (serie 1992-2021): mesma matriz, para ver a quebra 2021",
+    "url": "https://www.ige.gal/igebdt/igeapi/csv/datos/563/0:2019:2020:2021",
+    "descargado_utc": "2026-11-01T10:26:07+00:00",
+    "http": 200,
+    "bytes": 464026,
+    "filas": 9747,
+    "saida": "ige_563.csv"
+  },
+  {
+    "fonte": "IGE API",
+    "taboa": "10628",
+    "descricion": "EMCR: emigracións segundo tipo, por concello",
+    "url": "https://www.ige.gal/igebdt/igeapi/csv/datos/10628/0:2021:2022:2023:2024",
+    "descargado_utc": "2026-11-01T10:26:09+00:00",
+    "http": 200,
+    "bytes": 906254,
+    "filas": 13500,
+    "saida": "ige_10628.csv"
+  },
+  {
+    "fonte": "IGE API",
+    "taboa": "10629",
+    "descricion": "EMCR: inmigracións segundo tipo, por concello",
+    "url": "https://www.ige.gal/igebdt/igeapi/csv/datos/10629/0:2021:2022:2023:2024",
+    "descargado_utc": "2026-11-01T10:26:12+00:00",
+    "http": 200,
+    "bytes": 910119,
+    "filas": 13500,
+    "saida": "ige_10629.csv"
+  },
+  {
+    "fonte": "INE microdatos EMCR",
+    "url": "https://www.ine.es/ftp/microdatos/emcr/datos_2024.zip",
+    "descargado_utc": "2026-11-01T10:26:12+00:00",
+    "http": 206,
+    "bytes_zip": 275609214,
+    "last_modified": "Tue, 09 Jun 2026 08:17:54 GMT",
+    "indice_zip": [
+      {
+        "nome": "CSV/",
+        "metodo": 0,
+        "comprimido": 0,
+        "descomprimido": 0,
+        "offset": 0
+      },
+      {
+        "nome": "CSV/EMCR_2024.tab",
+        "metodo": 8,
+        "comprimido": 37897102,
+        "descomprimido": 227992901,
+        "offset": 66
+      },
+      {
+        "nome": "R/",
+        "metodo": 0,
+        "comprimido": 0,
+        "descomprimido": 0,
+        "offset": 37897263
+      },
+      {
+        "nome": "R/.Rhistory",
+        "metodo": 8,
+        "comprimido": 106,
+        "descomprimido": 127,
+        "offset": 37897327
+      },
+      {
+        "nome": "R/EMCR_2024.RData",
+        "metodo": 8,
+        "comprimido": 39494175,
+        "descomprimido": 42880427,
+        "offset": 37897522
+      },
+      {
+        "nome": "SAS/",
+        "metodo": 0,
+        "comprimido": 0,
+        "descomprimido": 0,
+        "offset": 77391792
+      },
+      {
+        "nome": "SAS/emcr_2024.sas7bdat",
+        "metodo": 8,
+        "comprimido": 37592613,
+        "descomprimido": 297271296,
+        "offset": 77391858
+      },
+      {
+        "nome": "SAS/EMCR_2024_conFormato.sas",
+        "metodo": 8,
+        "comprimido": 2112,
+        "descomprimido": 5103,
+        "offset": 114984571
+      },
+      {
+        "nome": "SPSS/",
+        "metodo": 0,
+        "comprimido": 0,
+        "descomprimido": 0,
+        "offset": 114986789
+      },
+      {
+        "nome": "SPSS/EMCR_2024.sav",
+        "metodo": 8,
+        "comprimido": 47207176,
+        "descomprimido": 622453966,
+        "offset": 114986856
+      },
+      {
+        "nome": "STATA/",
+        "metodo": 0,
+        "comprimido": 0,
+        "descomprimido": 0,
+        "offset": 162194128
+      },
+      {
+        "nome": "STATA/EMCR_2024.dta",
+        "metodo": 8,
+        "comprimido": 47482015,
+        "descomprimido": 311235662,
+        "offset": 162194196
+      },
+      {
+        "nome": "dr_emcr_Desde2021.json",
+        "metodo": 8,
+        "comprimido": 2970,
+        "descomprimido": 13032,
+        "offset": 209676308
+      },
+      {
+        "nome": "dr_emcr_Desde2021.xlsx",
+        "metodo": 8,
+        "comprimido": 23654,
+        "descomprimido": 28166,
+        "offset": 209679378
+      },
+      {
+        "nome": "Leeme.txt",
+        "metodo": 8,
+        "comprimido": 743,
+        "descomprimido": 2219,
+        "offset": 209703132
+      },
+      {
+        "nome": "md_EMCR_2024.parquet",
+        "metodo": 8,
+        "comprimido": 29673440,
+        "descomprimido": 42240829,
+        "offset": 209703962
+      },
+      {
+        "nome": "md_EMCR_2024.txt",
+        "metodo": 8,
+        "comprimido": 36230166,
+        "descomprimido": 207481008,
+        "offset": 239377500
+      }
+    ],
+    "nota": "Só se le o directorio central (Range) e o membro CSV/EMCR_2024.tab"
+  },
+  {
+    "fonte": "INE microdatos EMCR (agregado)",
+    "saida": "emcr_2024_od_galicia_trimestre.csv",
+    "filas": 14823,
+    "bytes_transferidos_aprox": 37897102,
+    "migracions_por_tipo": {
+      "EE": 16460,
+      "IE": 44190,
+      "MI": 43083,
+      "MI galicia-galicia": 66527
+    },
+    "persoas_distintas_galicia_galicia": 63535,
+    "descargado_utc": "2026-11-01T10:26:27+00:00"
+  },
+  {
+    "fonte": "INE deseño de rexistro",
+    "url": "https://www.ine.es/ftp/microdatos/emcr/dr_emcr_Desde2021.xlsx",
+    "http": 200,
+    "bytes": 28166,
+    "saida": "dr_emcr_Desde2021.xlsx",
+    "descargado_utc": "2026-11-01T10:26:27+00:00"
+  }
+]

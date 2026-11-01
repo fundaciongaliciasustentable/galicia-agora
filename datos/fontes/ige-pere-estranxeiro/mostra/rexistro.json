@@ -1,0 +1,41 @@
+[
+  {
+    "taboa": "2291",
+    "descricion": "residentes no estranxeiro por concello de inscrición e sexo",
+    "url": "https://www.ige.gal/igebdt/igeapi/csv/datos/2291/0:2009:2010:2011:2012:2013:2014:2015:2016:2017:2018:2019:2020:2021:2022:2023:2024:2025:2026",
+    "http": 200,
+    "descargado_utc": "2026-11-01T10:26:56+00:00",
+    "anos": "2009-2026",
+    "bytes": 1173106,
+    "filas": 20250,
+    "saida": "ige_2291_2009-2026.csv",
+    "fonte_ige": "INE. Padrón de Españoles Residentes en el Extranjero (PERE)",
+    "notas_ige": "A data de referencia dos datos é o día 1 de xaneiro de cada ano. O día 03/05/2010 modificáronse datos do ano 2009 ao detectarse algún erro."
+  },
+  {
+    "taboa": "2292",
+    "descricion": "por país de residencia e provincia de inscrición (idade e sexo = total)",
+    "url": "https://www.ige.gal/igebdt/igeapi/csv/datos/2292/0:2009:2010:2011:2012:2013:2014:2015:2016:2017:2018:2019:2020:2021:2022:2023:2024:2025:2026,2:0,3:0",
+    "http": 200,
+    "descargado_utc": "2026-11-01T10:26:59+00:00",
+    "anos": "2009-2026",
+    "bytes": 386621,
+    "filas": 5670,
+    "saida": "ige_2292_2009-2026.csv",
+    "fonte_ige": "INE. Padrón de Españoles Residentes en el Extranjero (PERE)",
+    "notas_ige": "A data de referencia dos datos é o día 1 de xaneiro de cada ano."
+  },
+  {
+    "taboa": "2293",
+    "descricion": "por país de residencia, provincia de inscrición e lugar de nacemento (sexo = total)",
+    "url": "https://www.ige.gal/igebdt/igeapi/csv/datos/2293/0:2009:2010:2011:2012:2013:2014:2015:2016:2017:2018:2019:2020:2021:2022:2023:2024:2025:2026,4:0",
+    "http": 200,
+    "descargado_utc": "2026-11-01T10:27:04+00:00",
+    "anos": "2009-2026",
+    "bytes": 2067605,
+    "filas": 28350,
+    "saida": "ige_2293_2009-2026.csv",
+    "fonte_ige": "INE. Padrón de Españoles Residentes en el Extranjero (PERE)",
+    "notas_ige": "A data de referencia dos datos é o día 1 de xaneiro de cada ano."
+  }
+]

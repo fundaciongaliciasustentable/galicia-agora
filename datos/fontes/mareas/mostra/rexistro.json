@@ -1,0 +1,171 @@
+{
+ "started_utc": "2026-11-01T10:40:01+00:00",
+ "finished_utc": "2026-11-01T10:40:20+00:00",
+ "dataset": "INSITU_IBI_PHYBGCWAV_DISCRETE_MYNRT_013_033/cmems_obs-ins_ibi_phybgcwav_mynrt_na_irr_202311",
+ "doi": "https://doi.org/10.48670/moi-00043",
+ "index_platform_update": "Date of update : 2026-11-01T09:42:05Z",
+ "galician_slev_platforms": [
+  "Coruna2TG",
+  "CorunaTG",
+  "Ferrol2TG",
+  "FerrolTG",
+  "LangosteiraTG",
+  "MarinTG",
+  "SanCibraoTG",
+  "VigoTG",
+  "VillagarciaTG"
+ ],
+ "day": "2026-10-31",
+ "daily_files": [
+  {
+   "file": "IR_TS_TG_CorunaTG_20261031.nc",
+   "bytes": 46245,
+   "time_coverage_end": "2026-10-31T23:59:00Z",
+   "date_update": "2026-11-01T09:35:38Z",
+   "institution": "Puertos del Estado"
+  },
+  {
+   "file": "IR_TS_TG_Ferrol2TG_20261031.nc",
+   "bytes": 46173,
+   "time_coverage_end": "2026-10-31T23:59:00Z",
+   "date_update": "2026-11-01T09:35:37Z",
+   "institution": "Puertos del Estado"
+  },
+  {
+   "file": "IR_TS_TG_FerrolTG_20261031.nc",
+   "bytes": 46383,
+   "time_coverage_end": "2026-10-31T23:59:00Z",
+   "date_update": "2026-11-01T09:35:37Z",
+   "institution": "Puertos del Estado"
+  },
+  {
+   "file": "IR_TS_TG_LangosteiraTG_20261031.nc",
+   "bytes": 91034,
+   "time_coverage_end": "2026-10-31T23:59:00Z",
+   "date_update": "2026-11-01T09:35:36Z",
+   "institution": "Puertos del Estado"
+  },
+  {
+   "file": "IR_TS_TG_MarinTG_20261031.nc",
+   "bytes": 46178,
+   "time_coverage_end": "2026-10-31T23:59:00Z",
+   "date_update": "2026-11-01T09:35:39Z",
+   "institution": "Puertos del Estado"
+  },
+  {
+   "file": "IR_TS_TG_SanCibraoTG_20261031.nc",
+   "bytes": 46251,
+   "time_coverage_end": "2026-10-31T23:59:00Z",
+   "date_update": "2026-11-01T09:35:36Z",
+   "institution": "Puertos del Estado"
+  },
+  {
+   "file": "IR_TS_TG_VigoTG_20261031.nc",
+   "bytes": 46176,
+   "time_coverage_end": "2026-10-31T23:59:00Z",
+   "date_update": "2026-11-01T09:35:38Z",
+   "institution": "Puertos del Estado"
+  },
+  {
+   "file": "IR_TS_TG_VillagarciaTG_20261031.nc",
+   "bytes": 46072,
+   "time_coverage_end": "2026-10-31T23:59:00Z",
+   "date_update": "2026-11-01T09:35:38Z",
+   "institution": "Puertos del Estado"
+  }
+ ],
+ "history": {
+  "file": "IR_TS_TG_VigoTG.nc",
+  "bytes": 874733,
+  "time_coverage_start": "1992-11-01T05:00:00Z",
+  "time_coverage_end": "2026-09-30T23:00:00Z"
+ },
+ "requests": [
+  {
+   "url": "https://s3.waw3-1.cloudferro.com/mdl-native-03/native/INSITU_IBI_PHYBGCWAV_DISCRETE_MYNRT_013_033/cmems_obs-ins_ibi_phybgcwav_mynrt_na_irr_202311/index_platform.txt",
+   "status": 200,
+   "bytes": 3208141,
+   "last_modified": null
+  },
+  {
+   "url": "https://s3.waw3-1.cloudferro.com/mdl-native-03/native/INSITU_IBI_PHYBGCWAV_DISCRETE_MYNRT_013_033/cmems_obs-ins_ibi_phybgcwav_mynrt_na_irr_202311/index_latest.txt",
+   "status": 200,
+   "bytes": 8822882,
+   "last_modified": null
+  },
+  {
+   "url": "https://s3.waw3-1.cloudferro.com/mdl-native-03/native/INSITU_IBI_PHYBGCWAV_DISCRETE_MYNRT_013_033/cmems_obs-ins_ibi_phybgcwav_mynrt_na_irr_202311/index_history.txt",
+   "status": 200,
+   "bytes": 4344449,
+   "last_modified": null
+  },
+  {
+   "url": "https://s3.waw3-1.cloudferro.com/mdl-native-03/native/INSITU_IBI_PHYBGCWAV_DISCRETE_MYNRT_013_033/cmems_obs-ins_ibi_phybgcwav_mynrt_na_irr_202311/latest/20261031/IR_TS_TG_CorunaTG_20261031.nc",
+   "status": 200,
+   "bytes": 46245,
+   "last_modified": null
+  },
+  {
+   "url": "https://s3.waw3-1.cloudferro.com/mdl-native-03/native/INSITU_IBI_PHYBGCWAV_DISCRETE_MYNRT_013_033/cmems_obs-ins_ibi_phybgcwav_mynrt_na_irr_202311/latest/20261031/IR_TS_TG_Ferrol2TG_20261031.nc",
+   "status": 200,
+   "bytes": 46173,
+   "last_modified": null
+  },
+  {
+   "url": "https://s3.waw3-1.cloudferro.com/mdl-native-03/native/INSITU_IBI_PHYBGCWAV_DISCRETE_MYNRT_013_033/cmems_obs-ins_ibi_phybgcwav_mynrt_na_irr_202311/latest/20261031/IR_TS_TG_FerrolTG_20261031.nc",
+   "status": 200,
+   "bytes": 46383,
+   "last_modified": null
+  },
+  {
+   "url": "https://s3.waw3-1.cloudferro.com/mdl-native-03/native/INSITU_IBI_PHYBGCWAV_DISCRETE_MYNRT_013_033/cmems_obs-ins_ibi_phybgcwav_mynrt_na_irr_202311/latest/20261031/IR_TS_TG_LangosteiraTG_20261031.nc",
+   "status": 200,
+   "bytes": 91034,
+   "last_modified": null
+  },
+  {
+   "url": "https://s3.waw3-1.cloudferro.com/mdl-native-03/native/INSITU_IBI_PHYBGCWAV_DISCRETE_MYNRT_013_033/cmems_obs-ins_ibi_phybgcwav_mynrt_na_irr_202311/latest/20261031/IR_TS_TG_MarinTG_20261031.nc",
+   "status": 200,
+   "bytes": 46178,
+   "last_modified": null
+  },
+  {
+   "url": "https://s3.waw3-1.cloudferro.com/mdl-native-03/native/INSITU_IBI_PHYBGCWAV_DISCRETE_MYNRT_013_033/cmems_obs-ins_ibi_phybgcwav_mynrt_na_irr_202311/latest/20261031/IR_TS_TG_SanCibraoTG_20261031.nc",
+   "status": 200,
+   "bytes": 46251,
+   "last_modified": null
+  },
+  {
+   "url": "https://s3.waw3-1.cloudferro.com/mdl-native-03/native/INSITU_IBI_PHYBGCWAV_DISCRETE_MYNRT_013_033/cmems_obs-ins_ibi_phybgcwav_mynrt_na_irr_202311/latest/20261031/IR_TS_TG_VigoTG_20261031.nc",
+   "status": 200,
+   "bytes": 46176,
+   "last_modified": null
+  },
+  {
+   "url": "https://s3.waw3-1.cloudferro.com/mdl-native-03/native/INSITU_IBI_PHYBGCWAV_DISCRETE_MYNRT_013_033/cmems_obs-ins_ibi_phybgcwav_mynrt_na_irr_202311/latest/20261031/IR_TS_TG_VillagarciaTG_20261031.nc",
+   "status": 200,
+   "bytes": 46072,
+   "last_modified": null
+  },
+  {
+   "url": "https://s3.waw3-1.cloudferro.com/mdl-native-03/native/INSITU_IBI_PHYBGCWAV_DISCRETE_MYNRT_013_033/cmems_obs-ins_ibi_phybgcwav_mynrt_na_irr_202311/history/TG/IR_TS_TG_VigoTG.nc",
+   "status": 200,
+   "bytes": 874733,
+   "last_modified": null
+  }
+ ],
+ "files": {
+  "IR_TS_TG_VigoTG.nc": 874733,
+  "dia_20261031/IR_TS_TG_CorunaTG_20261031.nc": 46245,
+  "dia_20261031/IR_TS_TG_Ferrol2TG_20261031.nc": 46173,
+  "dia_20261031/IR_TS_TG_FerrolTG_20261031.nc": 46383,
+  "dia_20261031/IR_TS_TG_LangosteiraTG_20261031.nc": 91034,
+  "dia_20261031/IR_TS_TG_MarinTG_20261031.nc": 46178,
+  "dia_20261031/IR_TS_TG_SanCibraoTG_20261031.nc": 46251,
+  "dia_20261031/IR_TS_TG_VigoTG_20261031.nc": 46176,
+  "dia_20261031/IR_TS_TG_VillagarciaTG_20261031.nc": 46072,
+  "index_history_galicia.csv": 2689,
+  "index_latest_galicia.csv": 72597,
+  "plataformas_galicia_slev.csv": 2106
+ }
+}

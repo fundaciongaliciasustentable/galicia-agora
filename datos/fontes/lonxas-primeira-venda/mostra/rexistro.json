@@ -1,0 +1,259 @@
+{
+  "descargado_utc": "2026-11-01T10:28:32+00:00",
+  "user_agent": "GaliciaAgora/0.1 (+https://github.com/fundaciongaliciasustentable/galicia-agora; galiciasustentable@galiciasustentable.org)",
+  "resumo": {
+    "licenza_abertos_0154": "Creative Commons BY SA 4.0",
+    "abertos_data_actualizacion": "01-11-2026",
+    "abertos_frecuencia": "diario",
+    "anos_dispoñibles": "2003–2025",
+    "bytes_por_ano": {
+      "2003": 12619524,
+      "2004": 17048008,
+      "2005": 16893221,
+      "2006": 16652033,
+      "2007": 16691380,
+      "2008": 16390806,
+      "2009": 16376577,
+      "2010": 17093859,
+      "2011": 17519829,
+      "2012": 17509433,
+      "2013": 16823663,
+      "2014": 16763015,
+      "2015": 17441730,
+      "2016": 18050180,
+      "2017": 18199669,
+      "2018": 17997253,
+      "2019": 18101320,
+      "2020": 17635990,
+      "2021": 18487862,
+      "2022": 17910112,
+      "2023": 18183050,
+      "2024": 18120390,
+      "2025": 17839125
+    },
+    "ano": 2025,
+    "filas_ano": 189448,
+    "columnas": [
+      10
+    ],
+    "dias_con_vendas_ano": 327,
+    "lonxas_ano": 60,
+    "especies_ano": 276,
+    "kg_ano": 107600442,
+    "eur_ano": 407783173,
+    "mostra": "pescafresca_2025-08.csv",
+    "filas_mostra": 15860,
+    "dias_mostra": 27,
+    "lonxas_mostra": 58
+  },
+  "peticions": [
+    {
+      "url": "https://abertos.xunta.gal/catalogo/economia-empresa-emprego/-/dataset/0154/principais-indicadores-vendas-produtos-pesqueiros",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 191440,
+      "last_modified": null,
+      "utc": "2026-11-01T10:27:41+00:00"
+    },
+    {
+      "url": "https://www.pescadegalicia.gal/gl/descargas",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 37643,
+      "last_modified": null,
+      "utc": "2026-11-01T10:27:43+00:00"
+    },
+    {
+      "url": "https://www.pescadegalicia.gal/descargas/pescafresca/pescafresca2003.csv",
+      "metodo": "HEAD",
+      "status": 200,
+      "bytes": 12619524,
+      "last_modified": null,
+      "utc": "2026-11-01T10:27:44+00:00"
+    },
+    {
+      "url": "https://www.pescadegalicia.gal/descargas/pescafresca/pescafresca2004.csv",
+      "metodo": "HEAD",
+      "status": 200,
+      "bytes": 17048008,
+      "last_modified": null,
+      "utc": "2026-11-01T10:27:45+00:00"
+    },
+    {
+      "url": "https://www.pescadegalicia.gal/descargas/pescafresca/pescafresca2005.csv",
+      "metodo": "HEAD",
+      "status": 200,
+      "bytes": 16893221,
+      "last_modified": null,
+      "utc": "2026-11-01T10:27:47+00:00"
+    },
+    {
+      "url": "https://www.pescadegalicia.gal/descargas/pescafresca/pescafresca2006.csv",
+      "metodo": "HEAD",
+      "status": 200,
+      "bytes": 16652033,
+      "last_modified": null,
+      "utc": "2026-11-01T10:27:48+00:00"
+    },
+    {
+      "url": "https://www.pescadegalicia.gal/descargas/pescafresca/pescafresca2007.csv",
+      "metodo": "HEAD",
+      "status": 200,
+      "bytes": 16691380,
+      "last_modified": null,
+      "utc": "2026-11-01T10:27:49+00:00"
+    },
+    {
+      "url": "https://www.pescadegalicia.gal/descargas/pescafresca/pescafresca2008.csv",
+      "metodo": "HEAD",
+      "status": 200,
+      "bytes": 16390806,
+      "last_modified": null,
+      "utc": "2026-11-01T10:27:51+00:00"
+    },
+    {
+      "url": "https://www.pescadegalicia.gal/descargas/pescafresca/pescafresca2009.csv",
+      "metodo": "HEAD",
+      "status": 200,
+      "bytes": 16376577,
+      "last_modified": null,
+      "utc": "2026-11-01T10:27:52+00:00"
+    },
+    {
+      "url": "https://www.pescadegalicia.gal/descargas/pescafresca/pescafresca2010.csv",
+      "metodo": "HEAD",
+      "status": 200,
+      "bytes": 17093859,
+      "last_modified": null,
+      "utc": "2026-11-01T10:27:54+00:00"
+    },
+    {
+      "url": "https://www.pescadegalicia.gal/descargas/pescafresca/pescafresca2011.csv",
+      "metodo": "HEAD",
+      "status": 200,
+      "bytes": 17519829,
+      "last_modified": null,
+      "utc": "2026-11-01T10:27:55+00:00"
+    },
+    {
+      "url": "https://www.pescadegalicia.gal/descargas/pescafresca/pescafresca2012.csv",
+      "metodo": "HEAD",
+      "status": 200,
+      "bytes": 17509433,
+      "last_modified": null,
+      "utc": "2026-11-01T10:27:56+00:00"
+    },
+    {
+      "url": "https://www.pescadegalicia.gal/descargas/pescafresca/pescafresca2013.csv",
+      "metodo": "HEAD",
+      "status": 200,
+      "bytes": 16823663,
+      "last_modified": null,
+      "utc": "2026-11-01T10:27:58+00:00"
+    },
+    {
+      "url": "https://www.pescadegalicia.gal/descargas/pescafresca/pescafresca2014.csv",
+      "metodo": "HEAD",
+      "status": 200,
+      "bytes": 16763015,
+      "last_modified": null,
+      "utc": "2026-11-01T10:27:59+00:00"
+    },
+    {
+      "url": "https://www.pescadegalicia.gal/descargas/pescafresca/pescafresca2015.csv",
+      "metodo": "HEAD",
+      "status": 200,
+      "bytes": 17441730,
+      "last_modified": null,
+      "utc": "2026-11-01T10:28:01+00:00"
+    },
+    {
+      "url": "https://www.pescadegalicia.gal/descargas/pescafresca/pescafresca2016.csv",
+      "metodo": "HEAD",
+      "status": 200,
+      "bytes": 18050180,
+      "last_modified": null,
+      "utc": "2026-11-01T10:28:02+00:00"
+    },
+    {
+      "url": "https://www.pescadegalicia.gal/descargas/pescafresca/pescafresca2017.csv",
+      "metodo": "HEAD",
+      "status": 200,
+      "bytes": 18199669,
+      "last_modified": null,
+      "utc": "2026-11-01T10:28:03+00:00"
+    },
+    {
+      "url": "https://www.pescadegalicia.gal/descargas/pescafresca/pescafresca2018.csv",
+      "metodo": "HEAD",
+      "status": 200,
+      "bytes": 17997253,
+      "last_modified": null,
+      "utc": "2026-11-01T10:28:05+00:00"
+    },
+    {
+      "url": "https://www.pescadegalicia.gal/descargas/pescafresca/pescafresca2019.csv",
+      "metodo": "HEAD",
+      "status": 200,
+      "bytes": 18101320,
+      "last_modified": null,
+      "utc": "2026-11-01T10:28:06+00:00"
+    },
+    {
+      "url": "https://www.pescadegalicia.gal/descargas/pescafresca/pescafresca2020.csv",
+      "metodo": "HEAD",
+      "status": 200,
+      "bytes": 17635990,
+      "last_modified": null,
+      "utc": "2026-11-01T10:28:08+00:00"
+    },
+    {
+      "url": "https://www.pescadegalicia.gal/descargas/pescafresca/pescafresca2021.csv",
+      "metodo": "HEAD",
+      "status": 200,
+      "bytes": 18487862,
+      "last_modified": null,
+      "utc": "2026-11-01T10:28:09+00:00"
+    },
+    {
+      "url": "https://www.pescadegalicia.gal/descargas/pescafresca/pescafresca2022.csv",
+      "metodo": "HEAD",
+      "status": 200,
+      "bytes": 17910112,
+      "last_modified": null,
+      "utc": "2026-11-01T10:28:10+00:00"
+    },
+    {
+      "url": "https://www.pescadegalicia.gal/descargas/pescafresca/pescafresca2023.csv",
+      "metodo": "HEAD",
+      "status": 200,
+      "bytes": 18183050,
+      "last_modified": null,
+      "utc": "2026-11-01T10:28:12+00:00"
+    },
+    {
+      "url": "https://www.pescadegalicia.gal/descargas/pescafresca/pescafresca2024.csv",
+      "metodo": "HEAD",
+      "status": 200,
+      "bytes": 18120390,
+      "last_modified": null,
+      "utc": "2026-11-01T10:28:13+00:00"
+    },
+    {
+      "url": "https://www.pescadegalicia.gal/descargas/pescafresca/pescafresca2025.csv",
+      "metodo": "HEAD",
+      "status": 200,
+      "bytes": 17839125,
+      "last_modified": null,
+      "utc": "2026-11-01T10:28:14+00:00"
+    },
+    {
+      "url": "https://www.pescadegalicia.gal/descargas/pescafresca/pescafresca2025.csv",
+      "metodo": "GET",
+      "status": 200,
+      "bytes": 17839125,
+      "last_modified": null,
+      "utc": "2026-11-01T10:28:30+00:00"
+    }
+  ]
+}

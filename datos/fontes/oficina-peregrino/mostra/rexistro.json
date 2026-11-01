@@ -1,0 +1,44 @@
+{
+  "descargado_utc": "2026-11-01T10:29:31+00:00",
+  "user_agent": "GaliciaAgora/0.1 (+https://github.com/fundaciongaliciasustentable/galicia-agora; galiciasustentable@galiciasustentable.org)",
+  "conclusion": "Sen descarga nin licenza de reutilización; só visor Power BI. Pedir permiso.",
+  "powerbi": "https://app.powerbi.com/view?r=eyJrIjoiNDNhNDQwYzItMjUxMi00ZTE1LWJmZDUtYWRiM2M2YjllZjA3IiwidCI6ImUzZWVhZTM4LTMwYzUtNDVjNy1hMjc0LWFlZGE5ZjNkNTI3MCJ9",
+  "peticions": [
+    {
+      "url": "https://oficinadelperegrino.com/robots.txt",
+      "status": 200,
+      "content_type": "text/plain; charset=utf-8",
+      "bytes": 179,
+      "utc": "2026-11-01T10:29:23+00:00",
+      "contido": "User-agent: *\r\nDisallow: /wp-admin/\r\nAllow: /wp-admin/admin-ajax.php\r\n\r\nSitemap: https://oficinadelperegrino.com/sitemap.xml\r\nSitemap: https://oficinadelperegrino.com/sitemap.rss"
+    },
+    {
+      "url": "https://oficinadelperegrino.com/estadisticas2/",
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 74016,
+      "utc": "2026-11-01T10:29:25+00:00",
+      "iframe_powerbi": null,
+      "ligazons_descarga": []
+    },
+    {
+      "url": "https://oficinadelperegrino.com/estadisticas-nueva/",
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 74038,
+      "utc": "2026-11-01T10:29:27+00:00",
+      "iframe_powerbi": "https://app.powerbi.com/view?r=eyJrIjoiNDNhNDQwYzItMjUxMi00ZTE1LWJmZDUtYWRiM2M2YjllZjA3IiwidCI6ImUzZWVhZTM4LTMwYzUtNDVjNy1hMjc0LWFlZGE5ZjNkNTI3MCJ9",
+      "ligazons_descarga": []
+    },
+    {
+      "url": "https://oficinadelperegrino.com/aviso-legal/",
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 81210,
+      "utc": "2026-11-01T10:29:29+00:00",
+      "titular": "SAMI CATEDRAL DE SANTIAGO DE COMPOSTELA",
+      "clausula_prohibicion_presente": true,
+      "menciona_reutilizacion_ou_licenza": false
+    }
+  ]
+}
