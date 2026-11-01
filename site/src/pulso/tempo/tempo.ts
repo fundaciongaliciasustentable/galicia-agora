@@ -1,10 +1,12 @@
-// /pulso/tempo/: the weather of the reference day (21 May 2025) at the MeteoGalicia stations.
+// /pulso/tempo/: the weather hour by hour at the MeteoGalicia stations, in two modes: the
+// reference day of the series (21 May 2025, meteo-dia) or the last 24 hours (meteo-24h,
+// refreshed every hour).
 // The canvas draws, back to front: a night veil that lifts with the mean measured sunshine,
 // a soft disc of colour around each station for its temperature, wind particles blowing from
 // each station, and rain marks where it rains. Below, the mean temperature with the band
 // between the coldest and warmest station; in the panel, an hourly table.
 //
-// Data: the meteo-dia layer (MeteoGalicia), served from this site.
+// Data: the meteo-dia and meteo-24h layers (MeteoGalicia), served from this site.
 
 import type { Map as MlMap } from 'maplibre-gl';
 import { asset } from '../../paths.ts';
@@ -23,9 +25,29 @@ interface Station {
   rs: Array<number | null>;
 }
 type LayerKey = 'temp' | 'wind' | 'rain';
+type Mode = 'dia' | 'live';
+interface Hour {
+  mean: number;
+  min: number;
+  max: number;
+  rs: number;
+  vv: number;
+  rain: number;
+}
+interface DataSet {
+  stations: Station[];
+  hourly: Hour[];
+  rsMax: number;
+  /** UTC ms of the first hour (live mode); null for the reference day, read as local hours. */
+  start: number | null;
+  attribution: string;
+  /** fresh / stale / failed, from the layer meta. */
+  status: string;
+  fetchedAt: string | null;
+}
 type Dict = Record<string, string>;
 
-const LAYER = 'meteo-dia';
+const LAYERS: Record<Mode, string> = { dia: 'meteo-dia', live: 'meteo-24h' };
 const SPEEDS = [45, 90, 180];
 const RAIN = '#8fd3ff';
 
@@ -56,65 +78,106 @@ export async function start(): Promise<void> {
   const tbody = q<HTMLElement>('.tp-table tbody');
   const caption = q<HTMLElement>('.tp-table caption');
   const sources = q<HTMLElement>('.tp-sources');
+  const periodEl = q<HTMLElement>('.tp-period');
+  const modeBtns = [...app.querySelectorAll<HTMLButtonElement>('[data-mode]')];
 
   // ---- Data -------------------------------------------------------------------------------
-  let stations: Station[] = [];
+  const summarise = (stations: Station[]): Hour[] =>
+    Array.from({ length: 24 }, (_, h) => {
+      const vals = (k: 'ta' | 'rs' | 'vv') =>
+        stations.map((s) => s[k][h]).filter((v): v is number => v !== null && v !== undefined);
+      const ta = vals('ta');
+      return {
+        mean: mean(ta),
+        min: Math.min(...ta),
+        max: Math.max(...ta),
+        rs: mean(vals('rs')),
+        vv: mean(vals('vv')),
+        rain: stations.filter((s) => (s.pp[h] ?? 0) > 0).length,
+      };
+    });
+  const sets: Partial<Record<Mode, DataSet>> = {};
   try {
     const catalog = (await (await fetch(asset('data/catalog.json'))).json()) as {
-      layers: Array<{ id: string; attribution: string; meta: unknown }>;
+      layers: Array<{
+        id: string;
+        attribution: string;
+        meta: { status?: string; fetched_at?: string } | null;
+      }>;
     };
-    const layer = catalog.layers.find((l) => l.id === LAYER);
-    if (layer?.meta) {
-      const fc = (await (await fetch(asset(`data/${LAYER}/data.geojson`))).json()) as {
-        features: Array<{
-          geometry: { coordinates: [number, number] };
-          properties: Record<string, unknown>;
-        }>;
-      };
-      stations = fc.features.map((f) => ({
-        id: Number(f.properties.id),
-        name: String(f.properties.nome),
-        lonlat: f.geometry.coordinates,
-        ta: f.properties.ta as Array<number | null>,
-        pp: f.properties.pp as Array<number | null>,
-        vv: f.properties.vv as Array<number | null>,
-        dv: f.properties.dv as Array<number | null>,
-        rs: f.properties.rs as Array<number | null>,
-      }));
-      sources.textContent = layer.attribution;
-    }
+    await Promise.all(
+      (Object.keys(LAYERS) as Mode[]).map(async (m) => {
+        const layer = catalog.layers.find((l) => l.id === LAYERS[m]);
+        if (!layer?.meta) return;
+        const res = await fetch(asset(`data/${LAYERS[m]}/data.geojson`));
+        if (!res.ok) return;
+        const fc = (await res.json()) as {
+          features: Array<{
+            geometry: { coordinates: [number, number] };
+            properties: Record<string, unknown>;
+          }>;
+        };
+        const stations = fc.features.map((f) => ({
+          id: Number(f.properties.id),
+          name: String(f.properties.nome),
+          lonlat: f.geometry.coordinates,
+          ta: f.properties.ta as Array<number | null>,
+          pp: f.properties.pp as Array<number | null>,
+          vv: f.properties.vv as Array<number | null>,
+          dv: f.properties.dv as Array<number | null>,
+          rs: f.properties.rs as Array<number | null>,
+        }));
+        if (stations.length === 0) return;
+        const hourly = summarise(stations);
+        const inicio = fc.features[0]?.properties.inicio;
+        sets[m] = {
+          stations,
+          hourly,
+          rsMax: Math.max(1, ...hourly.map((h) => h.rs)),
+          start: typeof inicio === 'string' ? Date.parse(inicio) : null,
+          attribution: layer.attribution,
+          status: layer.meta.status ?? 'fresh',
+          fetchedAt: layer.meta.fetched_at ?? null,
+        };
+      }),
+    );
   } catch {
     // Handled below.
   }
-  if (stations.length === 0) {
+  if (!sets.dia && !sets.live) {
     status.textContent = dict.weather_missing ?? '';
     return;
   }
-  // Hourly summaries for the curve, the table and the light.
-  const hourly = Array.from({ length: 24 }, (_, h) => {
-    const ta = stations
-      .map((s) => s.ta[h])
-      .filter((v): v is number => v !== null && v !== undefined);
-    const rs = stations
-      .map((s) => s.rs[h])
-      .filter((v): v is number => v !== null && v !== undefined);
-    const vv = stations
-      .map((s) => s.vv[h])
-      .filter((v): v is number => v !== null && v !== undefined);
-    const rain = stations.filter((s) => (s.pp[h] ?? 0) > 0).length;
-    return {
-      mean: mean(ta),
-      min: Math.min(...ta),
-      max: Math.max(...ta),
-      rs: mean(rs),
-      vv: mean(vv),
-      rain,
-    };
+  const params = new URLSearchParams(window.location.hash.slice(1));
+  let mode: Mode = (params.get('m') === '24h' && sets.live) || !sets.dia ? 'live' : 'dia';
+  let set = sets[mode] as DataSet;
+  let stations = set.stations;
+  let hourly = set.hourly;
+  let rsMax = set.rsMax;
+  const hourFmt = new Intl.DateTimeFormat('en-GB', {
+    timeZone: 'Europe/Madrid',
+    hour: '2-digit',
+    minute: '2-digit',
+    hourCycle: 'h23',
   });
-  const rsMax = Math.max(1, ...hourly.map((h) => h.rs));
+  // Own month names: some browsers ship without Galician locale data and fall back to Spanish.
+  const dayMonth = new Intl.DateTimeFormat('en-GB', {
+    timeZone: 'Europe/Madrid',
+    day: 'numeric',
+    month: 'numeric',
+  });
+  const dateFmt = {
+    format(d: Date) {
+      const [day, month] = dayMonth.format(d).split('/').map(Number) as [number, number];
+      return `${day} de ${(dict.pulse_months ?? '').split(',')[month - 1] ?? ''}`;
+    },
+  };
+  /** Local clock label of second `sec` of the shown 24 hours. */
+  const label = (sec: number) =>
+    set.start === null ? clock(sec) : hourFmt.format(new Date(set.start + sec * 1000));
+  for (const b of modeBtns) b.disabled = !sets[b.dataset.mode as Mode];
 
   // ---- State ------------------------------------------------------------------------------
-  const params = new URLSearchParams(window.location.hash.slice(1));
   const hm = /^(\d{2}):(\d{2})$/.exec(params.get('t') ?? '');
   let s = hm ? Number(hm[1]) * 3600 + Number(hm[2]) * 60 : 7 * 3600;
   const off = new Set((params.get('sen') ?? '').split(',').filter(Boolean) as LayerKey[]);
@@ -126,6 +189,7 @@ export async function start(): Promise<void> {
   let speed = SPEEDS[1] as number;
   const writeHash = () => {
     const p = new URLSearchParams();
+    if (mode === 'live') p.set('m', '24h');
     p.set('t', clock(s));
     const hidden = (['temp', 'wind', 'rain'] as LayerKey[]).filter((k) => !enabled.has(k));
     if (hidden.length) p.set('sen', hidden.join(','));
@@ -288,7 +352,7 @@ export async function start(): Promise<void> {
       ctx.fill();
     }
 
-    clockEl.textContent = clock(s);
+    clockEl.textContent = label(s);
     let lo: { v: number; st: Station } | null = null;
     let hi: { v: number; st: Station } | null = null;
     const vals: number[] = [];
@@ -361,7 +425,7 @@ export async function start(): Promise<void> {
       tx.setAttribute('x', String(Math.min(W - 14, Math.max(14, xOf(h * 3600)))));
       tx.setAttribute('y', String(H - 2));
       tx.setAttribute('class', 'tp-tick');
-      tx.textContent = clock(h * 3600);
+      tx.textContent = label(h * 3600);
       curve.append(tx);
     }
     playhead.setAttribute('class', 'tp-playhead');
@@ -375,9 +439,9 @@ export async function start(): Promise<void> {
       'aria-label',
       fill(dict.weather_curve_label ?? '', {
         low: f1.format(low),
-        lowAt: clock(means.indexOf(low) * 3600),
+        lowAt: label(means.indexOf(low) * 3600),
         high: f1.format(high),
-        highAt: clock(means.indexOf(high) * 3600),
+        highAt: label(means.indexOf(high) * 3600),
       }),
     );
     drawPlayhead();
@@ -402,27 +466,64 @@ export async function start(): Promise<void> {
   curve.addEventListener('pointerup', () => writeHash());
 
   // ---- Table ------------------------------------------------------------------------------
-  caption.textContent = fill(dict.weather_table_caption ?? '', { n: stations.length });
-  tbody.replaceChildren(
-    ...hourly.map((h, i) => {
-      const tr = document.createElement('tr');
-      const cells = [
-        clock(i * 3600),
-        f1.format(h.mean),
-        f1.format(h.min),
-        f1.format(h.max),
-        String(h.rain),
-        f1.format(h.vv),
-      ];
-      cells.forEach((text, k) => {
-        const td = document.createElement(k === 0 ? 'th' : 'td');
-        if (k === 0) td.setAttribute('scope', 'row');
-        td.textContent = text;
-        tr.append(td);
-      });
-      return tr;
-    }),
-  );
+  function table() {
+    caption.textContent = fill(dict.weather_table_caption ?? '', { n: stations.length });
+    tbody.replaceChildren(
+      ...hourly.map((h, i) => {
+        const tr = document.createElement('tr');
+        const cells = [
+          label(i * 3600),
+          f1.format(h.mean),
+          f1.format(h.min),
+          f1.format(h.max),
+          String(h.rain),
+          f1.format(h.vv),
+        ];
+        cells.forEach((text, k) => {
+          const td = document.createElement(k === 0 ? 'th' : 'td');
+          if (k === 0) td.setAttribute('scope', 'row');
+          td.textContent = text;
+          tr.append(td);
+        });
+        return tr;
+      }),
+    );
+  }
+
+  /** The period shown, the source and, in live mode, how fresh the data is. */
+  function period() {
+    sources.textContent = set.attribution;
+    if (set.start === null) {
+      periodEl.textContent = dict.weather_period_day ?? '';
+      return;
+    }
+    const end = new Date(set.start + 23 * 3600_000);
+    let text = fill(dict.weather_period_live ?? '', {
+      hour: hourFmt.format(end),
+      date: dateFmt.format(end),
+    });
+    // Judged here, not only from the meta: a copy of the site that stops receiving data would
+    // keep saying «fresh» for ever.
+    const old = Date.now() - end.getTime() > 3 * 3600_000;
+    if (old || set.status !== 'fresh') text += ` ${dict.weather_period_stale ?? ''}`;
+    periodEl.textContent = text;
+  }
+
+  const setMode = (m: Mode) => {
+    if (!sets[m]) return;
+    mode = m;
+    set = sets[m] as DataSet;
+    stations = set.stations;
+    hourly = set.hourly;
+    rsMax = set.rsMax;
+    for (const b of modeBtns) b.setAttribute('aria-pressed', String(b.dataset.mode === m));
+    period();
+    table();
+    drawCurve();
+    draw();
+    writeHash();
+  };
+  for (const b of modeBtns) b.addEventListener('click', () => setMode(b.dataset.mode as Mode));
 
   // ---- Controls ---------------------------------------------------------------------------
   range.min = '0';
@@ -480,7 +581,6 @@ export async function start(): Promise<void> {
   status.textContent = '';
   frame_();
   resize();
-  drawCurve();
-  draw();
+  setMode(mode);
   setPlaying(playing);
 }

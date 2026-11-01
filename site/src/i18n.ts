@@ -198,12 +198,27 @@ const STRINGS = {
   },
   weather_title: { gl: 'O tempo hora a hora', es: 'El tiempo hora a hora' },
   weather_lede: {
-    gl: 'O mércores 21 de maio de 2025 nas estacións de MeteoGalicia: a luz do sol medida, a temperatura, o vento e a choiva, hora a hora.',
-    es: 'El miércoles 21 de mayo de 2025 en las estaciones de MeteoGalicia: la luz del sol medida, la temperatura, el viento y la lluvia, hora a hora.',
+    gl: 'As estacións de MeteoGalicia hora a hora: a luz do sol medida, a temperatura, o vento e a choiva. O día de referencia da serie ou as últimas 24 horas.',
+    es: 'Las estaciones de MeteoGalicia hora a hora: la luz del sol medida, la temperatura, el viento y la lluvia. El día de referencia de la serie o las últimas 24 horas.',
   },
   weather_map_label: {
     gl: 'Mapa de Galicia coas estacións meteorolóxicas: cor pola temperatura, partículas polo vento e pingas pola choiva. As cifras están no panel e na táboa.',
     es: 'Mapa de Galicia con las estaciones meteorológicas: color por la temperatura, partículas por el viento y gotas por la lluvia. Las cifras están en el panel y en la tabla.',
+  },
+  weather_mode: { gl: 'Período', es: 'Periodo' },
+  weather_mode_day: { gl: '21 de maio de 2025', es: '21 de mayo de 2025' },
+  weather_mode_live: { gl: 'Últimas 24 horas', es: 'Últimas 24 horas' },
+  weather_period_day: {
+    gl: 'Mércores 21 de maio de 2025, o día de referencia da serie.',
+    es: 'Miércoles 21 de mayo de 2025, el día de referencia de la serie.',
+  },
+  weather_period_live: {
+    gl: 'As 24 horas ata a última lectura: as {hour} do {date}. Actualízase cada hora.',
+    es: 'Las 24 horas hasta la última lectura: las {hour} del {date}. Se actualiza cada hora.',
+  },
+  weather_period_stale: {
+    gl: 'Ollo: estes datos levan máis de tres horas sen actualizarse.',
+    es: 'Ojo: estos datos llevan más de tres horas sin actualizarse.',
   },
   weather_temp: { gl: 'Temperatura', es: 'Temperatura' },
   weather_wind: { gl: 'Vento', es: 'Viento' },
@@ -234,8 +249,8 @@ const STRINGS = {
   weather_col_rain: { gl: 'Choiva', es: 'Lluvia' },
   weather_col_wind: { gl: 'Vento m/s', es: 'Viento m/s' },
   weather_note: {
-    gl: 'Observación horaria das estacións de MeteoGalicia, só lecturas validadas, en hora oficial de Galicia. É o mesmo mércores que un dos catro da media de mobilidade, escollido por ser o máis común dos catro: suave e case seco (o 28 de maio pasou dos 35 °C e o 14 choveu). A cor arredor de cada estación só representa esa estación; entre estacións non se calcula nada. O vento é o medio da hora a 10 m (ou a 2 m onde non hai mastro de 10 m); as partículas son un esquema da dirección e da forza. O fondo aclara coa radiación solar media de todas as estacións.',
-    es: 'Observación horaria de las estaciones de MeteoGalicia, solo lecturas validadas, en hora oficial de Galicia. Es el mismo miércoles que uno de los cuatro de la media de movilidad, elegido por ser el más común de los cuatro: suave y casi seco (el 28 de mayo pasó de 35 °C y el 14 llovió). El color alrededor de cada estación solo representa esa estación; entre estaciones no se calcula nada. El viento es el medio de la hora a 10 m (o a 2 m donde no hay mástil de 10 m); las partículas son un esquema de la dirección y la fuerza. El fondo se aclara con la radiación solar media de todas las estaciones.',
+    gl: 'Observación horaria das estacións de MeteoGalicia, só lecturas validadas, en hora oficial de Galicia. «Últimas 24 horas» renóvase cada hora cunha soa petición a MeteoGalicia. O día de referencia é o mesmo mércores que un dos catro da media de mobilidade, escollido por ser o máis común dos catro: suave e case seco (o 28 de maio pasou dos 35 °C e o 14 choveu). A cor arredor de cada estación só representa esa estación; entre estacións non se calcula nada. O vento é o medio da hora a 10 m (ou a 2 m onde non hai mastro de 10 m); as partículas son un esquema da dirección e da forza. O fondo aclara coa radiación solar media de todas as estacións.',
+    es: 'Observación horaria de las estaciones de MeteoGalicia, solo lecturas validadas, en hora oficial de Galicia. «Últimas 24 horas» se renueva cada hora con una sola petición a MeteoGalicia. El día de referencia es el mismo miércoles que uno de los cuatro de la media de movilidad, elegido por ser el más común de los cuatro: suave y casi seco (el 28 de mayo pasó de 35 °C y el 14 llovió). El color alrededor de cada estación solo representa esa estación; entre estaciones no se calcula nada. El viento es el medio de la hora a 10 m (o a 2 m donde no hay mástil de 10 m); las partículas son un esquema de la dirección y la fuerza. El fondo se aclara con la radiación solar media de todas las estaciones.',
   },
   weather_missing: {
     gl: 'Aínda non están publicados os datos do tempo dese día.',

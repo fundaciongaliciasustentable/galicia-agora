@@ -18,6 +18,13 @@ const { lang } = Astro.props;
     <a class="tp-back" href={`${base(lang)}pulso/`}>← {t(lang, 'pulse_back')}</a>
     <h1>{t(lang, 'weather_title')}</h1>
     <p class="tp-lede">{t(lang, 'weather_lede')}</p>
+    <div class="tp-controls">
+      <div class="tp-seg" role="group" aria-label={t(lang, 'weather_mode')}>
+        <button type="button" data-mode="dia" aria-pressed="true">{t(lang, 'weather_mode_day')}</button>
+        <button type="button" data-mode="live" aria-pressed="false">{t(lang, 'weather_mode_live')}</button>
+      </div>
+    </div>
+    <p class="tp-period"></p>
     <p class="tp-clock" aria-live="off">--:--</p>
     <p class="tp-now" aria-live="off"></p>
     <div class="tp-controls">
@@ -133,6 +140,15 @@ const { lang } = Astro.props;
   }
   .tp-sources {
     font-size: var(--gs-texto-xs);
+  }
+  .tp-period {
+    margin: 8px 0 0;
+    font-size: var(--gs-texto-sm);
+    color: #e6e6df;
+  }
+  .tp-seg button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
   }
   .tp-clock {
     margin: 10px 0 0;

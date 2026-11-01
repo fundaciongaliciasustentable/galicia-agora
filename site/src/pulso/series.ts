@@ -65,7 +65,10 @@ export const SERIES: PulseMap[] = [
       gl: 'Temperatura, choiva e vento nas 155 estacións de MeteoGalicia.',
       es: 'Temperatura, lluvia y viento en las 155 estaciones de MeteoGalicia.',
     },
-    period: { gl: 'Mércores 21 de maio de 2025', es: 'Miércoles 21 de mayo de 2025' },
+    period: {
+      gl: 'Mércores 21 de maio de 2025 ou as últimas 24 horas',
+      es: 'Miércoles 21 de mayo de 2025 o las últimas 24 horas',
+    },
   },
   {
     slug: 'lume',
