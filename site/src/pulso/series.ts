@@ -143,6 +143,17 @@ export const SERIES: PulseMap[] = [
     period: { gl: 'Censos de 1900 a 2021', es: 'Censos de 1900 a 2021' },
   },
   {
+    slug: 'construcion',
+    ready: true,
+    colour: '#ffb35c',
+    title: { gl: 'Como se construíu Galicia', es: 'Cómo se construyó Galicia' },
+    summary: {
+      gl: 'Os edificios de hoxe acendéndose no ano que consta no Catastro, coa cor do seu uso.',
+      es: 'Los edificios de hoy encendiéndose en el año que consta en el Catastro, con el color de su uso.',
+    },
+    period: { gl: '1900–2026, ano a ano', es: '1900–2026, año a año' },
+  },
+  {
     slug: 'vida',
     ready: true,
     colour: '#a6dba0',

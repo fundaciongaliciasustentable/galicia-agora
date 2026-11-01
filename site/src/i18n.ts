@@ -481,6 +481,54 @@ const STRINGS = {
     es: 'Aún no están publicados los rayos de los últimos doce meses.',
   },
   pulse_provisional: { gl: 'provisional', es: 'provisional' },
+  build_title: { gl: 'Como se construíu Galicia', es: 'Cómo se construyó Galicia' },
+  build_lede: {
+    gl: 'Cada cela de 250 metros acéndese no ano de construción que consta no Catastro para os edificios que hai nela hoxe, na cor do seu uso principal.',
+    es: 'Cada celda de 250 metros se enciende en el año de construcción que consta en el Catastro para los edificios que hay en ella hoy, en el color de su uso principal.',
+  },
+  build_map_label: {
+    gl: 'Mapa de Galicia cos edificios de hoxe acendéndose no seu ano de construción, desde 1900. As cifras están no panel e na táboa.',
+    es: 'Mapa de Galicia con los edificios de hoy encendiéndose en su año de construcción, desde 1900. Las cifras están en el panel y en la tabla.',
+  },
+  build_now: {
+    gl: '{n} edificios con este ano de construción, {v} deles de vivenda. Desde 1900 ata este ano: {cum} dos {dated} que teñen un ano fiable.',
+    es: '{n} edificios con este año de construcción, {v} de ellos de vivienda. Desde 1900 hasta este año: {cum} de los {dated} que tienen un año fiable.',
+  },
+  build_speed_opt: { gl: 'Un ano cada {s} s', es: 'Un año cada {s} s' },
+  build_curve: {
+    gl: 'Edificios por ano de construción e uso',
+    es: 'Edificios por año de construcción y uso',
+  },
+  build_curve_label: {
+    gl: 'Edificios que existen hoxe por ano de construción, de {from} a {to}: máximo de {max} en {year}.',
+    es: 'Edificios que existen hoy por año de construcción, de {from} a {to}: máximo de {max} en {year}.',
+  },
+  build_table_caption: {
+    gl: '{n} edificios cun ano fiable desde 1900, por década e uso. Ademais, {before} anteriores a 1900 e {base} sen ano fiable.',
+    es: '{n} edificios con un año fiable desde 1900, por década y uso. Además, {before} anteriores a 1900 y {base} sin año fiable.',
+  },
+  build_col_decade: { gl: 'Década', es: 'Década' },
+  build_use_vivenda: { gl: 'Vivenda', es: 'Vivienda' },
+  build_use_agrario: { gl: 'Agrario', es: 'Agrario' },
+  build_use_industrial: { gl: 'Industria e almacén', es: 'Industria y almacén' },
+  build_use_servizos: { gl: 'Servizos', es: 'Servicios' },
+  build_use_outro: { gl: 'Outros', es: 'Otros' },
+  build_use_base: {
+    gl: 'Anterior a 1900 ou sen ano fiable',
+    es: 'Anterior a 1900 o sin año fiable',
+  },
+  build_note: {
+    gl: 'Edificios INSPIRE da Dirección General del Catastro. Un «edificio» é todo o construído sobre unha parcela catastral, e o seu ano é o da construción máis antiga da parcela, non o da última reforma. O Catastro só ten o que existe hoxe: os edificios derrubados non están, e un barrio renovado aparece como novo. Moitos anos antigos son estimacións redondas (por iso sobresaen 1940, 1950 ou 1960), e varios concellos enchen os edificios vellos sen data cun mesmo ano: eses anos de recheo, os anos posteriores á publicación e os edificios sen ano debúxanse en gris desde o comezo. O uso é o de maior superficie da parcela. Elaboración propia, con contas de edificios por cela de 250 metros: non é cartografía catastral.',
+    es: 'Edificios INSPIRE de la Dirección General del Catastro. Un «edificio» es todo lo construido sobre una parcela catastral, y su año es el de la construcción más antigua de la parcela, no el de la última reforma. El Catastro solo tiene lo que existe hoy: los edificios derribados no están, y un barrio renovado aparece como nuevo. Muchos años antiguos son estimaciones redondas (por eso sobresalen 1940, 1950 o 1960), y varios ayuntamientos rellenan los edificios viejos sin fecha con un mismo año: esos años de relleno, los años posteriores a la publicación y los edificios sin año se dibujan en gris desde el comienzo. El uso es el de mayor superficie de la parcela. Elaboración propia, con recuentos de edificios por celda de 250 metros: no es cartografía catastral.',
+  },
+  build_fillers: {
+    gl: 'Anos de recheo detectados ({n} concellos): {list}.',
+    es: 'Años de relleno detectados ({n} ayuntamientos): {list}.',
+  },
+  build_missing: {
+    gl: 'Aínda non están publicados os datos deste mapa.',
+    es: 'Aún no están publicados los datos de este mapa.',
+  },
   life_title: {
     gl: 'Nacer e morrer, concello a concello',
     es: 'Nacer y morir, ayuntamiento a ayuntamiento',

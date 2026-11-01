@@ -68,6 +68,7 @@ export const SERIES_LAYERS = new Set([
   'aire-24h',
   'lonxas-2025',
   'raios-ano',
+  'construcion-edificios',
   'nacementos-mortes',
   'escolas-concello',
   'vut-mensual',
