@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-01T22:34:37.171Z",
+  "generated_at": "2026-11-01T22:42:46.379Z",
   "layers": [
     {
       "id": "aeroportos",
@@ -385,8 +385,8 @@
       "meta": {
         "layer_id": "avisos-aemet",
         "published_at": "2026-11-01T10:27:51.000Z",
-        "fetched_at": "2026-11-01T22:31:21.850Z",
-        "last_success_at": "2026-11-01T22:31:21.850Z",
+        "fetched_at": "2026-11-01T22:42:44.519Z",
+        "last_success_at": "2026-11-01T22:42:44.519Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 4,
@@ -396,6 +396,10 @@
         "checksum": "sha256:1ef2efbac411d7e932e3bf630bfcfa6dded10092def3e0888d91692cbd48cfd6",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-11-01T22:42:44.519Z",
+            "ok": true
+          },
           {
             "at": "2026-11-01T22:31:21.850Z",
             "ok": true
@@ -618,8 +622,8 @@
       "meta": {
         "layer_id": "avisos-meteogalicia",
         "published_at": null,
-        "fetched_at": "2026-11-01T22:31:22.169Z",
-        "last_success_at": "2026-11-01T22:31:22.169Z",
+        "fetched_at": "2026-11-01T22:42:44.949Z",
+        "last_success_at": "2026-11-01T22:42:44.949Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 313,
@@ -629,6 +633,10 @@
         "checksum": "sha256:b0d3259a42f56a43a11eff1268cfdbc5e2c722c39da0f71071f3559ef3833aac",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-11-01T22:42:44.949Z",
+            "ok": true
+          },
           {
             "at": "2026-11-01T22:31:22.169Z",
             "ok": true
@@ -915,18 +923,22 @@
       },
       "meta": {
         "layer_id": "bicis-arteixo",
-        "published_at": "2026-11-01T22:30:45.000Z",
-        "fetched_at": "2026-11-01T22:31:22.916Z",
-        "last_success_at": "2026-11-01T22:31:22.916Z",
+        "published_at": "2026-11-01T22:41:58.000Z",
+        "fetched_at": "2026-11-01T22:42:45.569Z",
+        "last_success_at": "2026-11-01T22:42:45.569Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 15,
         "source_url": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_aa/gbfs.json",
         "licence": "CC0-1.0",
         "attribution": "Datos: biciArteixo / nextbike (CC0)",
-        "checksum": "sha256:baf381589b9c2c659284ac4af5cabc818636231fced947f795b909a7235dbfca",
+        "checksum": "sha256:46c21fd1aadb7d383b51cc7fd98df2add97102de6ecb9a979caa3f31cefb1f33",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-11-01T22:42:45.569Z",
+            "ok": true
+          },
           {
             "at": "2026-11-01T22:31:22.916Z",
             "ok": true
