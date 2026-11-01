@@ -1,0 +1,97 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "poboacion-seculo feature properties",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "codigo_ine",
+    "nome",
+    "censos",
+    "poboacion",
+    "unidade",
+    "unidade_poboacion",
+    "indice_1900",
+    "inclue",
+    "galicia",
+    "variacion_1900",
+    "variacion_1900_galicia",
+    "variacion_1900_rel",
+    "variacion_1900_periodo"
+  ],
+  "properties": {
+    "codigo_ine": {
+      "type": "string",
+      "pattern": "^\\d{5}$"
+    },
+    "nome": {
+      "type": "string",
+      "minLength": 1
+    },
+    "censos": {
+      "type": "array",
+      "minItems": 13,
+      "maxItems": 13,
+      "items": {
+        "type": "integer"
+      }
+    },
+    "poboacion": {
+      "type": "array",
+      "minItems": 13,
+      "maxItems": 13,
+      "items": {
+        "type": ["integer", "null"]
+      }
+    },
+    "unidade": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "pattern": "^\\d{5}$"
+      }
+    },
+    "unidade_poboacion": {
+      "type": "array",
+      "minItems": 13,
+      "maxItems": 13,
+      "items": {
+        "type": ["integer", "null"]
+      }
+    },
+    "indice_1900": {
+      "type": "array",
+      "minItems": 13,
+      "maxItems": 13,
+      "items": {
+        "type": ["number", "null"]
+      }
+    },
+    "inclue": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "galicia": {
+      "type": "array",
+      "minItems": 13,
+      "maxItems": 13,
+      "items": {
+        "type": "integer"
+      }
+    },
+    "variacion_1900": {
+      "type": ["number", "null"]
+    },
+    "variacion_1900_galicia": {
+      "type": "number"
+    },
+    "variacion_1900_rel": {
+      "type": ["number", "null"]
+    },
+    "variacion_1900_periodo": {
+      "type": "string"
+    }
+  }
+}

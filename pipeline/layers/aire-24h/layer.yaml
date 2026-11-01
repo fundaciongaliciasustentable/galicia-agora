@@ -1,0 +1,44 @@
+id: aire-24h
+title:
+  gl: Calidade do aire das últimas 24 horas, hora a hora
+  es: Calidad del aire de las últimas 24 horas, hora a hora
+theme: tempo-aire
+operator:
+  name: Rede de Calidade do Aire de Galicia (MeteoGalicia, Consellería de Medio Ambiente)
+  url: https://www.meteogalicia.gal/Caire/
+source_url: https://servizos.meteogalicia.gal/mgrss/caire/jsonEvolucionIcaEstacion.action
+licence:
+  text_url: https://abertos.xunta.gal/condicions-de-uso
+  quote: "utilizada libremente… co único compromiso de mencionar expresamente a MeteoGalicia"
+  verified_at: 2026-10-18
+  odbl_compatible: doubt
+  collection: cc-by-sa-4.0
+  notes: >-
+    Mesma fonte e licenzas ca calidade-aire (abertos.xunta.gal conxunto 0055, CC BY-SA 4.0, e
+    aviso legal de MeteoGalicia): colección CC BY-SA 4.0 (ADR 0005). Servizo documentado na
+    IT/052 de MeteoGalicia (jsonEvolucionIcaEstacion): índice de calidade do aire (ICA) e valor
+    de cada contaminante nas últimas ~34 horas por estación (comprobado o 1/11/2026, 46
+    estacións con índice). Unha petición por estación, con pausa. Datos en tempo real sen
+    validar (marca T).
+attribution: 'Fonte: Rede de Calidade do Aire de Galicia (MeteoGalicia, Xunta de Galicia). Datos en tempo real sen validar.'
+update_frequency:
+  declared: PT1H
+geometry: point
+output: geojson
+auth:
+  required: false
+privacy_notes: Medidas de estacións de calidade do aire; ningún dato persoal.
+stale_after: PT3H
+ingest:
+  every: PT1H
+style:
+  kind: circle
+  color_token: --c-aire
+  label_field: nome
+table:
+  fields:
+    - nome
+    - concello
+    - tipo
+    - area
+    - ica_max

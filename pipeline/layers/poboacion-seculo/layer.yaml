@@ -1,0 +1,73 @@
+id: poboacion-seculo
+title:
+  gl: Un século de poboación nos concellos (censos 1900–2021)
+  es: Un siglo de población en los ayuntamientos (censos 1900–2021)
+theme: territorio
+operator:
+  name: Instituto Nacional de Estadística (INE)
+  url: https://www.ine.es/intercensal/
+source_url: https://www.ine.es/intercensal/
+licence:
+  spdx: CC-BY-4.0
+  text_url: https://www.ine.es/dyngs/AYU/index.htm?cid=125
+  quote: >-
+    La licencia de uso general a aplicar a la información estadística de este sitio web, salvo
+    que se indique lo contrario, es la Creative Commons Reconocimiento 4.0 (CC BY 4.0)
+  verified_at: 2026-10-24
+  odbl_compatible: true
+  collection: odbl
+  notes: >-
+    INE, «Alteraciones de los municipios en los Censos de Población desde 1842»: poboación de
+    dereito de cada municipio nos censos de 1900 a 1991 e residente de 2001 a 2021. Sen
+    descarga masiva: unha consulta por código (~470, con pausa). Cálculo propio da Fundación
+    Galicia Sustentable para levar a serie aos 313 concellos de hoxe a partir das notas do INE:
+    os municipios absorbidos, fusionados (Oza-Cesuras 2013, Cerdedo-Cotobade 2016) ou
+    renomeados con código novo (Neira de Xusá → Baralla) súmanse ao concello actual; os
+    concellos segregados despois de 1900 (Rábade, Negueira de Muñiz, Ribeira de Piquín,
+    Mondariz-Balneario, Pontecesures, Cariño, Burela, A Illa de Arousa) forman unha unidade
+    comparable co concello do que saíron, porque antes da segregación a súa xente está no
+    censo do matriz. Os cambios parciais de termo entre concellos que seguen existindo non se
+    poden corrixir. A poboación de dereito dos primeiros censos conta como residentes moitos
+    emigrantes ausentes. Verificación en datos/fontes/ine-censos-historicos. Cita esixida:
+    «Elaboración propia con datos extraídos del sitio web del INE: www.ine.es».
+attribution: >-
+  Elaboración propia con datos extraídos del sitio web del INE: www.ine.es (Alteraciones de los
+  municipios en los Censos de Población desde 1842). Harmonización aos concellos actuais:
+  cálculo propio da Fundación Galicia Sustentable.
+update_frequency:
+  declared: static
+geometry: none
+output: geojson
+auth:
+  required: false
+privacy_notes: Cifras de poboación agregadas por municipio e censo; ningún dato persoal.
+stale_after: P3650D
+ingest:
+  every: P365D
+join:
+  layer: concellos-parroquias
+  key: codigo_ine
+  where: { nivel: concello }
+indicators:
+  - id: variacion_1900
+    label: { gl: Variación da poboación 1900–2021, es: Variación de la población 1900–2021 }
+    unit: '%'
+    comparison: points
+    source: INE, Alteraciones de los municipios en los Censos de Población desde 1842
+    note:
+      gl: >-
+        Variación da poboación entre o censo de 1900 e o de 2021, sobre os límites de hoxe
+        (cálculo propio). Nos concellos segregados despois de 1900 calcúlase sobre a unidade
+        que forman co concello do que saíron.
+      es: >-
+        Variación de la población entre el censo de 1900 y el de 2021, sobre los límites de
+        hoy (cálculo propio). En los municipios segregados después de 1900 se calcula sobre la
+        unidad que forman con el municipio del que salieron.
+style:
+  kind: fill
+  label_field: nome
+table:
+  fields:
+    - nome
+    - variacion_1900
+    - variacion_1900_galicia

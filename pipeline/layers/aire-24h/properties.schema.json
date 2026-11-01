@@ -1,0 +1,104 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "aire-24h feature properties",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "nome",
+    "concello",
+    "tipo",
+    "area",
+    "inicio",
+    "ica",
+    "dominante",
+    "no2",
+    "o3",
+    "pm10",
+    "pm25",
+    "so2",
+    "ica_max"
+  ],
+  "properties": {
+    "id": {
+      "type": "integer"
+    },
+    "nome": {
+      "type": "string",
+      "minLength": 1
+    },
+    "concello": {
+      "type": "string"
+    },
+    "tipo": {
+      "type": "string"
+    },
+    "area": {
+      "type": "string"
+    },
+    "inicio": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "ica": {
+      "type": "array",
+      "minItems": 24,
+      "maxItems": 24,
+      "items": {
+        "type": ["number", "null"]
+      }
+    },
+    "dominante": {
+      "type": "array",
+      "minItems": 24,
+      "maxItems": 24,
+      "items": {
+        "type": ["string", "null"]
+      }
+    },
+    "no2": {
+      "type": "array",
+      "minItems": 24,
+      "maxItems": 24,
+      "items": {
+        "type": ["number", "null"]
+      }
+    },
+    "o3": {
+      "type": "array",
+      "minItems": 24,
+      "maxItems": 24,
+      "items": {
+        "type": ["number", "null"]
+      }
+    },
+    "pm10": {
+      "type": "array",
+      "minItems": 24,
+      "maxItems": 24,
+      "items": {
+        "type": ["number", "null"]
+      }
+    },
+    "pm25": {
+      "type": "array",
+      "minItems": 24,
+      "maxItems": 24,
+      "items": {
+        "type": ["number", "null"]
+      }
+    },
+    "so2": {
+      "type": "array",
+      "minItems": 24,
+      "maxItems": 24,
+      "items": {
+        "type": ["number", "null"]
+      }
+    },
+    "ica_max": {
+      "type": "number",
+      "minimum": 0
+    }
+  }
+}

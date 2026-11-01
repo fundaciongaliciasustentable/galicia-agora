@@ -11,6 +11,8 @@ Verificación feita o 1 de novembro de 2026 con descargas reais. Cada fonte ten 
 | Meteoroloxía hora a hora | [MeteoGalicia, observación](fontes/meteogalicia-horario/) | Verde (día) / amarelo (ano horario) | Hora · 155 estacións | Tempo real | 2,8 MB | Un día = 310 peticións sen erros. Un ano horario arrisca o bloqueo de IP: usar diario ou pedir o ficheiro. |
 | Focos de calor (agosto de 2025) | [NASA FIRMS](fontes/nasa-firms/) | Verde | Pasada · píxel 375 m / 1 km | 2025 completo | 1,1 MB | Arquivo por país sen chave (VIIRS S-NPP e MODIS). NOAA-20/21 precisan a API con chave. |
 | Poboación estacional | [IGE, carga de poboación](fontes/ige-poboacion-estacional/) | Verde | Trimestre · 313 concellos | 2025/II (provisional) | 2,0 MB | API aberta, serie desde 2011, compoñentes desde 2016. |
+| Un século de poboación | [INE, alteracións dos municipios](fontes/ine-censos-historicos/) | Verde | Censo · 313 concellos (1900–2021) | Censo 2021 | 0,2 MB | Sen descarga masiva: 472 consultas por código. Harmonizado aos límites de hoxe. |
+| O aire hora a hora | [MeteoGalicia, calidade do aire](fontes/meteogalicia-aire/) | Verde (24 h) | Hora · 46 estacións | Tempo real | — | Datos sen validar; histórico máis longo non dispoñible no servizo. |
 
 ## Achados que cambian o encargo
 
