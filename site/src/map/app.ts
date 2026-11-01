@@ -15,7 +15,16 @@ import {
   type LegendItem,
   type Row,
 } from './choropleth.ts';
-import { layerStyles } from './styles.ts';
+import {
+  addAge,
+  CATEGORY_FIELDS,
+  encodeLayer,
+  type LegendBlock,
+  QUANTILE_FIELDS,
+  quantiles,
+  type Stats,
+  TIME_FIELD,
+} from './styles.ts';
 import { readHash, writeHash } from './urlstate.ts';
 
 interface Layer {
@@ -31,6 +40,7 @@ interface Layer {
   tiles?: string;
   join?: { layer: string; key: string; where?: Record<string, unknown> };
   indicators?: Indicator[];
+  ingest?: { every?: string };
   meta: {
     published_at: string | null;
     fetched_at: string;
@@ -42,6 +52,38 @@ interface Layer {
 type Dict = Record<string, string>;
 
 const TABLE_LIMIT = 500;
+/** Layers updated at least every half hour are re-fetched while shown. */
+const LIVE_REFRESH_MS = 5 * 60_000;
+
+type Feature = { type: 'Feature'; geometry: unknown; properties: Record<string, unknown> | null };
+type Collection = { type: 'FeatureCollection'; features: Feature[] };
+
+function isoMinutes(d?: string): number {
+  const m = d?.match(/^PT(\d+)M$/);
+  return m ? Number(m[1]) : Number.POSITIVE_INFINITY;
+}
+
+/** A wind arrow drawn on a canvas, used as an SDF icon so it takes any colour. */
+function arrowImage(): { width: number; height: number; data: Uint8Array } {
+  const size = 32;
+  const c = document.createElement('canvas');
+  c.width = size;
+  c.height = size;
+  const g = c.getContext('2d') as CanvasRenderingContext2D;
+  g.fillStyle = '#000';
+  g.beginPath();
+  g.moveTo(16, 2);
+  g.lineTo(23, 13);
+  g.lineTo(18, 13);
+  g.lineTo(18, 30);
+  g.lineTo(14, 30);
+  g.lineTo(14, 13);
+  g.lineTo(9, 13);
+  g.closePath();
+  g.fill();
+  const img = g.getImageData(0, 0, size, size);
+  return { width: size, height: size, data: new Uint8Array(img.data.buffer) };
+}
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
 function el<K extends keyof HTMLElementTagNameMap>(
@@ -276,57 +318,164 @@ export async function start(): Promise<void> {
     renderLegend(app, layer.id, classified.legend, note);
   }
 
-  function addLayer(id: string) {
+  const collections = new Map<string, Collection>();
+  const pulseLayers = new Set<string>();
+
+  function ensureImages() {
+    if (!map.hasImage('ga-arrow')) map.addImage('ga-arrow', arrowImage(), { sdf: true });
+  }
+
+  function statsFor(id: string, fc: Collection | undefined): Stats {
+    const stats: Stats = { q: {}, cats: {} };
+    if (!fc) return stats;
+    for (const f of QUANTILE_FIELDS[id] ?? []) {
+      (stats.q as Record<string, number[]>)[f] = quantiles(
+        fc.features.map((x) => Number(x.properties?.[f])),
+      );
+    }
+    const cat = CATEGORY_FIELDS[id];
+    if (cat) {
+      const [field, colour] = cat;
+      const seen = new Map<string, string>();
+      for (const x of fc.features) {
+        const v = x.properties?.[field];
+        if (typeof v === 'string' && !seen.has(v))
+          seen.set(v, String(x.properties?.[colour] ?? ''));
+      }
+      (stats.cats as Record<string, Array<{ value: string; color: string }>>)[field] = [
+        ...seen,
+      ].map(([value, color]) => ({ value, color }));
+    }
+    return stats;
+  }
+
+  /** Draw (or redraw) a non-choropleth layer's style layers and legend. */
+  function drawLayer(layer: Layer) {
+    for (const l of map.getStyle().layers.filter((x) => ownerOf(x) === layer.id)) {
+      map.removeLayer(l.id);
+    }
+    ensureImages();
+    const encoding = encodeLayer(layer, {
+      color: cssVar(layer.style.color_token ?? '--gs-verde-nato'),
+      dark: dark(),
+      sourceLayer: layer.tiles && layer.geometry !== 'raster' ? layer.id : undefined,
+      stats: statsFor(layer.id, collections.get(layer.id)),
+    });
+    const visibility = active.has(layer.id) ? 'visible' : 'none';
+    for (const spec of encoding.specs) {
+      map.addLayer({
+        ...spec,
+        metadata: { 'ga:layer': layer.id },
+        layout: { ...((spec.layout as object) ?? {}), visibility },
+      } as LayerSpecification);
+    }
+    for (const p of encoding.pulse) pulseLayers.add(p);
+    renderBlocks(app, layer.id, encoding.legend, lang as 'gl' | 'es');
+  }
+
+  /** Fetch a GeoJSON layer, add ages, and push it into its source. */
+  async function loadCollection(layer: Layer): Promise<Collection> {
+    const fc = (await (
+      await fetch(asset(`data/${layer.id}/data.geojson`), { cache: 'no-cache' })
+    ).json()) as Collection;
+    const timeField = TIME_FIELD[layer.id];
+    if (timeField) addAge(fc.features, timeField, Date.now());
+    collections.set(layer.id, fc);
+    return fc;
+  }
+
+  async function addLayer(id: string) {
     const layer = layersById.get(id);
     if (!layer || added.has(id)) return;
-    added.add(id);
     if (layer.join) {
+      added.add(id);
       void addJoinLayer(layer);
       return;
     }
-    if (map.getSource(id)) {
-      // Source already present as a choropleth base: just add the styled layers.
-      const color = cssVar(layer.style.color_token ?? '--gs-verde-nato');
-      for (const spec of layerStyles(layer, color, layer.tiles ? id : undefined)) {
-        map.addLayer({ ...spec, metadata: { 'ga:layer': id } } as LayerSpecification);
+    if (!map.getSource(id)) {
+      const origin = window.location.origin;
+      if (layer.tiles && layer.geometry === 'raster') {
+        // PNG tiles from a raster PMTiles archive; MapLibre overzooms past its maxzoom.
+        map.addSource(id, {
+          type: 'raster',
+          url: `pmtiles://${origin}${asset(layer.tiles)}`,
+          tileSize: 256,
+          attribution: layer.attribution,
+        });
+      } else if (layer.tiles) {
+        map.addSource(id, {
+          type: 'vector',
+          url: `pmtiles://${origin}${asset(layer.tiles)}`,
+          attribution: layer.attribution,
+        });
+      } else {
+        const fc = await loadCollection(layer);
+        if (map.getSource(id)) {
+          (map.getSource(id) as unknown as { setData: (d: unknown) => void }).setData(fc);
+        } else {
+          map.addSource(id, { type: 'geojson', data: fc as never, attribution: layer.attribution });
+        }
       }
-      return;
+    } else if (!layer.tiles && !collections.has(id)) {
+      // Source added earlier as a choropleth base: reuse it, but load the data for stats.
+      await loadCollection(layer);
     }
-    const origin = window.location.origin;
-    if (layer.tiles && layer.geometry === 'raster') {
-      // PNG tiles from a raster PMTiles archive; MapLibre overzooms past its maxzoom.
-      map.addSource(id, {
-        type: 'raster',
-        url: `pmtiles://${origin}${asset(layer.tiles)}`,
-        tileSize: 256,
-        attribution: layer.attribution,
-      });
-    } else if (layer.tiles) {
-      map.addSource(id, {
-        type: 'vector',
-        url: `pmtiles://${origin}${asset(layer.tiles)}`,
-        attribution: layer.attribution,
-      });
-    } else {
-      map.addSource(id, {
-        type: 'geojson',
-        data: asset(`data/${id}/data.geojson`),
-        attribution: layer.attribution,
-      });
+    drawLayer(layer);
+    added.add(id);
+  }
+
+  /** Keep live layers current: ages every minute, new data every few minutes. */
+  let lastFetch = Date.now();
+  setInterval(async () => {
+    const refetch = Date.now() - lastFetch >= LIVE_REFRESH_MS;
+    if (refetch) lastFetch = Date.now();
+    for (const id of active) {
+      const layer = layersById.get(id);
+      const src = map.getSource(id) as unknown as { setData?: (d: unknown) => void } | undefined;
+      if (!layer || layer.join || layer.tiles || !src?.setData) continue;
+      const live = isoMinutes(layer.ingest?.every) <= 30;
+      try {
+        if (refetch && live) {
+          src.setData(await loadCollection(layer));
+          drawLayer(layer);
+        } else if (TIME_FIELD[id]) {
+          const fc = collections.get(id);
+          if (!fc) continue;
+          addAge(fc.features, TIME_FIELD[id] as string, Date.now());
+          src.setData(fc);
+        }
+      } catch {
+        // Keep what is on screen; the next tick tries again.
+      }
     }
-    const color = cssVar(layer.style.color_token ?? '--gs-verde-nato');
-    for (const spec of layerStyles(layer, color, layer.tiles ? id : undefined)) {
-      map.addLayer({ ...spec, metadata: { 'ga:layer': id } } as LayerSpecification);
-    }
+  }, 60_000);
+
+  /** Pulses: a ring that grows and fades around recent events. */
+  if (!reducedMotion.matches) {
+    let last = 0;
+    const frame = (t: number) => {
+      if (t - last > 50) {
+        last = t;
+        const phase = (t % 1800) / 1800;
+        for (const pid of pulseLayers) {
+          const owner = pid.split('__')[0] ?? '';
+          if (!active.has(owner) || !map.getLayer(pid)) continue;
+          map.setPaintProperty(pid, 'circle-radius', 5 + 16 * phase);
+          map.setPaintProperty(pid, 'circle-stroke-opacity', 0.7 * (1 - phase));
+        }
+      }
+      requestAnimationFrame(frame);
+    };
+    requestAnimationFrame(frame);
   }
 
   function setVisible(id: string, on: boolean) {
     if (on) {
-      if (!added.has(id)) addLayer(id);
+      active.add(id);
+      if (!added.has(id)) void addLayer(id);
       for (const l of map.getStyle().layers.filter((x) => ownerOf(x) === id)) {
         map.setLayoutProperty(l.id, 'visibility', 'visible');
       }
-      active.add(id);
     } else {
       for (const l of map.getStyle().layers.filter((x) => ownerOf(x) === id)) {
         map.setLayoutProperty(l.id, 'visibility', 'none');
@@ -383,6 +532,7 @@ export async function start(): Promise<void> {
       for (const id of added) {
         const layer = layersById.get(id);
         if (layer?.join) paintJoin(layer);
+        else if (layer) drawLayer(layer);
       }
     });
   });
@@ -627,6 +777,53 @@ function renderLegend(app: HTMLElement, id: string, items: LegendItem[], note: s
   }
   const parts: Node[] = [list];
   if (note) parts.push(el('p', { class: 'ga-legend-note' }, note));
+  box.replaceChildren(...parts);
+  box.hidden = false;
+}
+
+const bi = (v: string | { gl: string; es: string }, lang: 'gl' | 'es') =>
+  typeof v === 'string' ? v : v[lang];
+
+/** Legend blocks for a point, line or area layer: dots, rings, ramps, arrows. */
+function renderBlocks(app: HTMLElement, id: string, blocks: LegendBlock[], lang: 'gl' | 'es') {
+  const box = app.querySelector<HTMLElement>(`[data-legend-for="${id}"]`);
+  if (!box) return;
+  if (!blocks.length) {
+    box.hidden = true;
+    return;
+  }
+  const parts: Node[] = [];
+  for (const b of blocks) {
+    if (b.title) parts.push(el('p', { class: 'ga-legend-title' }, b.title[lang]));
+    if (b.ramp) {
+      const bar = el('div', {
+        class: 'ga-legend-ramp',
+        style: `background:linear-gradient(to right,${b.ramp.colors.join(',')})`,
+        'aria-hidden': 'true',
+      });
+      const labels = el('div', { class: 'ga-legend-ramp-labels' });
+      for (const l of b.ramp.labels) labels.append(el('span', {}, bi(l, lang)));
+      parts.push(bar, labels);
+    }
+    if (b.entries?.length) {
+      const list = el('ul', { class: 'ga-legend' });
+      for (const e of b.entries) {
+        const li = el('li');
+        const size = e.size ?? 10;
+        const shape = e.shape ?? 'fill';
+        const mark = el('span', {
+          class: `ga-legend-mark ga-legend-${shape}`,
+          style: `--c:${e.color};--s:${Math.min(size, 32)}px`,
+          'aria-hidden': 'true',
+        });
+        if (shape === 'arrow') mark.textContent = '➜';
+        li.append(mark, document.createTextNode(bi(e.label, lang)));
+        list.append(li);
+      }
+      parts.push(list);
+    }
+    if (b.note) parts.push(el('p', { class: 'ga-legend-note' }, b.note[lang]));
+  }
   box.replaceChildren(...parts);
   box.hidden = false;
 }

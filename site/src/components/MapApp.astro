@@ -4,6 +4,7 @@ import { type CatalogLayer, displayStatus, loadCatalog } from '../catalog';
 // from the catalogue (works without JS and for screen readers); the client
 // script refreshes freshness and draws layers only when they are switched on.
 import { absoluteTime, dictionary, type Lang, relativeTime, THEME_ORDER, THEMES, t } from '../i18n';
+import { SERIES_LAYERS } from '../map/styles';
 import { asset } from '../paths';
 
 interface Props {
@@ -13,7 +14,8 @@ const { lang } = Astro.props;
 const catalog = loadCatalog();
 const byTheme = THEME_ORDER.map((theme) => ({
   theme,
-  layers: catalog.layers.filter((l) => l.theme === theme),
+  // Series layers are drawn on their own animated pages (/pulso/).
+  layers: catalog.layers.filter((l) => l.theme === theme && !SERIES_LAYERS.has(l.id)),
 })).filter((g) => g.layers.length > 0);
 
 const statusLabel = (l: CatalogLayer) => t(lang, `status_${displayStatus(l)}` as const);
@@ -49,21 +51,19 @@ const licenceLabel = (l: CatalogLayer) => l.licence.spdx ?? l.licence.text_url;
                     {statusLabel(l)}
                   </span>
                 </div>
-                {l.join && (
-                  <div class="ga-layer-extra">
-                    {l.indicators && l.indicators.length > 0 && (
-                      <label class="ga-indicator">
-                        <span>{t(lang, 'choose_indicator')}</span>
-                        <select data-indicator-for={l.id}>
-                          {l.indicators.map((ind) => (
-                            <option value={ind.id}>{ind.label[lang]}</option>
-                          ))}
-                        </select>
-                      </label>
-                    )}
-                    <div class="ga-legend-box" data-legend-for={l.id} hidden />
-                  </div>
-                )}
+                <div class="ga-layer-extra">
+                  {l.indicators && l.indicators.length > 0 && (
+                    <label class="ga-indicator">
+                      <span>{t(lang, 'choose_indicator')}</span>
+                      <select data-indicator-for={l.id}>
+                        {l.indicators.map((ind) => (
+                          <option value={ind.id}>{ind.label[lang]}</option>
+                        ))}
+                      </select>
+                    </label>
+                  )}
+                  <div class="ga-legend-box" data-legend-for={l.id} hidden />
+                </div>
                 <details class="ga-layer-info">
                   <summary>
                     <span class="visually-hidden">{l.title[lang]}: </span>
