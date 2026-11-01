@@ -26,6 +26,7 @@ Licenzas propias: datos derivados en **ODbL 1.0**; textos en **CC BY-NC-SA 4.0**
 | Renfe GTFS-RT | CC BY 4.0 | Si | Cita: «Origen de los datos: Renfe Operadora» |
 | MITMA mobilidade big data | Licenza de datos abertos do MITMA (3/12/2020): brutos coa mesma licenza; derivados poden ir noutra | Derivados si | Obriga «Basado en datos abiertos MITMA» con ligazón, conservar a data e «garantizar que la información esté siempre actualizada»: a capa é dun período de referencia fixo (maio de 2025) e dío coa data, porque MITMA xa non publica todos os días. Ver datos/fontes/mitma-mobilidade |
 | IGE grella | Aviso legal do portal (sen CC) | **Dúbida** | |
+| Catastro, edificios INSPIRE | Licenza propia (v1.0, 2016): só se pode difundir información transformada, sen desnaturalizala nin chamala «cartografía catastral» | **Dúbida** | Capa `construcion-edificios`: só contas por cela de 250 m, ano e uso, na colección separada. Atribución á Dirección General del Catastro. Nunca redistribuír os GML (tampouco nos tests). Ver datos/fontes/catastro-edificios |
 | Eólica IDEG | Non declarada | Descoñecida | |
 
 ## Por que CC BY-SA 4.0 é un problema

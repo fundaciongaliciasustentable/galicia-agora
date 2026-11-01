@@ -1,0 +1,53 @@
+id: construcion-edificios
+title:
+  gl: Como se construíu Galicia (edificios por ano de construción)
+  es: Cómo se construyó Galicia (edificios por año de construcción)
+theme: territorio
+operator:
+  name: Dirección General del Catastro (Ministerio de Hacienda)
+  url: https://www.catastro.hacienda.gob.es/webinspire/index.html
+# The real requests read the five Galician office feeds below this URL (15, 27, 32, 36 and 54)
+# and download the ZIP of each municipality they list.
+source_url: https://www.catastro.hacienda.gob.es/INSPIRE/buildings/ES.SDGC.BU.atom.xml
+licence:
+  text_url: https://www.catastro.hacienda.gob.es/webinspire/documentos/Licencia.pdf
+  quote: >-
+    Se autoriza el uso público, incluido el comercial, de la información catastral que haya
+    sido sometida a cualquier proceso previo de transformación
+  verified_at: 2026-11-01
+  odbl_compatible: doubt
+  collection: cc-by-sa-4.0
+  notes: >-
+    Licenza propia do Catastro para os conxuntos INSPIRE (v1.0, xullo de 2016), non CC. Só
+    autoriza difundir información transformada; non a orixinal. A transformación non pode
+    alterar o contido nin desnaturalizar o seu sentido, e o resultado non se pode presentar
+    como «cartografía catastral» nin «información catastral». Os feeds piden mencionar a
+    Dirección General del Catastro como autora e titular. Esta capa só publica contas por
+    cela de 250 m, ano e uso; ningún edificio, xeometría nin referencia catastral. Vai na
+    colección separada, fóra da base ODbL, ata consultar se a obra transformada pode ir en
+    ODbL. Verificación en datos/fontes/catastro-edificios.
+attribution: >-
+  Fonte: Dirección General del Catastro (Ministerio de Hacienda), Edificios INSPIRE.
+  Elaboración propia da Fundación Galicia Sustentable: contas por cela de 250 m; non é
+  cartografía catastral.
+update_frequency:
+  # The Catastro regenerates the INSPIRE ATOM files every six months.
+  declared: P180D
+geometry: none
+output: geojson
+auth:
+  required: false
+privacy_notes: >-
+  Contas de edificios por cela de 250 m, ano e uso. Non se le nin se garda a referencia
+  catastral, o enderezo nin as ligazóns á Sede; o Catastro non publica titulares nesta fonte.
+# ~600 MB of ZIPs: twice a year at most.
+stale_after: P400D
+ingest:
+  every: P180D
+# Lives on its own /pulso/ page; the main map does not draw it (SERIES_LAYERS).
+style:
+  kind: fill
+table:
+  fields:
+    - ano
+    - edificios

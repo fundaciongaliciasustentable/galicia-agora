@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:georss="http://www.georss.org/georss"  xmlns:inspire_dls = "http://inspire.ec.europa.eu/schemas/inspire_dls/1.0" xml:lang="en"> 
+    <!-- feed title -->
+    <title>Download service of Building. Territorial Office 54 - Vigo</title>
+    <!-- feed subtitle -->
+    <subtitle>INSPIRE Buildings. Spanish Directorate General for Cadastre</subtitle>
+    <!-- link to download service ISO 19139 metadata  -->
+    <link href="http://www.catastro.hacienda.gob.es/INSPIRE/Building/ES.SDGC.BU.DownloadServ.MD.xml" rel="describedby" type="application/vnd.iso.19139+xml"/>
+    <!-- self-referencing link to this feed -->
+    <link href="http://www.catastro.hacienda.gob.es/INSPIRE/Building/54/ES.SDGC.BU.atom_54.xml" rel="self" type="application/atom+xml" hreflang="en" title="This document"/>
+    <link href="http://www.catastro.hacienda.gob.es/" rel="alternate" type="text/html" hreflang="en" title="Cadastral web page"/>
+    <!-- identifier -->
+    <id>http://www.catastro.hacienda.gob.es/INSPIRE/Building/54/ES.SDGC.BU.atom_54.xml</id>
+    <!-- rights, access restrictions -->
+    <rights>This service can be used free of charge in every instance,  as long as that the D. G. of the Cadastre (Ministry of Finance)  is mentioned as author and owner of the information</rights>
+    <!-- date/time of last update of feed-->
+    <updated>2026-08-21T00:00:00Z</updated>
+    <!-- author info -->
+    <author>
+        <name>productosyservicios</name>
+        <email>productosyservicios@catastro.hacienda.gob.es</email>
+    </author>
+    <!-- pre-defined dataset -->
+    <entry>
+		<!-- title for pre-defined dataset -->
+		<title> 54003-BAIONA buildings</title>
+		<!-- Spatial Dataset Unique Resourse Identifier for this dataset-->
+		<inspire_dls:spatial_dataset_identifier_code>BU</inspire_dls:spatial_dataset_identifier_code>
+		<inspire_dls:spatial_dataset_identifier_namespace>SDGC</inspire_dls:spatial_dataset_identifier_namespace>
+		<content type="xhtml" xml:lang="en">
+		  <div xmlns="http://www.w3.org/1999/xhtml">
+		  </div>
+		</content>
+        <link rel="enclosure" href="https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/54/54003-BAIONA/A.ES.SDGC.BU.54003.zip" type="application/atom+xml" hreflang="en" />
+        <!-- identifier for pre-defined dataset -->
+        <id>https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/54/54003-BAIONA/A.ES.SDGC.BU.54003.zip</id>
+        <!-- rights, access info for pre-defined dataset -->
+        <rights>This service can be used free of charge in every instance,  as long as that the D. G. of the Cadastre (Ministry of Finance)  is mentioned as author and owner of the information</rights>
+        <!-- last date/time pre-defined dataset was updated -->
+        <updated>2026-08-21T00:00:00Z</updated>
+        <!-- optional GeoRSS-Simple bounding box of the pre-defined dataset. Must be lat lon -->
+        <georss:polygon>42.06899264745252 -8.896832315017289 42.06899264745252 -8.807034361977756 42.12676950515074 -8.807034361977756 42.12676950515074 -8.896832315017289 42.06899264745252 -8.896832315017289</georss:polygon>
+        <!-- INSPIRE Spatial Object Types contained in the pre-defined dataset -->
+        <category term="http://www.opengis.net/def/crs/EPSG/0/25829"  label="ETRS89"/>
+    </entry>
+    <entry>
+		<!-- title for pre-defined dataset -->
+		<title> 54021-GONDOMAR buildings</title>
+		<!-- Spatial Dataset Unique Resourse Identifier for this dataset-->
+		<inspire_dls:spatial_dataset_identifier_code>BU</inspire_dls:spatial_dataset_identifier_code>
+		<inspire_dls:spatial_dataset_identifier_namespace>SDGC</inspire_dls:spatial_dataset_identifier_namespace>
+		<content type="xhtml" xml:lang="en">
+		  <div xmlns="http://www.w3.org/1999/xhtml">
+		  </div>
+		</content>
+        <link rel="enclosure" href="https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/54/54021-GONDOMAR/A.ES.SDGC.BU.54021.zip" type="application/atom+xml" hreflang="en" />
+        <!-- identifier for pre-defined dataset -->
+        <id>https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/54/54021-GONDOMAR/A.ES.SDGC.BU.54021.zip</id>
+        <!-- rights, access info for pre-defined dataset -->
+        <rights>This service can be used free of charge in every instance,  as long as that the D. G. of the Cadastre (Ministry of Finance)  is mentioned as author and owner of the information</rights>
+        <!-- last date/time pre-defined dataset was updated -->
+        <updated>2026-08-21T00:00:00Z</updated>
+        <!-- optional GeoRSS-Simple bounding box of the pre-defined dataset. Must be lat lon -->
+        <georss:polygon>42.06513353652936 -8.81450892916582 42.06513353652936 -8.68786737657232 42.16336536665362 -8.68786737657232 42.16336536665362 -8.81450892916582 42.06513353652936 -8.81450892916582</georss:polygon>
+        <!-- INSPIRE Spatial Object Types contained in the pre-defined dataset -->
+        <category term="http://www.opengis.net/def/crs/EPSG/0/25829"  label="ETRS89"/>
+    </entry>
+    <entry>
+		<!-- title for pre-defined dataset -->
+		<title> 54035-NIGRAN buildings</title>
+		<!-- Spatial Dataset Unique Resourse Identifier for this dataset-->
+		<inspire_dls:spatial_dataset_identifier_code>BU</inspire_dls:spatial_dataset_identifier_code>
+		<inspire_dls:spatial_dataset_identifier_namespace>SDGC</inspire_dls:spatial_dataset_identifier_namespace>
+		<content type="xhtml" xml:lang="en">
+		  <div xmlns="http://www.w3.org/1999/xhtml">
+		  </div>
+		</content>
+        <link rel="enclosure" href="https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/54/54035-NIGRAN/A.ES.SDGC.BU.54035.zip" type="application/atom+xml" hreflang="en" />
+        <!-- identifier for pre-defined dataset -->
+        <id>https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/54/54035-NIGRAN/A.ES.SDGC.BU.54035.zip</id>
+        <!-- rights, access info for pre-defined dataset -->
+        <rights>This service can be used free of charge in every instance,  as long as that the D. G. of the Cadastre (Ministry of Finance)  is mentioned as author and owner of the information</rights>
+        <!-- last date/time pre-defined dataset was updated -->
+        <updated>2026-08-21T00:00:00Z</updated>
+        <!-- optional GeoRSS-Simple bounding box of the pre-defined dataset. Must be lat lon -->
+        <georss:polygon>42.11207435116555 -8.840645193216876 42.11207435116555 -8.747075113250116 42.16694389388403 -8.747075113250116 42.16694389388403 -8.840645193216876 42.11207435116555 -8.840645193216876</georss:polygon>
+        <!-- INSPIRE Spatial Object Types contained in the pre-defined dataset -->
+        <category term="http://www.opengis.net/def/crs/EPSG/0/25829"  label="ETRS89"/>
+    </entry>
+    <entry>
+		<!-- title for pre-defined dataset -->
+		<title> 54057-VIGO buildings</title>
+		<!-- Spatial Dataset Unique Resourse Identifier for this dataset-->
+		<inspire_dls:spatial_dataset_identifier_code>BU</inspire_dls:spatial_dataset_identifier_code>
+		<inspire_dls:spatial_dataset_identifier_namespace>SDGC</inspire_dls:spatial_dataset_identifier_namespace>
+		<content type="xhtml" xml:lang="en">
+		  <div xmlns="http://www.w3.org/1999/xhtml">
+		  </div>
+		</content>
+        <link rel="enclosure" href="https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/54/54057-VIGO/A.ES.SDGC.BU.54057.zip" type="application/atom+xml" hreflang="en" />
+        <!-- identifier for pre-defined dataset -->
+        <id>https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/54/54057-VIGO/A.ES.SDGC.BU.54057.zip</id>
+        <!-- rights, access info for pre-defined dataset -->
+        <rights>This service can be used free of charge in every instance,  as long as that the D. G. of the Cadastre (Ministry of Finance)  is mentioned as author and owner of the information</rights>
+        <!-- last date/time pre-defined dataset was updated -->
+        <updated>2026-08-21T00:00:00Z</updated>
+        <!-- optional GeoRSS-Simple bounding box of the pre-defined dataset. Must be lat lon -->
+        <georss:polygon>42.14648934515211 -8.915047406964772 42.14648934515211 -8.629087933392988 42.30187986322887 -8.629087933392988 42.30187986322887 -8.915047406964772 42.14648934515211 -8.915047406964772</georss:polygon>
+        <!-- INSPIRE Spatial Object Types contained in the pre-defined dataset -->
+        <category term="http://www.opengis.net/def/crs/EPSG/0/25829"  label="ETRS89"/>
+    </entry>
+</feed>

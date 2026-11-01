@@ -1,0 +1,202 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "construcion-edificios feature properties",
+  "description": "Three kinds of feature: one «galicia» summary; one «celas» list of 250 m UTM cells (ETRS89, zone `fuso`) as offsets x, y from the cell (x0, y0), in row order; and one «ano» per year bucket (0 = no reliable year, 1899 = before 1900) with d = gaps between the indices of its cells in that list and v = buildings × 5 + use index.",
+  "type": "object",
+  "required": ["tipo"],
+  "properties": {
+    "tipo": {
+      "enum": ["galicia", "celas", "ano"]
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "tipo": {
+            "const": "ano"
+          }
+        }
+      },
+      "then": {
+        "additionalProperties": false,
+        "required": ["tipo", "ano", "edificios", "d", "v"],
+        "properties": {
+          "tipo": {
+            "const": "ano"
+          },
+          "ano": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 2100
+          },
+          "edificios": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "d": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "v": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "minimum": 5
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "tipo": {
+            "const": "celas"
+          }
+        }
+      },
+      "then": {
+        "additionalProperties": false,
+        "required": ["tipo", "lado_m", "fuso", "x0", "y0", "x", "y"],
+        "properties": {
+          "tipo": {
+            "const": "celas"
+          },
+          "lado_m": {
+            "type": "integer"
+          },
+          "fuso": {
+            "const": 29
+          },
+          "x0": {
+            "type": "integer"
+          },
+          "y0": {
+            "type": "integer"
+          },
+          "x": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "y": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "minimum": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "tipo": {
+            "const": "galicia"
+          }
+        }
+      },
+      "then": {
+        "additionalProperties": false,
+        "required": [
+          "tipo",
+          "actualizado",
+          "concellos_catastro",
+          "edificios",
+          "sen_ano",
+          "recheo",
+          "imposibles",
+          "antes_1900",
+          "ano_inicio",
+          "ano_fin",
+          "usos",
+          "por_ano",
+          "anos_recheo"
+        ],
+        "properties": {
+          "tipo": {
+            "const": "galicia"
+          },
+          "actualizado": {
+            "type": ["string", "null"]
+          },
+          "concellos_catastro": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "edificios": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "sen_ano": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "recheo": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "imposibles": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "antes_1900": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "ano_inicio": {
+            "type": "integer"
+          },
+          "ano_fin": {
+            "type": "integer"
+          },
+          "usos": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "por_ano": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "minimum": 0
+              }
+            }
+          },
+          "anos_recheo": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["codigo", "nome", "ano", "edificios"],
+              "properties": {
+                "codigo": {
+                  "type": "string"
+                },
+                "nome": {
+                  "type": "string"
+                },
+                "ano": {
+                  "type": "integer"
+                },
+                "edificios": {
+                  "type": "integer"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}
