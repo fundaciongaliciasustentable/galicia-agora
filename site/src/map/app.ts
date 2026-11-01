@@ -17,6 +17,7 @@ import {
 } from './choropleth.ts';
 import {
   addAge,
+  archiveSourceId,
   CATEGORY_FIELDS,
   encodeLayer,
   type LegendBlock,
@@ -38,6 +39,8 @@ interface Layer {
   licence: { spdx?: string; text_url: string };
   operator: { name: string; url: string };
   tiles?: string;
+  /** Raster archives uploaded straight to the server (ortofoto-pnoa), lowest zoom first. */
+  archives?: Array<{ url: string; minzoom: number; maxzoom: number; bounds: number[] }>;
   join?: { layer: string; key: string; where?: Record<string, unknown> };
   indicators?: Indicator[];
   ingest?: { every?: string };
@@ -352,12 +355,22 @@ export async function start(): Promise<void> {
       stats: statsFor(layer.id, collections.get(layer.id)),
     });
     const visibility = active.has(layer.id) ? 'visible' : 'none';
+    // A base image goes under every data layer and under the basemap labels.
+    const before = layer.archives
+      ? map.getStyle().layers.find((l) => {
+          const o = ownerOf(l);
+          return l.type === 'symbol' || (o !== undefined && o !== layer.id && layersById.has(o));
+        })?.id
+      : undefined;
     for (const spec of encoding.specs) {
-      map.addLayer({
-        ...spec,
-        metadata: { 'ga:layer': layer.id },
-        layout: { ...((spec.layout as object) ?? {}), visibility },
-      } as LayerSpecification);
+      map.addLayer(
+        {
+          ...spec,
+          metadata: { 'ga:layer': layer.id },
+          layout: { ...((spec.layout as object) ?? {}), visibility },
+        } as LayerSpecification,
+        before,
+      );
     }
     for (const p of encoding.pulse) pulseLayers.add(p);
     renderBlocks(app, layer.id, encoding.legend, lang as 'gl' | 'es');
@@ -382,7 +395,20 @@ export async function start(): Promise<void> {
       void addJoinLayer(layer);
       return;
     }
-    if (!map.getSource(id)) {
+    if (layer.archives?.length) {
+      // One raster source per archive; each archive's header carries its zooms and bounds.
+      const origin = window.location.origin;
+      layer.archives.forEach((a, i) => {
+        const sid = archiveSourceId(id, i);
+        if (map.getSource(sid)) return;
+        map.addSource(sid, {
+          type: 'raster',
+          url: `pmtiles://${origin}${asset(a.url)}`,
+          tileSize: 256,
+          attribution: layer.attribution,
+        });
+      });
+    } else if (!map.getSource(id)) {
       const origin = window.location.origin;
       if (layer.tiles && layer.geometry === 'raster') {
         // PNG tiles from a raster PMTiles archive; MapLibre overzooms past its maxzoom.
@@ -506,7 +532,9 @@ export async function start(): Promise<void> {
       transformStyle: (prev, next) => {
         if (!prev) return next;
         const keep = Object.fromEntries(
-          Object.entries(prev.sources).filter(([k]) => layersById.has(k)),
+          Object.entries(prev.sources).filter(
+            ([k]) => layersById.has(k) || layersById.has(k.split('--')[0] ?? ''),
+          ),
         );
         const keepLayers = prev.layers.filter((l) => {
           const o = ownerOf(l);

@@ -12,7 +12,12 @@ interface LayerLike {
   id: string;
   geometry: string;
   style: { kind: string; label_field?: string };
+  /** Raster archives by zoom range or region (ortofoto-pnoa), lowest zoom first. */
+  archives?: Array<{ minzoom: number; maxzoom: number }>;
 }
+
+/** Source id of a layer's i-th raster archive. */
+export const archiveSourceId = (layerId: string, i: number) => `${layerId}--${i}`;
 
 export type Spec = Record<string, unknown>;
 type Bi = { gl: string; es: string };
@@ -217,6 +222,25 @@ export function encodeLayer(layer: LayerLike, ctx: StyleContext): Encoding {
     legend,
     pulse: pulseIds,
   });
+
+  if (layer.geometry === 'raster' && layer.archives?.length) {
+    // Orthophoto as a base image: opaque, smooth. Each archive draws from its
+    // own minzoom and stays visible (overzoomed) a level past its maxzoom under
+    // the next one, so the map never goes blank while detailed tiles load.
+    const archives = layer.archives;
+    const low = Math.min(...archives.map((a) => a.minzoom));
+    const top = Math.max(...archives.map((a) => a.maxzoom));
+    return enc(
+      archives.map((a, i) => ({
+        id: `${layer.id}__raster-${i}`,
+        source: archiveSourceId(layer.id, i),
+        type: 'raster',
+        ...(a.minzoom > low ? { minzoom: a.minzoom } : {}),
+        ...(a.maxzoom < top ? { maxzoom: a.maxzoom + 2 } : {}),
+        paint: { 'raster-opacity': 1, 'raster-resampling': 'linear' },
+      })),
+    );
+  }
 
   if (layer.geometry === 'raster') {
     // Keep the source's own colours: the legend is in the layer's context notes.

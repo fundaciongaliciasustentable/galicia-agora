@@ -35,6 +35,7 @@ export interface CatalogLayer {
   };
   attribution: string;
   update_frequency: { declared: string; measured?: string };
+  ingest?: { every: string; workflow?: string };
   geometry: string;
   privacy_notes: string;
   style: { kind: string; color_token?: string; label_field?: string };

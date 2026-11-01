@@ -126,6 +126,8 @@ interface CatalogLayer {
   table: { fields: string[] };
   meta: unknown;
   tiles?: string;
+  /** Raster archives uploaded straight to the server, one per zoom range or region. */
+  archives?: Array<{ url: string; minzoom: number; maxzoom: number; bounds: number[] }>;
 }
 
 function data() {
@@ -142,6 +144,23 @@ function data() {
     if (!existsSync(join(srcDir, 'meta.json'))) continue;
     mkdirSync(dstDir, { recursive: true });
     cpSync(join(srcDir, 'meta.json'), join(dstDir, 'meta.json'));
+    // Rasters too large for the data branch (ortofoto-pnoa) are uploaded to
+    // data/<id>/ by their own workflow; only their index travels with the data.
+    // Nothing is copied, and the deploy never deletes what it did not upload.
+    const index = join(srcDir, 'archives.json');
+    if (layer.geometry === 'raster' && existsSync(index)) {
+      const { archives } = JSON.parse(readFileSync(index, 'utf8')) as {
+        archives: Array<{ file: string; minzoom: number; maxzoom: number; bounds: number[] }>;
+      };
+      layer.archives = archives.map((a) => ({
+        url: `/data/${layer.id}/${a.file}`,
+        minzoom: a.minzoom,
+        maxzoom: a.maxzoom,
+        bounds: a.bounds,
+      }));
+      log(`${layer.id}: ${archives.length} raster archives on the server (not copied)`);
+      continue;
+    }
     // Raster layers arrive as a ready PMTiles archive (pipeline/lib/raster.ts).
     if (layer.geometry === 'raster') {
       const archive = join(srcDir, 'data.pmtiles');

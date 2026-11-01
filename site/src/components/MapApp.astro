@@ -15,7 +15,10 @@ const catalog = loadCatalog();
 const byTheme = THEME_ORDER.map((theme) => ({
   theme,
   // Series layers are drawn on their own animated pages (/pulso/).
-  layers: catalog.layers.filter((l) => l.theme === theme && !SERIES_LAYERS.has(l.id)),
+  // A raster never built has nothing to draw (ortofoto-pnoa before its first workflow run).
+  layers: catalog.layers.filter(
+    (l) => l.theme === theme && !SERIES_LAYERS.has(l.id) && (l.geometry !== 'raster' || l.meta),
+  ),
 })).filter((g) => g.layers.length > 0);
 
 const statusLabel = (l: CatalogLayer) => t(lang, `status_${displayStatus(l)}` as const);
@@ -124,7 +127,10 @@ const licenceLabel = (l: CatalogLayer) => l.licence.spdx ?? l.licence.text_url;
                       <p class="ga-layer-actions">
                         <a href={l.source_url} rel="noopener">{t(lang, 'source')}</a>
                         {l.geometry === 'raster' ? (
-                          <a href={asset(`data/${l.id}/data.pmtiles`)} download>{t(lang, 'download')} (PMTiles)</a>
+                          // Multi-GB rasters built by their own workflow (ortofoto-pnoa): no single file to offer.
+                          !l.ingest?.workflow && (
+                            <a href={asset(`data/${l.id}/data.pmtiles`)} download>{t(lang, 'download')} (PMTiles)</a>
+                          )
                         ) : (
                           <>
                             <button type="button" class="ga-button" data-table={l.id}>{t(lang, 'as_table')}</button>
