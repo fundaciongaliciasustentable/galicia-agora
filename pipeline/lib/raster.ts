@@ -168,6 +168,8 @@ export interface PmtilesMeta {
   bounds: Bbox;
   minzoom: number;
   maxzoom: number;
+  /** Tile format (default png). */
+  format?: 'png' | 'webp';
 }
 
 export interface Entry {
@@ -308,7 +310,7 @@ export function pmtilesPreamble(
 }
 
 /**
- * Pack PNG tiles into a PMTiles v3 archive. Identical tiles are stored once
+ * Pack PNG (or WebP) tiles into a PMTiles v3 archive. Identical tiles are stored once
  * (consecutive ones as a run). Tiles are written in tile-id order (clustered).
  */
 export function writePmtiles(tiles: Array<Tile & { data: Buffer }>, meta: PmtilesMeta): Buffer {
@@ -341,7 +343,7 @@ export function writePmtiles(tiles: Array<Tile & { data: Buffer }>, meta: Pmtile
     addressed: sorted.length,
     contents: chunks.length,
     dataLength,
-    tileType: 'png',
+    tileType: meta.format ?? 'png',
   });
   return Buffer.concat([preamble, ...chunks]);
 }

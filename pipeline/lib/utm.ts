@@ -45,3 +45,39 @@ export function utmToLonLat(easting: number, northing: number, zone: number): [n
       cos1;
   return [lon * DEG, lat * DEG];
 }
+
+/**
+ * [lon, lat] in degrees to UTM northern-hemisphere [easting, northing] (m) in the given zone.
+ * Forward series of the same source (Snyder eq. 8-9 to 8-13). Sentinel-2 grids are on WGS 84,
+ * whose ellipsoid differs from GRS80 by 0.1 mm in the semi-minor axis: the same formulas serve.
+ */
+export function lonLatToUtm(lon: number, lat: number, zone: number): [number, number] {
+  const lon0 = ((zone - 1) * 6 - 180 + 3) / DEG;
+  const phi = lat / DEG;
+  const sin = Math.sin(phi);
+  const cos = Math.cos(phi);
+  const tan = Math.tan(phi);
+  const n = A / Math.sqrt(1 - E2 * sin ** 2);
+  const t = tan ** 2;
+  const c = EP2 * cos ** 2;
+  const a = (lon / DEG - lon0) * cos;
+  const m =
+    A *
+    ((1 - E2 / 4 - (3 * E2 ** 2) / 64 - (5 * E2 ** 3) / 256) * phi -
+      ((3 * E2) / 8 + (3 * E2 ** 2) / 32 + (45 * E2 ** 3) / 1024) * Math.sin(2 * phi) +
+      ((15 * E2 ** 2) / 256 + (45 * E2 ** 3) / 1024) * Math.sin(4 * phi) -
+      ((35 * E2 ** 3) / 3072) * Math.sin(6 * phi));
+  const x =
+    K0 *
+    n *
+    (a + ((1 - t + c) * a ** 3) / 6 + ((5 - 18 * t + t ** 2 + 72 * c - 58 * EP2) * a ** 5) / 120);
+  const y =
+    K0 *
+    (m +
+      n *
+        tan *
+        (a ** 2 / 2 +
+          ((5 - t + 9 * c + 4 * c ** 2) * a ** 4) / 24 +
+          ((61 - 58 * t + t ** 2 + 600 * c - 330 * EP2) * a ** 6) / 720));
+  return [x + 500000, y];
+}

@@ -4,13 +4,14 @@
 //   npm run status                      status of each layer; exits 3 if any needs an alert
 //   npm run catalog                     write data-out/catalog.json for the site
 
-import { access, readdir } from 'node:fs/promises';
+import { access, readdir, readFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import type { LayerDef } from './lib/adapter.ts';
 import { parseDuration } from './lib/duration.ts';
 import { LAYERS_DIR, loadLayer, runLayer, staleAfterMs } from './lib/ingest.ts';
 import { ageStatus, type Meta, needsAlert, readMeta, writeAtomic } from './lib/publish.ts';
 import { loadYaml, validate } from './lib/schemas.ts';
+import type { MonthIndex } from './satelite/months.ts';
 
 const OUT_DIR = process.env.DATA_OUT_DIR ?? 'data-out';
 
@@ -131,6 +132,18 @@ async function cmdStatus(): Promise<number> {
   return alerts ? 3 : 0;
 }
 
+/** Monthly months listed in a raster's archives.json (pipeline/satelite), if any. */
+async function readMonths(id: string): Promise<MonthIndex | null> {
+  try {
+    const index = JSON.parse(
+      await readFile(join(OUT_DIR, id, 'archives.json'), 'utf8'),
+    ) as Partial<MonthIndex>;
+    return Array.isArray(index.months) ? (index as MonthIndex) : null;
+  } catch {
+    return null;
+  }
+}
+
 /** Public catalogue: layer definitions (no auth details) + current meta. */
 async function cmdCatalog(): Promise<number> {
   const now = new Date();
@@ -139,8 +152,19 @@ async function cmdCatalog(): Promise<number> {
     const layer = await loadLayer(id);
     const meta: Meta | null = await readMeta(join(OUT_DIR, id, 'meta.json'));
     const { auth: _auth, ...pub } = layer as LayerDef & { auth?: unknown };
+    const monthly = layer.geometry === 'raster' ? await readMonths(id) : null;
     layers.push({
       ...pub,
+      ...(monthly
+        ? {
+            months: monthly.months,
+            // Copernicus notice: the year of the month shown on the map.
+            attribution: layer.attribution.replace(
+              '[ano]',
+              monthly.months[0]?.month.slice(0, 4) ?? '',
+            ),
+          }
+        : {}),
       meta: meta
         ? {
             ...meta,

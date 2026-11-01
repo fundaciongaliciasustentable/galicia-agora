@@ -121,6 +121,14 @@ describe('writePmtiles', () => {
     expect(writePmtiles([...tiles].reverse(), meta).equals(buf)).toBe(true);
   });
 
+  it('marks WebP archives as tile type 4', async () => {
+    const webp = Buffer.from('RIFF\0\0\0\0WEBPVP8L', 'latin1');
+    const buf = writePmtiles([{ z: 8, x: 121, y: 94, data: webp }], { ...meta, format: 'webp' });
+    const p = new PMTiles(new BufferSource(buf));
+    expect((await p.getHeader()).tileType).toBe(4);
+    expect(await p.getMetadata()).toMatchObject({ format: 'webp' });
+  });
+
   it('spills into leaf directories when the root would not fit in 16 KiB', async () => {
     // ~60,000 z15 tiles with varied sizes, so the directory cannot compress below 16 KiB.
     const tiles = tilesInBbox(GALICIA_BBOX, 15, 15).map((t, i) => ({

@@ -29,3 +29,6 @@ dist/
 
 # Built by .github/workflows/ortofoto.yml (tile cache and archives)
 /.ortofoto/
+
+# Monthly satellite archives (pipeline/satelite): uploaded to the server, never committed
+/satelite-out/
