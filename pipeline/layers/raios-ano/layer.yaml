@@ -1,0 +1,44 @@
+id: raios-ano
+title:
+  gl: Raios dos últimos doce meses
+  es: Rayos de los últimos doce meses
+theme: tempo-aire
+operator:
+  name: MeteoGalicia (Consellería de Medio Ambiente, Xunta de Galicia)
+  url: https://www.meteogalicia.gal/web/observacion/raios
+# The real requests add dataIni/dataFin in windows of 7 days over the last twelve whole months.
+source_url: https://servizos.meteogalicia.gal/mgrss/observacion/jsonRaios.action
+licence:
+  spdx: CC-BY-SA-4.0
+  text_url: https://www.meteogalicia.gal/web/aviso-legal
+  quote: "utilizada libremente… co único compromiso de mencionar expresamente a MeteoGalicia"
+  verified_at: 2026-10-24
+  odbl_compatible: doubt
+  collection: cc-by-sa-4.0
+  notes: >-
+    O mesmo servizo e a mesma licenza ca a capa raios (dobre declaración, aplícase a máis
+    restritiva, ADR 0005). Histórico aberto sen chave desde 2010 en xanelas de ata 7 días
+    (datos/fontes/raios-historico). Doce meses enteiros anteriores ao mes en curso, en hora
+    oficial de Galicia, dentro da caixa de Galicia con 0,1° de marxe (inclúe mar e bordos de
+    Asturias, León, Zamora e Portugal). A documentación non di se a rede conta descargas
+    entre nubes.
+attribution: "Datos: MeteoGalicia (Xunta de Galicia)"
+update_frequency:
+  declared: P30D
+geometry: none
+output: geojson
+auth:
+  required: false
+privacy_notes: Descargas eléctricas detectadas pola rede de MeteoGalicia; ningún dato persoal.
+# Rebuilt monthly; ~53 spaced requests, so never more often.
+stale_after: P62D
+ingest:
+  every: P30D
+# Lives on its own /pulso/ page; the main map does not draw it (SERIES_LAYERS).
+style:
+  kind: circle
+  color_token: --c-raio
+table:
+  fields:
+    - dia
+    - n
