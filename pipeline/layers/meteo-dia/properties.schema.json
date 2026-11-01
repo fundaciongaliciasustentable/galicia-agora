@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "meteo-dia feature properties",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "nome",
+    "concello",
+    "provincia",
+    "altitude",
+    "dia",
+    "ta",
+    "pp",
+    "hr",
+    "vv",
+    "dv",
+    "rs",
+    "ta_max",
+    "ta_min",
+    "pp_total"
+  ],
+  "properties": {
+    "id": { "type": "integer" },
+    "nome": { "type": "string", "minLength": 1 },
+    "concello": { "type": "string" },
+    "provincia": { "type": "string" },
+    "altitude": { "type": "number" },
+    "dia": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+    "ta": { "$ref": "#/$defs/hours" },
+    "pp": { "$ref": "#/$defs/hours" },
+    "hr": { "$ref": "#/$defs/hours" },
+    "vv": { "$ref": "#/$defs/hours" },
+    "dv": { "$ref": "#/$defs/hours" },
+    "rs": { "$ref": "#/$defs/hours" },
+    "ta_max": { "type": "number" },
+    "ta_min": { "type": "number" },
+    "pp_total": { "type": "number", "minimum": 0 }
+  },
+  "$defs": {
+    "hours": {
+      "type": "array",
+      "minItems": 24,
+      "maxItems": 24,
+      "items": { "type": ["number", "null"] }
+    }
+  }
+}

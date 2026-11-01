@@ -1,0 +1,48 @@
+id: meteo-dia
+title:
+  gl: O tempo dun día hora a hora (21 de maio de 2025)
+  es: El tiempo de un día hora a hora (21 de mayo de 2025)
+theme: tempo-aire
+operator:
+  name: MeteoGalicia (Consellería de Medio Ambiente, Xunta de Galicia)
+  url: https://www.meteogalicia.gal
+source_url: https://servizos.meteogalicia.gal/mgrss/observacion/datosHorariosEstacions.action
+licence:
+  text_url: https://www.meteogalicia.gal/web/aviso-legal
+  quote: "utilizada libremente… co único compromiso de mencionar expresamente a MeteoGalicia"
+  verified_at: 2026-10-18
+  odbl_compatible: doubt
+  collection: cc-by-sa-4.0
+  notes: >-
+    Mesma fonte e mesmas dúas declaracións ca estacions-meteo (aviso legal de atribución e
+    CC BY-SA 4.0 en abertos.xunta.gal, conxunto 0114): vai na colección CC BY-SA 4.0 (ADR 0005).
+    Datos horarios históricos (JSON_EstacionHorariosHistoricos) do mércores 21 de maio de 2025,
+    día de referencia dos mapas animados: un dos catro mércores da media de mobilidade de
+    MITMA, o máis común deles (suave e case seco; ver datos/fontes/meteogalicia-horario). Horas
+    locais (Europe/Madrid): o servizo dá UTC e pídense as xanelas 22:00–09:00 e 10:00–21:00
+    UTC. Só lecturas validadas (código 1); o resto, nulo. Vento a 10 m ou, se a estación non o
+    ten, a 2 m.
+attribution: 'Fonte: MeteoGalicia (Xunta de Galicia), observación horaria do 21 de maio de 2025.'
+update_frequency:
+  declared: static
+geometry: point
+output: geojson
+auth:
+  required: false
+privacy_notes: Observacións de estacións meteorolóxicas; ningún dato persoal.
+# Fixed reference day: the same answer every time; never stale for being old.
+stale_after: P3650D
+ingest:
+  every: P365D
+style:
+  kind: circle
+  color_token: --c-tempo
+  label_field: nome
+table:
+  fields:
+    - nome
+    - concello
+    - altitude
+    - ta_min
+    - ta_max
+    - pp_total
