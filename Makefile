@@ -9,17 +9,27 @@ BUILD := build
 # Galicia plus a margin of sea and the neighbouring regions.
 BBOX := -9.6,41.7,-6.6,44.0
 MAXZOOM := 14
+# Low-zoom context around Galicia (Iberian Peninsula and the sea) so the map
+# never ends in an empty edge when zooming out or panning.
+CONTEXT_BBOX := -16,36,-1,48.5
+CONTEXT_MAXZOOM := 8
 # Protomaps daily builds: https://build-metadata.protomaps.dev/builds.json
-PROTOMAPS_BUILD ?= $(shell curl -s https://build-metadata.protomaps.dev/builds.json | python3 -c 'import json,sys;print(json.load(sys.stdin)[-2]["key"])')
+# The metadata host sometimes times out; daily builds are named YYYYMMDD.pmtiles,
+# so fall back to the one from two days ago (GNU date in CI, BSD date on macOS).
+PROTOMAPS_BUILD ?= $(shell k=$$(curl -s -m 20 https://build-metadata.protomaps.dev/builds.json | python3 -c 'import json,sys;print(json.load(sys.stdin)[-2]["key"])' 2>/dev/null); [ -n "$$k" ] && echo "$$k" || echo "$$(date -u -d '2 days ago' +%Y%m%d 2>/dev/null || date -u -v-2d +%Y%m%d).pmtiles")
 
 .PHONY: basemap assets site clean
 
-basemap: $(BUILD)/galicia.pmtiles
+basemap: $(BUILD)/galicia.pmtiles $(BUILD)/contexto.pmtiles
 
 $(BUILD)/galicia.pmtiles:
 	mkdir -p $(BUILD)
 	pmtiles extract https://build.protomaps.com/$(PROTOMAPS_BUILD) $@ --bbox=$(BBOX) --maxzoom=$(MAXZOOM)
 	echo "$(PROTOMAPS_BUILD)" > $(BUILD)/basemap-version.txt
+
+$(BUILD)/contexto.pmtiles:
+	mkdir -p $(BUILD)
+	pmtiles extract https://build.protomaps.com/$(PROTOMAPS_BUILD) $@ --bbox=$(CONTEXT_BBOX) --maxzoom=$(CONTEXT_MAXZOOM)
 
 assets: $(BUILD)/assets/fonts
 

@@ -34,6 +34,8 @@ function log(msg: string) {
   console.log(`prepare: ${msg}`);
 }
 
+let hasContext = false;
+
 function basemap() {
   const src = join(BUILD, 'galicia.pmtiles');
   if (!existsSync(src)) {
@@ -42,6 +44,10 @@ function basemap() {
   }
   mkdirSync(join(PUBLIC, 'basemap'), { recursive: true });
   cpSync(src, join(PUBLIC, 'basemap', 'galicia.pmtiles'));
+  const context = join(BUILD, 'contexto.pmtiles');
+  hasContext = existsSync(context);
+  if (hasContext) cpSync(context, join(PUBLIC, 'basemap', 'contexto.pmtiles'));
+  else log('no build/contexto.pmtiles: the basemap ends at the Galicia extract when zoomed out');
   for (const font of FONTS) {
     for (const range of GLYPH_RANGES) {
       const from = join(BUILD, 'assets', 'fonts', font, `${range}.pbf`);
@@ -63,6 +69,20 @@ function basemap() {
   return true;
 }
 
+/**
+ * Basemap layers: the background, then the low-zoom context without labels,
+ * then the Galicia extract, which draws over the context where it has data.
+ */
+function basemapLayers(flavor: 'light' | 'dark') {
+  const main = layers('protomaps', namedFlavor(flavor), { lang: 'gl' });
+  if (!hasContext) return main;
+  const context = layers('contexto', namedFlavor(flavor), { lang: 'gl' })
+    .filter((l) => l.type !== 'symbol' && l.type !== 'background')
+    .map((l) => ({ ...l, id: `contexto-${l.id}` }));
+  const background = main.filter((l) => l.type === 'background');
+  return [...background, ...context, ...main.filter((l) => l.type !== 'background')];
+}
+
 function styles(hasBasemap: boolean) {
   for (const flavor of ['light', 'dark'] as const) {
     const style = {
@@ -72,6 +92,13 @@ function styles(hasBasemap: boolean) {
       sprite: `/sprites/${flavor}`,
       sources: hasBasemap
         ? {
+            ...(hasContext && {
+              contexto: {
+                type: 'vector',
+                url: 'pmtiles:///basemap/contexto.pmtiles',
+                attribution: '© OpenStreetMap (ODbL) · Protomaps',
+              },
+            }),
             protomaps: {
               type: 'vector',
               url: 'pmtiles:///basemap/galicia.pmtiles',
@@ -80,7 +107,7 @@ function styles(hasBasemap: boolean) {
           }
         : {},
       layers: hasBasemap
-        ? layers('protomaps', namedFlavor(flavor), { lang: 'gl' })
+        ? basemapLayers(flavor)
         : [
             {
               id: 'background',
