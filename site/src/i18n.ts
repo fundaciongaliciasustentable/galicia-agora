@@ -150,6 +150,51 @@ const STRINGS = {
     gl: 'Aínda non hai datos de horarios publicados.',
     es: 'Aún no hay datos de horarios publicados.',
   },
+  weather_title: { gl: 'O tempo hora a hora', es: 'El tiempo hora a hora' },
+  weather_lede: {
+    gl: 'O mércores 21 de maio de 2025 nas estacións de MeteoGalicia: a luz do sol medida, a temperatura, o vento e a choiva, hora a hora.',
+    es: 'El miércoles 21 de mayo de 2025 en las estaciones de MeteoGalicia: la luz del sol medida, la temperatura, el viento y la lluvia, hora a hora.',
+  },
+  weather_map_label: {
+    gl: 'Mapa de Galicia coas estacións meteorolóxicas: cor pola temperatura, partículas polo vento e pingas pola choiva. As cifras están no panel e na táboa.',
+    es: 'Mapa de Galicia con las estaciones meteorológicas: color por la temperatura, partículas por el viento y gotas por la lluvia. Las cifras están en el panel y en la tabla.',
+  },
+  weather_temp: { gl: 'Temperatura', es: 'Temperatura' },
+  weather_wind: { gl: 'Vento', es: 'Viento' },
+  weather_rain: { gl: 'Choiva', es: 'Lluvia' },
+  weather_now: {
+    gl: 'Media {mean} °C · máxima {max} °C en {maxAt} · mínima {min} °C en {minAt}.',
+    es: 'Media {mean} °C · máxima {max} °C en {maxAt} · mínima {min} °C en {minAt}.',
+  },
+  weather_legend: {
+    gl: 'A cor arredor de cada estación é a súa temperatura (non se calcula nada entre estacións). As partículas van cara a onde sopra o vento; o fondo aclara coa radiación solar media medida.',
+    es: 'El color alrededor de cada estación es su temperatura (no se calcula nada entre estaciones). Las partículas van hacia donde sopla el viento; el fondo se aclara con la radiación solar media medida.',
+  },
+  weather_curve: {
+    gl: 'Temperatura media das estacións e franxa entre a mínima e a máxima (fondo: sol)',
+    es: 'Temperatura media de las estaciones y franja entre la mínima y la máxima (fondo: sol)',
+  },
+  weather_curve_label: {
+    gl: 'Temperatura media das estacións ao longo do día: de {low} °C ás {lowAt} a {high} °C ás {highAt}.',
+    es: 'Temperatura media de las estaciones a lo largo del día: de {low} °C a las {lowAt} a {high} °C a las {highAt}.',
+  },
+  weather_table_caption: {
+    gl: 'Resumo das {n} estacións, hora a hora. Choiva: estacións con algo de choiva nesa hora.',
+    es: 'Resumen de las {n} estaciones, hora a hora. Lluvia: estaciones con algo de lluvia en esa hora.',
+  },
+  weather_col_mean: { gl: 'Media °C', es: 'Media °C' },
+  weather_col_min: { gl: 'Mín. °C', es: 'Mín. °C' },
+  weather_col_max: { gl: 'Máx. °C', es: 'Máx. °C' },
+  weather_col_rain: { gl: 'Choiva', es: 'Lluvia' },
+  weather_col_wind: { gl: 'Vento m/s', es: 'Viento m/s' },
+  weather_note: {
+    gl: 'Observación horaria das estacións de MeteoGalicia, só lecturas validadas, en hora oficial de Galicia. É o mesmo mércores que un dos catro da media de mobilidade, escollido por ser o máis común dos catro: suave e case seco (o 28 de maio pasou dos 35 °C e o 14 choveu). A cor arredor de cada estación só representa esa estación; entre estacións non se calcula nada. O vento é o medio da hora a 10 m (ou a 2 m onde non hai mastro de 10 m); as partículas son un esquema da dirección e da forza. O fondo aclara coa radiación solar media de todas as estacións.',
+    es: 'Observación horaria de las estaciones de MeteoGalicia, solo lecturas validadas, en hora oficial de Galicia. Es el mismo miércoles que uno de los cuatro de la media de movilidad, elegido por ser el más común de los cuatro: suave y casi seco (el 28 de mayo pasó de 35 °C y el 14 llovió). El color alrededor de cada estación solo representa esa estación; entre estaciones no se calcula nada. El viento es el medio de la hora a 10 m (o a 2 m donde no hay mástil de 10 m); las partículas son un esquema de la dirección y la fuerza. El fondo se aclara con la radiación solar media de todas las estaciones.',
+  },
+  weather_missing: {
+    gl: 'Aínda non están publicados os datos do tempo dese día.',
+    es: 'Aún no están publicados los datos del tiempo de ese día.',
+  },
   moves_title: { gl: 'Galicia en movemento', es: 'Galicia en movimiento' },
   moves_lede: {
     gl: 'As viaxes entre concellos dun mércores e dun domingo medios de maio de 2025, hora a hora. Cada sentido vai polo seu carril.',

@@ -58,7 +58,7 @@ export const SERIES: PulseMap[] = [
   },
   {
     slug: 'tempo',
-    ready: false,
+    ready: true,
     colour: '#8fb8ff',
     title: { gl: 'O tempo hora a hora', es: 'El tiempo hora a hora' },
     summary: {
