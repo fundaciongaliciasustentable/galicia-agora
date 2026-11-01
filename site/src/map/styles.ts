@@ -1700,6 +1700,51 @@ export function encodeLayer(layer: LayerLike, ctx: StyleContext): Encoding {
           },
         ],
       );
+    case 'bibliotecas': {
+      const publica = ['==', ['get', 'tipo'], 'Biblioteca Pública'];
+      const aberta = ['!=', ['get', 'acceso'], 'restrinxido'];
+      return enc(
+        [
+          base('circle', {
+            type: 'circle',
+            paint: {
+              'circle-radius': byZoom([
+                [6, 2.5],
+                [12, 6],
+              ]),
+              'circle-color': ['case', aberta, ['case', publica, color, '#2e6b8a'], halo],
+              'circle-stroke-color': ['case', publica, color, '#2e6b8a'],
+              'circle-stroke-width': ['case', aberta, 0.8, 1.6],
+            },
+          }),
+          label('label', ['get', 'nome'], 13),
+        ],
+        [
+          {
+            entries: [
+              {
+                shape: 'dot',
+                color,
+                size: 9,
+                label: T('Biblioteca pública', 'Biblioteca pública'),
+              },
+              {
+                shape: 'dot',
+                color: '#2e6b8a',
+                size: 9,
+                label: T('Especializada', 'Especializada'),
+              },
+              {
+                shape: 'ring',
+                color: '#2e6b8a',
+                size: 9,
+                label: T('Acceso restrinxido', 'Acceso restringido'),
+              },
+            ],
+          },
+        ],
+      );
+    }
     case 'distancia-servizos': {
       const stops: Array<[number, string]> = [
         [0, CHEAP_DEAR[0]],

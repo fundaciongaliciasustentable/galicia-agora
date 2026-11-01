@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "bibliotecas feature properties",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "nome",
+    "tipo",
+    "especializacion",
+    "enderezo",
+    "localidade",
+    "concello",
+    "codigo_ine",
+    "cp",
+    "titularidade",
+    "titular",
+    "acceso",
+    "rede_bibliotecas",
+    "web"
+  ],
+  "properties": {
+    "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+    "nome": { "type": "string", "minLength": 1 },
+    "tipo": { "type": ["string", "null"] },
+    "especializacion": { "type": ["string", "null"] },
+    "enderezo": { "type": ["string", "null"] },
+    "localidade": { "type": ["string", "null"] },
+    "concello": { "type": ["string", "null"] },
+    "codigo_ine": { "type": ["string", "null"], "pattern": "^(15|27|32|36)\\d{3}$" },
+    "cp": { "type": ["string", "null"], "pattern": "^\\d{5}$" },
+    "titularidade": { "enum": ["publica", "privada", null] },
+    "titular": { "type": ["string", "null"], "description": "Institución titular" },
+    "acceso": { "enum": ["publico", "restrinxido", null] },
+    "rede_bibliotecas": {
+      "type": "boolean",
+      "description": "Integrada na Rede de Bibliotecas de Galicia"
+    },
+    "web": { "type": ["string", "null"], "pattern": "^https?://" }
+  }
+}

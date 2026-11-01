@@ -1,0 +1,43 @@
+id: bibliotecas
+title:
+  gl: Bibliotecas
+  es: Bibliotecas
+theme: servizos
+operator:
+  name: Xunta de Galicia — Consellería de Cultura (Rede de Bibliotecas de Galicia)
+  url: https://bibliotecas.xunta.gal/
+source_url: https://abertos.xunta.gal/catalogo/cultura-ocio-deporte/-/dataset/0230/rede-bibliotecas-galicia
+licence:
+  spdx: CC-BY-SA-4.0
+  text_url: https://abertos.xunta.gal/catalogo/cultura-ocio-deporte/-/dataset/0230/rede-bibliotecas-galicia
+  quote: "Creative Commons BY SA 4.0"
+  verified_at: 2026-11-01
+  odbl_compatible: doubt
+  collection: cc-by-sa-4.0
+  notes: >-
+    Licenza indicada na ficha do conxunto 0230 en abertos.xunta.gal (CC BY-SA 4.0).
+    Compatibilidade coa ODbL en dúbida: colección CC BY-SA (ADR 0005). Descarga
+    https://directorio-rbgalicia.xunta.gal/download?file=/csv/DirectorioBibliotecasPublicasGalicia.csv
+    (486 bibliotecas, UTF-8, xerado en cada petición, sen Last-Modified: hora de publicación
+    non indicada). 303 públicas, 182 especializadas e a Biblioteca de Galicia; 91 de acceso
+    restrinxido. Quedan fóra 15 sen as dúas coordenadas (bibliotecas móbiles e filas só coa
+    latitude). Sen horarios.
+attribution: "Xunta de Galicia. Consellería de Cultura, directorio da Rede de Bibliotecas de Galicia (abertos.xunta.gal, conxunto 0230)"
+update_frequency:
+  declared: P1D
+geometry: point
+output: geojson
+auth:
+  required: false
+privacy_notes: >-
+  Non se publican o teléfono nin o correo. As titulares son todas institucións (concellos,
+  universidades, colexios profesionais, fundacións, dioceses).
+stale_after: P30D
+ingest:
+  every: P7D
+style:
+  kind: circle
+  color_token: --c-biblioteca
+  label_field: nome
+table:
+  fields: [nome, tipo, especializacion, concello, enderezo, titular, acceso, rede_bibliotecas, web]
