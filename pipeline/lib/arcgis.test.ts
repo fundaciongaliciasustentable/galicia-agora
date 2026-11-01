@@ -1,0 +1,99 @@
+import { describe, expect, it } from 'vitest';
+import type { LayerDef } from './adapter.ts';
+import { cleanGeometry, fetchLayer, num, queryUrl, str } from './arcgis.ts';
+
+const layer = { id: 'x' } as unknown as LayerDef;
+
+function ctxWith(pages: unknown[]) {
+  const requested: string[] = [];
+  return {
+    requested,
+    ctx: {
+      layer,
+      now: new Date(),
+      env: {},
+      async get(url: string) {
+        requested.push(url);
+        const body = Buffer.from(JSON.stringify(pages[requested.length - 1]));
+        return {
+          url,
+          status: 200,
+          notModified: false,
+          body,
+          headers: {},
+          etag: null,
+          lastModified: null,
+          attempts: 1,
+        };
+      },
+    },
+  };
+}
+
+describe('arcgis helpers', () => {
+  it('builds a GeoJSON query in EPSG:4326 with optional generalisation', () => {
+    const u = queryUrl('https://h/MapServer/3', 2000, {
+      maxAllowableOffset: 0.0005,
+      pageSize: 500,
+    });
+    expect(u).toContain('MapServer/3/query?resultOffset=2000&resultRecordCount=500');
+    expect(u).toContain('outSR=4326');
+    expect(u).toContain('maxAllowableOffset=0.0005');
+    expect(u).toContain('f=geojson');
+    expect(queryUrl('https://h/MapServer/3', 0)).not.toContain('maxAllowableOffset');
+  });
+
+  it('follows exceededTransferLimit and stops on the last page', async () => {
+    const f = { type: 'Feature', geometry: null, properties: {} };
+    const { ctx, requested } = ctxWith([
+      { type: 'FeatureCollection', features: [f, f], exceededTransferLimit: true },
+      { type: 'FeatureCollection', features: [f] },
+    ]);
+    const pages = await fetchLayer(ctx, 'https://h/MapServer/0');
+    expect(pages).toHaveLength(2);
+    expect(requested[1]).toContain('resultOffset=2&');
+  });
+
+  it('throws on service errors and on empty pages that promise more', async () => {
+    await expect(fetchLayer(ctxWith([{ error: { message: 'boom' } }]).ctx, 'u')).rejects.toThrow(
+      /boom/,
+    );
+    await expect(
+      fetchLayer(
+        ctxWith([{ type: 'FeatureCollection', features: [], exceededTransferLimit: true }]).ctx,
+        'u',
+      ),
+    ).rejects.toThrow(/empty page/);
+  });
+
+  it('cuts geometry to 2D, rounds it and drops repeated vertices', () => {
+    expect(cleanGeometry({ type: 'Point', coordinates: [-8.123456, 42.987654, 0, null] })).toEqual({
+      type: 'Point',
+      coordinates: [-8.12346, 42.98765],
+    });
+    expect(
+      cleanGeometry({
+        type: 'LineString',
+        coordinates: [
+          [1.000001, 2],
+          [1.000002, 2],
+          [3, 4],
+        ],
+      }),
+    ).toEqual({
+      type: 'LineString',
+      coordinates: [
+        [1, 2],
+        [3, 4],
+      ],
+    });
+    expect(cleanGeometry(null)).toBeNull();
+  });
+
+  it('cleans strings and numbers', () => {
+    expect(str('  a   b ')).toBe('a b');
+    expect(str('-')).toBeNull();
+    expect(num('1,256', 1)).toBe(1.3);
+    expect(num(null)).toBeNull();
+  });
+});

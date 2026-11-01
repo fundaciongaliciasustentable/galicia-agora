@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "praias feature properties",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "nome", "concello", "provincia", "categoria", "tramo"],
+  "properties": {
+    "id": { "type": "string", "pattern": "^Praia_\\d+$", "description": "COD_PRAIA" },
+    "nome": { "type": "string", "minLength": 1 },
+    "concello": {
+      "type": ["string", "null"],
+      "description": "Texto da fonte; ás veces dous concellos"
+    },
+    "provincia": { "type": ["string", "null"] },
+    "categoria": {
+      "enum": ["natural", "urbana"],
+      "description": "Clasificación da fonte (NATURAL / URBANA, tamén «URBANA *»)"
+    },
+    "tramo": {
+      "type": ["integer", "null"],
+      "minimum": 1,
+      "description": "Número de tramo cando a fonte divide a praia; null se é tramo único"
+    }
+  }
+}

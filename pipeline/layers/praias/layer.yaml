@@ -1,0 +1,42 @@
+id: praias
+title:
+  gl: Praias
+  es: Playas
+theme: auga-mar
+operator:
+  name: Xunta de Galicia (Instituto de Estudos do Territorio / IDEG)
+  url: https://mapas.xunta.gal
+source_url: https://ideg.xunta.gal/servizos/rest/services/CubertaTerrestre/Clasificacion_PRAIAS/MapServer/0
+licence:
+  spdx: CC-BY-SA-4.0
+  text_url: https://mapas.xunta.gal/gl/aviso-legal
+  verified_at: 2026-11-01
+  odbl_compatible: doubt
+  collection: cc-by-sa-4.0
+  notes: >-
+    Dobre licenza (ADR 0005): IET «compatible con CC BY 4.0» / abertos.xunta.gal CC BY-SA
+    4.0; aplícase a máis restritiva ata confirmación escrita. 987 praias costeiras (A
+    Coruña, Lugo e Pontevedra) nunha soa páxina (maxRecordCount 1000). Sen bandeira azul:
+    o campo B_AZUL do servizo non di de que ano é, e a lista de 2026 de abertos.xunta.gal
+    (PraiasBandeiraAzul_2026.csv, 126 filas, 8 baleiras) non casa ben por posición co
+    servizo (29 de 118 casaban con outra praia; as praias fluviais non están nesta capa).
+    A clasificación natural/urbana é a da fonte; 42 urbanas levan «URBANA *» sen
+    explicación. Praias partidas en tramos aparecen unha vez por tramo.
+attribution: © Instituto de Estudos do Territorio. Xunta de Galicia
+update_frequency:
+  declared: static
+  measured: static
+geometry: point
+output: geojson
+auth:
+  required: false
+privacy_notes: Situación e nome das praias; ningún dato persoal.
+stale_after: P90D
+ingest:
+  every: P30D
+style:
+  kind: circle
+  color_token: --c-praia
+  label_field: nome
+table:
+  fields: [nome, concello, provincia, categoria, tramo]

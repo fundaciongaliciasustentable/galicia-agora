@@ -605,6 +605,35 @@ export function encodeLayer(layer: LayerLike, ctx: StyleContext): Encoding {
         ],
       );
 
+    case 'praias': {
+      const urbana = ['==', ['get', 'categoria'], 'urbana'];
+      return enc(
+        [
+          base('circle', {
+            type: 'circle',
+            paint: {
+              'circle-radius': byZoom([
+                [6, 2.2],
+                [12, 5.5],
+              ]),
+              'circle-color': ['case', urbana, halo, color],
+              'circle-stroke-color': color,
+              'circle-stroke-width': ['case', urbana, 1.6, 0.8],
+            },
+          }),
+          label('label', ['get', 'nome'], 12),
+        ],
+        [
+          {
+            entries: [
+              { shape: 'dot', color, size: 9, label: T('Praia natural', 'Playa natural') },
+              { shape: 'ring', color, size: 9, label: T('Praia urbana', 'Playa urbana') },
+            ],
+            note: T('Praias da costa; sen as fluviais.', 'Playas de la costa; sin las fluviales.'),
+          },
+        ],
+      );
+    }
     // ───────────────────────── Mobilidade ─────────────────────────
     case 'tren': {
       const cercanias = ['==', ['get', 'rede'], 'Cercanías'];
