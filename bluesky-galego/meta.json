@@ -1,0 +1,20 @@
+{
+  "layer_id": "bluesky-galego",
+  "published_at": null,
+  "fetched_at": "2026-11-01T22:31:23.686Z",
+  "last_success_at": "2026-11-01T22:31:23.686Z",
+  "status": "fresh",
+  "consecutive_failures": 0,
+  "feature_count": 7,
+  "source_url": "https://api.bsky.app/xrpc/app.bsky.feed.searchPosts",
+  "licence": "https://bsky.network/docs/developer-guidelines/",
+  "attribution": "Fonte: Bluesky (AT Protocol): mostra de Jetstream e busca da AppView, só contas agregadas. Lingua declarada pola app de quen publica; lugar tirado do texto. Estimacións: cálculo propio da Fundación Galicia Sustentable.",
+  "checksum": "sha256:42df33a7dfba84bd8c6bebed4b1a2500c25057fd404f46cc2ee52f2daf3e64b5",
+  "last_error": null,
+  "history": [
+    {
+      "at": "2026-11-01T22:31:23.686Z",
+      "ok": true
+    }
+  ]
+}

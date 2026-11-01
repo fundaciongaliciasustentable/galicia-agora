@@ -1,17 +1,21 @@
 {
   "layer_id": "calidade-aire",
-  "published_at": "2026-11-01T20:00:00.000Z",
-  "fetched_at": "2026-11-01T21:06:58.210Z",
-  "last_success_at": "2026-11-01T21:06:58.210Z",
+  "published_at": "2026-11-01T22:00:00.000Z",
+  "fetched_at": "2026-11-01T22:34:12.284Z",
+  "last_success_at": "2026-11-01T22:34:12.284Z",
   "status": "fresh",
   "consecutive_failures": 0,
   "feature_count": 46,
   "source_url": "https://servizos.meteogalicia.gal/mgrss/caire/jsonICAActual.action",
   "licence": "CC-BY-SA-4.0",
   "attribution": "Datos: Rede de Calidade do Aire de Galicia, MeteoGalicia (Xunta de Galicia). Datos provisionais, non validados.",
-  "checksum": "sha256:06551113fef3ac291369513b95cb2aecf0605fc8c48807d1a530c422e91458b9",
+  "checksum": "sha256:b5d4ff7dadddf7d41323eedb863183c6e248a2393b27c334af8b294d75269c44",
   "last_error": null,
   "history": [
+    {
+      "at": "2026-11-01T22:34:12.284Z",
+      "ok": true
+    },
     {
       "at": "2026-11-01T21:06:58.210Z",
       "ok": true
@@ -158,10 +162,6 @@
     },
     {
       "at": "2026-10-26T00:11:47.332Z",
-      "ok": true
-    },
-    {
-      "at": "2026-10-25T22:05:41.676Z",
       "ok": true
     }
   ]

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-01T21:07:40.994Z",
+  "generated_at": "2026-11-01T22:34:37.171Z",
   "layers": [
     {
       "id": "aeroportos",
@@ -156,18 +156,22 @@
       },
       "meta": {
         "layer_id": "aire-24h",
-        "published_at": "2026-11-01T20:00:00.000Z",
-        "fetched_at": "2026-11-01T21:06:18.852Z",
-        "last_success_at": "2026-11-01T21:06:18.852Z",
+        "published_at": "2026-11-01T22:00:00.000Z",
+        "fetched_at": "2026-11-01T22:28:02.290Z",
+        "last_success_at": "2026-11-01T22:28:02.290Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 46,
         "source_url": "https://servizos.meteogalicia.gal/mgrss/caire/jsonEvolucionIcaEstacion.action",
         "licence": "https://abertos.xunta.gal/condicions-de-uso",
         "attribution": "Fonte: Rede de Calidade do Aire de Galicia (MeteoGalicia, Xunta de Galicia). Datos en tempo real sen validar.",
-        "checksum": "sha256:31c3223dd9125d59104927f0c77a5a29a08347231073d96f4256e40dbb67e04e",
+        "checksum": "sha256:0403b5c9ef34e5d8a9b062c0ec30c113ae9b066f2f17968b5e6a9bfcf5f7900f",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-11-01T22:28:02.290Z",
+            "ok": true
+          },
           {
             "at": "2026-11-01T21:06:18.852Z",
             "ok": true
@@ -259,6 +263,75 @@
       }
     },
     {
+      "id": "atencion-wikipedia",
+      "title": {
+        "gl": "Atención en Wikipedia por concello, día a día",
+        "es": "Atención en Wikipedia por ayuntamiento, día a día"
+      },
+      "theme": "territorio",
+      "operator": {
+        "name": "Wikimedia Foundation (Wikimedia Analytics API)",
+        "url": "https://doc.wikimedia.org/generated-data-platform/aqs/analytics-api/"
+      },
+      "source_url": "https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article",
+      "licence": {
+        "spdx": "CC0-1.0",
+        "text_url": "https://doc.wikimedia.org/generated-data-platform/aqs/analytics-api/documentation/access-policy.html",
+        "quote": "Data provided by the API is available under the CC0 1.0 license",
+        "verified_at": "2026-11-01",
+        "odbl_compatible": true,
+        "collection": "odbl",
+        "notes": "Vistas diarias do artigo de cada concello na Wikipedia en galego e en castelán, axente `user` (Wikimedia retira os bots coñecidos e o tráfico automatizado que detecta), todos os accesos (web e app). Correspondencia concello ↔ artigo lida unha vez de Wikidata (P772, código INE) e gardada en artigos.json; só o título canónico, sen sumar redireccións. A política de acceso pide User-Agent identificable e esperar cada resposta antes da seguinte: unha petición tras outra (~630 ao día). Poboación: INE, censo de 2021 (poboacion-seculo, CC BY 4.0). O índice de picos e as vistas por 1.000 habitantes son cálculo propio. Non di onde está quen le nin quen é: é cantas veces se abriu a páxina."
+      },
+      "attribution": "Fonte: Wikimedia Foundation, vistas de páxina (Wikimedia Analytics API, CC0), artigos da Wikipedia en galego e en castelán; correspondencia por Wikidata (CC0). Poboación: INE, censo de 2021. Índice de picos: cálculo propio da Fundación Galicia Sustentable.",
+      "update_frequency": {
+        "declared": "P1D"
+      },
+      "geometry": "none",
+      "output": "geojson",
+      "privacy_notes": "Contas diarias agregadas por Wikimedia para cada artigo; ningún dato de lectores (nin lugar, nin dispositivo, nin conta).",
+      "stale_after": "P4D",
+      "ingest": {
+        "every": "P1D"
+      },
+      "depends_on": [
+        "poboacion-seculo"
+      ],
+      "style": {
+        "kind": "fill",
+        "label_field": "nome"
+      },
+      "table": {
+        "fields": [
+          "nome",
+          "codigo_ine",
+          "vistas_ano",
+          "vistas_ano_mil"
+        ]
+      },
+      "meta": {
+        "layer_id": "atencion-wikipedia",
+        "published_at": "2026-10-31T00:00:00.000Z",
+        "fetched_at": "2026-11-01T22:28:39.241Z",
+        "last_success_at": "2026-11-01T22:28:39.241Z",
+        "status": "fresh",
+        "consecutive_failures": 0,
+        "feature_count": 313,
+        "source_url": "https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article",
+        "licence": "CC0-1.0",
+        "attribution": "Fonte: Wikimedia Foundation, vistas de páxina (Wikimedia Analytics API, CC0), artigos da Wikipedia en galego e en castelán; correspondencia por Wikidata (CC0). Poboación: INE, censo de 2021. Índice de picos: cálculo propio da Fundación Galicia Sustentable.",
+        "checksum": "sha256:e6c13eae6eecee7687bf16cf579aacb8b81965d440887c197b690385a24f61d6",
+        "last_error": null,
+        "history": [
+          {
+            "at": "2026-11-01T22:28:39.241Z",
+            "ok": true
+          }
+        ],
+        "alert": false
+      }
+    },
+    {
       "id": "avisos-aemet",
       "title": {
         "gl": "Avisos meteorolóxicos da AEMET",
@@ -312,8 +385,8 @@
       "meta": {
         "layer_id": "avisos-aemet",
         "published_at": "2026-11-01T10:27:51.000Z",
-        "fetched_at": "2026-11-01T21:06:55.461Z",
-        "last_success_at": "2026-11-01T21:06:55.461Z",
+        "fetched_at": "2026-11-01T22:31:21.850Z",
+        "last_success_at": "2026-11-01T22:31:21.850Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 4,
@@ -323,6 +396,10 @@
         "checksum": "sha256:1ef2efbac411d7e932e3bf630bfcfa6dded10092def3e0888d91692cbd48cfd6",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-11-01T22:31:21.850Z",
+            "ok": true
+          },
           {
             "at": "2026-11-01T21:06:55.461Z",
             "ok": true
@@ -478,10 +555,6 @@
           {
             "at": "2026-10-26T00:11:45.270Z",
             "ok": true
-          },
-          {
-            "at": "2026-10-25T22:05:39.712Z",
-            "ok": true
           }
         ],
         "alert": false
@@ -545,8 +618,8 @@
       "meta": {
         "layer_id": "avisos-meteogalicia",
         "published_at": null,
-        "fetched_at": "2026-11-01T21:06:56.106Z",
-        "last_success_at": "2026-11-01T21:06:56.106Z",
+        "fetched_at": "2026-11-01T22:31:22.169Z",
+        "last_success_at": "2026-11-01T22:31:22.169Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 313,
@@ -556,6 +629,10 @@
         "checksum": "sha256:b0d3259a42f56a43a11eff1268cfdbc5e2c722c39da0f71071f3559ef3833aac",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-11-01T22:31:22.169Z",
+            "ok": true
+          },
           {
             "at": "2026-11-01T21:06:56.106Z",
             "ok": true
@@ -711,10 +788,6 @@
           {
             "at": "2026-10-26T00:11:45.716Z",
             "ok": true
-          },
-          {
-            "at": "2026-10-25T22:05:40.236Z",
-            "ok": true
           }
         ],
         "alert": false
@@ -842,18 +915,22 @@
       },
       "meta": {
         "layer_id": "bicis-arteixo",
-        "published_at": "2026-11-01T21:06:21.000Z",
-        "fetched_at": "2026-11-01T21:06:57.436Z",
-        "last_success_at": "2026-11-01T21:06:57.436Z",
+        "published_at": "2026-11-01T22:30:45.000Z",
+        "fetched_at": "2026-11-01T22:31:22.916Z",
+        "last_success_at": "2026-11-01T22:31:22.916Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 15,
         "source_url": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_aa/gbfs.json",
         "licence": "CC0-1.0",
         "attribution": "Datos: biciArteixo / nextbike (CC0)",
-        "checksum": "sha256:4c9e1354b491466e2a174f40930c08986e6d7eab4ea66ff7126edb04ba9bf30b",
+        "checksum": "sha256:baf381589b9c2c659284ac4af5cabc818636231fced947f795b909a7235dbfca",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-11-01T22:31:22.916Z",
+            "ok": true
+          },
           {
             "at": "2026-11-01T21:06:57.436Z",
             "ok": true
@@ -1009,9 +1086,72 @@
           {
             "at": "2026-10-26T00:11:46.384Z",
             "ok": true
-          },
+          }
+        ],
+        "alert": false
+      }
+    },
+    {
+      "id": "bluesky-galego",
+      "title": {
+        "gl": "Bluesky en galego e as sete cidades en Bluesky",
+        "es": "Bluesky en gallego y las siete ciudades en Bluesky"
+      },
+      "theme": "territorio",
+      "operator": {
+        "name": "Bluesky Social PBC (Jetstream e AppView do AT Protocol)",
+        "url": "https://bsky.network/"
+      },
+      "source_url": "https://api.bsky.app/xrpc/app.bsky.feed.searchPosts",
+      "licence": {
+        "text_url": "https://bsky.network/docs/developer-guidelines/",
+        "quote": "All services must have a method for deleting content a user has requested to be deleted.",
+        "verified_at": "2026-11-01",
+        "odbl_compatible": "doubt",
+        "collection": "cc-by-sa-4.0",
+        "notes": "Sen licenza de datos: as publicacións son públicas no AT Protocol e as directrices para desenvolvedores non prohiben publicar estatísticas agregadas; a obriga de borrar contido que un usuario elimina non nos toca porque non gardamos contido (nin texto, nin conta, nin URI): só contadores. Por prudencia vai na colección CC BY-SA, non na ODbL. Dúas fontes: (1) Jetstream (wss://jetstream2.us-east.bsky.network/subscribe, sen chave), que reproduce ~36 h desde un cursor: cada execución mostra 6 minutos de cada hora completa das últimas 30 que aínda non contou e conta as publicacións novas e as marcadas `gl` e `es`; (2) a busca da AppView (api.bsky.app, sen chave; public.api.bsky.app dá 403), co total de publicacións (hitsTotal) que mencionan cada cidade en cada semana. Límite: 3.000 peticións / 5 min por IP (https://bsky.network/docs/rate-limits/). Política de privacidade e termos: https://bsky.social/about/support/tos."
+      },
+      "attribution": "Fonte: Bluesky (AT Protocol): mostra de Jetstream e busca da AppView, só contas agregadas. Lingua declarada pola app de quen publica; lugar tirado do texto. Estimacións: cálculo propio da Fundación Galicia Sustentable.",
+      "update_frequency": {
+        "declared": "PT6H"
+      },
+      "geometry": "none",
+      "output": "geojson",
+      "privacy_notes": "Só contadores: publicacións por lingua declarada nunha mostra horaria e total semanal de publicacións que nomean cada cidade (só se hai polo menos 10). Ningún texto, conta, DID, alcume nin URI chega a gardarse: cada evento lese, cóntase e descártase.",
+      "stale_after": "P2D",
+      "ingest": {
+        "every": "PT6H"
+      },
+      "depends_on": [
+        "poboacion-seculo"
+      ],
+      "style": {
+        "kind": "fill",
+        "label_field": "nome"
+      },
+      "table": {
+        "fields": [
+          "nome",
+          "codigo_ine",
+          "consulta"
+        ]
+      },
+      "meta": {
+        "layer_id": "bluesky-galego",
+        "published_at": null,
+        "fetched_at": "2026-11-01T22:31:23.686Z",
+        "last_success_at": "2026-11-01T22:31:23.686Z",
+        "status": "fresh",
+        "consecutive_failures": 0,
+        "feature_count": 7,
+        "source_url": "https://api.bsky.app/xrpc/app.bsky.feed.searchPosts",
+        "licence": "https://bsky.network/docs/developer-guidelines/",
+        "attribution": "Fonte: Bluesky (AT Protocol): mostra de Jetstream e busca da AppView, só contas agregadas. Lingua declarada pola app de quen publica; lugar tirado do texto. Estimacións: cálculo propio da Fundación Galicia Sustentable.",
+        "checksum": "sha256:42df33a7dfba84bd8c6bebed4b1a2500c25057fd404f46cc2ee52f2daf3e64b5",
+        "last_error": null,
+        "history": [
           {
-            "at": "2026-10-25T22:05:40.921Z",
+            "at": "2026-11-01T22:31:23.686Z",
             "ok": true
           }
         ],
@@ -1172,18 +1312,22 @@
       },
       "meta": {
         "layer_id": "calidade-aire",
-        "published_at": "2026-11-01T20:00:00.000Z",
-        "fetched_at": "2026-11-01T21:06:58.210Z",
-        "last_success_at": "2026-11-01T21:06:58.210Z",
+        "published_at": "2026-11-01T22:00:00.000Z",
+        "fetched_at": "2026-11-01T22:34:12.284Z",
+        "last_success_at": "2026-11-01T22:34:12.284Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 46,
         "source_url": "https://servizos.meteogalicia.gal/mgrss/caire/jsonICAActual.action",
         "licence": "CC-BY-SA-4.0",
         "attribution": "Datos: Rede de Calidade do Aire de Galicia, MeteoGalicia (Xunta de Galicia). Datos provisionais, non validados.",
-        "checksum": "sha256:06551113fef3ac291369513b95cb2aecf0605fc8c48807d1a530c422e91458b9",
+        "checksum": "sha256:b5d4ff7dadddf7d41323eedb863183c6e248a2393b27c334af8b294d75269c44",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-11-01T22:34:12.284Z",
+            "ok": true
+          },
           {
             "at": "2026-11-01T21:06:58.210Z",
             "ok": true
@@ -1331,10 +1475,6 @@
           {
             "at": "2026-10-26T00:11:47.332Z",
             "ok": true
-          },
-          {
-            "at": "2026-10-25T22:05:41.676Z",
-            "ok": true
           }
         ],
         "alert": false
@@ -1389,18 +1529,22 @@
       },
       "meta": {
         "layer_id": "caudais-rios",
-        "published_at": "2026-11-01T20:50:00.000Z",
-        "fetched_at": "2026-11-01T21:06:59.245Z",
-        "last_success_at": "2026-11-01T21:06:59.245Z",
+        "published_at": "2026-11-01T22:20:00.000Z",
+        "fetched_at": "2026-11-01T22:34:13.801Z",
+        "last_success_at": "2026-11-01T22:34:13.801Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 88,
         "source_url": "https://servizos.meteogalicia.gal/mgafos/json/estadoActual.action",
         "licence": "https://www.meteogalicia.gal/web/aviso-legal",
         "attribution": "Datos: Augas de Galicia e MeteoGalicia (Xunta de Galicia). Datos non validados.",
-        "checksum": "sha256:5572f7bc7dc77d19f8ad20c8cf50bdabcd95db672714ba51ad737eb21f07c145",
+        "checksum": "sha256:495cca6abcd1a1729661c32f2aab49979b005a90828dd407a845fa46c6373700",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-11-01T22:34:13.801Z",
+            "ok": true
+          },
           {
             "at": "2026-11-01T21:06:59.245Z",
             "ok": true
@@ -1555,10 +1699,6 @@
           },
           {
             "at": "2026-10-26T00:11:48.402Z",
-            "ok": true
-          },
-          {
-            "at": "2026-10-25T22:05:42.768Z",
             "ok": true
           }
         ],
@@ -2769,18 +2909,22 @@
       },
       "meta": {
         "layer_id": "estacions-meteo",
-        "published_at": "2026-11-01T21:00:00.000Z",
-        "fetched_at": "2026-11-01T21:07:07.896Z",
-        "last_success_at": "2026-11-01T21:07:07.896Z",
+        "published_at": "2026-11-01T22:20:00.000Z",
+        "fetched_at": "2026-11-01T22:34:14.154Z",
+        "last_success_at": "2026-11-01T22:34:14.154Z",
         "status": "fresh",
         "consecutive_failures": 0,
-        "feature_count": 153,
+        "feature_count": 154,
         "source_url": "https://servizos.meteogalicia.gal/mgrss/observacion/ultimos10minEstacionsMeteo.action",
         "licence": "CC-BY-SA-4.0",
         "attribution": "Datos: MeteoGalicia (Xunta de Galicia)",
-        "checksum": "sha256:a9158e61583485ca577d07692071f168446a4d87c344262ae61ebc3e62d490eb",
+        "checksum": "sha256:5df859baf5942b27c89e8cc7816899604552b8197aae755a20ad9558d8b02f2c",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-11-01T22:34:14.154Z",
+            "ok": true
+          },
           {
             "at": "2026-11-01T21:07:07.896Z",
             "ok": true
@@ -2931,10 +3075,6 @@
           },
           {
             "at": "2026-10-26T00:11:48.707Z",
-            "ok": true
-          },
-          {
-            "at": "2026-10-25T22:05:43.102Z",
             "ok": true
           }
         ],
@@ -3337,8 +3477,8 @@
       "meta": {
         "layer_id": "focos-calor",
         "published_at": "2026-11-01T15:56:00.000Z",
-        "fetched_at": "2026-11-01T21:07:13.804Z",
-        "last_success_at": "2026-11-01T21:07:13.804Z",
+        "fetched_at": "2026-11-01T22:34:15.088Z",
+        "last_success_at": "2026-11-01T22:34:15.088Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 3,
@@ -3348,6 +3488,10 @@
         "checksum": "sha256:3ee8c28e1840f7accf8a67cb9d881fe2317c395a83edd95f0becb5138248ac8f",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-11-01T22:34:15.088Z",
+            "ok": true
+          },
           {
             "at": "2026-11-01T21:07:13.804Z",
             "ok": true
@@ -3502,10 +3646,72 @@
           {
             "at": "2026-10-26T00:11:49.561Z",
             "ok": true
-          },
+          }
+        ],
+        "alert": false
+      }
+    },
+    {
+      "id": "galicia-noticias",
+      "title": {
+        "gl": "Concellos nas noticias, día a día (GDELT)",
+        "es": "Ayuntamientos en las noticias, día a día (GDELT)"
+      },
+      "theme": "territorio",
+      "operator": {
+        "name": "The GDELT Project",
+        "url": "https://www.gdeltproject.org/"
+      },
+      "source_url": "https://api.gdeltproject.org/api/v2/doc/doc",
+      "licence": {
+        "text_url": "https://www.gdeltproject.org/about.html#termsofuse",
+        "quote": "any use or redistribution of the data must include a citation to the GDELT Project and a link to this website",
+        "verified_at": "2026-11-01",
+        "odbl_compatible": "doubt",
+        "collection": "cc-by-sa-4.0",
+        "notes": "Termos de GDELT (https://www.gdeltproject.org/about.html): uso «unlimited and unrestricted» con cita e ligazón a gdeltproject.org. Só atribución, pero sen texto de licenza estándar: colección CC BY-SA por prudencia. API DOC 2.0, modos timelinevolraw (artigos por día e total vixiado polo GDELT, `norm`) e timelinetone (ton medio), cunha consulta revisada á man por concello (consultas.json) e `sourcecountry:spain`. A documentación fala de 3 meses de xanela; con timespan=12m devolveu 335 días o 1/11/2026, así que a capa garda o seu propio histórico. GDELT pide unha petición cada 5 s e bloquea a IP un tempo se non (comprobado: 429 durante máis de 20 min): 10 s entre peticións (o dobre do pedido), 9 concellos por execución horaria (uns 216 ao día, case os 217 con consulta) e parar ao primeiro erro. Non se publica ningún titular, URL nin medio. Ton só con 5 artigos ou máis no día."
+      },
+      "attribution": "Fonte: The GDELT Project (https://www.gdeltproject.org/), API DOC 2.0: artigos de medios con sede en España que nomean cada concello e o seu ton medio. Consultas e suma de 7 días: cálculo propio da Fundación Galicia Sustentable.",
+      "update_frequency": {
+        "declared": "P1D"
+      },
+      "geometry": "none",
+      "output": "geojson",
+      "privacy_notes": "Contas de artigos de medios por concello e día e ton medio; ningún titular, URL, medio nin nome de persoa.",
+      "stale_after": "P2D",
+      "ingest": {
+        "every": "PT1H"
+      },
+      "style": {
+        "kind": "fill",
+        "label_field": "nome"
+      },
+      "table": {
+        "fields": [
+          "nome",
+          "codigo_ine",
+          "consulta",
+          "motivo"
+        ]
+      },
+      "meta": {
+        "layer_id": "galicia-noticias",
+        "published_at": null,
+        "fetched_at": "2026-11-01T22:34:16.254Z",
+        "last_success_at": null,
+        "status": "failed",
+        "consecutive_failures": 1,
+        "feature_count": 0,
+        "source_url": "https://api.gdeltproject.org/api/v2/doc/doc",
+        "licence": "https://www.gdeltproject.org/about.html#termsofuse",
+        "attribution": "Fonte: The GDELT Project (https://www.gdeltproject.org/), API DOC 2.0: artigos de medios con sede en España que nomean cada concello e o seu ton medio. Consultas e suma de 7 días: cálculo propio da Fundación Galicia Sustentable.",
+        "checksum": null,
+        "last_error": "GDELT answered no concello this run",
+        "history": [
           {
-            "at": "2026-10-25T22:05:44.051Z",
-            "ok": true
+            "at": "2026-11-01T22:34:16.254Z",
+            "ok": false,
+            "error": "GDELT answered no concello this run"
           }
         ],
         "alert": false
@@ -3565,17 +3771,21 @@
       "meta": {
         "layer_id": "gasolineiras",
         "published_at": null,
-        "fetched_at": "2026-11-01T21:07:14.981Z",
-        "last_success_at": "2026-11-01T21:07:14.981Z",
+        "fetched_at": "2026-11-01T22:34:28.293Z",
+        "last_success_at": "2026-11-01T22:34:28.293Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 736,
         "source_url": "https://sedeaplicaciones.minetur.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/EstacionesTerrestres/FiltroCCAA/12",
         "licence": "https://www.miteco.gob.es/es/atencion-al-ciudadano/aviso-legal.html",
         "attribution": "Fonte: Ministerio para a Transición Ecolóxica (MITERD), xeoportal de gasolineiras",
-        "checksum": "sha256:bac68ad0e6d885f4ae287dfc96d1ef09e1af467b7db0941c6b618c08839b8351",
+        "checksum": "sha256:5dd94acdcf19901a6b38853e4fe1515f29fc16f4da5bee171b5de48caf8f067a",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-11-01T22:34:28.293Z",
+            "ok": true
+          },
           {
             "at": "2026-11-01T21:07:14.981Z",
             "ok": true
@@ -3726,10 +3936,6 @@
           },
           {
             "at": "2026-10-26T00:11:50.216Z",
-            "ok": true
-          },
-          {
-            "at": "2026-10-25T22:05:45.110Z",
             "ok": true
           }
         ],
@@ -4951,18 +5157,22 @@
       },
       "meta": {
         "layer_id": "meteo-24h",
-        "published_at": "2026-11-01T21:00:00.000Z",
-        "fetched_at": "2026-11-01T21:07:21.317Z",
-        "last_success_at": "2026-11-01T21:07:21.317Z",
+        "published_at": "2026-11-01T22:00:00.000Z",
+        "fetched_at": "2026-11-01T22:34:31.720Z",
+        "last_success_at": "2026-11-01T22:34:31.720Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 152,
         "source_url": "https://servizos.meteogalicia.gal/mgrss/observacion/ultimosHorariosEstacions.action",
         "licence": "https://www.meteogalicia.gal/web/aviso-legal",
         "attribution": "Fonte: MeteoGalicia (Xunta de Galicia), observación horaria.",
-        "checksum": "sha256:93a34483bc0233d348ee6b08e679da37c724a4042adf104f7307b59c31de358c",
+        "checksum": "sha256:706e4922f474b0306ba77b0f12ed29966c1adb3888c1b17a73e27b99e26c5f65",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-11-01T22:34:31.720Z",
+            "ok": true
+          },
           {
             "at": "2026-11-01T21:07:21.317Z",
             "ok": true
@@ -5254,6 +5464,193 @@
         ],
         "alert": false
       }
+    },
+    {
+      "id": "ndvi-mes",
+      "title": {
+        "gl": "Vexetación desde o satélite (NDVI), mes a mes",
+        "es": "Vegetación desde el satélite (NDVI), mes a mes"
+      },
+      "theme": "territorio",
+      "operator": {
+        "name": "Comisión Europea e ESA (Copernicus Sentinel-2)",
+        "url": "https://dataspace.copernicus.eu/explore-data/data-collections/sentinel-data/sentinel-2"
+      },
+      "source_url": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a",
+      "licence": {
+        "text_url": "https://ewds.climate.copernicus.eu/licences/ec-sentinel",
+        "quote": "users shall have a free, full and open access to Copernicus Sentinel Data",
+        "verified_at": "2026-11-01",
+        "odbl_compatible": true,
+        "collection": "odbl",
+        "notes": "Aviso legal dos datos Copernicus Sentinel (rev. 1). Se se modifican, a nota é «Contains modified Copernicus Sentinel data [Year]», que a interface dá en galego co ano do mes que se mostra. A colección do catálogo de Earth Search (Element84) enlaza o mesmo aviso legal da ESA. Escenas Sentinel-2 L2A en COG públicos de AWS Open Data (sentinel-cogs), sen conta. Mapas Galicia Sustentable fai a composición mensual (mediana sen nubes) e serve as teselas desde o seu propio servidor. A imaxe recórtase co contorno de Galicia do IGN (WFS INSPIRE de unidades administrativas, «CC BY 4.0 ign.es», en pipeline/satelite/galicia-ign.geojson), non cos polígonos do IET, para que a capa siga na colección ODbL."
+      },
+      "attribution": "Contén datos Copernicus Sentinel modificados 2026 · Contorno de Galicia © IGN (CC BY 4.0)",
+      "update_frequency": {
+        "declared": "P5D",
+        "measured": "P30D",
+        "schedule": "0 3 3 * *"
+      },
+      "stale_after": "P70D",
+      "ingest": {
+        "every": "P31D",
+        "workflow": ".github/workflows/satelite.yml"
+      },
+      "geometry": "raster",
+      "output": "pmtiles",
+      "privacy_notes": "Imaxe de satélite a 20 m por píxel; non se distinguen persoas nin vehículos.",
+      "context": [
+        {
+          "label": {
+            "gl": "Como se fai",
+            "es": "Cómo se hace"
+          },
+          "value": "Mediana das escenas máis limpas de cada mes, a 20 m",
+          "source": "Sentinel-2 L2A (Earth Search, Element84)",
+          "source_url": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a",
+          "note": {
+            "gl": "Para cada cadro MGRS que cobre Galicia escóllense ata oito escenas do mes coa menor nubosidade. Quítanse nubes, sombras de nubes e cirros coa clasificación da propia escena (SCL) e cada píxel toma a mediana do que queda. Resolución de 20 m: desde o zoom 14 o mapa amplía as teselas do 13. Onde ningunha escena do mes viu o chan sen nubes queda un oco transparente; non se enche con meses anteriores.",
+            "es": "Para cada cuadro MGRS que cubre Galicia se eligen hasta ocho escenas del mes con menor nubosidad. Se quitan nubes, sombras de nubes y cirros con la clasificación de la propia escena (SCL) y cada píxel toma la mediana de lo que queda. Resolución de 20 m: desde el zoom 14 el mapa amplía las teselas del 13. Donde ninguna escena del mes vio el suelo sin nubes queda un hueco transparente; no se rellena con meses anteriores."
+          }
+        },
+        {
+          "label": {
+            "gl": "Que mide",
+            "es": "Qué mide"
+          },
+          "value": "NDVI = (NIR − vermello) / (NIR + vermello), bandas B08 e B04",
+          "source": "Sentinel-2 L2A (Earth Search, Element84)",
+          "source_url": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a",
+          "note": {
+            "gl": "Índice de vexetación de diferenza normalizada, de −1 a 1. Por debaixo de 0, auga; de 0 a 0,2, chan espido, rocha ou cidade; de 0,2 a 0,5, pasto, mato ou cultivo; por riba de 0,6, vexetación densa e vigorosa. Calcúlase en cada escena e tómase a mediana do mes. Cambia coa estación: compárese o mesmo mes de anos distintos.",
+            "es": "Índice de vegetación de diferencia normalizada, de −1 a 1. Por debajo de 0, agua; de 0 a 0,2, suelo desnudo, roca o ciudad; de 0,2 a 0,5, pasto, matorral o cultivo; por encima de 0,6, vegetación densa y vigorosa. Se calcula en cada escena y se toma la mediana del mes. Cambia con la estación: compárese el mismo mes de años distintos."
+          }
+        }
+      ],
+      "style": {
+        "kind": "raster"
+      },
+      "table": {
+        "fields": [
+          "mes"
+        ]
+      },
+      "months": [
+        {
+          "month": "2026-10",
+          "file": "2026-10-59faf6ca44af.pmtiles",
+          "minzoom": 8,
+          "maxzoom": 13,
+          "bounds": [
+            -9.35,
+            41.8,
+            -6.7,
+            43.8
+          ],
+          "tiles": 3487,
+          "bytes": 49499976,
+          "sha256": "59faf6ca44af33285d158fdc1a722ade18990c3a7f41d3b3c2610848bd348100",
+          "gap_share": 0.009,
+          "scenes": 71,
+          "first_date": "2026-10-03T11:39:13.094000Z",
+          "last_date": "2026-10-30T11:39:37.524000Z",
+          "built_at": "2026-11-01T22:20:43.002Z"
+        }
+      ],
+      "meta": {
+        "layer_id": "ndvi-mes",
+        "published_at": "2026-10-30T11:39:37.524000Z",
+        "fetched_at": "2026-11-01T22:20:43.002Z",
+        "last_success_at": "2026-11-01T22:20:43.002Z",
+        "status": "fresh",
+        "consecutive_failures": 0,
+        "feature_count": 3487,
+        "source_url": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a",
+        "licence": "https://ewds.climate.copernicus.eu/licences/ec-sentinel",
+        "attribution": "Contén datos Copernicus Sentinel modificados 2026 · Contorno de Galicia © IGN (CC BY 4.0)",
+        "checksum": "sha256:59faf6ca44af33285d158fdc1a722ade18990c3a7f41d3b3c2610848bd348100",
+        "last_error": null,
+        "history": [
+          {
+            "at": "2026-11-01T22:20:43.002Z",
+            "ok": true
+          }
+        ],
+        "alert": false
+      }
+    },
+    {
+      "id": "ortofoto-pnoa",
+      "title": {
+        "gl": "Ortofoto (PNOA)",
+        "es": "Ortofoto (PNOA)"
+      },
+      "theme": "territorio",
+      "operator": {
+        "name": "Instituto Geográfico Nacional (IGN) e Centro Nacional de Información Geográfica (CNIG)",
+        "url": "https://pnoa.ign.es/"
+      },
+      "source_url": "https://www.ign.es/wmts/pnoa-ma?request=GetCapabilities&service=WMTS",
+      "licence": {
+        "spdx": "CC-BY-4.0",
+        "text_url": "https://www.ign.es/resources/licencia/Condiciones_licenciaUso_IGN.pdf",
+        "quote": "<ows:AccessConstraints>CC BY 4.0 scne.es</ows:AccessConstraints>; licenza do IGN: «conlleva la aceptación por el usuario de una licencia CC-BY 4.0»",
+        "verified_at": "2026-11-01",
+        "odbl_compatible": true,
+        "collection": "odbl",
+        "notes": "Licenza declarada no GetCapabilities do WMTS pnoa-ma (AccessConstraints «CC BY 4.0 scne.es», Fees «No se aplican condiciones») e na licenza de uso do IGN, ligada desde o aviso legal (https://www.ign.es/web/ign/portal/info-aviso-legal). Como as teselas se recodifican a WebP, a cita segue o punto 4 da licenza («Obra derivada de …»). Capa OI.OrthoimageCoverage, teselas JPEG GoogleMapsCompatible. Mapas Galicia Sustentable garda só as teselas que tocan Galicia (z6–z16) en PMTiles propios, subidos directamente ao servidor polo fluxo .github/workflows/ortofoto.yml; non pasan pola rama de datos. Desde z17 o mapa non amplía máis."
+      },
+      "attribution": "Obra derivada de PNOA máxima actualidade CC BY 4.0 scne.es · PNOA cedido por © Instituto Geográfico Nacional",
+      "update_frequency": {
+        "declared": "static",
+        "measured": "static"
+      },
+      "stale_after": "P1100D",
+      "ingest": {
+        "every": "P730D",
+        "workflow": ".github/workflows/ortofoto.yml"
+      },
+      "geometry": "raster",
+      "output": "pmtiles",
+      "privacy_notes": "Ortofoto aérea de 15–25 cm por píxel: no nivel máximo que publicamos (z16, uns 1,7 m por píxel en Galicia) non se distinguen persoas nin matrículas.",
+      "context": [
+        {
+          "label": {
+            "gl": "Datas de voo",
+            "es": "Fechas de vuelo"
+          },
+          "value": "PNOA 2023 (xullo–outubro), 15 cm por píxel",
+          "source": "IGN, WMS pnoa-ma, capa OI.MosaicElement (FECHA, RESOLUCION)",
+          "source_url": "https://www.ign.es/wms-inspire/pnoa-ma?request=GetCapabilities&service=WMS",
+          "note": {
+            "gl": "Consultado o 01/11/2026 en 81 puntos de Galicia (unha grella de 0,2°): todos son do voo de 2023, de xullo (sur de Ourense) a outubro (Rías Baixas). O IGN substitúe as zonas cando hai un voo novo; o fluxo que constrúe a capa volve medir as datas.",
+            "es": "Consultado el 01/11/2026 en 81 puntos de Galicia (una rejilla de 0,2°): todos son del vuelo de 2023, de julio (sur de Ourense) a octubre (Rías Baixas). El IGN sustituye las zonas cuando hay un vuelo nuevo; el flujo que construye la capa vuelve a medir las fechas."
+          }
+        },
+        {
+          "label": {
+            "gl": "Escalas pequenas",
+            "es": "Escalas pequeñas"
+          },
+          "value": "Mosaico Sentinel-2 do IGN ata z12",
+          "source": "Resumo do GetCapabilities do WMTS pnoa-ma",
+          "source_url": "https://www.ign.es/wmts/pnoa-ma?request=GetCapabilities&service=WMTS",
+          "note": {
+            "gl": "O servizo mostra imaxe do satélite Sentinel-2 a escalas menores de 1:70.000 (ata z12) e a ortofoto PNOA desde z13.",
+            "es": "El servicio muestra imagen del satélite Sentinel-2 a escalas menores de 1:70.000 (hasta z12) y la ortofoto PNOA desde z13."
+          }
+        }
+      ],
+      "style": {
+        "kind": "raster",
+        "color_token": "--gs-verde-nato"
+      },
+      "table": {
+        "fields": [
+          "ortofoto"
+        ]
+      },
+      "meta": null
     },
     {
       "id": "patrimonio",
@@ -6242,8 +6639,8 @@
       "meta": {
         "layer_id": "raios",
         "published_at": null,
-        "fetched_at": "2026-11-01T21:07:29.038Z",
-        "last_success_at": "2026-11-01T21:07:29.038Z",
+        "fetched_at": "2026-11-01T22:34:34.046Z",
+        "last_success_at": "2026-11-01T22:34:34.046Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 0,
@@ -6253,6 +6650,10 @@
         "checksum": "sha256:ed778c73ea51338d6576fb5992b189f2b94d9f3d5e199f46c1af520d6b0b3e6c",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-11-01T22:34:34.046Z",
+            "ok": true
+          },
           {
             "at": "2026-11-01T21:07:29.038Z",
             "ok": true
@@ -6403,10 +6804,6 @@
           },
           {
             "at": "2026-10-26T00:11:53.056Z",
-            "ok": true
-          },
-          {
-            "at": "2026-10-25T22:05:48.153Z",
             "ok": true
           }
         ],
@@ -6572,6 +6969,107 @@
       }
     },
     {
+      "id": "satelite-mes",
+      "title": {
+        "gl": "Galicia desde o satélite, mes a mes",
+        "es": "Galicia desde el satélite, mes a mes"
+      },
+      "theme": "territorio",
+      "operator": {
+        "name": "Comisión Europea e ESA (Copernicus Sentinel-2)",
+        "url": "https://dataspace.copernicus.eu/explore-data/data-collections/sentinel-data/sentinel-2"
+      },
+      "source_url": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a",
+      "licence": {
+        "text_url": "https://ewds.climate.copernicus.eu/licences/ec-sentinel",
+        "quote": "users shall have a free, full and open access to Copernicus Sentinel Data",
+        "verified_at": "2026-11-01",
+        "odbl_compatible": true,
+        "collection": "odbl",
+        "notes": "Aviso legal dos datos Copernicus Sentinel (rev. 1). Se se modifican, a nota é «Contains modified Copernicus Sentinel data [Year]», que a interface dá en galego co ano do mes que se mostra. A colección do catálogo de Earth Search (Element84) enlaza o mesmo aviso legal da ESA. Escenas Sentinel-2 L2A en COG públicos de AWS Open Data (sentinel-cogs), sen conta. Mapas Galicia Sustentable fai a composición mensual (mediana sen nubes) e serve as teselas desde o seu propio servidor. A imaxe recórtase co contorno de Galicia do IGN (WFS INSPIRE de unidades administrativas, «CC BY 4.0 ign.es», en pipeline/satelite/galicia-ign.geojson), non cos polígonos do IET, para que a capa siga na colección ODbL."
+      },
+      "attribution": "Contén datos Copernicus Sentinel modificados 2026 · Contorno de Galicia © IGN (CC BY 4.0)",
+      "update_frequency": {
+        "declared": "P5D",
+        "measured": "P30D",
+        "schedule": "0 3 3 * *"
+      },
+      "stale_after": "P70D",
+      "ingest": {
+        "every": "P31D",
+        "workflow": ".github/workflows/satelite.yml"
+      },
+      "geometry": "raster",
+      "output": "pmtiles",
+      "privacy_notes": "Imaxe de satélite a 20 m por píxel; non se distinguen persoas nin vehículos.",
+      "context": [
+        {
+          "label": {
+            "gl": "Como se fai",
+            "es": "Cómo se hace"
+          },
+          "value": "Mediana das escenas máis limpas de cada mes, a 20 m",
+          "source": "Sentinel-2 L2A (Earth Search, Element84)",
+          "source_url": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a",
+          "note": {
+            "gl": "Para cada cadro MGRS que cobre Galicia escóllense ata oito escenas do mes coa menor nubosidade. Quítanse nubes, sombras de nubes e cirros coa clasificación da propia escena (SCL) e cada píxel toma a mediana do que queda. Resolución de 20 m: desde o zoom 14 o mapa amplía as teselas do 13. Onde ningunha escena do mes viu o chan sen nubes queda un oco transparente; non se enche con meses anteriores.",
+            "es": "Para cada cuadro MGRS que cubre Galicia se eligen hasta ocho escenas del mes con menor nubosidad. Se quitan nubes, sombras de nubes y cirros con la clasificación de la propia escena (SCL) y cada píxel toma la mediana de lo que queda. Resolución de 20 m: desde el zoom 14 el mapa amplía las teselas del 13. Donde ninguna escena del mes vio el suelo sin nubes queda un hueco transparente; no se rellena con meses anteriores."
+          }
+        }
+      ],
+      "style": {
+        "kind": "raster"
+      },
+      "table": {
+        "fields": [
+          "mes"
+        ]
+      },
+      "months": [
+        {
+          "month": "2026-10",
+          "file": "2026-10-d332eefd8a43.pmtiles",
+          "minzoom": 8,
+          "maxzoom": 13,
+          "bounds": [
+            -9.35,
+            41.8,
+            -6.7,
+            43.8
+          ],
+          "tiles": 3487,
+          "bytes": 31091656,
+          "sha256": "d332eefd8a43c5c9f421f94d947806b19330bc1709d2c61e3728629855fd8630",
+          "gap_share": 0.009,
+          "scenes": 71,
+          "first_date": "2026-10-03T11:39:13.094000Z",
+          "last_date": "2026-10-30T11:39:37.524000Z",
+          "built_at": "2026-11-01T22:20:43.002Z"
+        }
+      ],
+      "meta": {
+        "layer_id": "satelite-mes",
+        "published_at": "2026-10-30T11:39:37.524000Z",
+        "fetched_at": "2026-11-01T22:20:43.002Z",
+        "last_success_at": "2026-11-01T22:20:43.002Z",
+        "status": "fresh",
+        "consecutive_failures": 0,
+        "feature_count": 3487,
+        "source_url": "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a",
+        "licence": "https://ewds.climate.copernicus.eu/licences/ec-sentinel",
+        "attribution": "Contén datos Copernicus Sentinel modificados 2026 · Contorno de Galicia © IGN (CC BY 4.0)",
+        "checksum": "sha256:d332eefd8a43c5c9f421f94d947806b19330bc1709d2c61e3728629855fd8630",
+        "last_error": null,
+        "history": [
+          {
+            "at": "2026-11-01T22:20:43.002Z",
+            "ok": true
+          }
+        ],
+        "alert": false
+      }
+    },
+    {
       "id": "sendas-paisaxe",
       "title": {
         "gl": "Sendas e itinerarios da paisaxe",
@@ -6694,8 +7192,8 @@
       "meta": {
         "layer_id": "sismos-recentes",
         "published_at": "2026-10-31T09:17:54.575Z",
-        "fetched_at": "2026-11-01T21:07:30.978Z",
-        "last_success_at": "2026-11-01T21:07:30.978Z",
+        "fetched_at": "2026-11-01T22:34:34.220Z",
+        "last_success_at": "2026-11-01T22:34:34.220Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 64,
@@ -6705,6 +7203,10 @@
         "checksum": "sha256:bdfd693502aedc4a8dba867b1f341fdad5f2eaf0afa6ffd7696248a9f4e99ee4",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-11-01T22:34:34.220Z",
+            "ok": true
+          },
           {
             "at": "2026-11-01T21:07:30.978Z",
             "ok": true
@@ -6856,10 +7358,6 @@
           {
             "at": "2026-10-26T00:11:53.214Z",
             "ok": true
-          },
-          {
-            "at": "2026-10-25T22:05:48.325Z",
-            "ok": true
           }
         ],
         "alert": false
@@ -6915,18 +7413,22 @@
       },
       "meta": {
         "layer_id": "trafico-balizas-v16",
-        "published_at": "2026-11-01T21:06:18.726Z",
-        "fetched_at": "2026-11-01T21:07:33.357Z",
-        "last_success_at": "2026-11-01T21:07:33.357Z",
+        "published_at": "2026-11-01T22:34:18.737Z",
+        "fetched_at": "2026-11-01T22:34:35.434Z",
+        "last_success_at": "2026-11-01T22:34:35.434Z",
         "status": "fresh",
         "consecutive_failures": 0,
-        "feature_count": 9,
+        "feature_count": 1,
         "source_url": "https://nap.dgt.es/datex2/v3/dgt/SituationPublication/datex2_v37.xml",
         "licence": "https://nap.dgt.es/es/dataset/incidencias-dgt-datex2-v3-7",
         "attribution": "Fonte: DGT, Punto de Acceso Nacional de Tráfico",
-        "checksum": "sha256:b4d42d36afbc4e4905a5cb3a1fbc0eb5a7dd15a6be0ec1313afafc483150966a",
+        "checksum": "sha256:9ed29bd2635cf6caf66892afc0cbeff32ac644160770601279bb70a8d3f8a2f2",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-11-01T22:34:35.434Z",
+            "ok": true
+          },
           {
             "at": "2026-11-01T21:07:33.357Z",
             "ok": true
@@ -7078,10 +7580,6 @@
           {
             "at": "2026-10-26T00:11:54.658Z",
             "ok": true
-          },
-          {
-            "at": "2026-10-25T22:05:50.220Z",
-            "ok": true
           }
         ],
         "alert": false
@@ -7142,18 +7640,22 @@
       },
       "meta": {
         "layer_id": "trafico-incidencias",
-        "published_at": "2026-11-01T21:06:18.726Z",
-        "fetched_at": "2026-11-01T21:07:33.782Z",
-        "last_success_at": "2026-11-01T21:07:33.782Z",
+        "published_at": "2026-11-01T22:34:18.737Z",
+        "fetched_at": "2026-11-01T22:34:35.863Z",
+        "last_success_at": "2026-11-01T22:34:35.863Z",
         "status": "fresh",
         "consecutive_failures": 0,
-        "feature_count": 68,
+        "feature_count": 58,
         "source_url": "https://nap.dgt.es/datex2/v3/dgt/SituationPublication/datex2_v37.xml",
         "licence": "https://nap.dgt.es/es/dataset/incidencias-dgt-datex2-v3-7",
         "attribution": "Fonte: DGT, Punto de Acceso Nacional de Tráfico",
-        "checksum": "sha256:301960c0ca4a5edbfe15460915f482bec6cd35b522f838cd8d6d8dfdf8842d33",
+        "checksum": "sha256:c4a9e8e61a0917c2e13f28d693ef149e6ad6ab7c4220218c1afb78ee5a3a2e04",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-11-01T22:34:35.863Z",
+            "ok": true
+          },
           {
             "at": "2026-11-01T21:07:33.782Z",
             "ok": true
@@ -7304,10 +7806,6 @@
           },
           {
             "at": "2026-10-26T00:11:55.422Z",
-            "ok": true
-          },
-          {
-            "at": "2026-10-25T22:05:50.981Z",
             "ok": true
           }
         ],
@@ -7472,18 +7970,22 @@
       "volatile": true,
       "meta": {
         "layer_id": "tren",
-        "published_at": "2026-11-01T20:07:27.000Z",
-        "fetched_at": "2026-11-01T21:07:33.846Z",
-        "last_success_at": "2026-11-01T21:07:33.846Z",
+        "published_at": "2026-11-01T21:34:27.000Z",
+        "fetched_at": "2026-11-01T22:34:35.931Z",
+        "last_success_at": "2026-11-01T22:34:35.931Z",
         "status": "fresh",
         "consecutive_failures": 0,
-        "feature_count": 11,
+        "feature_count": 6,
         "source_url": "https://gtfsrt.renfe.com/vehicle_positions_LD.json",
         "licence": "CC-BY-4.0",
         "attribution": "Origen de los datos: Renfe Operadora",
-        "checksum": "sha256:4b150ff858317d786a7feeb946236e06a7e289666a821b382899dcc61c1b9b85",
+        "checksum": "sha256:a39192127d408eb80a9d2593c8d4cd54e96c5cd34501574ea1f57ff656581868",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-11-01T22:34:35.931Z",
+            "ok": true
+          },
           {
             "at": "2026-11-01T21:07:33.846Z",
             "ok": true
@@ -7642,10 +8144,6 @@
             "at": "2026-10-26T00:11:55.480Z",
             "ok": false,
             "error": "Renfe cercanias: unexpected GTFS-RT JSON (no header/entity)"
-          },
-          {
-            "at": "2026-10-25T22:05:51.060Z",
-            "ok": true
           }
         ],
         "alert": false
