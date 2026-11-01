@@ -1,17 +1,21 @@
 {
   "layer_id": "aeroportos",
   "published_at": "2026-10-30T22:00:00.000Z",
-  "fetched_at": "2026-10-31T00:08:39.386Z",
-  "last_success_at": "2026-10-31T00:08:39.386Z",
+  "fetched_at": "2026-11-01T01:48:09.237Z",
+  "last_success_at": "2026-11-01T01:48:09.237Z",
   "status": "fresh",
   "consecutive_failures": 0,
   "feature_count": 40,
   "source_url": "https://davidmegginson.github.io/ourairports-data/airports.csv",
   "licence": "https://ourairports.com/data/",
   "attribution": "OurAirports (dominio público); pasaxeiros: Eurostat (avia_paoa)",
-  "checksum": "sha256:b2887ef90bb4c98cbc5800233047bb1ba3830e3195cf5e02c75af7d820f5c7d8",
+  "checksum": "sha256:95dd2245dd0149f5df4678a836e8ca76908964e49f6df3bea5e0a38279a45831",
   "last_error": null,
   "history": [
+    {
+      "at": "2026-11-01T01:48:09.237Z",
+      "ok": true
+    },
     {
       "at": "2026-10-31T00:08:39.386Z",
       "ok": true
@@ -46,14 +50,6 @@
     },
     {
       "at": "2026-10-25T09:21:43.743Z",
-      "ok": true
-    },
-    {
-      "at": "2026-10-24T09:06:18.821Z",
-      "ok": true
-    },
-    {
-      "at": "2026-10-24T07:54:03.142Z",
       "ok": true
     }
   ]
