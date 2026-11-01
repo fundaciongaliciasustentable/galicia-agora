@@ -1,0 +1,20 @@
+{
+  "layer_id": "vut-mensual",
+  "published_at": null,
+  "fetched_at": "2026-11-01T13:38:13.343Z",
+  "last_success_at": "2026-11-01T13:38:13.343Z",
+  "status": "fresh",
+  "consecutive_failures": 0,
+  "feature_count": 313,
+  "source_url": "https://descargascdn.xunta.gal/interno/smarxa/REAT_Serie_Mensual.csv",
+  "licence": "CC-BY-SA-4.0",
+  "attribution": "Fonte: Turismo de Galicia, Rexistro de Empresas e Actividades Turísticas (REAT), serie mensual, CC BY-SA 4.0. Poboación: INE, censo de 2021. Cálculo propio da Fundación Galicia Sustentable.",
+  "checksum": "sha256:307e03a3f1a65f0ba3dc5b5cb623e0b0fcd9a3a2de788efb5c8df8bb192de234",
+  "last_error": null,
+  "history": [
+    {
+      "at": "2026-11-01T13:38:13.343Z",
+      "ok": true
+    }
+  ]
+}

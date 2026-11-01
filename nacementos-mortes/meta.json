@@ -1,0 +1,20 @@
+{
+  "layer_id": "nacementos-mortes",
+  "published_at": null,
+  "fetched_at": "2026-11-01T13:26:52.981Z",
+  "last_success_at": "2026-11-01T13:26:52.981Z",
+  "status": "fresh",
+  "consecutive_failures": 0,
+  "feature_count": 313,
+  "source_url": "https://www.ige.gal/igebdt/igeapi/csv/datos/57",
+  "licence": "https://www.ige.gal/web/avisolegal.jsp",
+  "attribution": "Fonte: IGE: https://www.ige.gal, a partir do Movemento natural da poboación (IGE, INE). Nacementos por 100 defuncións: cálculo propio da Fundación Galicia Sustentable. Este produto emprega a API de datos do Instituto Galego de Estatística (IGE), pero non está certificado ou aprobado polo IGE.",
+  "checksum": "sha256:7ce12a30205055aac580d12ac24644599d0b25a9633a8932f79f72b05f875bdf",
+  "last_error": null,
+  "history": [
+    {
+      "at": "2026-11-01T13:26:52.981Z",
+      "ok": true
+    }
+  ]
+}

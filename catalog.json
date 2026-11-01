@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-01T09:57:11.210Z",
+  "generated_at": "2026-11-01T13:38:20.964Z",
   "layers": [
     {
       "id": "aeroportos",
@@ -110,6 +110,73 @@
       }
     },
     {
+      "id": "aire-24h",
+      "title": {
+        "gl": "Calidade do aire das últimas 24 horas, hora a hora",
+        "es": "Calidad del aire de las últimas 24 horas, hora a hora"
+      },
+      "theme": "tempo-aire",
+      "operator": {
+        "name": "Rede de Calidade do Aire de Galicia (MeteoGalicia, Consellería de Medio Ambiente)",
+        "url": "https://www.meteogalicia.gal/Caire/"
+      },
+      "source_url": "https://servizos.meteogalicia.gal/mgrss/caire/jsonEvolucionIcaEstacion.action",
+      "licence": {
+        "text_url": "https://abertos.xunta.gal/condicions-de-uso",
+        "quote": "utilizada libremente… co único compromiso de mencionar expresamente a MeteoGalicia",
+        "verified_at": "2026-10-18",
+        "odbl_compatible": "doubt",
+        "collection": "cc-by-sa-4.0",
+        "notes": "Mesma fonte e licenzas ca calidade-aire (abertos.xunta.gal conxunto 0055, CC BY-SA 4.0, e aviso legal de MeteoGalicia): colección CC BY-SA 4.0 (ADR 0005). Servizo documentado na IT/052 de MeteoGalicia (jsonEvolucionIcaEstacion): índice de calidade do aire (ICA) e valor de cada contaminante nas últimas ~34 horas por estación (comprobado o 1/11/2026, 46 estacións con índice). Unha petición por estación, con pausa. Datos en tempo real sen validar (marca T)."
+      },
+      "attribution": "Fonte: Rede de Calidade do Aire de Galicia (MeteoGalicia, Xunta de Galicia). Datos en tempo real sen validar.",
+      "update_frequency": {
+        "declared": "PT1H"
+      },
+      "geometry": "point",
+      "output": "geojson",
+      "privacy_notes": "Medidas de estacións de calidade do aire; ningún dato persoal.",
+      "stale_after": "PT3H",
+      "ingest": {
+        "every": "PT1H"
+      },
+      "style": {
+        "kind": "circle",
+        "color_token": "--c-aire",
+        "label_field": "nome"
+      },
+      "table": {
+        "fields": [
+          "nome",
+          "concello",
+          "tipo",
+          "area",
+          "ica_max"
+        ]
+      },
+      "meta": {
+        "layer_id": "aire-24h",
+        "published_at": "2026-11-01T13:00:00.000Z",
+        "fetched_at": "2026-11-01T13:24:47.010Z",
+        "last_success_at": "2026-11-01T13:24:47.010Z",
+        "status": "fresh",
+        "consecutive_failures": 0,
+        "feature_count": 46,
+        "source_url": "https://servizos.meteogalicia.gal/mgrss/caire/jsonEvolucionIcaEstacion.action",
+        "licence": "https://abertos.xunta.gal/condicions-de-uso",
+        "attribution": "Fonte: Rede de Calidade do Aire de Galicia (MeteoGalicia, Xunta de Galicia). Datos en tempo real sen validar.",
+        "checksum": "sha256:7799a94e2458129a84030d5cacabd6de834803f7a3fb9bae3d74e76fadb36615",
+        "last_error": null,
+        "history": [
+          {
+            "at": "2026-11-01T13:24:47.010Z",
+            "ok": true
+          }
+        ],
+        "alert": false
+      }
+    },
+    {
       "id": "aloxamento-reat",
       "title": {
         "gl": "Aloxamentos turísticos rexistrados",
@@ -160,8 +227,8 @@
       "meta": {
         "layer_id": "aloxamento-reat",
         "published_at": "2026-09-30T22:00:00.000Z",
-        "fetched_at": "2026-10-25T11:34:03.017Z",
-        "last_success_at": "2026-10-25T11:34:03.017Z",
+        "fetched_at": "2026-11-01T13:25:22.376Z",
+        "last_success_at": "2026-11-01T13:25:22.376Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 4483,
@@ -172,15 +239,7 @@
         "last_error": null,
         "history": [
           {
-            "at": "2026-10-25T11:34:03.017Z",
-            "ok": true
-          },
-          {
-            "at": "2026-10-25T11:26:11.623Z",
-            "ok": true
-          },
-          {
-            "at": "2026-10-25T11:10:59.001Z",
+            "at": "2026-11-01T13:25:22.376Z",
             "ok": true
           }
         ],
@@ -240,18 +299,22 @@
       },
       "meta": {
         "layer_id": "avisos-aemet",
-        "published_at": "2026-11-01T09:40:30.000Z",
-        "fetched_at": "2026-11-01T09:50:25.884Z",
-        "last_success_at": "2026-11-01T09:50:25.884Z",
+        "published_at": "2026-11-01T10:27:51.000Z",
+        "fetched_at": "2026-11-01T13:25:23.119Z",
+        "last_success_at": "2026-11-01T13:25:23.119Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 4,
         "source_url": "https://www.aemet.es/documentos_d/eltiempo/prediccion/avisos/rss/CAP_AFAC71_ATOM.xml",
         "licence": "https://www.aemet.es/es/nota_legal",
         "attribution": "© AEMET. Información elaborada pola Axencia Estatal de Meteoroloxía",
-        "checksum": "sha256:804cfc3f7658389013baea91b5fa7f29c5d1b4b969b599b71c61b93818157bde",
+        "checksum": "sha256:1ef2efbac411d7e932e3bf630bfcfa6dded10092def3e0888d91692cbd48cfd6",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-11-01T13:25:23.119Z",
+            "ok": true
+          },
           {
             "at": "2026-11-01T09:50:25.884Z",
             "ok": true
@@ -411,22 +474,6 @@
           {
             "at": "2026-10-25T13:48:34.460Z",
             "ok": true
-          },
-          {
-            "at": "2026-10-25T12:29:33.667Z",
-            "ok": true
-          },
-          {
-            "at": "2026-10-25T11:34:05.583Z",
-            "ok": true
-          },
-          {
-            "at": "2026-10-25T11:26:12.283Z",
-            "ok": true
-          },
-          {
-            "at": "2026-10-25T11:11:02.015Z",
-            "ok": true
           }
         ],
         "alert": false
@@ -490,8 +537,8 @@
       "meta": {
         "layer_id": "avisos-meteogalicia",
         "published_at": null,
-        "fetched_at": "2026-11-01T09:50:26.296Z",
-        "last_success_at": "2026-11-01T09:50:26.296Z",
+        "fetched_at": "2026-11-01T13:25:23.496Z",
+        "last_success_at": "2026-11-01T13:25:23.496Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 313,
@@ -501,6 +548,10 @@
         "checksum": "sha256:b0d3259a42f56a43a11eff1268cfdbc5e2c722c39da0f71071f3559ef3833aac",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-11-01T13:25:23.496Z",
+            "ok": true
+          },
           {
             "at": "2026-11-01T09:50:26.296Z",
             "ok": true
@@ -660,22 +711,6 @@
           {
             "at": "2026-10-25T13:48:34.811Z",
             "ok": true
-          },
-          {
-            "at": "2026-10-25T12:29:34.124Z",
-            "ok": true
-          },
-          {
-            "at": "2026-10-25T11:34:05.962Z",
-            "ok": true
-          },
-          {
-            "at": "2026-10-25T11:26:12.594Z",
-            "ok": true
-          },
-          {
-            "at": "2026-10-25T11:11:02.691Z",
-            "ok": true
           }
         ],
         "alert": false
@@ -731,18 +766,22 @@
       },
       "meta": {
         "layer_id": "bicis-arteixo",
-        "published_at": "2026-11-01T09:50:17.000Z",
-        "fetched_at": "2026-11-01T09:50:26.838Z",
-        "last_success_at": "2026-11-01T09:50:26.838Z",
+        "published_at": "2026-11-01T13:24:48.000Z",
+        "fetched_at": "2026-11-01T13:25:23.787Z",
+        "last_success_at": "2026-11-01T13:25:23.787Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 15,
         "source_url": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_aa/gbfs.json",
         "licence": "CC0-1.0",
         "attribution": "Datos: biciArteixo / nextbike (CC0)",
-        "checksum": "sha256:8118935ea0eaa2ffdf3659df022bc14cf502de4689f8c67007d8b6f639ace53b",
+        "checksum": "sha256:9486e0f59be8b1e9097a2853c6f6ea67076406ab4ed262fb19472b796276d339",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-11-01T13:25:23.787Z",
+            "ok": true
+          },
           {
             "at": "2026-11-01T09:50:26.838Z",
             "ok": true
@@ -901,22 +940,6 @@
           },
           {
             "at": "2026-10-25T13:48:35.287Z",
-            "ok": true
-          },
-          {
-            "at": "2026-10-25T12:29:34.679Z",
-            "ok": true
-          },
-          {
-            "at": "2026-10-25T11:34:06.651Z",
-            "ok": true
-          },
-          {
-            "at": "2026-10-25T11:26:13.444Z",
-            "ok": true
-          },
-          {
-            "at": "2026-10-25T11:11:03.408Z",
             "ok": true
           }
         ],
@@ -1077,18 +1100,22 @@
       },
       "meta": {
         "layer_id": "calidade-aire",
-        "published_at": "2026-11-01T09:00:00.000Z",
-        "fetched_at": "2026-11-01T09:50:27.665Z",
-        "last_success_at": "2026-11-01T09:50:27.665Z",
+        "published_at": "2026-11-01T13:00:00.000Z",
+        "fetched_at": "2026-11-01T13:25:24.482Z",
+        "last_success_at": "2026-11-01T13:25:24.482Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 46,
         "source_url": "https://servizos.meteogalicia.gal/mgrss/caire/jsonICAActual.action",
         "licence": "CC-BY-SA-4.0",
         "attribution": "Datos: Rede de Calidade do Aire de Galicia, MeteoGalicia (Xunta de Galicia). Datos provisionais, non validados.",
-        "checksum": "sha256:75e94832c1a22a15ec1249e4daa824191205c6e45ca728470841fe022e34569a",
+        "checksum": "sha256:665950c3ff2997966b332e26459d632b99bf40e595f8a1bfe8d2b0873c605938",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-11-01T13:25:24.482Z",
+            "ok": true
+          },
           {
             "at": "2026-11-01T09:50:27.665Z",
             "ok": true
@@ -1240,18 +1267,6 @@
           {
             "at": "2026-10-25T13:48:35.879Z",
             "ok": true
-          },
-          {
-            "at": "2026-10-25T11:34:27.513Z",
-            "ok": true
-          },
-          {
-            "at": "2026-10-25T11:26:38.481Z",
-            "ok": true
-          },
-          {
-            "at": "2026-10-25T11:11:27.376Z",
-            "ok": true
           }
         ],
         "alert": false
@@ -1306,18 +1321,22 @@
       },
       "meta": {
         "layer_id": "caudais-rios",
-        "published_at": "2026-11-01T09:30:00.000Z",
-        "fetched_at": "2026-11-01T09:50:28.407Z",
-        "last_success_at": "2026-11-01T09:50:28.407Z",
+        "published_at": "2026-11-01T13:10:00.000Z",
+        "fetched_at": "2026-11-01T13:25:25.385Z",
+        "last_success_at": "2026-11-01T13:25:25.385Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 88,
         "source_url": "https://servizos.meteogalicia.gal/mgafos/json/estadoActual.action",
         "licence": "https://www.meteogalicia.gal/web/aviso-legal",
         "attribution": "Datos: Augas de Galicia e MeteoGalicia (Xunta de Galicia). Datos non validados.",
-        "checksum": "sha256:7c53233fb2fbd1ee016eca6659a8fc0fefbdf2a38bfad5798e56d70264172994",
+        "checksum": "sha256:2e051b90819addb25729c58a1a0358cff2478bd6af3094b6c4e78aeb1bbe83e9",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-11-01T13:25:25.385Z",
+            "ok": true
+          },
           {
             "at": "2026-11-01T09:50:28.407Z",
             "ok": true
@@ -1476,22 +1495,6 @@
           },
           {
             "at": "2026-10-25T13:48:36.552Z",
-            "ok": true
-          },
-          {
-            "at": "2026-10-25T12:29:35.349Z",
-            "ok": true
-          },
-          {
-            "at": "2026-10-25T11:34:28.883Z",
-            "ok": true
-          },
-          {
-            "at": "2026-10-25T11:26:40.173Z",
-            "ok": true
-          },
-          {
-            "at": "2026-10-25T11:11:29.015Z",
             "ok": true
           }
         ],
@@ -1666,8 +1669,8 @@
       "meta": {
         "layer_id": "centros-maiores",
         "published_at": "2026-10-05T06:52:48.000Z",
-        "fetched_at": "2026-10-25T11:35:24.863Z",
-        "last_success_at": "2026-10-25T11:35:24.863Z",
+        "fetched_at": "2026-11-01T13:25:25.685Z",
+        "last_success_at": "2026-11-01T13:25:25.685Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 703,
@@ -1678,15 +1681,7 @@
         "last_error": null,
         "history": [
           {
-            "at": "2026-10-25T11:35:24.863Z",
-            "ok": true
-          },
-          {
-            "at": "2026-10-25T11:27:36.144Z",
-            "ok": true
-          },
-          {
-            "at": "2026-10-25T11:12:24.988Z",
+            "at": "2026-11-01T13:25:25.685Z",
             "ok": true
           }
         ],
@@ -2148,9 +2143,9 @@
       "theme": "servizos",
       "operator": {
         "name": "Fundación Galicia Sustentable (cálculo propio con datos da Xunta de Galicia)",
-        "url": "https://agora.galiciasustentable.org"
+        "url": "https://mapas.galiciasustentable.org"
       },
-      "source_url": "https://agora.galiciasustentable.org",
+      "source_url": "https://mapas.galiciasustentable.org",
       "licence": {
         "spdx": "CC-BY-SA-4.0",
         "text_url": "https://abertos.xunta.gal/catalogo/saude-servicios-sociais/-/dataset/0253/mapa-dos-servizos-sanitarios-galicia",
@@ -2203,30 +2198,21 @@
       "meta": {
         "layer_id": "distancia-servizos",
         "published_at": "2026-10-25T11:36:35.548Z",
-        "fetched_at": "2026-10-25T11:36:40.161Z",
+        "fetched_at": "2026-11-01T13:25:27.572Z",
         "last_success_at": "2026-10-25T11:36:40.161Z",
-        "status": "fresh",
-        "consecutive_failures": 0,
+        "status": "stale",
+        "consecutive_failures": 1,
         "feature_count": 36190,
-        "source_url": "https://agora.galiciasustentable.org",
+        "source_url": "https://mapas.galiciasustentable.org",
         "licence": "CC-BY-SA-4.0",
         "attribution": "Cálculo propio da Fundación Galicia Sustentable con datos de: © Instituto de Estudos do Territorio. Xunta de Galicia (PBA); Xunta de Galicia. Consellería de Sanidade — Servizo Galego de Saúde (SERGAS); Consellería de Educación (abertos.xunta.gal, conxunto 0257); Consellería de Política Social (RUEPSS; abertos.xunta.gal, conxunto 0299).",
         "checksum": "sha256:9cd7c53932b7facf8bcd1fd6e904fb36d28a1589e34d064aeae0eed4599cf161",
-        "last_error": null,
+        "last_error": "input layer centros-educativos is stale: last good data 2026-10-25T11:25:08.832Z",
         "history": [
           {
-            "at": "2026-10-25T11:36:40.161Z",
-            "ok": true
-          },
-          {
-            "at": "2026-10-25T11:28:59.611Z",
+            "at": "2026-11-01T13:25:27.572Z",
             "ok": false,
-            "error": "input layer centros-educativos is stale (last success 2026-10-25T11:25:08.832Z)"
-          },
-          {
-            "at": "2026-10-25T11:13:48.164Z",
-            "ok": false,
-            "error": "input layer centros-educativos has no published data"
+            "error": "input layer centros-educativos is stale: last good data 2026-10-25T11:25:08.832Z"
           }
         ],
         "alert": false
@@ -2307,6 +2293,69 @@
           },
           {
             "at": "2026-10-24T09:06:49.730Z",
+            "ok": true
+          }
+        ],
+        "alert": false
+      }
+    },
+    {
+      "id": "escolas-concello",
+      "title": {
+        "gl": "Centros de ensino por concello desde 2005",
+        "es": "Centros de enseñanza por ayuntamiento desde 2005"
+      },
+      "theme": "servizos",
+      "operator": {
+        "name": "Instituto Galego de Estatística (IGE)",
+        "url": "https://www.ige.gal/igebdt/selector.jsp?COD=1653"
+      },
+      "source_url": "https://www.ige.gal/igebdt/igeapi/csv/datos/1653",
+      "licence": {
+        "text_url": "https://www.ige.gal/web/avisolegal.jsp",
+        "quote": "Está prohibido desnaturalizar o sentido da información. Debe citarse a fonte",
+        "verified_at": "2026-11-01",
+        "odbl_compatible": "doubt",
+        "collection": "cc-by-sa-4.0",
+        "notes": "Aviso legal do IGE (reutilización citando «Fonte: IGE: https://www.ige.gal» e sen desnaturalizar), como as outras táboas do IGE do proxecto. Táboa 1653, centros de réxime xeral por concello, só a fila Total (os tipos de ensinanza cambian de contido sen nota). 2005 ata o último ano publicado; non hai serie por concello antes de 2005 nin datas de apertura ou peche de cada escola. Un CRA conta como un centro. Públicos e privados xuntos; fóra conservatorios, idiomas e artes. Harmonizado aos 313 concellos de hoxe sumando os fusionados. Valor do mapa: centros de diferenza co primeiro ano (cálculo propio). Verificación en datos/fontes/centros-educativos-historico."
+      },
+      "attribution": "Fonte: IGE: https://www.ige.gal, Ensinanza non universitaria (táboa 1653). Diferenza con 2005: cálculo propio da Fundación Galicia Sustentable. Este produto emprega a API de datos do Instituto Galego de Estatística (IGE), pero non está certificado ou aprobado polo IGE.",
+      "update_frequency": {
+        "declared": "P365D"
+      },
+      "geometry": "none",
+      "output": "geojson",
+      "privacy_notes": "Número de centros por concello e ano; ningún dato persoal.",
+      "stale_after": "P400D",
+      "ingest": {
+        "every": "P30D"
+      },
+      "style": {
+        "kind": "fill",
+        "label_field": "nome"
+      },
+      "table": {
+        "fields": [
+          "nome",
+          "codigo_ine"
+        ]
+      },
+      "meta": {
+        "layer_id": "escolas-concello",
+        "published_at": null,
+        "fetched_at": "2026-11-01T13:25:27.641Z",
+        "last_success_at": "2026-11-01T13:25:27.641Z",
+        "status": "fresh",
+        "consecutive_failures": 0,
+        "feature_count": 313,
+        "source_url": "https://www.ige.gal/igebdt/igeapi/csv/datos/1653",
+        "licence": "https://www.ige.gal/web/avisolegal.jsp",
+        "attribution": "Fonte: IGE: https://www.ige.gal, Ensinanza non universitaria (táboa 1653). Diferenza con 2005: cálculo propio da Fundación Galicia Sustentable. Este produto emprega a API de datos do Instituto Galego de Estatística (IGE), pero non está certificado ou aprobado polo IGE.",
+        "checksum": "sha256:a0b752f979eeab3a502eabca4326aa93d2eba6d1ed9a70df6e2b743e47829d3b",
+        "last_error": null,
+        "history": [
+          {
+            "at": "2026-11-01T13:25:27.641Z",
             "ok": true
           }
         ],
@@ -2455,18 +2504,22 @@
       },
       "meta": {
         "layer_id": "estacions-meteo",
-        "published_at": "2026-11-01T09:40:00.000Z",
-        "fetched_at": "2026-11-01T09:50:28.646Z",
-        "last_success_at": "2026-11-01T09:50:28.646Z",
+        "published_at": "2026-11-01T13:10:00.000Z",
+        "fetched_at": "2026-11-01T13:25:37.376Z",
+        "last_success_at": "2026-11-01T13:25:37.376Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 153,
         "source_url": "https://servizos.meteogalicia.gal/mgrss/observacion/ultimos10minEstacionsMeteo.action",
         "licence": "CC-BY-SA-4.0",
         "attribution": "Datos: MeteoGalicia (Xunta de Galicia)",
-        "checksum": "sha256:3be2f73e3beebda7211c656b2a5f55a10e2f824f023daa3938aa40e30cf2f11b",
+        "checksum": "sha256:1b2d5ab046eb45801851c35da8ef79f9391de6d5a53940b359e197e76d97a79d",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-11-01T13:25:37.376Z",
+            "ok": true
+          },
           {
             "at": "2026-11-01T09:50:28.646Z",
             "ok": true
@@ -2625,22 +2678,6 @@
           },
           {
             "at": "2026-10-25T13:48:36.791Z",
-            "ok": true
-          },
-          {
-            "at": "2026-10-25T12:29:35.628Z",
-            "ok": true
-          },
-          {
-            "at": "2026-10-25T11:36:44.974Z",
-            "ok": true
-          },
-          {
-            "at": "2026-10-25T11:29:03.792Z",
-            "ok": true
-          },
-          {
-            "at": "2026-10-25T11:13:52.367Z",
             "ok": true
           }
         ],
@@ -2972,18 +3009,22 @@
       "volatile": true,
       "meta": {
         "layer_id": "focos-calor",
-        "published_at": null,
-        "fetched_at": "2026-11-01T09:50:30.034Z",
-        "last_success_at": "2026-11-01T09:50:30.034Z",
+        "published_at": "2026-11-01T02:36:00.000Z",
+        "fetched_at": "2026-11-01T13:25:38.355Z",
+        "last_success_at": "2026-11-01T13:25:38.355Z",
         "status": "fresh",
         "consecutive_failures": 0,
-        "feature_count": 0,
+        "feature_count": 1,
         "source_url": "https://firms.modaps.eosdis.nasa.gov/api/area/",
         "licence": "CC0-1.0",
         "attribution": "NASA LANCE FIRMS (NASA/GSFC/ESDIS)",
-        "checksum": "sha256:ed778c73ea51338d6576fb5992b189f2b94d9f3d5e199f46c1af520d6b0b3e6c",
+        "checksum": "sha256:5ad8b36421da0dfc13630afddc9dd1352593267fd238bb144d8df0e6415f0c01",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-11-01T13:25:38.355Z",
+            "ok": true
+          },
           {
             "at": "2026-11-01T09:50:30.034Z",
             "ok": true
@@ -3146,22 +3187,6 @@
           {
             "at": "2026-10-25T13:48:37.423Z",
             "ok": true
-          },
-          {
-            "at": "2026-10-25T12:29:36.635Z",
-            "ok": true
-          },
-          {
-            "at": "2026-10-25T11:37:06.523Z",
-            "ok": true
-          },
-          {
-            "at": "2026-10-25T11:29:28.941Z",
-            "ok": true
-          },
-          {
-            "at": "2026-10-25T11:14:11.682Z",
-            "ok": true
           }
         ],
         "alert": false
@@ -3221,17 +3246,21 @@
       "meta": {
         "layer_id": "gasolineiras",
         "published_at": null,
-        "fetched_at": "2026-11-01T09:50:30.390Z",
-        "last_success_at": "2026-11-01T09:50:30.390Z",
+        "fetched_at": "2026-11-01T13:25:38.967Z",
+        "last_success_at": "2026-11-01T13:25:38.967Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 736,
         "source_url": "https://sedeaplicaciones.minetur.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/EstacionesTerrestres/FiltroCCAA/12",
         "licence": "https://www.miteco.gob.es/es/atencion-al-ciudadano/aviso-legal.html",
         "attribution": "Fonte: Ministerio para a Transición Ecolóxica (MITERD), xeoportal de gasolineiras",
-        "checksum": "sha256:2984c55141d84e3c8b21b23de4783f153c9fd153177a000b5561f01f69fb46cf",
+        "checksum": "sha256:7001b5fd4ee87d054ed6f9fa9e332e82bb9aa67619e42d0332cee20bd10ba5ac",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-11-01T13:25:38.967Z",
+            "ok": true
+          },
           {
             "at": "2026-11-01T09:50:30.390Z",
             "ok": true
@@ -3390,22 +3419,6 @@
           },
           {
             "at": "2026-10-25T13:48:37.777Z",
-            "ok": true
-          },
-          {
-            "at": "2026-10-25T12:29:37.108Z",
-            "ok": true
-          },
-          {
-            "at": "2026-10-25T11:37:07.130Z",
-            "ok": true
-          },
-          {
-            "at": "2026-10-25T11:29:29.934Z",
-            "ok": true
-          },
-          {
-            "at": "2026-10-25T11:14:12.712Z",
             "ok": true
           }
         ],
@@ -4002,35 +4015,19 @@
       "meta": {
         "layer_id": "indicadores-concellos",
         "published_at": null,
-        "fetched_at": "2026-10-25T11:38:26.258Z",
-        "last_success_at": "2026-10-25T11:38:26.258Z",
+        "fetched_at": "2026-11-01T13:25:42.120Z",
+        "last_success_at": "2026-11-01T13:25:42.120Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 313,
         "source_url": "https://www.ige.gal/igebdt/igeapi/csv/datos/723/T%5B1:a%5D,1:0:3:9:10,2:2",
         "licence": "https://www.ige.gal/web/avisolegal.jsp",
         "attribution": "Fonte: IGE: https://www.ige.gal. Comparacións con Galicia e indicadores derivados: cálculo propio da Fundación Galicia Sustentable. Este produto emprega a API de datos do Instituto Galego de Estatística (IGE), pero non está certificado ou aprobado polo IGE. Vivendas baleiras: elaboración propia con datos extraídos do sitio web do INE: www.ine.es (Censo de Población y Viviendas 2021, última actualización da táboa 22/11/2024; CC BY 4.0).",
-        "checksum": "sha256:19d81ffcdcbf05e243ac49ee01f65dd8a85253e941060423670b6e6b248567e2",
+        "checksum": "sha256:e88c1ae0368c563030820a4a1066238ad2030ca39ae5213b01011fbade92b84f",
         "last_error": null,
         "history": [
           {
-            "at": "2026-10-25T11:38:26.258Z",
-            "ok": true
-          },
-          {
-            "at": "2026-10-25T11:30:50.971Z",
-            "ok": true
-          },
-          {
-            "at": "2026-10-25T11:15:29.602Z",
-            "ok": true
-          },
-          {
-            "at": "2026-10-24T09:08:58.736Z",
-            "ok": true
-          },
-          {
-            "at": "2026-10-24T07:54:40.008Z",
+            "at": "2026-11-01T13:25:42.120Z",
             "ok": true
           }
         ],
@@ -4318,6 +4315,73 @@
       }
     },
     {
+      "id": "lonxas-2025",
+      "title": {
+        "gl": "Primeira venda nas lonxas, día a día (2025)",
+        "es": "Primera venta en las lonjas, día a día (2025)"
+      },
+      "theme": "auga-mar",
+      "operator": {
+        "name": "Consellería do Mar (Xunta de Galicia)",
+        "url": "https://www.pescadegalicia.gal"
+      },
+      "source_url": "https://www.pescadegalicia.gal/descargas/pescafresca/pescafresca2025.csv",
+      "licence": {
+        "spdx": "CC-BY-SA-4.0",
+        "text_url": "https://abertos.xunta.gal/catalogo/economia-empresa-emprego/-/dataset/0154/principais-indicadores-vendas-produtos-pesqueiros",
+        "quote": "Creative Commons BY SA 4.0",
+        "verified_at": "2026-11-01",
+        "odbl_compatible": "doubt",
+        "collection": "cc-by-sa-4.0",
+        "notes": "abertos.xunta.gal declara CC BY-SA 4.0 (fonte «Consellería do Mar») e o aviso legal de pescadegalicia.gal permite reutilizar citando a fonte: aplícase a máis restritiva e vai na colección CC BY-SA (ADR 0005). Ficheiro anual de pesca fresca de 2025, unha fila por día, lonxa e especie. A posición de cada lonxa sae do Nomenclátor Geográfico Básico do IGN (CC BY 4.0, compatible): o porto cando o NGBE o nomea, se non o núcleo que dá nome á lonxa (lonxas.json, con identificador NGBE e nota de cada caso). Baldaio e a Coop. Ría de Arosa non teñen punto verificable e van sen xeometría. Só pesca fresca: sen acuicultura nin conxelado. Verificación en datos/fontes/lonxas-primeira-venda/README.md."
+      },
+      "attribution": "Consellería do Mar, Xunta de Galicia: notas de primeira venda (pescadegalicia.gal), 2025. Posicións: Nomenclátor Geográfico Básico de España, © Instituto Geográfico Nacional. Cálculo propio da Fundación Galicia Sustentable.",
+      "update_frequency": {
+        "declared": "static"
+      },
+      "geometry": "point",
+      "output": "geojson",
+      "privacy_notes": "Vendas agregadas por día, lonxa e especie, sen buque nin comprador. A capa só publica euros por grupo de especies e kg totais por lonxa e día, e as tres especies de máis importe no ano; non publica prezos de especies soltas por lonxa, porque nunha lonxa pequena unha fila pode ser un só barco.",
+      "stale_after": "P3650D",
+      "ingest": {
+        "every": "P365D"
+      },
+      "style": {
+        "kind": "circle",
+        "color_token": "--c-auga"
+      },
+      "table": {
+        "fields": [
+          "nome",
+          "zona",
+          "importe_total",
+          "kg_total",
+          "dias_venda"
+        ]
+      },
+      "meta": {
+        "layer_id": "lonxas-2025",
+        "published_at": null,
+        "fetched_at": "2026-11-01T13:26:16.608Z",
+        "last_success_at": "2026-11-01T13:26:16.608Z",
+        "status": "fresh",
+        "consecutive_failures": 0,
+        "feature_count": 61,
+        "source_url": "https://www.pescadegalicia.gal/descargas/pescafresca/pescafresca2025.csv",
+        "licence": "CC-BY-SA-4.0",
+        "attribution": "Consellería do Mar, Xunta de Galicia: notas de primeira venda (pescadegalicia.gal), 2025. Posicións: Nomenclátor Geográfico Básico de España, © Instituto Geográfico Nacional. Cálculo propio da Fundación Galicia Sustentable.",
+        "checksum": "sha256:948cb25253f71d99510bd2182da7372939726e5e1087aa43e89d306f23e50439",
+        "last_error": null,
+        "history": [
+          {
+            "at": "2026-11-01T13:26:16.608Z",
+            "ok": true
+          }
+        ],
+        "alert": false
+      }
+    },
+    {
       "id": "meteo-24h",
       "title": {
         "gl": "O tempo das últimas 24 horas, hora a hora",
@@ -4365,18 +4429,22 @@
       },
       "meta": {
         "layer_id": "meteo-24h",
-        "published_at": "2026-11-01T09:00:00.000Z",
-        "fetched_at": "2026-11-01T09:50:32.601Z",
-        "last_success_at": "2026-11-01T09:50:32.601Z",
+        "published_at": "2026-11-01T13:00:00.000Z",
+        "fetched_at": "2026-11-01T13:26:50.897Z",
+        "last_success_at": "2026-11-01T13:26:50.897Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 152,
         "source_url": "https://servizos.meteogalicia.gal/mgrss/observacion/ultimosHorariosEstacions.action",
         "licence": "https://www.meteogalicia.gal/web/aviso-legal",
         "attribution": "Fonte: MeteoGalicia (Xunta de Galicia), observación horaria.",
-        "checksum": "sha256:d4e3ef919a58b93ba1bd5f41bb0985a8b46bddd04fdd81f965029c4f000d9e9f",
+        "checksum": "sha256:135ddbbc897cbdc63546dc34e2be75c5979ed7d2a7983346b43789ef73042de9",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-11-01T13:26:50.897Z",
+            "ok": true
+          },
           {
             "at": "2026-11-01T09:50:32.601Z",
             "ok": true
@@ -4591,6 +4659,69 @@
       }
     },
     {
+      "id": "nacementos-mortes",
+      "title": {
+        "gl": "Nacementos e mortes por concello desde 1975",
+        "es": "Nacimientos y defunciones por ayuntamiento desde 1975"
+      },
+      "theme": "territorio",
+      "operator": {
+        "name": "Instituto Galego de Estatística (IGE), a partir do INE",
+        "url": "https://www.ige.gal/igebdt/bancodatos/?codigo=0201011001&banco=municipalecomarcal"
+      },
+      "source_url": "https://www.ige.gal/igebdt/igeapi/csv/datos/57",
+      "licence": {
+        "text_url": "https://www.ige.gal/web/avisolegal.jsp",
+        "quote": "Está prohibido desnaturalizar o sentido da información. Debe citarse a fonte",
+        "verified_at": "2026-11-01",
+        "odbl_compatible": "doubt",
+        "collection": "cc-by-sa-4.0",
+        "notes": "Aviso legal do IGE (reutilización citando «Fonte: IGE: https://www.ige.gal» e sen desnaturalizar), como as outras táboas do IGE do proxecto; dato primario do INE (CC BY 4.0). Táboas 57 (nacementos, concello de residencia da nai) e 30 (defuncións, concello de residencia), 1975 ata o último ano publicado (o último é provisional). Harmonizado aos 313 concellos de hoxe: Oza dos Ríos e Cesuras suman en Oza-Cesuras e Cerdedo e Cotobade en Cerdedo-Cotobade antes da fusión; Cariño (1988), Burela (1995) e A Illa de Arousa (1997) sen dato antes de existir. Laxe 1981–1982 dubidoso na fonte. Valor do mapa: nacementos por cada 100 defuncións (cálculo propio). Verificación en datos/fontes/ige-nacementos-mortes."
+      },
+      "attribution": "Fonte: IGE: https://www.ige.gal, a partir do Movemento natural da poboación (IGE, INE). Nacementos por 100 defuncións: cálculo propio da Fundación Galicia Sustentable. Este produto emprega a API de datos do Instituto Galego de Estatística (IGE), pero non está certificado ou aprobado polo IGE.",
+      "update_frequency": {
+        "declared": "P365D"
+      },
+      "geometry": "none",
+      "output": "geojson",
+      "privacy_notes": "Contas anuais por concello de residencia; ningún dato persoal.",
+      "stale_after": "P400D",
+      "ingest": {
+        "every": "P30D"
+      },
+      "style": {
+        "kind": "fill",
+        "label_field": "nome"
+      },
+      "table": {
+        "fields": [
+          "nome",
+          "codigo_ine"
+        ]
+      },
+      "meta": {
+        "layer_id": "nacementos-mortes",
+        "published_at": null,
+        "fetched_at": "2026-11-01T13:26:52.981Z",
+        "last_success_at": "2026-11-01T13:26:52.981Z",
+        "status": "fresh",
+        "consecutive_failures": 0,
+        "feature_count": 313,
+        "source_url": "https://www.ige.gal/igebdt/igeapi/csv/datos/57",
+        "licence": "https://www.ige.gal/web/avisolegal.jsp",
+        "attribution": "Fonte: IGE: https://www.ige.gal, a partir do Movemento natural da poboación (IGE, INE). Nacementos por 100 defuncións: cálculo propio da Fundación Galicia Sustentable. Este produto emprega a API de datos do Instituto Galego de Estatística (IGE), pero non está certificado ou aprobado polo IGE.",
+        "checksum": "sha256:7ce12a30205055aac580d12ac24644599d0b25a9633a8932f79f72b05f875bdf",
+        "last_error": null,
+        "history": [
+          {
+            "at": "2026-11-01T13:26:52.981Z",
+            "ok": true
+          }
+        ],
+        "alert": false
+      }
+    },
+    {
       "id": "patrimonio",
       "title": {
         "gl": "Bens de interese cultural (BIC)",
@@ -4643,8 +4774,8 @@
       "meta": {
         "layer_id": "patrimonio",
         "published_at": null,
-        "fetched_at": "2026-10-25T11:39:00.931Z",
-        "last_success_at": "2026-10-25T11:39:00.931Z",
+        "fetched_at": "2026-11-01T13:27:01.125Z",
+        "last_success_at": "2026-11-01T13:27:01.125Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 664,
@@ -4655,27 +4786,7 @@
         "last_error": null,
         "history": [
           {
-            "at": "2026-10-25T11:39:00.931Z",
-            "ok": true
-          },
-          {
-            "at": "2026-10-25T11:31:27.719Z",
-            "ok": true
-          },
-          {
-            "at": "2026-10-25T11:16:07.188Z",
-            "ok": true
-          },
-          {
-            "at": "2026-10-24T09:09:28.417Z",
-            "ok": true
-          },
-          {
-            "at": "2026-10-24T07:54:54.781Z",
-            "ok": true
-          },
-          {
-            "at": "2026-10-24T07:32:51.451Z",
+            "at": "2026-11-01T13:27:01.125Z",
             "ok": true
           }
         ],
@@ -4691,9 +4802,9 @@
       "theme": "servizos",
       "operator": {
         "name": "Fundación Galicia Sustentable (cálculo propio con datos da Xunta de Galicia)",
-        "url": "https://agora.galiciasustentable.org"
+        "url": "https://mapas.galiciasustentable.org"
       },
-      "source_url": "https://agora.galiciasustentable.org",
+      "source_url": "https://mapas.galiciasustentable.org",
       "licence": {
         "spdx": "CC-BY-SA-4.0",
         "text_url": "https://creativecommons.org/licenses/by-sa/4.0/deed.gl",
@@ -4818,19 +4929,19 @@
       "meta": {
         "layer_id": "perfil-concellos",
         "published_at": "2026-10-25T11:36:35.548Z",
-        "fetched_at": "2026-10-25T11:39:01.940Z",
-        "last_success_at": "2026-10-25T11:39:01.940Z",
+        "fetched_at": "2026-11-01T13:27:02.160Z",
+        "last_success_at": "2026-11-01T13:27:02.160Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 313,
-        "source_url": "https://agora.galiciasustentable.org",
+        "source_url": "https://mapas.galiciasustentable.org",
         "licence": "CC-BY-SA-4.0",
         "attribution": "Cálculo propio da Fundación Galicia Sustentable con datos de: © Instituto de Estudos do Territorio. Xunta de Galicia (PBA); Xunta de Galicia. Consellería de Sanidade — Servizo Galego de Saúde (SERGAS); Consellería de Educación (abertos.xunta.gal, conxunto 0257).",
         "checksum": "sha256:8dfadf58a98d015c4f19746e17334fe74fd25178b3b04bd86bf29e20d88efbf1",
         "last_error": null,
         "history": [
           {
-            "at": "2026-10-25T11:39:01.940Z",
+            "at": "2026-11-01T13:27:02.160Z",
             "ok": true
           }
         ],
@@ -5050,6 +5161,94 @@
         "history": [
           {
             "at": "2026-11-01T09:54:15.879Z",
+            "ok": true
+          }
+        ],
+        "alert": false
+      }
+    },
+    {
+      "id": "poboacion-seculo",
+      "title": {
+        "gl": "Un século de poboación nos concellos (censos 1900–2021)",
+        "es": "Un siglo de población en los ayuntamientos (censos 1900–2021)"
+      },
+      "theme": "territorio",
+      "operator": {
+        "name": "Instituto Nacional de Estadística (INE)",
+        "url": "https://www.ine.es/intercensal/"
+      },
+      "source_url": "https://www.ine.es/intercensal/",
+      "licence": {
+        "spdx": "CC-BY-4.0",
+        "text_url": "https://www.ine.es/dyngs/AYU/index.htm?cid=125",
+        "quote": "La licencia de uso general a aplicar a la información estadística de este sitio web, salvo que se indique lo contrario, es la Creative Commons Reconocimiento 4.0 (CC BY 4.0)",
+        "verified_at": "2026-10-24",
+        "odbl_compatible": true,
+        "collection": "odbl",
+        "notes": "INE, «Alteraciones de los municipios en los Censos de Población desde 1842»: poboación de dereito de cada municipio nos censos de 1900 a 1991 e residente de 2001 a 2021. Sen descarga masiva: unha consulta por código (~470, con pausa). Cálculo propio da Fundación Galicia Sustentable para levar a serie aos 313 concellos de hoxe a partir das notas do INE: os municipios absorbidos, fusionados (Oza-Cesuras 2013, Cerdedo-Cotobade 2016) ou renomeados con código novo (Neira de Xusá → Baralla) súmanse ao concello actual; os concellos segregados despois de 1900 (Rábade, Negueira de Muñiz, Ribeira de Piquín, Mondariz-Balneario, Pontecesures, Cariño, Burela, A Illa de Arousa) forman unha unidade comparable co concello do que saíron, porque antes da segregación a súa xente está no censo do matriz. Os cambios parciais de termo entre concellos que seguen existindo non se poden corrixir. A poboación de dereito dos primeiros censos conta como residentes moitos emigrantes ausentes. Verificación en datos/fontes/ine-censos-historicos. Cita esixida: «Elaboración propia con datos extraídos del sitio web del INE: www.ine.es»."
+      },
+      "attribution": "Elaboración propia con datos extraídos del sitio web del INE: www.ine.es (Alteraciones de los municipios en los Censos de Población desde 1842). Harmonización aos concellos actuais: cálculo propio da Fundación Galicia Sustentable.",
+      "update_frequency": {
+        "declared": "static"
+      },
+      "geometry": "none",
+      "output": "geojson",
+      "privacy_notes": "Cifras de poboación agregadas por municipio e censo; ningún dato persoal.",
+      "stale_after": "P3650D",
+      "ingest": {
+        "every": "P365D"
+      },
+      "join": {
+        "layer": "concellos-parroquias",
+        "key": "codigo_ine",
+        "where": {
+          "nivel": "concello"
+        }
+      },
+      "indicators": [
+        {
+          "id": "variacion_1900",
+          "label": {
+            "gl": "Variación da poboación 1900–2021",
+            "es": "Variación de la población 1900–2021"
+          },
+          "unit": "%",
+          "comparison": "points",
+          "source": "INE, Alteraciones de los municipios en los Censos de Población desde 1842",
+          "note": {
+            "gl": "Variación da poboación entre o censo de 1900 e o de 2021, sobre os límites de hoxe (cálculo propio). Nos concellos segregados despois de 1900 calcúlase sobre a unidade que forman co concello do que saíron.",
+            "es": "Variación de la población entre el censo de 1900 y el de 2021, sobre los límites de hoy (cálculo propio). En los municipios segregados después de 1900 se calcula sobre la unidad que forman con el municipio del que salieron."
+          }
+        }
+      ],
+      "style": {
+        "kind": "fill",
+        "label_field": "nome"
+      },
+      "table": {
+        "fields": [
+          "nome",
+          "variacion_1900",
+          "variacion_1900_galicia"
+        ]
+      },
+      "meta": {
+        "layer_id": "poboacion-seculo",
+        "published_at": null,
+        "fetched_at": "2026-11-01T13:27:02.400Z",
+        "last_success_at": "2026-11-01T13:27:02.400Z",
+        "status": "fresh",
+        "consecutive_failures": 0,
+        "feature_count": 313,
+        "source_url": "https://www.ine.es/intercensal/",
+        "licence": "CC-BY-4.0",
+        "attribution": "Elaboración propia con datos extraídos del sitio web del INE: www.ine.es (Alteraciones de los municipios en los Censos de Población desde 1842). Harmonización aos concellos actuais: cálculo propio da Fundación Galicia Sustentable.",
+        "checksum": "sha256:0d0843f5148df95aad951f3d454b65ddcd73a8706b3699774b87853b141163dd",
+        "last_error": null,
+        "history": [
+          {
+            "at": "2026-11-01T13:27:02.400Z",
             "ok": true
           }
         ],
@@ -5371,8 +5570,8 @@
       "meta": {
         "layer_id": "raios",
         "published_at": null,
-        "fetched_at": "2026-11-01T09:54:22.322Z",
-        "last_success_at": "2026-11-01T09:54:22.322Z",
+        "fetched_at": "2026-11-01T13:36:26.196Z",
+        "last_success_at": "2026-11-01T13:36:26.196Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 0,
@@ -5382,6 +5581,10 @@
         "checksum": "sha256:ed778c73ea51338d6576fb5992b189f2b94d9f3d5e199f46c1af520d6b0b3e6c",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-11-01T13:36:26.196Z",
+            "ok": true
+          },
           {
             "at": "2026-11-01T09:54:22.322Z",
             "ok": true
@@ -5541,21 +5744,69 @@
           {
             "at": "2026-10-25T13:48:40.164Z",
             "ok": true
-          },
+          }
+        ],
+        "alert": false
+      }
+    },
+    {
+      "id": "raios-ano",
+      "title": {
+        "gl": "Raios dos últimos doce meses",
+        "es": "Rayos de los últimos doce meses"
+      },
+      "theme": "tempo-aire",
+      "operator": {
+        "name": "MeteoGalicia (Consellería de Medio Ambiente, Xunta de Galicia)",
+        "url": "https://www.meteogalicia.gal/web/observacion/raios"
+      },
+      "source_url": "https://servizos.meteogalicia.gal/mgrss/observacion/jsonRaios.action",
+      "licence": {
+        "spdx": "CC-BY-SA-4.0",
+        "text_url": "https://www.meteogalicia.gal/web/aviso-legal",
+        "quote": "utilizada libremente… co único compromiso de mencionar expresamente a MeteoGalicia",
+        "verified_at": "2026-10-24",
+        "odbl_compatible": "doubt",
+        "collection": "cc-by-sa-4.0",
+        "notes": "O mesmo servizo e a mesma licenza ca a capa raios (dobre declaración, aplícase a máis restritiva, ADR 0005). Histórico aberto sen chave desde 2010 en xanelas de ata 7 días (datos/fontes/raios-historico). Doce meses enteiros anteriores ao mes en curso, en hora oficial de Galicia, dentro da caixa de Galicia con 0,1° de marxe (inclúe mar e bordos de Asturias, León, Zamora e Portugal). A documentación non di se a rede conta descargas entre nubes."
+      },
+      "attribution": "Datos: MeteoGalicia (Xunta de Galicia)",
+      "update_frequency": {
+        "declared": "P30D"
+      },
+      "geometry": "none",
+      "output": "geojson",
+      "privacy_notes": "Descargas eléctricas detectadas pola rede de MeteoGalicia; ningún dato persoal.",
+      "stale_after": "P62D",
+      "ingest": {
+        "every": "P30D"
+      },
+      "style": {
+        "kind": "circle",
+        "color_token": "--c-raio"
+      },
+      "table": {
+        "fields": [
+          "dia",
+          "n"
+        ]
+      },
+      "meta": {
+        "layer_id": "raios-ano",
+        "published_at": "2026-10-31T23:59:59Z",
+        "fetched_at": "2026-11-01T13:36:26.683Z",
+        "last_success_at": "2026-11-01T13:36:26.683Z",
+        "status": "fresh",
+        "consecutive_failures": 0,
+        "feature_count": 131,
+        "source_url": "https://servizos.meteogalicia.gal/mgrss/observacion/jsonRaios.action",
+        "licence": "CC-BY-SA-4.0",
+        "attribution": "Datos: MeteoGalicia (Xunta de Galicia)",
+        "checksum": "sha256:b7a2d1af2a15c4ba579bc59bbfaad11ebd516cb3789a151e254661b1bc669ed4",
+        "last_error": null,
+        "history": [
           {
-            "at": "2026-10-25T12:29:39.642Z",
-            "ok": true
-          },
-          {
-            "at": "2026-10-25T11:39:06.463Z",
-            "ok": true
-          },
-          {
-            "at": "2026-10-25T11:31:33.696Z",
-            "ok": true
-          },
-          {
-            "at": "2026-10-25T11:16:13.734Z",
+            "at": "2026-11-01T13:36:26.683Z",
             "ok": true
           }
         ],
@@ -5711,8 +5962,8 @@
       "meta": {
         "layer_id": "sismos-recentes",
         "published_at": "2026-10-31T09:17:54.575Z",
-        "fetched_at": "2026-11-01T09:54:22.439Z",
-        "last_success_at": "2026-11-01T09:54:22.439Z",
+        "fetched_at": "2026-11-01T13:38:07.771Z",
+        "last_success_at": "2026-11-01T13:38:07.771Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 64,
@@ -5722,6 +5973,10 @@
         "checksum": "sha256:bdfd693502aedc4a8dba867b1f341fdad5f2eaf0afa6ffd7696248a9f4e99ee4",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-11-01T13:38:07.771Z",
+            "ok": true
+          },
           {
             "at": "2026-11-01T09:54:22.439Z",
             "ok": true
@@ -5881,22 +6136,6 @@
           {
             "at": "2026-10-25T13:48:40.284Z",
             "ok": true
-          },
-          {
-            "at": "2026-10-25T12:29:39.782Z",
-            "ok": true
-          },
-          {
-            "at": "2026-10-25T11:39:08.029Z",
-            "ok": true
-          },
-          {
-            "at": "2026-10-25T11:31:35.205Z",
-            "ok": true
-          },
-          {
-            "at": "2026-10-25T11:16:16.252Z",
-            "ok": true
           }
         ],
         "alert": false
@@ -5952,18 +6191,22 @@
       },
       "meta": {
         "layer_id": "trafico-balizas-v16",
-        "published_at": "2026-11-01T09:54:18.582Z",
-        "fetched_at": "2026-11-01T09:54:23.628Z",
-        "last_success_at": "2026-11-01T09:54:23.628Z",
+        "published_at": "2026-11-01T13:37:18.637Z",
+        "fetched_at": "2026-11-01T13:38:09.713Z",
+        "last_success_at": "2026-11-01T13:38:09.713Z",
         "status": "fresh",
         "consecutive_failures": 0,
-        "feature_count": 5,
+        "feature_count": 4,
         "source_url": "https://nap.dgt.es/datex2/v3/dgt/SituationPublication/datex2_v37.xml",
         "licence": "https://nap.dgt.es/es/dataset/incidencias-dgt-datex2-v3-7",
         "attribution": "Fonte: DGT, Punto de Acceso Nacional de Tráfico",
-        "checksum": "sha256:e4dd6398b0a4e4958e77bdbb4b2ae07c73ecb9169bf068dd6049f4f369e55565",
+        "checksum": "sha256:48cbefcfeced42ee35bf2c5e7530d509897e63e20b45a04a907417b1d0cb1249",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-11-01T13:38:09.713Z",
+            "ok": true
+          },
           {
             "at": "2026-11-01T09:54:23.628Z",
             "ok": true
@@ -6123,22 +6366,6 @@
           {
             "at": "2026-10-25T13:48:42.804Z",
             "ok": true
-          },
-          {
-            "at": "2026-10-25T12:29:41.391Z",
-            "ok": true
-          },
-          {
-            "at": "2026-10-25T11:39:09.327Z",
-            "ok": true
-          },
-          {
-            "at": "2026-10-25T11:31:36.929Z",
-            "ok": true
-          },
-          {
-            "at": "2026-10-25T11:16:17.411Z",
-            "ok": true
           }
         ],
         "alert": false
@@ -6199,18 +6426,22 @@
       },
       "meta": {
         "layer_id": "trafico-incidencias",
-        "published_at": "2026-11-01T09:54:18.582Z",
-        "fetched_at": "2026-11-01T09:54:23.929Z",
-        "last_success_at": "2026-11-01T09:54:23.929Z",
+        "published_at": "2026-11-01T13:37:18.637Z",
+        "fetched_at": "2026-11-01T13:38:10.326Z",
+        "last_success_at": "2026-11-01T13:38:10.326Z",
         "status": "fresh",
         "consecutive_failures": 0,
-        "feature_count": 68,
+        "feature_count": 67,
         "source_url": "https://nap.dgt.es/datex2/v3/dgt/SituationPublication/datex2_v37.xml",
         "licence": "https://nap.dgt.es/es/dataset/incidencias-dgt-datex2-v3-7",
         "attribution": "Fonte: DGT, Punto de Acceso Nacional de Tráfico",
-        "checksum": "sha256:3453a2e93e453466a8ae3fe8dc3510affc760ffd70072e844124c74af9052848",
+        "checksum": "sha256:9170f521581abe1ad3b813139907e1cb0b878728591252a712071e861160ce24",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-11-01T13:38:10.326Z",
+            "ok": true
+          },
           {
             "at": "2026-11-01T09:54:23.929Z",
             "ok": true
@@ -6369,22 +6600,6 @@
           },
           {
             "at": "2026-10-25T13:48:43.408Z",
-            "ok": true
-          },
-          {
-            "at": "2026-10-25T12:29:41.608Z",
-            "ok": true
-          },
-          {
-            "at": "2026-10-25T11:39:10.005Z",
-            "ok": true
-          },
-          {
-            "at": "2026-10-25T11:31:37.339Z",
-            "ok": true
-          },
-          {
-            "at": "2026-10-25T11:16:17.836Z",
             "ok": true
           }
         ],
@@ -6549,18 +6764,22 @@
       "volatile": true,
       "meta": {
         "layer_id": "tren",
-        "published_at": "2026-11-01T08:54:13.000Z",
-        "fetched_at": "2026-11-01T09:54:24.023Z",
-        "last_success_at": "2026-11-01T09:54:24.023Z",
+        "published_at": "2026-11-01T12:37:57.000Z",
+        "fetched_at": "2026-11-01T13:38:10.404Z",
+        "last_success_at": "2026-11-01T13:38:10.404Z",
         "status": "fresh",
         "consecutive_failures": 0,
-        "feature_count": 11,
+        "feature_count": 12,
         "source_url": "https://gtfsrt.renfe.com/vehicle_positions_LD.json",
         "licence": "CC-BY-4.0",
         "attribution": "Origen de los datos: Renfe Operadora",
-        "checksum": "sha256:428392c09e366b99ae2d52a7262d8f383933aca2eb0ab3d5bef4e7f76f80ac99",
+        "checksum": "sha256:7563a6f89e6e7e9c72b8d01ca15451af281fd1a51a8ea67c0847bd31f1c86c77",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-11-01T13:38:10.404Z",
+            "ok": true
+          },
           {
             "at": "2026-11-01T09:54:24.023Z",
             "ok": true
@@ -6727,22 +6946,6 @@
           {
             "at": "2026-10-25T13:48:43.506Z",
             "ok": true
-          },
-          {
-            "at": "2026-10-25T12:29:41.714Z",
-            "ok": true
-          },
-          {
-            "at": "2026-10-25T11:39:10.664Z",
-            "ok": true
-          },
-          {
-            "at": "2026-10-25T11:31:38.261Z",
-            "ok": true
-          },
-          {
-            "at": "2026-10-25T11:16:18.709Z",
-            "ok": true
           }
         ],
         "alert": false
@@ -6837,8 +7040,8 @@
       "meta": {
         "layer_id": "vut-concello",
         "published_at": "2026-09-30T22:00:00.000Z",
-        "fetched_at": "2026-10-25T11:39:11.673Z",
-        "last_success_at": "2026-10-25T11:39:11.673Z",
+        "fetched_at": "2026-11-01T13:38:11.792Z",
+        "last_success_at": "2026-11-01T13:38:11.792Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 313,
@@ -6849,15 +7052,75 @@
         "last_error": null,
         "history": [
           {
-            "at": "2026-10-25T11:39:11.673Z",
+            "at": "2026-11-01T13:38:11.792Z",
             "ok": true
-          },
+          }
+        ],
+        "alert": false
+      }
+    },
+    {
+      "id": "vut-mensual",
+      "title": {
+        "gl": "Vivendas de uso turístico por concello, mes a mes",
+        "es": "Viviendas de uso turístico por ayuntamiento, mes a mes"
+      },
+      "theme": "territorio",
+      "operator": {
+        "name": "Turismo de Galicia (Xunta de Galicia)",
+        "url": "https://aei.turismo.gal/es/rexistro-de-empresas-e-actividades-turisticas"
+      },
+      "source_url": "https://descargascdn.xunta.gal/interno/smarxa/REAT_Serie_Mensual.csv",
+      "licence": {
+        "spdx": "CC-BY-SA-4.0",
+        "text_url": "https://abertos.xunta.gal/catalogo/cultura-ocio-deporte/-/dataset/0022/rexistro-empresas-actividades-turisticas",
+        "quote": "Creative Commons BY SA 4.0",
+        "verified_at": "2026-11-01",
+        "odbl_compatible": "doubt",
+        "collection": "cc-by-sa-4.0",
+        "notes": "Conxunto 0022 de abertos.xunta.gal (REAT), que leva á páxina do AEI onde está a serie mensual; o mesmo razoamento ca vut-concello. Stock mensual de vivendas de uso turístico por concello desde 2017M06 (as dúas copias antigas do directorio no Internet Archive dan o mesmo número da serie). Conta inscricións, non vivendas alugadas. Valor do mapa: VUT por 1.000 habitantes do censo de 2021 (poboacion-seculo, INE), un denominador fixo (cálculo propio). Verificación en datos/fontes/vut-historico."
+      },
+      "attribution": "Fonte: Turismo de Galicia, Rexistro de Empresas e Actividades Turísticas (REAT), serie mensual, CC BY-SA 4.0. Poboación: INE, censo de 2021. Cálculo propio da Fundación Galicia Sustentable.",
+      "update_frequency": {
+        "declared": "P30D"
+      },
+      "geometry": "none",
+      "output": "geojson",
+      "privacy_notes": "Contas mensuais por concello; ningún enderezo nin titular (unha VUT é un domicilio, por iso só se publica agregado).",
+      "stale_after": "P75D",
+      "ingest": {
+        "every": "P7D"
+      },
+      "depends_on": [
+        "poboacion-seculo"
+      ],
+      "style": {
+        "kind": "fill",
+        "label_field": "nome"
+      },
+      "table": {
+        "fields": [
+          "nome",
+          "codigo_ine",
+          "poboacion_2021"
+        ]
+      },
+      "meta": {
+        "layer_id": "vut-mensual",
+        "published_at": null,
+        "fetched_at": "2026-11-01T13:38:13.343Z",
+        "last_success_at": "2026-11-01T13:38:13.343Z",
+        "status": "fresh",
+        "consecutive_failures": 0,
+        "feature_count": 313,
+        "source_url": "https://descargascdn.xunta.gal/interno/smarxa/REAT_Serie_Mensual.csv",
+        "licence": "CC-BY-SA-4.0",
+        "attribution": "Fonte: Turismo de Galicia, Rexistro de Empresas e Actividades Turísticas (REAT), serie mensual, CC BY-SA 4.0. Poboación: INE, censo de 2021. Cálculo propio da Fundación Galicia Sustentable.",
+        "checksum": "sha256:307e03a3f1a65f0ba3dc5b5cb623e0b0fcd9a3a2de788efb5c8df8bb192de234",
+        "last_error": null,
+        "history": [
           {
-            "at": "2026-10-25T11:31:39.450Z",
-            "ok": true
-          },
-          {
-            "at": "2026-10-25T11:16:19.873Z",
+            "at": "2026-11-01T13:38:13.343Z",
             "ok": true
           }
         ],

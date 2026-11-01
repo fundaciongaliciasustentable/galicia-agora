@@ -1,0 +1,20 @@
+{
+  "layer_id": "raios-ano",
+  "published_at": "2026-10-31T23:59:59Z",
+  "fetched_at": "2026-11-01T13:36:26.683Z",
+  "last_success_at": "2026-11-01T13:36:26.683Z",
+  "status": "fresh",
+  "consecutive_failures": 0,
+  "feature_count": 131,
+  "source_url": "https://servizos.meteogalicia.gal/mgrss/observacion/jsonRaios.action",
+  "licence": "CC-BY-SA-4.0",
+  "attribution": "Datos: MeteoGalicia (Xunta de Galicia)",
+  "checksum": "sha256:b7a2d1af2a15c4ba579bc59bbfaad11ebd516cb3789a151e254661b1bc669ed4",
+  "last_error": null,
+  "history": [
+    {
+      "at": "2026-11-01T13:36:26.683Z",
+      "ok": true
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "layer_id": "lonxas-2025",
+  "published_at": null,
+  "fetched_at": "2026-11-01T13:26:16.608Z",
+  "last_success_at": "2026-11-01T13:26:16.608Z",
+  "status": "fresh",
+  "consecutive_failures": 0,
+  "feature_count": 61,
+  "source_url": "https://www.pescadegalicia.gal/descargas/pescafresca/pescafresca2025.csv",
+  "licence": "CC-BY-SA-4.0",
+  "attribution": "Consellería do Mar, Xunta de Galicia: notas de primeira venda (pescadegalicia.gal), 2025. Posicións: Nomenclátor Geográfico Básico de España, © Instituto Geográfico Nacional. Cálculo propio da Fundación Galicia Sustentable.",
+  "checksum": "sha256:948cb25253f71d99510bd2182da7372939726e5e1087aa43e89d306f23e50439",
+  "last_error": null,
+  "history": [
+    {
+      "at": "2026-11-01T13:26:16.608Z",
+      "ok": true
+    }
+  ]
+}

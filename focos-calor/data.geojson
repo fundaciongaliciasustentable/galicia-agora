@@ -1,1 +1,1 @@
-{"type":"FeatureCollection","features":[]}
+{"type":"FeatureCollection","features":[{"type":"Feature","id":"Suomi NPP-2026-11-01T02:36:00.000Z--8.4364-43.34551","geometry":{"type":"Point","coordinates":[-8.4364,43.34551]},"properties":{"satelite":"Suomi NPP","instrumento":"VIIRS","data_deteccion":"2026-11-01T02:36:00.000Z","confianza":"nominal","confianza_pct":null,"frp":0.63,"dia_noite":"noite"}}]}

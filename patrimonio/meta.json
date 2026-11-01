@@ -1,8 +1,8 @@
 {
   "layer_id": "patrimonio",
   "published_at": null,
-  "fetched_at": "2026-10-25T11:39:00.931Z",
-  "last_success_at": "2026-10-25T11:39:00.931Z",
+  "fetched_at": "2026-11-01T13:27:01.125Z",
+  "last_success_at": "2026-11-01T13:27:01.125Z",
   "status": "fresh",
   "consecutive_failures": 0,
   "feature_count": 664,
@@ -13,27 +13,7 @@
   "last_error": null,
   "history": [
     {
-      "at": "2026-10-25T11:39:00.931Z",
-      "ok": true
-    },
-    {
-      "at": "2026-10-25T11:31:27.719Z",
-      "ok": true
-    },
-    {
-      "at": "2026-10-25T11:16:07.188Z",
-      "ok": true
-    },
-    {
-      "at": "2026-10-24T09:09:28.417Z",
-      "ok": true
-    },
-    {
-      "at": "2026-10-24T07:54:54.781Z",
-      "ok": true
-    },
-    {
-      "at": "2026-10-24T07:32:51.451Z",
+      "at": "2026-11-01T13:27:01.125Z",
       "ok": true
     }
   ]

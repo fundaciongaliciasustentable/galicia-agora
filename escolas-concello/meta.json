@@ -1,0 +1,20 @@
+{
+  "layer_id": "escolas-concello",
+  "published_at": null,
+  "fetched_at": "2026-11-01T13:25:27.641Z",
+  "last_success_at": "2026-11-01T13:25:27.641Z",
+  "status": "fresh",
+  "consecutive_failures": 0,
+  "feature_count": 313,
+  "source_url": "https://www.ige.gal/igebdt/igeapi/csv/datos/1653",
+  "licence": "https://www.ige.gal/web/avisolegal.jsp",
+  "attribution": "Fonte: IGE: https://www.ige.gal, Ensinanza non universitaria (táboa 1653). Diferenza con 2005: cálculo propio da Fundación Galicia Sustentable. Este produto emprega a API de datos do Instituto Galego de Estatística (IGE), pero non está certificado ou aprobado polo IGE.",
+  "checksum": "sha256:a0b752f979eeab3a502eabca4326aa93d2eba6d1ed9a70df6e2b743e47829d3b",
+  "last_error": null,
+  "history": [
+    {
+      "at": "2026-11-01T13:25:27.641Z",
+      "ok": true
+    }
+  ]
+}
