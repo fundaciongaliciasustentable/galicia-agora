@@ -1,0 +1,47 @@
+id: nacementos-mortes
+title:
+  gl: Nacementos e mortes por concello desde 1975
+  es: Nacimientos y defunciones por ayuntamiento desde 1975
+theme: territorio
+operator:
+  name: Instituto Galego de Estatística (IGE), a partir do INE
+  url: https://www.ige.gal/igebdt/bancodatos/?codigo=0201011001&banco=municipalecomarcal
+source_url: https://www.ige.gal/igebdt/igeapi/csv/datos/57
+licence:
+  text_url: https://www.ige.gal/web/avisolegal.jsp
+  quote: "Está prohibido desnaturalizar o sentido da información. Debe citarse a fonte"
+  verified_at: 2026-11-01
+  odbl_compatible: doubt
+  collection: cc-by-sa-4.0
+  notes: >-
+    Aviso legal do IGE (reutilización citando «Fonte: IGE: https://www.ige.gal» e sen
+    desnaturalizar), como as outras táboas do IGE do proxecto; dato primario do INE (CC BY
+    4.0). Táboas 57 (nacementos, concello de residencia da nai) e 30 (defuncións, concello de
+    residencia), 1975 ata o último ano publicado (o último é provisional). Harmonizado aos 313
+    concellos de hoxe: Oza dos Ríos e Cesuras suman en Oza-Cesuras e Cerdedo e Cotobade en
+    Cerdedo-Cotobade antes da fusión; Cariño (1988), Burela (1995) e A Illa de Arousa (1997)
+    sen dato antes de existir. Laxe 1981–1982 dubidoso na fonte. Valor do mapa: nacementos
+    por cada 100 defuncións (cálculo propio). Verificación en datos/fontes/ige-nacementos-mortes.
+attribution: >-
+  Fonte: IGE: https://www.ige.gal, a partir do Movemento natural da poboación (IGE, INE).
+  Nacementos por 100 defuncións: cálculo propio da Fundación Galicia Sustentable. Este
+  produto emprega a API de datos do Instituto Galego de Estatística (IGE), pero non está
+  certificado ou aprobado polo IGE.
+update_frequency:
+  declared: P365D
+geometry: none
+output: geojson
+auth:
+  required: false
+privacy_notes: Contas anuais por concello de residencia; ningún dato persoal.
+stale_after: P400D
+ingest:
+  every: P30D
+# Lives on its own /pulso/ page; the main map does not draw it (SERIES_LAYERS).
+style:
+  kind: fill
+  label_field: nome
+table:
+  fields:
+    - nome
+    - codigo_ine

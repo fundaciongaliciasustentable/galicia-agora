@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "nacementos-mortes feature properties",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "codigo_ine",
+    "nome",
+    "periodos",
+    "provisional",
+    "nacementos",
+    "defuncions",
+    "valor"
+  ],
+  "properties": {
+    "codigo_ine": { "type": "string", "pattern": "^\\d{5}$" },
+    "nome": { "type": "string", "minLength": 1 },
+    "periodos": { "type": "array", "items": { "type": "string", "pattern": "^\\d{4}$" } },
+    "provisional": { "type": "string", "pattern": "^\\d{4}$" },
+    "nacementos": { "type": "array", "items": { "type": ["integer", "null"], "minimum": 0 } },
+    "defuncions": { "type": "array", "items": { "type": ["integer", "null"], "minimum": 0 } },
+    "valor": { "type": "array", "items": { "type": ["number", "null"], "minimum": 0 } }
+  }
+}
