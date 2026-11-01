@@ -1,0 +1,50 @@
+id: vut-mensual
+title:
+  gl: Vivendas de uso turístico por concello, mes a mes
+  es: Viviendas de uso turístico por ayuntamiento, mes a mes
+theme: territorio
+operator:
+  name: Turismo de Galicia (Xunta de Galicia)
+  url: https://aei.turismo.gal/es/rexistro-de-empresas-e-actividades-turisticas
+source_url: https://descargascdn.xunta.gal/interno/smarxa/REAT_Serie_Mensual.csv
+licence:
+  spdx: CC-BY-SA-4.0
+  text_url: https://abertos.xunta.gal/catalogo/cultura-ocio-deporte/-/dataset/0022/rexistro-empresas-actividades-turisticas
+  quote: "Creative Commons BY SA 4.0"
+  verified_at: 2026-11-01
+  odbl_compatible: doubt
+  collection: cc-by-sa-4.0
+  notes: >-
+    Conxunto 0022 de abertos.xunta.gal (REAT), que leva á páxina do AEI onde está a serie
+    mensual; o mesmo razoamento ca vut-concello. Stock mensual de vivendas de uso turístico
+    por concello desde 2017M06 (as dúas copias antigas do directorio no Internet Archive dan
+    o mesmo número da serie). Conta inscricións, non vivendas alugadas. Valor do mapa: VUT
+    por 1.000 habitantes do censo de 2021 (poboacion-seculo, INE), un denominador fixo
+    (cálculo propio). Verificación en datos/fontes/vut-historico.
+attribution: >-
+  Fonte: Turismo de Galicia, Rexistro de Empresas e Actividades Turísticas (REAT), serie
+  mensual, CC BY-SA 4.0. Poboación: INE, censo de 2021. Cálculo propio da Fundación Galicia
+  Sustentable.
+update_frequency:
+  declared: P30D
+geometry: none
+output: geojson
+auth:
+  required: false
+privacy_notes: >-
+  Contas mensuais por concello; ningún enderezo nin titular (unha VUT é un domicilio, por iso
+  só se publica agregado).
+stale_after: P75D
+ingest:
+  every: P7D
+depends_on:
+  - poboacion-seculo
+# Lives on its own /pulso/ page; the main map does not draw it (SERIES_LAYERS).
+style:
+  kind: fill
+  label_field: nome
+table:
+  fields:
+    - nome
+    - codigo_ine
+    - poboacion_2021
