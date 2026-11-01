@@ -1,0 +1,44 @@
+id: meteo-24h
+title:
+  gl: O tempo das últimas 24 horas, hora a hora
+  es: El tiempo de las últimas 24 horas, hora a hora
+theme: tempo-aire
+operator:
+  name: MeteoGalicia (Consellería de Medio Ambiente, Xunta de Galicia)
+  url: https://www.meteogalicia.gal
+source_url: https://servizos.meteogalicia.gal/mgrss/observacion/ultimosHorariosEstacions.action
+licence:
+  text_url: https://www.meteogalicia.gal/web/aviso-legal
+  quote: "utilizada libremente… co único compromiso de mencionar expresamente a MeteoGalicia"
+  verified_at: 2026-10-18
+  odbl_compatible: doubt
+  collection: cc-by-sa-4.0
+  notes: >-
+    Mesma fonte e licenzas ca estacions-meteo e meteo-dia (colección CC BY-SA 4.0, ADR 0005).
+    Unha chamada por hora a ultimosHorariosEstacions con numHoras=24 trae as últimas 24
+    lecturas horarias das 155 estacións (comprobado o 1/11/2026, ~5 MB). Xanela: as 24 horas
+    que rematan na lectura máis recente de calquera estación. Só lecturas validadas (código
+    1); o resto, nulo. Horas en UTC no ficheiro; a páxina amósaas en hora de Galicia.
+attribution: 'Fonte: MeteoGalicia (Xunta de Galicia), observación horaria.'
+update_frequency:
+  declared: PT1H
+geometry: point
+output: geojson
+auth:
+  required: false
+privacy_notes: Observacións de estacións meteorolóxicas; ningún dato persoal.
+stale_after: PT3H
+ingest:
+  every: PT1H
+style:
+  kind: circle
+  color_token: --c-tempo
+  label_field: nome
+table:
+  fields:
+    - nome
+    - concello
+    - altitude
+    - ta_min
+    - ta_max
+    - pp_total

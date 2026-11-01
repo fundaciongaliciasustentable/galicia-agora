@@ -30,7 +30,7 @@ export const PARAMS = {
 } as const;
 export type Field = keyof typeof PARAMS;
 
-interface Measure {
+export interface Measure {
   codigoParametro: string;
   valor: number;
   lnCodigoValidacion: number;
@@ -41,7 +41,7 @@ interface HourlyResponse {
     listaInstantes: Array<{ instanteLecturaUTC: string; listaMedidas: Measure[] }>;
   }>;
 }
-interface Station {
+export interface Station {
   idEstacion: number;
   estacion: string;
   concello: string;
@@ -86,6 +86,17 @@ export function localHour(utc: string): { day: string; hour: number } {
   return { day: `${parts.year}-${parts.month}-${parts.day}`, hour: Number(parts.hour) };
 }
 
+/** Validated value of a field in one instant's measures (first matching code), else null. */
+export function pick(measures: Measure[], field: Field): number | null {
+  for (const code of PARAMS[field]) {
+    const m = measures.find((x) => x.codigoParametro === code);
+    if (m && m.lnCodigoValidacion === 1 && m.valor !== -9999) {
+      return round(m.valor, field === 'pp' || field === 'ta' || field === 'vv' ? 1 : 0);
+    }
+  }
+  return null;
+}
+
 /** 24 local hours per field for one station; null where there is no validated reading. */
 export function stationHours(
   responses: HourlyResponse[],
@@ -101,18 +112,8 @@ export function stationHours(
       for (const inst of h.listaInstantes) {
         const { day, hour } = localHour(inst.instanteLecturaUTC);
         if (day !== localDay) continue;
-        for (const [field, codes] of Object.entries(PARAMS) as Array<[Field, readonly string[]]>) {
-          if (out[field][hour] !== null) continue;
-          for (const code of codes) {
-            const m = inst.listaMedidas.find((x) => x.codigoParametro === code);
-            if (m && m.lnCodigoValidacion === 1 && m.valor !== -9999) {
-              out[field][hour] = round(
-                m.valor,
-                field === 'pp' ? 1 : field === 'dv' || field === 'rs' || field === 'hr' ? 0 : 1,
-              );
-              break;
-            }
-          }
+        for (const field of Object.keys(PARAMS) as Field[]) {
+          if (out[field][hour] === null) out[field][hour] = pick(inst.listaMedidas, field);
         }
       }
     }
