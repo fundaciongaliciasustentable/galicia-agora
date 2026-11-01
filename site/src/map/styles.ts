@@ -1091,6 +1091,63 @@ export function encodeLayer(layer: LayerLike, ctx: StyleContext): Encoding {
         ],
       );
 
+    case 'imd-estradas': {
+      const imd = num('imd');
+      const stops: Array<[number, string]> = [
+        [0, '#efd9a7'],
+        [2000, '#e0a95a'],
+        [8000, '#c2410c'],
+        [20000, '#7a1426'],
+      ];
+      // Sections whose last count is older than 2023 (or that have none) are drawn fainter.
+      const old = ['<', num('ano_aforo'), 2023];
+      return enc(
+        [
+          base('line', {
+            type: 'line',
+            layout: { 'line-cap': 'round', 'line-join': 'round' },
+            paint: {
+              'line-color': interpolate(imd, stops),
+              'line-width': zoomTimes(
+                [
+                  [7, 0.6],
+                  [12, 1.4],
+                ],
+                interpolate(imd, [
+                  [0, 1],
+                  [2000, 2],
+                  [8000, 3.5],
+                  [20000, 6],
+                ]),
+              ),
+              'line-opacity': ['case', old, 0.5, 0.95],
+            },
+          }),
+          label(
+            'label',
+            ['concat', ['get', 'estrada'], ' · ', ['number-format', imd, { locale: 'gl-ES' }]],
+            11,
+            {
+              layout: {
+                'symbol-placement': 'line',
+                'text-offset': [0, 0.8],
+                'text-anchor': 'center',
+              },
+            },
+          ),
+        ],
+        [
+          {
+            title: T('Vehículos ao día (IMD 2025)', 'Vehículos al día (IMD 2025)'),
+            ramp: { colors: stops.map(([, c]) => c), labels: ['0', '8.000', '20.000+'] },
+            note: T(
+              'Máis tenue: último aforo anterior a 2023 ou sen aforo. Só estradas da Xunta.',
+              'Más tenue: último aforo anterior a 2023 o sin aforo. Solo carreteras de la Xunta.',
+            ),
+          },
+        ],
+      );
+    }
     // ───────────────────────── Servizos ─────────────────────────
     case 'centros-saude': {
       const pac = ['==', ['get', 'tipo'], 'pac'];

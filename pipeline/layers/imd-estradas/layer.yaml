@@ -1,0 +1,54 @@
+id: imd-estradas
+title:
+  gl: Tráfico nas estradas autonómicas (IMD 2025)
+  es: Tráfico en las carreteras autonómicas (IMD 2025)
+theme: mobilidade
+operator:
+  name: Xunta de Galicia — Axencia Galega de Infraestruturas (AXI), servizo no IDEG
+  url: https://axi.xunta.gal/
+source_url: https://ideg.xunta.gal/servizos/rest/services/AXI/MapaTrafico/MapServer/7
+licence:
+  spdx: CC-BY-SA-4.0
+  text_url: https://mapas.xunta.gal/gl/aviso-legal
+  verified_at: 2026-11-01
+  odbl_compatible: doubt
+  collection: cc-by-sa-4.0
+  notes: >-
+    Servizo da AXI aloxado no IDEG (copyright «Instituto de Estudos do Territorio, AXI, Xunta
+    de Galiza»). Aviso legal do IET: «licenza de uso compatible con CC- BY 4.0 INT»; o aviso
+    xeral da Xunta (https://www.xunta.gal/aviso-legal-do-portal-da-xunta) pide citar a fonte e
+    prohibe desnaturalizar a información. Sen confirmación escrita, aplícase a máis restritiva
+    (ADR 0005): colección CC BY-SA. 1.138 treitos da Rede Autonómica de Estradas (RAEG),
+    unha páxina. Liñas xeneralizadas no servidor con maxAllowableOffset = 0,0002° (≈ 20 m).
+    Coidado: a IMD de 2025 é a estimación da AXI para cada treito, non sempre un aforo de
+    2025. Cada treito leva o ano do último aforo (380 de 2025; 42 sen aforo; algúns de 2009)
+    e o tipo (PER, COM, NEUM, CONCESIÓN: códigos da AXI sen lenda publicada no servizo). As
+    capas 4 e 6 dan 2023 e 2024 (serie para un pulso futuro). Sen estradas estatais nin
+    provinciais. Non se inclúen as 1.695 estacións de aforo.
+attribution: "Axencia Galega de Infraestruturas e Instituto de Estudos do Territorio. Xunta de Galicia"
+update_frequency:
+  declared: P365D
+  measured: static
+geometry: line
+output: geojson
+auth:
+  required: false
+privacy_notes: Medias anuais de tráfico por treito de estrada; ningún dato persoal.
+stale_after: P400D
+ingest:
+  every: P30D
+style:
+  kind: line
+  color_token: --c-trafico
+  label_field: estrada
+table:
+  fields:
+    - estrada
+    - treito
+    - imd
+    - pesados_pct
+    - ano_aforo
+    - tipo_aforo
+    - rede
+    - clase
+    - lonxitude_km

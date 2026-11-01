@@ -92,6 +92,7 @@
   --c-praia: #3d8f9e;
   --c-desa: #b42318;
   --c-senda: #8b5e3c;
+  --c-trafico: #a64040;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -138,6 +139,7 @@
     --c-praia: #7cc4cf;
     --c-desa: #f07a6a;
     --c-senda: #c2946e;
+    --c-trafico: #e08a8a;
   }
 }
 
@@ -184,4 +186,5 @@
   --c-praia: #7cc4cf;
   --c-desa: #f07a6a;
   --c-senda: #c2946e;
+  --c-trafico: #e08a8a;
 }

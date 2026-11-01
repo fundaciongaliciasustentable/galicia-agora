@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "imd-estradas feature properties",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "estrada",
+    "treito",
+    "pk_inicio",
+    "pk_fin",
+    "lonxitude_km",
+    "imd",
+    "pesados_pct",
+    "imd_pesados",
+    "ano",
+    "ano_aforo",
+    "tipo_aforo",
+    "rede",
+    "clase"
+  ],
+  "properties": {
+    "id": { "type": "string", "pattern": "^\\d+$", "description": "OBJECTID do servizo" },
+    "estrada": { "type": "string", "minLength": 1 },
+    "treito": { "type": ["string", "null"] },
+    "pk_inicio": { "type": ["number", "null"] },
+    "pk_fin": { "type": ["number", "null"] },
+    "lonxitude_km": { "type": ["number", "null"], "minimum": 0 },
+    "imd": {
+      "type": "number",
+      "minimum": 0,
+      "description": "Vehículos ao día, media anual (IMD_2025)"
+    },
+    "pesados_pct": { "type": ["number", "null"], "minimum": 0, "maximum": 100 },
+    "imd_pesados": { "type": ["number", "null"], "minimum": 0 },
+    "ano": { "const": 2025 },
+    "ano_aforo": {
+      "type": ["integer", "null"],
+      "description": "Ano do último aforo; null se non o hai"
+    },
+    "tipo_aforo": {
+      "type": ["string", "null"],
+      "description": "Código da AXI: PER, COM, NEUM, CONCESIÓN"
+    },
+    "rede": { "type": ["string", "null"] },
+    "clase": { "type": ["string", "null"] }
+  }
+}
