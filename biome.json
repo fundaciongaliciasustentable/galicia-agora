@@ -5,6 +5,7 @@
       "**",
       "!pipeline/samples",
       "!**/fixtures",
+      "!datos/fontes/*/mostra",
       "!node_modules",
       "!dist",
       "!.astro",
