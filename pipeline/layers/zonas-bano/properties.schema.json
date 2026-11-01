@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "zonas-bano feature properties",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "nome", "tipo", "superficie_ha", "data_alta"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^ES[0-9A-ZÑ]+(-\\d+)?$",
+      "description": "EUZPROTCOD (código europeo da zona)"
+    },
+    "nome": { "type": "string", "minLength": 1, "description": "DEN_NAYADE, nome do censo Náiade" },
+    "tipo": { "enum": ["maritima", "continental"] },
+    "superficie_ha": { "type": ["number", "null"], "minimum": 0 },
+    "data_alta": { "type": ["string", "null"], "format": "date" }
+  }
+}

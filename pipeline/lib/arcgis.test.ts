@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import type { LayerDef } from './adapter.ts';
-import { cleanGeometry, fetchLayer, num, queryUrl, str } from './arcgis.ts';
+import { cleanGeometry, esriToGeoJSON, fetchLayer, num, queryUrl, str } from './arcgis.ts';
 
 const layer = { id: 'x' } as unknown as LayerDef;
 
@@ -95,5 +95,52 @@ describe('arcgis helpers', () => {
     expect(str('-')).toBeNull();
     expect(num('1,256', 1)).toBe(1.3);
     expect(num(null)).toBeNull();
+  });
+});
+
+describe('esriToGeoJSON', () => {
+  it('turns clockwise outer rings and counter-clockwise holes into a GeoJSON polygon', () => {
+    const outer = [
+      [0, 0],
+      [0, 10],
+      [10, 10],
+      [10, 0],
+      [0, 0],
+    ];
+    const hole = [
+      [2, 2],
+      [8, 2],
+      [8, 8],
+      [2, 8],
+      [2, 2],
+    ];
+    const g = esriToGeoJSON({ rings: [outer, hole] });
+    expect(g?.type).toBe('Polygon');
+    const rings = g?.coordinates as number[][][];
+    expect(rings).toHaveLength(2);
+    expect(rings[0]).toEqual([...outer].reverse());
+  });
+
+  it('makes a MultiPolygon from two outer rings and handles paths and points', () => {
+    const sq = (o: number) => [
+      [o, 0],
+      [o, 1],
+      [o + 1, 1],
+      [o + 1, 0],
+      [o, 0],
+    ];
+    expect(esriToGeoJSON({ rings: [sq(0), sq(5)] })?.type).toBe('MultiPolygon');
+    expect(
+      esriToGeoJSON({
+        paths: [
+          [
+            [0, 0],
+            [1, 1],
+          ],
+        ],
+      })?.type,
+    ).toBe('LineString');
+    expect(esriToGeoJSON({ x: 1, y: 2 })).toEqual({ type: 'Point', coordinates: [1, 2] });
+    expect(esriToGeoJSON(null)).toBeNull();
   });
 });

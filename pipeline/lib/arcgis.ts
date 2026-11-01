@@ -134,3 +134,147 @@ export function num(v: unknown, decimals = 2): number | null {
   const n = typeof v === 'string' ? Number(v.replace(',', '.')) : v;
   return typeof n === 'number' && Number.isFinite(n) ? round(n, decimals) : null;
 }
+
+// ── `find` fallback ────────────────────────────────────────────────────────────────────────
+// Some IDEG sublayers (Augas de Galicia protected zones, checked 2026-11-01) answer `query`
+// with `geometry: null` for every feature, while the standard MapServer `find` operation
+// returns the shapes. `find` has no paging, so the result size is checked against the
+// `query` count, which works on those layers.
+
+export interface EsriGeometry {
+  rings?: number[][][];
+  paths?: number[][][];
+  x?: number;
+  y?: number;
+}
+
+export interface FindResult {
+  layerId: number;
+  attributes: Record<string, unknown>;
+  geometry?: EsriGeometry | null;
+}
+
+/** Signed area (shoelace); Esri outer rings are clockwise (negative here). */
+function signedArea(ring: number[][]): number {
+  let s = 0;
+  for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) {
+    const a = ring[j] as number[];
+    const b = ring[i] as number[];
+    s += ((a[0] as number) - (b[0] as number)) * ((a[1] as number) + (b[1] as number));
+  }
+  return s / 2;
+}
+
+function inRing(pt: number[], ring: number[][]): boolean {
+  const [x, y] = pt as [number, number];
+  let inside = false;
+  for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) {
+    const [xi, yi] = ring[i] as [number, number];
+    const [xj, yj] = ring[j] as [number, number];
+    if (yi > y !== yj > y && x < ((xj - xi) * (y - yi)) / (yj - yi) + xi) inside = !inside;
+  }
+  return inside;
+}
+
+/** Esri JSON geometry → GeoJSON geometry (Point, LineString/MultiLineString, Polygon/MultiPolygon). */
+export function esriToGeoJSON(g: EsriGeometry | null | undefined): ArcFeature['geometry'] {
+  if (!g) return null;
+  if (typeof g.x === 'number' && typeof g.y === 'number') {
+    return { type: 'Point', coordinates: [g.x, g.y] };
+  }
+  if (g.paths?.length) {
+    return g.paths.length === 1
+      ? { type: 'LineString', coordinates: g.paths[0] }
+      : { type: 'MultiLineString', coordinates: g.paths };
+  }
+  if (g.rings?.length) {
+    const outers: number[][][][] = [];
+    const holes: number[][][] = [];
+    for (const r of g.rings) {
+      if (r.length < 4) continue;
+      // Esri: clockwise = outer ring, counter-clockwise = hole. GeoJSON wants the reverse.
+      if (signedArea(r) < 0) outers.push([[...r].reverse()]);
+      else holes.push([...r].reverse());
+    }
+    for (const h of holes) {
+      const owner = outers.find((p) => inRing(h[0] as number[], p[0] as number[][]));
+      if (owner) owner.push(h);
+    }
+    if (outers.length === 0) return null;
+    return outers.length === 1
+      ? { type: 'Polygon', coordinates: outers[0] }
+      : { type: 'MultiPolygon', coordinates: outers };
+  }
+  return null;
+}
+
+export function countUrl(layerUrl: string, where = '1=1'): string {
+  return `${layerUrl}/query?${new URLSearchParams({ where, returnCountOnly: 'true', f: 'json' })}`;
+}
+
+export function findUrl(
+  mapServerUrl: string,
+  layer: number,
+  searchField: string,
+  searchText: string,
+  maxAllowableOffset?: number,
+): string {
+  const q = new URLSearchParams({
+    searchText,
+    contains: 'true',
+    searchFields: searchField,
+    layers: String(layer),
+    returnGeometry: 'true',
+    sr: '4326',
+    ...(maxAllowableOffset ? { maxAllowableOffset: String(maxAllowableOffset) } : {}),
+    geometryPrecision: '5',
+    f: 'json',
+  });
+  return `${mapServerUrl}/find?${q}`;
+}
+
+async function getJson(ctx: AdapterContext, url: string, what: string): Promise<unknown> {
+  try {
+    return JSON.parse((await ctx.get(url)).body.toString('utf8'));
+  } catch (err) {
+    if (err instanceof SyntaxError) throw new Error(`ArcGIS ${what}: response is not JSON`);
+    throw err;
+  }
+}
+
+/**
+ * Every feature of one sublayer through `find` (a text match on a field all features share),
+ * checked against the sublayer's `query` count so a truncated answer fails.
+ */
+export async function fetchByFind(
+  ctx: AdapterContext,
+  mapServerUrl: string,
+  layer: number,
+  searchField: string,
+  searchText: string,
+  maxAllowableOffset?: number,
+): Promise<{ count: number; results: FindResult[] }> {
+  const what = `${mapServerUrl.replace(IDEG, '')}/${layer}`;
+  const c = (await getJson(ctx, countUrl(`${mapServerUrl}/${layer}`), `${what} count`)) as {
+    count?: number;
+    error?: { message?: string };
+  };
+  if (c?.error || typeof c?.count !== 'number') {
+    throw new Error(`ArcGIS ${what}: no count (${c?.error?.message ?? 'unexpected response'})`);
+  }
+  const f = (await getJson(
+    ctx,
+    findUrl(mapServerUrl, layer, searchField, searchText, maxAllowableOffset),
+    `${what} find`,
+  )) as { results?: FindResult[]; error?: { message?: string } };
+  if (f?.error || !Array.isArray(f?.results)) {
+    throw new Error(`ArcGIS ${what} find: ${f?.error?.message ?? 'unexpected response'}`);
+  }
+  const results = f.results.filter((r) => r.layerId === layer);
+  if (results.length !== c.count) {
+    throw new Error(
+      `ArcGIS ${what}: find gave ${results.length} features, query counts ${c.count}`,
+    );
+  }
+  return { count: c.count, results };
+}

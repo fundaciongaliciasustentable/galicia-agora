@@ -1,0 +1,43 @@
+id: zonas-bano
+title:
+  gl: Zonas de baño oficiais
+  es: Zonas de baño oficiales
+theme: auga-mar
+operator:
+  name: Xunta de Galicia — Augas de Galicia (Plan hidrolóxico Galicia-Costa 2021–2027), servizo no IDEG
+  url: https://augasdegalicia.xunta.gal/
+source_url: https://ideg.xunta.gal/servizos/rest/services/IDE_DHGC/PHGC2021_2027_ZProtex_NEuropeo/MapServer/4
+licence:
+  spdx: CC-BY-SA-4.0
+  text_url: https://augasdegalicia.xunta.gal/aviso-legal
+  verified_at: 2026-11-01
+  odbl_compatible: doubt
+  collection: cc-by-sa-4.0
+  notes: >-
+    Aviso legal de Augas de Galicia (reutilización libre, comercial ou non, citando a fonte e
+    sen desnaturalizar) e do IET para o IDEG («compatible con CC- BY 4.0 INT»). Sen
+    confirmación escrita, aplícase a máis restritiva (ADR 0005): colección CC BY-SA. Zonas de
+    baño do censo oficial (Náiade) na demarcación Galicia-Costa: 458 no servizo, 16 delas con
+    data de baixa (non se publican). O Miño-Sil (CHMS) non está. A subcapa responde a `query`
+    sen xeometría; as formas lense coa operación estándar `find` e compróbase que dá tantas
+    como o reconto de `query`. Polígonos xeneralizados no servidor (0,0002°, ≈ 20 m). Só
+    xeometría: a calidade da auga de cada tempada está nunha páxina HTML do SERGAS, sen feed.
+    Nomes do censo en castelán, como os dá a fonte.
+attribution: "Augas de Galicia. Plan hidrolóxico Galicia-Costa 2021–2027. Xunta de Galicia"
+update_frequency:
+  declared: static
+  measured: static
+geometry: polygon
+output: geojson
+auth:
+  required: false
+privacy_notes: Límites das zonas de baño; ningún dato persoal.
+stale_after: P90D
+ingest:
+  every: P30D
+style:
+  kind: fill
+  color_token: --c-bano
+  label_field: nome
+table:
+  fields: [nome, tipo, superficie_ha, data_alta]

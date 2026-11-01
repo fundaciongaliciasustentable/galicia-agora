@@ -634,6 +634,51 @@ export function encodeLayer(layer: LayerLike, ctx: StyleContext): Encoding {
         ],
       );
     }
+    case 'zonas-bano': {
+      const rio = ['==', ['get', 'tipo'], 'continental'];
+      return enc(
+        [
+          base('fill', {
+            type: 'fill',
+            paint: { 'fill-color': ['case', rio, '#6b8f47', color], 'fill-opacity': 0.35 },
+          }),
+          base('line', {
+            type: 'line',
+            paint: { 'line-color': ['case', rio, '#6b8f47', color], 'line-width': 1 },
+          }),
+          // Small at low zoom: a dot marks each zone until the polygon is visible.
+          base('dot', {
+            type: 'circle',
+            maxzoom: 10,
+            paint: {
+              'circle-radius': 2.5,
+              'circle-color': ['case', rio, '#6b8f47', color],
+              'circle-stroke-color': halo,
+              'circle-stroke-width': 0.8,
+            },
+          }),
+          label('label', ['get', 'nome'], 12, {
+            layout: { 'text-offset': [0, 0], 'text-anchor': 'center' },
+          }),
+        ],
+        [
+          {
+            entries: [
+              { shape: 'fill', color, label: T('Zona de baño no mar', 'Zona de baño en el mar') },
+              {
+                shape: 'fill',
+                color: '#6b8f47',
+                label: T('Zona de baño en río ou encoro', 'Zona de baño en río o embalse'),
+              },
+            ],
+            note: T(
+              'Censo oficial de Galicia-Costa; sen a calidade da auga da tempada.',
+              'Censo oficial de Galicia-Costa; sin la calidad del agua de la temporada.',
+            ),
+          },
+        ],
+      );
+    }
     // ───────────────────────── Mobilidade ─────────────────────────
     case 'tren': {
       const cercanias = ['==', ['get', 'rede'], 'Cercanías'];
