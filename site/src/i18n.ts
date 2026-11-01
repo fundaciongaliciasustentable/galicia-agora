@@ -150,6 +150,65 @@ const STRINGS = {
     gl: 'Aínda non hai datos de horarios publicados.',
     es: 'Aún no hay datos de horarios publicados.',
   },
+  season_title: { gl: 'Poboación estacional', es: 'Población estacional' },
+  season_lede: {
+    gl: 'Canta xente soporta cada concello, trimestre a trimestre, contra os seus residentes: turismo, segundas vivendas, estudos, traballo e saúde. 2025 é provisional e só ten dous trimestres; 2024 vai como referencia.',
+    es: 'Cuánta gente soporta cada ayuntamiento, trimestre a trimestre, frente a sus residentes: turismo, segundas viviendas, estudios, trabajo y salud. 2025 es provisional y solo tiene dos trimestres; 2024 va como referencia.',
+  },
+  season_map_label: {
+    gl: 'Mapa dos concellos de Galicia coloreados pola súa taxa de carga poboacional no trimestre. As cifras están no panel e na táboa.',
+    es: 'Mapa de los ayuntamientos de Galicia coloreados por su tasa de carga poblacional en el trimestre. Las cifras están en el panel y en la tabla.',
+  },
+  season_quarter: { gl: '{q} trimestre', es: '{q} trimestre' },
+  season_provisional: { gl: 'provisional', es: 'provisional' },
+  season_missing_quarter: {
+    gl: 'Aínda sen publicar: o IGE publica cada ano completo dous anos despois.',
+    es: 'Aún sin publicar: el IGE publica cada año completo dos años después.',
+  },
+  season_now: {
+    gl: 'Galicia: {rate} % dos residentes. Máis carga: {top}.',
+    es: 'Galicia: {rate} % de los residentes. Más carga: {top}.',
+  },
+  season_detail: {
+    gl: '{name}: {rate} % ({load} persoas para {res} residentes).',
+    es: '{name}: {rate} % ({load} personas para {res} residentes).',
+  },
+  season_parts: {
+    gl: 'Achegan: turismo {tur}, segundas vivendas {sv}, estudos {est}, traballo {tra}, saúde {sau}.',
+    es: 'Aportan: turismo {tur}, segundas viviendas {sv}, estudios {est}, trabajo {tra}, salud {sau}.',
+  },
+  season_pick: {
+    gl: 'Toca un concello no mapa para ver o seu detalle.',
+    es: 'Toca un ayuntamiento en el mapa para ver su detalle.',
+  },
+  season_legend: {
+    gl: 'Azul: soporta menos xente ca a que vive nel (saen máis dos que chegan). Laranxa e vermello: máis. O 100 % son os seus residentes.',
+    es: 'Azul: soporta menos gente de la que vive en él (salen más de los que llegan). Naranja y rojo: más. El 100 % son sus residentes.',
+  },
+  season_curve: {
+    gl: 'Taxa de carga de Galicia por trimestre (branco: o concello escollido)',
+    es: 'Tasa de carga de Galicia por trimestre (blanco: el ayuntamiento elegido)',
+  },
+  season_curve_label: {
+    gl: 'Taxa de carga de Galicia por trimestre: de {min} % a {max} %.',
+    es: 'Tasa de carga de Galicia por trimestre: de {min} % a {max} %.',
+  },
+  season_table_caption: {
+    gl: 'Os 20 concellos con máis carga en {q}, en % dos residentes.',
+    es: 'Los 20 ayuntamientos con más carga en {q}, en % de los residentes.',
+  },
+  season_col_rate: { gl: 'Taxa %', es: 'Tasa %' },
+  season_col_load: { gl: 'Carga', es: 'Carga' },
+  season_col_res: { gl: 'Residentes', es: 'Residentes' },
+  season_speed_opt: { gl: '{s} s por trimestre', es: '{s} s por trimestre' },
+  season_note: {
+    gl: 'Estimación do IGE («Carga de poboación estacional dos concellos de Galicia», táboas 9043 e 9046): media trimestral de persoas equivalentes a tempo completo que soporta cada concello, sumando aos residentes os que chegan e restando os que saen por turismo, segundas vivendas, estudos, traballo e saúde (un terzo de peso á noite e dous terzos ao día). É un cálculo con modelos sobre enquisas e rexistros, non un reconto. 2025 é provisional e só ten os trimestres I e II: o IGE publica cada ano completo dous anos despois, así que o verán de 2025 non está; 2024 é o último ano definitivo e vai ao lado como referencia. Os trimestres saltan sen interpolar. A diferenza con Galicia é cálculo propio. Este produto emprega a API de datos do IGE, pero non está certificado nin aprobado polo IGE.',
+    es: 'Estimación del IGE («Carga de poboación estacional dos concellos de Galicia», tablas 9043 y 9046): media trimestral de personas equivalentes a tiempo completo que soporta cada ayuntamiento, sumando a los residentes los que llegan y restando los que salen por turismo, segundas viviendas, estudios, trabajo y salud (un tercio de peso por la noche y dos tercios por el día). Es un cálculo con modelos sobre encuestas y registros, no un recuento. 2025 es provisional y solo tiene los trimestres I y II: el IGE publica cada año completo dos años después, así que el verano de 2025 no está; 2024 es el último año definitivo y va al lado como referencia. Los trimestres saltan sin interpolar. La diferencia con Galicia es cálculo propio. Este producto emplea la API de datos del IGE, pero no está certificado ni aprobado por el IGE.',
+  },
+  season_missing: {
+    gl: 'Aínda non están publicados os datos de poboación estacional.',
+    es: 'Aún no están publicados los datos de población estacional.',
+  },
   fire_title: { gl: 'Focos de calor, agosto de 2025', es: 'Focos de calor, agosto de 2025' },
   fire_lede: {
     gl: 'O que viron os satélites sobre Galicia no mes dos grandes lumes, pasada a pasada. Cada foco escintila ao velo o satélite e arrefría nos días seguintes.',

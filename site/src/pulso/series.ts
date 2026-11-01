@@ -83,13 +83,16 @@ export const SERIES: PulseMap[] = [
   },
   {
     slug: 'estacion',
-    ready: false,
+    ready: true,
     colour: '#b9e27a',
     title: { gl: 'Poboación estacional', es: 'Población estacional' },
     summary: {
       gl: 'Canta xente soporta cada concello trimestre a trimestre, contra os seus residentes.',
       es: 'Cuánta gente soporta cada ayuntamiento trimestre a trimestre, frente a sus residentes.',
     },
-    period: { gl: '2025 (provisional)', es: '2025 (provisional)' },
+    period: {
+      gl: '2025 provisional (dous trimestres) e 2024',
+      es: '2025 provisional (dos trimestres) y 2024',
+    },
   },
 ];
