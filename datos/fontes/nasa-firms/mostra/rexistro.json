@@ -1,0 +1,28 @@
+[
+  {
+    "produto": "VIIRS S-NPP (375 m)",
+    "url": "https://firms.modaps.eosdis.nasa.gov/data/country/viirs-snpp/2025/viirs-snpp_2025_Spain.csv",
+    "bytes": 2407569,
+    "last_modified": null,
+    "descargado_utc": "2026-11-01T07:36:01+00:00",
+    "deteccions_espana_ano": 30751,
+    "deteccions_bbox_2025-08": 9639,
+    "deteccions_galicia_2025-08": 7714
+  },
+  {
+    "produto": "MODIS Aqua/Terra (1 km)",
+    "url": "https://firms.modaps.eosdis.nasa.gov/data/country/modis/2025/modis_2025_Spain.csv",
+    "bytes": 757793,
+    "last_modified": null,
+    "descargado_utc": "2026-11-01T07:36:06+00:00",
+    "deteccions_espana_ano": 9461,
+    "deteccions_bbox_2025-08": 3469,
+    "deteccions_galicia_2025-08": 2742
+  },
+  {
+    "saida": "firms_galicia_2025-08.csv",
+    "filas": 10456,
+    "pasadas_distintas_dia_hora": 175,
+    "recorte": "polígono dos concellos"
+  }
+]

@@ -1,0 +1,31 @@
+[
+  {
+    "url": "https://movilidad-opendata.mitma.es/zonificacion/relacion_ine_zonificacionMitma.csv",
+    "descargado_utc": "2026-11-01T07:31:12+00:00",
+    "zonas_galicia": 208
+  },
+  {
+    "url": "https://movilidad-opendata.mitma.es/estudios_basicos/por-municipios/viajes/ficheros-diarios/2025-05/20250521_Viajes_municipios.csv.gz",
+    "descargado_utc": "2026-11-01T07:31:51+00:00",
+    "saida": "20250521_viaxes_municipios_galicia.csv.gz",
+    "filas_total": 14767608,
+    "filas_galicia": 1066378,
+    "viaxes_min": 1.0,
+    "tamaño_gz": 162648680,
+    "last_modified": "Tue, 23 Dec 2025 14:26:18 GMT",
+    "pares_hora_od": 134319,
+    "viaxes_total_galicia": 9389467
+  },
+  {
+    "url": "https://movilidad-opendata.mitma.es/estudios_basicos/por-municipios/viajes/ficheros-diarios/2025-05/20250525_Viajes_municipios.csv.gz",
+    "descargado_utc": "2026-11-01T07:32:26+00:00",
+    "saida": "20250525_viaxes_municipios_galicia.csv.gz",
+    "filas_total": 13274705,
+    "filas_galicia": 1058494,
+    "viaxes_min": 1.0,
+    "tamaño_gz": 147247850,
+    "last_modified": "Tue, 23 Dec 2025 14:26:44 GMT",
+    "pares_hora_od": 147518,
+    "viaxes_total_galicia": 7580375
+  }
+]

@@ -1,0 +1,24 @@
+[
+  {
+    "url": "https://servizos.meteogalicia.gal/mgrss/observacion/listaEstacionsMeteo.action",
+    "descargado_utc": "2026-11-01T07:36:42+00:00",
+    "estacions": 155
+  },
+  {
+    "url": "https://servizos.meteogalicia.gal/mgrss/observacion/datosHorariosEstacions.action?dataIni=DD/MM/YYYY%20HH:MM&numHoras=12&idEst=ID",
+    "descargado_utc": "2026-11-01T07:39:45+00:00",
+    "dia": "2025-05-21",
+    "peticions": 310,
+    "erros": 0,
+    "bytes_json": 5669972,
+    "filas": 42286,
+    "saida": "horario_2025-05-21.csv"
+  },
+  {
+    "url": "https://servizos.meteogalicia.gal/mgrss/observacion/datosDiariosEstacionsMeteo.action?dataIni=2025-05-01&dataFin=2025-05-31&idParam=TA_AVG_1.5m%2CTA_MAX_1.5m%2CTA_MIN_1.5m%2CPP_SUM_1.5m",
+    "descargado_utc": "2026-11-01T07:39:46+00:00",
+    "bytes_json": 3384703,
+    "filas": 20801,
+    "saida": "diario_2025-05-01_2025-05-31.csv"
+  }
+]
