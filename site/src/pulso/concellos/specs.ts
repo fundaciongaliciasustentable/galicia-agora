@@ -35,6 +35,8 @@ export interface Spec {
   detailKey?: (c: Concello) => string;
   /** A colour that overrides the scale (e.g. no school left), or null. */
   special?: (c: Concello, i: number) => string | null;
+  /** Rewrites a concello's series once loaded (e.g. into running totals). */
+  prepare?: (c: Concello) => void;
   /** Figures of a concello at a step. */
   vars: (c: Concello, i: number) => Vars;
   /** Galicia's figures at a step, from all concellos. */
@@ -142,41 +144,47 @@ export const SPECS: Record<string, Spec> = {
     slug: 'atencion',
     layer: 'atencion-wikipedia',
     prefix: 'wiki',
-    // Spike index: the day's views against the concello's usual (100 = an ordinary day).
+    // Views per 1,000 residents added up from the first day to the day shown.
     stops: [
-      [0, '#1f3347'],
-      [100, '#34362f'],
-      [150, '#6e5a2c'],
-      [200, '#c98a26'],
-      [400, '#ff6a3d'],
-      [800, '#ffd9c7'],
+      [0, '#1f2a33'],
+      [100, '#24414f'],
+      [300, '#2f6b6e'],
+      [700, '#6f9a5c'],
+      [1500, '#d9b44a'],
+      [3000, '#ff8a4c'],
+      [6000, '#ffe0cc'],
     ],
-    scale: ['0', '×2', '×8'],
-    speeds: [0.08, 0.16, 0.4],
+    scale: ['0', '1.500', '6.000'],
+    speeds: [0.05, 0.1, 0.25],
     monthly: false,
     daily: true,
-    detailKey: (c) => (c.props.agrupacion === 'semana' ? '_week' : ''),
+    prepare: (c) => {
+      const gl = arr(c, 'gl');
+      const es = arr(c, 'es');
+      const pop = c.props.poboacion_2021 as number | null;
+      let total = 0;
+      const running = gl.map((g, i) => {
+        total += (g ?? 0) + (es[i] ?? 0);
+        return total;
+      });
+      c.props.acumulado = running;
+      c.value = running.map((t) => (pop ? Math.round((10000 * t) / pop) / 10 : null));
+    },
     vars: (c, i) => {
       const gl = arr(c, 'gl')[i] ?? null;
       const es = arr(c, 'es')[i] ?? null;
-      const views = gl === null || es === null ? null : gl + es;
-      const pop = c.props.poboacion_2021 as number | null;
       return {
-        gl,
-        es,
-        views,
-        pmil: views !== null && pop ? Math.round((10000 * views) / pop) / 10 : null,
+        views: gl === null || es === null ? null : gl + es,
+        total: arr(c, 'acumulado')[i] ?? null,
         value: c.value[i] ?? null,
       };
     },
     galicia: (list, i) => {
-      const gl = sumAt(list, 'gl', i);
-      const es = sumAt(list, 'es', i);
-      const peaks = list.filter((c) => (c.value[i] ?? 0) >= 200).length;
-      return { gl, es, views: gl + es, peaks };
+      const day = sumAt(list, 'gl', i) + sumAt(list, 'es', i);
+      return { views: day, total: sumAt(list, 'acumulado', i) };
     },
-    bar: (g) => g.views ?? 0,
-    columns: ['views', 'pmil'],
+    bar: (g) => g.total ?? 0,
+    columns: ['views', 'total'],
   },
   noticias: {
     slug: 'noticias',
@@ -221,39 +229,6 @@ export const SPECS: Record<string, Spec> = {
     },
     bar: (g) => g.articles ?? 0,
     columns: ['articles', 'tone'],
-  },
-  bluesky: {
-    slug: 'bluesky',
-    layer: 'bluesky-galego',
-    prefix: 'bsky',
-    // Weekly posts naming the city per 10,000 residents.
-    stops: [
-      [0, '#262a2b'],
-      [10, '#2f5361'],
-      [25, '#3f8a8c'],
-      [50, '#9cc69b'],
-      [100, '#f0d77b'],
-      [200, '#f08a4b'],
-    ],
-    scale: ['0', '50', '200'],
-    speeds: [0.4, 0.8, 1.6],
-    monthly: false,
-    weekly: true,
-    vars: (c, i) => ({
-      mentions: arr(c, 'mencions')[i] ?? null,
-      people: (c.props.poboacion_2021 as number | null) ?? null,
-      value: c.value[i] ?? null,
-    }),
-    galicia: (list, i) => {
-      const p = list[0]?.props ?? {};
-      return {
-        gl: (p.galego as Array<number | null> | undefined)?.[i] ?? null,
-        permil: (p.galego_permil as Array<number | null> | undefined)?.[i] ?? null,
-        mentions: sumAt(list, 'mencions', i),
-      };
-    },
-    bar: (g) => g.mentions ?? 0,
-    columns: ['mentions', 'people'],
   },
 };
 

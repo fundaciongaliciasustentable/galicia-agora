@@ -9,7 +9,7 @@ Algunhas fontes só dan os últimos días (Jetstream de Bluesky reproduce ~36 h)
 - O contexto do adaptador ten `readPrevious()`: a última saída boa publicada da propia capa (`data.geojson` + `meta.json` de `data-out/<id>/`), ou `null` se non hai. Non mira a idade: é o histórico da propia capa, non unha entrada doutra.
 - O histórico vive no ficheiro publicado (rama `data`), non nun ficheiro aparte: o que se garda é o mesmo que se publica e cumpre as mesmas regras (só agregados, limiares). Se un dato non se pode publicar (p. ex. menos de 10 mencións nunha semana), gárdase como `null`, non o número.
 - A política de publicación non cambia: se unha execución falla, consérvase o último ficheiro bo e o histórico con el.
-- Capas: `galicia-noticias` (GDELT, 9 concellos por execución horaria) e `bluesky-galego` (máscara de horas mostradas por día).
+- Capas: `galicia-noticias` (GDELT, 9 concellos por execución horaria) e `bluesky-galego` (retirada o 02/11/2026) (máscara de horas mostradas por día).
 
 ## Riscos
 - Se a rama `data` se perde, pérdese o histórico que a fonte xa non dá.

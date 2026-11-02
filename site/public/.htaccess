@@ -9,6 +9,8 @@
   RewriteEngine On
   RewriteCond %{HTTP_HOST} !^mapas\.galiciasustentable\.org$ [NC]
   RewriteRule ^(.*)$ https://mapas.galiciasustentable.org/$1 [R=301,L]
+  # Pages that were removed (their files stay on the server): back to the pulse index.
+  RewriteRule ^(es/)?pulso/bluesky(/.*)?$ /$1pulso/ [R=301,L]
 </IfModule>
 
 <IfModule mod_mime.c>

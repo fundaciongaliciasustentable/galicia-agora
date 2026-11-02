@@ -676,28 +676,24 @@ const STRINGS = {
   },
   wiki_title: { gl: 'Atención en Wikipedia', es: 'Atención en Wikipedia' },
   wiki_lede: {
-    gl: 'Cantas veces se abriu cada día o artigo de cada concello na Wikipedia en galego e en castelán, e os días en que se saíu do normal.',
-    es: 'Cuántas veces se abrió cada día el artículo de cada ayuntamiento en la Wikipedia en gallego y en castellano, y los días en que se salió de lo normal.',
+    gl: 'Cantas veces se abriu o artigo de cada concello na Wikipedia en galego e en castelán, sumadas día a día ao longo do último ano.',
+    es: 'Cuántas veces se abrió el artículo de cada ayuntamiento en la Wikipedia en gallego y en castellano, sumadas día a día a lo largo del último año.',
   },
   wiki_map_label: {
-    gl: 'Mapa dos concellos de Galicia coloreados polas vistas do seu artigo na Wikipedia cada día, comparadas co habitual. As cifras están no panel e na táboa.',
-    es: 'Mapa de los ayuntamientos de Galicia coloreados por las visitas de su artículo en la Wikipedia cada día, comparadas con lo habitual. Las cifras están en el panel y en la tabla.',
+    gl: 'Mapa dos concellos de Galicia coloreados polas vistas acumuladas do seu artigo na Wikipedia por cada 1.000 habitantes, desde o primeiro día ata o día mostrado. As cifras están no panel e na táboa.',
+    es: 'Mapa de los ayuntamientos de Galicia coloreados por las visitas acumuladas de su artículo en la Wikipedia por cada 1.000 habitantes, desde el primer día hasta el día mostrado. Las cifras están en el panel y en la tabla.',
   },
   wiki_legend: {
-    gl: 'Vistas do día fronte á mediana dos 28 días anteriores do mesmo concello: gris, un día normal; laranxa, o dobre ou máis.',
-    es: 'Visitas del día frente a la mediana de los 28 días anteriores del mismo ayuntamiento: gris, un día normal; naranja, el doble o más.',
+    gl: 'Vistas acumuladas por cada 1.000 habitantes desde o primeiro día: escuro, poucas; laranxa e claro, moitas.',
+    es: 'Visitas acumuladas por cada 1.000 habitantes desde el primer día: oscuro, pocas; naranja y claro, muchas.',
   },
   wiki_now: {
-    gl: 'Galicia: {views} vistas ({gl} en galego, {es} en castelán); {peaks} concellos co dobre do habitual ou máis.',
-    es: 'Galicia: {views} visitas ({gl} en gallego, {es} en castellano); {peaks} ayuntamientos con el doble de lo habitual o más.',
+    gl: 'Galicia: {total} vistas acumuladas; {views} ese día.',
+    es: 'Galicia: {total} visitas acumuladas; {views} ese día.',
   },
   wiki_detail: {
-    gl: '{name}, {when}: {views} vistas ({gl} gl, {es} es), {pmil} por cada 1.000 habitantes; índice {value} (100 = un día normal).',
-    es: '{name}, {when}: {views} visitas ({gl} gl, {es} es), {pmil} por cada 1.000 habitantes; índice {value} (100 = un día normal).',
-  },
-  wiki_detail_week: {
-    gl: '{name}, {when}: {views} vistas ({gl} gl, {es} es); índice da semana {value} (100 = unha semana normal), porque un día normal ten menos de 3 vistas.',
-    es: '{name}, {when}: {views} visitas ({gl} gl, {es} es); índice de la semana {value} (100 = una semana normal), porque un día normal tiene menos de 3 visitas.',
+    gl: '{name}, ata o {when}: {total} vistas acumuladas, {value} por cada 1.000 habitantes; {views} ese día.',
+    es: '{name}, hasta el {when}: {total} visitas acumuladas, {value} por cada 1.000 habitantes; {views} ese día.',
   },
   wiki_pick: {
     gl: 'Preme nun concello para ver as súas cifras.',
@@ -705,23 +701,32 @@ const STRINGS = {
   },
   wiki_speed_opt: { gl: 'Un día cada {s} s', es: 'Un día cada {s} s' },
   wiki_curve: {
-    gl: 'Vistas dos artigos dos 313 concellos, cada día',
-    es: 'Visitas de los artículos de los 313 ayuntamientos, cada día',
+    gl: 'Vistas acumuladas dos artigos dos 313 concellos',
+    es: 'Visitas acumuladas de los artículos de los 313 ayuntamientos',
   },
   wiki_curve_label: {
-    gl: 'Vistas diarias dos artigos dos concellos: {first} o {firstWhen}, {last} o {lastWhen}; máximo de {max} o {maxWhen}.',
-    es: 'Visitas diarias de los artículos de los ayuntamientos: {first} el {firstWhen}, {last} el {lastWhen}; máximo de {max} el {maxWhen}.',
+    gl: 'Vistas acumuladas dos artigos dos concellos: {first} o {firstWhen}, {last} o {lastWhen}.',
+    es: 'Visitas acumuladas de los artículos de los ayuntamientos: {first} el {firstWhen}, {last} el {lastWhen}.',
   },
   wiki_table_caption: {
-    gl: 'Os 15 concellos máis por riba e por baixo do seu habitual o {when}.',
-    es: 'Los 15 ayuntamientos más por encima y por debajo de su habitual el {when}.',
+    gl: 'Os 15 concellos con máis e con menos vistas acumuladas por habitante ata o {when}.',
+    es: 'Los 15 ayuntamientos con más y con menos visitas acumuladas por habitante hasta el {when}.',
   },
-  wiki_col_a: { gl: 'Vistas', es: 'Visitas' },
-  wiki_col_b: { gl: 'Por 1.000 hab.', es: 'Por 1.000 hab.' },
-  wiki_col_value: { gl: 'Índice', es: 'Índice' },
+  wiki_col_a: {
+    gl: 'Vistas ese día',
+    es: 'Visitas ese día',
+  },
+  wiki_col_b: {
+    gl: 'Acumuladas',
+    es: 'Acumuladas',
+  },
+  wiki_col_value: {
+    gl: 'Por 1.000 hab.',
+    es: 'Por 1.000 hab.',
+  },
   wiki_note: {
-    gl: 'Vistas de páxina da Wikimedia Foundation (CC0): as veces que alguén abriu o artigo do concello na Wikipedia en galego ou en castelán, sen os bots que Wikimedia detecta. Non di quen le nin desde onde: unha vista pode ser de calquera parte do mundo e unha persoa pode contar varias veces. Sobe con festas, sucesos, eleccións, lumes, partidos ou unha noticia que enlaza a páxina; tamén cando cambia a portada da Wikipedia ou un buscador. Algúns picos dun só día con centos de vistas nun concello pequeno son, seguramente, programas automáticos que Wikimedia non distinguiu dunha persoa. Conta só o título principal de cada artigo (as redireccións non), lido de Wikidata polo código INE. O índice compara o día coa mediana dos 28 días anteriores do mesmo concello; nos concellos con menos de 3 vistas nun día normal compárase a semana coas catro anteriores. As vistas por 1.000 habitantes usan o censo de 2021 (INE). Índice e taxa son cálculo propio. O último día é o de onte.',
-    es: 'Visitas de página de la Wikimedia Foundation (CC0): las veces que alguien abrió el artículo del ayuntamiento en la Wikipedia en gallego o en castellano, sin los bots que Wikimedia detecta. No dice quién lee ni desde dónde: una visita puede ser de cualquier parte del mundo y una persona puede contar varias veces. Sube con fiestas, sucesos, elecciones, incendios, partidos o una noticia que enlaza la página; también cuando cambia la portada de la Wikipedia o un buscador. Algunos picos de un solo día con cientos de visitas en un ayuntamiento pequeño son, seguramente, programas automáticos que Wikimedia no distinguió de una persona. Cuenta solo el título principal de cada artículo (las redirecciones no), leído de Wikidata por el código INE. El índice compara el día con la mediana de los 28 días anteriores del mismo ayuntamiento; en los ayuntamientos con menos de 3 visitas en un día normal se compara la semana con las cuatro anteriores. Las visitas por 1.000 habitantes usan el censo de 2021 (INE). Índice y tasa son cálculo propio. El último día es el de ayer.',
+    gl: 'Vistas de páxina da Wikimedia Foundation (CC0): as veces que alguén abriu o artigo do concello na Wikipedia en galego ou en castelán, sen os bots que Wikimedia detecta. Non di quen le nin desde onde: unha vista pode ser de calquera parte do mundo e unha persoa pode contar varias veces. Sobe con festas, sucesos, eleccións, lumes, partidos ou unha noticia que enlaza a páxina; tamén cando cambia a portada da Wikipedia ou un buscador. Algúns picos dun só día con centos de vistas nun concello pequeno son, seguramente, programas automáticos que Wikimedia non distinguiu dunha persoa. Conta só o título principal de cada artigo (as redireccións non), lido de Wikidata polo código INE. O mapa suma as vistas día a día desde o primeiro día da serie; as vistas por 1.000 habitantes usan o censo de 2021 (INE) e son cálculo propio. O último día é o de onte.',
+    es: 'Visitas de página de la Wikimedia Foundation (CC0): las veces que alguien abrió el artículo del ayuntamiento en la Wikipedia en gallego o en castellano, sin los bots que Wikimedia detecta. No dice quién lee ni desde dónde: una visita puede ser de cualquier parte del mundo y una persona puede contar varias veces. Sube con fiestas, sucesos, elecciones, incendios, partidos o una noticia que enlaza la página; también cuando cambia la portada de la Wikipedia o un buscador. Algunos picos de un solo día con cientos de visitas en un ayuntamiento pequeño son, seguramente, programas automáticos que Wikimedia no distinguió de una persona. Cuenta solo el título principal de cada artículo (las redirecciones no), leído de Wikidata por el código INE. El mapa suma las visitas día a día desde el primer día de la serie; las visitas por 1.000 habitantes usan el censo de 2021 (INE) y son cálculo propio. El último día es el de ayer.',
   },
   wiki_missing: {
     gl: 'Aínda non están publicadas as vistas dos artigos dos concellos.',
@@ -779,55 +784,6 @@ const STRINGS = {
   news_missing: {
     gl: 'Aínda non están publicados os artigos por concello.',
     es: 'Aún no están publicados los artículos por ayuntamiento.',
-  },
-  bsky_title: { gl: 'Bluesky en galego', es: 'Bluesky en gallego' },
-  bsky_lede: {
-    gl: 'Cantas publicacións en galego aparecen en Bluesky cada semana, e cantas nomean cada unha das sete cidades.',
-    es: 'Cuántas publicaciones en gallego aparecen en Bluesky cada semana, y cuántas nombran cada una de las siete ciudades.',
-  },
-  bsky_map_label: {
-    gl: 'Mapa das sete cidades galegas coloreadas polas publicacións de Bluesky que as nomean cada semana, por cada 10.000 habitantes. As cifras están no panel e na táboa.',
-    es: 'Mapa de las siete ciudades gallegas coloreadas por las publicaciones de Bluesky que las nombran cada semana, por cada 10.000 habitantes. Las cifras están en el panel y en la tabla.',
-  },
-  bsky_legend: {
-    gl: 'Publicacións da semana que nomean a cidade, por cada 10.000 habitantes. O lugar sae do texto, non de onde está quen escribe. Só as sete cidades.',
-    es: 'Publicaciones de la semana que nombran la ciudad, por cada 10.000 habitantes. El lugar sale del texto, no de dónde está quien escribe. Solo las siete ciudades.',
-  },
-  bsky_now: {
-    gl: 'Mencións das sete cidades: {mentions}. En galego: {gl} publicacións estimadas na semana, {permil} de cada 1.000 en Bluesky (– se a mostra non chega á metade).',
-    es: 'Menciones de las siete ciudades: {mentions}. En gallego: {gl} publicaciones estimadas en la semana, {permil} de cada 1.000 en Bluesky (– si la muestra no llega a la mitad).',
-  },
-  bsky_detail: {
-    gl: '{name}, {when}: {mentions} publicacións que a nomean, {value} por cada 10.000 habitantes.',
-    es: '{name}, {when}: {mentions} publicaciones que la nombran, {value} por cada 10.000 habitantes.',
-  },
-  bsky_pick: {
-    gl: 'Preme nunha das sete cidades para ver as súas cifras.',
-    es: 'Pulsa en una de las siete ciudades para ver sus cifras.',
-  },
-  bsky_speed_opt: { gl: 'Unha semana cada {s} s', es: 'Una semana cada {s} s' },
-  bsky_curve: {
-    gl: 'Publicacións que nomean as sete cidades, cada semana',
-    es: 'Publicaciones que nombran las siete ciudades, cada semana',
-  },
-  bsky_curve_label: {
-    gl: 'Publicacións semanais que nomean as sete cidades: {first} na {firstWhen}, {last} na {lastWhen}; máximo de {max} na {maxWhen}.',
-    es: 'Publicaciones semanales que nombran las siete ciudades: {first} en la {firstWhen}, {last} en la {lastWhen}; máximo de {max} en la {maxWhen}.',
-  },
-  bsky_table_caption: {
-    gl: 'As sete cidades na {when}.',
-    es: 'Las siete ciudades en la {when}.',
-  },
-  bsky_col_a: { gl: 'Mencións', es: 'Menciones' },
-  bsky_col_b: { gl: 'Habitantes', es: 'Habitantes' },
-  bsky_col_value: { gl: 'Por 10.000 hab.', es: 'Por 10.000 hab.' },
-  bsky_note: {
-    gl: 'Dúas contas feitas sobre Bluesky, sen gardar ningún texto, conta nin ligazón: cada publicación lese, cóntase e descártase. Galego: a lingua é a que marca a aplicación de quen publica (autodeclarada, e moitas apps poñen a do teléfono), non a que se le no texto. Contamos unha mostra de 6 minutos de cada hora no fluxo público de Bluesky (Jetstream) e multiplicamos ata a semana; só se publica se se mostrou polo menos a metade do previsto, e a serie empeza o 1 de novembro de 2026 porque o fluxo só garda día e medio. Cidades: o total de publicacións en calquera lingua cuxo texto contén o nome (Coruña, Ferrol, «Santiago de Compostela», Lugo, Ourense, Pontevedra, Vigo), segundo o buscador de Bluesky, semana a semana desde hai un ano. Bluesky non ten xeolocalización: é de que lugares se fala, non onde se publica. Lugo e Coruña tamén son apelidos, nomes de clubs e, Lugo, unha vila de Italia; «Santiago» só se conta xunto con «de Compostela». Semanas con menos de 10 mencións non se publican. Taxas e estimacións: cálculo propio.',
-    es: 'Dos cuentas hechas sobre Bluesky, sin guardar ningún texto, cuenta ni enlace: cada publicación se lee, se cuenta y se descarta. Gallego: la lengua es la que marca la aplicación de quien publica (autodeclarada, y muchas apps ponen la del teléfono), no la que se lee en el texto. Contamos una muestra de 6 minutos de cada hora en el flujo público de Bluesky (Jetstream) y multiplicamos hasta la semana; solo se publica si se muestreó al menos la mitad de lo previsto, y la serie empieza el 1 de noviembre de 2026 porque el flujo solo guarda día y medio. Ciudades: el total de publicaciones en cualquier lengua cuyo texto contiene el nombre (Coruña, Ferrol, «Santiago de Compostela», Lugo, Ourense, Pontevedra, Vigo), según el buscador de Bluesky, semana a semana desde hace un año. Bluesky no tiene geolocalización: es de qué lugares se habla, no dónde se publica. Lugo y Coruña también son apellidos, nombres de clubes y, Lugo, una villa de Italia; «Santiago» solo se cuenta junto con «de Compostela». Las semanas con menos de 10 menciones no se publican. Tasas y estimaciones: cálculo propio.',
-  },
-  bsky_missing: {
-    gl: 'Aínda non están publicadas as contas de Bluesky.',
-    es: 'Aún no están publicadas las cuentas de Bluesky.',
   },
   air_title: { gl: 'O aire hora a hora', es: 'El aire hora a hora' },
   air_lede: {

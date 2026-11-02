@@ -73,6 +73,7 @@ export async function start(): Promise<void> {
         props: p,
         value: p.valor as Array<number | null>,
       }));
+      if (spec.prepare) for (const c of concellos) spec.prepare(c);
       const p0 = fc.features[0]?.properties ?? {};
       steps =
         (p0.periodos as string[] | undefined) ??
