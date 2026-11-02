@@ -1,17 +1,21 @@
 {
   "layer_id": "tren",
-  "published_at": "2026-11-02T06:42:43.000Z",
-  "fetched_at": "2026-11-02T07:42:51.689Z",
-  "last_success_at": "2026-11-02T07:42:51.689Z",
+  "published_at": "2026-11-02T07:00:57.000Z",
+  "fetched_at": "2026-11-02T08:01:04.032Z",
+  "last_success_at": "2026-11-02T08:01:04.032Z",
   "status": "fresh",
   "consecutive_failures": 0,
-  "feature_count": 19,
+  "feature_count": 16,
   "source_url": "https://gtfsrt.renfe.com/vehicle_positions_LD.json",
   "licence": "CC-BY-4.0",
   "attribution": "Origen de los datos: Renfe Operadora",
-  "checksum": "sha256:438a8f791d66649751dad48ab5a95e8d8f2d42f5d7e07ae45d3932cefa19ad94",
+  "checksum": "sha256:70f74c6b733c6ba75b78242ce4ef192e683a61252e9dec13193ab0fb24e53d96",
   "last_error": null,
   "history": [
+    {
+      "at": "2026-11-02T08:01:04.032Z",
+      "ok": true
+    },
     {
       "at": "2026-11-02T07:42:51.689Z",
       "ok": true
