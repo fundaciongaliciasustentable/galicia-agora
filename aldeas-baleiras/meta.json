@@ -1,0 +1,20 @@
+{
+  "layer_id": "aldeas-baleiras",
+  "published_at": "2025-01-01T00:00:00Z",
+  "fetched_at": "2026-11-03T17:41:08.541Z",
+  "last_success_at": "2026-11-03T17:41:08.541Z",
+  "status": "fresh",
+  "consecutive_failures": 0,
+  "feature_count": 30518,
+  "source_url": "https://www.ine.es/nomen_files/nacional/es/Nacional_2025.zip",
+  "licence": "CC-BY-SA-4.0",
+  "attribution": "Elaboración propia con datos extraídos del sitio web del INE: www.ine.es (Nomenclátor: población del Padrón Continuo por unidad poblacional, 2000–2025). Posicións: © Instituto de Estudos do Territorio. Xunta de Galicia (PBA). Cálculos: Fundación Galicia Sustentable.",
+  "checksum": "sha256:375397b122dc2b4df8dc856a1a79e42dd577e246ab1ea98e006154f37fc85de1",
+  "last_error": null,
+  "history": [
+    {
+      "at": "2026-11-03T17:41:08.541Z",
+      "ok": true
+    }
+  ]
+}
