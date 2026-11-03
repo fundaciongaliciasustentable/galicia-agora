@@ -70,8 +70,8 @@ export function fill(s: string, vars: Record<string, string | number>): string {
   return Object.entries(vars).reduce((acc, [k, v]) => acc.replaceAll(`{${k}}`, String(v)), s);
 }
 
-export async function loadStyle(): Promise<StyleSpecification> {
-  const style = (await (await fetch(asset('style-dark.json'))).json()) as StyleSpecification;
+export async function loadStyle(flavor: 'dark' | 'light' = 'dark'): Promise<StyleSpecification> {
+  const style = (await (await fetch(asset(`style-${flavor}.json`))).json()) as StyleSpecification;
   const origin = window.location.origin;
   // MapLibre needs absolute URLs for glyphs, sprites and pmtiles sources.
   if (style.glyphs) style.glyphs = origin + asset(style.glyphs);

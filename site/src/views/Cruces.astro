@@ -1,0 +1,293 @@
+---
+// Cruces: a bivariate map of the concellos. Two indicators from any published layer joined to
+// the concellos, three equal groups (terciles) each, nine colours. The same figures are given as
+// text: the picked cell's concellos, the picked concello's values and a table.
+import { dictionary, type Lang, t } from '../i18n';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const PRESETS = [
+  'old_shrinking',
+  'income_age',
+  'empty_homes',
+  'far_old',
+  'births_foreign',
+  'tourist_homes',
+] as const;
+---
+
+<div class="cx-app" data-lang={lang} data-dict={JSON.stringify(dictionary(lang))}>
+  <div class="cx-map" role="region" aria-label={t(lang, 'cross_map_label')}></div>
+
+  <section class="cx-panel" id="contido">
+    <h1>{t(lang, 'cross_title')}</h1>
+    <p class="cx-lede">{t(lang, 'cross_lede')}</p>
+
+    <h2>{t(lang, 'cross_presets')}</h2>
+    <div class="cx-presets" role="group" aria-label={t(lang, 'cross_presets')}>
+      {PRESETS.map((p) => <button type="button" data-preset={p} aria-pressed="false">{t(lang, `cross_p_${p}`)}</button>)}
+    </div>
+
+    <div class="cx-axes">
+      <label class="cx-axis cx-axis-a">
+        <span>{t(lang, 'cross_axis_a')}</span>
+        <select class="cx-sel-a"></select>
+      </label>
+      <button type="button" class="cx-inv cx-inv-a" aria-pressed="false">{t(lang, 'cross_invert')}</button>
+      <label class="cx-axis cx-axis-b">
+        <span>{t(lang, 'cross_axis_b')}</span>
+        <select class="cx-sel-b"></select>
+      </label>
+      <button type="button" class="cx-inv cx-inv-b" aria-pressed="false">{t(lang, 'cross_invert')}</button>
+    </div>
+
+    <div class="cx-legend">
+      <div class="cx-grid" role="group"></div>
+      <span class="cx-lab-a"></span>
+      <span class="cx-lab-b"></span>
+    </div>
+    <p class="cx-cuts"></p>
+    <div class="cx-cell" aria-live="polite"></div>
+    <div class="cx-detail" aria-live="polite"></div>
+    <p class="cx-status" role="status">{t(lang, 'loading')}</p>
+
+    <details class="cx-table">
+      <summary>{t(lang, 'cross_table')}</summary>
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">{t(lang, 'fire_col_concello')}</th>
+            <th scope="col" class="cx-th-a"></th>
+            <th scope="col" class="cx-th-b"></th>
+            <th scope="col">{t(lang, 'cross_col_cell')}</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </details>
+    <details class="cx-about">
+      <summary>{t(lang, 'pulse_about')}</summary>
+      <p>{t(lang, 'cross_note')}</p>
+      <p class="cx-sources"></p>
+    </details>
+  </section>
+</div>
+
+<style is:global>
+  .cx-app {
+    position: relative;
+    height: calc(100dvh - var(--ga-head, 52px));
+    overflow: hidden;
+    background: #f4f2ec;
+    color: #222;
+  }
+  .cx-map {
+    position: absolute;
+    inset: 0;
+    /* MapLibre makes the container position: relative; the size must not depend on inset. */
+    width: 100%;
+    height: 100%;
+  }
+  .cx-panel {
+    position: absolute;
+    z-index: 2;
+    top: 16px;
+    left: 16px;
+    bottom: 16px;
+    width: min(390px, calc(100% - 32px));
+    overflow-y: auto;
+    padding: 16px 18px;
+    border-radius: var(--gs-radius-card);
+    background: rgba(251, 250, 246, 0.94);
+    backdrop-filter: blur(6px);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
+  }
+  .cx-panel h1 {
+    margin: 0;
+    color: #222;
+    font-size: var(--gs-texto-xl);
+    line-height: 1.15;
+  }
+  .cx-panel h2 {
+    margin: 14px 0 6px;
+    font-size: var(--gs-texto-xs);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #777;
+  }
+  .cx-lede,
+  .cx-cuts,
+  .cx-about,
+  .cx-table {
+    font-size: var(--gs-texto-sm);
+    color: #555;
+    margin: 6px 0 0;
+  }
+  .cx-presets {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .cx-presets button,
+  .cx-inv {
+    font: inherit;
+    font-size: var(--gs-texto-sm);
+    border: 1px solid #c9c6bc;
+    border-radius: 999px;
+    padding: 3px 11px;
+    background: transparent;
+    color: #222;
+    cursor: pointer;
+  }
+  .cx-presets button[aria-pressed='true'],
+  .cx-inv[aria-pressed='true'] {
+    background: #222;
+    border-color: #222;
+    color: #fff;
+  }
+  .cx-axes {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 8px;
+    align-items: end;
+    margin-top: 14px;
+  }
+  .cx-axis span {
+    display: block;
+    font-size: var(--gs-texto-xs);
+    color: #777;
+  }
+  .cx-axis select {
+    width: 100%;
+    font: inherit;
+    font-size: var(--gs-texto-sm);
+    padding: 4px 6px;
+    border: 1px solid #c9c6bc;
+    border-radius: var(--gs-radius);
+    background: #fff;
+    color: #222;
+  }
+  .cx-inv {
+    font-size: var(--gs-texto-xs);
+    padding: 3px 8px;
+  }
+  .cx-legend {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto;
+    gap: 4px 8px;
+    margin-top: 16px;
+    align-items: center;
+  }
+  .cx-grid {
+    grid-column: 2;
+    grid-row: 1;
+    display: grid;
+    grid-template-columns: repeat(3, 52px);
+    grid-template-rows: repeat(3, 40px);
+    gap: 2px;
+  }
+  .cx-grid button {
+    border: 2px solid transparent;
+    border-radius: 2px;
+    font: inherit;
+    font-size: var(--gs-texto-xs);
+    font-variant-numeric: tabular-nums;
+    color: #222;
+    cursor: pointer;
+  }
+  .cx-grid button.is-dark {
+    color: #fff;
+  }
+  .cx-grid button[aria-pressed='true'] {
+    border-color: #111;
+    outline: 2px solid #fff;
+    outline-offset: -4px;
+  }
+  .cx-lab-a {
+    grid-column: 1;
+    grid-row: 1;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-size: var(--gs-texto-xs);
+    color: #555;
+    max-height: 130px;
+  }
+  .cx-lab-b {
+    grid-column: 2;
+    grid-row: 2;
+    font-size: var(--gs-texto-xs);
+    color: #555;
+  }
+  .cx-cell,
+  .cx-detail {
+    margin-top: 10px;
+    font-size: var(--gs-texto-sm);
+  }
+  .cx-cell:empty,
+  .cx-detail:empty {
+    display: none;
+  }
+  .cx-cell ul {
+    margin: 4px 0 0;
+    padding-left: 18px;
+    max-height: 10em;
+    overflow-y: auto;
+  }
+  .cx-status {
+    margin: 6px 0 0;
+    font-size: var(--gs-texto-sm);
+    color: #a0661c;
+  }
+  .cx-status:empty {
+    display: none;
+  }
+  .cx-about summary,
+  .cx-table summary {
+    cursor: pointer;
+    margin-top: 8px;
+  }
+  .cx-sources {
+    font-size: var(--gs-texto-xs);
+  }
+  .cx-table table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 6px;
+    font-variant-numeric: tabular-nums;
+    font-size: var(--gs-texto-xs);
+    color: #222;
+  }
+  .cx-table th,
+  .cx-table td {
+    padding: 2px 4px;
+    border-bottom: 1px solid #e3e0d7;
+    text-align: right;
+  }
+  .cx-table th:first-child,
+  .cx-table td:first-child {
+    text-align: left;
+  }
+  @media (max-width: 700px) {
+    .cx-panel {
+      top: auto;
+      bottom: 8px;
+      left: 8px;
+      right: 8px;
+      width: auto;
+      max-height: 50%;
+      padding: 12px 14px;
+    }
+    .cx-lede {
+      display: none;
+    }
+  }
+</style>
+
+<script>
+  import { start } from '../cruces/cruces';
+  start();
+</script>
