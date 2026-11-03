@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "galicia-linas feature properties",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "orde",
+    "filas",
+    "columnas",
+    "escala",
+    "parella",
+    "periodo",
+    "total",
+    "unidade",
+    "fonte",
+    "perfis"
+  ],
+  "properties": {
+    "id": { "type": "string", "pattern": "^[a-z0-9_]+$" },
+    "orde": { "type": "integer", "minimum": 0 },
+    "filas": { "type": "integer", "minimum": 1 },
+    "columnas": { "type": "integer", "minimum": 1 },
+    "escala": { "enum": ["raiz", "lineal"] },
+    "parella": { "type": ["string", "null"] },
+    "periodo": { "type": "string" },
+    "total": { "type": ["number", "null"], "minimum": 0 },
+    "unidade": { "type": ["string", "null"] },
+    "fonte": { "type": "string", "minLength": 1 },
+    "perfis": { "type": "string", "pattern": "^[A-Za-z0-9+/]+=*$" }
+  }
+}

@@ -1,0 +1,60 @@
+id: galicia-linas
+title:
+  gl: Galicia en liñas (perfís para carteis)
+  es: Galicia en líneas (perfiles para carteles)
+theme: territorio
+operator:
+  name: Fundación Galicia Sustentable (cálculo propio con datos do IGN, o IGE, o INE, MeteoGalicia e Copernicus EFFIS)
+  url: https://mapas.galiciasustentable.org
+source_url: https://servicios.idee.es/wcs-inspire/mdt?SERVICE=WCS&VERSION=2.0.1&REQUEST=GetCoverage&COVERAGEID=Elevacion4258_200&SUBSET=Lat(41.78,43.82)&SUBSET=Long(-9.45,-6.65)&FORMAT=ArcGrid
+licence:
+  spdx: CC-BY-SA-4.0
+  text_url: https://creativecommons.org/licenses/by-sa/4.0/deed.gl
+  quote: "Creative Commons BY SA 4.0"
+  verified_at: 2026-11-03
+  odbl_compatible: doubt
+  collection: cc-by-sa-4.0
+  notes: >-
+    Capa derivada publicada baixo CC BY-SA 4.0 porque usa capas desa colección
+    (galicia-deformada, entidades-poboacion, raios-ano). Relevo: Modelo Dixital do Terreno de
+    200 m do IGN (PNOA-LiDAR) polo WCS INSPIRE, licenza «CC BY 4.0 scne.es» declarada nas
+    AccessConstraints do servizo (comprobado o 03/11/2026), recortado co contorno de Galicia do
+    IGN (CC BY 4.0). Lumes: Copernicus EFFIS (historial-queimados, CC BY 4.0). Cálculo propio:
+    os valores de cada concello repártense entre os seus lugares segundo a poboación do
+    Nomenclátor (só os lugares con cifra; sen ningún, no centroide), suavízanse cunha
+    gaussiana de 2,2 km (3 km nos raios, 2 km nos lumes) e móstranse en raíz cadrada; o
+    relevo, lineal, media 5 × 5 celas, e fóra de Galicia cae a cero en 7 km. Repartir o PIB e
+    a poboación de 1950 segundo a poboación de hoxe dos lugares é unha aproximación para un
+    cartel, non un dato.
+attribution: >-
+  Carteis e cálculos: Fundación Galicia Sustentable. Relevo e contorno: © Instituto Geográfico
+  Nacional (MDT200, PNOA-LiDAR; CC BY 4.0 scne.es). Poboación, idades e PIB: Fonte: IGE:
+  https://www.ige.gal; censos: elaboración propia con datos extraídos del sitio web del INE:
+  www.ine.es. Lugares: © Instituto de Estudos do Territorio. Xunta de Galicia. Raios:
+  MeteoGalicia (Xunta de Galicia). Lumes: © Unión Europea, Copernicus EFFIS (JRC).
+update_frequency:
+  declared: P30D
+geometry: none
+output: geojson
+auth:
+  required: false
+privacy_notes: Perfís suavizados de agregados; ningún dato persoal.
+stale_after: P120D
+ingest:
+  every: P30D
+depends_on:
+  - galicia-deformada
+  - entidades-poboacion
+  - raios-ano
+  - historial-queimados
+# Lives on its own page (/linas/); the main map does not draw it (SERIES_LAYERS).
+style:
+  kind: fill
+  label_field: id
+table:
+  fields:
+    - id
+    - periodo
+    - total
+    - unidade
+    - fonte
