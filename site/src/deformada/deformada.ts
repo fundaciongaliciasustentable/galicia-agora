@@ -5,6 +5,11 @@
 // A pair of variables with the same unit (births and deaths, young and old, two censuses) is
 // drawn at the same scale: each map's total area follows Galicia's total, so the smaller one
 // shrinks. Other pairs fill the same area and compare shares only.
+//
+// Births, deaths and the two age groups are shown by default as a share of the population:
+// the shapes stay those of the population cartogram and the colour gives the rate (births and
+// deaths per thousand inhabitants, ages in %). A rate cannot be an area, since rates do not add
+// up. The counts are one click away.
 
 import { asset } from '../paths.ts';
 
@@ -29,6 +34,39 @@ const SAME_SCALE = new Set([
   'menores_20~maiores_65',
   'poboacion_1950~poboacion_2021',
 ]);
+
+/** Variables that can be shown as a rate over the population. */
+export const RATE_VARS = new Set<Var>(['nacementos', 'defuncions', 'menores_20', 'maiores_65']);
+/** Rate per this many inhabitants (births and deaths per thousand, ages in %). */
+const PER: Partial<Record<Var, number>> = {
+  nacementos: 1000,
+  defuncions: 1000,
+  menores_20: 100,
+  maiores_65: 100,
+};
+/** Rates sharing one colour scale. */
+const RATE_GROUP: Partial<Record<Var, Var[]>> = {
+  nacementos: ['nacementos', 'defuncions'],
+  defuncions: ['nacementos', 'defuncions'],
+  menores_20: ['menores_20', 'maiores_65'],
+  maiores_65: ['menores_20', 'maiores_65'],
+};
+/** Dark to light, readable on the dark background. */
+export const RAMP = ['#1d3b4f', '#245a6b', '#2e7d7a', '#5b9e6e', '#9dbb5c', '#d9c94f', '#ffe066'];
+
+const hexRgb = (h: string) => [1, 3, 5].map((i) => Number.parseInt(h.slice(i, i + 2), 16));
+const rgbHex = (c: number[]) =>
+  `#${c.map((v) => Math.round(v).toString(16).padStart(2, '0')).join('')}`;
+export function mix(a: string, b: string, t: number): string {
+  const [x, y] = [hexRgb(a), hexRgb(b)];
+  return rgbHex(x.map((v, i) => v + ((y[i] as number) - v) * t));
+}
+/** Colour of t in [0, 1] along RAMP. */
+export function ramp(t: number): string {
+  const x = Math.max(0, Math.min(1, t)) * (RAMP.length - 1);
+  const i = Math.min(RAMP.length - 2, Math.floor(x));
+  return mix(RAMP[i] as string, RAMP[i + 1] as string, x - i);
+}
 
 export const PROVINCE_COLOURS: Record<string, string> = {
   'A Coruña': '#e8925a',
@@ -92,6 +130,10 @@ export async function start(): Promise<void> {
   const caption = q<HTMLElement>('.df-table caption');
   const sources = q<HTMLElement>('.df-sources');
   const hint = detail.innerHTML;
+  const modeBox = q<HTMLElement>('.df-mode');
+  const legendProvinces = q<HTMLElement>('.df-legend');
+  const legendRamp = q<HTMLElement>('.df-ramp');
+  const shareHead = q<HTMLElement>('.df-col-share');
 
   // ---- Data -------------------------------------------------------------------------------
   const LAYER = 'galicia-deformada';
@@ -137,6 +179,26 @@ export async function start(): Promise<void> {
   const totals = Object.fromEntries(
     VARS.map((v) => [v, concellos.reduce((s, c) => s + (c.values[v] ?? 0), 0)]),
   ) as Record<Var, number>;
+
+  /** Rate of a concello (null without data). */
+  const rateOf = (c: Concello, v: Var) => {
+    const x = c.values[v];
+    const pop = c.values.poboacion;
+    return x === null || !pop ? null : ((PER[v] ?? 100) * x) / pop;
+  };
+  const galiciaRate = (v: Var) => ((PER[v] ?? 100) * totals[v]) / totals.poboacion;
+  /** Colour domain per rate group: 2nd to 98th percentile of both variables. */
+  const domain = new Map<Var, [number, number]>();
+  for (const v of RATE_VARS) {
+    const all = (RATE_GROUP[v] ?? [v])
+      .flatMap((w) => concellos.map((c) => rateOf(c, w)))
+      .filter((x): x is number => x !== null)
+      .sort((a, b) => a - b);
+    domain.set(v, [
+      all[Math.floor(all.length * 0.02)] ?? 0,
+      all[Math.floor(all.length * 0.98)] ?? 1,
+    ]);
+  }
 
   // Frame: the union of every map at full size, so a shrunk map stays in place.
   let [x0, y0, x1, y1] = [Infinity, Infinity, -Infinity, -Infinity];
@@ -187,13 +249,32 @@ export async function start(): Promise<void> {
 
   /** Linear scale factor of a variable inside a pair (1 unless the pair shares a scale). */
   const scaleOf = (v: Var, pair: [Var, Var] | null) => {
-    if (!pair || !SAME_SCALE.has(pair.join('~'))) return 1;
+    if (!pair || !SAME_SCALE.has(pair.join('~')) || asRate(v)) return 1;
     const big = Math.max(totals[pair[0]], totals[pair[1]]);
     return Math.sqrt(totals[v] / big);
   };
 
-  /** Draw every concello between `a` (t = 0) and `b` (t = 1). */
-  function draw(a: Var, b: Var, t: number, sa: number, sb: number) {
+  let mode: 'rate' | 'count' = 'rate';
+  const asRate = (v: Var) => mode === 'rate' && RATE_VARS.has(v);
+  /** Shape drawn for a variable: the population cartogram when it is shown as a rate. */
+  const shapeOf = (v: Var): Var => (asRate(v) ? 'poboacion' : v);
+  const fillOf = (c: Concello, v: Var): string => {
+    if (!asRate(v)) return PROVINCE_COLOURS[c.province] ?? '#888';
+    const r = rateOf(c, v);
+    const [lo, hi] = domain.get(v) ?? [0, 1];
+    return r === null ? '#3a3b35' : ramp((r - lo) / (hi - lo || 1));
+  };
+
+  /** Draw every concello between `va` (t = 0) and `vb` (t = 1), shapes and colours. */
+  function draw(va: Var, vb: Var, t: number, sa: number, sb: number) {
+    concellos.forEach((c, u) => {
+      pathEls[u]?.setAttribute('fill', mix(fillOf(c, va), fillOf(c, vb), t));
+    });
+    drawShapes(shapeOf(va), shapeOf(vb), t, sa, sb);
+  }
+
+  /** Shapes only, between the cartograms of `a` and `b`. */
+  function drawShapes(a: Var, b: Var, t: number, sa: number, sb: number) {
     const [ax, ay] = centre[a];
     const [bx, by] = centre[b];
     concellos.forEach((c, u) => {
@@ -227,12 +308,14 @@ export async function start(): Promise<void> {
   let playing = !reducedMotion.matches;
   // Shown state: from `shown` towards `target`.
   let shown: Var = current;
+  if (params.get('n') === '1') mode = 'count';
   let shownScale = scaleOf(current, pair);
   let anim: number | null = null;
   let loopTimer: number | null = null;
 
   const writeHash = () => {
-    history.replaceState(null, '', pair ? `#p=${pair.join('~')}` : `#v=${current}`);
+    const n = mode === 'count' ? '&n=1' : '';
+    history.replaceState(null, '', pair ? `#p=${pair.join('~')}${n}` : `#v=${current}${n}`);
   };
 
   function morphTo(v: Var, done?: () => void) {
@@ -242,7 +325,7 @@ export async function start(): Promise<void> {
     const toScale = scaleOf(v, pair);
     current = v;
     describe();
-    if (reducedMotion.matches || (from === v && fromScale === toScale)) {
+    if (reducedMotion.matches) {
       shown = v;
       shownScale = toScale;
       draw(v, v, 0, toScale, toScale);
@@ -286,10 +369,37 @@ export async function start(): Promise<void> {
           ? tr(`deform_total_${v}`, { v: nf.format(x) })
           : tr('deform_total_people', { v: nf.format(x) });
 
+  const fmtRate = (v: Var, x: number) =>
+    tr(PER[v] === 1000 ? 'deform_rate_permil' : 'deform_rate_pct', { v: pf.format(x) });
+
   function describe() {
     heading.textContent = tr(`deform_heading_${current}`, { year: periods[current] ?? '' });
-    totalEl.textContent = `Galicia: ${fmtValue(current, totals[current])}`;
-    if (pair) {
+    totalEl.textContent = asRate(current)
+      ? `Galicia: ${fmtRate(current, galiciaRate(current))}`
+      : `Galicia: ${fmtValue(current, totals[current])}`;
+    const rateVisible = pair ? pair.some((v) => RATE_VARS.has(v)) : RATE_VARS.has(current);
+    modeBox.hidden = !rateVisible;
+    for (const b of modeBox.querySelectorAll<HTMLButtonElement>('[data-mode]')) {
+      b.setAttribute('aria-pressed', String(b.dataset.mode === mode));
+    }
+    legendProvinces.hidden = asRate(current);
+    legendRamp.hidden = !asRate(current);
+    if (asRate(current)) {
+      const [lo, hi] = domain.get(current) ?? [0, 1];
+      legendRamp.querySelector('.df-ramp-lo')?.replaceChildren(pf.format(lo));
+      legendRamp.querySelector('.df-ramp-hi')?.replaceChildren(pf.format(hi));
+      legendRamp
+        .querySelector('.df-ramp-unit')
+        ?.replaceChildren(tr(PER[current] === 1000 ? 'deform_ramp_permil' : 'deform_ramp_pct'));
+    }
+    if (pair && pair.every(asRate)) {
+      scaleEl.textContent = `${tr('deform_rate_note')} ${tr(`deform_rate_ratio_${pair[0]}`, {
+        a: pf.format(galiciaRate(pair[0])),
+        b: pf.format(galiciaRate(pair[1])),
+      })}`;
+    } else if (asRate(current)) {
+      scaleEl.textContent = tr('deform_rate_note');
+    } else if (pair) {
       const same = SAME_SCALE.has(pair.join('~'));
       const ratio = same ? pf2.format((100 * totals[pair[0]]) / totals[pair[1]]) : '';
       scaleEl.textContent = `${tr(same ? 'deform_scale_same' : 'deform_scale_own')} ${tr(`deform_ratio_${pair[0]}`, { r: ratio })}`;
@@ -317,22 +427,38 @@ export async function start(): Promise<void> {
     const value = c.values[current];
     const strong = document.createElement('strong');
     strong.textContent = c.name;
+    const rate = rateOf(c, current);
     const text =
       value === null
         ? tr('deform_detail_none')
-        : tr('deform_detail', {
-            value: fmtValue(current, value),
-            share: pf.format((100 * value) / totals[current]),
-            area: pf.format((100 * (c.values.superficie ?? 0)) / totals.superficie),
-          });
+        : asRate(current) && rate !== null
+          ? tr('deform_detail_rate', {
+              value: fmtValue(current, value),
+              rate: fmtRate(current, rate),
+              galicia: fmtRate(current, galiciaRate(current)),
+            })
+          : tr('deform_detail', {
+              value: fmtValue(current, value),
+              share: pf.format((100 * value) / totals[current]),
+              area: pf.format((100 * (c.values.superficie ?? 0)) / totals.superficie),
+            });
     detail.replaceChildren(strong, document.createElement('br'), text);
   }
 
   function fillTable() {
     caption.textContent = heading.textContent;
+    const byRate = asRate(current);
+    shareHead.textContent = tr(
+      byRate
+        ? PER[current] === 1000
+          ? 'deform_ramp_permil'
+          : 'deform_ramp_pct'
+        : 'deform_col_share',
+    );
+    const key = (c: Concello) => (byRate ? (rateOf(c, current) ?? -1) : (c.values[current] ?? 0));
     const rows = [...concellos]
       .filter((c) => c.values[current] !== null)
-      .sort((a, b) => (b.values[current] ?? 0) - (a.values[current] ?? 0));
+      .sort((a, b) => key(b) - key(a));
     tbody.replaceChildren(
       ...rows.map((c) => {
         const tr0 = document.createElement('tr');
@@ -340,7 +466,7 @@ export async function start(): Promise<void> {
         const cells = [
           c.name,
           current === 'pib' ? nf.format(v / 1000) : nf.format(v),
-          pf.format((100 * v) / totals[current]),
+          byRate ? pf.format(rateOf(c, current) ?? 0) : pf.format((100 * v) / totals[current]),
           pf.format((100 * (c.values.superficie ?? 0)) / totals.superficie),
         ];
         cells.forEach((text, i) => {
@@ -369,6 +495,40 @@ export async function start(): Promise<void> {
       pair = (b.dataset.pair ?? '').split('~') as [Var, Var];
       playing = !reducedMotion.matches;
       morphTo(pair[0], loop);
+      writeHash();
+    });
+  }
+  for (const b of modeBox.querySelectorAll<HTMLButtonElement>('[data-mode]')) {
+    b.addEventListener('click', () => {
+      if (b.dataset.mode === mode) return;
+      const before = shown;
+      const beforeScale = shownScale;
+      // Morph from how the shown variable looks now to how it looks in the other mode.
+      const a = shapeOf(before);
+      const fromFills = concellos.map((c) => fillOf(c, before));
+      mode = b.dataset.mode === 'count' ? 'count' : 'rate';
+      stopLoop();
+      if (anim !== null) cancelAnimationFrame(anim);
+      const toScale = scaleOf(before, pair);
+      const t0 = performance.now();
+      const toFills = concellos.map((c) => fillOf(c, before));
+      const bShape = shapeOf(before);
+      const step = (now: number) => {
+        const t = reducedMotion.matches ? 1 : Math.min(1, (now - t0) / 1200);
+        const e = ease(t);
+        drawShapes(a, bShape, e, beforeScale, toScale);
+        concellos.forEach((_, u) => {
+          pathEls[u]?.setAttribute('fill', mix(fromFills[u] as string, toFills[u] as string, e));
+        });
+        if (t < 1) anim = requestAnimationFrame(step);
+        else {
+          anim = null;
+          shownScale = toScale;
+          if (pair && playing) loop();
+        }
+      };
+      anim = requestAnimationFrame(step);
+      describe();
       writeHash();
     });
   }
