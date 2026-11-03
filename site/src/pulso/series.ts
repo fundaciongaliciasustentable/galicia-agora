@@ -143,6 +143,17 @@ export const SERIES: PulseMap[] = [
     period: { gl: 'Censos de 1900 a 2021', es: 'Censos de 1900 a 2021' },
   },
   {
+    slug: 'respira',
+    ready: true,
+    colour: '#7fbf6a',
+    title: { gl: 'Galicia respirando', es: 'Galicia respirando' },
+    summary: {
+      gl: 'O mosaico de satélite mes a mes: o verde sobe e baixa, aparecen a seitura e os queimados.',
+      es: 'El mosaico de satélite mes a mes: el verde sube y baja, aparecen la siega y los quemados.',
+    },
+    period: { gl: 'Sentinel-2, últimos meses', es: 'Sentinel-2, últimos meses' },
+  },
+  {
     slug: 'ausencias',
     ready: true,
     colour: '#c9d3dc',

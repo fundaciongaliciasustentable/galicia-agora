@@ -430,6 +430,38 @@ const STRINGS = {
   cross_p_far_old: { gl: 'Lonxe e maiores', es: 'Lejos y mayores' },
   cross_p_births_foreign: { gl: 'Natalidade e estranxeiros', es: 'Natalidad y extranjeros' },
   cross_p_tourist_homes: { gl: 'Pisos turísticos e baleiros', es: 'Pisos turísticos y vacíos' },
+  breath_title: { gl: 'Galicia respirando', es: 'Galicia respirando' },
+  breath_lede: {
+    gl: 'O mosaico de Sentinel-2 mes a mes, fundido dun ao seguinte: o verde sobe na primavera e baixa no verán, aparecen a seitura e os queimados, e volve o verde.',
+    es: 'El mosaico de Sentinel-2 mes a mes, fundido de uno al siguiente: el verde sube en primavera y baja en verano, aparecen la siega y los quemados, y vuelve el verde.',
+  },
+  breath_map_label: {
+    gl: 'Imaxe de satélite de Galicia que cambia mes a mes',
+    es: 'Imagen de satélite de Galicia que cambia mes a mes',
+  },
+  breath_true: { gl: 'Cor real', es: 'Color real' },
+  breath_ndvi: { gl: 'Verdor (NDVI)', es: 'Verdor (NDVI)' },
+  breath_view: { gl: 'Imaxe', es: 'Imagen' },
+  breath_info: {
+    gl: '{scenes} escenas entre o {from} e o {to}; {gap} % de Galicia sen ningunha observación limpa.',
+    es: '{scenes} escenas entre el {from} y el {to}; {gap} % de Galicia sin ninguna observación limpia.',
+  },
+  breath_ndvi_legend: {
+    gl: 'NDVI: chan, auga e rocha en grises e ocres; canto máis verde, máis vexetación activa.',
+    es: 'NDVI: suelo, agua y roca en grises y ocres; cuanto más verde, más vegetación activa.',
+  },
+  breath_few: {
+    gl: 'Polo de agora, {n} de 12 meses: engádese un cada mes.',
+    es: 'Por ahora, {n} de 12 meses: se añade uno cada mes.',
+  },
+  breath_note: {
+    gl: 'Mosaico mensual propio de Sentinel-2 L2A (Copernicus, en AWS): para cada píxel, a mediana das observacións sen nubes, sombras nin neve do mes, a 20 m, recortado co contorno de Galicia do IGN. Aquí, unha imaxe de toda Galicia por mes (uns 150 m por píxel); no mapa pódese ver o último mes ata 20 m. Os meses con moitas nubes deixan ocos transparentes. Unha mancha parda pode ser seitura, labra, seca de verán ou lume: compárao co mapa de queimados.',
+    es: 'Mosaico mensual propio de Sentinel-2 L2A (Copernicus, en AWS): para cada píxel, la mediana de las observaciones sin nubes, sombras ni nieve del mes, a 20 m, recortado con el contorno de Galicia del IGN. Aquí, una imagen de toda Galicia por mes (unos 150 m por píxel); en el mapa se puede ver el último mes hasta 20 m. Los meses con muchas nubes dejan huecos transparentes. Una mancha parda puede ser siega, labranza, sequía de verano o fuego: compáralo con el mapa de quemados.',
+  },
+  breath_missing: {
+    gl: 'Aínda non están publicadas as imaxes mensuais.',
+    es: 'Aún no están publicadas las imágenes mensuales.',
+  },
   absence_title: { gl: 'As ausencias', es: 'Las ausencias' },
   absence_lede: {
     gl: 'Cada luz é un lugar onde vive xente; cada anel baleiro, un que quedou sen ninguén. As 30.500 entidades de poboación de Galicia, ano a ano desde 2000.',
