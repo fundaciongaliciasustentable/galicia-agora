@@ -182,10 +182,13 @@ function data() {
     const fc = JSON.parse(readFileSync(geojson, 'utf8')) as {
       features: Array<{ properties: Record<string, unknown> }>;
     };
-    // Without the cartogram rings of galicia-deformada, which are no table material.
+    // Without the cartogram rings (galicia-deformada) and line profiles (galicia-linas*),
+    // which are no table material.
     writeFileSync(
       join(dstDir, 'table.json'),
-      JSON.stringify(fc.features.map(({ properties: { formas: _, ...rest } }) => rest)),
+      JSON.stringify(
+        fc.features.map(({ properties: { formas: _f, perfis: _p, ...rest } }) => rest),
+      ),
     );
 
     if (

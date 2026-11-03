@@ -91,6 +91,27 @@ const STRINGS = {
   collection_bysa: { gl: 'Colección CC BY-SA 4.0', es: 'Colección CC BY-SA 4.0' },
   portrait_nav: { gl: 'Retrato', es: 'Retrato' },
   pulse_nav: { gl: 'Pulso', es: 'Pulso' },
+  lines_t_heading: { gl: 'En movemento', es: 'En movimiento' },
+  lines_t_seculo: { gl: 'Un século, censo a censo', es: 'Un siglo, censo a censo' },
+  lines_t_raios: { gl: 'Raios, mes a mes', es: 'Rayos, mes a mes' },
+  lines_t_lume: { gl: 'Lume, ano a ano', es: 'Fuego, año a año' },
+  lines_t_seculo_text: {
+    gl: 'A poboación de cada censo de 1900 a 2021, todos na mesma escala: o interior báixase e as cidades érguense. Dentro de cada concello a xente repártese como hoxe.',
+    es: 'La población de cada censo de 1900 a 2021, todos en la misma escala: el interior baja y las ciudades se levantan. Dentro de cada ayuntamiento la gente se reparte como hoy.',
+  },
+  lines_t_raios_text: {
+    gl: 'Os raios caídos en Galicia cada mes dos últimos doce, na mesma escala. As treboadas de verán érguense sobre o interior.',
+    es: 'Los rayos caídos en Galicia cada mes de los últimos doce, en la misma escala. Las tormentas de verano se levantan sobre el interior.',
+  },
+  lines_t_lume_text: {
+    gl: 'A superficie queimada en grandes lumes cada ano, na mesma escala. Os anos tranquilos quedan case planos.',
+    es: 'La superficie quemada en grandes incendios cada año, en la misma escala. Los años tranquilos quedan casi planos.',
+  },
+  lines_t_time: { gl: 'Momento', es: 'Momento' },
+  lines_t_map: {
+    gl: 'Liñas de Galicia en movemento; o momento e o total escríbense ao lado.',
+    es: 'Líneas de Galicia en movimiento; el momento y el total se escriben al lado.',
+  },
   lines_nav: { gl: 'Liñas', es: 'Líneas' },
   lines_title: { gl: 'Galicia en liñas', es: 'Galicia en líneas' },
   lines_lede: {
@@ -240,6 +261,29 @@ const STRINGS = {
   deform_detail: {
     gl: '{value}: o {share} % de Galicia. No mapa real ocupa o {area} %.',
     es: '{value}: el {share} % de Galicia. En el mapa real ocupa el {area} %.',
+  },
+  deform_mode_label: { gl: 'Mostrar', es: 'Mostrar' },
+  deform_mode_rate: { gl: 'En proporción á poboación', es: 'En proporción a la población' },
+  deform_mode_count: { gl: 'En número', es: 'En número' },
+  deform_rate_permil: { gl: '{v} por mil habitantes', es: '{v} por mil habitantes' },
+  deform_rate_pct: { gl: '{v} % da poboación', es: '{v} % de la población' },
+  deform_ramp_permil: { gl: 'por mil habitantes', es: 'por mil habitantes' },
+  deform_ramp_pct: { gl: '% da poboación', es: '% de la población' },
+  deform_rate_note: {
+    gl: 'A área é a poboación de cada concello; a cor, a proporción.',
+    es: 'El área es la población de cada ayuntamiento; el color, la proporción.',
+  },
+  deform_rate_ratio_nacementos: {
+    gl: 'En Galicia nacen {a} por cada mil habitantes e morren {b}.',
+    es: 'En Galicia nacen {a} por cada mil habitantes y mueren {b}.',
+  },
+  deform_rate_ratio_menores_20: {
+    gl: 'En Galicia o {a} % ten menos de 20 anos e o {b} % ten 65 ou máis.',
+    es: 'En Galicia el {a} % tiene menos de 20 años y el {b} % tiene 65 o más.',
+  },
+  deform_detail_rate: {
+    gl: '{value}: {rate} (Galicia: {galicia}).',
+    es: '{value}: {rate} (Galicia: {galicia}).',
   },
   deform_detail_none: { gl: 'Sen dato propio.', es: 'Sin dato propio.' },
   deform_hint: {

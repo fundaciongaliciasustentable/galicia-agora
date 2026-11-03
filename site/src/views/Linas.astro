@@ -15,6 +15,27 @@ const { lang } = Astro.props;
     <p>{t(lang, 'lines_lede')}</p>
     <p class="li-status" role="status">{t(lang, 'loading')}</p>
   </header>
+  <section class="lt-box" aria-labelledby="lt-heading">
+    <canvas role="img" aria-label={t(lang, 'lines_t_map')}></canvas>
+    <div class="lt-side">
+      <h2 id="lt-heading">{t(lang, 'lines_t_heading')}</h2>
+      <div class="lt-seqs" role="group" aria-label={t(lang, 'lines_t_heading')}>
+        <button type="button" data-seq="seculo" aria-pressed="true">{t(lang, 'lines_t_seculo')}</button>
+        <button type="button" data-seq="raios" aria-pressed="false">{t(lang, 'lines_t_raios')}</button>
+        <button type="button" data-seq="lume" aria-pressed="false">{t(lang, 'lines_t_lume')}</button>
+      </div>
+      <p class="lt-frame" aria-live="off"></p>
+      <p class="lt-total" aria-live="off"></p>
+      <p class="lt-text"></p>
+      <div class="lt-controls">
+        <button type="button" class="lt-play" aria-pressed="false">{t(lang, 'pulse_pause')}</button>
+        <label>
+          <span class="visually-hidden">{t(lang, 'lines_t_time')}</span>
+          <input class="lt-range" type="range" min="0" value="0" />
+        </label>
+      </div>
+    </div>
+  </section>
   <ul class="li-grid"></ul>
   <footer class="li-foot">
     <p>{t(lang, 'lines_licence')}</p>
@@ -68,6 +89,91 @@ const { lang } = Astro.props;
   }
   .li-status:empty {
     display: none;
+  }
+  .lt-box {
+    max-width: 1200px;
+    margin: 24px auto 8px;
+    display: grid;
+    grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+    gap: 24px;
+    align-items: start;
+  }
+  .lt-box[hidden] {
+    display: none;
+  }
+  .lt-box canvas {
+    display: block;
+    width: 100%;
+    aspect-ratio: 5 / 4;
+    background: #000;
+    border: 1px solid #1f1f1c;
+    border-radius: 4px;
+  }
+  .lt-side h2 {
+    margin: 0 0 8px;
+    font-size: var(--gs-texto-xs);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #8a8a82;
+  }
+  .lt-seqs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .lt-seqs button,
+  .lt-play {
+    font: inherit;
+    font-size: var(--gs-texto-sm);
+    border: 1px solid #3a3b35;
+    border-radius: 999px;
+    padding: 3px 11px;
+    background: transparent;
+    color: #e6e6df;
+    cursor: pointer;
+  }
+  .lt-seqs button[aria-pressed='true'] {
+    background: #e6e6df;
+    border-color: #e6e6df;
+    color: #000;
+  }
+  .lt-frame {
+    margin: 16px 0 0;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    font-variant-numeric: tabular-nums;
+  }
+  .lt-total {
+    margin: 4px 0 0;
+    font-variant-numeric: tabular-nums;
+  }
+  .lt-text {
+    color: #b3b3aa;
+    font-size: var(--gs-texto-sm);
+  }
+  .lt-controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .lt-play {
+    border-color: #e6e6df;
+    min-width: 6em;
+  }
+  .lt-controls label {
+    flex: 1;
+  }
+  .lt-range {
+    width: 100%;
+    accent-color: #e6e6df;
+  }
+  @media (max-width: 760px) {
+    .lt-box {
+      grid-template-columns: 1fr;
+    }
   }
   .li-grid {
     list-style: none;

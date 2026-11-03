@@ -3,6 +3,7 @@
 
 import { asset } from '../paths.ts';
 import { decodeHeights, HEIGHT, type PosterData, posterSvg, WIDTH } from './poster.ts';
+import { startTempo } from './tempo.ts';
 
 type Dict = Record<string, string>;
 
@@ -31,6 +32,9 @@ export async function start(): Promise<void> {
   const status = q<HTMLElement>('.li-status');
   const dialog = q<HTMLDialogElement>('.li-dialog');
   const sources = q<HTMLElement>('.li-sources');
+
+  // The animation loads on its own; the gallery does not wait for it.
+  void startTempo(app, dict, lang);
 
   const LAYER = 'galicia-linas';
   let posters: Array<PosterData & { text: string; file: string }> = [];
