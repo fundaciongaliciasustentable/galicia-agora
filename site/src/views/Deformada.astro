@@ -1,0 +1,297 @@
+---
+// Galicia deformada: cartograms of the 313 concellos (galicia-deformada layer). One variable
+// at a time, or a pair morphing back and forth. The same figures are given as text: the
+// heading with Galicia's total, the picked concello's detail and a table.
+import { dictionary, type Lang, t } from '../i18n';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const VARS = [
+  'superficie',
+  'poboacion',
+  'pib',
+  'nacementos',
+  'defuncions',
+  'menores_20',
+  'maiores_65',
+  'poboacion_1950',
+  'poboacion_2021',
+] as const;
+const PAIRS = [
+  ['nacementos', 'defuncions'],
+  ['menores_20', 'maiores_65'],
+  ['poboacion_1950', 'poboacion_2021'],
+  ['poboacion', 'pib'],
+  ['superficie', 'poboacion'],
+] as const;
+const PROVINCES = [
+  ['A Coruña', '#e8925a'],
+  ['Lugo', '#a6c86e'],
+  ['Ourense', '#5cc2b0'],
+  ['Pontevedra', '#7b98e6'],
+] as const;
+---
+
+<div class="df-app" data-lang={lang} data-dict={JSON.stringify(dictionary(lang))}>
+  <svg class="df-stage" role="img" aria-label={t(lang, 'deform_map_label')}>
+    <g class="df-shapes"></g>
+  </svg>
+
+  <section class="df-panel" id="contido">
+    <h1>{t(lang, 'deform_title')}</h1>
+    <p class="df-lede">{t(lang, 'deform_lede')}</p>
+
+    <p class="df-heading" aria-live="polite"></p>
+    <p class="df-total"></p>
+    <p class="df-scale"></p>
+
+    <h2>{t(lang, 'deform_one')}</h2>
+    <div class="df-chips" role="group" aria-label={t(lang, 'deform_one')}>
+      {VARS.map((v) => <button type="button" data-var={v} aria-pressed="false">{t(lang, `deform_v_${v}`)}</button>)}
+    </div>
+
+    <h2>{t(lang, 'deform_pairs')}</h2>
+    <div class="df-pairs" role="group" aria-label={t(lang, 'deform_pairs')}>
+      {
+        PAIRS.map(([a, b]) => (
+          <button type="button" data-pair={`${a}~${b}`} aria-pressed="false">
+            {t(lang, `deform_v_${a}`)} <span aria-hidden="true">⇄</span> {t(lang, `deform_v_${b}`)}
+          </button>
+        ))
+      }
+    </div>
+    <div class="df-controls">
+      <button type="button" class="df-play" aria-pressed="false" hidden>{t(lang, 'pulse_pause')}</button>
+    </div>
+
+    <div class="df-detail" aria-live="polite"><span class="df-hint">{t(lang, 'deform_hint')}</span></div>
+    <p class="df-legend">
+      {PROVINCES.map(([name, colour]) => <span><i style={`background:${colour}`}></i>{name}</span>)}
+    </p>
+    <p class="df-status" role="status">{t(lang, 'loading')}</p>
+
+    <details class="df-table">
+      <summary>{t(lang, 'deform_table')}</summary>
+      <table>
+        <caption></caption>
+        <thead>
+          <tr>
+            <th scope="col">{t(lang, 'fire_col_concello')}</th>
+            <th scope="col">{t(lang, 'deform_col_value')}</th>
+            <th scope="col">{t(lang, 'deform_col_share')}</th>
+            <th scope="col">{t(lang, 'deform_col_area')}</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </details>
+    <details class="df-about">
+      <summary>{t(lang, 'pulse_about')}</summary>
+      <p>{t(lang, 'deform_note')}</p>
+      <p class="df-sources"></p>
+    </details>
+  </section>
+</div>
+
+<style is:global>
+  .df-app {
+    position: relative;
+    height: calc(100dvh - var(--ga-head, 52px));
+    overflow: hidden;
+    background: #111210;
+    color: #e6e6df;
+  }
+  .df-stage {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: min(400px, 38%);
+    right: 0;
+    width: auto;
+    height: 100%;
+  }
+  .df-shapes path {
+    stroke: #111210;
+    stroke-width: 0.6;
+    stroke-linejoin: round;
+    fill-rule: evenodd;
+    vector-effect: non-scaling-stroke;
+    cursor: pointer;
+  }
+  .df-shapes path.is-on {
+    stroke: #fff;
+    stroke-width: 2;
+  }
+  .df-panel {
+    position: absolute;
+    z-index: 2;
+    top: 16px;
+    left: 16px;
+    bottom: 16px;
+    width: min(370px, calc(38% - 24px));
+    overflow-y: auto;
+    padding: 16px 18px;
+    border-radius: var(--gs-radius-card);
+    background: rgba(17, 18, 16, 0.82);
+    backdrop-filter: blur(6px);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+  }
+  .df-panel h1 {
+    margin: 0;
+    font-size: var(--gs-texto-xl);
+    color: #fff;
+  }
+  .df-panel h2 {
+    margin: 14px 0 6px;
+    font-size: var(--gs-texto-xs);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #8a8a82;
+  }
+  .df-lede,
+  .df-about,
+  .df-table,
+  .df-scale,
+  .df-legend {
+    font-size: var(--gs-texto-sm);
+    color: #b3b3aa;
+    margin: 6px 0 0;
+  }
+  .df-heading {
+    margin: 12px 0 0;
+    font-size: var(--gs-texto-lg);
+    font-weight: 700;
+    line-height: 1.2;
+    color: #fff;
+  }
+  .df-total {
+    margin: 2px 0 0;
+    font-variant-numeric: tabular-nums;
+    font-size: var(--gs-texto-sm);
+  }
+  .df-chips,
+  .df-pairs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .df-chips button,
+  .df-pairs button,
+  .df-play {
+    font: inherit;
+    font-size: var(--gs-texto-sm);
+    border: 1px solid #3a3b35;
+    border-radius: 999px;
+    padding: 3px 11px;
+    background: transparent;
+    color: #e6e6df;
+    cursor: pointer;
+  }
+  .df-chips button:hover,
+  .df-pairs button:hover {
+    border-color: #8a8a82;
+  }
+  .df-chips button[aria-pressed='true'],
+  .df-pairs button[aria-pressed='true'] {
+    background: #e6e6df;
+    border-color: #e6e6df;
+    color: #111210;
+  }
+  .df-controls {
+    margin-top: 8px;
+  }
+  .df-play {
+    border-color: #e6e6df;
+    min-width: 6em;
+  }
+  .df-detail {
+    margin-top: 12px;
+    min-height: 3em;
+    font-size: var(--gs-texto-sm);
+  }
+  .df-detail strong {
+    color: #fff;
+  }
+  .df-hint {
+    color: #8a8a82;
+  }
+  .df-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 12px;
+  }
+  .df-legend i {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+    margin-right: 5px;
+    vertical-align: -1px;
+  }
+  .df-status {
+    margin: 6px 0 0;
+    font-size: var(--gs-texto-sm);
+    color: #e0a95a;
+  }
+  .df-status:empty {
+    display: none;
+  }
+  .df-about summary,
+  .df-table summary {
+    cursor: pointer;
+    margin-top: 8px;
+  }
+  .df-sources {
+    font-size: var(--gs-texto-xs);
+  }
+  .df-table table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 6px;
+    font-variant-numeric: tabular-nums;
+    font-size: var(--gs-texto-xs);
+    color: #e6e6df;
+  }
+  .df-table caption {
+    text-align: left;
+    color: #b3b3aa;
+    padding-bottom: 4px;
+  }
+  .df-table th,
+  .df-table td {
+    padding: 2px 4px;
+    border-bottom: 1px solid #2a2b26;
+    text-align: right;
+  }
+  .df-table th:first-child,
+  .df-table td:first-child {
+    text-align: left;
+  }
+  @media (max-width: 760px) {
+    .df-stage {
+      left: 0;
+      top: 44%;
+      height: 56%;
+    }
+    .df-panel {
+      top: 8px;
+      left: 8px;
+      right: 8px;
+      bottom: auto;
+      width: auto;
+      max-height: 42%;
+      padding: 12px 14px;
+    }
+    .df-lede {
+      display: none;
+    }
+  }
+</style>
+
+<script>
+  import { start } from '../deformada/deformada';
+  start();
+</script>

@@ -91,6 +91,108 @@ const STRINGS = {
   collection_bysa: { gl: 'Colección CC BY-SA 4.0', es: 'Colección CC BY-SA 4.0' },
   portrait_nav: { gl: 'Retrato', es: 'Retrato' },
   pulse_nav: { gl: 'Pulso', es: 'Pulso' },
+  deform_nav: { gl: 'Galicia deformada', es: 'Galicia deformada' },
+  deform_title: { gl: 'Galicia deformada', es: 'Galicia deformada' },
+  deform_lede: {
+    gl: 'Cada concello ocupa no mapa a área do que conta: a súa xente, a súa riqueza, os seus nacementos. A mesma Galicia, medida doutras maneiras.',
+    es: 'Cada ayuntamiento ocupa en el mapa el área de lo que cuenta: su gente, su riqueza, sus nacimientos. La misma Galicia, medida de otras maneras.',
+  },
+  deform_map_label: {
+    gl: 'Cartograma dos concellos de Galicia',
+    es: 'Cartograma de los ayuntamientos de Galicia',
+  },
+  deform_one: { gl: 'Medir por', es: 'Medir por' },
+  deform_pairs: { gl: 'Pasar dun a outro', es: 'Pasar de uno a otro' },
+  deform_v_superficie: { gl: 'Superficie', es: 'Superficie' },
+  deform_v_poboacion: { gl: 'Poboación', es: 'Población' },
+  deform_v_pib: { gl: 'PIB', es: 'PIB' },
+  deform_v_nacementos: { gl: 'Nacementos', es: 'Nacimientos' },
+  deform_v_defuncions: { gl: 'Defuncións', es: 'Defunciones' },
+  deform_v_menores_20: { gl: 'Menores de 20', es: 'Menores de 20' },
+  deform_v_maiores_65: { gl: 'Maiores de 65', es: 'Mayores de 65' },
+  deform_v_poboacion_1950: { gl: 'Poboación 1950', es: 'Población 1950' },
+  deform_v_poboacion_2021: { gl: 'Poboación 2021', es: 'Población 2021' },
+  deform_heading_superficie: { gl: 'O mapa de sempre', es: 'El mapa de siempre' },
+  deform_heading_poboacion: {
+    gl: 'A Galicia da xente ({year})',
+    es: 'La Galicia de la gente ({year})',
+  },
+  deform_heading_pib: { gl: 'A Galicia do PIB ({year})', es: 'La Galicia del PIB ({year})' },
+  deform_heading_nacementos: {
+    gl: 'A Galicia que nace ({year})',
+    es: 'La Galicia que nace ({year})',
+  },
+  deform_heading_defuncions: {
+    gl: 'A Galicia que morre ({year})',
+    es: 'La Galicia que muere ({year})',
+  },
+  deform_heading_menores_20: {
+    gl: 'A Galicia nova: menores de 20 ({year})',
+    es: 'La Galicia joven: menores de 20 ({year})',
+  },
+  deform_heading_maiores_65: {
+    gl: 'A Galicia maior: 65 e máis ({year})',
+    es: 'La Galicia mayor: 65 y más ({year})',
+  },
+  deform_heading_poboacion_1950: { gl: 'A Galicia de 1950', es: 'La Galicia de 1950' },
+  deform_heading_poboacion_2021: { gl: 'A Galicia de 2021', es: 'La Galicia de 2021' },
+  deform_total_superficie: { gl: '{v} km²', es: '{v} km²' },
+  deform_total_people: { gl: '{v} persoas', es: '{v} personas' },
+  deform_total_nacementos: { gl: '{v} nacementos', es: '{v} nacimientos' },
+  deform_total_defuncions: { gl: '{v} defuncións', es: '{v} defunciones' },
+  deform_total_pib: { gl: '{v} millóns de euros', es: '{v} millones de euros' },
+  deform_scale_same: {
+    gl: 'Mesma escala nos dous mapas: a área total segue o total de Galicia.',
+    es: 'Misma escala en los dos mapas: el área total sigue el total de Galicia.',
+  },
+  deform_scale_own: {
+    gl: 'Cada mapa ocupa a mesma área total: compáranse as partes, non os totais.',
+    es: 'Cada mapa ocupa la misma área total: se comparan las partes, no los totales.',
+  },
+  deform_ratio_nacementos: {
+    gl: 'Por cada 100 defuncións houbo {r} nacementos.',
+    es: 'Por cada 100 defunciones hubo {r} nacimientos.',
+  },
+  deform_ratio_menores_20: {
+    gl: 'Por cada 100 maiores de 65 hai {r} menores de 20.',
+    es: 'Por cada 100 mayores de 65 hay {r} menores de 20.',
+  },
+  deform_ratio_poboacion_1950: {
+    gl: 'En 2021 había {r} persoas por cada 100 de 1950, pero noutros concellos.',
+    es: 'En 2021 había {r} personas por cada 100 de 1950, pero en otros ayuntamientos.',
+  },
+  deform_ratio_poboacion: {
+    gl: 'O PIB conta onde están as empresas; a poboación, onde vive a xente.',
+    es: 'El PIB cuenta dónde están las empresas; la población, dónde vive la gente.',
+  },
+  deform_ratio_superficie: {
+    gl: 'Do mapa do territorio ao mapa da xente.',
+    es: 'Del mapa del territorio al mapa de la gente.',
+  },
+  deform_detail: {
+    gl: '{value}: o {share} % de Galicia. No mapa real ocupa o {area} %.',
+    es: '{value}: el {share} % de Galicia. En el mapa real ocupa el {area} %.',
+  },
+  deform_detail_none: { gl: 'Sen dato propio.', es: 'Sin dato propio.' },
+  deform_hint: {
+    gl: 'Pasa o rato por riba ou toca un concello.',
+    es: 'Pasa el ratón por encima o toca un ayuntamiento.',
+  },
+  deform_table: {
+    gl: 'Os concellos, do maior ao menor',
+    es: 'Los ayuntamientos, del mayor al menor',
+  },
+  deform_col_value: { gl: 'Valor', es: 'Valor' },
+  deform_col_share: { gl: '% de Galicia', es: '% de Galicia' },
+  deform_col_area: { gl: '% da superficie', es: '% de la superficie' },
+  deform_note: {
+    gl: 'Cartogramas por difusión (Gastner e Newman, 2004): o valor de cada concello repártese pola súa área como unha densidade, a densidade déixase difundir ata quedar igual en todas partes, e os bordos móvense co fluxo. Os concellos veciños seguen unidos e as áreas quedan a menos do 1,5 % do seu valor. O PIB municipal é unha estimación do IGE que o sitúa onde están as empresas. Menores de 20 e maiores de 65: padrón polas porcentaxes do IGE (cálculo propio). Cariño, Burela e A Illa de Arousa non existían en 1950: a súa xente está no concello do que saíron.',
+    es: 'Cartogramas por difusión (Gastner y Newman, 2004): el valor de cada ayuntamiento se reparte por su área como una densidad, la densidad se deja difundir hasta quedar igual en todas partes y los bordes se mueven con el flujo. Los ayuntamientos vecinos siguen unidos y las áreas quedan a menos del 1,5 % de su valor. El PIB municipal es una estimación del IGE que lo sitúa donde están las empresas. Menores de 20 y mayores de 65: padrón por los porcentajes del IGE (cálculo propio). Cariño, Burela y A Illa de Arousa no existían en 1950: su gente está en el ayuntamiento del que salieron.',
+  },
+  deform_missing: {
+    gl: 'Aínda non están publicados os datos da Galicia deformada.',
+    es: 'Aún no están publicados los datos de la Galicia deformada.',
+  },
   pulse_title: { gl: 'O pulso de Galicia', es: 'El pulso de Galicia' },
   pulse_index_title: { gl: 'O pulso de Galicia', es: 'El pulso de Galicia' },
   pulse_index_lede: {
