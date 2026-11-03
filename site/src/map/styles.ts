@@ -85,6 +85,7 @@ export const SERIES_LAYERS = new Set([
   'galicia-noticias',
   'galicia-deformada',
   'galicia-linas',
+  'galicia-linas-tempo',
 ]);
 
 /** Time field per layer: the client adds `_h`, hours since that instant. */

@@ -47,7 +47,6 @@ export const SKIRT_KM = 7;
 const RAD = Math.PI / 180;
 const KM_PER_DEG = 111.19;
 const KX = KM_PER_DEG * Math.cos(42.8 * RAD);
-const COL_KM = ((FRAME.lon1 - FRAME.lon0) * KX) / COLS;
 const ROW_KM = ((FRAME.lat1 - FRAME.lat0) * KM_PER_DEG) / ROWS;
 
 type Grid = Float64Array;
@@ -68,32 +67,36 @@ export interface Poster {
 const lonOf = (c: number) => FRAME.lon0 + ((c + 0.5) * (FRAME.lon1 - FRAME.lon0)) / COLS;
 const latOf = (r: number) => FRAME.lat1 - ((r + 0.5) * (FRAME.lat1 - FRAME.lat0)) / ROWS;
 
-/** Add a Gaussian bump of `weight` at (lon, lat). */
-export function splat(grid: Grid, lon: number, lat: number, weight: number, sigma = SIGMA_KM) {
-  const cx = ((lon - FRAME.lon0) / (FRAME.lon1 - FRAME.lon0)) * COLS - 0.5;
+/** Add a Gaussian bump of `weight` at (lon, lat) to a ROWS × `cols` grid. */
+export function splat(
+  grid: Grid,
+  lon: number,
+  lat: number,
+  weight: number,
+  sigma = SIGMA_KM,
+  cols = COLS,
+) {
+  const colKm = ((FRAME.lon1 - FRAME.lon0) * KX) / cols;
+  const cx = ((lon - FRAME.lon0) / (FRAME.lon1 - FRAME.lon0)) * cols - 0.5;
   const cy = ((FRAME.lat1 - lat) / (FRAME.lat1 - FRAME.lat0)) * ROWS - 0.5;
   const rr = Math.ceil((3 * sigma) / ROW_KM);
-  const rc = Math.ceil((3 * sigma) / COL_KM);
+  const rc = Math.ceil((3 * sigma) / colKm);
   const s2 = 2 * sigma * sigma;
-  for (
-    let r = Math.max(0, Math.round(cy) - rr);
-    r <= Math.min(ROWS - 1, Math.round(cy) + rr);
-    r++
-  ) {
+  const r0 = Math.max(0, Math.round(cy) - rr);
+  const r1 = Math.min(ROWS - 1, Math.round(cy) + rr);
+  const c0 = Math.max(0, Math.round(cx) - rc);
+  const c1 = Math.min(cols - 1, Math.round(cx) + rc);
+  for (let r = r0; r <= r1; r++) {
     const dy = (r - cy) * ROW_KM;
     const wy = Math.exp(-(dy * dy) / s2);
-    for (
-      let c = Math.max(0, Math.round(cx) - rc);
-      c <= Math.min(COLS - 1, Math.round(cx) + rc);
-      c++
-    ) {
-      const dx = (c - cx) * COL_KM;
-      grid[r * COLS + c] = (grid[r * COLS + c] as number) + weight * wy * Math.exp(-(dx * dx) / s2);
+    for (let c = c0; c <= c1; c++) {
+      const dx = (c - cx) * colKm;
+      grid[r * cols + c] = (grid[r * cols + c] as number) + weight * wy * Math.exp(-(dx * dx) / s2);
     }
   }
 }
 
-function ringsOf(geometry: Feature['geometry']): Ring[] {
+export function ringsOf(geometry: Feature['geometry']): Ring[] {
   if (geometry?.type === 'Polygon') return geometry.coordinates as Ring[];
   if (geometry?.type === 'MultiPolygon') return (geometry.coordinates as Ring[][]).flat();
   return [];
@@ -119,7 +122,7 @@ const insideAt = (xs: number[], lon: number) => {
 };
 
 /** Even-odd mask of the outline on a fine lattice, for point tests. */
-class Mask {
+export class Mask {
   private readonly step = 0.005;
   private readonly rows: number[][] = [];
   constructor(rings: Ring[]) {
@@ -134,7 +137,7 @@ class Mask {
 }
 
 /** Area-weighted centroid of the largest polygon of a geometry. */
-function centroid(geometry: Feature['geometry']): [number, number] | null {
+export function centroid(geometry: Feature['geometry']): [number, number] | null {
   const polys =
     geometry?.type === 'Polygon'
       ? [geometry.coordinates as Ring[]]

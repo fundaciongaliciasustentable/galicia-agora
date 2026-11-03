@@ -1,0 +1,57 @@
+id: galicia-linas-tempo
+title:
+  gl: Galicia en liñas, animada (perfís no tempo)
+  es: Galicia en líneas, animada (perfiles en el tiempo)
+theme: territorio
+operator:
+  name: Fundación Galicia Sustentable (cálculo propio con datos do INE, o IET, MeteoGalicia e Copernicus EFFIS)
+  url: https://mapas.galiciasustentable.org
+source_url: https://mapas.galiciasustentable.org/linas/
+licence:
+  spdx: CC-BY-SA-4.0
+  text_url: https://creativecommons.org/licenses/by-sa/4.0/deed.gl
+  quote: "Creative Commons BY SA 4.0"
+  verified_at: 2026-11-03
+  odbl_compatible: doubt
+  collection: cc-by-sa-4.0
+  notes: >-
+    Capa derivada sen descarga externa, baixo CC BY-SA 4.0 porque usa capas desa colección
+    (galicia-deformada, entidades-poboacion, raios-ano). Tres secuencias de perfís como os de
+    galicia-linas, a media resolución (80 × 280): poboación en cada censo de 1900 a 2021
+    (poboacion-seculo, INE, CC BY 4.0) repartida entre os lugares de cada concello segundo a
+    súa poboación de hoxe (aproximación: mostra o cambio dos concellos, non o de dentro de
+    cada un); raios mes a mes dentro de Galicia (raios-ano, MeteoGalicia); superficie queimada
+    ano a ano (historial-queimados, Copernicus EFFIS, CC BY 4.0). Unha escala por secuencia,
+    raíz cadrada. Contorno de Galicia: IGN, CC BY 4.0.
+attribution: >-
+  Cálculos: Fundación Galicia Sustentable. Censos: elaboración propia con datos extraídos del
+  sitio web del INE: www.ine.es. Lugares: © Instituto de Estudos do Territorio. Xunta de Galicia.
+  Raios: MeteoGalicia (Xunta de Galicia). Lumes: © Unión Europea, Copernicus EFFIS (JRC).
+  Contorno: © Instituto Geográfico Nacional (CC BY 4.0).
+update_frequency:
+  declared: P30D
+geometry: none
+output: geojson
+auth:
+  required: false
+privacy_notes: Perfís suavizados de agregados; ningún dato persoal.
+stale_after: P120D
+ingest:
+  every: P30D
+depends_on:
+  - poboacion-seculo
+  - galicia-deformada
+  - entidades-poboacion
+  - raios-ano
+  - historial-queimados
+# Played on /linas/; the main map does not draw it (SERIES_LAYERS).
+style:
+  kind: fill
+  label_field: id
+table:
+  fields:
+    - id
+    - fotogramas
+    - totais
+    - unidade
+    - fonte
