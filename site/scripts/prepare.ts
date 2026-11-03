@@ -183,6 +183,12 @@ function data() {
         bounds: a.bounds,
       }));
       log(`${layer.id}: ${archives.length} raster archives on the server (not copied)`);
+      // Monthly whole-Galicia images (satellite layers), small enough to travel with the site.
+      const previews = join(srcDir, 'previews.json');
+      if (existsSync(previews)) {
+        cpSync(previews, join(dstDir, 'previews.json'));
+        cpSync(join(srcDir, 'previews'), join(dstDir, 'previews'), { recursive: true });
+      }
       continue;
     }
     // Raster layers arrive as a ready PMTiles archive (pipeline/lib/raster.ts).

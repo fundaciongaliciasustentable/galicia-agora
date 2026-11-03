@@ -18,6 +18,10 @@ on:
         description: Month to build (YYYY-MM); empty = the month just ended
         type: string
         default: ''
+      preview_only:
+        description: Only the whole-Galicia image of the month (past months for /pulso/respira/); no tiles uploaded
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -71,9 +75,10 @@ jobs:
         id: build
         env:
           MONTH: ${{ inputs.month }}
+          PREVIEW_ONLY: ${{ inputs.preview_only && '--preview-only' || '' }}
         run: |
           set +e
-          npx tsx pipeline/satelite/cli.ts ${MONTH:+--month=$MONTH}
+          npx tsx pipeline/satelite/cli.ts ${MONTH:+--month=$MONTH} $PREVIEW_ONLY
           echo "code=$?" >> "$GITHUB_OUTPUT"
           set -e
           ls -l satelite-out/*/ 2>/dev/null || true

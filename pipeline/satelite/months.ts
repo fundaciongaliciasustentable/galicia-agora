@@ -68,3 +68,39 @@ export function addMonth(
     removed,
   };
 }
+
+/** One month's whole-Galicia image (data/<id>/previews.json, files in previews/). */
+export interface PreviewEntry {
+  month: string;
+  /** Path next to previews.json: "previews/<YYYY-MM>-<hash>.webp". */
+  file: string;
+  width: number;
+  height: number;
+  bounds: [number, number, number, number];
+  gap_share: number;
+  scenes: number;
+  first_date: string | null;
+  last_date: string | null;
+}
+
+export interface PreviewIndex {
+  layer_id: string;
+  /** Oldest first, as the page plays them. */
+  previews: PreviewEntry[];
+}
+
+/** Add (or replace) a month's image and keep the newest `keep`; returns the files to delete. */
+export function addPreview(
+  index: PreviewIndex,
+  entry: PreviewEntry,
+  keep: number,
+): { index: PreviewIndex; removed: string[] } {
+  const others = index.previews.filter((p) => p.month !== entry.month);
+  const all = [...others, entry].sort((a, b) => a.month.localeCompare(b.month));
+  const kept = all.slice(Math.max(0, all.length - keep));
+  const keptFiles = new Set(kept.map((p) => p.file));
+  const removed = [...index.previews, entry]
+    .map((p) => p.file)
+    .filter((f, i, a) => !keptFiles.has(f) && a.indexOf(f) === i);
+  return { index: { ...index, previews: kept }, removed };
+}
