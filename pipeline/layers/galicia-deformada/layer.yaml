@@ -1,0 +1,65 @@
+id: galicia-deformada
+title:
+  gl: Galicia deformada (cartogramas dos concellos)
+  es: Galicia deformada (cartogramas de los ayuntamientos)
+theme: territorio
+operator:
+  name: Fundación Galicia Sustentable (cálculo propio con datos do IGE, o INE e o IET)
+  url: https://mapas.galiciasustentable.org
+source_url: https://www.ige.gal/igebdt/igeapi/csv/datos/9958/T%5B1:a%5D,1:1
+licence:
+  spdx: CC-BY-SA-4.0
+  text_url: https://creativecommons.org/licenses/by-sa/4.0/deed.gl
+  quote: "Creative Commons BY SA 4.0"
+  verified_at: 2026-11-03
+  odbl_compatible: doubt
+  collection: cc-by-sa-4.0
+  notes: >-
+    Capa derivada (ADR 0005, colección CC BY-SA 4.0 polos límites do IET). Lé as capas
+    publicadas concellos-parroquias (IET, CC BY-SA 4.0), nacementos-mortes (IGE/INE) e
+    poboacion-seculo (INE, CC BY 4.0), e pide tres táboas do IGE (aviso legal do IGE, Lei
+    37/2007, citando «Fonte: IGE» e sen desnaturalizar): 1558 (padrón, último ano), 723
+    (porcentaxes de 20–64 e de 65 e máis anos) e 9958 (PIB municipal en miles de euros, último
+    ano). Valores orixinais: poboación, PIB, nacementos e defuncións (último ano definitivo) e
+    poboación dos censos de 1950 e 2021. Cálculo propio: menores de 20 e maiores de 65 anos
+    (padrón × porcentaxe do IGE, redondeado), a xeometría simplificada (Douglas–Peucker a 120
+    m, mantendo as fronteiras compartidas; illotes de menos de 0,05 km² fóra) e os cartogramas
+    (método de difusión de Gastner e Newman, 2004, en grella de 256 × 256; as áreas quedan a
+    menos do 1,5 % do seu valor). Os concellos segregados despois de 1950 (Cariño, Burela, A
+    Illa de Arousa) non teñen poboación propia nese censo: está no concello do que saíron.
+attribution: >-
+  Cartogramas e cálculos: Fundación Galicia Sustentable. Fonte: IGE: https://www.ige.gal
+  (padrón, indicadores de poboación, PIB municipal, movemento natural da poboación). Este
+  produto emprega a API de datos do Instituto Galego de Estatística (IGE), pero non está
+  certificado ou aprobado polo IGE. Censos de 1950 e 2021: elaboración propia con datos
+  extraídos del sitio web del INE: www.ine.es. Límites: © Instituto de Estudos do Territorio.
+  Xunta de Galicia.
+update_frequency:
+  declared: P30D
+geometry: polygon
+output: geojson
+auth:
+  required: false
+privacy_notes: Contas agregadas por concello; ningún dato persoal.
+stale_after: P400D
+ingest:
+  every: P30D
+depends_on:
+  - concellos-parroquias
+  - nacementos-mortes
+  - poboacion-seculo
+# Lives on its own page (/deformada/); the main map does not draw it (SERIES_LAYERS).
+style:
+  kind: fill
+  label_field: nome
+table:
+  fields:
+    - nome
+    - poboacion
+    - pib
+    - nacementos
+    - defuncions
+    - menores_20
+    - maiores_65
+    - poboacion_1950
+    - poboacion_2021

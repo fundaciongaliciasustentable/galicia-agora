@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "galicia-deformada feature properties",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "codigo_ine",
+    "nome",
+    "provincia",
+    "superficie_km2",
+    "poboacion",
+    "pib",
+    "nacementos",
+    "defuncions",
+    "menores_20",
+    "maiores_65",
+    "poboacion_1950",
+    "poboacion_2021",
+    "periodos",
+    "formas",
+    "erro_area"
+  ],
+  "$defs": {
+    "count": { "type": ["integer", "null"], "minimum": 0 },
+    "rings": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "array", "minItems": 6, "items": { "type": "integer" } }
+    }
+  },
+  "properties": {
+    "codigo_ine": { "type": "string", "pattern": "^\\d{5}$" },
+    "nome": { "type": "string", "minLength": 1 },
+    "provincia": { "enum": ["A Coruña", "Lugo", "Ourense", "Pontevedra"] },
+    "superficie_km2": { "type": "number", "exclusiveMinimum": 0 },
+    "poboacion": { "$ref": "#/$defs/count" },
+    "pib": { "$ref": "#/$defs/count" },
+    "nacementos": { "$ref": "#/$defs/count" },
+    "defuncions": { "$ref": "#/$defs/count" },
+    "menores_20": { "$ref": "#/$defs/count" },
+    "maiores_65": { "$ref": "#/$defs/count" },
+    "poboacion_1950": { "$ref": "#/$defs/count" },
+    "poboacion_2021": { "$ref": "#/$defs/count" },
+    "periodos": {
+      "type": "object",
+      "additionalProperties": { "type": "string", "pattern": "^\\d{4}$" }
+    },
+    "formas": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "superficie",
+        "poboacion",
+        "pib",
+        "nacementos",
+        "defuncions",
+        "menores_20",
+        "maiores_65",
+        "poboacion_1950",
+        "poboacion_2021"
+      ],
+      "patternProperties": { "^[a-z0-9_]+$": { "$ref": "#/$defs/rings" } }
+    },
+    "erro_area": {
+      "type": "object",
+      "additionalProperties": { "type": "number", "minimum": 0, "maximum": 0.05 }
+    }
+  }
+}

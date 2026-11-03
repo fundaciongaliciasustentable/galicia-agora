@@ -29,6 +29,8 @@ const FONTS = ['Noto Sans Regular', 'Noto Sans Medium', 'Noto Sans Italic'];
 const GLYPH_RANGES = ['0-255', '256-511', '8192-8447'];
 /** Layers above this size are served as PMTiles instead of GeoJSON. */
 const TILE_THRESHOLD_BYTES = 1_000_000;
+/** Layers read whole by their own page, never tiled (galicia-deformada: cartograms in `formas`). */
+const NO_TILES = new Set(['galicia-deformada']);
 
 function log(msg: string) {
   console.log(`prepare: ${msg}`);
@@ -180,9 +182,17 @@ function data() {
     const fc = JSON.parse(readFileSync(geojson, 'utf8')) as {
       features: Array<{ properties: Record<string, unknown> }>;
     };
-    writeFileSync(join(dstDir, 'table.json'), JSON.stringify(fc.features.map((f) => f.properties)));
+    // Without the cartogram rings of galicia-deformada, which are no table material.
+    writeFileSync(
+      join(dstDir, 'table.json'),
+      JSON.stringify(fc.features.map(({ properties: { formas: _, ...rest } }) => rest)),
+    );
 
-    if (layer.geometry !== 'none' && statSync(geojson).size > TILE_THRESHOLD_BYTES) {
+    if (
+      layer.geometry !== 'none' &&
+      !NO_TILES.has(layer.id) &&
+      statSync(geojson).size > TILE_THRESHOLD_BYTES
+    ) {
       const out = join(dstDir, 'data.pmtiles');
       execFileSync(
         'tippecanoe',
