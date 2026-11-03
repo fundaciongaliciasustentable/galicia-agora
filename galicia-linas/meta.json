@@ -1,0 +1,20 @@
+{
+  "layer_id": "galicia-linas",
+  "published_at": "2026-11-01T13:27:02.400Z",
+  "fetched_at": "2026-11-03T17:07:26.363Z",
+  "last_success_at": "2026-11-03T17:07:26.363Z",
+  "status": "fresh",
+  "consecutive_failures": 0,
+  "feature_count": 9,
+  "source_url": "https://servicios.idee.es/wcs-inspire/mdt?SERVICE=WCS&VERSION=2.0.1&REQUEST=GetCoverage&COVERAGEID=Elevacion4258_200&SUBSET=Lat(41.78,43.82)&SUBSET=Long(-9.45,-6.65)&FORMAT=ArcGrid",
+  "licence": "CC-BY-SA-4.0",
+  "attribution": "Carteis e cálculos: Fundación Galicia Sustentable. Relevo e contorno: © Instituto Geográfico Nacional (MDT200, PNOA-LiDAR; CC BY 4.0 scne.es). Poboación, idades e PIB: Fonte: IGE: https://www.ige.gal; censos: elaboración propia con datos extraídos del sitio web del INE: www.ine.es. Lugares: © Instituto de Estudos do Territorio. Xunta de Galicia. Raios: MeteoGalicia (Xunta de Galicia). Lumes: © Unión Europea, Copernicus EFFIS (JRC).",
+  "checksum": "sha256:d5b801f3eca6af3890ad785ca3a8e3db38fe4afb641a4392e58038dd8f86baab",
+  "last_error": null,
+  "history": [
+    {
+      "at": "2026-11-03T17:07:26.363Z",
+      "ok": true
+    }
+  ]
+}
