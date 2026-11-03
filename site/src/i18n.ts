@@ -91,6 +91,74 @@ const STRINGS = {
   collection_bysa: { gl: 'Colección CC BY-SA 4.0', es: 'Colección CC BY-SA 4.0' },
   portrait_nav: { gl: 'Retrato', es: 'Retrato' },
   pulse_nav: { gl: 'Pulso', es: 'Pulso' },
+  lines_nav: { gl: 'Liñas', es: 'Líneas' },
+  lines_title: { gl: 'Galicia en liñas', es: 'Galicia en líneas' },
+  lines_lede: {
+    gl: 'Carteis ao xeito da portada de Unknown Pleasures: cada liña é un paralelo de Galicia, de norte a sur, e érguese co que hai debaixo. Descárgaos para imprimir.',
+    es: 'Carteles a la manera de la portada de Unknown Pleasures: cada línea es un paralelo de Galicia, de norte a sur, y se levanta con lo que hay debajo. Descárgalos para imprimir.',
+  },
+  lines_download_svg: { gl: 'SVG (vectorial)', es: 'SVG (vectorial)' },
+  lines_download_png: { gl: 'PNG 3000 × 3750', es: 'PNG 3000 × 3750' },
+  lines_close: { gl: 'Pechar', es: 'Cerrar' },
+  lines_open: { gl: 'Ver o cartel: {title}', es: 'Ver el cartel: {title}' },
+  lines_step: { gl: 'unha liña cada {km} km', es: 'una línea cada {km} km' },
+  lines_licence: {
+    gl: 'Os carteis publícanse baixo CC BY-SA 4.0: podes imprimilos, compartilos e modificalos citando a autoría e as fontes que levan ao pé.',
+    es: 'Los carteles se publican bajo CC BY-SA 4.0: puedes imprimirlos, compartirlos y modificarlos citando la autoría y las fuentes que llevan al pie.',
+  },
+  lines_note: {
+    gl: 'Os valores de cada concello repártense entre os seus lugares segundo a poboación do Nomenclátor e suavízanse uns 2 km; a altura vai en raíz cadrada para que as cidades non borren o resto. No PIB e en 1950 ese reparto é unha aproximación. O relevo é o MDT de 200 m do IGN, lineal, e fóra de Galicia cae a cero en 7 km.',
+    es: 'Los valores de cada ayuntamiento se reparten entre sus lugares según la población del Nomenclátor y se suavizan unos 2 km; la altura va en raíz cuadrada para que las ciudades no borren el resto. En el PIB y en 1950 ese reparto es una aproximación. El relieve es el MDT de 200 m del IGN, lineal, y fuera de Galicia cae a cero en 7 km.',
+  },
+  lines_missing: {
+    gl: 'Aínda non están publicados os perfís dos carteis.',
+    es: 'Aún no están publicados los perfiles de los carteles.',
+  },
+  lines_relevo_title: { gl: 'Relevo', es: 'Relieve' },
+  lines_relevo_text: {
+    gl: 'As serras do norte de Lugo, os Ancares e o Courel, o Macizo Central ourensán. A costa e as rías quedan planas.',
+    es: 'Las sierras del norte de Lugo, Os Ancares y O Courel, el Macizo Central ourensano. La costa y las rías quedan planas.',
+  },
+  lines_poboacion_title: { gl: 'Poboación {p}', es: 'Población {p}' },
+  lines_poboacion_text: {
+    gl: 'A Coruña e Ferrol arriba, Santiago e Lugo no medio, Vigo, Pontevedra e Ourense abaixo. O interior case non se move.',
+    es: 'A Coruña y Ferrol arriba, Santiago y Lugo en medio, Vigo, Pontevedra y Ourense abajo. El interior casi no se mueve.',
+  },
+  lines_poboacion_1950_title: { gl: 'Poboación 1950', es: 'Población 1950' },
+  lines_poboacion_1950_text: {
+    gl: 'Case a mesma xente ca hoxe, repartida por todo o país. Na mesma escala ca 2021.',
+    es: 'Casi la misma gente que hoy, repartida por todo el país. En la misma escala que 2021.',
+  },
+  lines_poboacion_2021_title: { gl: 'Poboación 2021', es: 'Población 2021' },
+  lines_poboacion_2021_text: {
+    gl: 'Setenta anos despois: a xente xuntouse nas cidades e na costa. Na mesma escala ca 1950.',
+    es: 'Setenta años después: la gente se juntó en las ciudades y en la costa. En la misma escala que 1950.',
+  },
+  lines_menores_20_title: { gl: 'Menores de 20 · {p}', es: 'Menores de 20 · {p}' },
+  lines_menores_20_text: {
+    gl: 'A Galicia nova, na mesma escala ca a maior: as liñas apenas se levantan fóra das cidades.',
+    es: 'La Galicia joven, en la misma escala que la mayor: las líneas apenas se levantan fuera de las ciudades.',
+  },
+  lines_maiores_65_title: { gl: 'Maiores de 65 · {p}', es: 'Mayores de 65 · {p}' },
+  lines_maiores_65_text: {
+    gl: 'A Galicia maior, na mesma escala ca a nova: máis alta e máis repartida.',
+    es: 'La Galicia mayor, en la misma escala que la joven: más alta y más repartida.',
+  },
+  lines_pib_title: { gl: 'PIB · {p}', es: 'PIB · {p}' },
+  lines_pib_text: {
+    gl: 'O PIB conta onde están as empresas: Vigo e A Coruña sobresaen máis ca na poboación.',
+    es: 'El PIB cuenta dónde están las empresas: Vigo y A Coruña sobresalen más que en la población.',
+  },
+  lines_raios_title: { gl: 'Raios · 12 meses', es: 'Rayos · 12 meses' },
+  lines_raios_text: {
+    gl: 'Os lóstregos caídos en Galicia no último ano, segundo a rede de MeteoGalicia.',
+    es: 'Los rayos caídos en Galicia en el último año, según la red de MeteoGalicia.',
+  },
+  lines_lume_title: { gl: 'Lume · {p}', es: 'Fuego · {p}' },
+  lines_lume_text: {
+    gl: 'A superficie queimada en grandes lumes. O sur de Ourense érguese como unha cordilleira.',
+    es: 'La superficie quemada en grandes incendios. El sur de Ourense se levanta como una cordillera.',
+  },
   deform_nav: { gl: 'Galicia deformada', es: 'Galicia deformada' },
   deform_title: { gl: 'Galicia deformada', es: 'Galicia deformada' },
   deform_lede: {

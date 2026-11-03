@@ -1,0 +1,183 @@
+---
+// Galicia en liñas: gallery of ridgeline posters (galicia-linas layer), drawn and offered for
+// download by site/src/linas/linas.ts.
+import { dictionary, type Lang, t } from '../i18n';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+---
+
+<div class="li-app" data-lang={lang} data-dict={JSON.stringify(dictionary(lang))}>
+  <header class="li-head" id="contido">
+    <h1>{t(lang, 'lines_title')}</h1>
+    <p>{t(lang, 'lines_lede')}</p>
+    <p class="li-status" role="status">{t(lang, 'loading')}</p>
+  </header>
+  <ul class="li-grid"></ul>
+  <footer class="li-foot">
+    <p>{t(lang, 'lines_licence')}</p>
+    <details>
+      <summary>{t(lang, 'pulse_about')}</summary>
+      <p>{t(lang, 'lines_note')}</p>
+      <p class="li-sources"></p>
+    </details>
+  </footer>
+
+  <dialog class="li-dialog" aria-labelledby="li-big-title">
+    <div class="li-big"></div>
+    <div class="li-side">
+      <h2 class="li-big-title" id="li-big-title"></h2>
+      <p class="li-big-text"></p>
+      <div class="li-actions">
+        <button type="button" class="li-svg">{t(lang, 'lines_download_svg')}</button>
+        <button type="button" class="li-png">{t(lang, 'lines_download_png')}</button>
+      </div>
+      <button type="button" class="li-close">{t(lang, 'lines_close')}</button>
+    </div>
+  </dialog>
+</div>
+
+<style is:global>
+  .li-app {
+    background: #000;
+    color: #e6e6df;
+    min-height: calc(100dvh - var(--ga-head, 52px));
+    padding: 32px 16px 48px;
+  }
+  .li-head,
+  .li-foot {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  .li-head h1 {
+    margin: 0;
+    color: #fff;
+    font-size: var(--gs-texto-2xl, 2rem);
+    letter-spacing: 0.02em;
+  }
+  .li-head p,
+  .li-foot {
+    color: #b3b3aa;
+    font-size: var(--gs-texto-sm);
+    max-width: 62ch;
+  }
+  .li-status {
+    color: #e0a95a;
+  }
+  .li-status:empty {
+    display: none;
+  }
+  .li-grid {
+    list-style: none;
+    margin: 24px auto;
+    padding: 0;
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+  }
+  .li-card {
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: 1px solid #1f1f1c;
+    border-radius: 4px;
+    background: #000;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+    text-align: left;
+    transition: border-color 0.15s;
+  }
+  .li-card:hover,
+  .li-card:focus-visible {
+    border-color: #8a8a82;
+  }
+  .li-card svg,
+  .li-big svg {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .li-caption {
+    display: block;
+    padding: 6px 10px 10px;
+    font-size: var(--gs-texto-sm);
+    color: #e6e6df;
+  }
+  .li-foot summary {
+    cursor: pointer;
+  }
+  .li-sources {
+    font-size: var(--gs-texto-xs);
+  }
+  .li-dialog {
+    width: min(1000px, calc(100vw - 32px));
+    max-height: calc(100dvh - 32px);
+    padding: 16px;
+    border: 1px solid #2a2b26;
+    border-radius: 6px;
+    background: #000;
+    color: #e6e6df;
+    display: none;
+    gap: 20px;
+  }
+  .li-dialog[open] {
+    display: grid;
+    grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+  }
+  .li-dialog::backdrop {
+    background: rgba(0, 0, 0, 0.8);
+  }
+  .li-big svg {
+    max-height: calc(100dvh - 72px);
+    width: auto;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  .li-big-title {
+    margin: 0;
+    color: #fff;
+  }
+  .li-big-text {
+    color: #b3b3aa;
+    font-size: var(--gs-texto-sm);
+  }
+  .li-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 12px 0;
+  }
+  .li-actions button,
+  .li-close {
+    font: inherit;
+    font-size: var(--gs-texto-sm);
+    border: 1px solid #e6e6df;
+    border-radius: 999px;
+    padding: 4px 14px;
+    background: transparent;
+    color: #e6e6df;
+    cursor: pointer;
+  }
+  .li-actions button:hover {
+    background: #e6e6df;
+    color: #000;
+  }
+  .li-close {
+    border-color: #3a3b35;
+  }
+  @media (max-width: 700px) {
+    .li-dialog[open] {
+      grid-template-columns: 1fr;
+      overflow-y: auto;
+    }
+  }
+</style>
+
+<script>
+  import { start } from '../linas/linas';
+  start();
+</script>
