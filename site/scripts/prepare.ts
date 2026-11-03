@@ -31,6 +31,26 @@ const GLYPH_RANGES = ['0-255', '256-511', '8192-8447'];
 const TILE_THRESHOLD_BYTES = 1_000_000;
 /** Layers read whole by their own page, never tiled (galicia-deformada: cartograms in `formas`). */
 const NO_TILES = new Set(['galicia-deformada']);
+/**
+ * Tippecanoe options per layer, instead of the defaults below. aldeas-baleiras is a night map of
+ * all 30,000 places from zoom 6: no point may be dropped, and the state-only fields stay out.
+ */
+const TIPPECANOE: Record<string, string[]> = {
+  'aldeas-baleiras': [
+    '-Z6',
+    '-z12',
+    '-r1',
+    '--no-tile-size-limit',
+    ...['anos_baleira', 'nome_ine', 'parroquia_ine', 'posicion', 'ano', 'codigo_ine'].flatMap(
+      (f) => ['-x', f],
+    ),
+  ],
+};
+/** Rows kept in table.json when a layer's own page only needs some of them. */
+const TABLE_ROWS: Record<string, (p: Record<string, unknown>) => boolean> = {
+  // 30,000 entities on the map (tiles); the page lists only those ever left empty.
+  'aldeas-baleiras': (p) => Array.isArray(p.anos_baleira) && p.anos_baleira.length > 0,
+};
 
 function log(msg: string) {
   console.log(`prepare: ${msg}`);
@@ -187,7 +207,9 @@ function data() {
     writeFileSync(
       join(dstDir, 'table.json'),
       JSON.stringify(
-        fc.features.map(({ properties: { formas: _f, perfis: _p, ...rest } }) => rest),
+        fc.features
+          .filter((f) => TABLE_ROWS[layer.id]?.(f.properties) ?? true)
+          .map(({ properties: { formas: _f, perfis: _p, ...rest } }) => rest),
       ),
     );
 
@@ -208,14 +230,15 @@ function data() {
           layer.id,
           // Points keep full precision (z13) and every feature from z10;
           // -zg would stop at z7 (~76 m) for dense point layers.
-          ...(layer.geometry === 'point'
-            ? ['-z13', '--base-zoom=10', '--drop-densest-as-needed']
-            : [
-                '-zg',
-                '--coalesce-densest-as-needed',
-                '--detect-shared-borders',
-                '--extend-zooms-if-still-dropping',
-              ]),
+          ...(TIPPECANOE[layer.id] ??
+            (layer.geometry === 'point'
+              ? ['-z13', '--base-zoom=10', '--drop-densest-as-needed']
+              : [
+                  '-zg',
+                  '--coalesce-densest-as-needed',
+                  '--detect-shared-borders',
+                  '--extend-zooms-if-still-dropping',
+                ])),
           geojson,
         ],
         { stdio: 'inherit' },

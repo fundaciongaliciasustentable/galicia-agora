@@ -1,0 +1,58 @@
+id: aldeas-baleiras
+title:
+  gl: Aldeas baleiras (entidades sen habitantes desde 2000)
+  es: Aldeas vacías (entidades sin habitantes desde 2000)
+theme: territorio
+operator:
+  name: Instituto Nacional de Estadística (INE)
+  url: https://www.ine.es/dyngs/INEbase/operacion.htm?c=Estadistica_C&cid=1254736177010&idp=1254735572981
+source_url: https://www.ine.es/nomen_files/nacional/es/Nacional_2025.zip
+licence:
+  spdx: CC-BY-SA-4.0
+  text_url: https://www.ine.es/dyngs/AYU/index.htm?cid=125
+  quote: >-
+    La licencia de uso general a aplicar a la información estadística de este sitio web, salvo
+    que se indique lo contrario, es la Creative Commons Reconocimiento 4.0 (CC BY 4.0)
+  verified_at: 2026-11-03
+  odbl_compatible: doubt
+  collection: cc-by-sa-4.0
+  notes: >-
+    Poboación de cada entidade singular no Nomenclátor do INE (Padrón continuo por unidade
+    poboacional a 1 de xaneiro; desde 2024, a partir do Censo anual), CC BY 4.0, un ZIP nacional
+    por ano desde 2000 con texto de ancho fixo. Posicións das entidades: puntos do IET
+    (entidades-poboacion, CC BY-SA 4.0) polo mesmo código de 11 cifras ou, se non o hai, polo
+    mesmo nome no mesmo concello; por iso a capa vai na colección CC BY-SA 4.0. Cálculo propio da
+    Fundación Galicia Sustentable: os anos en que cada entidade estivo a 0, o ano en que quedou
+    baleira por última vez, se volveu ter xente e a continuidade das entidades de Oza-Cesuras e
+    Cerdedo-Cotobade (polo nome nos concellos de antes da fusión). Só as entidades do último
+    Nomenclátor: as que desapareceron del non contan nas series. Cita esixida: «Elaboración
+    propia con datos extraídos del sitio web del INE: www.ine.es».
+attribution: >-
+  Elaboración propia con datos extraídos del sitio web del INE: www.ine.es (Nomenclátor:
+  población del Padrón Continuo por unidad poblacional, 2000–2025). Posicións: © Instituto de
+  Estudos do Territorio. Xunta de Galicia (PBA). Cálculos: Fundación Galicia Sustentable.
+update_frequency:
+  declared: P365D
+geometry: point
+output: geojson
+auth:
+  required: false
+privacy_notes: >-
+  Poboación agregada por entidade de poboación, como a publica o INE; ningún dato persoal. Unha
+  entidade con 1 ou 2 habitantes identifica de feito unha casa: a páxina non mostra cifras por
+  debaixo de 5 nin nomes de persoas, só se a entidade ten xente ou non.
+stale_after: P400D
+ingest:
+  every: P30D
+depends_on:
+  - entidades-poboacion
+# Lives on its own page (/ausencias/); the main map does not draw it (SERIES_LAYERS).
+style:
+  kind: circle
+  label_field: nome
+table:
+  fields:
+    - nome
+    - codigo_ine
+    - baleira_desde
+    - rexurdiu

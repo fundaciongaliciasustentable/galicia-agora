@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "aldeas-baleiras feature properties",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "codigo",
+    "nome",
+    "nome_ine",
+    "codigo_ine",
+    "pob_2000",
+    "pob",
+    "ano",
+    "primeiro_ano",
+    "baleira_desde",
+    "baleira_antes_2000",
+    "rexurdiu",
+    "anos_baleira",
+    "anos_baleira_txt",
+    "posicion"
+  ],
+  "properties": {
+    "codigo": { "type": "string", "pattern": "^(15|27|32|36)\\d{7}00$" },
+    "nome": { "type": "string", "minLength": 1 },
+    "nome_ine": { "type": "string", "minLength": 1 },
+    "parroquia_ine": { "type": "string" },
+    "codigo_ine": { "type": "string", "pattern": "^\\d{5}$" },
+    "pob_2000": { "type": ["integer", "null"], "minimum": 0 },
+    "pob": { "type": "integer", "minimum": 0 },
+    "ano": { "type": "integer", "minimum": 2000 },
+    "primeiro_ano": { "type": "integer", "minimum": 2000 },
+    "baleira_desde": { "type": ["integer", "null"], "minimum": 2000 },
+    "baleira_antes_2000": { "type": "boolean" },
+    "rexurdiu": { "type": "boolean" },
+    "anos_baleira": { "type": "array", "items": { "type": "integer", "minimum": 2000 } },
+    "anos_baleira_txt": { "type": "string", "pattern": "^(,(\\d{4},)+)?$" },
+    "posicion": { "enum": ["codigo", "nome", null] }
+  }
+}
