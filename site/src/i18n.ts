@@ -375,6 +375,60 @@ const STRINGS = {
     gl: 'Aínda non hai datos de horarios publicados.',
     es: 'Aún no hay datos de horarios publicados.',
   },
+  absence_title: { gl: 'As ausencias', es: 'Las ausencias' },
+  absence_lede: {
+    gl: 'Cada luz é un lugar onde vive xente; cada anel baleiro, un que quedou sen ninguén. As 30.500 entidades de poboación de Galicia, ano a ano desde 2000.',
+    es: 'Cada luz es un lugar donde vive gente; cada anillo vacío, uno que se quedó sin nadie. Las 30.500 entidades de población de Galicia, año a año desde 2000.',
+  },
+  absence_map_label: {
+    gl: 'Mapa nocturno das entidades de poboación de Galicia: luces as habitadas, aneis as baleiras',
+    es: 'Mapa nocturno de las entidades de población de Galicia: luces las habitadas, anillos las vacías',
+  },
+  absence_count: { gl: '{n} lugares sen ninguén', es: '{n} lugares sin nadie' },
+  absence_new: { gl: 'Quedaron baleiros en {y} ({n}):', es: 'Se quedaron vacíos en {y} ({n}):' },
+  absence_new_none: { gl: 'Ningún quedou baleiro en {y}.', es: 'Ninguno se quedó vacío en {y}.' },
+  absence_more: { gl: 'e {n} máis', es: 'y {n} más' },
+  absence_first: {
+    gl: 'En 2000 xa había {n} sen ninguén: non sabemos cando quedaron baleiros.',
+    es: 'En 2000 ya había {n} sin nadie: no sabemos cuándo se quedaron vacíos.',
+  },
+  absence_legend_lit: { gl: 'con xente', es: 'con gente' },
+  absence_legend_ghost: { gl: 'sen ninguén', es: 'sin nadie' },
+  absence_legend_new: { gl: 'quedou baleiro ese ano', es: 'se quedó vacío ese año' },
+  absence_pick: {
+    gl: 'Toca un lugar para ver o seu nome e desde cando está baleiro. Achégate para ler os nomes.',
+    es: 'Toca un lugar para ver su nombre y desde cuándo está vacío. Acércate para leer los nombres.',
+  },
+  absence_detail_empty: { gl: 'Sen ninguén desde {y}.', es: 'Sin nadie desde {y}.' },
+  absence_detail_empty_2000: {
+    gl: 'Sen ninguén xa en 2000.',
+    es: 'Sin nadie ya en 2000.',
+  },
+  absence_detail_lit: { gl: '{pob} habitantes en {y}.', es: '{pob} habitantes en {y}.' },
+  absence_detail_few: {
+    gl: 'Menos de 5 habitantes en {y}.',
+    es: 'Menos de 5 habitantes en {y}.',
+  },
+  absence_detail_revived: {
+    gl: 'Estivo sen ninguén algún ano e volveu ter xente.',
+    es: 'Estuvo sin nadie algún año y volvió a tener gente.',
+  },
+  absence_curve: {
+    gl: 'Lugares sen ninguén cada 1 de xaneiro',
+    es: 'Lugares sin nadie cada 1 de enero',
+  },
+  absence_table: { gl: 'O muro dos nomes', es: 'El muro de los nombres' },
+  absence_col_name: { gl: 'Lugar', es: 'Lugar' },
+  absence_col_since: { gl: 'Baleiro desde', es: 'Vacío desde' },
+  absence_before: { gl: 'antes de 2000', es: 'antes de 2000' },
+  absence_note: {
+    gl: 'Entidades singulares de poboación do Nomenclátor do INE (poboación a 1 de xaneiro; desde 2024, do Censo anual), situadas co punto do mesmo código do IET ou, se non o hai, co mesmo nome no mesmo concello; 75 lugares baleiros quedan sen punto. Contan só as entidades do último Nomenclátor. Moitos lugares de 1 ou 2 habitantes oscilan entre 0 e 1: un lugar «quedou baleiro» o primeiro ano dunha racha de ceros que dura ata hoxe. Para non sinalar casas concretas, por debaixo de 5 habitantes só se di «menos de 5».',
+    es: 'Entidades singulares de población del Nomenclátor del INE (población a 1 de enero; desde 2024, del Censo anual), situadas con el punto del mismo código del IET o, si no lo hay, con el mismo nombre en el mismo ayuntamiento; 75 lugares vacíos quedan sin punto. Cuentan solo las entidades del último Nomenclátor. Muchos lugares de 1 o 2 habitantes oscilan entre 0 y 1: un lugar «se quedó vacío» el primer año de una racha de ceros que dura hasta hoy. Para no señalar casas concretas, por debajo de 5 habitantes solo se dice «menos de 5».',
+  },
+  absence_missing: {
+    gl: 'Aínda non están publicados os datos das aldeas baleiras.',
+    es: 'Aún no están publicados los datos de las aldeas vacías.',
+  },
   century_title: { gl: 'Un século de poboación', es: 'Un siglo de población' },
   century_lede: {
     gl: 'Os censos de 1900 a 2021, concello a concello e sobre os límites de hoxe: onde se foi a xente e onde se xuntou. Cada cor compara co mesmo concello en 1900.',

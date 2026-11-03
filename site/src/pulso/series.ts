@@ -143,6 +143,17 @@ export const SERIES: PulseMap[] = [
     period: { gl: 'Censos de 1900 a 2021', es: 'Censos de 1900 a 2021' },
   },
   {
+    slug: 'ausencias',
+    ready: true,
+    colour: '#c9d3dc',
+    title: { gl: 'As ausencias', es: 'Las ausencias' },
+    summary: {
+      gl: 'Os lugares de Galicia que quedaron sen ninguén, apagándose ano a ano desde 2000.',
+      es: 'Los lugares de Galicia que se quedaron sin nadie, apagándose año a año desde 2000.',
+    },
+    period: { gl: 'Nomenclátor do INE, 2000–2025', es: 'Nomenclátor del INE, 2000–2025' },
+  },
+  {
     slug: 'construcion',
     ready: true,
     colour: '#ffb35c',
