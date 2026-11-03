@@ -1,0 +1,20 @@
+{
+  "layer_id": "galicia-linas-tempo",
+  "published_at": "2026-11-01T13:27:02.400Z",
+  "fetched_at": "2026-11-03T17:21:34.471Z",
+  "last_success_at": "2026-11-03T17:21:34.471Z",
+  "status": "fresh",
+  "consecutive_failures": 0,
+  "feature_count": 3,
+  "source_url": "https://mapas.galiciasustentable.org/linas/",
+  "licence": "CC-BY-SA-4.0",
+  "attribution": "Cálculos: Fundación Galicia Sustentable. Censos: elaboración propia con datos extraídos del sitio web del INE: www.ine.es. Lugares: © Instituto de Estudos do Territorio. Xunta de Galicia. Raios: MeteoGalicia (Xunta de Galicia). Lumes: © Unión Europea, Copernicus EFFIS (JRC). Contorno: © Instituto Geográfico Nacional (CC BY 4.0).",
+  "checksum": "sha256:f6c18f909fbaaa91ba191a14a657004f3a2808ad97d75d526f7c0de1c7feba9f",
+  "last_error": null,
+  "history": [
+    {
+      "at": "2026-11-03T17:21:34.471Z",
+      "ok": true
+    }
+  ]
+}
