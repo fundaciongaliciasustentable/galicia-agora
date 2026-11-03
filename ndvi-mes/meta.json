@@ -1,8 +1,8 @@
 {
   "layer_id": "ndvi-mes",
   "published_at": "2026-10-30T11:39:37.524000Z",
-  "fetched_at": "2026-11-01T22:20:43.002Z",
-  "last_success_at": "2026-11-01T22:20:43.002Z",
+  "fetched_at": "2026-11-03T10:28:48.357Z",
+  "last_success_at": "2026-11-03T10:28:48.357Z",
   "status": "fresh",
   "consecutive_failures": 0,
   "feature_count": 3487,
@@ -12,6 +12,10 @@
   "checksum": "sha256:59faf6ca44af33285d158fdc1a722ade18990c3a7f41d3b3c2610848bd348100",
   "last_error": null,
   "history": [
+    {
+      "at": "2026-11-03T10:28:48.357Z",
+      "ok": true
+    },
     {
       "at": "2026-11-01T22:20:43.002Z",
       "ok": true
