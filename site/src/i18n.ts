@@ -430,6 +430,47 @@ const STRINGS = {
   cross_p_far_old: { gl: 'Lonxe e maiores', es: 'Lejos y mayores' },
   cross_p_births_foreign: { gl: 'Natalidade e estranxeiros', es: 'Natalidad y extranjeros' },
   cross_p_tourist_homes: { gl: 'Pisos turísticos e baleiros', es: 'Pisos turísticos y vacíos' },
+  flood_title: { gl: 'A crecida', es: 'La crecida' },
+  flood_lede: {
+    gl: 'Un temporal visto desde os ríos: a choiva de cada día e, hora a hora, canto subiu cada río sobre o seu caudal de antes, medido nas estacións de aforo. A onda vai chegando a cada conca co seu atraso real.',
+    es: 'Un temporal visto desde los ríos: la lluvia de cada día y, hora a hora, cuánto subió cada río sobre su caudal de antes, medido en las estaciones de aforo. La onda va llegando a cada cuenca con su retraso real.',
+  },
+  flood_map_label: {
+    gl: 'Mapa animado da crecida dos ríos de Galicia',
+    es: 'Mapa animado de la crecida de los ríos de Galicia',
+  },
+  flood_now: {
+    gl: '{n} estacións por riba do dobre do seu caudal de antes. Choiva do día: {mm} mm de media.',
+    es: '{n} estaciones por encima del doble de su caudal de antes. Lluvia del día: {mm} mm de media.',
+  },
+  flood_pick: {
+    gl: 'Toca unha estación de aforo para ver a súa crecida.',
+    es: 'Toca una estación de aforo para ver su crecida.',
+  },
+  flood_detail: {
+    gl: '{name}: agora {q} m³/s ({r} veces o de antes). De {base} a {peak} m³/s, co pico o {when}.',
+    es: '{name}: ahora {q} m³/s ({r} veces lo de antes). De {base} a {peak} m³/s, con el pico el {when}.',
+  },
+  flood_tidal: {
+    gl: 'Estación na ría: o nivel e o caudal seguen a marea.',
+    es: 'Estación en la ría: el nivel y el caudal siguen la marea.',
+  },
+  flood_curve: {
+    gl: 'Estacións por riba do dobre do caudal de antes, hora a hora (barras: choiva media do día)',
+    es: 'Estaciones por encima del doble del caudal de antes, hora a hora (barras: lluvia media del día)',
+  },
+  flood_legend: {
+    gl: 'Caudal sobre o de antes do temporal',
+    es: 'Caudal sobre el de antes del temporal',
+  },
+  flood_note: {
+    gl: 'Caudal medio horario das estacións de aforo de Augas de Galicia e MeteoGalicia (datos de 10 minutos non validados, que o servizo só garda 30 días: este episodio gardouse a tempo). A razón compara cada hora coa mediana das primeiras 24 horas do episodio. Os ríos son as masas de auga de Augas de Galicia (Galicia-Costa); cada tramo toma a estación do mesmo río máis próxima, e os tramos sen estación no seu río quedan apagados. Os caudais do Ulla e do Sar en Padrón seguen a marea e non acenden ríos. A choiva é a diaria das estacións de MeteoGalicia.',
+    es: 'Caudal medio horario de las estaciones de aforo de Augas de Galicia y MeteoGalicia (datos de 10 minutos no validados, que el servicio solo guarda 30 días: este episodio se guardó a tiempo). La razón compara cada hora con la mediana de las primeras 24 horas del episodio. Los ríos son las masas de agua de Augas de Galicia (Galicia-Costa); cada tramo toma la estación del mismo río más próxima, y los tramos sin estación en su río quedan apagados. Los caudales del Ulla y del Sar en Padrón siguen la marea y no encienden ríos. La lluvia es la diaria de las estaciones de MeteoGalicia.',
+  },
+  flood_missing: {
+    gl: 'Aínda non hai ningún episodio de crecida publicado.',
+    es: 'Aún no hay ningún episodio de crecida publicado.',
+  },
   heat_title: { gl: 'O ano das máximas', es: 'El año de las máximas' },
   heat_lede: {
     gl: 'A temperatura máxima de cada día de {y} en toda Galicia, a partir das estacións de MeteoGalicia: o inverno azul, as ondas de calor que soben polos vales do Miño e do Sil, o verán que se apaga.',

@@ -1,0 +1,405 @@
+---
+// A crecida: a flood seen from the rivers (crecida-episodios layer), hour by hour. The same
+// figures are given as text: the hour, how many stations are above twice their flow, the
+// day's rain and a picked station's flood.
+import { base, dictionary, type Lang, t } from '../i18n';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const STOPS = ['#2f6f8f', '#5fd3f3', '#ffe066', '#ff8a4c', '#ff3d6e'];
+---
+
+<div class="cr-app" data-lang={lang} data-dict={JSON.stringify(dictionary(lang))}>
+  <div class="cr-map" role="region" aria-label={t(lang, 'flood_map_label')}></div>
+
+  <section class="cr-panel" id="contido">
+    <a class="cr-back" href={`${base(lang)}pulso/`}>← {t(lang, 'pulse_back')}</a>
+    <h1>{t(lang, 'flood_title')}</h1>
+    <p class="cr-lede"></p>
+    <p class="cr-clock" aria-live="off">--</p>
+    <p class="cr-now" aria-live="off"></p>
+    <div class="cr-controls">
+      <button type="button" class="cr-play" aria-pressed="false">{t(lang, 'pulse_play')}</button>
+    </div>
+    <label class="cr-range-label">
+      <span class="visually-hidden">{t(lang, 'pulse_time')}</span>
+      <input class="cr-range" type="range" min="0" step="0.05" value="0" />
+    </label>
+    <div class="cr-detail" aria-live="polite"></div>
+    <p class="cr-legend">
+      <span class="cr-tscale" style={`background:linear-gradient(90deg, ${STOPS.join(', ')})`} aria-hidden="true"
+        ><span>×1</span><span>×5</span><span>×30</span></span
+      >
+      {t(lang, 'flood_legend')}
+    </p>
+    <p class="cr-status" role="status">{t(lang, 'loading')}</p>
+    <details class="cr-about">
+      <summary>{t(lang, 'pulse_about')}</summary>
+      <p>{t(lang, 'flood_note')}</p>
+      <p class="cr-sources"></p>
+    </details>
+  </section>
+
+  <figure class="cr-curve">
+    <figcaption>{t(lang, 'flood_curve')}</figcaption>
+    <svg role="img" preserveAspectRatio="none"></svg>
+  </figure>
+</div>
+
+<style is:global>
+  .cr-app {
+    position: relative;
+    height: calc(100dvh - var(--ga-head, 52px));
+    overflow: hidden;
+    background: #111210;
+    color: #e6e6df;
+  }
+  .cr-map,
+  .cr-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .cr-canvas {
+    pointer-events: none;
+    z-index: 1;
+  }
+  .cr-panel {
+    position: absolute;
+    z-index: 2;
+    top: 16px;
+    left: 16px;
+    width: min(360px, calc(100% - 32px));
+    max-height: calc(100% - 190px);
+    overflow-y: auto;
+    padding: 16px 18px;
+    border-radius: var(--gs-radius-card);
+    background: rgba(17, 18, 16, 0.8);
+    backdrop-filter: blur(6px);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+  }
+  .cr-back {
+    display: inline-block;
+    margin-bottom: 6px;
+    font-size: var(--gs-texto-sm);
+    color: #b3b3aa;
+  }
+  .cr-back:hover,
+  .cr-back:focus-visible {
+    color: #fff;
+  }
+  .cr-panel h1 {
+    margin: 0;
+    font-size: var(--gs-texto-xl);
+    color: #fff;
+  }
+  .cr-lede,
+  .cr-legend,
+  .cr-about,
+  .cr-table {
+    font-size: var(--gs-texto-sm);
+    color: #b3b3aa;
+    margin: 6px 0 0;
+  }
+  .cr-about summary,
+  .cr-table summary {
+    cursor: pointer;
+  }
+  .cr-sources {
+    font-size: var(--gs-texto-xs);
+  }
+  .cr-clock {
+    margin: 10px 0 0;
+    font-size: clamp(2.5rem, 7vw, 3.75rem);
+    font-weight: 700;
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+    color: #fff;
+    letter-spacing: -0.02em;
+  }
+  .cr-app .cr-clock {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+  }
+  .cr-now {
+    margin: 4px 0 0;
+    font-variant-numeric: tabular-nums;
+    min-height: 2.8em;
+    font-size: var(--gs-texto-sm);
+  }
+  .cr-status {
+    margin: 4px 0 0;
+    font-size: var(--gs-texto-sm);
+    color: #e0a95a;
+  }
+  .cr-status:empty {
+    display: none;
+  }
+  .cr-controls {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 12px;
+    margin-top: 12px;
+  }
+  .cr-seg {
+    display: flex;
+    border: 1px solid #3a3b35;
+    border-radius: 999px;
+    padding: 2px;
+  }
+  .cr-seg button,
+  .cr-play {
+    font: inherit;
+    font-size: var(--gs-texto-sm);
+    border: 0;
+    border-radius: 999px;
+    padding: 4px 12px;
+    background: transparent;
+    color: #e6e6df;
+    cursor: pointer;
+  }
+  .cr-seg button[aria-pressed="true"] {
+    background: #e6e6df;
+    color: #111210;
+  }
+  .cr-play {
+    border: 1px solid #e6e6df;
+    min-width: 6em;
+  }
+  .cr-speed {
+    font: inherit;
+    font-size: var(--gs-texto-sm);
+    background: #1f201c;
+    color: #e6e6df;
+    border: 1px solid #3a3b35;
+    border-radius: var(--gs-radius);
+    padding: 3px 6px;
+  }
+  .cr-range-label {
+    display: block;
+    margin-top: 10px;
+  }
+  .cr-range {
+    width: 100%;
+    accent-color: #e6e6df;
+  }
+  .cr-mode {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: var(--gs-texto-sm);
+    cursor: pointer;
+  }
+  .cr-mode input {
+    width: 16px;
+    height: 16px;
+    accent-color: #e6e6df;
+  }
+  .cr-scale {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4px;
+    padding: 2px 4px;
+    border-radius: 3px;
+    font-size: var(--gs-texto-xs);
+    color: #111210;
+    background: linear-gradient(90deg, #7f3b08, #e08214 25%, #fdb863 40%, #f7f7f2 50%, #b2abd2 65%, #8073ac 80%, #2d004b);
+  }
+  .cr-scale span:first-child {
+    color: #fff;
+  }
+  .cr-scale span:last-child {
+    color: #fff;
+  }
+  .cr-scale span:nth-child(2) {
+    color: #111210;
+  }
+  .cr-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-right: 3px;
+  }
+  .cr-dot-in {
+    background: #5fd3f3;
+    margin-right: 6px;
+  }
+  .cr-table table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 6px;
+    font-variant-numeric: tabular-nums;
+    font-size: var(--gs-texto-xs);
+    color: #e6e6df;
+  }
+  .cr-table caption {
+    text-align: left;
+    color: #b3b3aa;
+    padding-bottom: 4px;
+  }
+  .cr-table th,
+  .cr-table td {
+    padding: 2px 4px;
+    border-bottom: 1px solid #2a2b26;
+    text-align: right;
+  }
+  .cr-table th:first-child,
+  .cr-table td:first-child {
+    text-align: left;
+  }
+  .cr-curve {
+    position: absolute;
+    z-index: 2;
+    left: 16px;
+    right: 64px;
+    bottom: 12px;
+    margin: 0;
+    height: 120px;
+  }
+  .cr-curve figcaption {
+    font-size: var(--gs-texto-xs);
+    color: #b3b3aa;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .cr-curve svg {
+    display: block;
+    width: 100%;
+    height: 100px;
+    cursor: ew-resize;
+    touch-action: none;
+  }
+  .cr-tick {
+    fill: #8a8a82;
+    font-size: 11px;
+    text-anchor: middle;
+  }
+  .cr-bar {
+    fill: rgba(230, 230, 223, 0.25);
+    cursor: pointer;
+  }
+  .cr-bar.is-now {
+    fill: #b2abd2;
+  }
+  .cr-bar.is-missing {
+    fill: none;
+    stroke: rgba(230, 230, 223, 0.35);
+    stroke-dasharray: 3 3;
+  }
+  .cr-mine {
+    fill: #fff;
+  }
+  .cr-mine-line {
+    fill: none;
+    stroke: #fff;
+    stroke-width: 1.5;
+    vector-effect: non-scaling-stroke;
+  }
+  .cr-detail {
+    margin-top: 8px;
+    font-size: var(--gs-texto-sm);
+  }
+  .cr-detail:empty {
+    display: none;
+  }
+  .cr-detail strong {
+    color: #fff;
+  }
+  .cr-badge {
+    display: inline-block;
+    margin-left: 6px;
+    padding: 0 6px;
+    border-radius: 999px;
+    border: 1px solid #fdae61;
+    color: #fdae61;
+    font-size: var(--gs-texto-xs);
+    vertical-align: middle;
+  }
+  .cr-area {
+    fill: none;
+    stroke: #ff7a3d;
+    stroke-width: 1.5;
+    vector-effect: non-scaling-stroke;
+  }
+  .cr-other {
+    fill: none;
+    stroke: rgba(230, 230, 223, 0.45);
+    stroke-width: 1;
+    stroke-dasharray: 3 3;
+    vector-effect: non-scaling-stroke;
+  }
+  .cr-playhead {
+    stroke: #fff;
+    stroke-width: 1.5;
+    vector-effect: non-scaling-stroke;
+  }
+  @media (max-width: 700px) {
+    .cr-panel {
+      top: 8px;
+      left: 8px;
+      right: 8px;
+      width: auto;
+      max-height: 48%;
+      padding: 12px 14px;
+    }
+    .cr-lede,
+    .cr-legend {
+      display: none;
+    }
+    .cr-clock {
+      margin-top: 4px;
+      font-size: 2.2rem;
+    }
+    .cr-now {
+      min-height: 0;
+    }
+    .cr-controls {
+      margin-top: 8px;
+    }
+    .cr-curve {
+      left: 8px;
+      right: 8px;
+      height: 96px;
+    }
+    .cr-curve svg {
+      height: 76px;
+    }
+  }
+  .cr-tscale {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4px;
+    padding: 2px 4px;
+    border-radius: 3px;
+    font-size: var(--gs-texto-xs);
+    color: #111;
+  }
+  .cr-tscale span:first-child,
+  .cr-tscale span:last-child {
+    color: #fff;
+  }
+  .cr-band {
+    fill: rgba(95, 211, 243, 0.25);
+  }
+  .cr-mean {
+    fill: none;
+    stroke: #ffe066;
+    stroke-width: 1.5;
+    vector-effect: non-scaling-stroke;
+  }
+  .cr-mine {
+    fill: none;
+    stroke: #fff;
+    stroke-width: 1.2;
+    vector-effect: non-scaling-stroke;
+  }
+</style>
+
+<script>
+  import { start } from '../crecida/crecida';
+  start();
+</script>

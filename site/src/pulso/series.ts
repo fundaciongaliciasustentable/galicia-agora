@@ -143,6 +143,20 @@ export const SERIES: PulseMap[] = [
     period: { gl: 'Censos de 1900 a 2021', es: 'Censos de 1900 a 2021' },
   },
   {
+    slug: 'crecida',
+    ready: true,
+    colour: '#5fd3f3',
+    title: { gl: 'A crecida', es: 'La crecida' },
+    summary: {
+      gl: 'Un temporal visto desde os ríos: a onda de crecida chegando a cada conca co seu atraso real.',
+      es: 'Un temporal visto desde los ríos: la onda de crecida llegando a cada cuenca con su retraso real.',
+    },
+    period: {
+      gl: '5–10 de outubro de 2026, hora a hora',
+      es: '5–10 de octubre de 2026, hora a hora',
+    },
+  },
+  {
     slug: 'calor',
     ready: true,
     colour: '#f46d43',
