@@ -15,7 +15,7 @@ on:
   workflow_dispatch:
     inputs:
       month:
-        description: Month to build (YYYY-MM); empty = the month just ended
+        description: Month to build (YYYY-MM); empty = the month just ended. With preview_only, a comma-separated list
         type: string
         default: ''
       preview_only:
@@ -78,8 +78,17 @@ jobs:
           PREVIEW_ONLY: ${{ inputs.preview_only && '--preview-only' || '' }}
         run: |
           set +e
-          npx tsx pipeline/satelite/cli.ts ${MONTH:+--month=$MONTH} $PREVIEW_ONLY
-          echo "code=$?" >> "$GITHUB_OUTPUT"
+          if [ -n "$PREVIEW_ONLY" ] && [ -n "$MONTH" ]; then
+            # Past months, one after another (~6 min each); a failed month does not stop the rest.
+            code=0
+            for m in $(printf %s "$MONTH" | tr ',' ' '); do
+              npx tsx pipeline/satelite/cli.ts --month="$m" $PREVIEW_ONLY || { echo "::warning::$m: no image"; code=1; }
+            done
+          else
+            npx tsx pipeline/satelite/cli.ts ${MONTH:+--month=$MONTH} $PREVIEW_ONLY
+            code=$?
+          fi
+          echo "code=$code" >> "$GITHUB_OUTPUT"
           set -e
           ls -l satelite-out/*/ 2>/dev/null || true
           cat satelite-out/upload.txt 2>/dev/null || true
