@@ -1,0 +1,61 @@
+# Keep a flood episode (10-minute river flow and level) before it leaves the 30 days that
+# MeteoGalicia serves. Manual; the file goes to the data branch (caudais-episodios/).
+name: aforos-episodio
+
+on:
+  workflow_dispatch:
+    inputs:
+      inicio:
+        description: Start, UTC (AAAA-MM-DDTHH:MM)
+        type: string
+        required: true
+      fin:
+        description: End, UTC (AAAA-MM-DDTHH:MM)
+        type: string
+        required: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: data-branch-aforos
+  cancel-in-progress: false
+
+jobs:
+  episodio:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      DATA_OUT_DIR: data-out
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - name: Data branch
+        run: |
+          git fetch origin data
+          git worktree add data-out origin/data
+          git -C data-out switch -c data
+      - name: Download the episode
+        env:
+          METEOGALICIA_AFOROS_KEY: ${{ secrets.METEOGALICIA_AFOROS_KEY }}
+          INICIO: ${{ inputs.inicio }}
+          FIN: ${{ inputs.fin }}
+        run: npx tsx pipeline/aforos/episodio.ts --inicio="$INICIO" --fin="$FIN"
+      - name: Commit to the data branch
+        run: |
+          git config --global user.name "galicia-agora-ingest"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          cp -R data-out/caudais-episodios keep
+          for attempt in 1 2 3 4 5; do
+            git -C data-out add caudais-episodios
+            git -C data-out commit -q -m "data: caudais episodio ${{ inputs.inicio }}" || break
+            git -C data-out push -q origin HEAD:data && break
+            [ "$attempt" = 5 ] && { echo "::error::could not push"; exit 1; }
+            sleep $((attempt * 20))
+            git fetch -q origin data && git -C data-out reset -q --hard origin/data
+            mkdir -p data-out/caudais-episodios && cp -R keep/. data-out/caudais-episodios/
+          done
