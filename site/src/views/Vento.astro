@@ -1,0 +1,387 @@
+---
+// Vento visible: particles following the 10 m wind forecast of MeteoGalicia's WRF (vento-wrf
+// layer) over a dark map. The hour, the run and the wind at a picked point are given as text.
+import { base, dictionary, type Lang, t } from '../i18n';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const STOPS = ['#3d6e8f', '#4fa3a5', '#8fcf8a', '#e5e17a', '#f2a65a', '#e8604c', '#c03a6a'];
+---
+
+<div class="ve-app" data-lang={lang} data-dict={JSON.stringify(dictionary(lang))}>
+  <div class="ve-map" role="region" aria-label={t(lang, 'wind_map_label')}></div>
+  <canvas class="ve-canvas" aria-hidden="true"></canvas>
+
+  <section class="ve-panel" id="contido">
+    <a class="ve-back" href={`${base(lang)}pulso/`}>← {t(lang, 'pulse_back')}</a>
+    <h1>{t(lang, 'wind_title')}</h1>
+    <p class="ve-lede">{t(lang, 'wind_lede')}</p>
+    <p class="ve-clock" aria-live="off">--:--</p>
+    <p class="ve-now"></p>
+    <div class="ve-controls">
+      <button type="button" class="ve-play" aria-pressed="false">{t(lang, 'pulse_play')}</button>
+    </div>
+    <label class="ve-range-label">
+      <span class="visually-hidden">{t(lang, 'pulse_time')}</span>
+      <input class="ve-range" type="range" min="0" step="0.05" value="0" />
+    </label>
+    <div class="ve-detail" aria-live="polite"></div>
+    <p class="ve-legend">
+      <span class="ve-windscale" style={`background:linear-gradient(90deg, ${STOPS.join(', ')})`} aria-hidden="true"
+        ><span>0</span><span>36</span><span>72+</span></span
+      >
+      {t(lang, 'wind_legend')}
+    </p>
+    <p class="ve-status" role="status">{t(lang, 'loading')}</p>
+    <details class="ve-about">
+      <summary>{t(lang, 'pulse_about')}</summary>
+      <p>{t(lang, 'wind_note')}</p>
+      <p class="ve-sources"></p>
+    </details>
+  </section>
+</div>
+
+<style is:global>
+  .ve-app {
+    position: relative;
+    height: calc(100dvh - var(--ga-head, 52px));
+    overflow: hidden;
+    background: #111210;
+    color: #e6e6df;
+  }
+  .ve-map,
+  .ve-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .ve-canvas {
+    pointer-events: none;
+    z-index: 1;
+  }
+  .ve-panel {
+    position: absolute;
+    z-index: 2;
+    top: 16px;
+    left: 16px;
+    width: min(360px, calc(100% - 32px));
+    max-height: calc(100% - 190px);
+    overflow-y: auto;
+    padding: 16px 18px;
+    border-radius: var(--gs-radius-card);
+    background: rgba(17, 18, 16, 0.8);
+    backdrop-filter: blur(6px);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+  }
+  .ve-back {
+    display: inline-block;
+    margin-bottom: 6px;
+    font-size: var(--gs-texto-sm);
+    color: #b3b3aa;
+  }
+  .ve-back:hover,
+  .ve-back:focus-visible {
+    color: #fff;
+  }
+  .ve-panel h1 {
+    margin: 0;
+    font-size: var(--gs-texto-xl);
+    color: #fff;
+  }
+  .ve-lede,
+  .ve-legend,
+  .ve-about,
+  .ve-table {
+    font-size: var(--gs-texto-sm);
+    color: #b3b3aa;
+    margin: 6px 0 0;
+  }
+  .ve-about summary,
+  .ve-table summary {
+    cursor: pointer;
+  }
+  .ve-sources {
+    font-size: var(--gs-texto-xs);
+  }
+  .ve-clock {
+    margin: 10px 0 0;
+    font-size: clamp(2.5rem, 7vw, 3.75rem);
+    font-weight: 700;
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+    color: #fff;
+    letter-spacing: -0.02em;
+  }
+  .ve-app .ve-clock {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+  }
+  .ve-now {
+    margin: 4px 0 0;
+    font-variant-numeric: tabular-nums;
+    min-height: 2.8em;
+    font-size: var(--gs-texto-sm);
+  }
+  .ve-status {
+    margin: 4px 0 0;
+    font-size: var(--gs-texto-sm);
+    color: #e0a95a;
+  }
+  .ve-status:empty {
+    display: none;
+  }
+  .ve-controls {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 12px;
+    margin-top: 12px;
+  }
+  .ve-seg {
+    display: flex;
+    border: 1px solid #3a3b35;
+    border-radius: 999px;
+    padding: 2px;
+  }
+  .ve-seg button,
+  .ve-play {
+    font: inherit;
+    font-size: var(--gs-texto-sm);
+    border: 0;
+    border-radius: 999px;
+    padding: 4px 12px;
+    background: transparent;
+    color: #e6e6df;
+    cursor: pointer;
+  }
+  .ve-seg button[aria-pressed="true"] {
+    background: #e6e6df;
+    color: #111210;
+  }
+  .ve-play {
+    border: 1px solid #e6e6df;
+    min-width: 6em;
+  }
+  .ve-speed {
+    font: inherit;
+    font-size: var(--gs-texto-sm);
+    background: #1f201c;
+    color: #e6e6df;
+    border: 1px solid #3a3b35;
+    border-radius: var(--gs-radius);
+    padding: 3px 6px;
+  }
+  .ve-range-label {
+    display: block;
+    margin-top: 10px;
+  }
+  .ve-range {
+    width: 100%;
+    accent-color: #e6e6df;
+  }
+  .ve-mode {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: var(--gs-texto-sm);
+    cursor: pointer;
+  }
+  .ve-mode input {
+    width: 16px;
+    height: 16px;
+    accent-color: #e6e6df;
+  }
+  .ve-scale {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4px;
+    padding: 2px 4px;
+    border-radius: 3px;
+    font-size: var(--gs-texto-xs);
+    color: #111210;
+    background: linear-gradient(90deg, #7f3b08, #e08214 25%, #fdb863 40%, #f7f7f2 50%, #b2abd2 65%, #8073ac 80%, #2d004b);
+  }
+  .ve-scale span:first-child {
+    color: #fff;
+  }
+  .ve-scale span:last-child {
+    color: #fff;
+  }
+  .ve-scale span:nth-child(2) {
+    color: #111210;
+  }
+  .ve-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-right: 3px;
+  }
+  .ve-dot-in {
+    background: #5fd3f3;
+    margin-right: 6px;
+  }
+  .ve-table table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 6px;
+    font-variant-numeric: tabular-nums;
+    font-size: var(--gs-texto-xs);
+    color: #e6e6df;
+  }
+  .ve-table caption {
+    text-align: left;
+    color: #b3b3aa;
+    padding-bottom: 4px;
+  }
+  .ve-table th,
+  .ve-table td {
+    padding: 2px 4px;
+    border-bottom: 1px solid #2a2b26;
+    text-align: right;
+  }
+  .ve-table th:first-child,
+  .ve-table td:first-child {
+    text-align: left;
+  }
+  .ve-curve {
+    position: absolute;
+    z-index: 2;
+    left: 16px;
+    right: 64px;
+    bottom: 12px;
+    margin: 0;
+    height: 120px;
+  }
+  .ve-curve figcaption {
+    font-size: var(--gs-texto-xs);
+    color: #b3b3aa;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .ve-curve svg {
+    display: block;
+    width: 100%;
+    height: 100px;
+    cursor: ew-resize;
+    touch-action: none;
+  }
+  .ve-tick {
+    fill: #8a8a82;
+    font-size: 11px;
+    text-anchor: middle;
+  }
+  .ve-bar {
+    fill: rgba(230, 230, 223, 0.25);
+    cursor: pointer;
+  }
+  .ve-bar.is-now {
+    fill: #b2abd2;
+  }
+  .ve-bar.is-missing {
+    fill: none;
+    stroke: rgba(230, 230, 223, 0.35);
+    stroke-dasharray: 3 3;
+  }
+  .ve-mine {
+    fill: #fff;
+  }
+  .ve-mine-line {
+    fill: none;
+    stroke: #fff;
+    stroke-width: 1.5;
+    vector-effect: non-scaling-stroke;
+  }
+  .ve-detail {
+    margin-top: 8px;
+    font-size: var(--gs-texto-sm);
+  }
+  .ve-detail:empty {
+    display: none;
+  }
+  .ve-detail strong {
+    color: #fff;
+  }
+  .ve-badge {
+    display: inline-block;
+    margin-left: 6px;
+    padding: 0 6px;
+    border-radius: 999px;
+    border: 1px solid #fdae61;
+    color: #fdae61;
+    font-size: var(--gs-texto-xs);
+    vertical-align: middle;
+  }
+  .ve-area {
+    fill: none;
+    stroke: #ff7a3d;
+    stroke-width: 1.5;
+    vector-effect: non-scaling-stroke;
+  }
+  .ve-other {
+    fill: none;
+    stroke: rgba(230, 230, 223, 0.45);
+    stroke-width: 1;
+    stroke-dasharray: 3 3;
+    vector-effect: non-scaling-stroke;
+  }
+  .ve-playhead {
+    stroke: #fff;
+    stroke-width: 1.5;
+    vector-effect: non-scaling-stroke;
+  }
+  @media (max-width: 700px) {
+    .ve-panel {
+      top: 8px;
+      left: 8px;
+      right: 8px;
+      width: auto;
+      max-height: 48%;
+      padding: 12px 14px;
+    }
+    .ve-lede,
+    .ve-legend {
+      display: none;
+    }
+    .ve-clock {
+      margin-top: 4px;
+      font-size: 2.2rem;
+    }
+    .ve-now {
+      min-height: 0;
+    }
+    .ve-controls {
+      margin-top: 8px;
+    }
+    .ve-curve {
+      left: 8px;
+      right: 8px;
+      height: 96px;
+    }
+    .ve-curve svg {
+      height: 76px;
+    }
+  }
+  .ve-windscale {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4px;
+    padding: 2px 4px;
+    border-radius: 3px;
+    font-size: var(--gs-texto-xs);
+    color: #111;
+  }
+  .ve-windscale span:first-child {
+    color: #fff;
+  }
+  .ve-canvas {
+    pointer-events: none;
+  }
+</style>
+
+<script>
+  import { start } from '../vento/vento';
+  start();
+</script>

@@ -143,6 +143,20 @@ export const SERIES: PulseMap[] = [
     period: { gl: 'Censos de 1900 a 2021', es: 'Censos de 1900 a 2021' },
   },
   {
+    slug: 'vento',
+    ready: true,
+    colour: '#8fcf8a',
+    title: { gl: 'Vento visible', es: 'Viento visible' },
+    summary: {
+      gl: 'Partículas que seguen o vento previsto por MeteoGalicia para os próximos tres días.',
+      es: 'Partículas que siguen el viento previsto por MeteoGalicia para los próximos tres días.',
+    },
+    period: {
+      gl: 'Próximas 72 horas; renóvase dúas veces ao día',
+      es: 'Próximas 72 horas; se renueva dos veces al día',
+    },
+  },
+  {
     slug: 'respira',
     ready: true,
     colour: '#7fbf6a',

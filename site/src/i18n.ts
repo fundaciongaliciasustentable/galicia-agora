@@ -430,6 +430,38 @@ const STRINGS = {
   cross_p_far_old: { gl: 'Lonxe e maiores', es: 'Lejos y mayores' },
   cross_p_births_foreign: { gl: 'Natalidade e estranxeiros', es: 'Natalidad y extranjeros' },
   cross_p_tourist_homes: { gl: 'Pisos turísticos e baleiros', es: 'Pisos turísticos y vacíos' },
+  wind_title: { gl: 'Vento visible', es: 'Viento visible' },
+  wind_lede: {
+    gl: 'O vento a 10 metros previsto polo modelo WRF de MeteoGalicia para as próximas 72 horas: cada fío é unha partícula que segue o vento, máis clara canto máis sopra.',
+    es: 'El viento a 10 metros previsto por el modelo WRF de MeteoGalicia para las próximas 72 horas: cada hilo es una partícula que sigue el viento, más clara cuanto más sopla.',
+  },
+  wind_map_label: {
+    gl: 'Mapa animado do vento previsto en Galicia',
+    es: 'Mapa animado del viento previsto en Galicia',
+  },
+  wind_run: { gl: 'Predición feita o {d} ás {h}', es: 'Predicción hecha el {d} a las {h}' },
+  wind_pick: {
+    gl: 'Toca o mapa para ler o vento nese punto.',
+    es: 'Toca el mapa para leer el viento en ese punto.',
+  },
+  wind_here: {
+    gl: '{kmh} km/h ({ms} m/s), do {from}.',
+    es: '{kmh} km/h ({ms} m/s), del {from}.',
+  },
+  wind_calm: { gl: 'Calma.', es: 'Calma.' },
+  wind_dirs: {
+    gl: 'norte,nordeste,leste,sueste,sur,suroeste,oeste,noroeste',
+    es: 'norte,noreste,este,sureste,sur,suroeste,oeste,noroeste',
+  },
+  wind_legend: { gl: 'Velocidade (km/h)', es: 'Velocidad (km/h)' },
+  wind_note: {
+    gl: 'Predición, non medida: vento a 10 m do modelo WRF de MeteoGalicia a 4 km, a última execución completa (00 ou 12 UTC), cada 3 horas ata 72 (entre unha e outra, interpolado). Para debuxalo pásase a unha malla regular de 0,03° e a 0,25 m/s. As partículas móvense moito máis rápido ca o vento real: a velocidade relativa e o rumbo son os do modelo.',
+    es: 'Predicción, no medida: viento a 10 m del modelo WRF de MeteoGalicia a 4 km, la última ejecución completa (00 o 12 UTC), cada 3 horas hasta 72 (entre una y otra, interpolado). Para dibujarlo se pasa a una malla regular de 0,03° y a 0,25 m/s. Las partículas se mueven mucho más rápido que el viento real: la velocidad relativa y el rumbo son los del modelo.',
+  },
+  wind_missing: {
+    gl: 'Aínda non está publicada a predición do vento.',
+    es: 'Aún no está publicada la predicción del viento.',
+  },
   breath_title: { gl: 'Galicia respirando', es: 'Galicia respirando' },
   breath_lede: {
     gl: 'O mosaico de Sentinel-2 mes a mes, fundido dun ao seguinte: o verde sobe na primavera e baixa no verán, aparecen a seitura e os queimados, e volve o verde.',
