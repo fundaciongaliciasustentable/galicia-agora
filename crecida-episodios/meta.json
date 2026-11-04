@@ -1,0 +1,20 @@
+{
+  "layer_id": "crecida-episodios",
+  "published_at": "2026-10-11T00:00:00.000Z",
+  "fetched_at": "2026-11-04T06:59:38.781Z",
+  "last_success_at": "2026-11-04T06:59:38.781Z",
+  "status": "fresh",
+  "consecutive_failures": 0,
+  "feature_count": 630,
+  "source_url": "https://servizos.meteogalicia.gal/mgafos/json/datos10min.action",
+  "licence": "https://www.meteogalicia.gal/web/aviso-legal",
+  "attribution": "Datos: Augas de Galicia e MeteoGalicia (Xunta de Galicia), caudais de 10 minutos non validados e choiva diaria das estacións. Rede fluvial: masas de auga de Augas de Galicia. Cálculos: Fundación Galicia Sustentable.",
+  "checksum": "sha256:c53e086a3b3cbe029de9658aaa729b4bf26cce5cbf13a998078e91f4f01e1bb5",
+  "last_error": null,
+  "history": [
+    {
+      "at": "2026-11-04T06:59:38.781Z",
+      "ok": true
+    }
+  ]
+}

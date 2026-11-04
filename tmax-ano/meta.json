@@ -1,0 +1,20 @@
+{
+  "layer_id": "tmax-ano",
+  "published_at": "2025-12-31T00:00:00Z",
+  "fetched_at": "2026-11-04T06:59:41.882Z",
+  "last_success_at": "2026-11-04T06:59:41.882Z",
+  "status": "fresh",
+  "consecutive_failures": 0,
+  "feature_count": 169,
+  "source_url": "https://servizos.meteogalicia.gal/mgrss/observacion/datosDiariosEstacionsMeteo.action",
+  "licence": "https://www.meteogalicia.gal/web/aviso-legal",
+  "attribution": "Fonte: MeteoGalicia e Consellería de Medio Ambiente e Cambio Climático (Xunta de Galicia), datos diarios das estacións. Alturas: © Instituto Geográfico Nacional (MDT 1000 m, CC BY 4.0). Superficie interpolada: Fundación Galicia Sustentable.",
+  "checksum": "sha256:95d80024afc60f28334d99b392987df3d764c25961c040ae5c924ddcf534c312",
+  "last_error": null,
+  "history": [
+    {
+      "at": "2026-11-04T06:59:41.882Z",
+      "ok": true
+    }
+  ]
+}
