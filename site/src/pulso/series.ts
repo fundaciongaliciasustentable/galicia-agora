@@ -143,6 +143,17 @@ export const SERIES: PulseMap[] = [
     period: { gl: 'Censos de 1900 a 2021', es: 'Censos de 1900 a 2021' },
   },
   {
+    slug: 'calor',
+    ready: true,
+    colour: '#f46d43',
+    title: { gl: 'O ano das máximas', es: 'El año de las máximas' },
+    summary: {
+      gl: 'A temperatura máxima de cada día do ano en toda Galicia, das estacións de MeteoGalicia.',
+      es: 'La temperatura máxima de cada día del año en toda Galicia, de las estaciones de MeteoGalicia.',
+    },
+    period: { gl: 'Último ano completo, día a día', es: 'Último año completo, día a día' },
+  },
+  {
     slug: 'vento',
     ready: true,
     colour: '#8fcf8a',

@@ -430,6 +430,40 @@ const STRINGS = {
   cross_p_far_old: { gl: 'Lonxe e maiores', es: 'Lejos y mayores' },
   cross_p_births_foreign: { gl: 'Natalidade e estranxeiros', es: 'Natalidad y extranjeros' },
   cross_p_tourist_homes: { gl: 'Pisos turísticos e baleiros', es: 'Pisos turísticos y vacíos' },
+  heat_title: { gl: 'O ano das máximas', es: 'El año de las máximas' },
+  heat_lede: {
+    gl: 'A temperatura máxima de cada día de {y} en toda Galicia, a partir das estacións de MeteoGalicia: o inverno azul, as ondas de calor que soben polos vales do Miño e do Sil, o verán que se apaga.',
+    es: 'La temperatura máxima de cada día de {y} en toda Galicia, a partir de las estaciones de MeteoGalicia: el invierno azul, las olas de calor que suben por los valles del Miño y del Sil, el verano que se apaga.',
+  },
+  heat_map_label: {
+    gl: 'Mapa da temperatura máxima diaria en Galicia',
+    es: 'Mapa de la temperatura máxima diaria en Galicia',
+  },
+  heat_now: {
+    gl: 'Media das estacións: {mean} °C. A máis alta: {hot} °C en {hotName}; a máis baixa: {cold} °C en {coldName}.',
+    es: 'Media de las estaciones: {mean} °C. La más alta: {hot} °C en {hotName}; la más baja: {cold} °C en {coldName}.',
+  },
+  heat_pick: {
+    gl: 'Toca unha estación para ver o seu ano.',
+    es: 'Toca una estación para ver su año.',
+  },
+  heat_detail: {
+    gl: '{name} ({alt} m): {t} °C este día. O día máis quente do ano, {max} °C o {maxDay}.',
+    es: '{name} ({alt} m): {t} °C este día. El día más caluroso del año, {max} °C el {maxDay}.',
+  },
+  heat_curve: {
+    gl: 'Máxima media das estacións, día a día (banda: da máis fría á máis quente)',
+    es: 'Máxima media de las estaciones, día a día (banda: de la más fría a la más caliente)',
+  },
+  heat_legend: { gl: 'Temperatura máxima (°C)', es: 'Temperatura máxima (°C)' },
+  heat_note: {
+    gl: 'Temperatura máxima diaria a 1,5 m das estacións de MeteoGalicia, só valores validados. Entre estacións, cálculo propio: a temperatura de cada estación lévase ao nivel do mar cun gradiente de 6,5 °C por km, interpólase polo inverso da distancia e devólvese á altura de cada cela (MDT de 1 km do IGN). É unha estimación suave: non ve as inversións térmicas nin o efecto do mar preto da costa.',
+    es: 'Temperatura máxima diaria a 1,5 m de las estaciones de MeteoGalicia, solo valores validados. Entre estaciones, cálculo propio: la temperatura de cada estación se lleva al nivel del mar con un gradiente de 6,5 °C por km, se interpola por el inverso de la distancia y se devuelve a la altura de cada celda (MDT de 1 km del IGN). Es una estimación suave: no ve las inversiones térmicas ni el efecto del mar cerca de la costa.',
+  },
+  heat_missing: {
+    gl: 'Aínda non están publicadas as temperaturas do ano.',
+    es: 'Aún no están publicadas las temperaturas del año.',
+  },
   wind_title: { gl: 'Vento visible', es: 'Viento visible' },
   wind_lede: {
     gl: 'O vento a 10 metros previsto polo modelo WRF de MeteoGalicia para as próximas 72 horas: cada fío é unha partícula que segue o vento, máis clara canto máis sopra.',

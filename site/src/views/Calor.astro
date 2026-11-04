@@ -1,0 +1,405 @@
+---
+// O ano das máximas: daily maximum temperature over the last complete year (tmax-ano layer),
+// as a field interpolated from the MeteoGalicia stations, day by day. The same figures are
+// given as text: the day, the mean, hottest and coldest stations, a picked station's year.
+import { base, dictionary, type Lang, t } from '../i18n';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const STOPS = ['#313695', '#4575b4', '#74add1', '#abd9e9', '#fee090', '#fdae61', '#f46d43', '#d73027', '#a50026'];
+---
+
+<div class="ca-app" data-lang={lang} data-dict={JSON.stringify(dictionary(lang))}>
+  <div class="ca-map" role="region" aria-label={t(lang, 'heat_map_label')}></div>
+
+  <section class="ca-panel" id="contido">
+    <a class="ca-back" href={`${base(lang)}pulso/`}>← {t(lang, 'pulse_back')}</a>
+    <h1>{t(lang, 'heat_title')}</h1>
+    <p class="ca-lede"></p>
+    <p class="ca-clock" aria-live="off">--</p>
+    <p class="ca-now" aria-live="off"></p>
+    <div class="ca-controls">
+      <button type="button" class="ca-play" aria-pressed="false">{t(lang, 'pulse_play')}</button>
+    </div>
+    <label class="ca-range-label">
+      <span class="visually-hidden">{t(lang, 'pulse_time')}</span>
+      <input class="ca-range" type="range" min="0" step="0.05" value="0" />
+    </label>
+    <div class="ca-detail" aria-live="polite"></div>
+    <p class="ca-legend">
+      <span class="ca-tscale" style={`background:linear-gradient(90deg, ${STOPS.join(', ')})`} aria-hidden="true"
+        ><span>0</span><span>20</span><span>40</span></span
+      >
+      {t(lang, 'heat_legend')}
+    </p>
+    <p class="ca-status" role="status">{t(lang, 'loading')}</p>
+    <details class="ca-about">
+      <summary>{t(lang, 'pulse_about')}</summary>
+      <p>{t(lang, 'heat_note')}</p>
+      <p class="ca-sources"></p>
+    </details>
+  </section>
+
+  <figure class="ca-curve">
+    <figcaption>{t(lang, 'heat_curve')}</figcaption>
+    <svg role="img" preserveAspectRatio="none"></svg>
+  </figure>
+</div>
+
+<style is:global>
+  .ca-app {
+    position: relative;
+    height: calc(100dvh - var(--ga-head, 52px));
+    overflow: hidden;
+    background: #111210;
+    color: #e6e6df;
+  }
+  .ca-map,
+  .ca-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .ca-canvas {
+    pointer-events: none;
+    z-index: 1;
+  }
+  .ca-panel {
+    position: absolute;
+    z-index: 2;
+    top: 16px;
+    left: 16px;
+    width: min(360px, calc(100% - 32px));
+    max-height: calc(100% - 190px);
+    overflow-y: auto;
+    padding: 16px 18px;
+    border-radius: var(--gs-radius-card);
+    background: rgba(17, 18, 16, 0.8);
+    backdrop-filter: blur(6px);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+  }
+  .ca-back {
+    display: inline-block;
+    margin-bottom: 6px;
+    font-size: var(--gs-texto-sm);
+    color: #b3b3aa;
+  }
+  .ca-back:hover,
+  .ca-back:focus-visible {
+    color: #fff;
+  }
+  .ca-panel h1 {
+    margin: 0;
+    font-size: var(--gs-texto-xl);
+    color: #fff;
+  }
+  .ca-lede,
+  .ca-legend,
+  .ca-about,
+  .ca-table {
+    font-size: var(--gs-texto-sm);
+    color: #b3b3aa;
+    margin: 6px 0 0;
+  }
+  .ca-about summary,
+  .ca-table summary {
+    cursor: pointer;
+  }
+  .ca-sources {
+    font-size: var(--gs-texto-xs);
+  }
+  .ca-clock {
+    margin: 10px 0 0;
+    font-size: clamp(2.5rem, 7vw, 3.75rem);
+    font-weight: 700;
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+    color: #fff;
+    letter-spacing: -0.02em;
+  }
+  .ca-app .ca-clock {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+  }
+  .ca-now {
+    margin: 4px 0 0;
+    font-variant-numeric: tabular-nums;
+    min-height: 2.8em;
+    font-size: var(--gs-texto-sm);
+  }
+  .ca-status {
+    margin: 4px 0 0;
+    font-size: var(--gs-texto-sm);
+    color: #e0a95a;
+  }
+  .ca-status:empty {
+    display: none;
+  }
+  .ca-controls {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 12px;
+    margin-top: 12px;
+  }
+  .ca-seg {
+    display: flex;
+    border: 1px solid #3a3b35;
+    border-radius: 999px;
+    padding: 2px;
+  }
+  .ca-seg button,
+  .ca-play {
+    font: inherit;
+    font-size: var(--gs-texto-sm);
+    border: 0;
+    border-radius: 999px;
+    padding: 4px 12px;
+    background: transparent;
+    color: #e6e6df;
+    cursor: pointer;
+  }
+  .ca-seg button[aria-pressed="true"] {
+    background: #e6e6df;
+    color: #111210;
+  }
+  .ca-play {
+    border: 1px solid #e6e6df;
+    min-width: 6em;
+  }
+  .ca-speed {
+    font: inherit;
+    font-size: var(--gs-texto-sm);
+    background: #1f201c;
+    color: #e6e6df;
+    border: 1px solid #3a3b35;
+    border-radius: var(--gs-radius);
+    padding: 3px 6px;
+  }
+  .ca-range-label {
+    display: block;
+    margin-top: 10px;
+  }
+  .ca-range {
+    width: 100%;
+    accent-color: #e6e6df;
+  }
+  .ca-mode {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: var(--gs-texto-sm);
+    cursor: pointer;
+  }
+  .ca-mode input {
+    width: 16px;
+    height: 16px;
+    accent-color: #e6e6df;
+  }
+  .ca-scale {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4px;
+    padding: 2px 4px;
+    border-radius: 3px;
+    font-size: var(--gs-texto-xs);
+    color: #111210;
+    background: linear-gradient(90deg, #7f3b08, #e08214 25%, #fdb863 40%, #f7f7f2 50%, #b2abd2 65%, #8073ac 80%, #2d004b);
+  }
+  .ca-scale span:first-child {
+    color: #fff;
+  }
+  .ca-scale span:last-child {
+    color: #fff;
+  }
+  .ca-scale span:nth-child(2) {
+    color: #111210;
+  }
+  .ca-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-right: 3px;
+  }
+  .ca-dot-in {
+    background: #5fd3f3;
+    margin-right: 6px;
+  }
+  .ca-table table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 6px;
+    font-variant-numeric: tabular-nums;
+    font-size: var(--gs-texto-xs);
+    color: #e6e6df;
+  }
+  .ca-table caption {
+    text-align: left;
+    color: #b3b3aa;
+    padding-bottom: 4px;
+  }
+  .ca-table th,
+  .ca-table td {
+    padding: 2px 4px;
+    border-bottom: 1px solid #2a2b26;
+    text-align: right;
+  }
+  .ca-table th:first-child,
+  .ca-table td:first-child {
+    text-align: left;
+  }
+  .ca-curve {
+    position: absolute;
+    z-index: 2;
+    left: 16px;
+    right: 64px;
+    bottom: 12px;
+    margin: 0;
+    height: 120px;
+  }
+  .ca-curve figcaption {
+    font-size: var(--gs-texto-xs);
+    color: #b3b3aa;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .ca-curve svg {
+    display: block;
+    width: 100%;
+    height: 100px;
+    cursor: ew-resize;
+    touch-action: none;
+  }
+  .ca-tick {
+    fill: #8a8a82;
+    font-size: 11px;
+    text-anchor: middle;
+  }
+  .ca-bar {
+    fill: rgba(230, 230, 223, 0.25);
+    cursor: pointer;
+  }
+  .ca-bar.is-now {
+    fill: #b2abd2;
+  }
+  .ca-bar.is-missing {
+    fill: none;
+    stroke: rgba(230, 230, 223, 0.35);
+    stroke-dasharray: 3 3;
+  }
+  .ca-mine {
+    fill: #fff;
+  }
+  .ca-mine-line {
+    fill: none;
+    stroke: #fff;
+    stroke-width: 1.5;
+    vector-effect: non-scaling-stroke;
+  }
+  .ca-detail {
+    margin-top: 8px;
+    font-size: var(--gs-texto-sm);
+  }
+  .ca-detail:empty {
+    display: none;
+  }
+  .ca-detail strong {
+    color: #fff;
+  }
+  .ca-badge {
+    display: inline-block;
+    margin-left: 6px;
+    padding: 0 6px;
+    border-radius: 999px;
+    border: 1px solid #fdae61;
+    color: #fdae61;
+    font-size: var(--gs-texto-xs);
+    vertical-align: middle;
+  }
+  .ca-area {
+    fill: none;
+    stroke: #ff7a3d;
+    stroke-width: 1.5;
+    vector-effect: non-scaling-stroke;
+  }
+  .ca-other {
+    fill: none;
+    stroke: rgba(230, 230, 223, 0.45);
+    stroke-width: 1;
+    stroke-dasharray: 3 3;
+    vector-effect: non-scaling-stroke;
+  }
+  .ca-playhead {
+    stroke: #fff;
+    stroke-width: 1.5;
+    vector-effect: non-scaling-stroke;
+  }
+  @media (max-width: 700px) {
+    .ca-panel {
+      top: 8px;
+      left: 8px;
+      right: 8px;
+      width: auto;
+      max-height: 48%;
+      padding: 12px 14px;
+    }
+    .ca-lede,
+    .ca-legend {
+      display: none;
+    }
+    .ca-clock {
+      margin-top: 4px;
+      font-size: 2.2rem;
+    }
+    .ca-now {
+      min-height: 0;
+    }
+    .ca-controls {
+      margin-top: 8px;
+    }
+    .ca-curve {
+      left: 8px;
+      right: 8px;
+      height: 96px;
+    }
+    .ca-curve svg {
+      height: 76px;
+    }
+  }
+  .ca-tscale {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4px;
+    padding: 2px 4px;
+    border-radius: 3px;
+    font-size: var(--gs-texto-xs);
+    color: #111;
+  }
+  .ca-tscale span:first-child,
+  .ca-tscale span:last-child {
+    color: #fff;
+  }
+  .ca-band {
+    fill: rgba(244, 109, 67, 0.22);
+  }
+  .ca-mean {
+    fill: none;
+    stroke: #fdae61;
+    stroke-width: 1.5;
+    vector-effect: non-scaling-stroke;
+  }
+  .ca-mine {
+    fill: none;
+    stroke: #fff;
+    stroke-width: 1.2;
+    vector-effect: non-scaling-stroke;
+  }
+</style>
+
+<script>
+  import { start } from '../calor/calor';
+  start();
+</script>
