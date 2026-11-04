@@ -12,6 +12,10 @@ on:
         description: Ignore ingest.every and refresh every layer
         type: boolean
         default: false
+      layer:
+        description: Refresh only this layer id (e.g. after its adapter changed)
+        type: string
+        default: ''
 
 permissions:
   contents: write
@@ -56,7 +60,7 @@ jobs:
           FIRMS_MAP_KEY: ${{ secrets.FIRMS_MAP_KEY }}
           NAP_API_KEY: ${{ secrets.NAP_API_KEY }}
           METEOGALICIA_AFOROS_KEY: ${{ secrets.METEOGALICIA_AFOROS_KEY }}
-        run: npx tsx pipeline/cli.ts ingest ${{ inputs.force && '--force' || '' }}
+        run: npx tsx pipeline/cli.ts ingest ${{ inputs.force && '--force' || '' }} ${{ inputs.layer && format('--layer={0}', inputs.layer) || '' }}
 
       - name: Save data
         working-directory: data-out
