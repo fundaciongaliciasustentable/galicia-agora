@@ -1,0 +1,55 @@
+id: crecida-episodios
+title:
+  gl: Crecidas dos ríos, episodio a episodio
+  es: Crecidas de los ríos, episodio a episodio
+theme: auga-mar
+operator:
+  name: Augas de Galicia e MeteoGalicia (Xunta de Galicia)
+  url: https://servizos.meteogalicia.gal/mgafos/estacions/estacions.action
+source_url: https://servizos.meteogalicia.gal/mgafos/json/datos10min.action
+licence:
+  text_url: https://www.meteogalicia.gal/web/aviso-legal
+  quote: >-
+    poida ser utilizada libremente por eles, co único compromiso de mencionar expresamente a
+    MeteoGalicia e á Consellería de Medio Ambiente e Cambio Climático
+  verified_at: 2026-11-04
+  odbl_compatible: doubt
+  collection: cc-by-sa-4.0
+  notes: >-
+    Colección CC BY-SA 4.0 (ADR 0005), como caudais-rios, estado-masas-auga e as capas de
+    MeteoGalicia. Caudais: datos de 10 minutos de datos10min.action (chave METEOGALICIA_AFOROS_KEY,
+    só os últimos 30 días), gardados por episodio na rama data con aforos-episodio.yml; datos
+    non validados. Rede fluvial: masas de auga de río de estado-masas-auga (Augas de Galicia,
+    demarcación Galicia-Costa). Choiva: datos diarios das estacións de MeteoGalicia. Cálculo
+    propio: medias horarias, razón ao caudal antes do temporal (mediana das primeiras 24 h) e
+    asignación de cada tramo á estación do mesmo río máis próxima (ata 40 km). As estacións de
+    Padrón (Ulla e Sar) móvense coa marea: márcanse e non acenden ríos.
+attribution: >-
+  Datos: Augas de Galicia e MeteoGalicia (Xunta de Galicia), caudais de 10 minutos non validados
+  e choiva diaria das estacións. Rede fluvial: masas de auga de Augas de Galicia. Cálculos:
+  Fundación Galicia Sustentable.
+update_frequency:
+  declared: static
+geometry: line
+output: geojson
+auth:
+  required: false
+privacy_notes: Medidas de estacións e xeometría de ríos; ningún dato persoal.
+stale_after: P3650D
+ingest:
+  every: P1D
+depends_on:
+  - estado-masas-auga
+  - estacions-meteo
+# Lives on its own /pulso/ page; the main map does not draw it (SERIES_LAYERS).
+style:
+  kind: line
+  label_field: nome
+table:
+  fields:
+    - tipo
+    - episodio
+    - nome
+    - caudal_base
+    - caudal_pico
+    - hora_pico

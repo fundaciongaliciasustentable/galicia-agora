@@ -29,8 +29,8 @@ const FONTS = ['Noto Sans Regular', 'Noto Sans Medium', 'Noto Sans Italic'];
 const GLYPH_RANGES = ['0-255', '256-511', '8192-8447'];
 /** Layers above this size are served as PMTiles instead of GeoJSON. */
 const TILE_THRESHOLD_BYTES = 1_000_000;
-/** Layers read whole by their own page, never tiled (galicia-deformada: cartograms in `formas`). */
-const NO_TILES = new Set(['galicia-deformada']);
+/** Layers read whole by their own page, never tiled (cartograms in `formas`, flood series). */
+const NO_TILES = new Set(['galicia-deformada', 'crecida-episodios']);
 /**
  * Tippecanoe options per layer, instead of the defaults below. aldeas-baleiras is a night map of
  * all 30,000 places from zoom 6: no point may be dropped, and the state-only fields stay out.

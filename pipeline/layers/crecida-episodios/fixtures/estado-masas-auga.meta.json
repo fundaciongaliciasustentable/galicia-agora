@@ -1,0 +1,20 @@
+{
+ "layer_id": "estado-masas-auga",
+ "published_at": null,
+ "fetched_at": "2026-11-01T21:07:08.980Z",
+ "last_success_at": "2026-11-01T21:07:08.980Z",
+ "status": "fresh",
+ "consecutive_failures": 0,
+ "feature_count": 494,
+ "source_url": "https://ideg.xunta.gal/servizos/rest/services/IDE_DHGC/PHGC2021_2027_Estado/MapServer",
+ "licence": "CC-BY-SA-4.0",
+ "attribution": "Augas de Galicia. Plan hidrol\u00f3xico Galicia-Costa 2021\u20132027. Xunta de Galicia",
+ "checksum": "sha256:3d7d4d71037ec439e9237214a046db738a06a42da667e277da7013e7994de513",
+ "last_error": null,
+ "history": [
+  {
+   "at": "2026-11-01T21:07:08.980Z",
+   "ok": true
+  }
+ ]
+}

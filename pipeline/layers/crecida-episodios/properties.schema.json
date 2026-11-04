@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "crecida-episodios feature properties",
+  "type": "object",
+  "required": ["tipo", "episodio"],
+  "properties": {
+    "tipo": { "enum": ["estacion", "rio", "choiva"] },
+    "episodio": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{4}_\\d{4}-\\d{2}-\\d{2}T\\d{4}$"
+    },
+    "inicio": { "type": "string", "format": "date-time" },
+    "id": { "type": "integer" },
+    "nome": { "type": "string" },
+    "concello": { "type": "string" },
+    "marea": { "type": "boolean" },
+    "caudal_base": { "type": ["number", "null"], "minimum": 0 },
+    "caudal_pico": { "type": "number", "minimum": 0 },
+    "hora_pico": { "type": "string", "format": "date-time" },
+    "caudal": { "type": "array", "items": { "type": ["number", "null"] } },
+    "razon": { "type": "array", "items": { "type": ["number", "null"], "minimum": 0 } },
+    "codigo": { "type": "string" },
+    "estacion": { "type": ["integer", "null"] },
+    "choiva_dia": { "type": "array", "items": { "type": ["number", "null"], "minimum": 0 } }
+  },
+  "additionalProperties": false
+}
