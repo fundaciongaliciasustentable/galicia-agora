@@ -26,6 +26,7 @@ const ramp = `linear-gradient(90deg, ${NDVI_STOPS.map(([, c]) => c).join(', ')})
       <button type="button" data-kind="satelite-mes" aria-pressed="true">{t(lang, 'breath_true')}</button>
       <button type="button" data-kind="ndvi-mes" aria-pressed="false">{t(lang, 'breath_ndvi')}</button>
     </div>
+    <div class="re-seg re-periods" role="group" aria-label={t(lang, 'breath_period')} hidden></div>
     <p class="re-clock" aria-live="off"></p>
     <p class="re-info"></p>
     <div class="re-controls">
@@ -119,6 +120,12 @@ const ramp = `linear-gradient(90deg, ${NDVI_STOPS.map(([, c]) => c).join(', ')})
     background: transparent;
     color: #e6e6df;
     cursor: pointer;
+  }
+  .re-periods {
+    margin-left: 8px;
+  }
+  .re-periods[hidden] {
+    display: none;
   }
   .re-seg button[aria-pressed='true'] {
     background: #e6e6df;

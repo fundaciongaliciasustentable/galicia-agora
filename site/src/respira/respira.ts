@@ -1,6 +1,7 @@
 // /pulso/respira/: Galicia breathing. The monthly whole-Galicia images of the Sentinel-2 mosaic
 // (previews.json of satelite-mes and ndvi-mes), cross-faded: two stacked images, the next month
 // fading in over the current one, so green rises and falls and harvests and burns come and go.
+// A period picks the months played: the last twelve, or any calendar year that is complete.
 
 import { asset } from '../paths.ts';
 
@@ -73,12 +74,23 @@ export async function start(): Promise<void> {
   }
 
   let kind: Kind = series.has('satelite-mes') ? 'satelite-mes' : 'ndvi-mes';
-  let list = series.get(kind) as Preview[];
+  // Periods: the last twelve months, and every calendar year with its twelve months.
+  const allMonths = [...new Set([...series.values()].flat().map((p) => p.month))].sort();
+  const years = [...new Set(allMonths.map((m) => m.slice(0, 4)))].filter(
+    (y) => allMonths.filter((m) => m.startsWith(y)).length === 12,
+  );
+  const periodBox = q<HTMLElement>('.re-periods');
+  const params = new URLSearchParams(window.location.hash.slice(1));
+  let period = years.includes(params.get('ano') ?? '') ? (params.get('ano') as string) : 'last';
+  const inPeriod = (ps: Preview[]) =>
+    period === 'last' ? ps.slice(-12) : ps.filter((p) => p.month.startsWith(period));
+  let list = inPeriod(series.get(kind) as Preview[]);
   const src = (k: Kind, p: Preview) => asset(`data/${k}/${p.file}`);
   // Load every image once, so the fades never wait.
   for (const [k, ps] of series) for (const p of ps) new Image().src = src(k, p);
 
-  let pos = Math.max(0, list.length - 1);
+  // A year starts in January; the last twelve months, on the latest.
+  let pos = period === 'last' ? Math.max(0, list.length - 1) : 0;
   let playing = !reducedMotion.matches && list.length > 1;
   let last: number | null = null;
   let raf: number | null = null;
@@ -105,7 +117,7 @@ export async function start(): Promise<void> {
         gap: new Intl.NumberFormat(lang === 'gl' ? 'gl-ES' : 'es-ES', {
           maximumFractionDigits: 1,
         }).format(p.gap_share * 100),
-      }) + (n < 12 ? ` ${fill('breath_few', { n })}` : '');
+      }) + (period === 'last' && n < 12 ? ` ${fill('breath_few', { n })}` : '');
     range.value = String(pos);
   }
 
@@ -132,7 +144,8 @@ export async function start(): Promise<void> {
   function choose(k: Kind) {
     if (!series.has(k)) return;
     kind = k;
-    list = series.get(k) as Preview[];
+    list = inPeriod(series.get(k) as Preview[]);
+    if (list.length === 0) list = (series.get(k) as Preview[]).slice(-12);
     range.max = String(Math.max(0, list.length - 1));
     pos = Math.min(pos, list.length - 1);
     legend.hidden = k !== 'ndvi-mes';
@@ -147,6 +160,28 @@ export async function start(): Promise<void> {
   for (const b of app.querySelectorAll<HTMLButtonElement>('[data-kind]')) {
     b.addEventListener('click', () => choose(b.dataset.kind as Kind));
   }
+  // Period buttons: the last twelve months and each complete year.
+  for (const value of ['last', ...years]) {
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.dataset.period = value;
+    b.textContent = value === 'last' ? (dict.breath_last ?? '') : value;
+    b.addEventListener('click', () => {
+      period = value;
+      pos = 0;
+      history.replaceState(null, '', value === 'last' ? location.pathname : `#ano=${value}`);
+      markPeriod();
+      choose(kind);
+    });
+    periodBox.append(b);
+  }
+  const markPeriod = () => {
+    for (const b of periodBox.querySelectorAll<HTMLButtonElement>('[data-period]')) {
+      b.setAttribute('aria-pressed', String(b.dataset.period === period));
+    }
+  };
+  periodBox.hidden = years.length === 0;
+  markPeriod();
   playBtn.addEventListener('click', () => setPlaying(!playing));
   range.addEventListener('input', () => {
     setPlaying(false);

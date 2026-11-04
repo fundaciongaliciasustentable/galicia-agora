@@ -442,6 +442,8 @@ const STRINGS = {
   breath_true: { gl: 'Cor real', es: 'Color real' },
   breath_ndvi: { gl: 'Verdor (NDVI)', es: 'Verdor (NDVI)' },
   breath_view: { gl: 'Imaxe', es: 'Imagen' },
+  breath_period: { gl: 'Período', es: 'Periodo' },
+  breath_last: { gl: 'Últimos 12 meses', es: 'Últimos 12 meses' },
   breath_info: {
     gl: '{scenes} escenas entre o {from} e o {to}; {gap} % de Galicia sen ningunha observación limpa.',
     es: '{scenes} escenas entre el {from} y el {to}; {gap} % de Galicia sin ninguna observación limpia.',
