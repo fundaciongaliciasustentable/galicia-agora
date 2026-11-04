@@ -73,7 +73,7 @@ export const SERIES_LAYERS = new Set([
   'meteo-24h',
   'mobilidade-cidades',
   'mobilidade-fluxos',
-  'focos-agosto-2025',
+  'focos-tempada-2025',
   'aire-24h',
   'lonxas-2025',
   'raios-ano',

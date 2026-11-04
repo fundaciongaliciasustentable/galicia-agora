@@ -3,17 +3,26 @@
 // (engine.ts). Below, detections per day; in the panel, the last pass and a table of the
 // concellos with most detections.
 //
-// Data: the focos-agosto-2025 layer (NASA FIRMS), served from this site.
+// Data: the focos-tempada-2025 layer (NASA FIRMS), served from this site.
 
 import type { Map as MlMap } from 'maplibre-gl';
 import { asset } from '../../paths.ts';
 import { clock } from '../engine.ts';
 import { fill, loadStyle, pickerRoom } from '../pulso.ts';
-import { type Detection, ember, MONTH, passes, perDay, secondsOf, upTo } from './engine.ts';
+import {
+  type Detection,
+  ember,
+  passes,
+  perDay,
+  SEASON,
+  START_UTC,
+  secondsOf,
+  upTo,
+} from './engine.ts';
 
 type Dict = Record<string, string>;
 
-const LAYER = 'focos-agosto-2025';
+const LAYER = 'focos-tempada-2025';
 const SPEEDS = [60, 120, 240];
 
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -76,8 +85,8 @@ export async function start(): Promise<void> {
 
   // ---- State ------------------------------------------------------------------------------
   const params = new URLSearchParams(window.location.hash.slice(1));
-  const dm = /^(\d{1,2})-(\d{2}):(\d{2})$/.exec(params.get('t') ?? '');
-  let s = dm ? (Number(dm[1]) - 1) * 86400 + Number(dm[2]) * 3600 + Number(dm[3]) * 60 : 12 * 86400;
+  const dm = /^(\d{1,3})-(\d{2}):(\d{2})$/.exec(params.get('t') ?? '');
+  let s = dm ? (Number(dm[1]) - 1) * 86400 + Number(dm[2]) * 3600 + Number(dm[3]) * 60 : 0;
   const products = new Set(productBoxes.map((b) => b.dataset.product as string));
   for (const p of (params.get('sen') ?? '').split(',')) products.delete(p);
   for (const b of productBoxes) b.checked = products.has(b.dataset.product as string);
@@ -90,9 +99,18 @@ export async function start(): Promise<void> {
   select();
   let playing = !reducedMotion.matches;
   let speed = SPEEDS[1] as number;
+  const months = (dict.pulse_months ?? '').split(',');
+  /** Day of the season (for the hash), calendar day and month, and time. */
   const stamp = (sec: number) => {
     const day = Math.floor(sec / 86400) + 1;
-    return { day, time: clock(sec - (day - 1) * 86400) };
+    const date = new Date(START_UTC + 2 * 3600 * 1000 + (day - 1) * 86_400_000);
+    return {
+      day,
+      dom: date.getUTCDate(),
+      month: date.getUTCMonth(),
+      monthName: months[date.getUTCMonth()] ?? '',
+      time: clock(sec - (day - 1) * 86400),
+    };
   };
   const writeHash = () => {
     const p = new URLSearchParams();
@@ -228,8 +246,8 @@ export async function start(): Promise<void> {
     }
     ctx.globalCompositeOperation = 'source-over';
 
-    const { day, time } = stamp(s);
-    clockEl.textContent = `${day} ago ${time}`;
+    const now = stamp(s);
+    clockEl.textContent = `${now.dom} ${now.monthName.slice(0, 3)} ${now.time}`;
     let last = null as (typeof shownPasses)[number] | null;
     for (const p of shownPasses) {
       if (p.t > s) break;
@@ -242,7 +260,7 @@ export async function start(): Promise<void> {
         n: nf.format(n),
         c: nf.format(concellos),
         product: last.product,
-        when: fill(dict.fire_date ?? '', { day: when.day, time: when.time }),
+        when: fill(dict.fire_date ?? '', { day: when.dom, month: when.monthName, time: when.time }),
         k: nf.format(last.count),
       });
     } else nowEl.textContent = dict.fire_now_none ?? '';
@@ -254,7 +272,7 @@ export async function start(): Promise<void> {
   const W = 1000;
   const H = 120;
   const ns = 'http://www.w3.org/2000/svg';
-  const xOf = (sec: number) => (sec / MONTH) * W;
+  const xOf = (sec: number) => (sec / SEASON) * W;
   const playhead = document.createElementNS(ns, 'line');
   let bars: SVGRectElement[] = [];
   function drawCurve() {
@@ -273,12 +291,19 @@ export async function start(): Promise<void> {
       curve.append(r);
       return r;
     });
-    for (const dd of [1, 5, 10, 15, 20, 25, 31]) {
+    // A label in the middle of each month.
+    for (const [m, first, len] of [
+      [5, 0, 30],
+      [6, 30, 31],
+      [7, 61, 31],
+      [8, 92, 30],
+      [9, 122, 31],
+    ] as Array<[number, number, number]>) {
       const tx = document.createElementNS(ns, 'text');
-      tx.setAttribute('x', xOf((dd - 0.5) * 86400).toFixed(1));
+      tx.setAttribute('x', xOf((first + len / 2) * 86400).toFixed(1));
       tx.setAttribute('y', String(H - 2));
       tx.setAttribute('class', 'lu-tick');
-      tx.textContent = String(dd);
+      tx.textContent = months[m] ?? '';
       curve.append(tx);
     }
     playhead.setAttribute('class', 'lu-playhead');
@@ -287,7 +312,10 @@ export async function start(): Promise<void> {
     curve.append(playhead);
     curve.setAttribute(
       'aria-label',
-      fill(dict.fire_curve_label ?? '', { max: nf.format(max), day: days.indexOf(max) + 1 }),
+      fill(dict.fire_curve_label ?? '', {
+        max: nf.format(max),
+        day: `${stamp(days.indexOf(max) * 86400).dom} de ${stamp(days.indexOf(max) * 86400).monthName}`,
+      }),
     );
     drawPlayhead();
   }
@@ -302,7 +330,7 @@ export async function start(): Promise<void> {
   }
   const seek = (e: PointerEvent) => {
     const r = curve.getBoundingClientRect();
-    s = Math.round(Math.min(1, Math.max(0, (e.clientX - r.left) / r.width)) * (MONTH - 60));
+    s = Math.round(Math.min(1, Math.max(0, (e.clientX - r.left) / r.width)) * (SEASON - 60));
     draw();
   };
   curve.addEventListener('pointerdown', (e) => {
@@ -327,17 +355,20 @@ export async function start(): Promise<void> {
     tbody.replaceChildren(
       ...top.map(([name, ds]) => {
         const days = perDay(ds);
-        const peak = days.indexOf(Math.max(...days)) + 1;
+        const peak = stamp(days.indexOf(Math.max(...days)) * 86400);
         const first = stamp((ds[0] as Detection).t);
         const tr = document.createElement('tr');
-        [name, nf.format(ds.length), `${first.day}/8 ${first.time}`, `${peak}/8`].forEach(
-          (text, k) => {
-            const td = document.createElement(k === 0 ? 'th' : 'td');
-            if (k === 0) td.setAttribute('scope', 'row');
-            td.textContent = text;
-            tr.append(td);
-          },
-        );
+        [
+          name,
+          nf.format(ds.length),
+          `${first.dom}/${first.month + 1} ${first.time}`,
+          `${peak.dom}/${peak.month + 1}`,
+        ].forEach((text, k) => {
+          const td = document.createElement(k === 0 ? 'th' : 'td');
+          if (k === 0) td.setAttribute('scope', 'row');
+          td.textContent = text;
+          tr.append(td);
+        });
         return tr;
       }),
     );
@@ -345,7 +376,7 @@ export async function start(): Promise<void> {
 
   // ---- Controls ---------------------------------------------------------------------------
   range.min = '0';
-  range.max = String(MONTH - 60);
+  range.max = String(SEASON - 60);
   range.step = '600';
   range.addEventListener('input', () => {
     s = Number(range.value);
@@ -362,7 +393,10 @@ export async function start(): Promise<void> {
       requestAnimationFrame(frame);
     } else writeHash();
   };
-  playBtn.addEventListener('click', () => setPlaying(!playing));
+  playBtn.addEventListener('click', () => {
+    if (!playing && s >= SEASON - 60) s = 0;
+    setPlaying(!playing);
+  });
   for (const sp of SPEEDS) {
     const o = document.createElement('option');
     o.value = String(sp);
@@ -390,8 +424,14 @@ export async function start(): Promise<void> {
     if (!playing) return;
     const dt = Math.min(0.1, (now - lastFrame) / 1000);
     lastFrame = now;
-    s += (dt * MONTH) / speed;
-    if (s >= MONTH - 60) s = 0;
+    s += (dt * SEASON) / speed;
+    // At the end the clock stops: what is left is the scar of the whole summer.
+    if (s >= SEASON - 60) {
+      s = SEASON - 60;
+      draw();
+      setPlaying(false);
+      return;
+    }
     draw();
     requestAnimationFrame(frame);
   }

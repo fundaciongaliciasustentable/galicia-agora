@@ -113,12 +113,12 @@ export const SERIES: PulseMap[] = [
     slug: 'lume',
     ready: true,
     colour: '#ff7a3d',
-    title: { gl: 'Focos de calor', es: 'Focos de calor' },
+    title: { gl: 'Tempada de lume', es: 'Temporada de incendios' },
     summary: {
-      gl: 'O que viron os satélites, pasada a pasada, no mes dos grandes lumes.',
-      es: 'Lo que vieron los satélites, pasada a pasada, en el mes de los grandes incendios.',
+      gl: 'Os focos de calor de xuño a outubro, pasada a pasada, como brasas que se apagan; ao final, a cicatriz do verán.',
+      es: 'Los focos de calor de junio a octubre, pasada a pasada, como brasas que se apagan; al final, la cicatriz del verano.',
     },
-    period: { gl: 'Agosto de 2025', es: 'Agosto de 2025' },
+    period: { gl: 'Xuño–outubro de 2025', es: 'Junio–octubre de 2025' },
   },
   {
     slug: 'lonxas',

@@ -10,9 +10,10 @@ const d = (t: number, product = 'VIIRS S-NPP'): Detection => ({
 });
 
 describe('lume engine', () => {
-  it('counts time from 1 August 00:00 in Galicia', () => {
-    expect(secondsOf('2025-07-31T22:00:00Z')).toBe(0);
-    expect(secondsOf('2025-08-15T13:19:00Z')).toBe(14 * 86400 + 15 * 3600 + 19 * 60);
+  it('counts time from 1 June 00:00 in Galicia', () => {
+    expect(secondsOf('2025-05-31T22:00:00Z')).toBe(0);
+    // 15 August is day 75 of the season (30 + 31 + 14 days before it).
+    expect(secondsOf('2025-08-15T13:19:00Z')).toBe(75 * 86400 + 15 * 3600 + 19 * 60);
   });
 
   it('finds what has been seen so far', () => {

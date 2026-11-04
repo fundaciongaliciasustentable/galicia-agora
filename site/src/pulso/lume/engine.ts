@@ -1,12 +1,14 @@
-// /pulso/lume/ model: a month-long clock over satellite detections. Times are seconds since
-// 1 August 2025 00:00 in Galicia (CEST, UTC+2). Detections come in passes: every detection of
-// one product at one minute.
+// /pulso/lume/ model: a clock over the 2025 fire season of satellite detections. Times are
+// seconds since 1 June 2025 00:00 in Galicia (CEST, UTC+2). Detections come in passes: every
+// detection of one product at one minute.
 
-export const START_UTC = Date.UTC(2025, 6, 31, 22, 0, 0); // 1 Aug 2025 00:00 CEST
-export const MONTH = 31 * 24 * 3600;
+export const START_UTC = Date.UTC(2025, 4, 31, 22, 0, 0); // 1 Jun 2025 00:00 CEST
+/** Days of the season, 1 June to 31 October. */
+export const DAYS = 153;
+export const SEASON = DAYS * 24 * 3600;
 
 export interface Detection {
-  /** Seconds since the start of the month (local). */
+  /** Seconds since the start of the season (local). */
   t: number;
   lonlat: [number, number];
   frp: number;
@@ -45,12 +47,12 @@ export function passes(ds: Detection[]): Pass[] {
   return out;
 }
 
-/** Detections per local day (31 values). */
+/** Detections per local day of the season (DAYS values). */
 export function perDay(ds: Detection[]): number[] {
-  const out: number[] = Array(31).fill(0);
+  const out: number[] = Array(DAYS).fill(0);
   for (const d of ds) {
     const i = Math.floor(d.t / 86400);
-    if (i >= 0 && i < 31) out[i] = (out[i] ?? 0) + 1;
+    if (i >= 0 && i < DAYS) out[i] = (out[i] ?? 0) + 1;
   }
   return out;
 }

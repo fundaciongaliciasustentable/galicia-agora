@@ -13,7 +13,7 @@ const layer = await loadYaml<LayerDef>(join(dir, 'layer.yaml'));
 
 // Real rows of the 2025 FIRMS archives for Spain (S-NPP and MODIS), recorded on 1/11/2026:
 // 40 August vegetation detections inside Quiroga, Monterrei or Ponteareas per product, plus
-// rows inside the Galicia box but outside those concellos, outside August, or not type 0.
+// rows inside the Galicia box but outside those concellos, outside the season (January), or not type 0.
 // The concellos are the published polygons of those three.
 async function concellos(): Promise<PublishedLayer> {
   return {
@@ -22,8 +22,8 @@ async function concellos(): Promise<PublishedLayer> {
   };
 }
 
-describe('focos-agosto-2025 adapter', () => {
-  it('keeps August vegetation fires inside a concello, in time order', async () => {
+describe('focos-tempada-2025 adapter', () => {
+  it('keeps vegetation fires of the season inside a concello, in time order', async () => {
     const c = fixtureContext(layer, [
       { match: 'viirs-snpp_2025_Spain.csv', file: fx('viirs-snpp_2025_Spain.csv') },
       { match: 'modis_2025_Spain.csv', file: fx('modis_2025_Spain.csv') },

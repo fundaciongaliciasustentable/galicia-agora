@@ -1,5 +1,5 @@
-// Every heat focus the satellites saw over Galicia in August 2025, the month of the large fires,
-// pass by pass. Feeds /pulso/lume/.
+// Every heat focus the satellites saw over Galicia in the 2025 fire season (June to October,
+// with the large fires of August), pass by pass. Feeds /pulso/lume/.
 //
 // Source: NASA FIRMS yearly archives per country (no MAP_KEY), which exist for VIIRS S-NPP
 // (375 m) and MODIS (1 km). NOAA-20 and NOAA-21 have no country archive and would need the
@@ -15,7 +15,8 @@ import type { Adapter, AdapterContext, Feature, PublishedLayer } from '../../lib
 import { inGalicia, point, round } from '../../lib/adapter.ts';
 
 export const YEAR = 2025;
-export const MONTH = '2025-08';
+/** The fire season kept, inclusive (acquisition dates in UTC). */
+export const SEASON = { from: '2025-06-01', to: '2025-10-31' } as const;
 const BASE = 'https://firms.modaps.eosdis.nasa.gov/data/country';
 export const PRODUCTS = {
   'viirs-snpp': 'VIIRS S-NPP',
@@ -101,7 +102,7 @@ function parseCsv(text: string): Array<Record<string, string>> {
 
 const adapter: Adapter<Raw> = {
   async fetch(ctx: AdapterContext): Promise<Raw> {
-    if (!ctx.readLayer) throw new Error('focos-agosto-2025 needs ctx.readLayer (derived layer)');
+    if (!ctx.readLayer) throw new Error('focos-tempada-2025 needs ctx.readLayer (derived layer)');
     const csv = {} as Record<Product, string>;
     let lastModified: string | null = null;
     for (const p of Object.keys(PRODUCTS) as Product[]) {
@@ -121,13 +122,14 @@ const adapter: Adapter<Raw> = {
     const features: Feature[] = [];
     for (const p of Object.keys(PRODUCTS) as Product[]) {
       for (const r of parseCsv(raw.csv[p])) {
-        if (!r.acq_date?.startsWith(MONTH) || r.type !== '0') continue;
+        const day = r.acq_date ?? '';
+        if (day < SEASON.from || day > SEASON.to || r.type !== '0') continue;
         const x = Number(r.longitude);
         const y = Number(r.latitude);
         if (!inGalicia(x, y)) continue;
         const c = locate(x, y, list);
         if (!c) continue;
-        const at = acquired(r.acq_date, r.acq_time ?? '0');
+        const at = acquired(day, r.acq_time ?? '0');
         features.push({
           type: 'Feature',
           geometry: point(x, y),
