@@ -65,6 +65,18 @@ export const VARIABLES = [
 ] as const;
 export type Variable = (typeof VARIABLES)[number];
 
+/**
+ * Shares of each concello's own population (own calculation, %), also drawn as cartograms: the
+ * area of a concello is then its percentage, whatever its size, so the map grows where the share
+ * is high (a small village concello with many elderly outweighs a city with fewer).
+ */
+export const RATES = [
+  'nacementos_pct',
+  'defuncions_pct',
+  'menores_20_pct',
+  'maiores_65_pct',
+] as const;
+
 export const PAUSE_MS = 1000;
 /** Cartogram grid side (cells); the real map fills its middle half. */
 export const GRID = 256;
@@ -409,7 +421,15 @@ export function addShapes(features: Feature[], grid = GRID): Record<string, numb
   );
   const shapes: Record<string, Float64Array> = { superficie: shape.base };
   const errors: Record<string, number> = {};
-  for (const v of VARIABLES) {
+  // The shares over each concello's population (2025 register; births and deaths are a year).
+  for (const f of features) {
+    const pop = f.properties.poboacion as number | null;
+    for (const r of RATES) {
+      const count = f.properties[r.replace(/_pct$/, '')] as number | null;
+      f.properties[r] = pop && count !== null ? round((100 * count) / pop, 3) : null;
+    }
+  }
+  for (const v of [...VARIABLES, ...RATES]) {
     const raw = features.map((f) => f.properties[v] as number | null);
     const mean = raw.reduce<number>((s, x) => s + Math.max(0, x ?? 0), 0) / raw.length;
     const values = Float64Array.from(raw, (x) => Math.max(x ?? 0, mean * FLOOR_SHARE));

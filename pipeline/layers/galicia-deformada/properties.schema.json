@@ -16,6 +16,10 @@
     "maiores_65",
     "poboacion_1950",
     "poboacion_2021",
+    "nacementos_pct",
+    "defuncions_pct",
+    "menores_20_pct",
+    "maiores_65_pct",
     "periodos",
     "formas",
     "erro_area"
@@ -41,6 +45,10 @@
     "maiores_65": { "$ref": "#/$defs/count" },
     "poboacion_1950": { "$ref": "#/$defs/count" },
     "poboacion_2021": { "$ref": "#/$defs/count" },
+    "nacementos_pct": { "type": ["number", "null"], "minimum": 0, "maximum": 100 },
+    "defuncions_pct": { "type": ["number", "null"], "minimum": 0, "maximum": 100 },
+    "menores_20_pct": { "type": ["number", "null"], "minimum": 0, "maximum": 100 },
+    "maiores_65_pct": { "type": ["number", "null"], "minimum": 0, "maximum": 100 },
     "periodos": {
       "type": "object",
       "additionalProperties": { "type": "string", "pattern": "^\\d{4}$" }
@@ -57,7 +65,11 @@
         "menores_20",
         "maiores_65",
         "poboacion_1950",
-        "poboacion_2021"
+        "poboacion_2021",
+        "nacementos_pct",
+        "defuncions_pct",
+        "menores_20_pct",
+        "maiores_65_pct"
       ],
       "patternProperties": { "^[a-z0-9_]+$": { "$ref": "#/$defs/rings" } }
     },

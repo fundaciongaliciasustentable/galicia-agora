@@ -4,7 +4,7 @@ import { beforeAll, describe, expect, it } from 'vitest';
 import type { LayerDef, PublishedLayer } from '../../lib/adapter.ts';
 import { loadYaml, validateWithSchema } from '../../lib/schemas.ts';
 import { fixtureContext } from '../../lib/testing.ts';
-import adapter, { BASE, INPUTS, REQUESTS, simplifyShared, VARIABLES } from './adapter.ts';
+import adapter, { BASE, INPUTS, RATES, REQUESTS, simplifyShared, VARIABLES } from './adapter.ts';
 import { Cosine } from './diffusion.ts';
 import schema from './properties.schema.json' with { type: 'json' };
 
@@ -92,7 +92,7 @@ describe('galicia-deformada adapter', () => {
   });
 
   it('gives every variable a cartogram whose areas follow the values', async () => {
-    for (const v of ['superficie', ...VARIABLES]) {
+    for (const v of ['superficie', ...VARIABLES, ...RATES]) {
       const areas = rows.map((r) =>
         area((r.formas as Record<string, number[][]>)[v] as number[][]),
       );

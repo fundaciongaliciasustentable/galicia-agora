@@ -6,10 +6,11 @@
 // drawn at the same scale: each map's total area follows Galicia's total, so the smaller one
 // shrinks. Other pairs fill the same area and compare shares only.
 //
-// Births, deaths and the two age groups are shown by default as a share of the population:
-// the shapes stay those of the population cartogram and the colour gives the % of each
-// concello's population. A rate cannot be an area, since rates do not add up. The counts are one
-// click away, and the detail and the table give both the count and the %.
+// Births, deaths and the two age groups are shown by default as a share of the population.
+// Those maps are cartograms of their own (the pipeline's `_pct` shapes): each concello's area
+// follows its %, whatever its size, so a small concello where a third of the people are over 65
+// outweighs a city where a sixth are. The counts are one click away, and the detail and the
+// table give both the count and the %.
 
 import { asset } from '../paths.ts';
 
@@ -39,29 +40,9 @@ const SAME_SCALE = new Set([
 export const RATE_VARS = new Set<Var>(['nacementos', 'defuncions', 'menores_20', 'maiores_65']);
 /** Rates with two decimals (a year's births or deaths are well under 1 % of the people). */
 const SMALL_RATES = new Set<Var>(['nacementos', 'defuncions']);
-/** Rates sharing one colour scale. */
-const RATE_GROUP: Partial<Record<Var, Var[]>> = {
-  nacementos: ['nacementos', 'defuncions'],
-  defuncions: ['nacementos', 'defuncions'],
-  menores_20: ['menores_20', 'maiores_65'],
-  maiores_65: ['menores_20', 'maiores_65'],
-};
-/** Dark to light, readable on the dark background. */
-export const RAMP = ['#1d3b4f', '#245a6b', '#2e7d7a', '#5b9e6e', '#9dbb5c', '#d9c94f', '#ffe066'];
-
-const hexRgb = (h: string) => [1, 3, 5].map((i) => Number.parseInt(h.slice(i, i + 2), 16));
-const rgbHex = (c: number[]) =>
-  `#${c.map((v) => Math.round(v).toString(16).padStart(2, '0')).join('')}`;
-export function mix(a: string, b: string, t: number): string {
-  const [x, y] = [hexRgb(a), hexRgb(b)];
-  return rgbHex(x.map((v, i) => v + ((y[i] as number) - v) * t));
-}
-/** Colour of t in [0, 1] along RAMP. */
-export function ramp(t: number): string {
-  const x = Math.max(0, Math.min(1, t)) * (RAMP.length - 1);
-  const i = Math.min(RAMP.length - 2, Math.floor(x));
-  return mix(RAMP[i] as string, RAMP[i + 1] as string, x - i);
-}
+/** A cartogram: one per variable, plus one per rate (`nacementos_pct`, …). */
+type Shape = Var | `${Var}_pct`;
+const SHAPES: Shape[] = [...VARS, ...[...RATE_VARS].map((v): Shape => `${v}_pct`)];
 
 export const PROVINCE_COLOURS: Record<string, string> = {
   'A Coruña': '#e8925a',
@@ -75,8 +56,8 @@ interface Concello {
   name: string;
   province: string;
   values: Record<Var, number | null>;
-  /** Absolute ring positions per variable, flat [x0, y0, x1, y1, …]. */
-  rings: Record<Var, Float32Array[]>;
+  /** Absolute ring positions per shape, flat [x0, y0, x1, y1, …]. */
+  rings: Partial<Record<Shape, Float32Array[]>>;
 }
 
 /** [x0, y0, dx1, dy1, …] → absolute positions. */
@@ -126,8 +107,6 @@ export async function start(): Promise<void> {
   const sources = q<HTMLElement>('.df-sources');
   const hint = detail.innerHTML;
   const modeBox = q<HTMLElement>('.df-mode');
-  const legendProvinces = q<HTMLElement>('.df-legend');
-  const legendRamp = q<HTMLElement>('.df-ramp');
   const rateHead = q<HTMLElement>('.df-col-rate');
 
   // ---- Data -------------------------------------------------------------------------------
@@ -144,13 +123,12 @@ export async function start(): Promise<void> {
         features: Array<{ properties: Record<string, unknown> }>;
       };
       concellos = fc.features.map(({ properties: p }) => {
-        const formas = p.formas as Record<Var, number[][]>;
+        const formas = p.formas as Record<Shape, number[][]>;
         const values = {} as Record<Var, number | null>;
-        const rings = {} as Record<Var, Float32Array[]>;
-        for (const v of VARS) {
+        const rings: Concello['rings'] = {};
+        for (const v of VARS)
           values[v] = (v === 'superficie' ? p.superficie_km2 : p[v]) as number | null;
-          rings[v] = formas[v].map(decodeRing);
-        }
+        for (const s of SHAPES) rings[s] = formas[s].map(decodeRing);
         return {
           code: String(p.codigo_ine),
           name: String(p.nome),
@@ -182,24 +160,12 @@ export async function start(): Promise<void> {
     return x === null || !pop ? null : (100 * x) / pop;
   };
   const galiciaRate = (v: Var) => (100 * totals[v]) / totals.poboacion;
-  /** Colour domain per rate group: 2nd to 98th percentile of both variables. */
-  const domain = new Map<Var, [number, number]>();
-  for (const v of RATE_VARS) {
-    const all = (RATE_GROUP[v] ?? [v])
-      .flatMap((w) => concellos.map((c) => rateOf(c, w)))
-      .filter((x): x is number => x !== null)
-      .sort((a, b) => a - b);
-    domain.set(v, [
-      all[Math.floor(all.length * 0.02)] ?? 0,
-      all[Math.floor(all.length * 0.98)] ?? 1,
-    ]);
-  }
 
   // Frame: the union of every map at full size, so a shrunk map stays in place.
   let [x0, y0, x1, y1] = [Infinity, Infinity, -Infinity, -Infinity];
   for (const c of concellos) {
-    for (const v of VARS) {
-      for (const r of c.rings[v]) {
+    for (const s of SHAPES) {
+      for (const r of c.rings[s] ?? []) {
         for (let i = 0; i < r.length; i += 2) {
           x0 = Math.min(x0, r[i] as number);
           x1 = Math.max(x1, r[i] as number);
@@ -212,14 +178,14 @@ export async function start(): Promise<void> {
   const pad = (x1 - x0) * 0.03;
   svg.setAttribute('viewBox', `${x0 - pad} ${y0 - pad} ${x1 - x0 + 2 * pad} ${y1 - y0 + 2 * pad}`);
 
-  /** Area-weighted centre of a variable's map (about which it is scaled). */
+  /** Area-weighted centre of a shape's map (about which it is scaled). */
   const centre = Object.fromEntries(
-    VARS.map((v) => {
+    SHAPES.map((v) => {
       let a = 0;
       let cx = 0;
       let cy = 0;
       for (const c of concellos) {
-        for (const r of c.rings[v]) {
+        for (const r of c.rings[v] ?? []) {
           for (let i = 0, j = r.length - 2; i < r.length; j = i, i += 2) {
             const cr =
               (r[j] as number) * (r[i + 1] as number) - (r[i] as number) * (r[j + 1] as number);
@@ -231,7 +197,7 @@ export async function start(): Promise<void> {
       }
       return [v, [cx / (3 * a), cy / (3 * a)]];
     }),
-  ) as Record<Var, [number, number]>;
+  ) as Record<Shape, [number, number]>;
 
   // ---- Shapes -----------------------------------------------------------------------------
   const pathEls = concellos.map((c) => {
@@ -251,31 +217,23 @@ export async function start(): Promise<void> {
 
   let mode: 'rate' | 'count' = 'rate';
   const asRate = (v: Var) => mode === 'rate' && RATE_VARS.has(v);
-  /** Shape drawn for a variable: the population cartogram when it is shown as a rate. */
-  const shapeOf = (v: Var): Var => (asRate(v) ? 'poboacion' : v);
-  const fillOf = (c: Concello, v: Var): string => {
-    if (!asRate(v)) return PROVINCE_COLOURS[c.province] ?? '#888';
-    const r = rateOf(c, v);
-    const [lo, hi] = domain.get(v) ?? [0, 1];
-    return r === null ? '#3a3b35' : ramp((r - lo) / (hi - lo || 1));
-  };
+  /** Cartogram drawn for a variable: its % cartogram when it is shown as a rate. */
+  const shapeOf = (v: Var): Shape => (asRate(v) ? `${v}_pct` : v);
 
-  /** Draw every concello between `va` (t = 0) and `vb` (t = 1), shapes and colours. */
+  /** Draw every concello between `va` (t = 0) and `vb` (t = 1). */
   function draw(va: Var, vb: Var, t: number, sa: number, sb: number) {
-    concellos.forEach((c, u) => {
-      pathEls[u]?.setAttribute('fill', mix(fillOf(c, va), fillOf(c, vb), t));
-    });
     drawShapes(shapeOf(va), shapeOf(vb), t, sa, sb);
   }
 
-  /** Shapes only, between the cartograms of `a` and `b`. */
-  function drawShapes(a: Var, b: Var, t: number, sa: number, sb: number) {
+  /** Every concello between the cartograms `a` and `b`. */
+  function drawShapes(a: Shape, b: Shape, t: number, sa: number, sb: number) {
     const [ax, ay] = centre[a];
     const [bx, by] = centre[b];
     concellos.forEach((c, u) => {
       let d = '';
-      c.rings[a].forEach((ra, k) => {
-        const rb = c.rings[b][k] as Float32Array;
+      const rbs = c.rings[b] ?? [];
+      (c.rings[a] ?? []).forEach((ra, k) => {
+        const rb = rbs[k] as Float32Array;
         for (let i = 0; i < ra.length; i += 2) {
           const xa = ax + ((ra[i] as number) - ax) * sa;
           const ya = ay + ((ra[i + 1] as number) - ay) * sa;
@@ -378,14 +336,6 @@ export async function start(): Promise<void> {
     modeBox.hidden = !rateVisible;
     for (const b of modeBox.querySelectorAll<HTMLButtonElement>('[data-mode]')) {
       b.setAttribute('aria-pressed', String(b.dataset.mode === mode));
-    }
-    legendProvinces.hidden = asRate(current);
-    legendRamp.hidden = !asRate(current);
-    if (asRate(current)) {
-      const [lo, hi] = domain.get(current) ?? [0, 1];
-      legendRamp.querySelector('.df-ramp-lo')?.replaceChildren(rateNumber(current, lo));
-      legendRamp.querySelector('.df-ramp-hi')?.replaceChildren(rateNumber(current, hi));
-      legendRamp.querySelector('.df-ramp-unit')?.replaceChildren(tr('deform_ramp_pct'));
     }
     if (pair && pair.every(asRate)) {
       scaleEl.textContent = `${tr('deform_rate_note')} ${tr(`deform_rate_ratio_${pair[0]}`, {
@@ -502,21 +452,15 @@ export async function start(): Promise<void> {
       const beforeScale = shownScale;
       // Morph from how the shown variable looks now to how it looks in the other mode.
       const a = shapeOf(before);
-      const fromFills = concellos.map((c) => fillOf(c, before));
       mode = b.dataset.mode === 'count' ? 'count' : 'rate';
       stopLoop();
       if (anim !== null) cancelAnimationFrame(anim);
       const toScale = scaleOf(before, pair);
       const t0 = performance.now();
-      const toFills = concellos.map((c) => fillOf(c, before));
       const bShape = shapeOf(before);
       const step = (now: number) => {
         const t = reducedMotion.matches ? 1 : Math.min(1, (now - t0) / 1200);
-        const e = ease(t);
-        drawShapes(a, bShape, e, beforeScale, toScale);
-        concellos.forEach((_, u) => {
-          pathEls[u]?.setAttribute('fill', mix(fromFills[u] as string, toFills[u] as string, e));
-        });
+        drawShapes(a, bShape, ease(t), beforeScale, toScale);
         if (t < 1) anim = requestAnimationFrame(step);
         else {
           anim = null;

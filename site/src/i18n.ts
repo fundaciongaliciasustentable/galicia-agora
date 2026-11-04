@@ -268,8 +268,8 @@ const STRINGS = {
   deform_rate_pct: { gl: '{v} % da poboación', es: '{v} % de la población' },
   deform_ramp_pct: { gl: '% da poboación', es: '% de la población' },
   deform_rate_note: {
-    gl: 'A área é a poboación de cada concello; a cor, a proporción.',
-    es: 'El área es la población de cada ayuntamiento; el color, la proporción.',
+    gl: 'A área de cada concello é a súa porcentaxe, sexa grande ou pequeno: un concello pequeno cunha proporción alta pesa máis ca unha cidade.',
+    es: 'El área de cada ayuntamiento es su porcentaje, sea grande o pequeño: un ayuntamiento pequeño con una proporción alta pesa más que una ciudad.',
   },
   deform_rate_ratio_nacementos: {
     gl: 'En Galicia os nacementos do ano foron o {a} % da poboación e as defuncións o {b} %.',

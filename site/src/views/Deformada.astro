@@ -74,10 +74,6 @@ const PROVINCES = [
     <p class="df-legend">
       {PROVINCES.map(([name, colour]) => <span><i style={`background:${colour}`}></i>{name}</span>)}
     </p>
-    <p class="df-ramp" hidden>
-      <span class="df-ramp-bar" aria-hidden="true"></span>
-      <span class="df-ramp-ends"><span class="df-ramp-lo"></span><span class="df-ramp-unit"></span><span class="df-ramp-hi"></span></span>
-    </p>
     <p class="df-status" role="status">{t(lang, 'loading')}</p>
 
     <details class="df-table">
@@ -227,9 +223,7 @@ const PROVINCES = [
   .df-hint {
     color: #8a8a82;
   }
-  .df-mode[hidden],
-  .df-legend[hidden],
-  .df-ramp[hidden] {
+  .df-mode[hidden] {
     display: none;
   }
   .df-mode {
@@ -251,23 +245,6 @@ const PROVINCES = [
   .df-mode button[aria-pressed='true'] {
     border-color: #e6e6df;
     color: #fff;
-  }
-  .df-ramp {
-    margin: 8px 0 0;
-    font-size: var(--gs-texto-xs);
-    color: #b3b3aa;
-    font-variant-numeric: tabular-nums;
-  }
-  .df-ramp-bar {
-    display: block;
-    height: 10px;
-    border-radius: 2px;
-    background: linear-gradient(90deg, #1d3b4f, #245a6b, #2e7d7a, #5b9e6e, #9dbb5c, #d9c94f, #ffe066);
-  }
-  .df-ramp-ends {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 2px;
   }
   .df-legend {
     display: flex;
