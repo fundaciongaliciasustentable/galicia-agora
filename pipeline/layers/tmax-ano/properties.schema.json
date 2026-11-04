@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "tmax-ano feature properties",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "nome", "concello", "altitude", "ano", "tmax", "dias_con_dato"],
+  "properties": {
+    "id": { "type": "integer" },
+    "nome": { "type": "string", "minLength": 1 },
+    "concello": { "type": "string" },
+    "altitude": { "type": ["number", "null"] },
+    "ano": { "type": "integer", "minimum": 2000 },
+    "tmax": {
+      "type": "array",
+      "minItems": 365,
+      "maxItems": 366,
+      "items": { "type": ["number", "null"], "minimum": -50, "maximum": 60 }
+    },
+    "dias_con_dato": { "type": "integer", "minimum": 1 },
+    "grella": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["lon0", "lat0", "dlon", "dlat", "nx", "ny", "alturas"],
+      "properties": {
+        "lon0": { "type": "number" },
+        "lat0": { "type": "number" },
+        "dlon": { "type": "number" },
+        "dlat": { "type": "number" },
+        "nx": { "type": "integer" },
+        "ny": { "type": "integer" },
+        "alturas": { "type": "string" }
+      }
+    }
+  }
+}

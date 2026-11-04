@@ -1,0 +1,51 @@
+id: tmax-ano
+title:
+  gl: Temperaturas máximas diarias do último ano (estacións de MeteoGalicia)
+  es: Temperaturas máximas diarias del último año (estaciones de MeteoGalicia)
+theme: tempo-aire
+operator:
+  name: MeteoGalicia (Xunta de Galicia)
+  url: https://www.meteogalicia.gal
+source_url: https://servizos.meteogalicia.gal/mgrss/observacion/datosDiariosEstacionsMeteo.action
+licence:
+  text_url: https://www.meteogalicia.gal/web/aviso-legal
+  quote: >-
+    poida ser utilizada libremente por eles, co único compromiso de mencionar expresamente a
+    MeteoGalicia e á Consellería de Medio Ambiente e Cambio Climático
+  verified_at: 2026-11-04
+  odbl_compatible: doubt
+  collection: cc-by-sa-4.0
+  notes: >-
+    Mesma fonte e licenza ca as outras capas de MeteoGalicia (colección CC BY-SA 4.0, ADR 0005).
+    Temperatura máxima diaria a 1,5 m (TA_MAX_1.5m) de todas as estacións, último ano natural
+    completo, só valores validados (código 1). Posición e altitude de estacions-meteo; para
+    estacións que xa non están nela, as coordenadas UTM 29N da propia resposta e a altura do
+    MDT de 1000 m do IGN (CC BY 4.0), que tamén dá a altura de cada cela da grella de debuxo
+    (recortada co contorno de Galicia do IGN). A superficie da páxina é cálculo propio:
+    interpolación polo inverso da distancia cun gradiente térmico estándar de 6,5 °C por km.
+attribution: >-
+  Fonte: MeteoGalicia e Consellería de Medio Ambiente e Cambio Climático (Xunta de Galicia),
+  datos diarios das estacións. Alturas: © Instituto Geográfico Nacional (MDT 1000 m, CC BY 4.0).
+  Superficie interpolada: Fundación Galicia Sustentable.
+update_frequency:
+  declared: P365D
+geometry: point
+output: geojson
+auth:
+  required: false
+privacy_notes: Medidas de estacións meteorolóxicas; ningún dato persoal.
+stale_after: P400D
+ingest:
+  every: P30D
+depends_on:
+  - estacions-meteo
+# Lives on its own /pulso/ page; the main map does not draw it (SERIES_LAYERS).
+style:
+  kind: circle
+  label_field: nome
+table:
+  fields:
+    - nome
+    - concello
+    - altitude
+    - dias_con_dato
