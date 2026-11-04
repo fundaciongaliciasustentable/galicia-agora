@@ -1,21 +1,20 @@
 {
   "layer_id": "mobilidade-cidades",
-  "published_at": null,
-  "fetched_at": "2026-11-01T09:54:14.990Z",
-  "last_success_at": null,
-  "status": "failed",
-  "consecutive_failures": 1,
-  "feature_count": 0,
+  "published_at": "2025-12-23T14:46:25.000Z",
+  "fetched_at": "2026-11-01T08:37:28.010Z",
+  "last_success_at": "2026-11-01T08:37:28.010Z",
+  "status": "fresh",
+  "consecutive_failures": 0,
+  "feature_count": 7,
   "source_url": "https://movilidad-opendata.mitma.es/estudios_basicos/por-municipios/viajes/ficheros-diarios/",
   "licence": "https://movilidad-opendata.mitma.es/LICENCIA%20de%20datos%20abiertos%20del%20MITMA%2020201203.pdf",
   "attribution": "Basado en datos abiertos MITMA (estudios de movilidad con big data, mayo de 2025). Cálculo propio da Fundación Galicia Sustentable.",
-  "checksum": null,
-  "last_error": "HTTP 403 for https://movilidad-opendata.mitma.es/zonificacion/relacion_ine_zonificacionMitma.csv",
+  "checksum": "sha256:47bfae85ce97e9a690d5749c06da888bde36ec1389472400fdb577759022f305",
+  "last_error": null,
   "history": [
     {
-      "at": "2026-11-01T09:54:14.990Z",
-      "ok": false,
-      "error": "HTTP 403 for https://movilidad-opendata.mitma.es/zonificacion/relacion_ine_zonificacionMitma.csv"
+      "at": "2026-11-01T08:37:28.010Z",
+      "ok": true
     }
   ]
 }
