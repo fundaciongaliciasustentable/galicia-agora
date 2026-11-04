@@ -1,0 +1,364 @@
+Dataset {
+    Int32 Lambert_Conformal;
+    Float64 x[x = 117];
+    Float64 y[y = 126];
+    Int32 time[time = 96];
+    Grid {
+     ARRAY:
+        Float32 lon[y = 126][x = 117];
+     MAPS:
+        Float64 y[y = 126];
+        Float64 x[x = 117];
+    } lon;
+    Grid {
+     ARRAY:
+        Float32 lat[y = 126][x = 117];
+     MAPS:
+        Float64 y[y = 126];
+        Float64 x[x = 117];
+    } lat;
+    Grid {
+     ARRAY:
+        Float32 prec[time = 96][y = 126][x = 117];
+     MAPS:
+        Int32 time[time = 96];
+        Float64 y[y = 126];
+        Float64 x[x = 117];
+    } prec;
+    Grid {
+     ARRAY:
+        Float32 conv_prec[time = 96][y = 126][x = 117];
+     MAPS:
+        Int32 time[time = 96];
+        Float64 y[y = 126];
+        Float64 x[x = 117];
+    } conv_prec;
+    Grid {
+     ARRAY:
+        Float32 snow_prec[time = 96][y = 126][x = 117];
+     MAPS:
+        Int32 time[time = 96];
+        Float64 y[y = 126];
+        Float64 x[x = 117];
+    } snow_prec;
+    Grid {
+     ARRAY:
+        Float32 topo[time = 96][y = 126][x = 117];
+     MAPS:
+        Int32 time[time = 96];
+        Float64 y[y = 126];
+        Float64 x[x = 117];
+    } topo;
+    Grid {
+     ARRAY:
+        Float32 land_use[time = 96][y = 126][x = 117];
+     MAPS:
+        Int32 time[time = 96];
+        Float64 y[y = 126];
+        Float64 x[x = 117];
+    } land_use;
+    Grid {
+     ARRAY:
+        Float32 wind_gust[time = 96][y = 126][x = 117];
+     MAPS:
+        Int32 time[time = 96];
+        Float64 y[y = 126];
+        Float64 x[x = 117];
+    } wind_gust;
+    Grid {
+     ARRAY:
+        Float32 pbl_height[time = 96][y = 126][x = 117];
+     MAPS:
+        Int32 time[time = 96];
+        Float64 y[y = 126];
+        Float64 x[x = 117];
+    } pbl_height;
+    Grid {
+     ARRAY:
+        Float32 weasd[time = 96][y = 126][x = 117];
+     MAPS:
+        Int32 time[time = 96];
+        Float64 y[y = 126];
+        Float64 x[x = 117];
+    } weasd;
+    Grid {
+     ARRAY:
+        Float32 lwflx[time = 96][y = 126][x = 117];
+     MAPS:
+        Int32 time[time = 96];
+        Float64 y[y = 126];
+        Float64 x[x = 117];
+    } lwflx;
+    Grid {
+     ARRAY:
+        Float32 swflx[time = 96][y = 126][x = 117];
+     MAPS:
+        Int32 time[time = 96];
+        Float64 y[y = 126];
+        Float64 x[x = 117];
+    } swflx;
+    Grid {
+     ARRAY:
+        Float32 mslp[time = 96][y = 126][x = 117];
+     MAPS:
+        Int32 time[time = 96];
+        Float64 y[y = 126];
+        Float64 x[x = 117];
+    } mslp;
+    Grid {
+     ARRAY:
+        Float32 mod[time = 96][y = 126][x = 117];
+     MAPS:
+        Int32 time[time = 96];
+        Float64 y[y = 126];
+        Float64 x[x = 117];
+    } mod;
+    Grid {
+     ARRAY:
+        Float32 dir[time = 96][y = 126][x = 117];
+     MAPS:
+        Int32 time[time = 96];
+        Float64 y[y = 126];
+        Float64 x[x = 117];
+    } dir;
+    Grid {
+     ARRAY:
+        Float32 u[time = 96][y = 126][x = 117];
+     MAPS:
+        Int32 time[time = 96];
+        Float64 y[y = 126];
+        Float64 x[x = 117];
+    } u;
+    Grid {
+     ARRAY:
+        Float32 v[time = 96][y = 126][x = 117];
+     MAPS:
+        Int32 time[time = 96];
+        Float64 y[y = 126];
+        Float64 x[x = 117];
+    } v;
+    Grid {
+     ARRAY:
+        Float32 HGT500[time = 96][y = 126][x = 117];
+     MAPS:
+        Int32 time[time = 96];
+        Float64 y[y = 126];
+        Float64 x[x = 117];
+    } HGT500;
+    Grid {
+     ARRAY:
+        Float32 HGT850[time = 96][y = 126][x = 117];
+     MAPS:
+        Int32 time[time = 96];
+        Float64 y[y = 126];
+        Float64 x[x = 117];
+    } HGT850;
+    Grid {
+     ARRAY:
+        Float32 snowlevel[time = 96][y = 126][x = 117];
+     MAPS:
+        Int32 time[time = 96];
+        Float64 y[y = 126];
+        Float64 x[x = 117];
+    } snowlevel;
+    Grid {
+     ARRAY:
+        Float32 T850[time = 96][y = 126][x = 117];
+     MAPS:
+        Int32 time[time = 96];
+        Float64 y[y = 126];
+        Float64 x[x = 117];
+    } T850;
+    Grid {
+     ARRAY:
+        Float32 T500[time = 96][y = 126][x = 117];
+     MAPS:
+        Int32 time[time = 96];
+        Float64 y[y = 126];
+        Float64 x[x = 117];
+    } T500;
+    Grid {
+     ARRAY:
+        Float32 ulev1[time = 96][y = 126][x = 117];
+     MAPS:
+        Int32 time[time = 96];
+        Float64 y[y = 126];
+        Float64 x[x = 117];
+    } ulev1;
+    Grid {
+     ARRAY:
+        Float32 vlev1[time = 96][y = 126][x = 117];
+     MAPS:
+        Int32 time[time = 96];
+        Float64 y[y = 126];
+        Float64 x[x = 117];
+    } vlev1;
+    Grid {
+     ARRAY:
+        Float32 HGTlev1[time = 96][y = 126][x = 117];
+     MAPS:
+        Int32 time[time = 96];
+        Float64 y[y = 126];
+        Float64 x[x = 117];
+    } HGTlev1;
+    Grid {
+     ARRAY:
+        Float32 ulev2[time = 96][y = 126][x = 117];
+     MAPS:
+        Int32 time[time = 96];
+        Float64 y[y = 126];
+        Float64 x[x = 117];
+    } ulev2;
+    Grid {
+     ARRAY:
+        Float32 vlev2[time = 96][y = 126][x = 117];
+     MAPS:
+        Int32 time[time = 96];
+        Float64 y[y = 126];
+        Float64 x[x = 117];
+    } vlev2;
+    Grid {
+     ARRAY:
+        Float32 HGTlev2[time = 96][y = 126][x = 117];
+     MAPS:
+        Int32 time[time = 96];
+        Float64 y[y = 126];
+        Float64 x[x = 117];
+    } HGTlev2;
+    Grid {
+     ARRAY:
+        Float32 ulev3[time = 96][y = 126][x = 117];
+     MAPS:
+        Int32 time[time = 96];
+        Float64 y[y = 126];
+        Float64 x[x = 117];
+    } ulev3;
+    Grid {
+     ARRAY:
+        Float32 vlev3[time = 96][y = 126][x = 117];
+     MAPS:
+        Int32 time[time = 96];
+        Float64 y[y = 126];
+        Float64 x[x = 117];
+    } vlev3;
+    Grid {
+     ARRAY:
+        Float32 HGTlev3[time = 96][y = 126][x = 117];
+     MAPS:
+        Int32 time[time = 96];
+        Float64 y[y = 126];
+        Float64 x[x = 117];
+    } HGTlev3;
+    Grid {
+     ARRAY:
+        Float32 temp[time = 96][y = 126][x = 117];
+     MAPS:
+        Int32 time[time = 96];
+        Float64 y[y = 126];
+        Float64 x[x = 117];
+    } temp;
+    Grid {
+     ARRAY:
+        Float32 sst[time = 96][y = 126][x = 117];
+     MAPS:
+        Int32 time[time = 96];
+        Float64 y[y = 126];
+        Float64 x[x = 117];
+    } sst;
+    Grid {
+     ARRAY:
+        Float32 rh[time = 96][y = 126][x = 117];
+     MAPS:
+        Int32 time[time = 96];
+        Float64 y[y = 126];
+        Float64 x[x = 117];
+    } rh;
+    Grid {
+     ARRAY:
+        Float32 cft[time = 96][y = 126][x = 117];
+     MAPS:
+        Int32 time[time = 96];
+        Float64 y[y = 126];
+        Float64 x[x = 117];
+    } cft;
+    Grid {
+     ARRAY:
+        Float32 cfl[time = 96][y = 126][x = 117];
+     MAPS:
+        Int32 time[time = 96];
+        Float64 y[y = 126];
+        Float64 x[x = 117];
+    } cfl;
+    Grid {
+     ARRAY:
+        Float32 cfm[time = 96][y = 126][x = 117];
+     MAPS:
+        Int32 time[time = 96];
+        Float64 y[y = 126];
+        Float64 x[x = 117];
+    } cfm;
+    Grid {
+     ARRAY:
+        Float32 cfh[time = 96][y = 126][x = 117];
+     MAPS:
+        Int32 time[time = 96];
+        Float64 y[y = 126];
+        Float64 x[x = 117];
+    } cfh;
+    Grid {
+     ARRAY:
+        Float32 cape[time = 96][y = 126][x = 117];
+     MAPS:
+        Int32 time[time = 96];
+        Float64 y[y = 126];
+        Float64 x[x = 117];
+    } cape;
+    Grid {
+     ARRAY:
+        Float32 cin[time = 96][y = 126][x = 117];
+     MAPS:
+        Int32 time[time = 96];
+        Float64 y[y = 126];
+        Float64 x[x = 117];
+    } cin;
+    Grid {
+     ARRAY:
+        Float32 visibility[time = 96][y = 126][x = 117];
+     MAPS:
+        Int32 time[time = 96];
+        Float64 y[y = 126];
+        Float64 x[x = 117];
+    } visibility;
+    Grid {
+     ARRAY:
+        Float32 shflx[time = 96][y = 126][x = 117];
+     MAPS:
+        Int32 time[time = 96];
+        Float64 y[y = 126];
+        Float64 x[x = 117];
+    } shflx;
+    Grid {
+     ARRAY:
+        Float32 lhflx[time = 96][y = 126][x = 117];
+     MAPS:
+        Int32 time[time = 96];
+        Float64 y[y = 126];
+        Float64 x[x = 117];
+    } lhflx;
+    Grid {
+     ARRAY:
+        Int32 lwm[time = 96][y = 126][x = 117];
+     MAPS:
+        Int32 time[time = 96];
+        Float64 y[y = 126];
+        Float64 x[x = 117];
+    } lwm;
+    Grid {
+     ARRAY:
+        Int32 meteograms[time = 96][y = 126][x = 117];
+     MAPS:
+        Int32 time[time = 96];
+        Float64 y[y = 126];
+        Float64 x[x = 117];
+    } meteograms;
+} wrf_2d_04km/fmrc/files/20261104/wrf_arw_det_history_d03_20261104_0000.nc4;

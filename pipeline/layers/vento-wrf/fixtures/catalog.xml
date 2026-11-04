@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="http://www.unidata.ucar.edu/namespaces/thredds/InvCatalog/v1.0" xmlns:xlink="http://www.w3.org/1999/xlink" name="THREDDS - Servidor de datos de MeteoGalicia/Feature Collection/WRF_2D 04km" version="1.2">
+  <service name="allServices" serviceType="compound" base="">
+    <service name="dapService" serviceType="OpenDAP" base="/thredds/dodsC/" />
+    <service name="httpService" serviceType="HTTPServer" base="/thredds/fileServer/" />
+    <service name="wcsService" serviceType="WCS" base="/thredds/wcs/" />
+    <service name="ncss" serviceType="NetcdfSubset" base="/thredds/ncss/grid/" />
+    <service name="wms" serviceType="WMS" base="/thredds/wms/" />
+  </service>
+  <service name="Resolver" serviceType="Resolver" base="" />
+  <dataset name="files">
+    <metadata inherited="true">
+      <serviceName>allServices</serviceName>
+    </metadata>
+    <dataset name="Latest WRF_2D 04km File" ID="latest.xml" urlPath="latest.xml">
+      <serviceName>Resolver</serviceName>
+    </dataset>
+    <dataset name="20261021/wrf_arw_det_history_d03_20261021_0000.nc4" ID="wrf_2d_04km/fmrc/files/20261021/wrf_arw_det_history_d03_20261021_0000.nc4" urlPath="wrf_2d_04km/fmrc/files/20261021/wrf_arw_det_history_d03_20261021_0000.nc4">
+      <dataSize units="Mbytes">97.18</dataSize>
+      <variableMap xlink:title="variables" xlink:href="/thredds/metadata/wrf_2d_04km/fmrc/files/20261021/wrf_arw_det_history_d03_20261021_0000.nc4?metadata=variableMap" />
+    </dataset>
+    <dataset name="20261021/wrf_arw_det_history_d03_20261021_1200.nc4" ID="wrf_2d_04km/fmrc/files/20261021/wrf_arw_det_history_d03_20261021_1200.nc4" urlPath="wrf_2d_04km/fmrc/files/20261021/wrf_arw_det_history_d03_20261021_1200.nc4">
+      <dataSize units="Mbytes">83.92</dataSize>
+      <variableMap xlink:title="variables" xlink:href="/thredds/metadata/wrf_2d_04km/fmrc/files/20261021/wrf_arw_det_history_d03_20261021_1200.nc4?metadata=variableMap" />
+    </dataset>
+    <dataset name="20261022/wrf_arw_det_history_d03_20261022_0000.nc4" ID="wrf_2d_04km/fmrc/files/20261022/wrf_arw_det_history_d03_20261022_0000.nc4" urlPath="wrf_2d_04km/fmrc/files/20261022/wrf_arw_det_history_d03_20261022_0000.nc4">
+      <dataSize units="Mbytes">96.38</dataSize>
+      <variableMap xlink:title="variables" xlink:href="/thredds/metadata/wrf_2d_04km/fmrc/files/20261022/wrf_arw_det_history_d03_20261022_0000.nc4?metadata=variableMap" />
+    </dataset>
+    <dataset name="20261022/wrf_arw_det_history_d03_20261022_1200.nc4" ID="wrf_2d_04km/fmrc/files/20261022/wrf_arw_det_history_d03_20261022_1200.nc4" urlPath="wrf_2d_04km/fmrc/files/20261022/wrf_arw_det_history_d03_20261022_1200.nc4">
+      <dataSize units="Mbytes">84.68</dataSize>
+      <variableMap xlink:title="variables" xlink:href="/thredds/metadata/wrf_2d_04km/fmrc/files/20261022/wrf_arw_det_history_d03_20261022_1200.nc4?metadata=variableMap" />
+    </dataset>
+    <dataset name="20261023/wrf_arw_det_history_d03_20261023_0000.nc4" ID="wrf_2d_04km/fmrc/files/20261023/wrf_arw_det_history_d03_20261023_0000.nc4" urlPath="wrf_2d_04km/fmrc/files/20261023/wrf_arw_det_history_d03_20261023_0000.nc4">
+      <dataSize units="Mbytes">96.91</dataSize>
+      <variableMap xlink:title="variables" xlink:href="/thredds/metadata/wrf_2d_04km/fmrc/files/20261023/wrf_arw_det_history_d03_20261023_0000.nc4?metadata=variableMap" />
+    </dataset>
+    <dataset name="20261023/wrf_arw_det_history_d03_20261023_1200.nc4" ID="wrf_2d_04km/fmrc/files/20261023/wrf_arw_det_history_d03_20261023_1200.nc4" urlPath="wrf_2d_04km/fmrc/files/20261023/wrf_arw_det_history_d03_20261023_1200.nc4">
+      <dataSize units="Mbytes">84.65</dataSize>
+      <variableMap xlink:title="variables" xlink:href="/thredds/metadata/wrf_2d_04km/fmrc/files/20261023/wrf_arw_det_history_d03_20261023_1200.nc4?metadata=variableMap" />
+    </dataset>
+    <dataset name="20261024/wrf_arw_det_history_d03_20261024_0000.nc4" ID="wrf_2d_04km/fmrc/files/20261024/wrf_arw_det_history_d03_20261024_0000.nc4" urlPath="wrf_2d_04km/fmrc/files/20261024/wrf_arw_det_history_d03_20261024_0000.nc4">
+      <dataSize units="Mbytes">96.88</dataSize>
+      <variableMap xlink:title="variables" xlink:href="/thredds/metadata/wrf_2d_04km/fmrc/files/20261024/wrf_arw_det_history_d03_20261024_0000.nc4?metadata=variableMap" />
+    </dataset>
+    <dataset name="20261024/wrf_arw_det_history_d03_20261024_1200.nc4" ID="wrf_2d_04km/fmrc/files/20261024/wrf_arw_det_history_d03_20261024_1200.nc4" urlPath="wrf_2d_04km/fmrc/files/20261024/wrf_arw_det_history_d03_20261024_1200.nc4">
+      <dataSize units="Mbytes">85.07</dataSize>
+      <variableMap xlink:title="variables" xlink:href="/thredds/metadata/wrf_2d_04km/fmrc/files/20261024/wrf_arw_det_history_d03_20261024_1200.nc4?metadata=variableMap" />
+    </dataset>
+    <dataset name="20261025/wrf_arw_det_history_d03_20261025_0000.nc4" ID="wrf_2d_04km/fmrc/files/20261025/wrf_arw_det_history_d03_20261025_0000.nc4" urlPath="wrf_2d_04km/fmrc/files/20261025/wrf_arw_det_history_d03_20261025_0000.nc4">
+      <dataSize units="Mbytes">97.45</dataSize>
+      <variableMap xlink:title="variables" xlink:href="/thredds/metadata/wrf_2d_04km/fmrc/files/20261025/wrf_arw_det_history_d03_20261025_0000.nc4?metadata=variableMap" />
+    </dataset>
+    <dataset name="20261025/wrf_arw_det_history_d03_20261025_1200.nc4" ID="wrf_2d_04km/fmrc/files/20261025/wrf_arw_det_history_d03_20261025_1200.nc4" urlPath="wrf_2d_04km/fmrc/files/20261025/wrf_arw_det_history_d03_20261025_1200.nc4">
+      <dataSize units="Mbytes">84.73</dataSize>
+      <variableMap xlink:title="variables" xlink:href="/thredds/metadata/wrf_2d_04km/fmrc/files/20261025/wrf_arw_det_history_d03_20261025_1200.nc4?metadata=variableMap" />
+    </dataset>
+    <dataset name="20261026/wrf_arw_det_history_d03_20261026_0000.nc4" ID="wrf_2d_04km/fmrc/files/20261026/wrf_arw_det_history_d03_20261026_0000.nc4" urlPath="wrf_2d_04km/fmrc/files/20261026/wrf_arw_det_history_d03_20261026_0000.nc4">
+      <dataSize units="Mbytes">95.93</dataSize>
+      <variableMap xlink:title="variables" xlink:href="/thredds/metadata/wrf_2d_04km/fmrc/files/20261026/wrf_arw_det_history_d03_20261026_0000.nc4?metadata=variableMap" />
+    </dataset>
+    <dataset name="20261026/wrf_arw_det_history_d03_20261026_1200.nc4" ID="wrf_2d_04km/fmrc/files/20261026/wrf_arw_det_history_d03_20261026_1200.nc4" urlPath="wrf_2d_04km/fmrc/files/20261026/wrf_arw_det_history_d03_20261026_1200.nc4">
+      <dataSize units="Mbytes">83.20</dataSize>
+      <variableMap xlink:title="variables" xlink:href="/thredds/metadata/wrf_2d_04km/fmrc/files/20261026/wrf_arw_det_history_d03_20261026_1200.nc4?metadata=variableMap" />
+    </dataset>
+    <dataset name="20261027/wrf_arw_det_history_d03_20261027_0000.nc4" ID="wrf_2d_04km/fmrc/files/20261027/wrf_arw_det_history_d03_20261027_0000.nc4" urlPath="wrf_2d_04km/fmrc/files/20261027/wrf_arw_det_history_d03_20261027_0000.nc4">
+      <dataSize units="Mbytes">95.11</dataSize>
+      <variableMap xlink:title="variables" xlink:href="/thredds/metadata/wrf_2d_04km/fmrc/files/20261027/wrf_arw_det_history_d03_20261027_0000.nc4?metadata=variableMap" />
+    </dataset>
+    <dataset name="20261027/wrf_arw_det_history_d03_20261027_1200.nc4" ID="wrf_2d_04km/fmrc/files/20261027/wrf_arw_det_history_d03_20261027_1200.nc4" urlPath="wrf_2d_04km/fmrc/files/20261027/wrf_arw_det_history_d03_20261027_1200.nc4">
+      <dataSize units="Mbytes">82.19</dataSize>
+      <variableMap xlink:title="variables" xlink:href="/thredds/metadata/wrf_2d_04km/fmrc/files/20261027/wrf_arw_det_history_d03_20261027_1200.nc4?metadata=variableMap" />
+    </dataset>
+    <dataset name="20261028/wrf_arw_det_history_d03_20261028_0000.nc4" ID="wrf_2d_04km/fmrc/files/20261028/wrf_arw_det_history_d03_20261028_0000.nc4" urlPath="wrf_2d_04km/fmrc/files/20261028/wrf_arw_det_history_d03_20261028_0000.nc4">
+      <dataSize units="Mbytes">94.30</dataSize>
+      <variableMap xlink:title="variables" xlink:href="/thredds/metadata/wrf_2d_04km/fmrc/files/20261028/wrf_arw_det_history_d03_20261028_0000.nc4?metadata=variableMap" />
+    </dataset>
+    <dataset name="20261028/wrf_arw_det_history_d03_20261028_1200.nc4" ID="wrf_2d_04km/fmrc/files/20261028/wrf_arw_det_history_d03_20261028_1200.nc4" urlPath="wrf_2d_04km/fmrc/files/20261028/wrf_arw_det_history_d03_20261028_1200.nc4">
+      <dataSize units="Mbytes">81.75</dataSize>
+      <variableMap xlink:title="variables" xlink:href="/thredds/metadata/wrf_2d_04km/fmrc/files/20261028/wrf_arw_det_history_d03_20261028_1200.nc4?metadata=variableMap" />
+    </dataset>
+    <dataset name="20261029/wrf_arw_det_history_d03_20261029_0000.nc4" ID="wrf_2d_04km/fmrc/files/20261029/wrf_arw_det_history_d03_20261029_0000.nc4" urlPath="wrf_2d_04km/fmrc/files/20261029/wrf_arw_det_history_d03_20261029_0000.nc4">
+      <dataSize units="Mbytes">93.14</dataSize>
+      <variableMap xlink:title="variables" xlink:href="/thredds/metadata/wrf_2d_04km/fmrc/files/20261029/wrf_arw_det_history_d03_20261029_0000.nc4?metadata=variableMap" />
+    </dataset>
+    <dataset name="20261029/wrf_arw_det_history_d03_20261029_1200.nc4" ID="wrf_2d_04km/fmrc/files/20261029/wrf_arw_det_history_d03_20261029_1200.nc4" urlPath="wrf_2d_04km/fmrc/files/20261029/wrf_arw_det_history_d03_20261029_1200.nc4">
+      <dataSize units="Mbytes">81.98</dataSize>
+      <variableMap xlink:title="variables" xlink:href="/thredds/metadata/wrf_2d_04km/fmrc/files/20261029/wrf_arw_det_history_d03_20261029_1200.nc4?metadata=variableMap" />
+    </dataset>
+    <dataset name="20261030/wrf_arw_det_history_d03_20261030_0000.nc4" ID="wrf_2d_04km/fmrc/files/20261030/wrf_arw_det_history_d03_20261030_0000.nc4" urlPath="wrf_2d_04km/fmrc/files/20261030/wrf_arw_det_history_d03_20261030_0000.nc4">
+      <dataSize units="Mbytes">94.13</dataSize>
+      <variableMap xlink:title="variables" xlink:href="/thredds/metadata/wrf_2d_04km/fmrc/files/20261030/wrf_arw_det_history_d03_20261030_0000.nc4?metadata=variableMap" />
+    </dataset>
+    <dataset name="20261030/wrf_arw_det_history_d03_20261030_1200.nc4" ID="wrf_2d_04km/fmrc/files/20261030/wrf_arw_det_history_d03_20261030_1200.nc4" urlPath="wrf_2d_04km/fmrc/files/20261030/wrf_arw_det_history_d03_20261030_1200.nc4">
+      <dataSize units="Mbytes">81.13</dataSize>
+      <variableMap xlink:title="variables" xlink:href="/thredds/metadata/wrf_2d_04km/fmrc/files/20261030/wrf_arw_det_history_d03_20261030_1200.nc4?metadata=variableMap" />
+    </dataset>
+    <dataset name="20261031/wrf_arw_det_history_d03_20261031_0000.nc4" ID="wrf_2d_04km/fmrc/files/20261031/wrf_arw_det_history_d03_20261031_0000.nc4" urlPath="wrf_2d_04km/fmrc/files/20261031/wrf_arw_det_history_d03_20261031_0000.nc4">
+      <dataSize units="Mbytes">91.32</dataSize>
+      <variableMap xlink:title="variables" xlink:href="/thredds/metadata/wrf_2d_04km/fmrc/files/20261031/wrf_arw_det_history_d03_20261031_0000.nc4?metadata=variableMap" />
+    </dataset>
+    <dataset name="20261031/wrf_arw_det_history_d03_20261031_1200.nc4" ID="wrf_2d_04km/fmrc/files/20261031/wrf_arw_det_history_d03_20261031_1200.nc4" urlPath="wrf_2d_04km/fmrc/files/20261031/wrf_arw_det_history_d03_20261031_1200.nc4">
+      <dataSize units="Mbytes">79.46</dataSize>
+      <variableMap xlink:title="variables" xlink:href="/thredds/metadata/wrf_2d_04km/fmrc/files/20261031/wrf_arw_det_history_d03_20261031_1200.nc4?metadata=variableMap" />
+    </dataset>
+    <dataset name="20261101/wrf_arw_det_history_d03_20261101_0000.nc4" ID="wrf_2d_04km/fmrc/files/20261101/wrf_arw_det_history_d03_20261101_0000.nc4" urlPath="wrf_2d_04km/fmrc/files/20261101/wrf_arw_det_history_d03_20261101_0000.nc4">
+      <dataSize units="Mbytes">91.51</dataSize>
+      <variableMap xlink:title="variables" xlink:href="/thredds/metadata/wrf_2d_04km/fmrc/files/20261101/wrf_arw_det_history_d03_20261101_0000.nc4?metadata=variableMap" />
+    </dataset>
+    <dataset name="20261101/wrf_arw_det_history_d03_20261101_1200.nc4" ID="wrf_2d_04km/fmrc/files/20261101/wrf_arw_det_history_d03_20261101_1200.nc4" urlPath="wrf_2d_04km/fmrc/files/20261101/wrf_arw_det_history_d03_20261101_1200.nc4">
+      <dataSize units="Mbytes">81.87</dataSize>
+      <variableMap xlink:title="variables" xlink:href="/thredds/metadata/wrf_2d_04km/fmrc/files/20261101/wrf_arw_det_history_d03_20261101_1200.nc4?metadata=variableMap" />
+    </dataset>
+    <dataset name="20261102/wrf_arw_det_history_d03_20261102_0000.nc4" ID="wrf_2d_04km/fmrc/files/20261102/wrf_arw_det_history_d03_20261102_0000.nc4" urlPath="wrf_2d_04km/fmrc/files/20261102/wrf_arw_det_history_d03_20261102_0000.nc4">
+      <dataSize units="Mbytes">96.30</dataSize>
+      <variableMap xlink:title="variables" xlink:href="/thredds/metadata/wrf_2d_04km/fmrc/files/20261102/wrf_arw_det_history_d03_20261102_0000.nc4?metadata=variableMap" />
+    </dataset>
+    <dataset name="20261102/wrf_arw_det_history_d03_20261102_1200.nc4" ID="wrf_2d_04km/fmrc/files/20261102/wrf_arw_det_history_d03_20261102_1200.nc4" urlPath="wrf_2d_04km/fmrc/files/20261102/wrf_arw_det_history_d03_20261102_1200.nc4">
+      <dataSize units="Mbytes">84.43</dataSize>
+      <variableMap xlink:title="variables" xlink:href="/thredds/metadata/wrf_2d_04km/fmrc/files/20261102/wrf_arw_det_history_d03_20261102_1200.nc4?metadata=variableMap" />
+    </dataset>
+    <dataset name="20261103/wrf_arw_det_history_d03_20261103_0000.nc4" ID="wrf_2d_04km/fmrc/files/20261103/wrf_arw_det_history_d03_20261103_0000.nc4" urlPath="wrf_2d_04km/fmrc/files/20261103/wrf_arw_det_history_d03_20261103_0000.nc4">
+      <dataSize units="Mbytes">96.51</dataSize>
+      <variableMap xlink:title="variables" xlink:href="/thredds/metadata/wrf_2d_04km/fmrc/files/20261103/wrf_arw_det_history_d03_20261103_0000.nc4?metadata=variableMap" />
+    </dataset>
+    <dataset name="20261103/wrf_arw_det_history_d03_20261103_1200.nc4" ID="wrf_2d_04km/fmrc/files/20261103/wrf_arw_det_history_d03_20261103_1200.nc4" urlPath="wrf_2d_04km/fmrc/files/20261103/wrf_arw_det_history_d03_20261103_1200.nc4">
+      <dataSize units="Mbytes">83.80</dataSize>
+      <variableMap xlink:title="variables" xlink:href="/thredds/metadata/wrf_2d_04km/fmrc/files/20261103/wrf_arw_det_history_d03_20261103_1200.nc4?metadata=variableMap" />
+    </dataset>
+    <dataset name="20261104/wrf_arw_det_history_d03_20261104_0000.nc4" ID="wrf_2d_04km/fmrc/files/20261104/wrf_arw_det_history_d03_20261104_0000.nc4" urlPath="wrf_2d_04km/fmrc/files/20261104/wrf_arw_det_history_d03_20261104_0000.nc4">
+      <dataSize units="Mbytes">96.21</dataSize>
+      <variableMap xlink:title="variables" xlink:href="/thredds/metadata/wrf_2d_04km/fmrc/files/20261104/wrf_arw_det_history_d03_20261104_0000.nc4?metadata=variableMap" />
+    </dataset>
+  </dataset>
+</catalog>

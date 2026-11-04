@@ -1,0 +1,46 @@
+id: vento-wrf
+title:
+  gl: Vento previsto (WRF de MeteoGalicia)
+  es: Viento previsto (WRF de MeteoGalicia)
+theme: tempo-aire
+operator:
+  name: MeteoGalicia (Xunta de Galicia)
+  url: https://www.meteogalicia.gal
+source_url: https://thredds.meteogalicia.gal/thredds/catalog/wrf_2d_04km/fmrc/files/catalog.xml
+licence:
+  text_url: https://www.meteogalicia.gal/web/aviso-legal
+  quote: >-
+    poida ser utilizada libremente por eles, co único compromiso de mencionar expresamente a
+    MeteoGalicia e á Consellería de Medio Ambiente e Cambio Climático
+  verified_at: 2026-11-04
+  odbl_compatible: doubt
+  collection: cc-by-sa-4.0
+  notes: >-
+    Mesma fonte e licenza ca estacions-meteo, meteo-dia e meteo-24h (colección CC BY-SA 4.0,
+    ADR 0005). Modelo WRF de MeteoGalicia a 4 km (dominio d03, 117 × 126 puntos en Lambert
+    conforme), dúas execucións ao día (00 e 12 UTC) con 96 horas; vento a 10 m (u cara ao leste,
+    v cara ao norte) por OPeNDAP ASCII. Cálculo propio: cada 3 horas ata 72, remostraxe a unha
+    malla regular de 0,03° (140 × 90) sobre Galicia e o seu mar (media ponderada polo inverso
+    da distancia dos 4 puntos do modelo máis próximos) e cuantización a 0,25 m/s.
+attribution: >-
+  Fonte: MeteoGalicia e Consellería de Medio Ambiente e Cambio Climático (Xunta de Galicia),
+  predición do modelo WRF. Remostraxe: Fundación Galicia Sustentable.
+update_frequency:
+  declared: PT12H
+geometry: none
+output: geojson
+auth:
+  required: false
+privacy_notes: Predición meteorolóxica nunha malla; ningún dato persoal.
+stale_after: P1D
+ingest:
+  every: PT3H
+# Lives on its own /pulso/ page; the main map does not draw it (SERIES_LAYERS).
+style:
+  kind: fill
+  label_field: execucion
+table:
+  fields:
+    - execucion
+    - horas
+    - vento_max_ms
