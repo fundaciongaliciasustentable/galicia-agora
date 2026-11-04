@@ -1,0 +1,20 @@
+{
+  "layer_id": "seculo-movemento",
+  "published_at": null,
+  "fetched_at": "2026-11-04T07:18:40.477Z",
+  "last_success_at": "2026-11-04T07:18:40.477Z",
+  "status": "fresh",
+  "consecutive_failures": 0,
+  "feature_count": 313,
+  "source_url": "https://www.ine.es/intercensal/",
+  "licence": "CC-BY-SA-4.0",
+  "attribution": "Elaboración propia con datos extraídos del sitio web del INE: www.ine.es (censos 1900–2021). Lugares: © Instituto de Estudos do Territorio. Xunta de Galicia (PBA). Cálculos: Fundación Galicia Sustentable.",
+  "checksum": "sha256:254f68789eeadcd3bac976328f798ee08bcf0df829251993c3d3d1da4be49e5d",
+  "last_error": null,
+  "history": [
+    {
+      "at": "2026-11-04T07:18:40.477Z",
+      "ok": true
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "layer_id": "focos-tempada-2025",
+  "published_at": "2026-10-10T13:23:51.000Z",
+  "fetched_at": "2026-11-04T07:18:37.240Z",
+  "last_success_at": "2026-11-04T07:18:37.240Z",
+  "status": "fresh",
+  "consecutive_failures": 0,
+  "feature_count": 10767,
+  "source_url": "https://firms.modaps.eosdis.nasa.gov/data/country/",
+  "licence": "CC-BY-SA-4.0",
+  "attribution": "NASA FIRMS (LANCE, NASA/GSFC/ESDIS), VIIRS S-NPP e MODIS, xuño–outubro de 2025; concello: IET, Xunta de Galicia. Cálculo propio da Fundación Galicia Sustentable.",
+  "checksum": "sha256:55bbf75e12e4fce7f46f2af3ff31f6bfe14f52b5abeddc10c9faf9f2cd933305",
+  "last_error": null,
+  "history": [
+    {
+      "at": "2026-11-04T07:18:37.240Z",
+      "ok": true
+    }
+  ]
+}

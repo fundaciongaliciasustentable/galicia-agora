@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-04T07:00:30.925Z",
+  "generated_at": "2026-11-04T07:18:43.820Z",
   "layers": [
     {
       "id": "aeroportos",
@@ -494,8 +494,8 @@
       "meta": {
         "layer_id": "avisos-aemet",
         "published_at": "2026-11-03T22:50:01.000Z",
-        "fetched_at": "2026-11-04T06:59:35.825Z",
-        "last_success_at": "2026-11-04T06:59:35.825Z",
+        "fetched_at": "2026-11-04T07:18:29.290Z",
+        "last_success_at": "2026-11-04T07:18:29.290Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 1,
@@ -505,6 +505,10 @@
         "checksum": "sha256:32dcae9dc270f36a2e9e0688081265c52592f0f81adaf5b2a20fb70f65f59a42",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-11-04T07:18:29.290Z",
+            "ok": true
+          },
           {
             "at": "2026-11-04T06:59:35.825Z",
             "ok": true
@@ -759,8 +763,8 @@
       "meta": {
         "layer_id": "avisos-meteogalicia",
         "published_at": null,
-        "fetched_at": "2026-11-04T06:59:36.243Z",
-        "last_success_at": "2026-11-04T06:59:36.243Z",
+        "fetched_at": "2026-11-04T07:18:29.695Z",
+        "last_success_at": "2026-11-04T07:18:29.695Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 313,
@@ -770,6 +774,10 @@
         "checksum": "sha256:b0d3259a42f56a43a11eff1268cfdbc5e2c722c39da0f71071f3559ef3833aac",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-11-04T07:18:29.695Z",
+            "ok": true
+          },
           {
             "at": "2026-11-04T06:59:36.243Z",
             "ok": true
@@ -1088,18 +1096,22 @@
       },
       "meta": {
         "layer_id": "bicis-arteixo",
-        "published_at": "2026-11-04T06:59:08.000Z",
-        "fetched_at": "2026-11-04T06:59:36.770Z",
-        "last_success_at": "2026-11-04T06:59:36.770Z",
+        "published_at": "2026-11-04T07:18:27.000Z",
+        "fetched_at": "2026-11-04T07:18:30.171Z",
+        "last_success_at": "2026-11-04T07:18:30.171Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 15,
         "source_url": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_aa/gbfs.json",
         "licence": "CC0-1.0",
         "attribution": "Datos: biciArteixo / nextbike (CC0)",
-        "checksum": "sha256:6a3110605e5c287af732f69b9902421a9f7854e7060aa94bf7bc22ee23e3cf01",
+        "checksum": "sha256:d48be4a446af6203517bc2140d80ab5a5f6cb0b6cdde9526a1796e6bbd1140a1",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-11-04T07:18:30.171Z",
+            "ok": true
+          },
           {
             "at": "2026-11-04T06:59:36.770Z",
             "ok": true
@@ -1651,18 +1663,22 @@
       },
       "meta": {
         "layer_id": "caudais-rios",
-        "published_at": "2026-11-04T06:40:00.000Z",
-        "fetched_at": "2026-11-04T06:59:37.421Z",
-        "last_success_at": "2026-11-04T06:59:37.421Z",
+        "published_at": "2026-11-04T07:00:00.000Z",
+        "fetched_at": "2026-11-04T07:18:30.741Z",
+        "last_success_at": "2026-11-04T07:18:30.741Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 88,
         "source_url": "https://servizos.meteogalicia.gal/mgafos/json/estadoActual.action",
         "licence": "https://www.meteogalicia.gal/web/aviso-legal",
         "attribution": "Datos: Augas de Galicia e MeteoGalicia (Xunta de Galicia). Datos non validados.",
-        "checksum": "sha256:612cf5023d119a3dacafc8c2c07b7bf11265bdad8df9590b70b518e6653273de",
+        "checksum": "sha256:0bc80806202a961d2fca31569d4770c3ad9f13353b64e9478482aab47e089773",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-11-04T07:18:30.741Z",
+            "ok": true
+          },
           {
             "at": "2026-11-04T06:59:37.421Z",
             "ok": true
@@ -3101,18 +3117,22 @@
       },
       "meta": {
         "layer_id": "estacions-meteo",
-        "published_at": "2026-11-04T06:40:00.000Z",
-        "fetched_at": "2026-11-04T06:59:37.689Z",
-        "last_success_at": "2026-11-04T06:59:37.689Z",
+        "published_at": "2026-11-04T07:10:00.000Z",
+        "fetched_at": "2026-11-04T07:18:30.995Z",
+        "last_success_at": "2026-11-04T07:18:30.995Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 153,
         "source_url": "https://servizos.meteogalicia.gal/mgrss/observacion/ultimos10minEstacionsMeteo.action",
         "licence": "CC-BY-SA-4.0",
         "attribution": "Datos: MeteoGalicia (Xunta de Galicia)",
-        "checksum": "sha256:e40d3f0ba0b978631e55dcbbbbca9c997081fbdef4c48446d51d9be9956fd757",
+        "checksum": "sha256:058de366281182d48648caa8e34897a5b717e489c496f68c1f474e610f8235ad",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-11-04T07:18:30.995Z",
+            "ok": true
+          },
           {
             "at": "2026-11-04T06:59:37.689Z",
             "ok": true
@@ -3558,76 +3578,6 @@
       }
     },
     {
-      "id": "focos-agosto-2025",
-      "title": {
-        "gl": "Focos de calor de agosto de 2025 (satélite, pasada a pasada)",
-        "es": "Focos de calor de agosto de 2025 (satélite, pasada a pasada)"
-      },
-      "theme": "lume-monte",
-      "operator": {
-        "name": "NASA LANCE FIRMS (NASA/GSFC/ESDIS)",
-        "url": "https://firms.modaps.eosdis.nasa.gov"
-      },
-      "source_url": "https://firms.modaps.eosdis.nasa.gov/data/country/",
-      "licence": {
-        "spdx": "CC-BY-SA-4.0",
-        "text_url": "https://creativecommons.org/licenses/by-sa/4.0/deed.gl",
-        "quote": "Creative Commons BY SA 4.0",
-        "verified_at": "2026-11-01",
-        "odbl_compatible": "doubt",
-        "collection": "cc-by-sa-4.0",
-        "notes": "Detección de FIRMS: CC0 (misións NASA). Capa derivada: o concello de cada detección sae dos polígonos de concellos-parroquias (IET, CC BY-SA 4.0), así que vai na colección CC BY-SA 4.0 (ADR 0005), como perfil-concellos. Arquivos anuais por país de 2025 (VIIRS S-NPP, 375 m, e MODIS, 1 km), sen chave; NOAA-20 e NOAA-21 non teñen arquivo por país e quedan fóra. Só agosto de 2025, só tipo 0 (lume de vexetación presunto) e só dentro dun concello galego. Unha detección é un píxel quente nunha pasada do satélite, non un lume nin unha superficie. Horas en UTC. Verificación en datos/fontes/nasa-firms/README.md."
-      },
-      "attribution": "NASA FIRMS (LANCE, NASA/GSFC/ESDIS), VIIRS S-NPP e MODIS, agosto de 2025; concello: IET, Xunta de Galicia. Cálculo propio da Fundación Galicia Sustentable.",
-      "update_frequency": {
-        "declared": "static"
-      },
-      "geometry": "point",
-      "output": "geojson",
-      "privacy_notes": "Detección de calor por satélite; ningún dato persoal.",
-      "stale_after": "P3650D",
-      "ingest": {
-        "every": "P365D"
-      },
-      "depends_on": [
-        "concellos-parroquias"
-      ],
-      "style": {
-        "kind": "circle",
-        "color_token": "--c-lume"
-      },
-      "table": {
-        "fields": [
-          "instante",
-          "concello",
-          "produto",
-          "frp",
-          "dia_noite"
-        ]
-      },
-      "meta": {
-        "layer_id": "focos-agosto-2025",
-        "published_at": "2026-10-10T13:23:51.000Z",
-        "fetched_at": "2026-11-01T09:50:29.281Z",
-        "last_success_at": "2026-11-01T09:50:29.281Z",
-        "status": "fresh",
-        "consecutive_failures": 0,
-        "feature_count": 10427,
-        "source_url": "https://firms.modaps.eosdis.nasa.gov/data/country/",
-        "licence": "CC-BY-SA-4.0",
-        "attribution": "NASA FIRMS (LANCE, NASA/GSFC/ESDIS), VIIRS S-NPP e MODIS, agosto de 2025; concello: IET, Xunta de Galicia. Cálculo propio da Fundación Galicia Sustentable.",
-        "checksum": "sha256:39d2622276fd7006b0c478a450ed50a845c7cba99c0fe0b8d6828b3153938f48",
-        "last_error": null,
-        "history": [
-          {
-            "at": "2026-11-01T09:50:29.281Z",
-            "ok": true
-          }
-        ],
-        "alert": false
-      }
-    },
-    {
       "id": "focos-calor",
       "title": {
         "gl": "Focos de calor detectados por satélite",
@@ -3677,8 +3627,8 @@
       "meta": {
         "layer_id": "focos-calor",
         "published_at": "2026-11-04T02:45:00.000Z",
-        "fetched_at": "2026-11-04T06:44:36.631Z",
-        "last_success_at": "2026-11-04T06:44:36.631Z",
+        "fetched_at": "2026-11-04T07:18:31.884Z",
+        "last_success_at": "2026-11-04T07:18:31.884Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 2,
@@ -3688,6 +3638,10 @@
         "checksum": "sha256:dc48144296ff477d3e73164d4167272ae92cff9218f6b34b8ab0677a172a9668",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-11-04T07:18:31.884Z",
+            "ok": true
+          },
           {
             "at": "2026-11-04T06:44:36.631Z",
             "ok": true
@@ -3850,6 +3804,76 @@
           },
           {
             "at": "2026-10-28T11:35:41.246Z",
+            "ok": true
+          }
+        ],
+        "alert": false
+      }
+    },
+    {
+      "id": "focos-tempada-2025",
+      "title": {
+        "gl": "Focos de calor da tempada de 2025 (satélite, pasada a pasada)",
+        "es": "Focos de calor de la temporada de 2025 (satélite, pasada a pasada)"
+      },
+      "theme": "lume-monte",
+      "operator": {
+        "name": "NASA LANCE FIRMS (NASA/GSFC/ESDIS)",
+        "url": "https://firms.modaps.eosdis.nasa.gov"
+      },
+      "source_url": "https://firms.modaps.eosdis.nasa.gov/data/country/",
+      "licence": {
+        "spdx": "CC-BY-SA-4.0",
+        "text_url": "https://creativecommons.org/licenses/by-sa/4.0/deed.gl",
+        "quote": "Creative Commons BY SA 4.0",
+        "verified_at": "2026-11-01",
+        "odbl_compatible": "doubt",
+        "collection": "cc-by-sa-4.0",
+        "notes": "Detección de FIRMS: CC0 (misións NASA). Capa derivada: o concello de cada detección sae dos polígonos de concellos-parroquias (IET, CC BY-SA 4.0), así que vai na colección CC BY-SA 4.0 (ADR 0005), como perfil-concellos. Arquivos anuais por país de 2025 (VIIRS S-NPP, 375 m, e MODIS, 1 km), sen chave; NOAA-20 e NOAA-21 non teñen arquivo por país e quedan fóra. Só a tempada de 2025 (do 1 de xuño ao 31 de outubro), só tipo 0 (lume de vexetación presunto) e só dentro dun concello galego. Unha detección é un píxel quente nunha pasada do satélite, non un lume nin unha superficie. Horas en UTC. Verificación en datos/fontes/nasa-firms/README.md."
+      },
+      "attribution": "NASA FIRMS (LANCE, NASA/GSFC/ESDIS), VIIRS S-NPP e MODIS, xuño–outubro de 2025; concello: IET, Xunta de Galicia. Cálculo propio da Fundación Galicia Sustentable.",
+      "update_frequency": {
+        "declared": "static"
+      },
+      "geometry": "point",
+      "output": "geojson",
+      "privacy_notes": "Detección de calor por satélite; ningún dato persoal.",
+      "stale_after": "P3650D",
+      "ingest": {
+        "every": "P365D"
+      },
+      "depends_on": [
+        "concellos-parroquias"
+      ],
+      "style": {
+        "kind": "circle",
+        "color_token": "--c-lume"
+      },
+      "table": {
+        "fields": [
+          "instante",
+          "concello",
+          "produto",
+          "frp",
+          "dia_noite"
+        ]
+      },
+      "meta": {
+        "layer_id": "focos-tempada-2025",
+        "published_at": "2026-10-10T13:23:51.000Z",
+        "fetched_at": "2026-11-04T07:18:37.240Z",
+        "last_success_at": "2026-11-04T07:18:37.240Z",
+        "status": "fresh",
+        "consecutive_failures": 0,
+        "feature_count": 10767,
+        "source_url": "https://firms.modaps.eosdis.nasa.gov/data/country/",
+        "licence": "CC-BY-SA-4.0",
+        "attribution": "NASA FIRMS (LANCE, NASA/GSFC/ESDIS), VIIRS S-NPP e MODIS, xuño–outubro de 2025; concello: IET, Xunta de Galicia. Cálculo propio da Fundación Galicia Sustentable.",
+        "checksum": "sha256:55bbf75e12e4fce7f46f2af3ff31f6bfe14f52b5abeddc10c9faf9f2cd933305",
+        "last_error": null,
+        "history": [
+          {
+            "at": "2026-11-04T07:18:37.240Z",
             "ok": true
           }
         ],
@@ -4254,17 +4278,21 @@
       "meta": {
         "layer_id": "gasolineiras",
         "published_at": null,
-        "fetched_at": "2026-11-04T06:44:46.762Z",
-        "last_success_at": "2026-11-04T06:44:46.762Z",
+        "fetched_at": "2026-11-04T07:18:37.925Z",
+        "last_success_at": "2026-11-04T07:18:37.925Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 736,
         "source_url": "https://sedeaplicaciones.minetur.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/EstacionesTerrestres/FiltroCCAA/12",
         "licence": "https://www.miteco.gob.es/es/atencion-al-ciudadano/aviso-legal.html",
         "attribution": "Fonte: Ministerio para a Transición Ecolóxica (MITERD), xeoportal de gasolineiras",
-        "checksum": "sha256:e9455fe87a76fd3d3189e00372faea871faedf7e69ada2b7281cd2e702dd9680",
+        "checksum": "sha256:9c85181e53b9f9e2bdb39c7fbcc38262dacb85922263922832091ba274ad0f45",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-11-04T07:18:37.925Z",
+            "ok": true
+          },
           {
             "at": "2026-11-04T06:44:46.762Z",
             "ok": true
@@ -7167,8 +7195,8 @@
       "meta": {
         "layer_id": "raios",
         "published_at": null,
-        "fetched_at": "2026-11-04T06:59:39.666Z",
-        "last_success_at": "2026-11-04T06:59:39.666Z",
+        "fetched_at": "2026-11-04T07:18:40.358Z",
+        "last_success_at": "2026-11-04T07:18:40.358Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 0,
@@ -7178,6 +7206,10 @@
         "checksum": "sha256:ed778c73ea51338d6576fb5992b189f2b94d9f3d5e199f46c1af520d6b0b3e6c",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-11-04T07:18:40.358Z",
+            "ok": true
+          },
           {
             "at": "2026-11-04T06:59:39.666Z",
             "ok": true
@@ -7630,6 +7662,75 @@
       }
     },
     {
+      "id": "seculo-movemento",
+      "title": {
+        "gl": "Un século en movemento (poboación por censo e lugares habitados)",
+        "es": "Un siglo en movimiento (población por censo y lugares habitados)"
+      },
+      "theme": "territorio",
+      "operator": {
+        "name": "Fundación Galicia Sustentable (cálculo propio con datos do INE e o IET)",
+        "url": "https://mapas.galiciasustentable.org"
+      },
+      "source_url": "https://www.ine.es/intercensal/",
+      "licence": {
+        "spdx": "CC-BY-SA-4.0",
+        "text_url": "https://creativecommons.org/licenses/by-sa/4.0/deed.gl",
+        "quote": "Creative Commons BY SA 4.0",
+        "verified_at": "2026-11-04",
+        "odbl_compatible": "doubt",
+        "collection": "cc-by-sa-4.0",
+        "notes": "Capa derivada sen descarga externa: poboación de cada censo de 1900 a 2021 (poboacion-seculo, INE, CC BY 4.0, harmonizada aos 313 concellos), un punto por concello (centroide do seu polígono maior, galicia-deformada) e ata 24 lugares onde vive a xente hoxe (entidades-poboacion, IET, CC BY-SA 4.0; os de máis poboación), que serven de ancoraxe para os puntos da páxina. Os lugares son os de hoxe: en 1900 a xente dun concello repartíase doutra maneira dentro del."
+      },
+      "attribution": "Elaboración propia con datos extraídos del sitio web del INE: www.ine.es (censos 1900–2021). Lugares: © Instituto de Estudos do Territorio. Xunta de Galicia (PBA). Cálculos: Fundación Galicia Sustentable.",
+      "update_frequency": {
+        "declared": "static"
+      },
+      "geometry": "point",
+      "output": "geojson",
+      "privacy_notes": "Poboación agregada por concello e censo; ningún dato persoal.",
+      "stale_after": "P3650D",
+      "ingest": {
+        "every": "P365D"
+      },
+      "depends_on": [
+        "poboacion-seculo",
+        "entidades-poboacion",
+        "galicia-deformada"
+      ],
+      "style": {
+        "kind": "circle",
+        "label_field": "nome"
+      },
+      "table": {
+        "fields": [
+          "nome",
+          "codigo_ine"
+        ]
+      },
+      "meta": {
+        "layer_id": "seculo-movemento",
+        "published_at": null,
+        "fetched_at": "2026-11-04T07:18:40.477Z",
+        "last_success_at": "2026-11-04T07:18:40.477Z",
+        "status": "fresh",
+        "consecutive_failures": 0,
+        "feature_count": 313,
+        "source_url": "https://www.ine.es/intercensal/",
+        "licence": "CC-BY-SA-4.0",
+        "attribution": "Elaboración propia con datos extraídos del sitio web del INE: www.ine.es (censos 1900–2021). Lugares: © Instituto de Estudos do Territorio. Xunta de Galicia (PBA). Cálculos: Fundación Galicia Sustentable.",
+        "checksum": "sha256:254f68789eeadcd3bac976328f798ee08bcf0df829251993c3d3d1da4be49e5d",
+        "last_error": null,
+        "history": [
+          {
+            "at": "2026-11-04T07:18:40.477Z",
+            "ok": true
+          }
+        ],
+        "alert": false
+      }
+    },
+    {
       "id": "sendas-paisaxe",
       "title": {
         "gl": "Sendas e itinerarios da paisaxe",
@@ -7752,8 +7853,8 @@
       "meta": {
         "layer_id": "sismos-recentes",
         "published_at": "2026-11-02T23:00:56.150Z",
-        "fetched_at": "2026-11-04T06:59:39.824Z",
-        "last_success_at": "2026-11-04T06:59:39.824Z",
+        "fetched_at": "2026-11-04T07:18:40.624Z",
+        "last_success_at": "2026-11-04T07:18:40.624Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 65,
@@ -7763,6 +7864,10 @@
         "checksum": "sha256:b6f2bb3ab7e064d494fb343b204829e879af7e973643f6ce4759eae53eb14ca9",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-11-04T07:18:40.624Z",
+            "ok": true
+          },
           {
             "at": "2026-11-04T06:59:39.824Z",
             "ok": true
@@ -8069,18 +8174,22 @@
       },
       "meta": {
         "layer_id": "trafico-balizas-v16",
-        "published_at": "2026-11-04T06:59:19.487Z",
-        "fetched_at": "2026-11-04T07:00:28.747Z",
-        "last_success_at": "2026-11-04T07:00:28.747Z",
+        "published_at": "2026-11-04T07:18:19.494Z",
+        "fetched_at": "2026-11-04T07:18:41.688Z",
+        "last_success_at": "2026-11-04T07:18:41.688Z",
         "status": "fresh",
         "consecutive_failures": 0,
-        "feature_count": 7,
+        "feature_count": 8,
         "source_url": "https://nap.dgt.es/datex2/v3/dgt/SituationPublication/datex2_v37.xml",
         "licence": "https://nap.dgt.es/es/dataset/incidencias-dgt-datex2-v3-7",
         "attribution": "Fonte: DGT, Punto de Acceso Nacional de Tráfico",
-        "checksum": "sha256:126e1582d1bdc83e813e0e4440be5f36da848147569602f00585b7a67f7f08cb",
+        "checksum": "sha256:0c5f2c689065d92f8b0adcd3b3c3fdd6a397ad590fb48daf519cbae916c14a6b",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-11-04T07:18:41.688Z",
+            "ok": true
+          },
           {
             "at": "2026-11-04T07:00:28.747Z",
             "ok": true
@@ -8324,18 +8433,22 @@
       },
       "meta": {
         "layer_id": "trafico-incidencias",
-        "published_at": "2026-11-04T06:59:19.487Z",
-        "fetched_at": "2026-11-04T07:00:29.024Z",
-        "last_success_at": "2026-11-04T07:00:29.024Z",
+        "published_at": "2026-11-04T07:18:19.494Z",
+        "fetched_at": "2026-11-04T07:18:42.499Z",
+        "last_success_at": "2026-11-04T07:18:42.499Z",
         "status": "fresh",
         "consecutive_failures": 0,
-        "feature_count": 98,
+        "feature_count": 125,
         "source_url": "https://nap.dgt.es/datex2/v3/dgt/SituationPublication/datex2_v37.xml",
         "licence": "https://nap.dgt.es/es/dataset/incidencias-dgt-datex2-v3-7",
         "attribution": "Fonte: DGT, Punto de Acceso Nacional de Tráfico",
-        "checksum": "sha256:6404107f07bf235d4a22933674129e86317384aa7f1491388cd977c8d9c4c9d8",
+        "checksum": "sha256:c8bbd71155be4b90e6dc31ad178cede73b9b5d7edbab4f15c55d36c8710996e1",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-11-04T07:18:42.499Z",
+            "ok": true
+          },
           {
             "at": "2026-11-04T07:00:29.024Z",
             "ok": true
@@ -8674,18 +8787,22 @@
       "volatile": true,
       "meta": {
         "layer_id": "tren",
-        "published_at": "2026-11-04T06:00:15.000Z",
-        "fetched_at": "2026-11-04T07:00:29.159Z",
-        "last_success_at": "2026-11-04T07:00:29.159Z",
+        "published_at": "2026-11-04T06:18:38.000Z",
+        "fetched_at": "2026-11-04T07:18:42.659Z",
+        "last_success_at": "2026-11-04T07:18:42.659Z",
         "status": "fresh",
         "consecutive_failures": 0,
-        "feature_count": 19,
+        "feature_count": 18,
         "source_url": "https://gtfsrt.renfe.com/vehicle_positions_LD.json",
         "licence": "CC-BY-4.0",
         "attribution": "Origen de los datos: Renfe Operadora",
-        "checksum": "sha256:cb4bc8282167c51dcbcacf049f46c9dd1dcf72e5b7f38f3b7070e9670cafa660",
+        "checksum": "sha256:425e76c118f78c5152a28cfa6eaf0d23e04afe5dea8730899cbf65acd1ed9a74",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-11-04T07:18:42.659Z",
+            "ok": true
+          },
           {
             "at": "2026-11-04T07:00:29.159Z",
             "ok": true
