@@ -430,6 +430,42 @@ const STRINGS = {
   cross_p_far_old: { gl: 'Lonxe e maiores', es: 'Lejos y mayores' },
   cross_p_births_foreign: { gl: 'Natalidade e estranxeiros', es: 'Natalidad y extranjeros' },
   cross_p_tourist_homes: { gl: 'Pisos turísticos e baleiros', es: 'Pisos turísticos y vacíos' },
+  move_title: { gl: 'Un século en movemento', es: 'Un siglo en movimiento' },
+  move_lede: {
+    gl: 'Un punto por cada mil persoas, censo a censo de 1900 a 2021. Os que sobran nun concello esvaran ao máis próximo que gaña xente; os que non teñen onde ir apáganse.',
+    es: 'Un punto por cada mil personas, censo a censo de 1900 a 2021. Los que sobran en un ayuntamiento se deslizan al más próximo que gana gente; los que no tienen adónde ir se apagan.',
+  },
+  move_map_label: {
+    gl: 'Mapa animado da poboación de Galicia de 1900 a 2021, un punto por cada mil persoas',
+    es: 'Mapa animado de la población de Galicia de 1900 a 2021, un punto por cada mil personas',
+  },
+  move_dots: { gl: 'Puntos', es: 'Puntos' },
+  move_spikes: { gl: 'Agullas', es: 'Agujas' },
+  move_view: { gl: 'Vista', es: 'Vista' },
+  move_now: {
+    gl: 'Galicia: {pop} habitantes no censo de {y}.',
+    es: 'Galicia: {pop} habitantes en el censo de {y}.',
+  },
+  move_step: {
+    gl: 'De {a} a {b}: {moved} puntos esvaran a outro concello, {gone} apáganse e {new} aparecen.',
+    es: 'De {a} a {b}: {moved} puntos se deslizan a otro ayuntamiento, {gone} se apagan y {new} aparecen.',
+  },
+  move_legend_dot: { gl: '1 punto = 1.000 persoas', es: '1 punto = 1.000 personas' },
+  move_legend_moving: { gl: 'mudándose', es: 'mudándose' },
+  move_legend_up: { gl: 'máis xente ca en 1900', es: 'más gente que en 1900' },
+  move_legend_down: { gl: 'menos ca en 1900', es: 'menos que en 1900' },
+  move_curve: {
+    gl: 'Poboación de Galicia en cada censo',
+    es: 'Población de Galicia en cada censo',
+  },
+  move_note: {
+    gl: 'Censos do INE de 1900 a 2021 sobre os 313 concellos de hoxe (cálculo propio, ver «Un século de poboación»). Os puntos dun concello colócanse nos seus lugares habitados de hoxe (Nomenclátor do IET), así que en 1900 a xente estaba repartida doutra maneira dentro de cada concello. Entre dous censos, os puntos que sobran nos concellos que perden xente móvense ao concello máis próximo que gaña; os que non se emparellan apáganse (emigración fóra de Galicia, máis mortes ca nacementos) e os que faltan aparecen. É unha forma de debuxar o cambio entre concellos, non o camiño real de ninguén: os censos non din a onde marchou cada quen. As agullas miden a poboación de cada concello.',
+    es: 'Censos del INE de 1900 a 2021 sobre los 313 ayuntamientos de hoy (cálculo propio, ver «Un siglo de población»). Los puntos de un ayuntamiento se colocan en sus lugares habitados de hoy (Nomenclátor del IET), así que en 1900 la gente estaba repartida de otra manera dentro de cada ayuntamiento. Entre dos censos, los puntos que sobran en los ayuntamientos que pierden gente se mueven al ayuntamiento más próximo que gana; los que no se emparejan se apagan (emigración fuera de Galicia, más muertes que nacimientos) y los que faltan aparecen. Es una forma de dibujar el cambio entre ayuntamientos, no el camino real de nadie: los censos no dicen adónde se fue cada uno. Las agujas miden la población de cada ayuntamiento.',
+  },
+  move_missing: {
+    gl: 'Aínda non están publicados os datos do século en movemento.',
+    es: 'Aún no están publicados los datos del siglo en movimiento.',
+  },
   flood_title: { gl: 'A crecida', es: 'La crecida' },
   flood_lede: {
     gl: 'Un temporal visto desde os ríos: a choiva de cada día e, hora a hora, canto subiu cada río sobre o seu caudal de antes, medido nas estacións de aforo. A onda vai chegando a cada conca co seu atraso real.',

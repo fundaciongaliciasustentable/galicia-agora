@@ -90,6 +90,7 @@ export const SERIES_LAYERS = new Set([
   'vento-wrf',
   'tmax-ano',
   'crecida-episodios',
+  'seculo-movemento',
 ]);
 
 /** Time field per layer: the client adds `_h`, hours since that instant. */

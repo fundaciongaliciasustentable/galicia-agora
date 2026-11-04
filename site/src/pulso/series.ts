@@ -204,6 +204,17 @@ export const SERIES: PulseMap[] = [
     period: { gl: 'Nomenclátor do INE, 2000–2025', es: 'Nomenclátor del INE, 2000–2025' },
   },
   {
+    slug: 'seculo-movemento',
+    ready: true,
+    colour: '#e6e6df',
+    title: { gl: 'Un século en movemento', es: 'Un siglo en movimiento' },
+    summary: {
+      gl: 'Un punto por cada mil persoas: de 1900 a 2021 esvaran cara á costa e as agullas do interior encollen.',
+      es: 'Un punto por cada mil personas: de 1900 a 2021 se deslizan hacia la costa y las agujas del interior encogen.',
+    },
+    period: { gl: 'Censos de 1900 a 2021', es: 'Censos de 1900 a 2021' },
+  },
+  {
     slug: 'construcion',
     ready: true,
     colour: '#ffb35c',

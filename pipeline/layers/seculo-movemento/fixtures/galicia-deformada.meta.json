@@ -1,0 +1,20 @@
+{
+ "layer_id": "galicia-deformada",
+ "published_at": "2026-11-01T13:09:32.364Z",
+ "fetched_at": "2026-11-03T16:26:42.543Z",
+ "last_success_at": "2026-11-03T16:26:42.543Z",
+ "status": "fresh",
+ "consecutive_failures": 0,
+ "feature_count": 313,
+ "source_url": "https://www.ige.gal/igebdt/igeapi/csv/datos/9958/T%5B1:a%5D,1:1",
+ "licence": "CC-BY-SA-4.0",
+ "attribution": "Cartogramas e c\u00e1lculos: Fundaci\u00f3n Galicia Sustentable. Fonte: IGE: https://www.ige.gal (padr\u00f3n, indicadores de poboaci\u00f3n, PIB municipal, movemento natural da poboaci\u00f3n). Este produto emprega a API de datos do Instituto Galego de Estat\u00edstica (IGE), pero non est\u00e1 certificado ou aprobado polo IGE. Censos de 1950 e 2021: elaboraci\u00f3n propia con datos extra\u00eddos del sitio web del INE: www.ine.es. L\u00edmites: \u00a9 Instituto de Estudos do Territorio. Xunta de Galicia.",
+ "checksum": "sha256:458d400a903fe902c79952293b37286f80cf93a966d4ab5acfd9208cebe7e91f",
+ "last_error": null,
+ "history": [
+  {
+   "at": "2026-11-03T16:26:42.543Z",
+   "ok": true
+  }
+ ]
+}
