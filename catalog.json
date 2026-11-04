@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-04T08:30:41.810Z",
+  "generated_at": "2026-11-04T08:49:36.171Z",
   "layers": [
     {
       "id": "aeroportos",
@@ -3993,17 +3993,21 @@
       "meta": {
         "layer_id": "galicia-deformada",
         "published_at": "2026-11-01T13:27:02.400Z",
-        "fetched_at": "2026-11-03T16:30:40.009Z",
-        "last_success_at": "2026-11-03T16:30:40.009Z",
+        "fetched_at": "2026-11-04T08:48:58.979Z",
+        "last_success_at": "2026-11-04T08:48:58.979Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 313,
         "source_url": "https://www.ige.gal/igebdt/igeapi/csv/datos/9958/T%5B1:a%5D,1:1",
         "licence": "CC-BY-SA-4.0",
         "attribution": "Cartogramas e cálculos: Fundación Galicia Sustentable. Fonte: IGE: https://www.ige.gal (padrón, indicadores de poboación, PIB municipal, movemento natural da poboación). Este produto emprega a API de datos do Instituto Galego de Estatística (IGE), pero non está certificado ou aprobado polo IGE. Censos de 1950 e 2021: elaboración propia con datos extraídos del sitio web del INE: www.ine.es. Límites: © Instituto de Estudos do Territorio. Xunta de Galicia.",
-        "checksum": "sha256:458d400a903fe902c79952293b37286f80cf93a966d4ab5acfd9208cebe7e91f",
+        "checksum": "sha256:0f080ed199c894ea81a2a48023e76f9418611c338abf015cf22227fdf33a7c4f",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-11-04T08:48:58.979Z",
+            "ok": true
+          },
           {
             "at": "2026-11-03T16:30:40.009Z",
             "ok": true
