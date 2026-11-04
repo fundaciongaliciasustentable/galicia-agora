@@ -7,9 +7,9 @@
 // shrinks. Other pairs fill the same area and compare shares only.
 //
 // Births, deaths and the two age groups are shown by default as a share of the population:
-// the shapes stay those of the population cartogram and the colour gives the rate (births and
-// deaths per thousand inhabitants, ages in %). A rate cannot be an area, since rates do not add
-// up. The counts are one click away.
+// the shapes stay those of the population cartogram and the colour gives the % of each
+// concello's population. A rate cannot be an area, since rates do not add up. The counts are one
+// click away, and the detail and the table give both the count and the %.
 
 import { asset } from '../paths.ts';
 
@@ -37,13 +37,8 @@ const SAME_SCALE = new Set([
 
 /** Variables that can be shown as a rate over the population. */
 export const RATE_VARS = new Set<Var>(['nacementos', 'defuncions', 'menores_20', 'maiores_65']);
-/** Rate per this many inhabitants (births and deaths per thousand, ages in %). */
-const PER: Partial<Record<Var, number>> = {
-  nacementos: 1000,
-  defuncions: 1000,
-  menores_20: 100,
-  maiores_65: 100,
-};
+/** Rates with two decimals (a year's births or deaths are well under 1 % of the people). */
+const SMALL_RATES = new Set<Var>(['nacementos', 'defuncions']);
 /** Rates sharing one colour scale. */
 const RATE_GROUP: Partial<Record<Var, Var[]>> = {
   nacementos: ['nacementos', 'defuncions'],
@@ -133,7 +128,7 @@ export async function start(): Promise<void> {
   const modeBox = q<HTMLElement>('.df-mode');
   const legendProvinces = q<HTMLElement>('.df-legend');
   const legendRamp = q<HTMLElement>('.df-ramp');
-  const shareHead = q<HTMLElement>('.df-col-share');
+  const rateHead = q<HTMLElement>('.df-col-rate');
 
   // ---- Data -------------------------------------------------------------------------------
   const LAYER = 'galicia-deformada';
@@ -184,9 +179,9 @@ export async function start(): Promise<void> {
   const rateOf = (c: Concello, v: Var) => {
     const x = c.values[v];
     const pop = c.values.poboacion;
-    return x === null || !pop ? null : ((PER[v] ?? 100) * x) / pop;
+    return x === null || !pop ? null : (100 * x) / pop;
   };
-  const galiciaRate = (v: Var) => ((PER[v] ?? 100) * totals[v]) / totals.poboacion;
+  const galiciaRate = (v: Var) => (100 * totals[v]) / totals.poboacion;
   /** Colour domain per rate group: 2nd to 98th percentile of both variables. */
   const domain = new Map<Var, [number, number]>();
   for (const v of RATE_VARS) {
@@ -369,8 +364,10 @@ export async function start(): Promise<void> {
           ? tr(`deform_total_${v}`, { v: nf.format(x) })
           : tr('deform_total_people', { v: nf.format(x) });
 
-  const fmtRate = (v: Var, x: number) =>
-    tr(PER[v] === 1000 ? 'deform_rate_permil' : 'deform_rate_pct', { v: pf.format(x) });
+  const pct2 = new Intl.NumberFormat(loc, { maximumFractionDigits: 2, minimumFractionDigits: 2 });
+  /** A rate as a number, two decimals for births and deaths. */
+  const rateNumber = (v: Var, x: number) => (SMALL_RATES.has(v) ? pct2 : pf).format(x);
+  const fmtRate = (v: Var, x: number) => tr('deform_rate_pct', { v: rateNumber(v, x) });
 
   function describe() {
     heading.textContent = tr(`deform_heading_${current}`, { year: periods[current] ?? '' });
@@ -386,16 +383,14 @@ export async function start(): Promise<void> {
     legendRamp.hidden = !asRate(current);
     if (asRate(current)) {
       const [lo, hi] = domain.get(current) ?? [0, 1];
-      legendRamp.querySelector('.df-ramp-lo')?.replaceChildren(pf.format(lo));
-      legendRamp.querySelector('.df-ramp-hi')?.replaceChildren(pf.format(hi));
-      legendRamp
-        .querySelector('.df-ramp-unit')
-        ?.replaceChildren(tr(PER[current] === 1000 ? 'deform_ramp_permil' : 'deform_ramp_pct'));
+      legendRamp.querySelector('.df-ramp-lo')?.replaceChildren(rateNumber(current, lo));
+      legendRamp.querySelector('.df-ramp-hi')?.replaceChildren(rateNumber(current, hi));
+      legendRamp.querySelector('.df-ramp-unit')?.replaceChildren(tr('deform_ramp_pct'));
     }
     if (pair && pair.every(asRate)) {
       scaleEl.textContent = `${tr('deform_rate_note')} ${tr(`deform_rate_ratio_${pair[0]}`, {
-        a: pf.format(galiciaRate(pair[0])),
-        b: pf.format(galiciaRate(pair[1])),
+        a: rateNumber(pair[0], galiciaRate(pair[0])),
+        b: rateNumber(pair[1], galiciaRate(pair[1])),
       })}`;
     } else if (asRate(current)) {
       scaleEl.textContent = tr('deform_rate_note');
@@ -438,7 +433,10 @@ export async function start(): Promise<void> {
               galicia: fmtRate(current, galiciaRate(current)),
             })
           : tr('deform_detail', {
-              value: fmtValue(current, value),
+              value:
+                RATE_VARS.has(current) && rate !== null
+                  ? `${fmtValue(current, value)} (${fmtRate(current, rate)})`
+                  : fmtValue(current, value),
               share: pf.format((100 * value) / totals[current]),
               area: pf.format((100 * (c.values.superficie ?? 0)) / totals.superficie),
             });
@@ -448,13 +446,10 @@ export async function start(): Promise<void> {
   function fillTable() {
     caption.textContent = heading.textContent;
     const byRate = asRate(current);
-    shareHead.textContent = tr(
-      byRate
-        ? PER[current] === 1000
-          ? 'deform_ramp_permil'
-          : 'deform_ramp_pct'
-        : 'deform_col_share',
-    );
+    // The % of each concello's population goes in its own column for the four rates, in both
+    // modes; the share of Galicia's total stays next to it.
+    const withRate = RATE_VARS.has(current);
+    rateHead.hidden = !withRate;
     const key = (c: Concello) => (byRate ? (rateOf(c, current) ?? -1) : (c.values[current] ?? 0));
     const rows = [...concellos]
       .filter((c) => c.values[current] !== null)
@@ -463,10 +458,12 @@ export async function start(): Promise<void> {
       ...rows.map((c) => {
         const tr0 = document.createElement('tr');
         const v = c.values[current] as number;
+        const rate = rateOf(c, current);
         const cells = [
           c.name,
           current === 'pib' ? nf.format(v / 1000) : nf.format(v),
-          byRate ? pf.format(rateOf(c, current) ?? 0) : pf.format((100 * v) / totals[current]),
+          ...(withRate ? [rate === null ? '–' : rateNumber(current, rate)] : []),
+          pf.format((100 * v) / totals[current]),
           pf.format((100 * (c.values.superficie ?? 0)) / totals.superficie),
         ];
         cells.forEach((text, i) => {

@@ -259,23 +259,21 @@ const STRINGS = {
     es: 'Del mapa del territorio al mapa de la gente.',
   },
   deform_detail: {
-    gl: '{value}: o {share} % de Galicia. No mapa real ocupa o {area} %.',
-    es: '{value}: el {share} % de Galicia. En el mapa real ocupa el {area} %.',
+    gl: '{value}: o {share} % do total de Galicia. No mapa real ocupa o {area} %.',
+    es: '{value}: el {share} % del total de Galicia. En el mapa real ocupa el {area} %.',
   },
   deform_mode_label: { gl: 'Mostrar', es: 'Mostrar' },
-  deform_mode_rate: { gl: 'En proporción á poboación', es: 'En proporción a la población' },
+  deform_mode_rate: { gl: 'En % da poboación', es: 'En % de la población' },
   deform_mode_count: { gl: 'En número', es: 'En número' },
-  deform_rate_permil: { gl: '{v} por mil habitantes', es: '{v} por mil habitantes' },
   deform_rate_pct: { gl: '{v} % da poboación', es: '{v} % de la población' },
-  deform_ramp_permil: { gl: 'por mil habitantes', es: 'por mil habitantes' },
   deform_ramp_pct: { gl: '% da poboación', es: '% de la población' },
   deform_rate_note: {
     gl: 'A área é a poboación de cada concello; a cor, a proporción.',
     es: 'El área es la población de cada ayuntamiento; el color, la proporción.',
   },
   deform_rate_ratio_nacementos: {
-    gl: 'En Galicia nacen {a} por cada mil habitantes e morren {b}.',
-    es: 'En Galicia nacen {a} por cada mil habitantes y mueren {b}.',
+    gl: 'En Galicia os nacementos do ano foron o {a} % da poboación e as defuncións o {b} %.',
+    es: 'En Galicia los nacimientos del año fueron el {a} % de la población y las defunciones el {b} %.',
   },
   deform_rate_ratio_menores_20: {
     gl: 'En Galicia o {a} % ten menos de 20 anos e o {b} % ten 65 ou máis.',
@@ -295,7 +293,7 @@ const STRINGS = {
     es: 'Los ayuntamientos, del mayor al menor',
   },
   deform_col_value: { gl: 'Valor', es: 'Valor' },
-  deform_col_share: { gl: '% de Galicia', es: '% de Galicia' },
+  deform_col_share: { gl: '% do total de Galicia', es: '% del total de Galicia' },
   deform_col_area: { gl: '% da superficie', es: '% de la superficie' },
   deform_note: {
     gl: 'Cartogramas por difusión (Gastner e Newman, 2004): o valor de cada concello repártese pola súa área como unha densidade, a densidade déixase difundir ata quedar igual en todas partes, e os bordos móvense co fluxo. Os concellos veciños seguen unidos e as áreas quedan a menos do 1,5 % do seu valor. O PIB municipal é unha estimación do IGE que o sitúa onde están as empresas. Menores de 20 e maiores de 65: padrón polas porcentaxes do IGE (cálculo propio). Cariño, Burela e A Illa de Arousa non existían en 1950: a súa xente está no concello do que saíron.',
