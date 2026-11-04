@@ -2,6 +2,118 @@
   "layer_id": "ndvi-mes",
   "previews": [
     {
+      "month": "2025-01",
+      "file": "previews/2025-01-01d33a4204fb.webp",
+      "width": 966,
+      "height": 993,
+      "bounds": [
+        -9.35,
+        41.8,
+        -6.7,
+        43.8
+      ],
+      "gap_share": 0,
+      "scenes": 63,
+      "first_date": "2025-01-01T11:39:09.996000Z",
+      "last_date": "2025-01-31T11:39:48.770000Z"
+    },
+    {
+      "month": "2025-02",
+      "file": "previews/2025-02-02a9a616851d.webp",
+      "width": 966,
+      "height": 993,
+      "bounds": [
+        -9.35,
+        41.8,
+        -6.7,
+        43.8
+      ],
+      "gap_share": 0.176,
+      "scenes": 57,
+      "first_date": "2025-02-02T11:29:40.578000Z",
+      "last_date": "2025-02-27T11:29:34.126000Z"
+    },
+    {
+      "month": "2025-03",
+      "file": "previews/2025-03-5083122cd5f1.webp",
+      "width": 966,
+      "height": 993,
+      "bounds": [
+        -9.35,
+        41.8,
+        -6.7,
+        43.8
+      ],
+      "gap_share": 0.011,
+      "scenes": 66,
+      "first_date": "2025-03-02T11:39:12.598000Z",
+      "last_date": "2025-03-29T11:39:55.025000Z"
+    },
+    {
+      "month": "2025-04",
+      "file": "previews/2025-04-48ff52dd7d24.webp",
+      "width": 966,
+      "height": 993,
+      "bounds": [
+        -9.35,
+        41.8,
+        -6.7,
+        43.8
+      ],
+      "gap_share": 0.002,
+      "scenes": 70,
+      "first_date": "2025-04-01T11:39:13.151000Z",
+      "last_date": "2025-04-28T11:40:00.491000Z"
+    },
+    {
+      "month": "2025-05",
+      "file": "previews/2025-05-b96b9bd35d1b.webp",
+      "width": 966,
+      "height": 993,
+      "bounds": [
+        -9.35,
+        41.8,
+        -6.7,
+        43.8
+      ],
+      "gap_share": 0.001,
+      "scenes": 72,
+      "first_date": "2025-05-01T11:39:15.347000Z",
+      "last_date": "2025-05-31T11:39:42.832000Z"
+    },
+    {
+      "month": "2025-06",
+      "file": "previews/2025-06-098ab6a04c50.webp",
+      "width": 966,
+      "height": 993,
+      "bounds": [
+        -9.35,
+        41.8,
+        -6.7,
+        43.8
+      ],
+      "gap_share": 0,
+      "scenes": 71,
+      "first_date": "2025-06-02T11:29:48.459000Z",
+      "last_date": "2025-06-30T11:39:48.990000Z"
+    },
+    {
+      "month": "2025-07",
+      "file": "previews/2025-07-7b27d2060390.webp",
+      "width": 966,
+      "height": 993,
+      "bounds": [
+        -9.35,
+        41.8,
+        -6.7,
+        43.8
+      ],
+      "gap_share": 0,
+      "scenes": 72,
+      "first_date": "2025-07-02T11:29:49.862000Z",
+      "last_date": "2025-07-30T11:39:46.430000Z"
+    },
+    {
       "month": "2025-11",
       "file": "previews/2025-11-715249d56d6e.webp",
       "width": 966,
