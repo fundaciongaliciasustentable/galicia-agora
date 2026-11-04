@@ -1,17 +1,21 @@
 {
   "layer_id": "focos-calor",
-  "published_at": "2026-11-04T02:45:00.000Z",
-  "fetched_at": "2026-11-04T09:22:29.219Z",
-  "last_success_at": "2026-11-04T09:22:29.219Z",
+  "published_at": "2026-11-04T14:07:00.000Z",
+  "fetched_at": "2026-11-04T17:23:26.807Z",
+  "last_success_at": "2026-11-04T17:23:26.807Z",
   "status": "fresh",
   "consecutive_failures": 0,
-  "feature_count": 2,
+  "feature_count": 12,
   "source_url": "https://firms.modaps.eosdis.nasa.gov/api/area/",
   "licence": "CC0-1.0",
   "attribution": "NASA LANCE FIRMS (NASA/GSFC/ESDIS)",
-  "checksum": "sha256:dc48144296ff477d3e73164d4167272ae92cff9218f6b34b8ab0677a172a9668",
+  "checksum": "sha256:b0f92cbdfefe9de470704048c1ec634ab10dd60ad036bf7276b56c7a49808caa",
   "last_error": null,
   "history": [
+    {
+      "at": "2026-11-04T17:23:26.807Z",
+      "ok": true
+    },
     {
       "at": "2026-11-04T09:22:29.219Z",
       "ok": true
@@ -182,15 +186,6 @@
       "at": "2026-10-28T21:46:53.420Z",
       "ok": false,
       "error": "Failed after 4 attempts: fetch failed"
-    },
-    {
-      "at": "2026-10-28T17:20:52.699Z",
-      "ok": false,
-      "error": "Failed after 4 attempts: fetch failed"
-    },
-    {
-      "at": "2026-10-28T11:35:41.246Z",
-      "ok": true
     }
   ]
 }
