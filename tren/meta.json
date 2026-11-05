@@ -1,17 +1,22 @@
 {
   "layer_id": "tren",
   "published_at": "2026-11-04T21:45:11.000Z",
-  "fetched_at": "2026-11-04T22:45:22.377Z",
+  "fetched_at": "2026-11-05T02:54:24.655Z",
   "last_success_at": "2026-11-04T22:45:22.377Z",
-  "status": "fresh",
-  "consecutive_failures": 0,
+  "status": "stale",
+  "consecutive_failures": 1,
   "feature_count": 3,
   "source_url": "https://gtfsrt.renfe.com/vehicle_positions_LD.json",
   "licence": "CC-BY-4.0",
   "attribution": "Origen de los datos: Renfe Operadora",
   "checksum": "sha256:3d44c650d0dd3296e3e2d091cb31bcbc829f905f1e2371381af48617864af2b7",
-  "last_error": null,
+  "last_error": "Renfe ld: unexpected GTFS-RT JSON (no header/entity)",
   "history": [
+    {
+      "at": "2026-11-05T02:54:24.655Z",
+      "ok": false,
+      "error": "Renfe ld: unexpected GTFS-RT JSON (no header/entity)"
+    },
     {
       "at": "2026-11-04T22:45:22.377Z",
       "ok": true
@@ -210,11 +215,6 @@
     {
       "at": "2026-10-29T07:11:07.831Z",
       "ok": true
-    },
-    {
-      "at": "2026-10-29T01:17:30.256Z",
-      "ok": false,
-      "error": "Renfe cercanias: unexpected GTFS-RT JSON (no header/entity)"
     }
   ]
 }
