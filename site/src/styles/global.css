@@ -288,10 +288,72 @@ a:hover {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  * {
-    animation: none !important;
-    transition: none !important;
+  /* Kill spatial motion, but keep colour/opacity transitions: they aid comprehension. */
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
     scroll-behavior: auto !important;
+  }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  /* Every translucent card in the app (main map dock/ficha, pulso panels, pulso index picker):
+     frost solid instead of blurring, keeping the same surface colour. */
+  :is(
+    .lu-panel,
+    .se-panel,
+    .tp-panel,
+    .pu-panel,
+    .ai-panel,
+    .ci-panel,
+    .es-panel,
+    .mv-panel,
+    .ca-panel,
+    .au-panel,
+    .cx-panel,
+    .df-panel,
+    .cr-panel,
+    .mo-panel,
+    .re-panel,
+    .ve-panel,
+    .ga-dock-card,
+    .ga-active,
+    .px-picker
+  ) {
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+    background: var(--surface) !important;
+  }
+}
+
+@media (prefers-contrast: more) {
+  :is(
+    .lu-panel,
+    .se-panel,
+    .tp-panel,
+    .pu-panel,
+    .ai-panel,
+    .ci-panel,
+    .es-panel,
+    .mv-panel,
+    .ca-panel,
+    .au-panel,
+    .cx-panel,
+    .df-panel,
+    .cr-panel,
+    .mo-panel,
+    .re-panel,
+    .ve-panel,
+    .ga-dock-card,
+    .ga-active,
+    .px-picker
+  ) {
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+    background: var(--surface) !important;
+    border: 1px solid var(--text) !important;
   }
 }
 

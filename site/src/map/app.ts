@@ -528,7 +528,9 @@ export async function start(): Promise<void> {
   });
 
   // Re-apply the basemap when the colour scheme changes, keeping data layers.
+  const mapEl = map.getContainer();
   darkQuery.addEventListener('change', async () => {
+    mapEl.classList.add('is-restyling');
     const style = await loadStyle(darkQuery.matches);
     map.setStyle(style, {
       transformStyle: (prev, next) => {
@@ -555,6 +557,7 @@ export async function start(): Promise<void> {
         if (layer?.join) paintJoin(layer);
         else if (layer) drawLayer(layer);
       }
+      mapEl.classList.remove('is-restyling');
     });
   });
 
