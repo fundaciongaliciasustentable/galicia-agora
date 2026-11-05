@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-05T18:00:35.084Z",
+  "generated_at": "2026-11-05T23:20:18.407Z",
   "layers": [
     {
       "id": "aeroportos",
@@ -144,18 +144,22 @@
       },
       "meta": {
         "layer_id": "aire-24h",
-        "published_at": "2026-11-05T17:00:00.000Z",
-        "fetched_at": "2026-11-05T17:58:39.195Z",
-        "last_success_at": "2026-11-05T17:58:39.195Z",
+        "published_at": "2026-11-05T23:00:00.000Z",
+        "fetched_at": "2026-11-05T23:19:13.304Z",
+        "last_success_at": "2026-11-05T23:19:13.304Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 46,
         "source_url": "https://servizos.meteogalicia.gal/mgrss/caire/jsonEvolucionIcaEstacion.action",
         "licence": "https://abertos.xunta.gal/condicions-de-uso",
         "attribution": "Fonte: Rede de Calidade do Aire de Galicia (MeteoGalicia, Xunta de Galicia). Datos en tempo real sen validar.",
-        "checksum": "sha256:d1621081bebd5ac2e6ece7a6cf615f2f3d2d35e9303c863d6098fd403bd5787a",
+        "checksum": "sha256:675d2def9ed461c1d5cfd02907bdadd098fae897e02b941875591fcf02e7f5d8",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-11-05T23:19:13.304Z",
+            "ok": true
+          },
           {
             "at": "2026-11-05T17:58:39.195Z",
             "ok": true
@@ -525,9 +529,9 @@
       },
       "meta": {
         "layer_id": "avisos-aemet",
-        "published_at": "2026-11-05T10:50:53.000Z",
-        "fetched_at": "2026-11-05T17:59:16.052Z",
-        "last_success_at": "2026-11-05T17:59:16.052Z",
+        "published_at": "2026-11-05T22:50:01.000Z",
+        "fetched_at": "2026-11-05T23:19:46.977Z",
+        "last_success_at": "2026-11-05T23:19:46.977Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 1,
@@ -537,6 +541,10 @@
         "checksum": "sha256:abb94fd5508075a5a37108133a1ee1e74d6efe1ddf3978a7b24f55324df16c5d",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-11-05T23:19:46.977Z",
+            "ok": true
+          },
           {
             "at": "2026-11-05T17:59:16.052Z",
             "ok": true
@@ -736,10 +744,6 @@
           {
             "at": "2026-10-29T23:37:52.075Z",
             "ok": true
-          },
-          {
-            "at": "2026-10-29T19:44:25.691Z",
-            "ok": true
           }
         ],
         "alert": false
@@ -803,8 +807,8 @@
       "meta": {
         "layer_id": "avisos-meteogalicia",
         "published_at": null,
-        "fetched_at": "2026-11-05T17:59:16.485Z",
-        "last_success_at": "2026-11-05T17:59:16.485Z",
+        "fetched_at": "2026-11-05T23:19:47.265Z",
+        "last_success_at": "2026-11-05T23:19:47.265Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 313,
@@ -814,6 +818,10 @@
         "checksum": "sha256:b0d3259a42f56a43a11eff1268cfdbc5e2c722c39da0f71071f3559ef3833aac",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-11-05T23:19:47.265Z",
+            "ok": true
+          },
           {
             "at": "2026-11-05T17:59:16.485Z",
             "ok": true
@@ -1013,10 +1021,6 @@
           {
             "at": "2026-10-29T23:37:52.399Z",
             "ok": true
-          },
-          {
-            "at": "2026-10-29T19:44:26.424Z",
-            "ok": true
           }
         ],
         "alert": false
@@ -1144,18 +1148,22 @@
       },
       "meta": {
         "layer_id": "bicis-arteixo",
-        "published_at": "2026-11-05T17:58:19.000Z",
-        "fetched_at": "2026-11-05T17:59:16.807Z",
-        "last_success_at": "2026-11-05T17:59:16.807Z",
+        "published_at": "2026-11-05T23:19:34.000Z",
+        "fetched_at": "2026-11-05T23:19:47.537Z",
+        "last_success_at": "2026-11-05T23:19:47.537Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 15,
         "source_url": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_aa/gbfs.json",
         "licence": "CC0-1.0",
         "attribution": "Datos: biciArteixo / nextbike (CC0)",
-        "checksum": "sha256:46ac04557367de60e5d0991f302b2512b0db88ae21b4384897d1c8d6f131b5a4",
+        "checksum": "sha256:3a5f8df0fd7d2af61da6bf6a8bbc20d22755134c01154cdc9373ae95d814ba3f",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-11-05T23:19:47.537Z",
+            "ok": true
+          },
           {
             "at": "2026-11-05T17:59:16.807Z",
             "ok": true
@@ -1355,10 +1363,6 @@
           {
             "at": "2026-10-29T23:37:53.066Z",
             "ok": true
-          },
-          {
-            "at": "2026-10-29T19:44:27.251Z",
-            "ok": true
           }
         ],
         "alert": false
@@ -1506,18 +1510,22 @@
       },
       "meta": {
         "layer_id": "calidade-aire",
-        "published_at": "2026-11-05T17:00:00.000Z",
-        "fetched_at": "2026-11-05T17:59:17.629Z",
-        "last_success_at": "2026-11-05T17:59:17.629Z",
+        "published_at": "2026-11-05T23:00:00.000Z",
+        "fetched_at": "2026-11-05T23:19:48.201Z",
+        "last_success_at": "2026-11-05T23:19:48.201Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 46,
         "source_url": "https://servizos.meteogalicia.gal/mgrss/caire/jsonICAActual.action",
         "licence": "CC-BY-SA-4.0",
         "attribution": "Datos: Rede de Calidade do Aire de Galicia, MeteoGalicia (Xunta de Galicia). Datos provisionais, non validados.",
-        "checksum": "sha256:3b6c2bf26ef12bc65d3a8e894d4f3f597f9784756fbf318baaccfcb186430c18",
+        "checksum": "sha256:1124300f4ae7ddf72707041097d2f49909278d0fc2ac40052520442dea932324",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-11-05T23:19:48.201Z",
+            "ok": true
+          },
           {
             "at": "2026-11-05T17:59:17.629Z",
             "ok": true
@@ -1665,10 +1673,6 @@
           {
             "at": "2026-10-29T23:38:15.339Z",
             "ok": true
-          },
-          {
-            "at": "2026-10-29T19:44:28.045Z",
-            "ok": true
           }
         ],
         "alert": false
@@ -1723,18 +1727,22 @@
       },
       "meta": {
         "layer_id": "caudais-rios",
-        "published_at": "2026-11-05T17:40:00.000Z",
-        "fetched_at": "2026-11-05T17:59:18.633Z",
-        "last_success_at": "2026-11-05T17:59:18.633Z",
+        "published_at": "2026-11-05T23:00:00.000Z",
+        "fetched_at": "2026-11-05T23:19:48.982Z",
+        "last_success_at": "2026-11-05T23:19:48.982Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 88,
         "source_url": "https://servizos.meteogalicia.gal/mgafos/json/estadoActual.action",
         "licence": "https://www.meteogalicia.gal/web/aviso-legal",
         "attribution": "Datos: Augas de Galicia e MeteoGalicia (Xunta de Galicia). Datos non validados.",
-        "checksum": "sha256:aa5405ec9dd17332c6c899e6a03a09baf9ba97f0adb90555b629c698435323ac",
+        "checksum": "sha256:5de2705eb194f567dc1a0121cdb6aacb3ebfc5406dc8eea8705b9c5d0b1c0d08",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-11-05T23:19:48.982Z",
+            "ok": true
+          },
           {
             "at": "2026-11-05T17:59:18.633Z",
             "ok": true
@@ -1929,10 +1937,6 @@
           },
           {
             "at": "2026-10-29T23:38:17.058Z",
-            "ok": true
-          },
-          {
-            "at": "2026-10-29T19:44:29.018Z",
             "ok": true
           }
         ],
@@ -3189,18 +3193,22 @@
       },
       "meta": {
         "layer_id": "estacions-meteo",
-        "published_at": "2026-11-05T17:50:00.000Z",
-        "fetched_at": "2026-11-05T17:59:18.973Z",
-        "last_success_at": "2026-11-05T17:59:18.973Z",
+        "published_at": "2026-11-05T23:10:00.000Z",
+        "fetched_at": "2026-11-05T23:19:49.271Z",
+        "last_success_at": "2026-11-05T23:19:49.271Z",
         "status": "fresh",
         "consecutive_failures": 0,
-        "feature_count": 154,
+        "feature_count": 153,
         "source_url": "https://servizos.meteogalicia.gal/mgrss/observacion/ultimos10minEstacionsMeteo.action",
         "licence": "CC-BY-SA-4.0",
         "attribution": "Datos: MeteoGalicia (Xunta de Galicia)",
-        "checksum": "sha256:d7058808586373a44b3602888e201afaccf8fe30e5023890f09a6a07bb39319c",
+        "checksum": "sha256:f18b4fdb9bda61555103fa12c6f6ce7c56be4f7b785154d8a1dd4c38c124c811",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-11-05T23:19:49.271Z",
+            "ok": true
+          },
           {
             "at": "2026-11-05T17:59:18.973Z",
             "ok": true
@@ -3391,10 +3399,6 @@
           },
           {
             "at": "2026-10-29T23:39:40.604Z",
-            "ok": true
-          },
-          {
-            "at": "2026-10-29T19:44:29.352Z",
             "ok": true
           }
         ],
@@ -3707,8 +3711,8 @@
       "meta": {
         "layer_id": "focos-calor",
         "published_at": "2026-11-05T15:13:00.000Z",
-        "fetched_at": "2026-11-05T17:59:19.899Z",
-        "last_success_at": "2026-11-05T17:59:19.899Z",
+        "fetched_at": "2026-11-05T23:19:50.360Z",
+        "last_success_at": "2026-11-05T23:19:50.360Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 25,
@@ -3718,6 +3722,10 @@
         "checksum": "sha256:ef408ce33b7d3b58e5cab29f1e9d148ffa9946c6e096731303fc6eddd5f48850",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-11-05T23:19:50.360Z",
+            "ok": true
+          },
           {
             "at": "2026-11-05T17:59:19.899Z",
             "ok": true
@@ -3886,10 +3894,6 @@
           },
           {
             "at": "2026-10-29T23:39:58.722Z",
-            "ok": true
-          },
-          {
-            "at": "2026-10-29T19:44:30.281Z",
             "ok": true
           }
         ],
@@ -4239,10 +4243,10 @@
       "meta": {
         "layer_id": "galicia-noticias",
         "published_at": null,
-        "fetched_at": "2026-11-05T17:59:20.799Z",
+        "fetched_at": "2026-11-05T23:19:51.958Z",
         "last_success_at": null,
         "status": "failed",
-        "consecutive_failures": 19,
+        "consecutive_failures": 20,
         "feature_count": 0,
         "source_url": "https://api.gdeltproject.org/api/v2/doc/doc",
         "licence": "https://www.gdeltproject.org/about.html#termsofuse",
@@ -4250,6 +4254,11 @@
         "checksum": null,
         "last_error": "GDELT answered no concello this run",
         "history": [
+          {
+            "at": "2026-11-05T23:19:51.958Z",
+            "ok": false,
+            "error": "GDELT answered no concello this run"
+          },
           {
             "at": "2026-11-05T17:59:20.799Z",
             "ok": false,
@@ -4403,17 +4412,21 @@
       "meta": {
         "layer_id": "gasolineiras",
         "published_at": null,
-        "fetched_at": "2026-11-05T17:59:30.311Z",
-        "last_success_at": "2026-11-05T17:59:30.311Z",
+        "fetched_at": "2026-11-05T23:20:02.363Z",
+        "last_success_at": "2026-11-05T23:20:02.363Z",
         "status": "fresh",
         "consecutive_failures": 0,
-        "feature_count": 738,
+        "feature_count": 737,
         "source_url": "https://sedeaplicaciones.minetur.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/EstacionesTerrestres/FiltroCCAA/12",
         "licence": "https://www.miteco.gob.es/es/atencion-al-ciudadano/aviso-legal.html",
         "attribution": "Fonte: Ministerio para a Transición Ecolóxica (MITERD), xeoportal de gasolineiras",
-        "checksum": "sha256:337db9eb79bfff69bcd513f81c81d2ec26cc180932fc2da7ce8a9acae1bf2c4c",
+        "checksum": "sha256:d6a08be97763a0edf13e85ef842fc17c80b877c987f75b37d6dbba56c3641b69",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-11-05T23:20:02.363Z",
+            "ok": true
+          },
           {
             "at": "2026-11-05T17:59:30.311Z",
             "ok": true
@@ -4580,10 +4593,6 @@
           },
           {
             "at": "2026-10-29T23:39:59.405Z",
-            "ok": true
-          },
-          {
-            "at": "2026-10-29T19:44:31.211Z",
             "ok": true
           }
         ],
@@ -5798,10 +5807,10 @@
       "meta": {
         "layer_id": "meteo-24h",
         "published_at": "2026-11-02T07:00:00.000Z",
-        "fetched_at": "2026-11-05T17:59:33.168Z",
+        "fetched_at": "2026-11-05T23:20:04.869Z",
         "last_success_at": "2026-11-02T07:42:41.615Z",
         "status": "stale",
-        "consecutive_failures": 16,
+        "consecutive_failures": 17,
         "feature_count": 152,
         "source_url": "https://servizos.meteogalicia.gal/mgrss/observacion/ultimosHorariosEstacions.action",
         "licence": "https://www.meteogalicia.gal/web/aviso-legal",
@@ -5809,6 +5818,11 @@
         "checksum": "sha256:78c25f75a1462d966360e3a3cdf5762561bed7df358440617c376b26b9d8cc21",
         "last_error": "empty result (0 features)",
         "history": [
+          {
+            "at": "2026-11-05T23:20:04.869Z",
+            "ok": false,
+            "error": "empty result (0 features)"
+          },
           {
             "at": "2026-11-05T17:59:33.168Z",
             "ok": false,
@@ -7361,8 +7375,8 @@
       "meta": {
         "layer_id": "raios",
         "published_at": null,
-        "fetched_at": "2026-11-05T18:00:23.097Z",
-        "last_success_at": "2026-11-05T18:00:23.097Z",
+        "fetched_at": "2026-11-05T23:20:10.408Z",
+        "last_success_at": "2026-11-05T23:20:10.408Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 0,
@@ -7372,6 +7386,10 @@
         "checksum": "sha256:ed778c73ea51338d6576fb5992b189f2b94d9f3d5e199f46c1af520d6b0b3e6c",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-11-05T23:20:10.408Z",
+            "ok": true
+          },
           {
             "at": "2026-11-05T18:00:23.097Z",
             "ok": true
@@ -7562,10 +7580,6 @@
           },
           {
             "at": "2026-10-29T23:40:06.860Z",
-            "ok": true
-          },
-          {
-            "at": "2026-10-29T19:44:34.309Z",
             "ok": true
           }
         ],
@@ -8027,8 +8041,8 @@
       "meta": {
         "layer_id": "sismos-recentes",
         "published_at": "2026-11-04T13:24:19.738Z",
-        "fetched_at": "2026-11-05T18:00:23.583Z",
-        "last_success_at": "2026-11-05T18:00:23.583Z",
+        "fetched_at": "2026-11-05T23:20:10.552Z",
+        "last_success_at": "2026-11-05T23:20:10.552Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 65,
@@ -8038,6 +8052,10 @@
         "checksum": "sha256:1bab6810b52d901fc2989b58de9e9a03a45ad7462575854ec6e8e00eae8bbc05",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-11-05T23:20:10.552Z",
+            "ok": true
+          },
           {
             "at": "2026-11-05T18:00:23.583Z",
             "ok": true
@@ -8229,10 +8247,6 @@
           {
             "at": "2026-10-29T23:40:07.300Z",
             "ok": true
-          },
-          {
-            "at": "2026-10-29T19:44:34.478Z",
-            "ok": true
           }
         ],
         "alert": false
@@ -8356,18 +8370,22 @@
       },
       "meta": {
         "layer_id": "trafico-balizas-v16",
-        "published_at": "2026-11-05T18:00:19.932Z",
-        "fetched_at": "2026-11-05T18:00:24.964Z",
-        "last_success_at": "2026-11-05T18:00:24.964Z",
+        "published_at": "2026-11-05T23:19:20.025Z",
+        "fetched_at": "2026-11-05T23:20:12.032Z",
+        "last_success_at": "2026-11-05T23:20:12.032Z",
         "status": "fresh",
         "consecutive_failures": 0,
-        "feature_count": 4,
+        "feature_count": 3,
         "source_url": "https://nap.dgt.es/datex2/v3/dgt/SituationPublication/datex2_v37.xml",
         "licence": "https://nap.dgt.es/es/dataset/incidencias-dgt-datex2-v3-7",
         "attribution": "Fonte: DGT, Punto de Acceso Nacional de Tráfico",
-        "checksum": "sha256:a02db4036219da6a91dc7748a190ff49cffa841d1cedad08ca2ed8933dfbbf12",
+        "checksum": "sha256:fc54e9be24020db681688a1cd332b93ab49f7a816928b8a77fef4a3a6da9d166",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-11-05T23:20:12.032Z",
+            "ok": true
+          },
           {
             "at": "2026-11-05T18:00:24.964Z",
             "ok": true
@@ -8559,10 +8577,6 @@
           {
             "at": "2026-10-29T23:40:08.811Z",
             "ok": true
-          },
-          {
-            "at": "2026-10-29T19:44:36.369Z",
-            "ok": true
           }
         ],
         "alert": false
@@ -8623,18 +8637,22 @@
       },
       "meta": {
         "layer_id": "trafico-incidencias",
-        "published_at": "2026-11-05T18:00:19.932Z",
-        "fetched_at": "2026-11-05T18:00:26.007Z",
-        "last_success_at": "2026-11-05T18:00:26.007Z",
+        "published_at": "2026-11-05T23:19:20.025Z",
+        "fetched_at": "2026-11-05T23:20:12.562Z",
+        "last_success_at": "2026-11-05T23:20:12.562Z",
         "status": "fresh",
         "consecutive_failures": 0,
-        "feature_count": 136,
+        "feature_count": 101,
         "source_url": "https://nap.dgt.es/datex2/v3/dgt/SituationPublication/datex2_v37.xml",
         "licence": "https://nap.dgt.es/es/dataset/incidencias-dgt-datex2-v3-7",
         "attribution": "Fonte: DGT, Punto de Acceso Nacional de Tráfico",
-        "checksum": "sha256:e9272dedda1108ea35b7023914588e88edd6eba27bdbcf655de0b3bfe9fd5839",
+        "checksum": "sha256:71b6ed3666b86a93fcddbb57a95a0459b763fda98d75ffca2720b050e347c4ad",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-11-05T23:20:12.562Z",
+            "ok": true
+          },
           {
             "at": "2026-11-05T18:00:26.007Z",
             "ok": true
@@ -8826,10 +8844,6 @@
           {
             "at": "2026-10-29T23:40:08.927Z",
             "ok": true
-          },
-          {
-            "at": "2026-10-29T19:44:37.560Z",
-            "ok": true
           }
         ],
         "alert": false
@@ -8985,18 +8999,22 @@
       "volatile": true,
       "meta": {
         "layer_id": "tren",
-        "published_at": "2026-11-05T17:00:17.000Z",
-        "fetched_at": "2026-11-05T18:00:26.162Z",
-        "last_success_at": "2026-11-05T18:00:26.162Z",
+        "published_at": "2026-11-05T22:20:02.000Z",
+        "fetched_at": "2026-11-05T23:20:12.674Z",
+        "last_success_at": "2026-11-05T23:20:12.674Z",
         "status": "fresh",
         "consecutive_failures": 0,
-        "feature_count": 12,
+        "feature_count": 0,
         "source_url": "https://gtfsrt.renfe.com/vehicle_positions_LD.json",
         "licence": "CC-BY-4.0",
         "attribution": "Origen de los datos: Renfe Operadora",
-        "checksum": "sha256:5eb8748953aaf5de904d8f24c7b63f6c74f4ccc9fb5f037cad2e8ba77d973d7f",
+        "checksum": "sha256:ed778c73ea51338d6576fb5992b189f2b94d9f3d5e199f46c1af520d6b0b3e6c",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-11-05T23:20:12.674Z",
+            "ok": true
+          },
           {
             "at": "2026-11-05T18:00:26.162Z",
             "ok": true
@@ -9196,10 +9214,6 @@
             "at": "2026-10-29T23:40:09.656Z",
             "ok": false,
             "error": "Renfe cercanias: unexpected GTFS-RT JSON (no header/entity)"
-          },
-          {
-            "at": "2026-10-29T19:44:37.672Z",
-            "ok": true
           }
         ],
         "alert": false
@@ -9250,8 +9264,8 @@
       "meta": {
         "layer_id": "vento-wrf",
         "published_at": "2026-11-05T12:00:00.000Z",
-        "fetched_at": "2026-11-05T18:00:27.579Z",
-        "last_success_at": "2026-11-05T18:00:27.579Z",
+        "fetched_at": "2026-11-05T23:20:13.424Z",
+        "last_success_at": "2026-11-05T23:20:13.424Z",
         "status": "fresh",
         "consecutive_failures": 0,
         "feature_count": 1,
@@ -9261,6 +9275,10 @@
         "checksum": "sha256:c8799d9c56b796f2f5432fcce152b1f7cd43864bbc9721c0bf77019de32ace8e",
         "last_error": null,
         "history": [
+          {
+            "at": "2026-11-05T23:20:13.424Z",
+            "ok": true
+          },
           {
             "at": "2026-11-05T18:00:27.579Z",
             "ok": true
