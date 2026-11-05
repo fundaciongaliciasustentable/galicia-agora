@@ -34,8 +34,7 @@ describe('seculo-movemento', () => {
       }
     }
     const navia = features.find((f) => f.properties.codigo_ine === '27034')?.properties;
-    expect((navia?.poboacion as number[])[0]).toBeGreaterThan(
-      (navia?.poboacion as number[])[12] as number,
-    );
+    const poboacion = navia?.poboacion as number[] | undefined;
+    expect(poboacion?.[0]).toBeGreaterThan(poboacion?.[12] as number);
   });
 });

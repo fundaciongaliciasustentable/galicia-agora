@@ -66,7 +66,7 @@ export function toFeatures(csv: string): { features: Feature[]; stats: ParseStat
       properties: {
         id,
         nome,
-        tipo: blank(r['TIPOLOXÍA']),
+        tipo: blank(r.TIPOLOXÍA),
         especializacion: blank(r['EIDO DE ESPECIALIZACIÓN']),
         enderezo: blank(r.ENDEREZO),
         localidade: blank(r.LOCALIDADE),

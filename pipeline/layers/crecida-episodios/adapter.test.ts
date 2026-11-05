@@ -60,6 +60,7 @@ describe('crecida-episodios', () => {
     ).toBe(true);
     const rain = features.filter((f) => f.properties.tipo === 'choiva');
     expect(rain.length).toBe(2);
-    expect((rain[0]?.properties.choiva_dia as unknown[]).length).toBe(6);
+    const choivaDia = rain[0]?.properties.choiva_dia as unknown[] | undefined;
+    expect(choivaDia?.length).toBe(6);
   });
 });

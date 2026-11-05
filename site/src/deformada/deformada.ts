@@ -337,7 +337,7 @@ export async function start(): Promise<void> {
     for (const b of modeBox.querySelectorAll<HTMLButtonElement>('[data-mode]')) {
       b.setAttribute('aria-pressed', String(b.dataset.mode === mode));
     }
-    if (pair && pair.every(asRate)) {
+    if (pair?.every(asRate)) {
       scaleEl.textContent = `${tr('deform_rate_note')} ${tr(`deform_rate_ratio_${pair[0]}`, {
         a: rateNumber(pair[0], galiciaRate(pair[0])),
         b: rateNumber(pair[1], galiciaRate(pair[1])),

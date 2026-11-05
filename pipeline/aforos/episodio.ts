@@ -84,7 +84,12 @@ async function main() {
               const row: [string, number, number?] = [t.instanteLecturaUTC, m.valor];
               if (m.codigoValidacion !== undefined && m.codigoValidacion !== 1)
                 row.push(m.codigoValidacion);
-              (series[m.codParametro] ??= []).push(row);
+              let list = series[m.codParametro];
+              if (!list) {
+                list = [];
+                series[m.codParametro] = list;
+              }
+              list.push(row);
               readings++;
             }
           }
