@@ -1,17 +1,21 @@
 {
   "layer_id": "perimetros-queimados",
-  "published_at": "2026-11-03T08:26:44.203Z",
-  "fetched_at": "2026-11-04T09:22:45.627Z",
-  "last_success_at": "2026-11-04T09:22:45.627Z",
+  "published_at": "2026-11-05T09:16:51.936Z",
+  "fetched_at": "2026-11-05T10:10:03.433Z",
+  "last_success_at": "2026-11-05T10:10:03.433Z",
   "status": "fresh",
   "consecutive_failures": 0,
-  "feature_count": 179,
+  "feature_count": 189,
   "source_url": "https://maps.effis.emergency.copernicus.eu/effis?service=WFS&request=GetFeature&version=2.0.0&typeNames=ms:modis.ba.poly.season&outputFormat=geojson&bbox=41.8,-9.35,43.8,-6.7,urn:ogc:def:crs:EPSG::4326",
   "licence": "CC-BY-4.0",
   "attribution": "© Unión Europea, Copernicus EFFIS (JRC)",
-  "checksum": "sha256:51419a9ba55cf6086376c9ff7ed172630f35a2aa3f79b19f07b4d6b4e199fa0c",
+  "checksum": "sha256:c406fbcb1df203f928334d32a711a7aa02e281511aacf6f527d604c414cfc099",
   "last_error": null,
   "history": [
+    {
+      "at": "2026-11-05T10:10:03.433Z",
+      "ok": true
+    },
     {
       "at": "2026-11-04T09:22:45.627Z",
       "ok": true
@@ -34,10 +38,6 @@
     },
     {
       "at": "2026-10-29T23:40:02.253Z",
-      "ok": true
-    },
-    {
-      "at": "2026-10-28T21:47:11.331Z",
       "ok": true
     }
   ]
