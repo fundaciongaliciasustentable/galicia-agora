@@ -343,6 +343,39 @@ sources:
     samples: [xunta-incendios/Lumes-2025-por-Distrito.xlsx]
 
   # ───────────────────────── Mobilidade ─────────────────────────
+  - id: mitma-mobilidade
+    name: MITMA — estudos de mobilidade con big data (estudos básicos por municipios)
+    phase: conditional
+    layers: [mobilidade-cidades, mobilidade-fluxos]
+    operator: Ministerio de Transportes y Movilidad Sostenible (MITMA)
+    endpoints:
+      - url: https://movilidad-opendata.mitma.es/estudios_basicos/por-municipios/viajes/ficheros-diarios/
+        status: 200
+        documented: true
+        notes: "Ficheiros diarios nacionais; as capas usan catro mércores e catro domingos de maio de 2025. Verificación completa en datos/fontes/mitma-mobilidade/README.md."
+      - url: https://movilidad-opendata.mitma.es/zonificacion/relacion_ine_zonificacionMitma.csv
+        status: 200
+        documented: true
+        notes: "200 desde un ordenador da FGS (04/11/2026). Desde GitHub Actions responde 403 (ingesta do 01/11/2026 ás 09:54 UTC): o servidor rexeita os enderezos dos runners."
+    format: CSV gzip (viaxes por hora e par de zonas) e Shapefile (zonificación)
+    auth: ningunha
+    frequency: { declared: "bloque metodolóxico xaneiro 2022–xuño 2025; desde xullo de 2025 só semanas soltas", measured: static }
+    limits: "403 desde GitHub Actions; desde un equipo da FGS sen límite observado"
+    licence:
+      name: Licenza de datos abertos do MITMA (3/12/2020)
+      url: https://movilidad-opendata.mitma.es/LICENCIA%20de%20datos%20abiertos%20del%20MITMA%2020201203.pdf
+      quote: "las obras derivadas añadiendo valor pueden ofrecerse bajo licencias diferentes"
+      verified: true
+      odbl_compatible: true
+    coverage: España por municipios e zonas agrupadas (_AM); as capas recortan a Galicia.
+    risks:
+      - "Bloqueo de GitHub Actions (403): a ingesta destas capas faise nun equipo local (npx tsx pipeline/cli.ts ingest --layer=<id>) e súbense data.geojson e meta.json á rama data. Se o CI volve intentalo e falla, consérvase o último dato bo."
+      - Período de referencia fixo (maio de 2025); o método cambiou desde xullo de 2025.
+    verdict: conditional
+    verdict_notes: "Ingesta só en local. Datos subidos á rama data o 04/11/2026 (commit 364ce9c) desde a ingesta local do 01/11/2026."
+    verified: true
+    checked_at: 2026-11-04
+
   - id: adsb-lol
     name: adsb.lol
     phase: 1

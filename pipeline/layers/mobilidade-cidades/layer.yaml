@@ -44,6 +44,9 @@ privacy_notes: >-
 # Fixed reference period: recomputing gives the same answer, so a rare refresh is enough and
 # the file never turns stale for being old.
 stale_after: P3650D
+# MITMA responde 403 a GitHub Actions (sources.yaml, mitma-mobilidade): esta capa
+# inxírese nun equipo local e súbense data.geojson e meta.json á rama data.
+# Se o CI a intenta e falla, consérvase o último dato bo.
 ingest:
   every: P365D
 style:
