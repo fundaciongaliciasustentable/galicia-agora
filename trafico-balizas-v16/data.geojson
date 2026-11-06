@@ -1,1 +1,1 @@
-{"type":"FeatureCollection","features":[]}
+{"type":"FeatureCollection","features":[{"type":"Feature","id":1,"geometry":{"type":"Point","coordinates":[-7.6048,42.9452]},"properties":{"estrada":"A-54","pk":10,"concello":"Lugo","provincia":"Lugo","desde":"2026-11-06T11:00:00.000Z"}},{"type":"Feature","id":2,"geometry":{"type":"Point","coordinates":[-8.6503,42.44]},"properties":{"estrada":"PO-531","pk":1,"concello":"Pontevedra","provincia":"Pontevedra","desde":"2026-11-06T11:05:00.000Z"}}]}
