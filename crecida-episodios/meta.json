@@ -1,8 +1,8 @@
 {
   "layer_id": "crecida-episodios",
   "published_at": "2026-10-11T00:00:00.000Z",
-  "fetched_at": "2026-11-06T11:24:59.071Z",
-  "last_success_at": "2026-11-06T11:24:59.071Z",
+  "fetched_at": "2026-11-07T15:45:50.593Z",
+  "last_success_at": "2026-11-07T15:45:50.593Z",
   "status": "fresh",
   "consecutive_failures": 0,
   "feature_count": 631,
@@ -12,6 +12,10 @@
   "checksum": "sha256:33ca7ae80602d53c3e0b137bdfaf261f0624507458045e9146a6ae6f82b1ee66",
   "last_error": null,
   "history": [
+    {
+      "at": "2026-11-07T15:45:50.593Z",
+      "ok": true
+    },
     {
       "at": "2026-11-06T11:24:59.071Z",
       "ok": true
