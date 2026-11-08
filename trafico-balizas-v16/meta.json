@@ -1,17 +1,21 @@
 {
   "layer_id": "trafico-balizas-v16",
-  "published_at": "2026-11-08T20:00:21.050Z",
-  "fetched_at": "2026-11-08T20:01:00.368Z",
-  "last_success_at": "2026-11-08T20:01:00.368Z",
+  "published_at": "2026-11-08T23:28:21.115Z",
+  "fetched_at": "2026-11-08T23:29:42.218Z",
+  "last_success_at": "2026-11-08T23:29:42.218Z",
   "status": "fresh",
   "consecutive_failures": 0,
-  "feature_count": 8,
+  "feature_count": 0,
   "source_url": "https://nap.dgt.es/datex2/v3/dgt/SituationPublication/datex2_v37.xml",
   "licence": "https://nap.dgt.es/es/dataset/incidencias-dgt-datex2-v3-7",
   "attribution": "Fonte: DGT, Punto de Acceso Nacional de Tráfico",
-  "checksum": "sha256:a3c22cb8c89efe5a63cdb095f8c6c65758c2db23b39b4012c8035879d50cb0d0",
+  "checksum": "sha256:ed778c73ea51338d6576fb5992b189f2b94d9f3d5e199f46c1af520d6b0b3e6c",
   "last_error": null,
   "history": [
+    {
+      "at": "2026-11-08T23:29:42.218Z",
+      "ok": true
+    },
     {
       "at": "2026-11-08T20:01:00.368Z",
       "ok": true
@@ -174,22 +178,6 @@
     },
     {
       "at": "2026-11-02T02:29:55.436Z",
-      "ok": true
-    },
-    {
-      "at": "2026-11-01T23:08:34.453Z",
-      "ok": true
-    },
-    {
-      "at": "2026-11-01T22:56:15.332Z",
-      "ok": true
-    },
-    {
-      "at": "2026-11-01T22:34:35.434Z",
-      "ok": true
-    },
-    {
-      "at": "2026-11-01T21:07:33.357Z",
       "ok": true
     }
   ]

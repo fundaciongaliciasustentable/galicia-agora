@@ -1,8 +1,8 @@
 {
   "layer_id": "sismos-recentes",
   "published_at": "2026-11-08T19:47:10.058Z",
-  "fetched_at": "2026-11-08T20:00:59.023Z",
-  "last_success_at": "2026-11-08T20:00:59.023Z",
+  "fetched_at": "2026-11-08T23:29:39.953Z",
+  "last_success_at": "2026-11-08T23:29:39.953Z",
   "status": "fresh",
   "consecutive_failures": 0,
   "feature_count": 62,
@@ -12,6 +12,10 @@
   "checksum": "sha256:1d8f2a70fbb5aa623f831b12ba5f096c8502cbddaba9013650012cefe3220575",
   "last_error": null,
   "history": [
+    {
+      "at": "2026-11-08T23:29:39.953Z",
+      "ok": true
+    },
     {
       "at": "2026-11-08T20:00:59.023Z",
       "ok": true
@@ -174,22 +178,6 @@
     },
     {
       "at": "2026-11-02T02:29:53.241Z",
-      "ok": true
-    },
-    {
-      "at": "2026-11-01T23:08:32.755Z",
-      "ok": true
-    },
-    {
-      "at": "2026-11-01T22:56:11.921Z",
-      "ok": true
-    },
-    {
-      "at": "2026-11-01T22:34:34.220Z",
-      "ok": true
-    },
-    {
-      "at": "2026-11-01T21:07:30.978Z",
       "ok": true
     }
   ]

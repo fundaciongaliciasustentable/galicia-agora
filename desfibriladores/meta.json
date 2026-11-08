@@ -1,8 +1,8 @@
 {
   "layer_id": "desfibriladores",
   "published_at": "2026-07-10T07:42:38.000Z",
-  "fetched_at": "2026-11-01T21:07:06.938Z",
-  "last_success_at": "2026-11-01T21:07:06.938Z",
+  "fetched_at": "2026-11-08T23:29:02.467Z",
+  "last_success_at": "2026-11-08T23:29:02.467Z",
   "status": "fresh",
   "consecutive_failures": 0,
   "feature_count": 2357,
@@ -13,7 +13,7 @@
   "last_error": null,
   "history": [
     {
-      "at": "2026-11-01T21:07:06.938Z",
+      "at": "2026-11-08T23:29:02.467Z",
       "ok": true
     }
   ]
