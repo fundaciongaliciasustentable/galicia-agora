@@ -1,19 +1,19 @@
 {
   "layer_id": "aloxamento-reat",
-  "published_at": "2026-09-30T22:00:00.000Z",
-  "fetched_at": "2026-11-01T13:25:22.376Z",
-  "last_success_at": "2026-11-01T13:25:22.376Z",
+  "published_at": "2026-10-31T23:00:00.000Z",
+  "fetched_at": "2026-11-08T15:41:53.385Z",
+  "last_success_at": "2026-11-08T15:41:53.385Z",
   "status": "fresh",
   "consecutive_failures": 0,
-  "feature_count": 4483,
+  "feature_count": 4491,
   "source_url": "https://descargascdn.xunta.gal/interno/smarxa/reat_directorio-alojamientos_esp.csv",
   "licence": "CC-BY-SA-4.0",
   "attribution": "Fonte: Turismo de Galicia, Rexistro de Empresas e Actividades Turísticas (REAT), directorio de aloxamentos. CC BY-SA 4.0.",
-  "checksum": "sha256:448ce8958c618e053b7fb479ac0607b7aed1a7c0f225c5e6e614fe4456195fc1",
+  "checksum": "sha256:d83024e856b38953681f363e55af1b716f8385044ad0892a60e9d706d103c4e4",
   "last_error": null,
   "history": [
     {
-      "at": "2026-11-01T13:25:22.376Z",
+      "at": "2026-11-08T15:41:53.385Z",
       "ok": true
     }
   ]

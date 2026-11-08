@@ -1,8 +1,8 @@
 {
   "layer_id": "trafico-radares",
   "published_at": "2025-12-18T08:56:52.406Z",
-  "fetched_at": "2026-11-07T15:47:13.374Z",
-  "last_success_at": "2026-11-07T15:47:13.374Z",
+  "fetched_at": "2026-11-08T15:47:38.051Z",
+  "last_success_at": "2026-11-08T15:47:38.051Z",
   "status": "fresh",
   "consecutive_failures": 0,
   "feature_count": 81,
@@ -12,6 +12,10 @@
   "checksum": "sha256:e41eaea7a11080f70f9b04ef762f3f92328faca5541799fadb4b04992ce2ec55",
   "last_error": null,
   "history": [
+    {
+      "at": "2026-11-08T15:47:38.051Z",
+      "ok": true
+    },
     {
       "at": "2026-11-07T15:47:13.374Z",
       "ok": true
@@ -34,10 +38,6 @@
     },
     {
       "at": "2026-11-02T02:29:55.697Z",
-      "ok": true
-    },
-    {
-      "at": "2026-11-01T01:51:56.834Z",
       "ok": true
     }
   ]
