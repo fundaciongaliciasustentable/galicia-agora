@@ -1,8 +1,8 @@
 {
   "layer_id": "focos-calor",
   "published_at": null,
-  "fetched_at": "2026-11-08T23:29:03.062Z",
-  "last_success_at": "2026-11-08T23:29:03.062Z",
+  "fetched_at": "2026-11-09T02:54:03.288Z",
+  "last_success_at": "2026-11-09T02:54:03.288Z",
   "status": "fresh",
   "consecutive_failures": 0,
   "feature_count": 0,
@@ -12,6 +12,10 @@
   "checksum": "sha256:ed778c73ea51338d6576fb5992b189f2b94d9f3d5e199f46c1af520d6b0b3e6c",
   "last_error": null,
   "history": [
+    {
+      "at": "2026-11-09T02:54:03.288Z",
+      "ok": true
+    },
     {
       "at": "2026-11-08T23:29:03.062Z",
       "ok": true
@@ -154,10 +158,6 @@
     },
     {
       "at": "2026-11-02T07:42:26.971Z",
-      "ok": true
-    },
-    {
-      "at": "2026-11-02T02:29:31.557Z",
       "ok": true
     }
   ]
