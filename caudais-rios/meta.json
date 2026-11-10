@@ -1,8 +1,8 @@
 {
   "layer_id": "caudais-rios",
   "published_at": "2026-11-09T15:50:00.000Z",
-  "fetched_at": "2026-11-09T21:11:37.484Z",
-  "last_success_at": "2026-11-09T21:11:37.484Z",
+  "fetched_at": "2026-11-10T03:30:09.910Z",
+  "last_success_at": "2026-11-10T03:30:09.910Z",
   "status": "fresh",
   "consecutive_failures": 0,
   "feature_count": 88,
@@ -12,6 +12,10 @@
   "checksum": "sha256:d3b3635278c14b78a65ef15b5eb5bf1cf0b3c527c031384e578e79f87f93106b",
   "last_error": null,
   "history": [
+    {
+      "at": "2026-11-10T03:30:09.910Z",
+      "ok": true
+    },
     {
       "at": "2026-11-09T21:11:37.484Z",
       "ok": true
@@ -166,10 +170,6 @@
     },
     {
       "at": "2026-11-03T08:53:43.138Z",
-      "ok": true
-    },
-    {
-      "at": "2026-11-03T01:55:23.745Z",
       "ok": true
     }
   ]
