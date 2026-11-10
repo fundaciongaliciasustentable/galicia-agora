@@ -1,8 +1,8 @@
 {
   "layer_id": "pulso-bus",
   "published_at": "2026-11-06T21:22:27.000Z",
-  "fetched_at": "2026-11-09T21:14:25.183Z",
-  "last_success_at": "2026-11-09T21:14:25.183Z",
+  "fetched_at": "2026-11-10T23:52:54.703Z",
+  "last_success_at": "2026-11-10T23:52:54.703Z",
   "status": "fresh",
   "consecutive_failures": 0,
   "feature_count": 11531,
@@ -12,6 +12,10 @@
   "checksum": "sha256:171f334614f5e767fe243d10baf2ed247bb07590715c317c8b7d242008fcfbd0",
   "last_error": null,
   "history": [
+    {
+      "at": "2026-11-10T23:52:54.703Z",
+      "ok": true
+    },
     {
       "at": "2026-11-09T21:14:25.183Z",
       "ok": true
@@ -34,10 +38,6 @@
     },
     {
       "at": "2026-11-04T17:23:45.908Z",
-      "ok": true
-    },
-    {
-      "at": "2026-11-03T16:31:30.182Z",
       "ok": true
     }
   ]
