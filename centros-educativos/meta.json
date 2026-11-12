@@ -1,10 +1,10 @@
 {
   "layer_id": "centros-educativos",
   "published_at": null,
-  "fetched_at": "2026-11-10T23:50:34.802Z",
+  "fetched_at": "2026-11-12T00:37:58.517Z",
   "last_success_at": "2026-10-25T11:25:08.832Z",
   "status": "stale",
-  "consecutive_failures": 17,
+  "consecutive_failures": 18,
   "feature_count": 1613,
   "source_url": "https://abertos.xunta.gal/catalogo/ensino-formacion/-/dataset/0257/centros-educativos-galicia",
   "licence": "CC-BY-SA-4.0",
@@ -12,6 +12,11 @@
   "checksum": "sha256:14203cf7a41a8a52dfbd102a622062f21414610de51d35b09a2390c93962721e",
   "last_error": "Failed after 4 attempts: fetch failed",
   "history": [
+    {
+      "at": "2026-11-12T00:37:58.517Z",
+      "ok": false,
+      "error": "Failed after 4 attempts: fetch failed"
+    },
     {
       "at": "2026-11-10T23:50:34.802Z",
       "ok": false,
@@ -39,11 +44,6 @@
     },
     {
       "at": "2026-11-05T10:07:32.769Z",
-      "ok": false,
-      "error": "Failed after 4 attempts: fetch failed"
-    },
-    {
-      "at": "2026-11-04T09:20:19.441Z",
       "ok": false,
       "error": "Failed after 4 attempts: fetch failed"
     }

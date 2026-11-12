@@ -1,17 +1,21 @@
 {
   "layer_id": "centros-saude",
   "published_at": null,
-  "fetched_at": "2026-11-10T23:51:30.430Z",
-  "last_success_at": "2026-11-10T23:51:30.430Z",
+  "fetched_at": "2026-11-12T00:38:54.139Z",
+  "last_success_at": "2026-11-12T00:38:54.139Z",
   "status": "fresh",
   "consecutive_failures": 0,
   "feature_count": 557,
   "source_url": "https://extranet.sergas.es/sixsanweb/SIXSAN_WEB/proxyKml.ashx?SIXSAN_WEB_KML/MapServer/KmlServer?Composite=false&BBOX=-9.35,41.8,-6.7,43.8",
   "licence": "CC-BY-SA-4.0",
   "attribution": "Xunta de Galicia. Consellería de Sanidade — Servizo Galego de Saúde (SERGAS)",
-  "checksum": "sha256:3a8cf02ded5ea3b8dcc2b3473c47322585aa43d0313b21832c700ac6286fb7ac",
+  "checksum": "sha256:fa02261e2be1eee7b96af5025a378834284e8c3ddadaae59e59c811278b34339",
   "last_error": null,
   "history": [
+    {
+      "at": "2026-11-12T00:38:54.139Z",
+      "ok": true
+    },
     {
       "at": "2026-11-10T23:51:30.430Z",
       "ok": true
@@ -34,10 +38,6 @@
     },
     {
       "at": "2026-11-05T10:08:28.394Z",
-      "ok": true
-    },
-    {
-      "at": "2026-11-04T09:21:15.186Z",
       "ok": true
     }
   ]

@@ -1,8 +1,8 @@
 {
   "layer_id": "vento-wrf",
   "published_at": "2026-11-11T12:00:00.000Z",
-  "fetched_at": "2026-11-11T18:08:01.506Z",
-  "last_success_at": "2026-11-11T18:08:01.506Z",
+  "fetched_at": "2026-11-12T00:41:46.248Z",
+  "last_success_at": "2026-11-12T00:41:46.248Z",
   "status": "fresh",
   "consecutive_failures": 0,
   "feature_count": 1,
@@ -12,6 +12,10 @@
   "checksum": "sha256:4fcee288bf09b5ef2d012c8f78261490a5872b880ea39c0a65791ec4b2d8739a",
   "last_error": null,
   "history": [
+    {
+      "at": "2026-11-12T00:41:46.248Z",
+      "ok": true
+    },
     {
       "at": "2026-11-11T18:08:01.506Z",
       "ok": true
@@ -122,10 +126,6 @@
     },
     {
       "at": "2026-11-05T02:54:25.520Z",
-      "ok": true
-    },
-    {
-      "at": "2026-11-04T22:45:23.524Z",
       "ok": true
     }
   ]
