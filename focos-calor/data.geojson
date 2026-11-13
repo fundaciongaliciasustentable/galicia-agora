@@ -1,1 +1,1 @@
-{"type":"FeatureCollection","features":[]}
+{"type":"FeatureCollection","features":[{"type":"Feature","id":"NOAA-20-2026-11-13T02:32:00.000Z--8.43547-43.34578","geometry":{"type":"Point","coordinates":[-8.43547,43.34578]},"properties":{"satelite":"NOAA-20","instrumento":"VIIRS","data_deteccion":"2026-11-13T02:32:00.000Z","confianza":"nominal","confianza_pct":null,"frp":1.46,"dia_noite":"noite"}}]}
