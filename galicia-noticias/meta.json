@@ -1,10 +1,10 @@
 {
   "layer_id": "galicia-noticias",
   "published_at": null,
-  "fetched_at": "2026-11-14T02:50:01.291Z",
+  "fetched_at": "2026-11-14T09:28:52.040Z",
   "last_success_at": null,
   "status": "failed",
-  "consecutive_failures": 53,
+  "consecutive_failures": 54,
   "feature_count": 0,
   "source_url": "https://api.gdeltproject.org/api/v2/doc/doc",
   "licence": "https://www.gdeltproject.org/about.html#termsofuse",
@@ -12,6 +12,11 @@
   "checksum": null,
   "last_error": "GDELT answered no concello this run",
   "history": [
+    {
+      "at": "2026-11-14T09:28:52.040Z",
+      "ok": false,
+      "error": "GDELT answered no concello this run"
+    },
     {
       "at": "2026-11-14T02:50:01.291Z",
       "ok": false,
@@ -144,11 +149,6 @@
     },
     {
       "at": "2026-11-07T15:46:22.109Z",
-      "ok": false,
-      "error": "GDELT answered no concello this run"
-    },
-    {
-      "at": "2026-11-07T09:20:25.775Z",
       "ok": false,
       "error": "GDELT answered no concello this run"
     }
