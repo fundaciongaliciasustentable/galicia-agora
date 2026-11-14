@@ -1,8 +1,8 @@
 {
   "layer_id": "hospitais",
   "published_at": null,
-  "fetched_at": "2026-11-13T02:45:11.574Z",
-  "last_success_at": "2026-11-13T02:45:11.574Z",
+  "fetched_at": "2026-11-14T02:49:20.415Z",
+  "last_success_at": "2026-11-14T02:49:20.415Z",
   "status": "fresh",
   "consecutive_failures": 0,
   "feature_count": 83,
@@ -12,6 +12,10 @@
   "checksum": "sha256:307b0fbd63ee7ed11eacfbc24638ec7f14ae5ffc42cad3f15e3be3ffc28d17a2",
   "last_error": null,
   "history": [
+    {
+      "at": "2026-11-14T02:49:20.415Z",
+      "ok": true
+    },
     {
       "at": "2026-11-13T02:45:11.574Z",
       "ok": true
@@ -34,10 +38,6 @@
     },
     {
       "at": "2026-11-07T15:45:51.373Z",
-      "ok": true
-    },
-    {
-      "at": "2026-11-06T11:25:00.625Z",
       "ok": true
     }
   ]
