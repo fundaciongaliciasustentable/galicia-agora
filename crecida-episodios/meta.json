@@ -1,17 +1,21 @@
 {
   "layer_id": "crecida-episodios",
   "published_at": "2026-10-11T00:00:00.000Z",
-  "fetched_at": "2026-11-14T02:49:19.519Z",
-  "last_success_at": "2026-11-14T02:49:19.519Z",
+  "fetched_at": "2026-11-15T05:53:00.492Z",
+  "last_success_at": "2026-11-15T05:53:00.492Z",
   "status": "fresh",
   "consecutive_failures": 0,
-  "feature_count": 606,
+  "feature_count": 613,
   "source_url": "https://servizos.meteogalicia.gal/mgafos/json/datos10min.action",
   "licence": "https://www.meteogalicia.gal/web/aviso-legal",
   "attribution": "Datos: Augas de Galicia e MeteoGalicia (Xunta de Galicia), caudais de 10 minutos non validados e choiva diaria das estacións. Rede fluvial: masas de auga de Augas de Galicia. Cálculos: Fundación Galicia Sustentable.",
-  "checksum": "sha256:6c3b1a12385bfd601e46a89dbd404c570a5e066f4c069cdf5a47c75261307022",
+  "checksum": "sha256:f90e3be00e2aa495ef7be45b6e27909dbdadff63db509453432770f6b5b610de",
   "last_error": null,
   "history": [
+    {
+      "at": "2026-11-15T05:53:00.492Z",
+      "ok": true
+    },
     {
       "at": "2026-11-14T02:49:19.519Z",
       "ok": true
@@ -34,10 +38,6 @@
     },
     {
       "at": "2026-11-08T15:46:16.124Z",
-      "ok": true
-    },
-    {
-      "at": "2026-11-07T15:45:50.593Z",
       "ok": true
     }
   ]
