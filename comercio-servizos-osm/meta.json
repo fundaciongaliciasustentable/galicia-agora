@@ -1,17 +1,21 @@
 {
   "layer_id": "comercio-servizos-osm",
-  "published_at": "2026-11-14T21:20:41Z",
-  "fetched_at": "2026-11-15T05:50:45.924Z",
-  "last_success_at": "2026-11-15T05:50:45.924Z",
+  "published_at": "2026-11-15T21:22:28Z",
+  "fetched_at": "2026-11-16T10:30:27.144Z",
+  "last_success_at": "2026-11-16T10:30:27.144Z",
   "status": "fresh",
   "consecutive_failures": 0,
-  "feature_count": 28397,
+  "feature_count": 28401,
   "source_url": "https://download.geofabrik.de/europe/spain/galicia-latest.osm.pbf",
   "licence": "ODbL-1.0",
   "attribution": "© Colaboradores de OpenStreetMap",
-  "checksum": "sha256:c30a9c681f127413edde59f6ae92d5bd173d6b9893c90e2d18fd84531b260937",
+  "checksum": "sha256:e956530a9d0a4898a7212eb2987d4ce7c8a87a8050b2a4a2935e016d29892c78",
   "last_error": null,
   "history": [
+    {
+      "at": "2026-11-16T10:30:27.144Z",
+      "ok": true
+    },
     {
       "at": "2026-11-15T05:50:45.924Z",
       "ok": true
@@ -34,10 +38,6 @@
     },
     {
       "at": "2026-11-09T21:12:39.663Z",
-      "ok": true
-    },
-    {
-      "at": "2026-11-08T15:45:50.016Z",
       "ok": true
     }
   ]

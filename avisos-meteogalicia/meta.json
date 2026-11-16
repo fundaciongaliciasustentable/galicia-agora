@@ -1,17 +1,21 @@
 {
   "layer_id": "avisos-meteogalicia",
   "published_at": "2026-11-15T23:00:00.000Z",
-  "fetched_at": "2026-11-16T02:55:16.677Z",
-  "last_success_at": "2026-11-16T02:55:16.677Z",
+  "fetched_at": "2026-11-16T10:29:02.708Z",
+  "last_success_at": "2026-11-16T10:29:02.708Z",
   "status": "fresh",
   "consecutive_failures": 0,
   "feature_count": 313,
   "source_url": "https://servizos.meteogalicia.gal/mgrss/predicion/adversos/jsonConcellosNivelMax.action",
   "licence": "CC-BY-SA-4.0",
   "attribution": "Datos: MeteoGalicia (Xunta de Galicia)",
-  "checksum": "sha256:a2e60b9c596db2eb5fb7af984a02ba8f4aa4e2ccde714e495d9ae3be7c78dfce",
+  "checksum": "sha256:d1c8d1583078e123a150936f36f7705b372261fcc64db1b8969d6f4b1eb7700c",
   "last_error": null,
   "history": [
+    {
+      "at": "2026-11-16T10:29:02.708Z",
+      "ok": true
+    },
     {
       "at": "2026-11-16T02:55:16.677Z",
       "ok": true
