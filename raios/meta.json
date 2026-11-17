@@ -1,8 +1,8 @@
 {
   "layer_id": "raios",
   "published_at": null,
-  "fetched_at": "2026-11-17T03:09:08.414Z",
-  "last_success_at": "2026-11-17T03:09:08.414Z",
+  "fetched_at": "2026-11-17T11:50:22.333Z",
+  "last_success_at": "2026-11-17T11:50:22.333Z",
   "status": "fresh",
   "consecutive_failures": 0,
   "feature_count": 0,
@@ -12,6 +12,10 @@
   "checksum": "sha256:ed778c73ea51338d6576fb5992b189f2b94d9f3d5e199f46c1af520d6b0b3e6c",
   "last_error": null,
   "history": [
+    {
+      "at": "2026-11-17T11:50:22.333Z",
+      "ok": true
+    },
     {
       "at": "2026-11-17T03:09:08.414Z",
       "ok": true
@@ -115,14 +119,6 @@
     },
     {
       "at": "2026-11-10T18:49:52.916Z",
-      "ok": true
-    },
-    {
-      "at": "2026-11-10T11:36:15.017Z",
-      "ok": true
-    },
-    {
-      "at": "2026-11-10T03:30:39.625Z",
       "ok": true
     }
   ]

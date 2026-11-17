@@ -1,8 +1,8 @@
 {
   "layer_id": "buses-xunta",
   "published_at": "2026-11-13T17:22:37.000Z",
-  "fetched_at": "2026-11-16T10:29:04.397Z",
-  "last_success_at": "2026-11-16T10:29:04.397Z",
+  "fetched_at": "2026-11-17T11:47:19.076Z",
+  "last_success_at": "2026-11-17T11:47:19.076Z",
   "status": "fresh",
   "consecutive_failures": 0,
   "feature_count": 27218,
@@ -12,6 +12,10 @@
   "checksum": "sha256:98b93b1baa954c650d5eb0f0498a627edc90469fbe1428b2b125caedf734fcac",
   "last_error": null,
   "history": [
+    {
+      "at": "2026-11-17T11:47:19.076Z",
+      "ok": true
+    },
     {
       "at": "2026-11-16T10:29:04.397Z",
       "ok": true
@@ -34,10 +38,6 @@
     },
     {
       "at": "2026-11-10T23:50:05.147Z",
-      "ok": true
-    },
-    {
-      "at": "2026-11-09T21:11:08.700Z",
       "ok": true
     }
   ]
