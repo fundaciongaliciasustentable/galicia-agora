@@ -1,17 +1,21 @@
 {
   "layer_id": "vento-wrf",
-  "published_at": "2026-11-17T12:00:00.000Z",
-  "fetched_at": "2026-11-18T02:22:17.735Z",
-  "last_success_at": "2026-11-18T02:22:17.735Z",
+  "published_at": "2026-11-18T00:00:00.000Z",
+  "fetched_at": "2026-11-18T10:27:56.304Z",
+  "last_success_at": "2026-11-18T10:27:56.304Z",
   "status": "fresh",
   "consecutive_failures": 0,
   "feature_count": 1,
   "source_url": "https://thredds.meteogalicia.gal/thredds/catalog/wrf_2d_04km/fmrc/files/catalog.xml",
   "licence": "https://www.meteogalicia.gal/web/aviso-legal",
   "attribution": "Fonte: MeteoGalicia e Consellería de Medio Ambiente e Cambio Climático (Xunta de Galicia), predición do modelo WRF. Remostraxe: Fundación Galicia Sustentable.",
-  "checksum": "sha256:f5d08e9b2c4a054f2f619a561f8ccb57438c8665bd2bc21a0ca3286576c0c160",
+  "checksum": "sha256:77e4177b5d7166a1b6c3b1273fd44160ae54a0fb5ee3dcea6de87646c220a1b5",
   "last_error": null,
   "history": [
+    {
+      "at": "2026-11-18T10:27:56.304Z",
+      "ok": true
+    },
     {
       "at": "2026-11-18T02:22:17.735Z",
       "ok": true
@@ -115,10 +119,6 @@
     },
     {
       "at": "2026-11-11T10:48:05.899Z",
-      "ok": true
-    },
-    {
-      "at": "2026-11-11T03:07:08.004Z",
       "ok": true
     }
   ]
