@@ -1,17 +1,21 @@
 {
   "layer_id": "farmacias",
   "published_at": null,
-  "fetched_at": "2026-11-17T11:49:04.660Z",
-  "last_success_at": "2026-11-17T11:49:04.660Z",
+  "fetched_at": "2026-11-18T19:03:49.603Z",
+  "last_success_at": "2026-11-18T19:03:49.603Z",
   "status": "fresh",
   "consecutive_failures": 0,
-  "feature_count": 1383,
+  "feature_count": 1384,
   "source_url": "https://extranet.sergas.es/sixsanweb/SIXSAN_WEB/proxyKml.ashx?SIXSAN_WEB_KML/MapServer/KmlServer?Composite=false&BBOX=-9.35,41.8,-6.7,43.8",
   "licence": "CC-BY-SA-4.0",
   "attribution": "Xunta de Galicia. Consellería de Sanidade — Servizo Galego de Saúde (SERGAS)",
-  "checksum": "sha256:176dda9b0c24f7013140a28ea73965b314b2155520f9597046d8f8f0847492f5",
+  "checksum": "sha256:ca636140a9b8759d70bce023f904956d8d26bbc6aa57d2eab6806638856ab679",
   "last_error": null,
   "history": [
+    {
+      "at": "2026-11-18T19:03:49.603Z",
+      "ok": true
+    },
     {
       "at": "2026-11-17T11:49:04.660Z",
       "ok": true
@@ -34,10 +38,6 @@
     },
     {
       "at": "2026-11-12T00:39:32.152Z",
-      "ok": true
-    },
-    {
-      "at": "2026-11-10T23:52:02.481Z",
       "ok": true
     }
   ]

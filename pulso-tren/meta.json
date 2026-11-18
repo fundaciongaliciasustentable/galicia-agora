@@ -1,8 +1,8 @@
 {
   "layer_id": "pulso-tren",
-  "published_at": "2026-11-17T03:14:55.000Z",
-  "fetched_at": "2026-11-17T11:50:03.360Z",
-  "last_success_at": "2026-11-17T11:50:03.360Z",
+  "published_at": "2026-11-18T12:15:52.000Z",
+  "fetched_at": "2026-11-18T19:05:33.179Z",
+  "last_success_at": "2026-11-18T19:05:33.179Z",
   "status": "fresh",
   "consecutive_failures": 0,
   "feature_count": 310,
@@ -12,6 +12,10 @@
   "checksum": "sha256:17c9c9a3ed562bc4d8dfc4517b67facee9a3db7b8fae0677d3c52c32d9f9cd03",
   "last_error": null,
   "history": [
+    {
+      "at": "2026-11-18T19:05:33.179Z",
+      "ok": true
+    },
     {
       "at": "2026-11-17T11:50:03.360Z",
       "ok": true
@@ -34,10 +38,6 @@
     },
     {
       "at": "2026-11-12T00:41:12.864Z",
-      "ok": true
-    },
-    {
-      "at": "2026-11-10T23:53:20.946Z",
       "ok": true
     }
   ]
