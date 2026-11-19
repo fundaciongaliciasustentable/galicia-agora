@@ -1,17 +1,21 @@
 {
   "layer_id": "pulso-bus",
   "published_at": "2026-11-13T17:22:37.000Z",
-  "fetched_at": "2026-11-18T19:05:08.965Z",
-  "last_success_at": "2026-11-18T19:05:08.965Z",
+  "fetched_at": "2026-11-19T23:52:58.105Z",
+  "last_success_at": "2026-11-19T23:52:58.105Z",
   "status": "fresh",
   "consecutive_failures": 0,
-  "feature_count": 12060,
+  "feature_count": 12057,
   "source_url": "https://nap.transportes.gob.es/api/Fichero/download/1584",
   "licence": "https://nap.transportes.gob.es/licencia-datos",
   "attribution": "Fonte: Xunta de Galicia, vía Punto de Acceso Nacional (MITRAMS). Powered by MITRAMS. Traxectorias: cálculo propio da Fundación Galicia Sustentable.",
-  "checksum": "sha256:bda7ec04ce5156835d6769c8c15ac63a0319985fd7d59e4f557ae073fc4b5025",
+  "checksum": "sha256:ba6d0af0877dd89d5c2e6880f68a3c8638b23d798f0aeb79dd8317dc0ed788e8",
   "last_error": null,
   "history": [
+    {
+      "at": "2026-11-19T23:52:58.105Z",
+      "ok": true
+    },
     {
       "at": "2026-11-18T19:05:08.965Z",
       "ok": true
@@ -34,10 +38,6 @@
     },
     {
       "at": "2026-11-13T02:46:23.481Z",
-      "ok": true
-    },
-    {
-      "at": "2026-11-12T00:40:47.363Z",
       "ok": true
     }
   ]
