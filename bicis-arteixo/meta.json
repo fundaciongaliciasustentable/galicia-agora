@@ -1,17 +1,21 @@
 {
   "layer_id": "bicis-arteixo",
-  "published_at": "2026-11-19T23:50:06.000Z",
-  "fetched_at": "2026-11-19T23:50:21.091Z",
-  "last_success_at": "2026-11-19T23:50:21.091Z",
+  "published_at": "2026-11-20T04:23:01.000Z",
+  "fetched_at": "2026-11-20T04:23:12.656Z",
+  "last_success_at": "2026-11-20T04:23:12.656Z",
   "status": "fresh",
   "consecutive_failures": 0,
   "feature_count": 15,
   "source_url": "https://gbfs.nextbike.net/maps/gbfs/v2/nextbike_aa/gbfs.json",
   "licence": "CC0-1.0",
   "attribution": "Datos: biciArteixo / nextbike (CC0)",
-  "checksum": "sha256:6b7da2d6690b3284c6be6a600c251cda6384d3575c3b23dafa7769a81b6856dd",
+  "checksum": "sha256:9da8cb534a7012675fcef0946c67f27050e7ece4d9490ea7a434f4a6628e077d",
   "last_error": null,
   "history": [
+    {
+      "at": "2026-11-20T04:23:12.656Z",
+      "ok": true
+    },
     {
       "at": "2026-11-19T23:50:21.091Z",
       "ok": true
@@ -110,10 +114,6 @@
     },
     {
       "at": "2026-11-13T09:59:03.119Z",
-      "ok": true
-    },
-    {
-      "at": "2026-11-13T02:43:23.130Z",
       "ok": true
     }
   ]

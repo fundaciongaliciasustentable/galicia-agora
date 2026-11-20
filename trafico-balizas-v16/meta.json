@@ -1,8 +1,8 @@
 {
   "layer_id": "trafico-balizas-v16",
-  "published_at": "2026-11-19T23:53:25.171Z",
-  "fetched_at": "2026-11-19T23:53:43.046Z",
-  "last_success_at": "2026-11-19T23:53:43.046Z",
+  "published_at": "2026-11-20T04:23:25.246Z",
+  "fetched_at": "2026-11-20T04:23:32.987Z",
+  "last_success_at": "2026-11-20T04:23:32.987Z",
   "status": "fresh",
   "consecutive_failures": 0,
   "feature_count": 0,
@@ -12,6 +12,10 @@
   "checksum": "sha256:ed778c73ea51338d6576fb5992b189f2b94d9f3d5e199f46c1af520d6b0b3e6c",
   "last_error": null,
   "history": [
+    {
+      "at": "2026-11-20T04:23:32.987Z",
+      "ok": true
+    },
     {
       "at": "2026-11-19T23:53:43.046Z",
       "ok": true
@@ -110,10 +114,6 @@
     },
     {
       "at": "2026-11-13T09:59:25.259Z",
-      "ok": true
-    },
-    {
-      "at": "2026-11-13T02:47:13.552Z",
       "ok": true
     }
   ]
