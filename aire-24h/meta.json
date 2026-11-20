@@ -1,17 +1,21 @@
 {
   "layer_id": "aire-24h",
-  "published_at": "2026-11-20T13:00:00.000Z",
-  "fetched_at": "2026-11-20T13:22:38.114Z",
-  "last_success_at": "2026-11-20T13:22:38.114Z",
+  "published_at": "2026-11-20T21:00:00.000Z",
+  "fetched_at": "2026-11-20T21:23:17.816Z",
+  "last_success_at": "2026-11-20T21:23:17.816Z",
   "status": "fresh",
   "consecutive_failures": 0,
   "feature_count": 46,
   "source_url": "https://servizos.meteogalicia.gal/mgrss/caire/jsonEvolucionIcaEstacion.action",
   "licence": "https://abertos.xunta.gal/condicions-de-uso",
   "attribution": "Fonte: Rede de Calidade do Aire de Galicia (MeteoGalicia, Xunta de Galicia). Datos en tempo real sen validar.",
-  "checksum": "sha256:e0d21beecaaf1f82af725ef4a103b12897fbdd08579345953c0bcd474a947d8e",
+  "checksum": "sha256:8fc5cd0c41a5db9f93b439fb47ff204f7cf4d1b12f8977f55f287dc041cdece2",
   "last_error": null,
   "history": [
+    {
+      "at": "2026-11-20T21:23:17.816Z",
+      "ok": true
+    },
     {
       "at": "2026-11-20T13:22:38.114Z",
       "ok": true
@@ -111,10 +115,6 @@
     },
     {
       "at": "2026-11-13T22:50:07.064Z",
-      "ok": true
-    },
-    {
-      "at": "2026-11-13T17:33:04.241Z",
       "ok": true
     }
   ]
