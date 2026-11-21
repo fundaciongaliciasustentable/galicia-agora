@@ -1,8 +1,8 @@
 {
   "layer_id": "estacions-tren",
-  "published_at": "2026-11-19T03:10:53.000Z",
-  "fetched_at": "2026-11-19T23:52:21.512Z",
-  "last_success_at": "2026-11-19T23:52:21.512Z",
+  "published_at": "2026-11-21T00:06:36.000Z",
+  "fetched_at": "2026-11-21T02:43:04.337Z",
+  "last_success_at": "2026-11-21T02:43:04.337Z",
   "status": "fresh",
   "consecutive_failures": 0,
   "feature_count": 137,
@@ -12,6 +12,10 @@
   "checksum": "sha256:8eb0a6b91e8243a337bd4ad7d64e55ffedc9475fc5560ba0698f1059a93e36fc",
   "last_error": null,
   "history": [
+    {
+      "at": "2026-11-21T02:43:04.337Z",
+      "ok": true
+    },
     {
       "at": "2026-11-19T23:52:21.512Z",
       "ok": true
@@ -34,10 +38,6 @@
     },
     {
       "at": "2026-11-14T02:49:30.174Z",
-      "ok": true
-    },
-    {
-      "at": "2026-11-13T02:45:21.306Z",
       "ok": true
     }
   ]
