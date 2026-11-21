@@ -1,17 +1,21 @@
 {
   "layer_id": "avisos-aemet",
   "published_at": "2026-11-21T10:24:17.000Z",
-  "fetched_at": "2026-11-21T17:36:15.609Z",
-  "last_success_at": "2026-11-21T17:36:15.609Z",
+  "fetched_at": "2026-11-21T22:20:51.878Z",
+  "last_success_at": "2026-11-21T22:20:51.878Z",
   "status": "fresh",
   "consecutive_failures": 0,
-  "feature_count": 26,
+  "feature_count": 4,
   "source_url": "https://www.aemet.es/documentos_d/eltiempo/prediccion/avisos/rss/CAP_AFAC71_ATOM.xml",
   "licence": "https://www.aemet.es/es/nota_legal",
   "attribution": "© AEMET. Información elaborada pola Axencia Estatal de Meteoroloxía",
-  "checksum": "sha256:13db942a0393c81a406970151aa16f5b2b93ee5982312958afce082e5d9bb65c",
+  "checksum": "sha256:da9fc6a6fdd1371f634eba56d3ffa6de4047d0d2e69abff7f56ac78e7cd26536",
   "last_error": null,
   "history": [
+    {
+      "at": "2026-11-21T22:20:51.878Z",
+      "ok": true
+    },
     {
       "at": "2026-11-21T17:36:15.609Z",
       "ok": true
@@ -106,10 +110,6 @@
     },
     {
       "at": "2026-11-15T00:01:02.095Z",
-      "ok": true
-    },
-    {
-      "at": "2026-11-14T20:22:28.809Z",
       "ok": true
     }
   ]
