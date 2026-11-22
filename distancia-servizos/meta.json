@@ -1,10 +1,10 @@
 {
   "layer_id": "distancia-servizos",
   "published_at": "2026-10-25T11:36:35.548Z",
-  "fetched_at": "2026-11-15T19:17:20.462Z",
+  "fetched_at": "2026-11-22T22:50:12.709Z",
   "last_success_at": "2026-10-25T11:36:40.161Z",
   "status": "stale",
-  "consecutive_failures": 3,
+  "consecutive_failures": 4,
   "feature_count": 36190,
   "source_url": "https://mapas.galiciasustentable.org",
   "licence": "CC-BY-SA-4.0",
@@ -13,7 +13,7 @@
   "last_error": "input layer centros-educativos is stale: last good data 2026-10-25T11:25:08.832Z",
   "history": [
     {
-      "at": "2026-11-15T19:17:20.462Z",
+      "at": "2026-11-22T22:50:12.709Z",
       "ok": false,
       "error": "input layer centros-educativos is stale: last good data 2026-10-25T11:25:08.832Z"
     }

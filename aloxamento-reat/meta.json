@@ -1,8 +1,8 @@
 {
   "layer_id": "aloxamento-reat",
   "published_at": "2026-10-31T23:00:00.000Z",
-  "fetched_at": "2026-11-15T19:17:01.041Z",
-  "last_success_at": "2026-11-15T19:17:01.041Z",
+  "fetched_at": "2026-11-22T22:50:05.801Z",
+  "last_success_at": "2026-11-22T22:50:05.801Z",
   "status": "fresh",
   "consecutive_failures": 0,
   "feature_count": 4491,
@@ -13,7 +13,7 @@
   "last_error": null,
   "history": [
     {
-      "at": "2026-11-15T19:17:01.041Z",
+      "at": "2026-11-22T22:50:05.801Z",
       "ok": true
     }
   ]
