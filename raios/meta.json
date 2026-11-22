@@ -1,17 +1,21 @@
 {
   "layer_id": "raios",
   "published_at": "2026-11-22T04:01:36.000Z",
-  "fetched_at": "2026-11-22T10:06:06.927Z",
-  "last_success_at": "2026-11-22T10:06:06.927Z",
+  "fetched_at": "2026-11-22T17:43:06.435Z",
+  "last_success_at": "2026-11-22T17:43:06.435Z",
   "status": "fresh",
   "consecutive_failures": 0,
-  "feature_count": 24,
+  "feature_count": 14,
   "source_url": "https://servizos.meteogalicia.gal/mgrss/observacion/jsonRaios.action",
   "licence": "CC-BY-SA-4.0",
   "attribution": "Datos: MeteoGalicia (Xunta de Galicia)",
-  "checksum": "sha256:7ee66facc795f49114967df31ce91fb59740fedb9358008f76ca5ce3a8646591",
+  "checksum": "sha256:c9c84d3c0065827b8841aa137dfc9c58dced51f9ff9ebbd39dd38039eba1acb1",
   "last_error": null,
   "history": [
+    {
+      "at": "2026-11-22T17:43:06.435Z",
+      "ok": true
+    },
     {
       "at": "2026-11-22T10:06:06.927Z",
       "ok": true
@@ -107,10 +111,6 @@
     },
     {
       "at": "2026-11-15T19:18:15.804Z",
-      "ok": true
-    },
-    {
-      "at": "2026-11-15T13:00:23.734Z",
       "ok": true
     }
   ]
