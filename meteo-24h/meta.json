@@ -1,17 +1,21 @@
 {
   "layer_id": "meteo-24h",
-  "published_at": "2026-11-21T22:00:00.000Z",
-  "fetched_at": "2026-11-21T22:21:08.575Z",
-  "last_success_at": "2026-11-21T22:21:08.575Z",
+  "published_at": "2026-11-22T02:00:00.000Z",
+  "fetched_at": "2026-11-22T02:22:19.824Z",
+  "last_success_at": "2026-11-22T02:22:19.824Z",
   "status": "fresh",
   "consecutive_failures": 0,
   "feature_count": 147,
   "source_url": "https://servizos.meteogalicia.gal/mgrss/observacion/ultimosHorariosEstacions.action",
   "licence": "https://www.meteogalicia.gal/web/aviso-legal",
   "attribution": "Fonte: MeteoGalicia (Xunta de Galicia), observación horaria.",
-  "checksum": "sha256:3c21c4a1efa32743d56f8733861050bf0357431b8181c43f2148bc31fc7e4673",
+  "checksum": "sha256:16a69f24d9c68da62077b250c644be115f67d4eb857b1473ed83886177e473ae",
   "last_error": null,
   "history": [
+    {
+      "at": "2026-11-22T02:22:19.824Z",
+      "ok": true
+    },
     {
       "at": "2026-11-21T22:21:08.575Z",
       "ok": true
@@ -107,10 +111,6 @@
     },
     {
       "at": "2026-11-15T05:53:47.081Z",
-      "ok": true
-    },
-    {
-      "at": "2026-11-15T00:01:24.362Z",
       "ok": true
     }
   ]
