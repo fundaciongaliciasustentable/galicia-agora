@@ -1,10 +1,10 @@
 {
   "layer_id": "comercio-servizos-osm",
   "published_at": "2026-11-18T21:21:02Z",
-  "fetched_at": "2026-11-21T02:42:51.694Z",
+  "fetched_at": "2026-11-22T10:04:42.472Z",
   "last_success_at": "2026-11-19T23:51:49.021Z",
   "status": "stale",
-  "consecutive_failures": 1,
+  "consecutive_failures": 2,
   "feature_count": 28413,
   "source_url": "https://download.geofabrik.de/europe/spain/galicia-latest.osm.pbf",
   "licence": "ODbL-1.0",
@@ -12,6 +12,11 @@
   "checksum": "sha256:12b4a6127c67357b34add2c2f9a32c24c38804b39fc49b193aa7b206fe4f1ebb",
   "last_error": "HTTP 404 for https://download.geofabrik.de/europe/spain/galicia-latest.osm.pbf",
   "history": [
+    {
+      "at": "2026-11-22T10:04:42.472Z",
+      "ok": false,
+      "error": "HTTP 404 for https://download.geofabrik.de/europe/spain/galicia-latest.osm.pbf"
+    },
     {
       "at": "2026-11-21T02:42:51.694Z",
       "ok": false,
@@ -32,14 +37,6 @@
     },
     {
       "at": "2026-11-16T10:30:27.144Z",
-      "ok": true
-    },
-    {
-      "at": "2026-11-15T05:50:45.924Z",
-      "ok": true
-    },
-    {
-      "at": "2026-11-14T02:48:49.871Z",
       "ok": true
     }
   ]
