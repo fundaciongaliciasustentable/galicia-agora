@@ -1,24 +1,19 @@
 {
   "layer_id": "desfibriladores",
-  "published_at": "2026-07-10T07:42:38.000Z",
-  "fetched_at": "2026-11-15T23:28:51.166Z",
-  "last_success_at": "2026-11-08T23:29:02.467Z",
-  "status": "stale",
-  "consecutive_failures": 1,
-  "feature_count": 2357,
+  "published_at": "2026-11-12T13:24:29.000Z",
+  "fetched_at": "2026-11-23T03:15:20.237Z",
+  "last_success_at": "2026-11-23T03:15:20.237Z",
+  "status": "fresh",
+  "consecutive_failures": 0,
+  "feature_count": 2466,
   "source_url": "https://abertos.xunta.gal/catalogo/saude-servicios-sociais/-/dataset/0604/desfibriladores-semiautomaticos-externos-situados",
   "licence": "CC-BY-SA-4.0",
   "attribution": "Xunta de Galicia. 061, rexistro de desfibriladores (abertos.xunta.gal, conxunto 0604)",
-  "checksum": "sha256:582e3a604e4928a0aff497e8f4bf7abc6688de61b7497d2fe9e6940a419ef6ed",
-  "last_error": "Failed after 4 attempts: fetch failed",
+  "checksum": "sha256:7a6a93f024a1e4a530b61a28248c10c1da7026490cb5204a708180005a64720b",
+  "last_error": null,
   "history": [
     {
-      "at": "2026-11-15T23:28:51.166Z",
-      "ok": false,
-      "error": "Failed after 4 attempts: fetch failed"
-    },
-    {
-      "at": "2026-11-08T23:29:02.467Z",
+      "at": "2026-11-23T03:15:20.237Z",
       "ok": true
     }
   ]

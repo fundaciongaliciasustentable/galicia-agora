@@ -1,8 +1,8 @@
 {
   "layer_id": "avisos-meteogalicia",
   "published_at": null,
-  "fetched_at": "2026-11-22T22:50:07.083Z",
-  "last_success_at": "2026-11-22T22:50:07.083Z",
+  "fetched_at": "2026-11-23T03:15:09.888Z",
+  "last_success_at": "2026-11-23T03:15:09.888Z",
   "status": "fresh",
   "consecutive_failures": 0,
   "feature_count": 313,
@@ -12,6 +12,10 @@
   "checksum": "sha256:b0d3259a42f56a43a11eff1268cfdbc5e2c722c39da0f71071f3559ef3833aac",
   "last_error": null,
   "history": [
+    {
+      "at": "2026-11-23T03:15:09.888Z",
+      "ok": true
+    },
     {
       "at": "2026-11-22T22:50:07.083Z",
       "ok": true
@@ -103,15 +107,6 @@
     {
       "at": "2026-11-16T10:29:02.708Z",
       "ok": true
-    },
-    {
-      "at": "2026-11-16T02:55:16.677Z",
-      "ok": true
-    },
-    {
-      "at": "2026-11-15T23:25:07.028Z",
-      "ok": false,
-      "error": "Failed after 4 attempts: fetch failed"
     }
   ]
 }

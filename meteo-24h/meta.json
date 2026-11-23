@@ -1,17 +1,21 @@
 {
   "layer_id": "meteo-24h",
-  "published_at": "2026-11-22T22:00:00.000Z",
-  "fetched_at": "2026-11-22T22:51:28.332Z",
-  "last_success_at": "2026-11-22T22:51:28.332Z",
+  "published_at": "2026-11-23T03:00:00.000Z",
+  "fetched_at": "2026-11-23T03:15:34.689Z",
+  "last_success_at": "2026-11-23T03:15:34.689Z",
   "status": "fresh",
   "consecutive_failures": 0,
   "feature_count": 147,
   "source_url": "https://servizos.meteogalicia.gal/mgrss/observacion/ultimosHorariosEstacions.action",
   "licence": "https://www.meteogalicia.gal/web/aviso-legal",
   "attribution": "Fonte: MeteoGalicia (Xunta de Galicia), observación horaria.",
-  "checksum": "sha256:36d61c167945638b6302984b7c13271aba788985e5c56e1042318ebc4359d636",
+  "checksum": "sha256:80de746cb2e8b1bf385c54ceff1f15dd67fea95c7a8f2d06f20802bea5c1f360",
   "last_error": null,
   "history": [
+    {
+      "at": "2026-11-23T03:15:34.689Z",
+      "ok": true
+    },
     {
       "at": "2026-11-22T22:51:28.332Z",
       "ok": true
@@ -103,15 +107,6 @@
     {
       "at": "2026-11-16T10:32:53.433Z",
       "ok": true
-    },
-    {
-      "at": "2026-11-16T02:56:12.732Z",
-      "ok": true
-    },
-    {
-      "at": "2026-11-15T23:30:45.939Z",
-      "ok": false,
-      "error": "Failed after 4 attempts: fetch failed"
     }
   ]
 }
