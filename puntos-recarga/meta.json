@@ -1,17 +1,21 @@
 {
   "layer_id": "puntos-recarga",
-  "published_at": "2026-11-22T09:16:29.086Z",
-  "fetched_at": "2026-11-22T10:06:04.215Z",
-  "last_success_at": "2026-11-22T10:06:04.215Z",
+  "published_at": "2026-11-23T09:16:43.374Z",
+  "fetched_at": "2026-11-23T13:00:07.868Z",
+  "last_success_at": "2026-11-23T13:00:07.868Z",
   "status": "fresh",
   "consecutive_failures": 0,
-  "feature_count": 466,
+  "feature_count": 470,
   "source_url": "https://nap.dgt.es/datex2/v3/miterd/EnergyInfrastructureTablePublication/electrolineras.xml",
   "licence": "https://nap.dgt.es/es/dataset/puntos-de-recarga-electrica-para-vehiculos",
   "attribution": "Fonte: MITERD vía Punto de Acceso Nacional de Tráfico (DGT)",
-  "checksum": "sha256:8c85973915edddb0a3e57b77fa3ea5fc854c5f499b296a88e906ec7366a0f59e",
+  "checksum": "sha256:82b2e0f65041e20c75677306a437311fca58eb25ae3f390ff8a7c9eb8ffb54d4",
   "last_error": null,
   "history": [
+    {
+      "at": "2026-11-23T13:00:07.868Z",
+      "ok": true
+    },
     {
       "at": "2026-11-22T10:06:04.215Z",
       "ok": true
@@ -30,10 +34,6 @@
     },
     {
       "at": "2026-11-17T11:50:20.120Z",
-      "ok": true
-    },
-    {
-      "at": "2026-11-16T10:33:30.838Z",
       "ok": true
     }
   ]
