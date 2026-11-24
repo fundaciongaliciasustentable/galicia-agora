@@ -1,8 +1,8 @@
 {
   "layer_id": "entidades-poboacion",
   "published_at": "2025-11-30T23:00:00.000Z",
-  "fetched_at": "2026-10-25T11:35:52.779Z",
-  "last_success_at": "2026-10-25T11:35:52.779Z",
+  "fetched_at": "2026-11-24T20:43:15.208Z",
+  "last_success_at": "2026-11-24T20:43:15.208Z",
   "status": "fresh",
   "consecutive_failures": 0,
   "feature_count": 36190,
@@ -13,19 +13,7 @@
   "last_error": null,
   "history": [
     {
-      "at": "2026-10-25T11:35:52.779Z",
-      "ok": true
-    },
-    {
-      "at": "2026-10-25T11:28:11.028Z",
-      "ok": true
-    },
-    {
-      "at": "2026-10-25T11:13:00.017Z",
-      "ok": true
-    },
-    {
-      "at": "2026-10-24T09:06:49.730Z",
+      "at": "2026-11-24T20:43:15.208Z",
       "ok": true
     }
   ]
