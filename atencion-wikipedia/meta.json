@@ -1,17 +1,21 @@
 {
   "layer_id": "atencion-wikipedia",
-  "published_at": "2026-11-23T00:00:00.000Z",
-  "fetched_at": "2026-11-24T20:43:51.825Z",
-  "last_success_at": "2026-11-24T20:43:51.825Z",
+  "published_at": "2026-11-24T00:00:00.000Z",
+  "fetched_at": "2026-11-25T22:43:32.671Z",
+  "last_success_at": "2026-11-25T22:43:32.671Z",
   "status": "fresh",
   "consecutive_failures": 0,
   "feature_count": 313,
   "source_url": "https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article",
   "licence": "CC0-1.0",
   "attribution": "Fonte: Wikimedia Foundation, vistas de páxina (Wikimedia Analytics API, CC0), artigos da Wikipedia en galego e en castelán; correspondencia por Wikidata (CC0). Poboación: INE, censo de 2021. Índice de picos: cálculo propio da Fundación Galicia Sustentable.",
-  "checksum": "sha256:7aaf02dec265ef7225f8a8a2d2d07de111a052162beddfaca63ec452ab39a1d8",
+  "checksum": "sha256:a3cb228710f5dc4b46bf69946fa6fae7cc24eb7540b0d4e5528efee5ef4f07fd",
   "last_error": null,
   "history": [
+    {
+      "at": "2026-11-25T22:43:32.671Z",
+      "ok": true
+    },
     {
       "at": "2026-11-24T20:43:51.825Z",
       "ok": true
@@ -30,10 +34,6 @@
     },
     {
       "at": "2026-11-19T23:47:43.756Z",
-      "ok": true
-    },
-    {
-      "at": "2026-11-18T18:58:37.386Z",
       "ok": true
     }
   ]
