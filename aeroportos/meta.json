@@ -1,8 +1,8 @@
 {
   "layer_id": "aeroportos",
-  "published_at": "2026-11-24T10:00:00.000Z",
-  "fetched_at": "2026-11-25T22:42:58.776Z",
-  "last_success_at": "2026-11-25T22:42:58.776Z",
+  "published_at": "2026-11-26T22:00:00.000Z",
+  "fetched_at": "2026-11-26T23:00:28.141Z",
+  "last_success_at": "2026-11-26T23:00:28.141Z",
   "status": "fresh",
   "consecutive_failures": 0,
   "feature_count": 40,
@@ -12,6 +12,10 @@
   "checksum": "sha256:95dd2245dd0149f5df4678a836e8ca76908964e49f6df3bea5e0a38279a45831",
   "last_error": null,
   "history": [
+    {
+      "at": "2026-11-26T23:00:28.141Z",
+      "ok": true
+    },
     {
       "at": "2026-11-25T22:42:58.776Z",
       "ok": true

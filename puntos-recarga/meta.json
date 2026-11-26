@@ -1,8 +1,8 @@
 {
   "layer_id": "puntos-recarga",
-  "published_at": "2026-11-25T09:16:31.520Z",
-  "fetched_at": "2026-11-25T22:49:02.340Z",
-  "last_success_at": "2026-11-25T22:49:02.340Z",
+  "published_at": "2026-11-26T09:16:36.210Z",
+  "fetched_at": "2026-11-26T23:08:52.778Z",
+  "last_success_at": "2026-11-26T23:08:52.778Z",
   "status": "fresh",
   "consecutive_failures": 0,
   "feature_count": 470,
@@ -12,6 +12,10 @@
   "checksum": "sha256:82b2e0f65041e20c75677306a437311fca58eb25ae3f390ff8a7c9eb8ffb54d4",
   "last_error": null,
   "history": [
+    {
+      "at": "2026-11-26T23:08:52.778Z",
+      "ok": true
+    },
     {
       "at": "2026-11-25T22:49:02.340Z",
       "ok": true

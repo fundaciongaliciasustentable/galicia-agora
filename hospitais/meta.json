@@ -1,17 +1,21 @@
 {
   "layer_id": "hospitais",
   "published_at": null,
-  "fetched_at": "2026-11-25T22:47:48.490Z",
-  "last_success_at": "2026-11-25T22:47:48.490Z",
+  "fetched_at": "2026-11-26T23:07:03.916Z",
+  "last_success_at": "2026-11-26T23:07:03.916Z",
   "status": "fresh",
   "consecutive_failures": 0,
   "feature_count": 83,
   "source_url": "https://extranet.sergas.es/sixsanweb/SIXSAN_WEB/proxyKml.ashx?SIXSAN_WEB_KML/MapServer/KmlServer?Composite=false&BBOX=-9.35,41.8,-6.7,43.8",
   "licence": "CC-BY-SA-4.0",
   "attribution": "Xunta de Galicia. Consellería de Sanidade — Servizo Galego de Saúde (SERGAS)",
-  "checksum": "sha256:6c1472cab10c76b7ba8e86fc81695e994229708607d581952c071dd6fb105bb3",
+  "checksum": "sha256:211ea719d57ce65391f43c18121eb2f76ad3886245153c349b17a250e61b96cc",
   "last_error": null,
   "history": [
+    {
+      "at": "2026-11-26T23:07:03.916Z",
+      "ok": true
+    },
     {
       "at": "2026-11-25T22:47:48.490Z",
       "ok": true
