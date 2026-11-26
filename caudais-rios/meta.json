@@ -1,17 +1,21 @@
 {
   "layer_id": "caudais-rios",
-  "published_at": "2026-11-26T04:10:00.000Z",
-  "fetched_at": "2026-11-26T04:27:34.691Z",
-  "last_success_at": "2026-11-26T04:27:34.691Z",
+  "published_at": "2026-11-26T13:50:00.000Z",
+  "fetched_at": "2026-11-26T14:11:18.041Z",
+  "last_success_at": "2026-11-26T14:11:18.041Z",
   "status": "fresh",
   "consecutive_failures": 0,
-  "feature_count": 88,
+  "feature_count": 89,
   "source_url": "https://servizos.meteogalicia.gal/mgafos/json/estadoActual.action",
   "licence": "https://www.meteogalicia.gal/web/aviso-legal",
   "attribution": "Datos: Augas de Galicia e MeteoGalicia (Xunta de Galicia). Datos non validados.",
-  "checksum": "sha256:4572c18c1159898df853eb94a2372220a7123f285be8845d3f2eadf357ba49de",
+  "checksum": "sha256:5f142a64f87f8247872b25d5c017df31a393c021337de5050720c7cfcd06c0f8",
   "last_error": null,
   "history": [
+    {
+      "at": "2026-11-26T14:11:18.041Z",
+      "ok": true
+    },
     {
       "at": "2026-11-26T04:27:34.691Z",
       "ok": true
@@ -99,10 +103,6 @@
     },
     {
       "at": "2026-11-19T17:32:44.795Z",
-      "ok": true
-    },
-    {
-      "at": "2026-11-19T08:27:43.586Z",
       "ok": true
     }
   ]
