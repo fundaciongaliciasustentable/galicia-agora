@@ -1,8 +1,8 @@
 {
   "layer_id": "avisos-meteogalicia",
   "published_at": null,
-  "fetched_at": "2026-11-26T23:04:05.540Z",
-  "last_success_at": "2026-11-26T23:04:05.540Z",
+  "fetched_at": "2026-11-27T04:53:35.381Z",
+  "last_success_at": "2026-11-27T04:53:35.381Z",
   "status": "fresh",
   "consecutive_failures": 0,
   "feature_count": 313,
@@ -12,6 +12,10 @@
   "checksum": "sha256:b0d3259a42f56a43a11eff1268cfdbc5e2c722c39da0f71071f3559ef3833aac",
   "last_error": null,
   "history": [
+    {
+      "at": "2026-11-27T04:53:35.381Z",
+      "ok": true
+    },
     {
       "at": "2026-11-26T23:04:05.540Z",
       "ok": true
@@ -94,14 +98,6 @@
     },
     {
       "at": "2026-11-20T13:23:19.247Z",
-      "ok": true
-    },
-    {
-      "at": "2026-11-20T04:23:11.464Z",
-      "ok": true
-    },
-    {
-      "at": "2026-11-19T23:50:19.743Z",
       "ok": true
     }
   ]
