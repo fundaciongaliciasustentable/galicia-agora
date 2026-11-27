@@ -1,17 +1,21 @@
 {
   "layer_id": "caudais-rios",
-  "published_at": "2026-11-27T14:20:00.000Z",
-  "fetched_at": "2026-11-27T14:32:11.874Z",
-  "last_success_at": "2026-11-27T14:32:11.874Z",
+  "published_at": "2026-11-27T22:40:00.000Z",
+  "fetched_at": "2026-11-27T22:54:53.079Z",
+  "last_success_at": "2026-11-27T22:54:53.079Z",
   "status": "fresh",
   "consecutive_failures": 0,
-  "feature_count": 89,
+  "feature_count": 88,
   "source_url": "https://servizos.meteogalicia.gal/mgafos/json/estadoActual.action",
   "licence": "https://www.meteogalicia.gal/web/aviso-legal",
   "attribution": "Datos: Augas de Galicia e MeteoGalicia (Xunta de Galicia). Datos non validados.",
-  "checksum": "sha256:e8bb2c67ab461ff83eaff07442c0d8baa51a00455cf4cab57f1053715b4d3316",
+  "checksum": "sha256:acfe60769a96c798654ff7efc6a9c2be00b50d322c17fed112d80dfc16abe4c4",
   "last_error": null,
   "history": [
+    {
+      "at": "2026-11-27T22:54:53.079Z",
+      "ok": true
+    },
     {
       "at": "2026-11-27T14:32:11.874Z",
       "ok": true
@@ -95,11 +99,6 @@
     {
       "at": "2026-11-21T02:41:46.312Z",
       "ok": true
-    },
-    {
-      "at": "2026-11-20T21:23:54.108Z",
-      "ok": false,
-      "error": "schema validation failed: /features/73/properties/caudal_m3s must be >= 0"
     }
   ]
 }
