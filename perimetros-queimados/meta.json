@@ -1,8 +1,8 @@
 {
   "layer_id": "perimetros-queimados",
   "published_at": "2026-11-06T08:29:00.439Z",
-  "fetched_at": "2026-11-26T23:07:59.219Z",
-  "last_success_at": "2026-11-26T23:07:59.219Z",
+  "fetched_at": "2026-11-28T04:32:00.416Z",
+  "last_success_at": "2026-11-28T04:32:00.416Z",
   "status": "fresh",
   "consecutive_failures": 0,
   "feature_count": 190,
@@ -12,6 +12,10 @@
   "checksum": "sha256:419026e565c640c74411510b13e1066348eb1d86cb605ed17eef6a5ceb8e4233",
   "last_error": null,
   "history": [
+    {
+      "at": "2026-11-28T04:32:00.416Z",
+      "ok": true
+    },
     {
       "at": "2026-11-26T23:07:59.219Z",
       "ok": true
@@ -30,14 +34,6 @@
     },
     {
       "at": "2026-11-22T10:05:27.881Z",
-      "ok": true
-    },
-    {
-      "at": "2026-11-21T02:43:37.479Z",
-      "ok": true
-    },
-    {
-      "at": "2026-11-19T23:52:56.420Z",
       "ok": true
     }
   ]
